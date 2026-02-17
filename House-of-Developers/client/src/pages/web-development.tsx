@@ -111,80 +111,52 @@ function BrowserFrame({
   );
 }
 
-function DesignEditorMockup() {
+function CodeEditorMockup() {
   return (
-    <div className="bg-[#2d2d2d] rounded-xl shadow-2xl overflow-hidden flex-1 min-w-0">
-      <div className="flex items-center gap-2 px-4 py-2 border-b border-[#444]">
+    <div className="bg-[#1e1e1e] rounded-xl shadow-2xl overflow-hidden flex-1 min-w-0">
+      <div className="flex items-center gap-2 px-4 py-2 border-b border-[#333]">
         <div className="flex gap-1.5">
           <div className="w-2.5 h-2.5 rounded-full bg-red-500" />
           <div className="w-2.5 h-2.5 rounded-full bg-yellow-500" />
           <div className="w-2.5 h-2.5 rounded-full bg-green-500" />
         </div>
         <div className="flex gap-0 ml-4">
-          <div className="px-3 py-1 text-[10px] text-white bg-[#2d2d2d] border-t-2 border-t-[#3B82F6] rounded-t">
-            Homepage.fig
+          <div className="px-3 py-1 text-[10px] text-white bg-[#1e1e1e] border-t-2 border-t-[#3B82F6] rounded-t">
+            HomePage.tsx
           </div>
-          <div className="px-3 py-1 text-[10px] text-gray-500 bg-[#383838] rounded-t">
-            Styles
+          <div className="px-3 py-1 text-[10px] text-gray-500 bg-[#2d2d2d] rounded-t">
+            styles.css
           </div>
         </div>
       </div>
 
-      <div className="p-4 min-h-[280px]">
-        <div className="bg-[#1a1a2e] rounded-lg p-3 mb-3">
-          <div className="flex items-center justify-between mb-2">
-            <div className="flex items-center gap-2">
-              <div className="w-4 h-4 rounded" style={{ backgroundColor: WEB_DEV_COLOR }} />
-              <span className="text-white text-[10px] font-bold">BrandName</span>
-            </div>
-            <div className="flex gap-2">
-              {["Home", "About", "Services", "Contact"].map((l) => (
-                <span key={l} className="text-gray-400 text-[7px]">{l}</span>
-              ))}
-            </div>
+      <div className="p-4 font-mono text-[10px] leading-relaxed overflow-hidden">
+        {[
+          { num: 1, content: <><span style={{ color: "#569CD6" }}>import</span> <span style={{ color: "#DCDCAA" }}>{"{ Hero, Nav }"}</span> <span style={{ color: "#569CD6" }}>from</span> <span style={{ color: "#CE9178" }}>'./components'</span></> },
+          { num: 2, content: <><span style={{ color: "#569CD6" }}>import</span> <span style={{ color: "#DCDCAA" }}>{"{ motion }"}</span> <span style={{ color: "#569CD6" }}>from</span> <span style={{ color: "#CE9178" }}>'framer-motion'</span></> },
+          { num: 3, content: null },
+          { num: 4, content: <><span style={{ color: "#569CD6" }}>export default function</span> <span style={{ color: "#DCDCAA" }}>HomePage</span><span style={{ color: "#D4D4D4" }}>() {"{"}</span></> },
+          { num: 5, content: <><span style={{ color: "#D4D4D4" }}>{"  "}</span><span style={{ color: "#569CD6" }}>return</span> <span style={{ color: "#D4D4D4" }}>(</span></> },
+          { num: 6, content: <><span style={{ color: "#D4D4D4" }}>{"    "}&lt;</span><span style={{ color: "#569CD6" }}>main</span> <span style={{ color: "#9CDCFE" }}>className</span><span style={{ color: "#D4D4D4" }}>=</span><span style={{ color: "#CE9178" }}>"min-h-screen"</span><span style={{ color: "#D4D4D4" }}>&gt;</span></> },
+          { num: 7, content: <><span style={{ color: "#D4D4D4" }}>{"      "}&lt;</span><span style={{ color: "#4EC9B0" }}>Nav</span> <span style={{ color: "#9CDCFE" }}>brand</span><span style={{ color: "#D4D4D4" }}>=</span><span style={{ color: "#CE9178" }}>"BrandName"</span> <span style={{ color: "#D4D4D4" }}>/&gt;</span></> },
+          { num: 8, content: <><span style={{ color: "#D4D4D4" }}>{"      "}&lt;</span><span style={{ color: "#4EC9B0" }}>Hero</span> <span style={{ color: "#9CDCFE" }}>title</span><span style={{ color: "#D4D4D4" }}>=</span><span style={{ color: "#CE9178" }}>"Build Extraordinary"</span> <span style={{ color: "#D4D4D4" }}>/&gt;</span></> },
+          { num: 9, content: <><span style={{ color: "#D4D4D4" }}>{"      "}&lt;</span><span style={{ color: "#4EC9B0" }}>Features</span> <span style={{ color: "#9CDCFE" }}>columns</span><span style={{ color: "#D4D4D4" }}>={"{"}</span><span style={{ color: "#B5CEA8" }}>3</span><span style={{ color: "#D4D4D4" }}>{"}"} /&gt;</span></> },
+          { num: 10, content: <><span style={{ color: "#D4D4D4" }}>{"      "}&lt;</span><span style={{ color: "#4EC9B0" }}>Testimonials</span> <span style={{ color: "#D4D4D4" }}>/&gt;</span></> },
+          { num: 11, content: <><span style={{ color: "#D4D4D4" }}>{"      "}&lt;</span><span style={{ color: "#4EC9B0" }}>CTASection</span> <span style={{ color: "#9CDCFE" }}>variant</span><span style={{ color: "#D4D4D4" }}>=</span><span style={{ color: "#CE9178" }}>"gradient"</span> <span style={{ color: "#D4D4D4" }}>/&gt;</span></> },
+          { num: 12, content: <><span style={{ color: "#D4D4D4" }}>{"    "}&lt;/</span><span style={{ color: "#569CD6" }}>main</span><span style={{ color: "#D4D4D4" }}>&gt;</span></> },
+          { num: 13, content: <><span style={{ color: "#D4D4D4" }}>{"  "})</span></> },
+          { num: 14, content: <><span style={{ color: "#D4D4D4" }}>{"}"}</span></> },
+        ].map((line) => (
+          <div key={line.num} className="flex">
+            <span className="w-6 text-right mr-4 text-gray-600 select-none">{line.num}</span>
+            <span>{line.content || "\u00A0"}</span>
           </div>
-          <div className="bg-gradient-to-r from-blue-600/30 to-purple-600/30 rounded p-3 text-center">
-            <div className="text-white text-[11px] font-bold mb-1">Build Something Extraordinary</div>
-            <div className="text-gray-400 text-[7px] mb-2">Modern websites that drive growth</div>
-            <div className="flex gap-1.5 justify-center">
-              <div className="bg-blue-500 text-white text-[7px] px-2 py-0.5 rounded">Get Started</div>
-              <div className="border border-gray-500 text-gray-300 text-[7px] px-2 py-0.5 rounded">Learn More</div>
-            </div>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-3 gap-2 mb-3">
-          {[
-            { label: "Speed", val: "< 1s", icon: "⚡" },
-            { label: "SEO", val: "98/100", icon: "🔍" },
-            { label: "Mobile", val: "100%", icon: "📱" },
-          ].map((s) => (
-            <div key={s.label} className="bg-[#383838] rounded p-2 text-center">
-              <div className="text-[12px] mb-0.5">{s.icon}</div>
-              <div className="text-white text-[9px] font-bold">{s.val}</div>
-              <div className="text-gray-500 text-[7px]">{s.label}</div>
-            </div>
-          ))}
-        </div>
-
-        <div className="grid grid-cols-2 gap-2">
-          {[
-            { bg: "bg-blue-500/10", border: "border-blue-500/30", label: "Hero Section" },
-            { bg: "bg-purple-500/10", border: "border-purple-500/30", label: "Features Grid" },
-            { bg: "bg-green-500/10", border: "border-green-500/30", label: "Testimonials" },
-            { bg: "bg-amber-500/10", border: "border-amber-500/30", label: "CTA Section" },
-          ].map((c) => (
-            <div key={c.label} className={`${c.bg} border ${c.border} rounded p-2 text-center`}>
-              <div className="text-gray-300 text-[8px]">{c.label}</div>
-              <div className="h-3 bg-white/5 rounded mt-1" />
-            </div>
-          ))}
-        </div>
+        ))}
       </div>
 
-      <div className="flex items-center justify-between px-4 py-1 text-[9px]" style={{ backgroundColor: WEB_DEV_COLOR }}>
-        <span className="text-white">Figma · Web Design</span>
-        <span className="text-white">1440 × 900</span>
+      <div className="flex items-center justify-between px-4 py-1 text-white text-[9px]" style={{ backgroundColor: WEB_DEV_COLOR }}>
+        <span>TypeScript React</span>
+        <span>Ln 8, Col 32</span>
       </div>
     </div>
   );
@@ -286,7 +258,7 @@ function HeroMockup() {
       </motion.div>
 
       <div className="flex gap-3 items-stretch">
-        <DesignEditorMockup />
+        <CodeEditorMockup />
         <div className="flex flex-col items-center justify-center px-1">
           <div className="text-[9px] text-muted-foreground mb-1">Builds to</div>
           <ArrowRight className="w-4 h-4 text-muted-foreground" />
