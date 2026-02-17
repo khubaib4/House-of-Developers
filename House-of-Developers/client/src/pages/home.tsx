@@ -134,7 +134,7 @@ const stats = [
 export default function Home() {
   return (
     <>
-      <section className="py-24 md:py-32 pt-[80px] pb-[80px]">
+      <section className="py-24 md:py-32 pt-[50px] pb-[50px]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
