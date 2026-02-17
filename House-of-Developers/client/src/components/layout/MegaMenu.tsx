@@ -1,107 +1,101 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  Rocket,
   Globe,
-  Code2,
-  Layout,
   Smartphone,
-  Brain,
-  FileText,
+  Bot,
+  Search,
   Users,
-  TrendingUp,
+  ChevronRight,
   ArrowRight,
   type LucideIcon,
 } from "lucide-react";
 
-interface ServiceItem {
-  icon: LucideIcon;
-  label: string;
-  description: string;
+interface SubService {
+  name: string;
   href: string;
+  popular?: boolean;
 }
 
-interface FeaturedCard {
+interface ServiceCategory {
+  name: string;
   icon: LucideIcon;
-  title: string;
-  description: string;
+  color: string;
   href: string;
-  badge: string;
+  subServices: SubService[];
 }
 
-const developmentServices: ServiceItem[] = [
+const serviceCategories: ServiceCategory[] = [
   {
+    name: "Web Development",
     icon: Globe,
-    label: "Web Development",
-    description: "High-performance websites and landing pages",
+    color: "from-blue-500 to-indigo-500",
     href: "/services/web-development",
+    subServices: [
+      { name: "Custom Development", href: "/services/web-development/custom-development", popular: true },
+      { name: "Web Applications", href: "/services/web-development/web-applications" },
+      { name: "E-Commerce", href: "/services/web-development/ecommerce" },
+      { name: "Landing Pages", href: "/services/web-development/landing-pages" },
+      { name: "WordPress", href: "/services/web-development/cms/wordpress", popular: true },
+      { name: "Shopify", href: "/services/web-development/cms/shopify" },
+    ],
   },
   {
-    icon: Code2,
-    label: "Custom Development",
-    description: "Bespoke software for unique business needs",
-    href: "/services/custom-development",
-  },
-  {
-    icon: Layout,
-    label: "Web Applications",
-    description: "Full-stack SaaS platforms built for scale",
-    href: "/services/web-apps",
-  },
-  {
+    name: "Mobile Development",
     icon: Smartphone,
-    label: "Mobile Development",
-    description: "Native and cross-platform mobile apps",
+    color: "from-purple-500 to-pink-500",
     href: "/services/mobile-development",
+    subServices: [
+      { name: "Hybrid Apps", href: "/services/mobile-development/hybrid", popular: true },
+      { name: "iOS Development", href: "/services/mobile-development/ios" },
+      { name: "Android Development", href: "/services/mobile-development/android" },
+      { name: "React Native", href: "/services/mobile-development/hybrid" },
+      { name: "Flutter", href: "/services/mobile-development/hybrid" },
+    ],
   },
   {
-    icon: FileText,
-    label: "CMS Development",
-    description: "WordPress, Shopify, and headless CMS",
-    href: "/services/cms-development",
-  },
-];
-
-const growthServices: ServiceItem[] = [
-  {
-    icon: Brain,
-    label: "AI Services",
-    description: "Intelligent automation and AI integration",
+    name: "AI Services",
+    icon: Bot,
+    color: "from-violet-500 to-purple-500",
     href: "/services/ai-services",
+    subServices: [
+      { name: "AI Chatbots", href: "/services/ai-services/ai-chatbots", popular: true },
+      { name: "AI Agents", href: "/services/ai-services/ai-agents", popular: true },
+      { name: "AI Automation", href: "/services/ai-services/ai-automation" },
+      { name: "AI Integration", href: "/services/ai-services/ai-integration" },
+      { name: "Machine Learning", href: "/services/ai-services/machine-learning" },
+    ],
   },
   {
-    icon: TrendingUp,
-    label: "SEO & Growth",
-    description: "Data-driven SEO and growth marketing",
-    href: "/services/seo-services",
+    name: "SEO Services",
+    icon: Search,
+    color: "from-emerald-500 to-green-500",
+    href: "/services/seo",
+    subServices: [
+      { name: "SEO Audits", href: "/services/seo/seo-audit", popular: true },
+      { name: "Technical SEO", href: "/services/seo/technical-seo" },
+      { name: "Local SEO", href: "/services/seo/local-seo", popular: true },
+      { name: "E-Commerce SEO", href: "/services/seo/ecommerce-seo" },
+      { name: "Content SEO", href: "/services/seo/content-seo" },
+    ],
   },
   {
+    name: "Hire Developers",
     icon: Users,
-    label: "Hire Developers",
-    description: "Vetted developers for your team",
+    color: "from-orange-500 to-amber-500",
     href: "/services/hire-developers",
-  },
-];
-
-const featuredCards: FeaturedCard[] = [
-  {
-    icon: Rocket,
-    title: "30-Day MVP Program",
-    description: "Go from idea to launched product in just 30 days. Our most popular service for startups.",
-    href: "/services/build-mvp",
-    badge: "Popular",
-  },
-  {
-    icon: Users,
-    title: "Hire Developers",
-    description: "Scale your team with pre-vetted senior developers. Flexible monthly engagement.",
-    href: "/services/hire-developers",
-    badge: "Flexible",
+    subServices: [
+      { name: "Full-Stack Developers", href: "/services/hire-developers/full-stack", popular: true },
+      { name: "Frontend Developers", href: "/services/hire-developers/frontend" },
+      { name: "Backend Developers", href: "/services/hire-developers/backend" },
+      { name: "React Developers", href: "/services/hire-developers/frontend/react" },
+      { name: "Node.js Developers", href: "/services/hire-developers/backend/nodejs" },
+    ],
   },
 ];
 
 const containerVariants = {
-  hidden: { opacity: 0, y: -20 },
+  hidden: { opacity: 0, y: -10 },
   visible: {
     opacity: 1,
     y: 0,
@@ -110,20 +104,8 @@ const containerVariants = {
   exit: {
     opacity: 0,
     y: -10,
-    transition: { duration: 0.15, ease: "easeIn" },
+    transition: { duration: 0.2, ease: "easeIn" },
   },
-};
-
-const staggerVariants = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.03 },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, x: -10 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.15 } },
 };
 
 interface MegaMenuProps {
@@ -160,7 +142,6 @@ export function MegaMenu({ isOpen, onClose, onNavigate, triggerRef, onFocusWithi
       focusIndexRef.current = -1;
       return;
     }
-
     const timer = setTimeout(() => {
       collectFocusables();
       if (focusableRefs.current.length > 0) {
@@ -168,7 +149,6 @@ export function MegaMenu({ isOpen, onClose, onNavigate, triggerRef, onFocusWithi
         focusableRefs.current[0]?.focus();
       }
     }, 50);
-
     return () => clearTimeout(timer);
   }, [isOpen, collectFocusables]);
 
@@ -181,11 +161,9 @@ export function MegaMenu({ isOpen, onClose, onNavigate, triggerRef, onFocusWithi
 
   useEffect(() => {
     if (!isOpen) return;
-
     const handleKeyDown = (e: KeyboardEvent) => {
       const items = focusableRefs.current;
       if (!items.length) return;
-
       switch (e.key) {
         case "Escape":
           e.preventDefault();
@@ -200,9 +178,7 @@ export function MegaMenu({ isOpen, onClose, onNavigate, triggerRef, onFocusWithi
         case "Tab": {
           e.preventDefault();
           if (e.shiftKey) {
-            focusIndexRef.current = focusIndexRef.current <= 0
-              ? items.length - 1
-              : focusIndexRef.current - 1;
+            focusIndexRef.current = focusIndexRef.current <= 0 ? items.length - 1 : focusIndexRef.current - 1;
           } else {
             focusIndexRef.current = (focusIndexRef.current + 1) % items.length;
           }
@@ -211,9 +187,7 @@ export function MegaMenu({ isOpen, onClose, onNavigate, triggerRef, onFocusWithi
         }
         case "ArrowUp": {
           e.preventDefault();
-          focusIndexRef.current = focusIndexRef.current <= 0
-            ? items.length - 1
-            : focusIndexRef.current - 1;
+          focusIndexRef.current = focusIndexRef.current <= 0 ? items.length - 1 : focusIndexRef.current - 1;
           items[focusIndexRef.current]?.focus();
           break;
         }
@@ -231,7 +205,6 @@ export function MegaMenu({ isOpen, onClose, onNavigate, triggerRef, onFocusWithi
         }
       }
     };
-
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [isOpen, closeAndReturnFocus]);
@@ -289,150 +262,85 @@ export function MegaMenu({ isOpen, onClose, onNavigate, triggerRef, onFocusWithi
           exit="exit"
           role="menu"
           aria-label="Services menu"
-          className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[780px] rounded-lg border border-border bg-popover/95 backdrop-blur-xl shadow-2xl overflow-visible"
+          className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-screen max-w-6xl rounded-2xl border border-border bg-background/95 backdrop-blur-2xl shadow-2xl overflow-hidden"
+          style={{
+            backdropFilter: "blur(24px) saturate(180%)",
+            WebkitBackdropFilter: "blur(24px) saturate(180%)",
+          }}
           data-testid="mega-menu"
           onFocus={handleFocusIn}
         >
-          <div className="grid grid-cols-3 gap-0">
-            <motion.div
-              variants={staggerVariants}
-              initial="hidden"
-              animate="visible"
-              className="p-6 border-r border-border"
-            >
-              <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">
-                Development
-              </h3>
-              <div className="space-y-1">
-                {developmentServices.map((item) => (
-                  <ServiceMenuItem
-                    key={item.label}
-                    item={item}
-                    onClick={handleItemClick}
-                  />
-                ))}
-              </div>
-            </motion.div>
+          <div className="p-6 md:p-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+              {serviceCategories.map((category) => (
+                <div key={category.name} className="space-y-4">
+                  <button
+                    role="menuitem"
+                    onClick={() => handleItemClick(category.href)}
+                    className="flex items-center gap-3 group cursor-pointer w-full text-left"
+                    data-testid={`mega-menu-category-${category.name.toLowerCase().replace(/\s+/g, "-")}`}
+                  >
+                    <div
+                      className={`w-10 h-10 rounded-xl flex items-center justify-center bg-gradient-to-br ${category.color} group-hover:scale-110 transition-transform duration-200 flex-shrink-0`}
+                    >
+                      <category.icon size={18} className="text-white" />
+                    </div>
+                    <h3 className="font-semibold text-sm text-foreground group-hover:text-primary transition-colors">
+                      {category.name}
+                    </h3>
+                  </button>
 
-            <motion.div
-              variants={staggerVariants}
-              initial="hidden"
-              animate="visible"
-              className="p-6 border-r border-border"
-            >
-              <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">
-                Growth & Teams
-              </h3>
-              <div className="space-y-1">
-                {growthServices.map((item) => (
-                  <ServiceMenuItem
-                    key={item.label}
-                    item={item}
-                    onClick={handleItemClick}
-                  />
-                ))}
-              </div>
+                  <ul className="space-y-2.5">
+                    {category.subServices.map((service) => (
+                      <li key={`${category.name}-${service.name}`}>
+                        <button
+                          role="menuitem"
+                          onClick={() => handleItemClick(service.href)}
+                          className="group flex items-center justify-between w-full text-left text-sm text-muted-foreground hover:text-primary transition-colors"
+                          data-testid={`mega-menu-${service.name.toLowerCase().replace(/\s+/g, "-")}`}
+                        >
+                          <span className="flex items-center gap-2">
+                            {service.name}
+                            {service.popular && (
+                              <span className="text-[10px] font-semibold uppercase px-1.5 py-0.5 rounded bg-primary/10 text-primary">
+                                Popular
+                              </span>
+                            )}
+                          </span>
+                          <ChevronRight
+                            size={12}
+                            className="opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all duration-200 flex-shrink-0"
+                          />
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
 
-              <div className="mt-6 pt-4 border-t border-border">
-                <button
-                  role="menuitem"
-                  onClick={() => handleItemClick("/services")}
-                  className="flex items-center gap-2 text-sm font-semibold text-primary transition-colors rounded-md px-3 py-2 w-full hover-elevate"
-                  data-testid="mega-menu-view-all"
-                >
-                  View All Services
-                  <ArrowRight className="h-3.5 w-3.5" />
-                </button>
+            <div className="mt-8 pt-8 border-t flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div>
+                <p className="text-sm font-semibold text-foreground">
+                  Not sure which service you need?
+                </p>
+                <p className="text-xs text-muted-foreground mt-1">
+                  Book a free consultation and we'll recommend the right solution
+                </p>
               </div>
-            </motion.div>
-
-            <motion.div
-              variants={staggerVariants}
-              initial="hidden"
-              animate="visible"
-              className="p-6 bg-muted/30"
-            >
-              <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">
-                Featured
-              </h3>
-              <div className="space-y-3">
-                {featuredCards.map((card) => (
-                  <FeaturedCardItem
-                    key={card.title}
-                    card={card}
-                    onClick={handleItemClick}
-                  />
-                ))}
-              </div>
-            </motion.div>
+              <button
+                role="menuitem"
+                onClick={() => handleItemClick("/contact")}
+                className="flex items-center gap-2 px-6 py-2.5 bg-primary hover:bg-primary/90 text-primary-foreground text-sm font-semibold rounded-xl transition-all duration-200 active:scale-95 whitespace-nowrap"
+                data-testid="mega-menu-cta"
+              >
+                Get Free Consultation
+                <ArrowRight size={14} />
+              </button>
+            </div>
           </div>
         </motion.div>
       )}
     </AnimatePresence>
-  );
-}
-
-function ServiceMenuItem({
-  item,
-  onClick,
-}: {
-  item: ServiceItem;
-  onClick: (href: string) => void;
-}) {
-  const Icon = item.icon;
-  return (
-    <motion.button
-      variants={itemVariants}
-      role="menuitem"
-      onClick={() => onClick(item.href)}
-      className="group flex items-start gap-3 w-full text-left px-3 py-2.5 rounded-md hover-elevate transition-colors"
-      data-testid={`mega-menu-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
-    >
-      <div className="mt-0.5 flex-shrink-0">
-        <Icon className="h-5 w-5 text-muted-foreground" />
-      </div>
-      <div className="min-w-0">
-        <div className="text-sm font-semibold leading-tight">{item.label}</div>
-        <div className="text-xs text-muted-foreground mt-0.5 leading-snug">
-          {item.description}
-        </div>
-      </div>
-    </motion.button>
-  );
-}
-
-function FeaturedCardItem({
-  card,
-  onClick,
-}: {
-  card: FeaturedCard;
-  onClick: (href: string) => void;
-}) {
-  const Icon = card.icon;
-  return (
-    <motion.button
-      variants={itemVariants}
-      role="menuitem"
-      onClick={() => onClick(card.href)}
-      className="group w-full text-left p-4 rounded-lg border border-border bg-background/60 transition-all duration-200 hover:border-primary/30 hover:scale-[1.02]"
-      data-testid={`mega-menu-featured-${card.title.toLowerCase().replace(/\s+/g, "-")}`}
-    >
-      <div className="flex items-start gap-3">
-        <div className="flex-shrink-0 w-8 h-8 rounded-md bg-primary/10 flex items-center justify-center">
-          <Icon className="h-4 w-4 text-primary" />
-        </div>
-        <div className="min-w-0 flex-1">
-          <div className="flex items-center gap-2 flex-wrap">
-            <span className="text-sm font-semibold">{card.title}</span>
-            <span className="text-[10px] font-semibold uppercase tracking-wider px-1.5 py-0.5 rounded bg-primary/10 text-primary">
-              {card.badge}
-            </span>
-          </div>
-          <p className="text-xs text-muted-foreground mt-1 leading-snug">
-            {card.description}
-          </p>
-        </div>
-      </div>
-    </motion.button>
   );
 }

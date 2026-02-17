@@ -1,0 +1,756 @@
+Build a mega menu for the Services navigation item. The mega 
+menu should display all service categories in a 5-column grid 
+layout with popular badges on key services and a CTA button at 
+the bottom. Desktop: hover to open. Mobile: click/tap to open.
+
+---
+
+COMPONENT TO CREATE:
+
+FILE: client/src/components/navigation/MegaMenu.tsx
+
+FULL COMPONENT CODE:
+```tsx
+"use client";
+
+import { useState, useRef, useEffect } from "react";
+import { Link } from "wouter";
+import {
+  Globe,
+  Smartphone,
+  Bot,
+  Search,
+  Users,
+  ChevronRight,
+  ArrowRight,
+} from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+
+interface SubService {
+  name: string;
+  href: string;
+  popular?: boolean;
+}
+
+interface ServiceCategory {
+  name: string;
+  icon: React.ComponentType<{ size?: number; className?: string }>;
+  color: string; // Gradient color for icon circle
+  href: string;
+  subServices: SubService[];
+}
+
+const serviceCategories: ServiceCategory[] = [
+  {
+    name: "Web Development",
+    icon: Globe,
+    color: "from-blue-500 to-indigo-500",
+    href: "/services/web-development",
+    subServices: [
+      { 
+        name: "Custom Development", 
+        href: "/services/web-development/custom-development",
+        popular: true 
+      },
+      { 
+        name: "Web Applications", 
+        href: "/services/web-development/web-applications" 
+      },
+      { 
+        name: "E-Commerce", 
+        href: "/services/web-development/ecommerce" 
+      },
+      { 
+        name: "Landing Pages", 
+        href: "/services/web-development/landing-pages" 
+      },
+      { 
+        name: "WordPress", 
+        href: "/services/web-development/cms/wordpress",
+        popular: true 
+      },
+      { 
+        name: "Shopify", 
+        href: "/services/web-development/cms/shopify" 
+      },
+    ],
+  },
+  {
+    name: "Mobile Development",
+    icon: Smartphone,
+    color: "from-purple-500 to-pink-500",
+    href: "/services/mobile-development",
+    subServices: [
+      { 
+        name: "Hybrid Apps", 
+        href: "/services/mobile-development/hybrid",
+        popular: true 
+      },
+      { 
+        name: "iOS Development", 
+        href: "/services/mobile-development/ios" 
+      },
+      { 
+        name: "Android Development", 
+        href: "/services/mobile-development/android" 
+      },
+      { 
+        name: "React Native", 
+        href: "/services/mobile-development/hybrid" 
+      },
+      { 
+        name: "Flutter", 
+        href: "/services/mobile-development/hybrid" 
+      },
+    ],
+  },
+  {
+    name: "AI Services",
+    icon: Bot,
+    color: "from-violet-500 to-purple-500",
+    href: "/services/ai-services",
+    subServices: [
+      { 
+        name: "AI Chatbots", 
+        href: "/services/ai-services/ai-chatbots",
+        popular: true 
+      },
+      { 
+        name: "AI Agents", 
+        href: "/services/ai-services/ai-agents",
+        popular: true 
+      },
+      { 
+        name: "AI Automation", 
+        href: "/services/ai-services/ai-automation" 
+      },
+      { 
+        name: "AI Integration", 
+        href: "/services/ai-services/ai-integration" 
+      },
+      { 
+        name: "Machine Learning", 
+        href: "/services/ai-services/machine-learning" 
+      },
+    ],
+  },
+  {
+    name: "SEO Services",
+    icon: Search,
+    color: "from-emerald-500 to-green-500",
+    href: "/services/seo",
+    subServices: [
+      { 
+        name: "SEO Audits", 
+        href: "/services/seo/seo-audit",
+        popular: true 
+      },
+      { 
+        name: "Technical SEO", 
+        href: "/services/seo/technical-seo" 
+      },
+      { 
+        name: "Local SEO", 
+        href: "/services/seo/local-seo",
+        popular: true 
+      },
+      { 
+        name: "E-Commerce SEO", 
+        href: "/services/seo/ecommerce-seo" 
+      },
+      { 
+        name: "Content SEO", 
+        href: "/services/seo/content-seo" 
+      },
+    ],
+  },
+  {
+    name: "Hire Developers",
+    icon: Users,
+    color: "from-orange-500 to-amber-500",
+    href: "/services/hire-developers",
+    subServices: [
+      { 
+        name: "Full-Stack Developers", 
+        href: "/services/hire-developers/full-stack",
+        popular: true 
+      },
+      { 
+        name: "Frontend Developers", 
+        href: "/services/hire-developers/frontend" 
+      },
+      { 
+        name: "Backend Developers", 
+        href: "/services/hire-developers/backend" 
+      },
+      { 
+        name: "React Developers", 
+        href: "/services/hire-developers/frontend/react" 
+      },
+      { 
+        name: "Node.js Developers", 
+        href: "/services/hire-developers/backend/nodejs" 
+      },
+    ],
+  },
+];
+
+interface MegaMenuProps {
+  onClose?: () => void;
+}
+
+export function MegaMenu({ onClose }: MegaMenuProps) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
+
+  // Detect mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  // Click outside to close (mobile)
+  useEffect(() => {
+    if (!isMobile) return;
+
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+        onClose?.();
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen, isMobile, onClose]);
+
+  const handleMouseEnter = () => {
+    if (isMobile) return; // Desktop only
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    setIsOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    if (isMobile) return; // Desktop only
+    timeoutRef.current = setTimeout(() => {
+      setIsOpen(false);
+    }, 150); // Small delay before closing
+  };
+
+  const handleClick = () => {
+    if (!isMobile) return; // Mobile only
+    setIsOpen(!isOpen);
+  };
+
+  const handleLinkClick = () => {
+    setIsOpen(false);
+    onClose?.();
+  };
+
+  return (
+    <div
+      ref={menuRef}
+      className="relative"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      {/* Trigger Button */}
+      <button
+        onClick={handleClick}
+        className="
+          flex items-center gap-1
+          px-3 py-2
+          text-sm font-medium
+          text-foreground
+          hover:text-primary
+          transition-colors
+          duration-200
+        "
+        aria-expanded={isOpen}
+        aria-haspopup="true"
+      >
+        Services
+        <ChevronRight
+          size={14}
+          className={`
+            transition-transform duration-200
+            ${isOpen ? "rotate-90" : ""}
+          `}
+        />
+      </button>
+
+      {/* Mega Menu Panel */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="
+              absolute
+              left-1/2
+              -translate-x-1/2
+              top-full
+              mt-2
+              w-screen
+              max-w-6xl
+              z-50
+              md:left-0
+              md:translate-x-0
+            "
+          >
+            <div
+              className="
+                bg-background
+                border
+                rounded-2xl
+                shadow-2xl
+                overflow-hidden
+              "
+              style={{
+                backdropFilter: "blur(24px) saturate(180%)",
+                WebkitBackdropFilter: "blur(24px) saturate(180%)",
+                background: "rgba(var(--background), 0.95)",
+              }}
+            >
+              {/* Content */}
+              <div className="p-6 md:p-8">
+                {/* 5 Column Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+                  {serviceCategories.map((category) => (
+                    <div key={category.name} className="space-y-4">
+                      {/* Category Header */}
+                      <Link href={category.href} onClick={handleLinkClick}>
+                        <div className="flex items-center gap-3 group cursor-pointer">
+                          {/* Icon Circle */}
+                          <div
+                            className={`
+                              w-10 h-10
+                              rounded-xl
+                              flex items-center justify-center
+                              bg-gradient-to-br ${category.color}
+                              group-hover:scale-110
+                              transition-transform duration-200
+                            `}
+                          >
+                            <category.icon size={18} className="text-white" />
+                          </div>
+
+                          {/* Category Name */}
+                          <div>
+                            <h3
+                              className="
+                                font-semibold text-sm
+                                text-foreground
+                                group-hover:text-primary
+                                transition-colors
+                              "
+                            >
+                              {category.name}
+                            </h3>
+                          </div>
+                        </div>
+                      </Link>
+
+                      {/* Sub-Services List */}
+                      <ul className="space-y-2.5">
+                        {category.subServices.map((service) => (
+                          <li key={service.href}>
+                            <Link href={service.href} onClick={handleLinkClick}>
+                              <div
+                                className="
+                                  group
+                                  flex items-center justify-between
+                                  text-sm
+                                  text-muted-foreground
+                                  hover:text-primary
+                                  transition-colors
+                                  cursor-pointer
+                                "
+                              >
+                                <span className="flex items-center gap-2">
+                                  {service.name}
+                                  {service.popular && (
+                                    <span
+                                      className="
+                                        text-[10px]
+                                        font-semibold
+                                        uppercase
+                                        px-1.5 py-0.5
+                                        rounded
+                                        bg-primary/10
+                                        text-primary
+                                      "
+                                    >
+                                      Popular
+                                    </span>
+                                  )}
+                                </span>
+                                <ChevronRight
+                                  size={12}
+                                  className="
+                                    opacity-0
+                                    group-hover:opacity-100
+                                    group-hover:translate-x-0.5
+                                    transition-all
+                                    duration-200
+                                  "
+                                />
+                              </div>
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Bottom CTA */}
+                <div
+                  className="
+                    mt-8
+                    pt-8
+                    border-t
+                    flex flex-col sm:flex-row
+                    items-center
+                    justify-between
+                    gap-4
+                  "
+                >
+                  <div>
+                    <p className="text-sm font-semibold text-foreground">
+                      Not sure which service you need?
+                    </p>
+                    <p className="text-xs text-muted-foreground mt-1">
+                      Book a free consultation and we'll recommend the right solution
+                    </p>
+                  </div>
+
+                  <Link href="/contact" onClick={handleLinkClick}>
+                    <button
+                      className="
+                        flex items-center gap-2
+                        px-6 py-2.5
+                        bg-primary
+                        hover:bg-primary/90
+                        text-primary-foreground
+                        text-sm font-semibold
+                        rounded-xl
+                        transition-all
+                        duration-200
+                        active:scale-95
+                        whitespace-nowrap
+                      "
+                    >
+                      Get Free Consultation
+                      <ArrowRight size={14} />
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
+```
+
+---
+
+INTEGRATION INTO NAVIGATION:
+
+Find your main Navigation component. It's likely at:
+- client/src/components/navigation/Navigation.tsx
+- client/src/components/Navigation.tsx
+- client/src/components/layout/Header.tsx
+
+REPLACE the current "Services" nav link with the MegaMenu component:
+
+BEFORE (typical structure):
+```tsx
+<nav>
+  <Link href="/">Home</Link>
+  <Link href="/services">Services</Link>  {/* ← Replace this */}
+  <Link href="/about">About</Link>
+  <Link href="/contact">Contact</Link>
+</nav>
+```
+
+AFTER:
+```tsx
+import { MegaMenu } from "@/components/navigation/MegaMenu";
+
+<nav className="flex items-center gap-6">
+  <Link href="/">Home</Link>
+  
+  {/* Mega Menu replaces simple Services link */}
+  <MegaMenu />
+  
+  <Link href="/about">About</Link>
+  <Link href="/contact">Contact</Link>
+</nav>
+```
+
+---
+
+DESIGN SPECIFICATIONS:
+
+Layout:
+- 5 columns on desktop (lg:grid-cols-5)
+- 3 columns on tablet (md:grid-cols-3)
+- 2 columns on small tablet (sm:grid-cols-2)
+- 1 column on mobile (grid-cols-1)
+
+Panel:
+- Full-width up to max-w-6xl
+- Positioned: absolute, centered under nav
+- Background: frosted glass (backdrop-blur-24px)
+- Border + shadow-2xl
+- Rounded-2xl corners
+- Padding: p-6 md:p-8
+
+Category Header:
+- Icon: 40px circle with gradient (each category has unique color)
+- Name: font-semibold, text-sm
+- Hover: icon scales to 110%, name turns primary color
+- Clickable: links to category hub page
+
+Sub-Service Links:
+- text-sm, text-muted-foreground
+- Hover: text-primary color
+- ChevronRight icon appears on hover (slides in from right)
+- Popular badge: "POPULAR" pill (primary/10 bg, primary text)
+- Each links to specific service page
+
+Bottom CTA:
+- Border-top separator
+- Left: Heading + subtext
+- Right: "Get Free Consultation" button (primary color)
+- Button has ArrowRight icon
+- Responsive: stacks vertical on mobile
+
+Behavior:
+- Desktop: Hover to open, small delay (150ms) before closing on mouse leave
+- Mobile: Click/tap to toggle, click outside to close
+- Smooth animation: fade + slide (200ms duration)
+- AnimatePresence for clean mount/unmount
+
+Colors per Category (icon gradients):
+1. Web Development: blue to indigo (from-blue-500 to-indigo-500)
+2. Mobile: purple to pink (from-purple-500 to-pink-500)
+3. AI: violet to purple (from-violet-500 to-purple-500)
+4. SEO: emerald to green (from-emerald-500 to-green-500)
+5. Hire Developers: orange to amber (from-orange-500 to-amber-500)
+
+Popular Badges on:
+- Custom Development (Web)
+- WordPress (Web)
+- Hybrid Apps (Mobile)
+- AI Chatbots (AI)
+- AI Agents (AI)
+- SEO Audits (SEO)
+- Local SEO (SEO)
+- Full-Stack Developers (Hire)
+
+---
+
+MOBILE BEHAVIOR:
+
+Mobile (< 768px):
+- Click "Services" button to toggle menu
+- Menu appears below button (still full-width, centered)
+- Click any link → menu closes
+- Click outside menu → menu closes
+- Grid collapses to 1-2 columns for easy scrolling
+
+Desktop (≥ 768px):
+- Hover over "Services" → menu opens
+- Move mouse away → menu closes after 150ms
+- Click any link → menu closes
+- Hover interactions smooth and responsive
+
+---
+
+ACCESSIBILITY:
+
+1. Semantic HTML:
+   - <button> for trigger (not <div>)
+   - aria-expanded={isOpen}
+   - aria-haspopup="true"
+
+2. Keyboard Navigation:
+   - All links are keyboard-accessible
+   - Tab through services logically
+   - Enter/Space to activate links
+
+3. Focus States:
+   - Visible focus rings on all interactive elements
+   - Proper focus management on open/close
+
+4. Screen Readers:
+   - Proper ARIA attributes
+   - Meaningful link text
+   - Hierarchical headings (h3 for categories)
+
+---
+
+RESPONSIVE BREAKPOINTS:
+
+Mobile (< 640px):
+- 1 column
+- Stacked CTA button
+- Full-width menu
+
+Small Tablet (640px - 768px):
+- 2 columns
+- Stacked CTA
+
+Tablet (768px - 1024px):
+- 3 columns
+- Horizontal CTA layout
+
+Desktop (1024px+):
+- 5 columns
+- Full horizontal layout
+- Hover interactions active
+
+---
+
+ANIMATION DETAILS:
+
+Open Animation:
+- opacity: 0 → 1
+- translateY: -10px → 0px
+- duration: 200ms
+- easing: easeOut
+
+Close Animation:
+- opacity: 1 → 0
+- translateY: 0px → -10px
+- duration: 200ms
+
+Hover Transitions:
+- Icon scale: 200ms
+- Text color: 200ms
+- ChevronRight slide: 200ms
+
+---
+
+VISUAL STRUCTURE:
+
+Desktop View:
+┌────────────────────────────────────────────────────────────┐
+│  Navigation                                                 │
+│  Home  [Services ▼]  About  Contact                       │
+└────────────────────────────────────────────────────────────┘
+       ┌────────────────────────────────────────────────────┐
+       │  ╔═══════════════════════════════════════════════╗ │
+       │  ║  Frosted Glass Mega Menu Panel                ║ │
+       │  ╠═════════╦═════════╦═════════╦═════════╦═══════╣ │
+       │  ║ [🌐]    ║ [📱]    ║ [🤖]    ║ [🔍]    ║ [👥]  ║ │
+       │  ║ Web Dev ║ Mobile  ║ AI Svc  ║ SEO     ║ Hire  ║ │
+       │  ║         ║         ║         ║         ║       ║ │
+       │  ║ Custom  ║ Hybrid  ║ Chatbot ║ Audit   ║ Full- ║ │
+       │  ║ POPULAR ║ POPULAR ║ POPULAR ║ POPULAR ║ Stack ║ │
+       │  ║         ║         ║ POPULAR ║         ║       ║ │
+       │  ║ Web App ║ iOS Dev ║ Agents  ║ Tech    ║ Front ║ │
+       │  ║ ...     ║ ...     ║ ...     ║ ...     ║ ...   ║ │
+       │  ╠═════════════════════════════════════════════════╣ │
+       │  ║ Not sure which service? [Get Free Consultation]║ │
+       │  ╚═════════════════════════════════════════════════╝ │
+       └────────────────────────────────────────────────────┘
+
+Mobile View:
+┌─────────────────────────────┐
+│  ☰  Services ▼             │
+├─────────────────────────────┤
+│ ┌─────────────────────────┐ │
+│ │ [🌐] Web Development    │ │
+│ │ • Custom      POPULAR   │ │
+│ │ • Web Applications      │ │
+│ │ • WordPress   POPULAR   │ │
+│ │                         │ │
+│ │ [📱] Mobile Development │ │
+│ │ • Hybrid Apps POPULAR   │ │
+│ │ • iOS Development       │ │
+│ │                         │ │
+│ │ [Get Free Consultation] │ │
+│ └─────────────────────────┘ │
+└─────────────────────────────┘
+
+---
+
+DATA STRUCTURE:
+
+The serviceCategories array is the single source of truth.
+To add/remove/edit services:
+
+1. Update the serviceCategories array
+2. Set popular: true on key services
+3. Icon, color, and href are all defined here
+4. Component automatically renders changes
+
+Example - Adding a new service:
+```tsx
+{
+  name: "New Service Category",
+  icon: Rocket, // Lucide icon
+  color: "from-cyan-500 to-blue-500", // Gradient
+  href: "/services/new-category",
+  subServices: [
+    { 
+      name: "Sub Service 1", 
+      href: "/services/new-category/sub-1",
+      popular: true // Optional
+    },
+    { 
+      name: "Sub Service 2", 
+      href: "/services/new-category/sub-2" 
+    },
+  ],
+}
+```
+
+---
+
+FINAL REQUIREMENTS:
+
+1. ✅ Multi-column grid: 5 columns on desktop
+2. ✅ Popular badges on key services (10 services marked)
+3. ✅ CTA button at bottom of mega menu
+4. ✅ Hover behavior on desktop (with 150ms close delay)
+5. ✅ Click behavior on mobile
+6. ✅ Click outside to close (mobile)
+7. ✅ Frosted glass background effect
+8. ✅ Smooth animations (Framer Motion)
+9. ✅ Unique gradient icon per category
+10. ✅ Responsive: 5 → 3 → 2 → 1 columns
+11. ✅ ChevronRight appears on hover
+12. ✅ All links close menu on click
+13. ✅ Category headers link to hub pages
+14. ✅ Sub-services link to specific pages
+15. ✅ Accessible (ARIA, keyboard nav)
+16. ✅ Dark/light mode compatible
+
+Build the MegaMenu component and integrate it into 
+the main Navigation component, replacing the simple 
+"Services" link.
