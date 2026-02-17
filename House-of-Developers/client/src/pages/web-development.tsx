@@ -611,6 +611,7 @@ const webServices = [
     description: "Bespoke websites built from scratch, tailored to your brand and business goals. Every pixel crafted for maximum impact and conversion.",
     examples: ["Marketing websites", "Portfolio sites", "Multi-page business sites"],
     tech: ["React", "Next.js", "Tailwind CSS"],
+    link: "/services/custom-development",
   },
   {
     icon: ShoppingBag,
@@ -619,6 +620,7 @@ const webServices = [
     description: "High-converting online stores built with modern technology. From product pages to checkout flows optimised for maximum sales.",
     examples: ["Fashion stores", "B2B wholesalers", "Subscription boxes"],
     tech: ["Shopify", "WooCommerce", "Stripe"],
+    link: "/services/web-development/cms/shopify",
   },
   {
     icon: FileText,
@@ -627,6 +629,7 @@ const webServices = [
     description: "Powerful content management systems that put you in control. Update your website anytime without touching a single line of code.",
     examples: ["WordPress sites", "Blog platforms", "News portals"],
     tech: ["WordPress", "Sanity", "Strapi"],
+    link: "/services/cms-development",
   },
   {
     icon: Layers,
@@ -635,6 +638,7 @@ const webServices = [
     description: "Complex, feature-rich web applications that solve real business problems. Built with scalable architecture for long-term success.",
     examples: ["SaaS platforms", "Client portals", "Dashboard tools"],
     tech: ["React", "Node.js", "PostgreSQL"],
+    link: "/services/web-apps",
   },
   {
     icon: Target,
@@ -1050,28 +1054,43 @@ export default function WebDevelopmentPage() {
           >
             {webServices.map((service) => {
               const Icon = service.icon;
+              const cardContent = (
+                <Card className="p-6 h-full hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
+                  <div className={`w-14 h-14 rounded-full bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-4`}>
+                    <Icon className="w-7 h-7 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground group-hover:text-[#3B82F6] transition-colors">{service.name}</h3>
+                  <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{service.description}</p>
+                  <div className="mt-4 space-y-1.5">
+                    {service.examples.map((ex) => (
+                      <div key={ex} className="flex items-center gap-2 text-sm text-foreground">
+                        <ArrowRight className="w-3 h-3 flex-shrink-0" style={{ color: WEB_DEV_COLOR }} />
+                        <span>{ex}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="flex flex-wrap gap-1.5 mt-4">
+                    {service.tech.map((t) => (
+                      <span key={t} className="text-[10px] px-2 py-0.5 rounded-full bg-muted border border-border text-muted-foreground">{t}</span>
+                    ))}
+                  </div>
+                  {"link" in service && (
+                    <div className="mt-4 flex items-center gap-1 text-sm font-medium" style={{ color: WEB_DEV_COLOR }}>
+                      <span>Learn More</span>
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  )}
+                </Card>
+              );
               return (
                 <motion.div key={service.name} variants={itemVariants}>
-                  <Card className="p-6 h-full hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-                    <div className={`w-14 h-14 rounded-full bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-4`}>
-                      <Icon className="w-7 h-7 text-white" />
-                    </div>
-                    <h3 className="text-xl font-bold text-foreground">{service.name}</h3>
-                    <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{service.description}</p>
-                    <div className="mt-4 space-y-1.5">
-                      {service.examples.map((ex) => (
-                        <div key={ex} className="flex items-center gap-2 text-sm text-foreground">
-                          <ArrowRight className="w-3 h-3 flex-shrink-0" style={{ color: WEB_DEV_COLOR }} />
-                          <span>{ex}</span>
-                        </div>
-                      ))}
-                    </div>
-                    <div className="flex flex-wrap gap-1.5 mt-4">
-                      {service.tech.map((t) => (
-                        <span key={t} className="text-[10px] px-2 py-0.5 rounded-full bg-muted border border-border text-muted-foreground">{t}</span>
-                      ))}
-                    </div>
-                  </Card>
+                  {"link" in service ? (
+                    <Link href={(service as { link: string }).link} className="block h-full">
+                      {cardContent}
+                    </Link>
+                  ) : (
+                    cardContent
+                  )}
                 </motion.div>
               );
             })}
