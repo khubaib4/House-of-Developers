@@ -1,0 +1,705 @@
+Update the MegaMenu component to fix centering issues and improve 
+the premium feel. The mega menu should appear centered below the 
+entire navigation bar (not offset to the right), icons should be 
+smaller and more refined, and we need to add a "Home" link to the 
+main navigation.
+
+---
+
+FILE TO UPDATE: client/src/components/navigation/MegaMenu.tsx
+
+UPDATED COMPONENT CODE:
+```tsx
+"use client";
+
+import { useState, useRef, useEffect } from "react";
+import { Link } from "wouter";
+import {
+  Globe,
+  Smartphone,
+  Bot,
+  Search,
+  Users,
+  ChevronDown,
+  ArrowRight,
+} from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+
+interface SubService {
+  name: string;
+  href: string;
+  popular?: boolean;
+}
+
+interface ServiceCategory {
+  name: string;
+  icon: React.ComponentType<{ size?: number; className?: string }>;
+  color: string;
+  href: string;
+  subServices: SubService[];
+}
+
+const serviceCategories: ServiceCategory[] = [
+  {
+    name: "Web Development",
+    icon: Globe,
+    color: "from-blue-500 to-indigo-500",
+    href: "/services/web-development",
+    subServices: [
+      { 
+        name: "Custom Development", 
+        href: "/services/web-development/custom-development",
+        popular: true 
+      },
+      { 
+        name: "Web Applications", 
+        href: "/services/web-development/web-applications" 
+      },
+      { 
+        name: "E-Commerce", 
+        href: "/services/web-development/ecommerce" 
+      },
+      { 
+        name: "Landing Pages", 
+        href: "/services/web-development/landing-pages" 
+      },
+      { 
+        name: "WordPress", 
+        href: "/services/web-development/cms/wordpress",
+        popular: true 
+      },
+      { 
+        name: "Shopify", 
+        href: "/services/web-development/cms/shopify" 
+      },
+    ],
+  },
+  {
+    name: "Mobile Development",
+    icon: Smartphone,
+    color: "from-purple-500 to-pink-500",
+    href: "/services/mobile-development",
+    subServices: [
+      { 
+        name: "Hybrid Apps", 
+        href: "/services/mobile-development/hybrid",
+        popular: true 
+      },
+      { 
+        name: "iOS Development", 
+        href: "/services/mobile-development/ios" 
+      },
+      { 
+        name: "Android Development", 
+        href: "/services/mobile-development/android" 
+      },
+      { 
+        name: "React Native", 
+        href: "/services/mobile-development/hybrid" 
+      },
+      { 
+        name: "Flutter", 
+        href: "/services/mobile-development/hybrid" 
+      },
+    ],
+  },
+  {
+    name: "AI Services",
+    icon: Bot,
+    color: "from-violet-500 to-purple-500",
+    href: "/services/ai-services",
+    subServices: [
+      { 
+        name: "AI Chatbots", 
+        href: "/services/ai-services/ai-chatbots",
+        popular: true 
+      },
+      { 
+        name: "AI Agents", 
+        href: "/services/ai-services/ai-agents",
+        popular: true 
+      },
+      { 
+        name: "AI Automation", 
+        href: "/services/ai-services/ai-automation" 
+      },
+      { 
+        name: "AI Integration", 
+        href: "/services/ai-services/ai-integration" 
+      },
+      { 
+        name: "Machine Learning", 
+        href: "/services/ai-services/machine-learning" 
+      },
+    ],
+  },
+  {
+    name: "SEO Services",
+    icon: Search,
+    color: "from-emerald-500 to-green-500",
+    href: "/services/seo",
+    subServices: [
+      { 
+        name: "SEO Audits", 
+        href: "/services/seo/seo-audit",
+        popular: true 
+      },
+      { 
+        name: "Technical SEO", 
+        href: "/services/seo/technical-seo" 
+      },
+      { 
+        name: "Local SEO", 
+        href: "/services/seo/local-seo",
+        popular: true 
+      },
+      { 
+        name: "E-Commerce SEO", 
+        href: "/services/seo/ecommerce-seo" 
+      },
+      { 
+        name: "Content SEO", 
+        href: "/services/seo/content-seo" 
+      },
+    ],
+  },
+  {
+    name: "Hire Developers",
+    icon: Users,
+    color: "from-orange-500 to-amber-500",
+    href: "/services/hire-developers",
+    subServices: [
+      { 
+        name: "Full-Stack Developers", 
+        href: "/services/hire-developers/full-stack",
+        popular: true 
+      },
+      { 
+        name: "Frontend Developers", 
+        href: "/services/hire-developers/frontend" 
+      },
+      { 
+        name: "Backend Developers", 
+        href: "/services/hire-developers/backend" 
+      },
+      { 
+        name: "React Developers", 
+        href: "/services/hire-developers/frontend/react" 
+      },
+      { 
+        name: "Node.js Developers", 
+        href: "/services/hire-developers/backend/nodejs" 
+      },
+    ],
+  },
+];
+
+interface MegaMenuProps {
+  onClose?: () => void;
+}
+
+export function MegaMenu({ onClose }: MegaMenuProps) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  useEffect(() => {
+    if (!isMobile) return;
+
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+        onClose?.();
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen, isMobile, onClose]);
+
+  const handleMouseEnter = () => {
+    if (isMobile) return;
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    setIsOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    if (isMobile) return;
+    timeoutRef.current = setTimeout(() => {
+      setIsOpen(false);
+    }, 200);
+  };
+
+  const handleClick = () => {
+    if (!isMobile) return;
+    setIsOpen(!isOpen);
+  };
+
+  const handleLinkClick = () => {
+    setIsOpen(false);
+    onClose?.();
+  };
+
+  return (
+    <div
+      ref={menuRef}
+      className="relative"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      {/* Trigger Button */}
+      <button
+        onClick={handleClick}
+        className="
+          flex items-center gap-1
+          px-3 py-2
+          text-sm font-medium
+          text-foreground
+          hover:text-primary
+          transition-colors
+          duration-200
+        "
+        aria-expanded={isOpen}
+        aria-haspopup="true"
+      >
+        Services
+        <ChevronDown
+          size={14}
+          className={`
+            transition-transform duration-200
+            ${isOpen ? "rotate-180" : ""}
+          `}
+        />
+      </button>
+
+      {/* Mega Menu Panel - CENTERED */}
+      <AnimatePresence>
+        {isOpen && (
+          <>
+            {/* Invisible backdrop for hover area */}
+            <div className="fixed inset-x-0 top-[64px] h-8 z-40" />
+            
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.15, ease: "easeOut" }}
+              className="
+                fixed
+                left-1/2
+                -translate-x-1/2
+                top-[72px]
+                w-[95vw]
+                max-w-5xl
+                z-50
+              "
+              style={{
+                maxHeight: "calc(100vh - 100px)",
+                overflowY: "auto",
+              }}
+            >
+              <div
+                className="
+                  bg-background/98
+                  border
+                  border-border/50
+                  rounded-2xl
+                  shadow-2xl
+                  overflow-hidden
+                "
+                style={{
+                  backdropFilter: "blur(20px) saturate(180%)",
+                  WebkitBackdropFilter: "blur(20px) saturate(180%)",
+                }}
+              >
+                {/* Content */}
+                <div className="p-8">
+                  {/* 5 Column Grid */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-8 gap-y-8">
+                    {serviceCategories.map((category) => (
+                      <div key={category.name} className="space-y-4">
+                        {/* Category Header */}
+                        <Link href={category.href} onClick={handleLinkClick}>
+                          <div className="flex items-start gap-2.5 group cursor-pointer">
+                            {/* Icon Circle - SMALLER & REFINED */}
+                            <div
+                              className={`
+                                w-8 h-8
+                                rounded-lg
+                                flex items-center justify-center
+                                bg-gradient-to-br ${category.color}
+                                group-hover:scale-105
+                                transition-all duration-200
+                                shadow-sm
+                                flex-shrink-0
+                              `}
+                            >
+                              <category.icon 
+                                size={14} 
+                                className="text-white" 
+                                strokeWidth={2.5}
+                              />
+                            </div>
+
+                            {/* Category Name */}
+                            <div className="flex-1 min-w-0">
+                              <h3
+                                className="
+                                  font-semibold text-[13px]
+                                  text-foreground
+                                  group-hover:text-primary
+                                  transition-colors
+                                  leading-tight
+                                "
+                              >
+                                {category.name}
+                              </h3>
+                            </div>
+                          </div>
+                        </Link>
+
+                        {/* Sub-Services List */}
+                        <ul className="space-y-2 pl-0.5">
+                          {category.subServices.map((service) => (
+                            <li key={service.href}>
+                              <Link href={service.href} onClick={handleLinkClick}>
+                                <div
+                                  className="
+                                    group/item
+                                    flex items-start gap-2
+                                    text-[13px]
+                                    text-muted-foreground
+                                    hover:text-foreground
+                                    transition-colors
+                                    cursor-pointer
+                                    leading-relaxed
+                                  "
+                                >
+                                  <span className="flex-1 min-w-0">
+                                    {service.name}
+                                  </span>
+                                  {service.popular && (
+                                    <span
+                                      className="
+                                        text-[9px]
+                                        font-bold
+                                        uppercase
+                                        tracking-wider
+                                        px-1.5 py-0.5
+                                        rounded
+                                        bg-primary/10
+                                        text-primary
+                                        flex-shrink-0
+                                      "
+                                    >
+                                      Popular
+                                    </span>
+                                  )}
+                                </div>
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Bottom CTA */}
+                  <div
+                    className="
+                      mt-8
+                      pt-6
+                      border-t
+                      border-border/50
+                      flex flex-col sm:flex-row
+                      items-center
+                      justify-between
+                      gap-4
+                    "
+                  >
+                    <div className="text-center sm:text-left">
+                      <p className="text-sm font-semibold text-foreground">
+                        Not sure which service you need?
+                      </p>
+                      <p className="text-xs text-muted-foreground mt-1">
+                        Book a free consultation and we'll recommend the right solution
+                      </p>
+                    </div>
+
+                    <Link href="/contact" onClick={handleLinkClick}>
+                      <button
+                        className="
+                          flex items-center gap-2
+                          px-5 py-2.5
+                          bg-primary
+                          hover:bg-primary/90
+                          text-primary-foreground
+                          text-sm font-semibold
+                          rounded-xl
+                          transition-all
+                          duration-200
+                          active:scale-95
+                          whitespace-nowrap
+                          shadow-sm
+                        "
+                      >
+                        Get Free Consultation
+                        <ArrowRight size={14} strokeWidth={2.5} />
+                      </button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
+```
+
+---
+
+NAVIGATION INTEGRATION WITH HOME LINK:
+
+Update your main Navigation component to include the Home link:
+
+FILE: client/src/components/navigation/Navigation.tsx (or wherever your nav is)
+
+UPDATED NAVIGATION STRUCTURE:
+```tsx
+import { Link } from "wouter";
+import { MegaMenu } from "@/components/navigation/MegaMenu";
+
+export function Navigation() {
+  return (
+    <nav className="flex items-center gap-1">
+      {/* Home Link */}
+      <Link href="/">
+        <a className="
+          px-3 py-2
+          text-sm font-medium
+          text-foreground
+          hover:text-primary
+          transition-colors
+          duration-200
+        ">
+          Home
+        </a>
+      </Link>
+
+      {/* Services Mega Menu */}
+      <MegaMenu />
+
+      {/* Case Studies Link */}
+      <Link href="/case-studies">
+        <a className="
+          px-3 py-2
+          text-sm font-medium
+          text-foreground
+          hover:text-primary
+          transition-colors
+          duration-200
+        ">
+          Case Studies
+        </a>
+      </Link>
+
+      {/* About Link */}
+      <Link href="/about">
+        <a className="
+          px-3 py-2
+          text-sm font-medium
+          text-foreground
+          hover:text-primary
+          transition-colors
+          duration-200
+        ">
+          About
+        </a>
+      </Link>
+
+      {/* Contact Link */}
+      <Link href="/contact">
+        <a className="
+          px-3 py-2
+          text-sm font-medium
+          text-foreground
+          hover:text-primary
+          transition-colors
+          duration-200
+        ">
+          Contact
+        </a>
+      </Link>
+    </nav>
+  );
+}
+```
+
+---
+
+KEY CHANGES MADE:
+
+1. CENTERED POSITIONING:
+   - Changed from: `absolute left-0` (left-aligned)
+   - To: `fixed left-1/2 -translate-x-1/2` (perfectly centered)
+   - Position: `top-[72px]` (below nav bar)
+   - Width: `w-[95vw] max-w-5xl` (responsive, centered)
+
+2. SMALLER, PREMIUM ICONS:
+   - Icon circle: `w-10 h-10` → `w-8 h-8` (20% smaller)
+   - Icon size: `size={18}` → `size={14}` (refined)
+   - Border radius: `rounded-xl` → `rounded-lg` (softer)
+   - Added: `shadow-sm` (subtle depth)
+   - Added: `strokeWidth={2.5}` (crisper lines)
+
+3. REFINED TYPOGRAPHY:
+   - Category name: `text-sm` → `text-[13px]` (more compact)
+   - Sub-services: `text-sm` → `text-[13px]` (consistent)
+   - Popular badge: `text-[10px]` → `text-[9px]` (smaller, refined)
+   - Added: `tracking-wider` on badges (premium feel)
+
+4. IMPROVED SPACING:
+   - Gap between icon and text: `gap-3` → `gap-2.5` (tighter)
+   - Column gaps: `gap-8` → `gap-x-8 gap-y-8` (controlled)
+   - Padding: `p-6 md:p-8` → `p-8` (consistent)
+   - Sub-service spacing: `space-y-2.5` → `space-y-2` (compact)
+
+5. BETTER BACKDROP:
+   - Background: `rgba(var(--background), 0.95)` → `bg-background/98`
+   - Blur: `blur(24px)` → `blur(20px)` (subtler)
+   - Border: Added `border-border/50` (refined edge)
+   - Added invisible hover area to prevent flickering
+
+6. CHEVRON ICON:
+   - Changed: `ChevronRight` rotating → `ChevronDown` rotating
+   - Behavior: Points down, rotates 180° when open (standard UX)
+
+7. HOME LINK ADDED:
+   - New navigation item before Services
+   - Consistent styling with other nav links
+   - Links to `/` (homepage)
+
+8. MOBILE OPTIMIZATIONS:
+   - Max height: `calc(100vh - 100px)` with scroll
+   - Width: `w-[95vw]` (5% margin on mobile)
+   - Grid collapses: 5 → 3 → 2 → 1 columns
+
+---
+
+VISUAL COMPARISON:
+
+BEFORE (Right-aligned, Large Icons):
+Nav: Home  [Services ▶]  About  Contact
+└─────────────────────┐
+╔════╧════╗
+║ [🌐 36px]║
+║ Web Dev  ║
+╚══════════╝
+
+AFTER (Centered, Refined Icons):
+Nav:        Home  [Services ▼]  About  Contact
+┌────────────────┴────────────────┐
+│  ╔════╦════╦════╦════╦════╗    │
+│  ║[🌐]║[📱]║[🤖]║[🔍]║[👥]║    │
+│  ║28px║28px║28px║28px║28px║    │
+│  ╚════╩════╩════╩════╩════╝    │
+└────────────────────────────────┘
+Perfectly Centered
+
+---
+
+POSITIONING BREAKDOWN:
+
+Desktop:
+- `fixed` positioning (relative to viewport, not parent)
+- `left-1/2` (start at 50% of screen width)
+- `-translate-x-1/2` (shift back by 50% of menu width)
+- Result: Perfect horizontal centering
+- `top-[72px]` (just below nav bar, adjust if your nav height differs)
+
+Mobile:
+- Same centering logic
+- `w-[95vw]` (95% of viewport width, 2.5% margin each side)
+- Grid collapses to fewer columns
+- Scrollable if content exceeds viewport height
+
+Hover Area:
+- Invisible `div` with `h-8` creates gap tolerance
+- Prevents menu from closing when mouse moves between nav and panel
+- `z-40` (below menu's `z-50`, above page content)
+
+---
+
+PREMIUM DESIGN DETAILS:
+
+1. ICON REFINEMENT:
+   - Smaller circle (8×8 vs 10×10) = less visual weight
+   - Rounded-lg (not rounded-xl) = refined corners
+   - strokeWidth 2.5 = crisper, premium icons
+   - Subtle shadow-sm = depth without heaviness
+
+2. TYPOGRAPHY POLISH:
+   - 13px text (not 14px) = refined, not cramped
+   - tracking-wider on badges = luxury spacing
+   - leading-tight on headings = compact elegance
+   - font-bold on badges (not font-semibold) = emphasis
+
+3. SPACING HARMONY:
+   - Consistent 8px padding
+   - 2.5 gap between icon and text (perfect balance)
+   - 8px column gaps (breathing room)
+   - 2px row spacing (clean vertical rhythm)
+
+4. COLOR & OPACITY:
+   - bg-background/98 (not 95) = almost solid, premium
+   - border-border/50 = subtle, not harsh
+   - Popular badge: primary/10 bg = gentle highlight
+
+5. ANIMATIONS:
+   - 150ms duration (was 200ms) = snappier feel
+   - scale-105 on icon hover (was 110) = subtle elegance
+   - ChevronDown rotation = standard UX pattern
+
+---
+
+FINAL REQUIREMENTS CHECKLIST:
+
+1. ✅ Centered horizontally (fixed left-1/2 -translate-x-1/2)
+2. ✅ Icons 30% smaller (8×8, size 14, refined)
+3. ✅ Premium feel (shadows, refined spacing, typography)
+4. ✅ Home link added to navigation
+5. ✅ ChevronDown (not ChevronRight)
+6. ✅ Invisible hover area prevents flickering
+7. ✅ Mobile: 95vw width, scrollable if tall
+8. ✅ Desktop: max-w-5xl, perfectly centered
+9. ✅ Refined colors, borders, backdrop blur
+10. ✅ Compact but breathable spacing
+11. ✅ Popular badges smaller and refined
+12. ✅ All transitions smoother (150ms)
+
+Update the MegaMenu component and add the Home link to 
+your Navigation component. The mega menu will now appear 
+perfectly centered with a more premium, refined appearance.

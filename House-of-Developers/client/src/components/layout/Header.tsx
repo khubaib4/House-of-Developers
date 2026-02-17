@@ -19,6 +19,7 @@ interface MobileServiceLink {
 }
 
 const navItems: NavItem[] = [
+  { label: "Home", href: "/", isRoute: true },
   { label: "Services", href: "/services", isRoute: true, hasMegaMenu: true },
   { label: "Case Studies", href: "#projects" },
   { label: "About", href: "#why-choose" },
@@ -199,18 +200,15 @@ export function Header() {
                       className={`h-3.5 w-3.5 transition-transform duration-200 ${megaMenuOpen ? "rotate-180" : ""}`}
                     />
                   </button>
-                  <div
+                  <MegaMenu
+                    isOpen={megaMenuOpen}
+                    onClose={closeMegaMenuFull}
+                    onNavigate={handleMegaMenuNavigate}
+                    triggerRef={triggerRef}
+                    onFocusWithin={handleMegaMenuFocusWithin}
                     onMouseEnter={handleMouseEnterArea}
                     onMouseLeave={handleMouseLeaveArea}
-                  >
-                    <MegaMenu
-                      isOpen={megaMenuOpen}
-                      onClose={closeMegaMenuFull}
-                      onNavigate={handleMegaMenuNavigate}
-                      triggerRef={triggerRef}
-                      onFocusWithin={handleMegaMenuFocusWithin}
-                    />
-                  </div>
+                  />
                 </div>
               ) : (
                 <button

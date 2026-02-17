@@ -6,7 +6,6 @@ import {
   Bot,
   Search,
   Users,
-  ChevronRight,
   ArrowRight,
   type LucideIcon,
 } from "lucide-react";
@@ -99,12 +98,12 @@ const containerVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.2, ease: "easeOut" },
+    transition: { duration: 0.15, ease: "easeOut" },
   },
   exit: {
     opacity: 0,
     y: -10,
-    transition: { duration: 0.2, ease: "easeIn" },
+    transition: { duration: 0.15, ease: "easeIn" },
   },
 };
 
@@ -114,9 +113,11 @@ interface MegaMenuProps {
   onNavigate: (href: string) => void;
   triggerRef: React.RefObject<HTMLButtonElement | null>;
   onFocusWithin: () => void;
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
 }
 
-export function MegaMenu({ isOpen, onClose, onNavigate, triggerRef, onFocusWithin }: MegaMenuProps) {
+export function MegaMenu({ isOpen, onClose, onNavigate, triggerRef, onFocusWithin, onMouseEnter, onMouseLeave }: MegaMenuProps) {
   const menuRef = useRef<HTMLDivElement>(null);
   const [hasRendered, setHasRendered] = useState(false);
   const focusableRefs = useRef<HTMLElement[]>([]);
@@ -254,92 +255,104 @@ export function MegaMenu({ isOpen, onClose, onNavigate, triggerRef, onFocusWithi
   return (
     <AnimatePresence>
       {isOpen && (
-        <motion.div
-          ref={menuRef}
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          exit="exit"
-          role="menu"
-          aria-label="Services menu"
-          className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-screen max-w-6xl rounded-2xl border border-border bg-background/95 backdrop-blur-2xl shadow-2xl overflow-hidden"
-          style={{
-            backdropFilter: "blur(24px) saturate(180%)",
-            WebkitBackdropFilter: "blur(24px) saturate(180%)",
-          }}
-          data-testid="mega-menu"
-          onFocus={handleFocusIn}
-        >
-          <div className="p-6 md:p-8">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-              {serviceCategories.map((category) => (
-                <div key={category.name} className="space-y-4">
+        <>
+          <div className="fixed inset-x-0 top-[64px] h-8 z-40" />
+
+          <motion.div
+            ref={menuRef}
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            role="menu"
+            aria-label="Services menu"
+            className="fixed left-1/2 -translate-x-1/2 top-[72px] w-[95vw] max-w-5xl z-50"
+            style={{
+              maxHeight: "calc(100vh - 100px)",
+              overflowY: "auto",
+            }}
+            data-testid="mega-menu"
+            onFocus={handleFocusIn}
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
+          >
+            <div
+              className="bg-background/98 border border-border/50 rounded-2xl shadow-2xl overflow-hidden"
+              style={{
+                backdropFilter: "blur(20px) saturate(180%)",
+                WebkitBackdropFilter: "blur(20px) saturate(180%)",
+              }}
+            >
+              <div className="p-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-8 gap-y-8">
+                  {serviceCategories.map((category) => (
+                    <div key={category.name} className="space-y-4">
+                      <button
+                        role="menuitem"
+                        onClick={() => handleItemClick(category.href)}
+                        className="flex items-start gap-2.5 group cursor-pointer w-full text-left"
+                        data-testid={`mega-menu-category-${category.name.toLowerCase().replace(/\s+/g, "-")}`}
+                      >
+                        <div
+                          className={`w-8 h-8 rounded-lg flex items-center justify-center bg-gradient-to-br ${category.color} group-hover:scale-105 transition-all duration-200 shadow-sm flex-shrink-0`}
+                        >
+                          <category.icon size={14} className="text-white" strokeWidth={2.5} />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <h3 className="font-semibold text-[13px] text-foreground group-hover:text-primary transition-colors leading-tight">
+                            {category.name}
+                          </h3>
+                        </div>
+                      </button>
+
+                      <ul className="space-y-2 pl-0.5">
+                        {category.subServices.map((service) => (
+                          <li key={`${category.name}-${service.name}`}>
+                            <button
+                              role="menuitem"
+                              onClick={() => handleItemClick(service.href)}
+                              className="group/item flex items-start gap-2 w-full text-left text-[13px] text-muted-foreground hover:text-foreground transition-colors leading-relaxed"
+                              data-testid={`mega-menu-${service.name.toLowerCase().replace(/\s+/g, "-")}`}
+                            >
+                              <span className="flex-1 min-w-0">
+                                {service.name}
+                              </span>
+                              {service.popular && (
+                                <span className="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-primary/10 text-primary flex-shrink-0">
+                                  Popular
+                                </span>
+                              )}
+                            </button>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-8 pt-6 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between gap-4">
+                  <div className="text-center sm:text-left">
+                    <p className="text-sm font-semibold text-foreground">
+                      Not sure which service you need?
+                    </p>
+                    <p className="text-xs text-muted-foreground mt-1">
+                      Book a free consultation and we'll recommend the right solution
+                    </p>
+                  </div>
                   <button
                     role="menuitem"
-                    onClick={() => handleItemClick(category.href)}
-                    className="flex items-center gap-3 group cursor-pointer w-full text-left"
-                    data-testid={`mega-menu-category-${category.name.toLowerCase().replace(/\s+/g, "-")}`}
+                    onClick={() => handleItemClick("/contact")}
+                    className="flex items-center gap-2 px-5 py-2.5 bg-primary hover:bg-primary/90 text-primary-foreground text-sm font-semibold rounded-xl transition-all duration-200 active:scale-95 whitespace-nowrap shadow-sm"
+                    data-testid="mega-menu-cta"
                   >
-                    <div
-                      className={`w-10 h-10 rounded-xl flex items-center justify-center bg-gradient-to-br ${category.color} group-hover:scale-110 transition-transform duration-200 flex-shrink-0`}
-                    >
-                      <category.icon size={18} className="text-white" />
-                    </div>
-                    <h3 className="font-semibold text-sm text-foreground group-hover:text-primary transition-colors">
-                      {category.name}
-                    </h3>
+                    Get Free Consultation
+                    <ArrowRight size={14} strokeWidth={2.5} />
                   </button>
-
-                  <ul className="space-y-2.5">
-                    {category.subServices.map((service) => (
-                      <li key={`${category.name}-${service.name}`}>
-                        <button
-                          role="menuitem"
-                          onClick={() => handleItemClick(service.href)}
-                          className="group flex items-center justify-between w-full text-left text-sm text-muted-foreground hover:text-primary transition-colors"
-                          data-testid={`mega-menu-${service.name.toLowerCase().replace(/\s+/g, "-")}`}
-                        >
-                          <span className="flex items-center gap-2">
-                            {service.name}
-                            {service.popular && (
-                              <span className="text-[10px] font-semibold uppercase px-1.5 py-0.5 rounded bg-primary/10 text-primary">
-                                Popular
-                              </span>
-                            )}
-                          </span>
-                          <ChevronRight
-                            size={12}
-                            className="opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all duration-200 flex-shrink-0"
-                          />
-                        </button>
-                      </li>
-                    ))}
-                  </ul>
                 </div>
-              ))}
-            </div>
-
-            <div className="mt-8 pt-8 border-t flex flex-col sm:flex-row items-center justify-between gap-4">
-              <div>
-                <p className="text-sm font-semibold text-foreground">
-                  Not sure which service you need?
-                </p>
-                <p className="text-xs text-muted-foreground mt-1">
-                  Book a free consultation and we'll recommend the right solution
-                </p>
               </div>
-              <button
-                role="menuitem"
-                onClick={() => handleItemClick("/contact")}
-                className="flex items-center gap-2 px-6 py-2.5 bg-primary hover:bg-primary/90 text-primary-foreground text-sm font-semibold rounded-xl transition-all duration-200 active:scale-95 whitespace-nowrap"
-                data-testid="mega-menu-cta"
-              >
-                Get Free Consultation
-                <ArrowRight size={14} />
-              </button>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
+        </>
       )}
     </AnimatePresence>
   );
