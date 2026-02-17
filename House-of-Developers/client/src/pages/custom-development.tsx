@@ -907,7 +907,7 @@ export default function CustomDevelopmentPage() {
                   { stat: "5★", label: "Client Rating" },
                 ].map((s) => (
                   <div key={s.label} className="text-center">
-                    <div className="text-2xl md:text-3xl font-bold" style={{ color: CUSTOM_DEV_COLOR }}>{s.stat}</div>
+                    <div className="md:text-3xl font-bold text-[20px]" style={{ color: CUSTOM_DEV_COLOR }}>{s.stat}</div>
                     <div className="text-sm text-muted-foreground">{s.label}</div>
                   </div>
                 ))}
