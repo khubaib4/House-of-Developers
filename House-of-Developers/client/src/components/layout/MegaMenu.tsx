@@ -266,11 +266,7 @@ export function MegaMenu({ isOpen, onClose, onNavigate, triggerRef, onFocusWithi
             onMouseLeave={onMouseLeave}
           >
             <div
-              className="bg-background/98 border border-border/50 rounded-2xl shadow-2xl overflow-hidden"
-              style={{
-                backdropFilter: "blur(20px) saturate(180%)",
-                WebkitBackdropFilter: "blur(20px) saturate(180%)",
-              }}
+              className="bg-background border border-border rounded-2xl shadow-2xl overflow-hidden"
             >
               <div className="p-8">
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-8 gap-y-8">
