@@ -283,7 +283,7 @@ export default function WebAppsPage() {
                   { value: "5★", label: "Client Rating" },
                 ].map((stat) => (
                   <div key={stat.label} className="bg-card border rounded-xl p-4 text-center">
-                    <div className="text-3xl font-bold bg-gradient-to-r from-violet-600 to-purple-500 bg-clip-text text-transparent">
+                    <div className="font-bold bg-gradient-to-r from-violet-600 to-purple-500 bg-clip-text text-transparent text-[20px]">
                       {stat.value}
                     </div>
                     <div className="text-sm text-muted-foreground mt-1">{stat.label}</div>
