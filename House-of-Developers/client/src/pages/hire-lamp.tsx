@@ -15,7 +15,7 @@ import { ZigzagTimeline } from "@/components/ui/ZigzagTimeline";
 import { ValueProposition } from "@/components/ui/ValueProposition";
 import { CTASection } from "@/components/ui/CTASection";
 import { PricingCard } from "@/components/ui/PricingCard";
-import { TechStackIcons } from "@/components/ui/TechStackIcons";
+import { TabbedTechStack } from "@/components/ui/TabbedTechStack";
 import {
   Terminal,
   Server,
@@ -57,19 +57,62 @@ import {
 
 const LAMP_COLOR = "#8B5CF6";
 
-const lampTechnologies = [
-  { name: "PHP", slug: "php" },
-  { name: "MySQL", slug: "mysql" },
-  { name: "WordPress", slug: "wordpress" },
-  { name: "Laravel", slug: "laravel" },
-  { name: "JavaScript", slug: "javascript" },
-  { name: "AWS", slug: "amazonaws" },
-  { name: "Docker", slug: "docker" },
-  { name: "GitHub", slug: "github" },
-  { name: "Redis", slug: "redis" },
-  { name: "Stripe", slug: "stripe" },
-  { name: "Figma", slug: "figma" },
-  { name: "Python", slug: "python" },
+const lampTechTabs = [
+  {
+    label: "Frontend",
+    technologies: [
+      { name: "JavaScript", slug: "javascript" },
+      { name: "TypeScript", slug: "typescript" },
+      { name: "React", slug: "react" },
+      { name: "Vue.js", slug: "vuedotjs" },
+      { name: "Tailwind CSS", slug: "tailwindcss" },
+      { name: "WordPress", slug: "wordpress" },
+    ],
+  },
+  {
+    label: "Backend",
+    technologies: [
+      { name: "PHP", slug: "php" },
+      { name: "Laravel", slug: "laravel" },
+      { name: "WordPress", slug: "wordpress" },
+      { name: "Symfony", slug: "symfony" },
+      { name: "Node.js", slug: "nodedotjs" },
+      { name: "Python", slug: "python" },
+    ],
+  },
+  {
+    label: "Database",
+    technologies: [
+      { name: "MySQL", slug: "mysql" },
+      { name: "PostgreSQL", slug: "postgresql" },
+      { name: "Redis", slug: "redis" },
+      { name: "MongoDB", slug: "mongodb" },
+      { name: "SQLite", slug: "sqlite" },
+      { name: "MariaDB", slug: "mariadb" },
+    ],
+  },
+  {
+    label: "DevOps",
+    technologies: [
+      { name: "AWS", slug: "amazonaws" },
+      { name: "Docker", slug: "docker" },
+      { name: "GitHub Actions", slug: "githubactions" },
+      { name: "Cloudflare", slug: "cloudflare" },
+      { name: "DigitalOcean", slug: "digitalocean" },
+      { name: "Linux", slug: "linux" },
+    ],
+  },
+  {
+    label: "Tools",
+    technologies: [
+      { name: "GitHub", slug: "github" },
+      { name: "Figma", slug: "figma" },
+      { name: "Composer", slug: "composer" },
+      { name: "Stripe", slug: "stripe" },
+      { name: "Sentry", slug: "sentry" },
+      { name: "WooCommerce", slug: "woocommerce" },
+    ],
+  },
 ];
 
 const whyChooseValues = [
@@ -1081,10 +1124,10 @@ export default function HireLAMPPage() {
         </div>
       </section>
 
-      <TechStackIcons
-        title="Technologies We Use"
-        subtitle="We use industry-leading technologies to build products that are fast, reliable, and maintainable."
-        technologies={lampTechnologies}
+      <TabbedTechStack
+        tabs={lampTechTabs}
+        title="LAMP Stack Technologies"
+        subtitle="Our LAMP developers are proficient across the full technology spectrum."
       />
 
       <section className="py-20" data-testid="section-faq">

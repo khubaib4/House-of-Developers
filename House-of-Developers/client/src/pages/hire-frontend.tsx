@@ -12,7 +12,7 @@ import { Link } from "wouter";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { ZigzagTimeline } from "@/components/ui/ZigzagTimeline";
 import { ValueProposition } from "@/components/ui/ValueProposition";
-import { TechStackIcons } from "@/components/ui/TechStackIcons";
+import { TabbedTechStack } from "@/components/ui/TabbedTechStack";
 import { CTASection } from "@/components/ui/CTASection";
 import { PricingCard } from "@/components/ui/PricingCard";
 import {
@@ -219,22 +219,72 @@ const profiles = [
   },
 ];
 
-const frontendTechnologies = [
-  { name: "React", slug: "react" },
-  { name: "Next.js", slug: "nextdotjs" },
-  { name: "Vue.js", slug: "vuedotjs" },
-  { name: "Angular", slug: "angular" },
-  { name: "TypeScript", slug: "typescript" },
-  { name: "JavaScript", slug: "javascript" },
-  { name: "Tailwind CSS", slug: "tailwindcss" },
-  { name: "Figma", slug: "figma" },
-  { name: "GitHub", slug: "github" },
-  { name: "Jest", slug: "jest" },
-  { name: "Cypress", slug: "cypress" },
-  { name: "Vite", slug: "vite" },
-  { name: "Framer", slug: "framer" },
-  { name: "Redux", slug: "redux" },
-  { name: "Playwright", slug: "playwright" },
+const frontendTechTabs = [
+  {
+    label: "Frameworks",
+    technologies: [
+      { name: "React", slug: "react" },
+      { name: "Next.js", slug: "nextdotjs" },
+      { name: "Vue.js", slug: "vuedotjs" },
+      { name: "Angular", slug: "angular" },
+      { name: "Nuxt.js", slug: "nuxtdotjs" },
+      { name: "Vite", slug: "vite" },
+      { name: "Framer Motion", slug: "framer" },
+      { name: "Expo", slug: "expo" },
+    ],
+  },
+  {
+    label: "Languages & Styling",
+    technologies: [
+      { name: "TypeScript", slug: "typescript" },
+      { name: "JavaScript", slug: "javascript" },
+      { name: "Tailwind CSS", slug: "tailwindcss" },
+      { name: "Sass", slug: "sass" },
+      { name: "CSS3", slug: "css3" },
+      { name: "HTML5", slug: "html5" },
+      { name: "GraphQL", slug: "graphql" },
+      { name: "Redux", slug: "redux" },
+    ],
+  },
+  {
+    label: "State & Tools",
+    technologies: [
+      { name: "Redux", slug: "redux" },
+      { name: "GraphQL", slug: "graphql" },
+      { name: "Webpack", slug: "webpack" },
+      { name: "Vite", slug: "vite" },
+      { name: "Storybook", slug: "storybook" },
+      { name: "Figma", slug: "figma" },
+      { name: "GitHub", slug: "github" },
+      { name: "Vercel", slug: "vercel" },
+    ],
+  },
+  {
+    label: "Testing",
+    technologies: [
+      { name: "Jest", slug: "jest" },
+      { name: "Cypress", slug: "cypress" },
+      { name: "Playwright", slug: "playwright" },
+      { name: "Vitest", slug: "vitest" },
+      { name: "Sentry", slug: "sentry" },
+      { name: "Datadog", slug: "datadog" },
+      { name: "GitHub Actions", slug: "githubactions" },
+      { name: "Storybook", slug: "storybook" },
+    ],
+  },
+  {
+    label: "Analytics",
+    technologies: [
+      { name: "Datadog", slug: "datadog" },
+      { name: "Sentry", slug: "sentry" },
+      { name: "Grafana", slug: "grafana" },
+      { name: "GitHub", slug: "github" },
+      { name: "Cloudflare", slug: "cloudflare" },
+      { name: "Vercel", slug: "vercel" },
+      { name: "AWS", slug: "amazonaws" },
+      { name: "Docker", slug: "docker" },
+    ],
+  },
 ];
 
 const zigzagSteps = [
@@ -800,9 +850,10 @@ export default function HireFrontendPage() {
       />
 
       {/* TECH STACK */}
-      <TechStackIcons
-        title="Technologies We Use"
-        technologies={frontendTechnologies}
+      <TabbedTechStack
+        tabs={frontendTechTabs}
+        title="Frontend Technologies"
+        subtitle="Our frontend developers are proficient across the full technology spectrum."
       />
 
       {/* PROCESS */}

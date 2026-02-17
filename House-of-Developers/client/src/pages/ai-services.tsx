@@ -13,7 +13,7 @@ import { Link } from "wouter";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { CTASection } from "@/components/ui/CTASection";
 import { ValueProposition } from "@/components/ui/ValueProposition";
-import { TechStackIcons } from "@/components/ui/TechStackIcons";
+import { TabbedTechStack } from "@/components/ui/TabbedTechStack";
 import { Eye, Cpu, TestTube, RefreshCw } from "lucide-react";
 import { ZigzagTimeline } from "@/components/ui/ZigzagTimeline";
 import {
@@ -617,25 +617,72 @@ const caseStudies = [
 
 const AI_COLOR = "#8B5CF6";
 
-const aiTechnologies = [
-  { name: "OpenAI", slug: "openai" },
-  { name: "Python", slug: "python" },
-  { name: "TensorFlow", slug: "tensorflow" },
-  { name: "PyTorch", slug: "pytorch" },
-  { name: "Node.js", slug: "nodedotjs" },
-  { name: "React", slug: "react" },
-  { name: "PostgreSQL", slug: "postgresql" },
-  { name: "MongoDB", slug: "mongodb" },
-  { name: "Docker", slug: "docker" },
-  { name: "AWS", slug: "amazonaws" },
-  { name: "GitHub", slug: "github" },
-  { name: "FastAPI", slug: "fastapi" },
-  { name: "Next.js", slug: "nextdotjs" },
-  { name: "TypeScript", slug: "typescript" },
-  { name: "Redis", slug: "redis" },
-  { name: "Stripe", slug: "stripe" },
-  { name: "Hugging Face", slug: "huggingface" },
-  { name: "Supabase", slug: "supabase" },
+const aiServicesTechTabs = [
+  {
+    label: "AI Models",
+    technologies: [
+      { name: "OpenAI", slug: "openai" },
+      { name: "TensorFlow", slug: "tensorflow" },
+      { name: "PyTorch", slug: "pytorch" },
+      { name: "Hugging Face", slug: "huggingface" },
+      { name: "Python", slug: "python" },
+      { name: "FastAPI", slug: "fastapi" },
+      { name: "Node.js", slug: "nodedotjs" },
+      { name: "LangChain", slug: "langchain" },
+    ],
+  },
+  {
+    label: "Frameworks",
+    technologies: [
+      { name: "LangChain", slug: "langchain" },
+      { name: "FastAPI", slug: "fastapi" },
+      { name: "Django", slug: "django" },
+      { name: "Node.js", slug: "nodedotjs" },
+      { name: "React", slug: "react" },
+      { name: "Next.js", slug: "nextdotjs" },
+      { name: "TypeScript", slug: "typescript" },
+      { name: "GraphQL", slug: "graphql" },
+    ],
+  },
+  {
+    label: "Integrations",
+    technologies: [
+      { name: "Stripe", slug: "stripe" },
+      { name: "HubSpot", slug: "hubspot" },
+      { name: "Slack", slug: "slack" },
+      { name: "Zapier", slug: "zapier" },
+      { name: "Twilio", slug: "twilio" },
+      { name: "Shopify", slug: "shopify" },
+      { name: "PayPal", slug: "paypal" },
+      { name: "GitHub", slug: "github" },
+    ],
+  },
+  {
+    label: "Data Sources",
+    technologies: [
+      { name: "PostgreSQL", slug: "postgresql" },
+      { name: "MongoDB", slug: "mongodb" },
+      { name: "Redis", slug: "redis" },
+      { name: "Supabase", slug: "supabase" },
+      { name: "Firebase", slug: "firebase" },
+      { name: "Elasticsearch", slug: "elasticsearch" },
+      { name: "AWS", slug: "amazonaws" },
+      { name: "Docker", slug: "docker" },
+    ],
+  },
+  {
+    label: "Monitoring",
+    technologies: [
+      { name: "Datadog", slug: "datadog" },
+      { name: "Grafana", slug: "grafana" },
+      { name: "Sentry", slug: "sentry" },
+      { name: "GitHub Actions", slug: "githubactions" },
+      { name: "Cloudflare", slug: "cloudflare" },
+      { name: "Vercel", slug: "vercel" },
+      { name: "AWS", slug: "amazonaws" },
+      { name: "Docker", slug: "docker" },
+    ],
+  },
 ];
 
 const zigzagSteps = [
@@ -1123,10 +1170,10 @@ export default function AIServicesPage() {
 
       {/* TECHNOLOGIES & INTEGRATIONS */}
       <section className="py-20 bg-muted px-6" data-testid="section-ai-technologies">
-        <TechStackIcons
-          title="AI Technologies We Use"
-          subtitle="We use industry-leading technologies to build products that are fast, reliable, and maintainable."
-          technologies={aiTechnologies}
+        <TabbedTechStack
+          tabs={aiServicesTechTabs}
+          title="Technologies We Use"
+          subtitle="We use industry-leading technologies to build intelligent, scalable AI solutions."
         />
       </section>
 

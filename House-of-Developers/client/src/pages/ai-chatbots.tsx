@@ -63,7 +63,7 @@ import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { CTASection } from "@/components/ui/CTASection";
 import { ValueProposition } from "@/components/ui/ValueProposition";
 import { ZigzagTimeline } from "@/components/ui/ZigzagTimeline";
-import { TechStackIcons } from "@/components/ui/TechStackIcons";
+import { TabbedTechStack } from "@/components/ui/TabbedTechStack";
 import { Link } from "wouter";
 
 const CHATBOT_COLOR = "#A855F7";
@@ -564,25 +564,72 @@ const caseStudyMetrics = [
   { icon: Clock, label: "Support Team Time", value: "15 hours/week saved", detail: "Focus on complex issues" },
 ];
 
-const chatbotTechnologies = [
-  { name: "OpenAI", slug: "openai" },
-  { name: "Python", slug: "python" },
-  { name: "Node.js", slug: "nodedotjs" },
-  { name: "React", slug: "react" },
-  { name: "PostgreSQL", slug: "postgresql" },
-  { name: "MongoDB", slug: "mongodb" },
-  { name: "Redis", slug: "redis" },
-  { name: "AWS", slug: "amazonaws" },
-  { name: "Docker", slug: "docker" },
-  { name: "Stripe", slug: "stripe" },
-  { name: "Twilio", slug: "twilio" },
-  { name: "Slack", slug: "slack" },
-  { name: "HubSpot", slug: "hubspot" },
-  { name: "Shopify", slug: "shopify" },
-  { name: "WordPress", slug: "wordpress" },
-  { name: "GitHub", slug: "github" },
-  { name: "TypeScript", slug: "typescript" },
-  { name: "Next.js", slug: "nextdotjs" },
+const aiChatbotsTechTabs = [
+  {
+    label: "AI Models",
+    technologies: [
+      { name: "OpenAI", slug: "openai" },
+      { name: "TensorFlow", slug: "tensorflow" },
+      { name: "PyTorch", slug: "pytorch" },
+      { name: "Hugging Face", slug: "huggingface" },
+      { name: "Python", slug: "python" },
+      { name: "FastAPI", slug: "fastapi" },
+      { name: "LangChain", slug: "langchain" },
+      { name: "Node.js", slug: "nodedotjs" },
+    ],
+  },
+  {
+    label: "Frameworks",
+    technologies: [
+      { name: "LangChain", slug: "langchain" },
+      { name: "FastAPI", slug: "fastapi" },
+      { name: "Node.js", slug: "nodedotjs" },
+      { name: "React", slug: "react" },
+      { name: "Next.js", slug: "nextdotjs" },
+      { name: "TypeScript", slug: "typescript" },
+      { name: "Express.js", slug: "express" },
+      { name: "GraphQL", slug: "graphql" },
+    ],
+  },
+  {
+    label: "Integrations",
+    technologies: [
+      { name: "HubSpot", slug: "hubspot" },
+      { name: "Shopify", slug: "shopify" },
+      { name: "Stripe", slug: "stripe" },
+      { name: "Zapier", slug: "zapier" },
+      { name: "Slack", slug: "slack" },
+      { name: "Twilio", slug: "twilio" },
+      { name: "PayPal", slug: "paypal" },
+      { name: "GitHub", slug: "github" },
+    ],
+  },
+  {
+    label: "Channels",
+    technologies: [
+      { name: "Slack", slug: "slack" },
+      { name: "Twilio", slug: "twilio" },
+      { name: "WhatsApp", slug: "whatsapp" },
+      { name: "Facebook", slug: "facebook" },
+      { name: "Instagram", slug: "instagram" },
+      { name: "Zapier", slug: "zapier" },
+      { name: "HubSpot", slug: "hubspot" },
+      { name: "GitHub", slug: "github" },
+    ],
+  },
+  {
+    label: "Analytics",
+    technologies: [
+      { name: "Datadog", slug: "datadog" },
+      { name: "Grafana", slug: "grafana" },
+      { name: "Sentry", slug: "sentry" },
+      { name: "PostgreSQL", slug: "postgresql" },
+      { name: "MongoDB", slug: "mongodb" },
+      { name: "Redis", slug: "redis" },
+      { name: "AWS", slug: "amazonaws" },
+      { name: "Docker", slug: "docker" },
+    ],
+  },
 ];
 
 export default function AIChatbotsPage() {
@@ -899,9 +946,10 @@ export default function AIChatbotsPage() {
 
       {/* TECHNOLOGIES & INTEGRATIONS */}
       <section className="py-20 bg-muted" data-testid="section-chatbot-technologies">
-        <TechStackIcons
-          title="Technologies & Integrations We Use"
-          technologies={chatbotTechnologies}
+        <TabbedTechStack
+          tabs={aiChatbotsTechTabs}
+          title="Technologies We Use"
+          subtitle="We use industry-leading technologies to build intelligent chatbot solutions."
         />
       </section>
 

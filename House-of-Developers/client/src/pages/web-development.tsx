@@ -13,7 +13,7 @@ import { Link } from "wouter";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { ValueProposition } from "@/components/ui/ValueProposition";
 import { ZigzagTimeline } from "@/components/ui/ZigzagTimeline";
-import { TechStackIcons } from "@/components/ui/TechStackIcons";
+import { TabbedTechStack } from "@/components/ui/TabbedTechStack";
 import { CTASection } from "@/components/ui/CTASection";
 import {
   Globe,
@@ -675,25 +675,72 @@ const industries = [
   },
 ];
 
-const webDevTechnologies = [
-  { name: "React", slug: "react" },
-  { name: "Next.js", slug: "nextdotjs" },
-  { name: "TypeScript", slug: "typescript" },
-  { name: "Vue.js", slug: "vuedotjs" },
-  { name: "Angular", slug: "angular" },
-  { name: "Node.js", slug: "nodedotjs" },
-  { name: "Python", slug: "python" },
-  { name: "PHP", slug: "php" },
-  { name: "PostgreSQL", slug: "postgresql" },
-  { name: "MongoDB", slug: "mongodb" },
-  { name: "WordPress", slug: "wordpress" },
-  { name: "Shopify", slug: "shopify" },
-  { name: "WooCommerce", slug: "woocommerce" },
-  { name: "AWS", slug: "amazonaws" },
-  { name: "Docker", slug: "docker" },
-  { name: "Figma", slug: "figma" },
-  { name: "Stripe", slug: "stripe" },
-  { name: "GitHub", slug: "github" },
+const webDevTechTabs = [
+  {
+    label: "Frontend",
+    technologies: [
+      { name: "React", slug: "react" },
+      { name: "Next.js", slug: "nextdotjs" },
+      { name: "Vue.js", slug: "vuedotjs" },
+      { name: "Angular", slug: "angular" },
+      { name: "TypeScript", slug: "typescript" },
+      { name: "Tailwind CSS", slug: "tailwindcss" },
+      { name: "Vite", slug: "vite" },
+      { name: "Framer Motion", slug: "framer" },
+    ],
+  },
+  {
+    label: "Backend",
+    technologies: [
+      { name: "Node.js", slug: "nodedotjs" },
+      { name: "Express.js", slug: "express" },
+      { name: "Python", slug: "python" },
+      { name: "PHP", slug: "php" },
+      { name: "PostgreSQL", slug: "postgresql" },
+      { name: "MongoDB", slug: "mongodb" },
+      { name: "Redis", slug: "redis" },
+      { name: "GraphQL", slug: "graphql" },
+    ],
+  },
+  {
+    label: "CMS & E-Commerce",
+    technologies: [
+      { name: "WordPress", slug: "wordpress" },
+      { name: "Shopify", slug: "shopify" },
+      { name: "WooCommerce", slug: "woocommerce" },
+      { name: "Sanity", slug: "sanity" },
+      { name: "Contentful", slug: "contentful" },
+      { name: "Strapi", slug: "strapi" },
+      { name: "Stripe", slug: "stripe" },
+      { name: "PayPal", slug: "paypal" },
+    ],
+  },
+  {
+    label: "Cloud & DevOps",
+    technologies: [
+      { name: "AWS", slug: "amazonaws" },
+      { name: "Vercel", slug: "vercel" },
+      { name: "Cloudflare", slug: "cloudflare" },
+      { name: "Docker", slug: "docker" },
+      { name: "GitHub", slug: "github" },
+      { name: "GitHub Actions", slug: "githubactions" },
+      { name: "DigitalOcean", slug: "digitalocean" },
+      { name: "Terraform", slug: "terraform" },
+    ],
+  },
+  {
+    label: "Design & Tools",
+    technologies: [
+      { name: "Figma", slug: "figma" },
+      { name: "Adobe XD", slug: "adobexd" },
+      { name: "Jest", slug: "jest" },
+      { name: "Cypress", slug: "cypress" },
+      { name: "Playwright", slug: "playwright" },
+      { name: "Sentry", slug: "sentry" },
+      { name: "Datadog", slug: "datadog" },
+      { name: "Grafana", slug: "grafana" },
+    ],
+  },
 ];
 
 const caseStudies = [
@@ -1148,10 +1195,10 @@ export default function WebDevelopmentPage() {
       {/* TECHNOLOGY STACK */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6">
-          <TechStackIcons
+          <TabbedTechStack
+            tabs={webDevTechTabs}
             title="Technologies We Build With"
             subtitle="We use industry-leading technologies to build products that are fast, reliable, and maintainable."
-            technologies={webDevTechnologies}
           />
         </div>
       </section>

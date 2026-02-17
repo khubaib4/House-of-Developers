@@ -63,7 +63,7 @@ import {
 import { Link } from "wouter";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { ZigzagTimeline } from "@/components/ui/ZigzagTimeline";
-import { TechStackIcons } from "@/components/ui/TechStackIcons";
+import { TabbedTechStack } from "@/components/ui/TabbedTechStack";
 import { ValueProposition } from "@/components/ui/ValueProposition";
 import { CTASection } from "@/components/ui/CTASection";
 
@@ -198,25 +198,72 @@ const whyChooseValues = [
   { icon: Shield, title: "App Store Approved", description: "100% approval rate with Apple's review process" },
 ];
 
-const iosTechnologies = [
-  { name: "Swift", slug: "swift" },
-  { name: "React", slug: "react" },
-  { name: "TypeScript", slug: "typescript" },
-  { name: "Node.js", slug: "nodedotjs" },
-  { name: "PostgreSQL", slug: "postgresql" },
-  { name: "MongoDB", slug: "mongodb" },
-  { name: "Firebase", slug: "firebase" },
-  { name: "AWS", slug: "amazonaws" },
-  { name: "Docker", slug: "docker" },
-  { name: "GitHub", slug: "github" },
-  { name: "Figma", slug: "figma" },
-  { name: "Stripe", slug: "stripe" },
-  { name: "PayPal", slug: "paypal" },
-  { name: "Twilio", slug: "twilio" },
-  { name: "Supabase", slug: "supabase" },
-  { name: "Redux", slug: "redux" },
-  { name: "GraphQL", slug: "graphql" },
-  { name: "Jest", slug: "jest" },
+const iosTechTabs = [
+  {
+    label: "iOS Technologies",
+    technologies: [
+      { name: "Swift", slug: "swift" },
+      { name: "React Native", slug: "react" },
+      { name: "TypeScript", slug: "typescript" },
+      { name: "Redux", slug: "redux" },
+      { name: "GraphQL", slug: "graphql" },
+      { name: "Firebase", slug: "firebase" },
+      { name: "Supabase", slug: "supabase" },
+      { name: "Expo", slug: "expo" },
+    ],
+  },
+  {
+    label: "Backend",
+    technologies: [
+      { name: "Node.js", slug: "nodedotjs" },
+      { name: "Python", slug: "python" },
+      { name: "PostgreSQL", slug: "postgresql" },
+      { name: "MongoDB", slug: "mongodb" },
+      { name: "Redis", slug: "redis" },
+      { name: "GraphQL", slug: "graphql" },
+      { name: "Express.js", slug: "express" },
+      { name: "FastAPI", slug: "fastapi" },
+    ],
+  },
+  {
+    label: "Cloud",
+    technologies: [
+      { name: "AWS", slug: "amazonaws" },
+      { name: "Docker", slug: "docker" },
+      { name: "GitHub Actions", slug: "githubactions" },
+      { name: "Vercel", slug: "vercel" },
+      { name: "Cloudflare", slug: "cloudflare" },
+      { name: "DigitalOcean", slug: "digitalocean" },
+      { name: "Terraform", slug: "terraform" },
+      { name: "Kubernetes", slug: "kubernetes" },
+    ],
+  },
+  {
+    label: "Integrations",
+    technologies: [
+      { name: "Stripe", slug: "stripe" },
+      { name: "PayPal", slug: "paypal" },
+      { name: "Twilio", slug: "twilio" },
+      { name: "Slack", slug: "slack" },
+      { name: "HubSpot", slug: "hubspot" },
+      { name: "Zapier", slug: "zapier" },
+      { name: "GitHub", slug: "github" },
+      { name: "Figma", slug: "figma" },
+    ],
+  },
+  {
+    label: "Testing",
+    technologies: [
+      { name: "Jest", slug: "jest" },
+      { name: "Cypress", slug: "cypress" },
+      { name: "Playwright", slug: "playwright" },
+      { name: "Vitest", slug: "vitest" },
+      { name: "Sentry", slug: "sentry" },
+      { name: "Datadog", slug: "datadog" },
+      { name: "Grafana", slug: "grafana" },
+      { name: "GitHub", slug: "github" },
+    ],
+  },
 ];
 
 const faqs = [
@@ -674,9 +721,10 @@ export default function IOSDevelopmentPage() {
       {/* Tech Stack */}
       <section className="py-20" data-testid="section-tech-stack">
         <div className="max-w-7xl mx-auto px-6">
-          <TechStackIcons
-            title="iOS Technologies We Use"
-            technologies={iosTechnologies}
+          <TabbedTechStack
+            tabs={iosTechTabs}
+            title="Technologies We Use"
+            subtitle="We use industry-leading technologies to build exceptional iOS applications."
           />
         </div>
       </section>

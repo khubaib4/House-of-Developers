@@ -15,7 +15,7 @@ import { ZigzagTimeline } from "@/components/ui/ZigzagTimeline";
 import { ValueProposition } from "@/components/ui/ValueProposition";
 import { CTASection } from "@/components/ui/CTASection";
 import { PricingCard } from "@/components/ui/PricingCard";
-import { TechStackIcons } from "@/components/ui/TechStackIcons";
+import { TabbedTechStack } from "@/components/ui/TabbedTechStack";
 import {
   Triangle,
   Server,
@@ -59,19 +59,62 @@ import {
 
 const MEAN_COLOR = "#DD0031";
 
-const meanTechnologies = [
-  { name: "Angular", slug: "angular" },
-  { name: "Node.js", slug: "nodedotjs" },
-  { name: "MongoDB", slug: "mongodb" },
-  { name: "Express", slug: "express" },
-  { name: "TypeScript", slug: "typescript" },
-  { name: "AWS", slug: "amazonaws" },
-  { name: "Docker", slug: "docker" },
-  { name: "GitHub", slug: "github" },
-  { name: "Redis", slug: "redis" },
-  { name: "GraphQL", slug: "graphql" },
-  { name: "Jest", slug: "jest" },
-  { name: "Figma", slug: "figma" },
+const meanTechTabs = [
+  {
+    label: "Frontend",
+    technologies: [
+      { name: "Angular", slug: "angular" },
+      { name: "TypeScript", slug: "typescript" },
+      { name: "RxJS", slug: "reactivex" },
+      { name: "Redux", slug: "redux" },
+      { name: "Tailwind CSS", slug: "tailwindcss" },
+      { name: "GraphQL", slug: "graphql" },
+    ],
+  },
+  {
+    label: "Backend",
+    technologies: [
+      { name: "Node.js", slug: "nodedotjs" },
+      { name: "Express.js", slug: "express" },
+      { name: "NestJS", slug: "nestjs" },
+      { name: "GraphQL", slug: "graphql" },
+      { name: "FastAPI", slug: "fastapi" },
+      { name: "Python", slug: "python" },
+    ],
+  },
+  {
+    label: "Database",
+    technologies: [
+      { name: "MongoDB", slug: "mongodb" },
+      { name: "PostgreSQL", slug: "postgresql" },
+      { name: "Redis", slug: "redis" },
+      { name: "MySQL", slug: "mysql" },
+      { name: "Supabase", slug: "supabase" },
+      { name: "Firebase", slug: "firebase" },
+    ],
+  },
+  {
+    label: "DevOps",
+    technologies: [
+      { name: "AWS", slug: "amazonaws" },
+      { name: "Docker", slug: "docker" },
+      { name: "GitHub Actions", slug: "githubactions" },
+      { name: "Vercel", slug: "vercel" },
+      { name: "Cloudflare", slug: "cloudflare" },
+      { name: "Azure", slug: "microsoftazure" },
+    ],
+  },
+  {
+    label: "Tools",
+    technologies: [
+      { name: "GitHub", slug: "github" },
+      { name: "Figma", slug: "figma" },
+      { name: "Jest", slug: "jest" },
+      { name: "Cypress", slug: "cypress" },
+      { name: "Sentry", slug: "sentry" },
+      { name: "Stripe", slug: "stripe" },
+    ],
+  },
 ];
 
 const whyChooseValues = [
@@ -1081,10 +1124,10 @@ export default function HireMEANPage() {
         </div>
       </section>
 
-      <TechStackIcons
-        title="Technologies We Use"
-        subtitle="We use industry-leading technologies to build products that are fast, reliable, and maintainable."
-        technologies={meanTechnologies}
+      <TabbedTechStack
+        tabs={meanTechTabs}
+        title="MEAN Stack Technologies"
+        subtitle="Our MEAN developers are proficient across the full technology spectrum."
       />
 
       <section className="py-20" data-testid="section-faq">

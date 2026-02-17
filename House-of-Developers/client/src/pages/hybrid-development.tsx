@@ -55,7 +55,7 @@ import { useState, useRef, useCallback } from "react";
 import { Link } from "wouter";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { ZigzagTimeline } from "@/components/ui/ZigzagTimeline";
-import { TechStackIcons } from "@/components/ui/TechStackIcons";
+import { TabbedTechStack } from "@/components/ui/TabbedTechStack";
 import { ValueProposition } from "@/components/ui/ValueProposition";
 import { CTASection } from "@/components/ui/CTASection";
 
@@ -192,25 +192,72 @@ const whyChooseValues = [
   { icon: Users, title: "Proven Results", description: "Apps with 4.5+ ratings and 100K+ downloads" },
 ];
 
-const hybridTechnologies = [
-  { name: "React", slug: "react" },
-  { name: "Flutter", slug: "flutter" },
-  { name: "TypeScript", slug: "typescript" },
-  { name: "JavaScript", slug: "javascript" },
-  { name: "Node.js", slug: "nodedotjs" },
-  { name: "PostgreSQL", slug: "postgresql" },
-  { name: "MongoDB", slug: "mongodb" },
-  { name: "Firebase", slug: "firebase" },
-  { name: "AWS", slug: "amazonaws" },
-  { name: "Docker", slug: "docker" },
-  { name: "GitHub", slug: "github" },
-  { name: "Figma", slug: "figma" },
-  { name: "Expo", slug: "expo" },
-  { name: "Stripe", slug: "stripe" },
-  { name: "Twilio", slug: "twilio" },
-  { name: "Redux", slug: "redux" },
-  { name: "GraphQL", slug: "graphql" },
-  { name: "Supabase", slug: "supabase" },
+const hybridTechTabs = [
+  {
+    label: "Frameworks",
+    technologies: [
+      { name: "React Native", slug: "react" },
+      { name: "Flutter", slug: "flutter" },
+      { name: "Expo", slug: "expo" },
+      { name: "React", slug: "react" },
+      { name: "TypeScript", slug: "typescript" },
+      { name: "JavaScript", slug: "javascript" },
+      { name: "Redux", slug: "redux" },
+      { name: "GraphQL", slug: "graphql" },
+    ],
+  },
+  {
+    label: "State & Data",
+    technologies: [
+      { name: "Redux", slug: "redux" },
+      { name: "GraphQL", slug: "graphql" },
+      { name: "Firebase", slug: "firebase" },
+      { name: "Supabase", slug: "supabase" },
+      { name: "MongoDB", slug: "mongodb" },
+      { name: "PostgreSQL", slug: "postgresql" },
+      { name: "Redis", slug: "redis" },
+      { name: "Prisma", slug: "prisma" },
+    ],
+  },
+  {
+    label: "Backend",
+    technologies: [
+      { name: "Node.js", slug: "nodedotjs" },
+      { name: "Express.js", slug: "express" },
+      { name: "NestJS", slug: "nestjs" },
+      { name: "Python", slug: "python" },
+      { name: "FastAPI", slug: "fastapi" },
+      { name: "GraphQL", slug: "graphql" },
+      { name: "Stripe", slug: "stripe" },
+      { name: "Twilio", slug: "twilio" },
+    ],
+  },
+  {
+    label: "Cloud",
+    technologies: [
+      { name: "AWS", slug: "amazonaws" },
+      { name: "Docker", slug: "docker" },
+      { name: "GitHub Actions", slug: "githubactions" },
+      { name: "Vercel", slug: "vercel" },
+      { name: "Cloudflare", slug: "cloudflare" },
+      { name: "DigitalOcean", slug: "digitalocean" },
+      { name: "Terraform", slug: "terraform" },
+      { name: "Kubernetes", slug: "kubernetes" },
+    ],
+  },
+  {
+    label: "Testing",
+    technologies: [
+      { name: "Jest", slug: "jest" },
+      { name: "Cypress", slug: "cypress" },
+      { name: "Playwright", slug: "playwright" },
+      { name: "Vitest", slug: "vitest" },
+      { name: "Sentry", slug: "sentry" },
+      { name: "Datadog", slug: "datadog" },
+      { name: "Grafana", slug: "grafana" },
+      { name: "GitHub", slug: "github" },
+    ],
+  },
 ];
 
 const faqs = [
@@ -845,9 +892,10 @@ export default function HybridDevelopmentPage() {
       {/* Tech Stack */}
       <section className="py-20 bg-muted" data-testid="section-tech-stack">
         <div className="max-w-7xl mx-auto px-6">
-          <TechStackIcons
-            title="Technologies We Use for Hybrid Apps"
-            technologies={hybridTechnologies}
+          <TabbedTechStack
+            tabs={hybridTechTabs}
+            title="Technologies We Use"
+            subtitle="We use industry-leading technologies to build cross-platform mobile applications."
           />
         </div>
       </section>

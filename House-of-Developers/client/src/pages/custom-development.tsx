@@ -58,7 +58,7 @@ import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { ValueProposition } from "@/components/ui/ValueProposition";
 import { ZigzagTimeline } from "@/components/ui/ZigzagTimeline";
 import { CTASection } from "@/components/ui/CTASection";
-import { TechStackIcons } from "@/components/ui/TechStackIcons";
+import { TabbedTechStack } from "@/components/ui/TabbedTechStack";
 
 const CUSTOM_DEV_COLOR = "#F59E0B";
 
@@ -726,25 +726,72 @@ const industries = [
   },
 ];
 
-const customDevTechnologies = [
-  { name: "React", slug: "react" },
-  { name: "Next.js", slug: "nextdotjs" },
-  { name: "TypeScript", slug: "typescript" },
-  { name: "Node.js", slug: "nodedotjs" },
-  { name: "NestJS", slug: "nestjs" },
-  { name: "Python", slug: "python" },
-  { name: "PostgreSQL", slug: "postgresql" },
-  { name: "MongoDB", slug: "mongodb" },
-  { name: "Redis", slug: "redis" },
-  { name: "GraphQL", slug: "graphql" },
-  { name: "Docker", slug: "docker" },
-  { name: "AWS", slug: "amazonaws" },
-  { name: "Kubernetes", slug: "kubernetes" },
-  { name: "GitHub Actions", slug: "githubactions" },
-  { name: "Figma", slug: "figma" },
-  { name: "Jest", slug: "jest" },
-  { name: "Cypress", slug: "cypress" },
-  { name: "Stripe", slug: "stripe" },
+const customDevTechTabs = [
+  {
+    label: "Frontend",
+    technologies: [
+      { name: "React", slug: "react" },
+      { name: "Next.js", slug: "nextdotjs" },
+      { name: "TypeScript", slug: "typescript" },
+      { name: "Tailwind CSS", slug: "tailwindcss" },
+      { name: "Framer Motion", slug: "framer" },
+      { name: "Redux", slug: "redux" },
+      { name: "Jest", slug: "jest" },
+      { name: "Cypress", slug: "cypress" },
+    ],
+  },
+  {
+    label: "Backend",
+    technologies: [
+      { name: "Node.js", slug: "nodedotjs" },
+      { name: "Express.js", slug: "express" },
+      { name: "NestJS", slug: "nestjs" },
+      { name: "Python", slug: "python" },
+      { name: "GraphQL", slug: "graphql" },
+      { name: "FastAPI", slug: "fastapi" },
+      { name: "WebSockets", slug: "socketdotio" },
+      { name: "REST APIs", slug: "postman" },
+    ],
+  },
+  {
+    label: "Database",
+    technologies: [
+      { name: "PostgreSQL", slug: "postgresql" },
+      { name: "MongoDB", slug: "mongodb" },
+      { name: "Redis", slug: "redis" },
+      { name: "MySQL", slug: "mysql" },
+      { name: "Elasticsearch", slug: "elasticsearch" },
+      { name: "Supabase", slug: "supabase" },
+      { name: "Prisma", slug: "prisma" },
+      { name: "SQLite", slug: "sqlite" },
+    ],
+  },
+  {
+    label: "Cloud & DevOps",
+    technologies: [
+      { name: "AWS", slug: "amazonaws" },
+      { name: "Docker", slug: "docker" },
+      { name: "Kubernetes", slug: "kubernetes" },
+      { name: "GitHub Actions", slug: "githubactions" },
+      { name: "Vercel", slug: "vercel" },
+      { name: "Cloudflare", slug: "cloudflare" },
+      { name: "Terraform", slug: "terraform" },
+      { name: "DigitalOcean", slug: "digitalocean" },
+    ],
+  },
+  {
+    label: "Security",
+    technologies: [
+      { name: "Auth0", slug: "auth0" },
+      { name: "Cloudflare", slug: "cloudflare" },
+      { name: "Let's Encrypt", slug: "letsencrypt" },
+      { name: "Sentry", slug: "sentry" },
+      { name: "Datadog", slug: "datadog" },
+      { name: "Grafana", slug: "grafana" },
+      { name: "GitHub", slug: "github" },
+      { name: "Stripe", slug: "stripe" },
+    ],
+  },
 ];
 
 const caseStudies = [
@@ -1156,10 +1203,10 @@ export default function CustomDevelopmentPage() {
       {/* TECHNOLOGIES */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6">
-          <TechStackIcons
+          <TabbedTechStack
+            tabs={customDevTechTabs}
             title="Technologies We Use"
             subtitle="We use industry-leading technologies to build products that are fast, reliable, and maintainable."
-            technologies={customDevTechnologies}
           />
         </div>
       </section>

@@ -72,7 +72,7 @@ import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { CTASection } from "@/components/ui/CTASection";
 import { ValueProposition } from "@/components/ui/ValueProposition";
 import { ZigzagTimeline } from "@/components/ui/ZigzagTimeline";
-import { TechStackIcons } from "@/components/ui/TechStackIcons";
+import { TabbedTechStack } from "@/components/ui/TabbedTechStack";
 import { Link as WouterLink } from "wouter";
 
 const AGENT_COLOR = "#3B82F6";
@@ -309,25 +309,72 @@ const agentTypes = [
   },
 ];
 
-const agentTechnologies = [
-  { name: "OpenAI", slug: "openai" },
-  { name: "Python", slug: "python" },
-  { name: "Node.js", slug: "nodedotjs" },
-  { name: "FastAPI", slug: "fastapi" },
-  { name: "PostgreSQL", slug: "postgresql" },
-  { name: "MongoDB", slug: "mongodb" },
-  { name: "Redis", slug: "redis" },
-  { name: "AWS", slug: "amazonaws" },
-  { name: "Docker", slug: "docker" },
-  { name: "GitHub", slug: "github" },
-  { name: "Slack", slug: "slack" },
-  { name: "HubSpot", slug: "hubspot" },
-  { name: "TensorFlow", slug: "tensorflow" },
-  { name: "PyTorch", slug: "pytorch" },
-  { name: "TypeScript", slug: "typescript" },
-  { name: "React", slug: "react" },
-  { name: "Next.js", slug: "nextdotjs" },
-  { name: "Zapier", slug: "zapier" },
+const aiAgentsTechTabs = [
+  {
+    label: "AI Models",
+    technologies: [
+      { name: "OpenAI", slug: "openai" },
+      { name: "TensorFlow", slug: "tensorflow" },
+      { name: "PyTorch", slug: "pytorch" },
+      { name: "Hugging Face", slug: "huggingface" },
+      { name: "Python", slug: "python" },
+      { name: "FastAPI", slug: "fastapi" },
+      { name: "LangChain", slug: "langchain" },
+      { name: "Node.js", slug: "nodedotjs" },
+    ],
+  },
+  {
+    label: "Agent Frameworks",
+    technologies: [
+      { name: "LangChain", slug: "langchain" },
+      { name: "FastAPI", slug: "fastapi" },
+      { name: "Python", slug: "python" },
+      { name: "Node.js", slug: "nodedotjs" },
+      { name: "React", slug: "react" },
+      { name: "TypeScript", slug: "typescript" },
+      { name: "GraphQL", slug: "graphql" },
+      { name: "Express.js", slug: "express" },
+    ],
+  },
+  {
+    label: "Tool Integrations",
+    technologies: [
+      { name: "Slack", slug: "slack" },
+      { name: "HubSpot", slug: "hubspot" },
+      { name: "GitHub", slug: "github" },
+      { name: "Zapier", slug: "zapier" },
+      { name: "Stripe", slug: "stripe" },
+      { name: "Twilio", slug: "twilio" },
+      { name: "Figma", slug: "figma" },
+      { name: "PayPal", slug: "paypal" },
+    ],
+  },
+  {
+    label: "Data Sources",
+    technologies: [
+      { name: "PostgreSQL", slug: "postgresql" },
+      { name: "MongoDB", slug: "mongodb" },
+      { name: "Redis", slug: "redis" },
+      { name: "Supabase", slug: "supabase" },
+      { name: "Firebase", slug: "firebase" },
+      { name: "Elasticsearch", slug: "elasticsearch" },
+      { name: "AWS", slug: "amazonaws" },
+      { name: "Docker", slug: "docker" },
+    ],
+  },
+  {
+    label: "Monitoring",
+    technologies: [
+      { name: "Datadog", slug: "datadog" },
+      { name: "Grafana", slug: "grafana" },
+      { name: "Sentry", slug: "sentry" },
+      { name: "GitHub Actions", slug: "githubactions" },
+      { name: "Cloudflare", slug: "cloudflare" },
+      { name: "Vercel", slug: "vercel" },
+      { name: "AWS", slug: "amazonaws" },
+      { name: "Docker", slug: "docker" },
+    ],
+  },
 ];
 
 const faqData = [
@@ -1052,9 +1099,10 @@ export default function AIAgentsPage() {
 
       {/* TECHNOLOGIES */}
       <section className="py-20" data-testid="technologies-section">
-        <TechStackIcons
-          title="Technologies & Tools We Use"
-          technologies={agentTechnologies}
+        <TabbedTechStack
+          tabs={aiAgentsTechTabs}
+          title="Technologies We Use"
+          subtitle="We use industry-leading technologies to build autonomous AI agent solutions."
         />
       </section>
 

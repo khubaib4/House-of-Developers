@@ -44,27 +44,74 @@ import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { ZigzagTimeline } from "@/components/ui/ZigzagTimeline";
 import { ValueProposition } from "@/components/ui/ValueProposition";
 import { CTASection } from "@/components/ui/CTASection";
-import { TechStackIcons } from "@/components/ui/TechStackIcons";
+import { TabbedTechStack } from "@/components/ui/TabbedTechStack";
 
-const mobileTechnologies = [
-  { name: "React", slug: "react" },
-  { name: "Flutter", slug: "flutter" },
-  { name: "Swift", slug: "swift" },
-  { name: "Kotlin", slug: "kotlin" },
-  { name: "TypeScript", slug: "typescript" },
-  { name: "Node.js", slug: "nodedotjs" },
-  { name: "Python", slug: "python" },
-  { name: "PostgreSQL", slug: "postgresql" },
-  { name: "MongoDB", slug: "mongodb" },
-  { name: "Firebase", slug: "firebase" },
-  { name: "AWS", slug: "amazonaws" },
-  { name: "Docker", slug: "docker" },
-  { name: "GitHub", slug: "github" },
-  { name: "Figma", slug: "figma" },
-  { name: "Stripe", slug: "stripe" },
-  { name: "PayPal", slug: "paypal" },
-  { name: "Expo", slug: "expo" },
-  { name: "Supabase", slug: "supabase" },
+const mobileTechTabs = [
+  {
+    label: "Frameworks",
+    technologies: [
+      { name: "React Native", slug: "react" },
+      { name: "Flutter", slug: "flutter" },
+      { name: "Expo", slug: "expo" },
+      { name: "Next.js", slug: "nextdotjs" },
+      { name: "React", slug: "react" },
+      { name: "TypeScript", slug: "typescript" },
+      { name: "Redux", slug: "redux" },
+      { name: "GraphQL", slug: "graphql" },
+    ],
+  },
+  {
+    label: "Languages",
+    technologies: [
+      { name: "Swift", slug: "swift" },
+      { name: "Kotlin", slug: "kotlin" },
+      { name: "TypeScript", slug: "typescript" },
+      { name: "JavaScript", slug: "javascript" },
+      { name: "Python", slug: "python" },
+      { name: "Dart", slug: "dart" },
+      { name: "Java", slug: "java" },
+      { name: "Go", slug: "go" },
+    ],
+  },
+  {
+    label: "Backend",
+    technologies: [
+      { name: "Node.js", slug: "nodedotjs" },
+      { name: "PostgreSQL", slug: "postgresql" },
+      { name: "MongoDB", slug: "mongodb" },
+      { name: "Firebase", slug: "firebase" },
+      { name: "Supabase", slug: "supabase" },
+      { name: "GraphQL", slug: "graphql" },
+      { name: "Redis", slug: "redis" },
+      { name: "Express.js", slug: "express" },
+    ],
+  },
+  {
+    label: "Cloud",
+    technologies: [
+      { name: "AWS", slug: "amazonaws" },
+      { name: "Docker", slug: "docker" },
+      { name: "GitHub Actions", slug: "githubactions" },
+      { name: "Vercel", slug: "vercel" },
+      { name: "Cloudflare", slug: "cloudflare" },
+      { name: "DigitalOcean", slug: "digitalocean" },
+      { name: "Terraform", slug: "terraform" },
+      { name: "Kubernetes", slug: "kubernetes" },
+    ],
+  },
+  {
+    label: "Tools",
+    technologies: [
+      { name: "Figma", slug: "figma" },
+      { name: "Stripe", slug: "stripe" },
+      { name: "PayPal", slug: "paypal" },
+      { name: "Twilio", slug: "twilio" },
+      { name: "Sentry", slug: "sentry" },
+      { name: "Datadog", slug: "datadog" },
+      { name: "Jest", slug: "jest" },
+      { name: "Cypress", slug: "cypress" },
+    ],
+  },
 ];
 
 const MOBILE_COLOR = "#6366F1";
@@ -621,10 +668,10 @@ export default function MobileDevelopmentPage() {
       {/* Tech Stack */}
       <section className="py-20" data-testid="section-tech-stack">
         <div className="max-w-7xl mx-auto px-6">
-          <TechStackIcons
+          <TabbedTechStack
+            tabs={mobileTechTabs}
             title="Technologies We Use"
-            subtitle="We use industry-leading technologies to build products that are fast, reliable, and maintainable."
-            technologies={mobileTechnologies}
+            subtitle="We use industry-leading technologies to build mobile applications that are fast, reliable, and maintainable."
           />
         </div>
       </section>

@@ -12,7 +12,7 @@ import { Link } from "wouter";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { ZigzagTimeline } from "@/components/ui/ZigzagTimeline";
 import { ValueProposition } from "@/components/ui/ValueProposition";
-import { TechStackIcons } from "@/components/ui/TechStackIcons";
+import { TabbedTechStack } from "@/components/ui/TabbedTechStack";
 import { CTASection } from "@/components/ui/CTASection";
 import { PricingCard } from "@/components/ui/PricingCard";
 import {
@@ -242,22 +242,72 @@ const profiles = [
   },
 ];
 
-const backendTechnologies = [
-  { name: "Node.js", slug: "nodedotjs" },
-  { name: "Python", slug: "python" },
-  { name: "PHP", slug: "php" },
-  { name: "PostgreSQL", slug: "postgresql" },
-  { name: "MongoDB", slug: "mongodb" },
-  { name: "MySQL", slug: "mysql" },
-  { name: "Redis", slug: "redis" },
-  { name: "Docker", slug: "docker" },
-  { name: "AWS", slug: "amazonaws" },
-  { name: "GitHub", slug: "github" },
-  { name: "Express", slug: "express" },
-  { name: "Django", slug: "django" },
-  { name: "FastAPI", slug: "fastapi" },
-  { name: "Laravel", slug: "laravel" },
-  { name: "GraphQL", slug: "graphql" },
+const backendTechTabs = [
+  {
+    label: "Languages",
+    technologies: [
+      { name: "Node.js", slug: "nodedotjs" },
+      { name: "Python", slug: "python" },
+      { name: "PHP", slug: "php" },
+      { name: "Go", slug: "go" },
+      { name: "TypeScript", slug: "typescript" },
+      { name: "Java", slug: "java" },
+      { name: "Kotlin", slug: "kotlin" },
+      { name: "Rust", slug: "rust" },
+    ],
+  },
+  {
+    label: "Frameworks",
+    technologies: [
+      { name: "Express.js", slug: "express" },
+      { name: "NestJS", slug: "nestjs" },
+      { name: "Django", slug: "django" },
+      { name: "FastAPI", slug: "fastapi" },
+      { name: "Laravel", slug: "laravel" },
+      { name: "GraphQL", slug: "graphql" },
+      { name: "Next.js", slug: "nextdotjs" },
+      { name: "Flask", slug: "flask" },
+    ],
+  },
+  {
+    label: "Databases",
+    technologies: [
+      { name: "PostgreSQL", slug: "postgresql" },
+      { name: "MongoDB", slug: "mongodb" },
+      { name: "MySQL", slug: "mysql" },
+      { name: "Redis", slug: "redis" },
+      { name: "Elasticsearch", slug: "elasticsearch" },
+      { name: "Supabase", slug: "supabase" },
+      { name: "Firebase", slug: "firebase" },
+      { name: "SQLite", slug: "sqlite" },
+    ],
+  },
+  {
+    label: "Cloud",
+    technologies: [
+      { name: "AWS", slug: "amazonaws" },
+      { name: "Docker", slug: "docker" },
+      { name: "Kubernetes", slug: "kubernetes" },
+      { name: "GitHub Actions", slug: "githubactions" },
+      { name: "Vercel", slug: "vercel" },
+      { name: "Cloudflare", slug: "cloudflare" },
+      { name: "DigitalOcean", slug: "digitalocean" },
+      { name: "Terraform", slug: "terraform" },
+    ],
+  },
+  {
+    label: "Tools",
+    technologies: [
+      { name: "GitHub", slug: "github" },
+      { name: "Figma", slug: "figma" },
+      { name: "Jest", slug: "jest" },
+      { name: "Sentry", slug: "sentry" },
+      { name: "Datadog", slug: "datadog" },
+      { name: "Stripe", slug: "stripe" },
+      { name: "Twilio", slug: "twilio" },
+      { name: "Grafana", slug: "grafana" },
+    ],
+  },
 ];
 
 const zigzagSteps = [
@@ -836,9 +886,10 @@ export default function HireBackendPage() {
       />
 
       {/* TECH STACK */}
-      <TechStackIcons
-        title="Technologies We Use"
-        technologies={backendTechnologies}
+      <TabbedTechStack
+        tabs={backendTechTabs}
+        title="Backend Technologies"
+        subtitle="Our backend developers are proficient across the full technology spectrum."
       />
 
       {/* PROCESS */}
