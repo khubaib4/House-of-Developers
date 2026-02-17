@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -35,12 +36,10 @@ import {
   TrendingUp,
   Award,
   GitBranch,
-  Home,
   Users,
   BarChart,
   Settings,
   Bell,
-  Folder,
   ShoppingCart,
   Heart,
   CreditCard,
@@ -60,18 +59,12 @@ import {
   GraduationCap,
   Utensils,
   Rocket,
-  Clock,
-  Briefcase,
-  Scale,
-  UserCheck,
+  Home,
+  Folder,
+  Star,
 } from "lucide-react";
 
 const WEB_DEV_COLOR = "#3B82F6";
-
-const fadeInUp = {
-  initial: { opacity: 0, y: 24 },
-  animate: { opacity: 1, y: 0 },
-};
 
 const containerVariants = {
   initial: {},
@@ -118,160 +111,256 @@ function BrowserFrame({
   );
 }
 
-function WebHeroMockup() {
+function DesignEditorMockup() {
   return (
-    <div className="relative flex items-center justify-center" style={{ minHeight: 380 }}>
-      {[
-        { offset: -80, z: 1, rotate: -8, type: "ecommerce" },
-        { offset: 0, z: 3, rotate: 0, type: "saas" },
-        { offset: 80, z: 2, rotate: 8, type: "corporate" },
-      ].map((frame, idx) => (
-        <motion.div
-          key={frame.type}
-          className="absolute"
-          style={{ left: `calc(50% + ${frame.offset}px - 80px)`, zIndex: frame.z }}
-          initial={{ opacity: 0, y: 30, rotate: frame.rotate }}
-          animate={{ opacity: 1, y: 0, rotate: frame.rotate }}
-          transition={{ duration: 0.6, delay: 0.2 + idx * 0.15 }}
-        >
-          <div className="w-[160px] md:w-[190px] bg-background border-2 border-border rounded-xl shadow-2xl overflow-hidden">
-            <div className="h-5 bg-muted flex items-center gap-1.5 px-2">
-              <div className="flex gap-1">
-                <div className="w-1.5 h-1.5 rounded-full bg-red-500" />
-                <div className="w-1.5 h-1.5 rounded-full bg-yellow-500" />
-                <div className="w-1.5 h-1.5 rounded-full bg-green-500" />
-              </div>
-              <div className="flex-1 flex justify-center">
-                <div className="bg-background/80 rounded px-1.5 py-0.5 text-[6px] text-muted-foreground">
-                  {frame.type === "saas" ? "houseofdevelopers.co.uk/saas" : frame.type === "ecommerce" ? "houseofdevelopers.co.uk/store" : "houseofdevelopers.co.uk/law"}
-                </div>
-              </div>
+    <div className="bg-[#2d2d2d] rounded-xl shadow-2xl overflow-hidden flex-1 min-w-0">
+      <div className="flex items-center gap-2 px-4 py-2 border-b border-[#444]">
+        <div className="flex gap-1.5">
+          <div className="w-2.5 h-2.5 rounded-full bg-red-500" />
+          <div className="w-2.5 h-2.5 rounded-full bg-yellow-500" />
+          <div className="w-2.5 h-2.5 rounded-full bg-green-500" />
+        </div>
+        <div className="flex gap-0 ml-4">
+          <div className="px-3 py-1 text-[10px] text-white bg-[#2d2d2d] border-t-2 border-t-[#3B82F6] rounded-t">
+            Homepage.fig
+          </div>
+          <div className="px-3 py-1 text-[10px] text-gray-500 bg-[#383838] rounded-t">
+            Styles
+          </div>
+        </div>
+      </div>
+
+      <div className="p-4 min-h-[280px]">
+        <div className="bg-[#1a1a2e] rounded-lg p-3 mb-3">
+          <div className="flex items-center justify-between mb-2">
+            <div className="flex items-center gap-2">
+              <div className="w-4 h-4 rounded" style={{ backgroundColor: WEB_DEV_COLOR }} />
+              <span className="text-white text-[10px] font-bold">BrandName</span>
             </div>
-
-            {frame.type === "saas" && (
-              <div className="p-3 space-y-2" style={{ minHeight: 200 }}>
-                <div className="flex items-center justify-between">
-                  <div className="text-[8px] font-bold">Dashboard</div>
-                  <Bell className="h-2.5 w-2.5 text-muted-foreground" />
-                </div>
-                <div className="grid grid-cols-2 gap-1">
-                  {[
-                    { label: "Revenue", val: "$48.2K" },
-                    { label: "Users", val: "12,847" },
-                  ].map((s) => (
-                    <div key={s.label} className="rounded p-1.5 text-center" style={{ backgroundColor: `${WEB_DEV_COLOR}10` }}>
-                      <div className="text-[9px] font-bold" style={{ color: WEB_DEV_COLOR }}>{s.val}</div>
-                      <div className="text-[6px] text-muted-foreground">{s.label}</div>
-                    </div>
-                  ))}
-                </div>
-                <div className="h-14 rounded bg-muted/50 border border-border flex items-end px-1 pb-1 gap-0.5">
-                  {[40, 60, 45, 70, 55, 80, 65].map((h, i) => (
-                    <div key={i} className="flex-1 rounded-t" style={{ height: `${h}%`, backgroundColor: `${WEB_DEV_COLOR}${i === 5 ? "" : "60"}` }} />
-                  ))}
-                </div>
-                <div className="space-y-1">
-                  {["Active Projects: 12", "On Track: 92%"].map((t) => (
-                    <div key={t} className="flex items-center gap-1 rounded p-1 bg-muted/50">
-                      <div className="w-3 h-3 rounded-full" style={{ backgroundColor: `${WEB_DEV_COLOR}20` }} />
-                      <span className="text-[6px]">{t}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {frame.type === "ecommerce" && (
-              <div className="p-3 space-y-2" style={{ minHeight: 200 }}>
-                <div className="flex items-center justify-between">
-                  <div className="text-[8px] font-bold italic">LuxeWear</div>
-                  <ShoppingBag className="h-2.5 w-2.5 text-muted-foreground" />
-                </div>
-                <div className="h-12 rounded bg-gradient-to-br from-rose-100 to-pink-50 flex items-center justify-center">
-                  <Heart className="w-4 h-4 text-rose-300" />
-                </div>
-                <div className="grid grid-cols-2 gap-1">
-                  {[
-                    { name: "Silk Dress", price: "£189", color: "bg-rose-50" },
-                    { name: "Blazer", price: "£249", color: "bg-blue-50" },
-                    { name: "Leather Bag", price: "£129", color: "bg-amber-50" },
-                    { name: "Sneakers", price: "£89", color: "bg-green-50" },
-                  ].map((p) => (
-                    <div key={p.name}>
-                      <div className={`${p.color} rounded h-8 flex items-center justify-center`}>
-                        <ShoppingBag className="w-2.5 h-2.5 text-gray-300" />
-                      </div>
-                      <p className="text-[6px] font-semibold mt-0.5">{p.name}</p>
-                      <p className="text-[6px] text-muted-foreground">{p.price}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {frame.type === "corporate" && (
-              <div style={{ minHeight: 200 }}>
-                <div className="bg-slate-800 p-2 text-center">
-                  <p className="text-white text-[8px] font-bold">Hartley & Associates</p>
-                  <p className="text-slate-400 text-[6px] mt-0.5">Protecting Your Rights</p>
-                  <div className="mt-1.5">
-                    <div className="bg-amber-500 rounded px-2 py-0.5 text-[6px] text-white font-semibold inline-block">Consult</div>
-                  </div>
-                </div>
-                <div className="p-2 space-y-1.5">
-                  <div className="grid grid-cols-2 gap-1">
-                    {["30+ Years", "500+ Cases"].map((t) => (
-                      <div key={t} className="text-center p-1 bg-muted/50 rounded">
-                        <p className="text-[6px] font-bold">{t}</p>
-                      </div>
-                    ))}
-                  </div>
-                  {["Corporate Law", "Employment Law", "Property Law"].map((item) => (
-                    <div key={item} className="flex items-center justify-between rounded p-1.5 bg-muted/50">
-                      <span className="text-[6px]">{item}</span>
-                      <ArrowRight className="h-2 w-2 text-muted-foreground" />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            <div className="h-3 bg-muted flex items-center justify-center">
-              <div className="w-8 h-1 bg-muted-foreground/30 rounded-full" />
+            <div className="flex gap-2">
+              {["Home", "About", "Services", "Contact"].map((l) => (
+                <span key={l} className="text-gray-400 text-[7px]">{l}</span>
+              ))}
             </div>
           </div>
-        </motion.div>
-      ))}
+          <div className="bg-gradient-to-r from-blue-600/30 to-purple-600/30 rounded p-3 text-center">
+            <div className="text-white text-[11px] font-bold mb-1">Build Something Extraordinary</div>
+            <div className="text-gray-400 text-[7px] mb-2">Modern websites that drive growth</div>
+            <div className="flex gap-1.5 justify-center">
+              <div className="bg-blue-500 text-white text-[7px] px-2 py-0.5 rounded">Get Started</div>
+              <div className="border border-gray-500 text-gray-300 text-[7px] px-2 py-0.5 rounded">Learn More</div>
+            </div>
+          </div>
+        </div>
 
-      <motion.div
-        className="absolute -top-2 right-4 md:right-8 z-10"
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.8 }}
-      >
-        <Badge className="text-white border-0 shadow-lg text-xs" style={{ backgroundColor: WEB_DEV_COLOR }}>Next.js & React</Badge>
-      </motion.div>
-      <motion.div
-        className="absolute bottom-4 left-2 md:left-6 z-10"
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 1.0 }}
-      >
-        <Badge className="text-white border-0 shadow-lg text-xs" style={{ backgroundColor: WEB_DEV_COLOR }}>99.9% Uptime</Badge>
-      </motion.div>
-      <motion.div
-        className="absolute bottom-4 right-2 md:right-6 z-10"
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 1.2 }}
-      >
-        <Badge variant="outline" className="shadow-lg text-xs bg-background">SEO Optimised</Badge>
-      </motion.div>
+        <div className="grid grid-cols-3 gap-2 mb-3">
+          {[
+            { label: "Speed", val: "< 1s", icon: "⚡" },
+            { label: "SEO", val: "98/100", icon: "🔍" },
+            { label: "Mobile", val: "100%", icon: "📱" },
+          ].map((s) => (
+            <div key={s.label} className="bg-[#383838] rounded p-2 text-center">
+              <div className="text-[12px] mb-0.5">{s.icon}</div>
+              <div className="text-white text-[9px] font-bold">{s.val}</div>
+              <div className="text-gray-500 text-[7px]">{s.label}</div>
+            </div>
+          ))}
+        </div>
+
+        <div className="grid grid-cols-2 gap-2">
+          {[
+            { bg: "bg-blue-500/10", border: "border-blue-500/30", label: "Hero Section" },
+            { bg: "bg-purple-500/10", border: "border-purple-500/30", label: "Features Grid" },
+            { bg: "bg-green-500/10", border: "border-green-500/30", label: "Testimonials" },
+            { bg: "bg-amber-500/10", border: "border-amber-500/30", label: "CTA Section" },
+          ].map((c) => (
+            <div key={c.label} className={`${c.bg} border ${c.border} rounded p-2 text-center`}>
+              <div className="text-gray-300 text-[8px]">{c.label}</div>
+              <div className="h-3 bg-white/5 rounded mt-1" />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="flex items-center justify-between px-4 py-1 text-[9px]" style={{ backgroundColor: WEB_DEV_COLOR }}>
+        <span className="text-white">Figma · Web Design</span>
+        <span className="text-white">1440 × 900</span>
+      </div>
     </div>
   );
 }
 
-function SaaSProjectMockup() {
+function LiveWebPreviewMockup() {
+  return (
+    <div className="relative flex-1 min-w-0">
+      <div className="absolute -top-3 -right-3 z-10">
+        <Badge className="bg-green-500 text-white border-0 shadow-lg text-[10px] animate-pulse">
+          Live Preview
+        </Badge>
+      </div>
+      <BrowserFrame url="houseofdevelopers.co.uk/projects/brand" glowColor={WEB_DEV_COLOR}>
+        <div className="bg-background min-h-[280px]">
+          <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-4 text-center">
+            <div className="flex items-center justify-center gap-2 mb-3">
+              <div className="w-4 h-4 rounded" style={{ backgroundColor: "white" }} />
+              <span className="text-white text-[10px] font-bold">BrandName</span>
+            </div>
+            <div className="text-white text-[12px] font-bold mb-1">Build Something Extraordinary</div>
+            <div className="text-white/70 text-[8px] mb-2">Modern websites that drive growth</div>
+            <div className="flex gap-1.5 justify-center">
+              <div className="bg-white text-blue-600 text-[7px] px-2 py-0.5 rounded font-semibold">Get Started</div>
+              <div className="border border-white/50 text-white text-[7px] px-2 py-0.5 rounded">Learn More</div>
+            </div>
+          </div>
+
+          <div className="p-3">
+            <div className="grid grid-cols-3 gap-2 mb-3">
+              {[
+                { label: "Speed", val: "< 1s", color: "#3B82F6" },
+                { label: "SEO Score", val: "98/100", color: "#10B981" },
+                { label: "Mobile Ready", val: "100%", color: "#8B5CF6" },
+              ].map((s) => (
+                <div key={s.label} className="rounded-lg p-2 bg-muted/50 border border-border">
+                  <div className="text-[10px] font-bold" style={{ color: s.color }}>{s.val}</div>
+                  <div className="text-[7px] text-muted-foreground">{s.label}</div>
+                </div>
+              ))}
+            </div>
+
+            <div className="space-y-1.5">
+              {[
+                { name: "Responsive Design", status: "Live" },
+                { name: "SEO Optimised", status: "Live" },
+                { name: "Analytics Integrated", status: "Active" },
+              ].map((row) => (
+                <div key={row.name} className="flex items-center justify-between rounded px-2 py-1 bg-muted/30 border border-border">
+                  <div className="flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3 h-3 text-green-500" />
+                    <span className="text-[8px] text-foreground">{row.name}</span>
+                  </div>
+                  <span className="text-[7px] px-1.5 py-0.5 rounded-full bg-green-500/10 text-green-600">{row.status}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </BrowserFrame>
+    </div>
+  );
+}
+
+function HeroMockup() {
+  return (
+    <div className="relative">
+      <motion.div
+        className="absolute -top-3 left-4 z-20"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 0.8 }}
+      >
+        <Badge className="text-white border-0 shadow-lg text-[10px]" style={{ backgroundColor: WEB_DEV_COLOR }}>Next.js & React</Badge>
+      </motion.div>
+      <motion.div
+        className="absolute -top-3 right-4 z-20"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 1.0 }}
+      >
+        <Badge className="text-white border-0 shadow-lg text-[10px]" style={{ backgroundColor: "#10B981" }}>99.9% Uptime</Badge>
+      </motion.div>
+      <motion.div
+        className="absolute -bottom-3 left-4 z-20"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 1.2 }}
+      >
+        <Badge variant="outline" className="shadow-lg text-[10px] bg-background">SEO Optimised</Badge>
+      </motion.div>
+      <motion.div
+        className="absolute -bottom-3 right-4 z-20"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 1.4 }}
+      >
+        <Badge variant="outline" className="shadow-lg text-[10px] bg-background">Mobile-First</Badge>
+      </motion.div>
+
+      <div className="flex gap-3 items-stretch">
+        <DesignEditorMockup />
+        <div className="flex flex-col items-center justify-center px-1">
+          <div className="text-[9px] text-muted-foreground mb-1">Builds to</div>
+          <ArrowRight className="w-4 h-4 text-muted-foreground" />
+        </div>
+        <LiveWebPreviewMockup />
+      </div>
+    </div>
+  );
+}
+
+function EcommerceMockup() {
+  return (
+    <BrowserFrame url="houseofdevelopers.co.uk/projects/luxewear" glowColor="#10B981">
+      <div className="bg-white dark:bg-gray-50 min-h-[380px]">
+        <div className="flex items-center justify-between px-4 py-2.5 border-b border-gray-200">
+          <span className="text-gray-900 text-sm font-bold italic">LuxeWear</span>
+          <div className="flex items-center gap-3 text-[10px] text-gray-600">
+            <span>Women</span>
+            <span>Men</span>
+            <span className="text-red-500 font-semibold">Sale</span>
+            <span>About</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Search className="w-3.5 h-3.5 text-gray-500" />
+            <div className="relative">
+              <ShoppingBag className="w-3.5 h-3.5 text-gray-500" />
+              <span className="absolute -top-1 -right-1 w-3 h-3 bg-black text-white text-[7px] rounded-full flex items-center justify-center">3</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-2 gap-0">
+          <div className="bg-gradient-to-br from-rose-100 to-pink-50 p-6 flex items-center justify-center min-h-[120px]">
+            <div className="text-center">
+              <Heart className="w-8 h-8 text-rose-300 mx-auto mb-2" />
+              <p className="text-gray-400 text-[9px]">Featured Look</p>
+            </div>
+          </div>
+          <div className="p-4 flex flex-col justify-center">
+            <span className="text-[8px] text-gray-500 uppercase tracking-wider">New Collection</span>
+            <p className="text-gray-900 text-sm font-bold mt-1">Spring / Summer 2025</p>
+            <p className="text-gray-500 text-[9px] mt-1.5 leading-relaxed">Discover the latest trends in premium fashion</p>
+            <div className="flex gap-2 mt-3">
+              <div className="bg-gray-900 text-white text-[9px] px-3 py-1.5 rounded font-medium">Shop Now</div>
+              <div className="text-gray-600 text-[9px] px-3 py-1.5 underline">View Lookbook</div>
+            </div>
+          </div>
+        </div>
+
+        <div className="px-4 py-3">
+          <div className="grid grid-cols-4 gap-2">
+            {[
+              { brand: "LUXE", name: "Silk Dress", price: "£189", color: "bg-rose-50" },
+              { brand: "MAISON", name: "Wool Blazer", price: "£249", color: "bg-blue-50" },
+              { brand: "LUXE", name: "Leather Bag", price: "£129", color: "bg-amber-50" },
+              { brand: "ATELIER", name: "Sneakers", price: "£89", color: "bg-green-50" },
+            ].map((p) => (
+              <div key={p.name} className="group">
+                <div className={`${p.color} rounded-lg aspect-[3/4] flex items-center justify-center`}>
+                  <ShoppingBag className="w-5 h-5 text-gray-300" />
+                </div>
+                <p className="text-gray-400 text-[7px] mt-1.5 uppercase">{p.brand}</p>
+                <p className="text-gray-900 text-[9px] font-semibold">{p.name}</p>
+                <p className="text-gray-700 text-[9px] font-bold">{p.price}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </BrowserFrame>
+  );
+}
+
+function SaaSMockup() {
   const projects = [
     { name: "Website Redesign", progress: 78, status: "On Track", statusColor: "text-green-500 bg-green-500/10" },
     { name: "Mobile App MVP", progress: 45, status: "At Risk", statusColor: "text-orange-500 bg-orange-500/10" },
@@ -280,266 +369,333 @@ function SaaSProjectMockup() {
   ];
 
   return (
-    <div className="flex min-h-[340px]">
-      <div className="w-44 bg-gray-900 dark:bg-gray-950 p-3 flex flex-col">
-        <div className="flex items-center gap-2 mb-6">
-          <div className="w-6 h-6 rounded-lg bg-blue-500 flex items-center justify-center">
-            <Layers className="w-3.5 h-3.5 text-white" />
-          </div>
-          <span className="text-white text-xs font-bold">ProjectHub</span>
-        </div>
-        <nav className="space-y-1 flex-1">
-          {[
-            { icon: Home, label: "Dashboard", active: true },
-            { icon: Folder, label: "Projects", active: false },
-            { icon: Users, label: "Team", active: false },
-            { icon: BarChart, label: "Analytics", active: false },
-            { icon: Settings, label: "Settings", active: false },
-          ].map((item) => (
-            <div
-              key={item.label}
-              className={`flex items-center gap-2 px-2.5 py-1.5 rounded-md text-xs ${
-                item.active
-                  ? "bg-blue-500/20 text-blue-400"
-                  : "text-gray-400 hover:text-gray-300"
-              }`}
-            >
-              <item.icon className="w-3.5 h-3.5" />
-              {item.label}
+    <BrowserFrame url="houseofdevelopers.co.uk/projects/projecthub" glowColor="#3B82F6">
+      <div className="flex min-h-[380px]">
+        <div className="w-44 bg-gray-900 dark:bg-gray-950 p-3 flex flex-col">
+          <div className="flex items-center gap-2 mb-6">
+            <div className="w-6 h-6 rounded-lg bg-blue-500 flex items-center justify-center">
+              <Layers className="w-3.5 h-3.5 text-white" />
             </div>
-          ))}
-        </nav>
-        <div className="flex items-center gap-2 mt-4">
-          <div className="w-6 h-6 rounded-full bg-gradient-to-br from-blue-400 to-purple-500" />
-          <span className="text-gray-400 text-[10px]">Sarah M.</span>
-        </div>
-      </div>
-
-      <div className="flex-1 bg-gray-50 dark:bg-gray-900 p-4">
-        <div className="flex items-center justify-between mb-4">
-          <div>
-            <p className="text-foreground text-sm font-semibold">Good morning, Sarah 👋</p>
-            <p className="text-muted-foreground text-[10px]">Tuesday, Feb 17</p>
+            <span className="text-white text-xs font-bold">ProjectHub</span>
           </div>
-          <div className="flex items-center gap-2">
-            <Bell className="w-3.5 h-3.5 text-muted-foreground" />
-            <div className="bg-blue-500 text-white text-[9px] px-2 py-1 rounded-md font-semibold">+ New Project</div>
+          <nav className="space-y-1 flex-1">
+            {[
+              { icon: Home, label: "Dashboard", active: true },
+              { icon: Folder, label: "Projects", active: false },
+              { icon: Users, label: "Team", active: false },
+              { icon: BarChart, label: "Analytics", active: false },
+              { icon: Settings, label: "Settings", active: false },
+            ].map((item) => (
+              <div
+                key={item.label}
+                className={`flex items-center gap-2 px-2.5 py-1.5 rounded-md text-xs ${
+                  item.active
+                    ? "bg-blue-500/20 text-blue-400"
+                    : "text-gray-400 hover:text-gray-300"
+                }`}
+              >
+                <item.icon className="w-3.5 h-3.5" />
+                {item.label}
+              </div>
+            ))}
+          </nav>
+          <div className="flex items-center gap-2 mt-4">
+            <div className="w-6 h-6 rounded-full bg-gradient-to-br from-blue-400 to-purple-500" />
+            <span className="text-gray-400 text-[10px]">Sarah M.</span>
           </div>
         </div>
 
-        <div className="grid grid-cols-4 gap-2 mb-4">
-          {[
-            { label: "Active Projects", value: "12", color: "border-blue-500/30 bg-blue-500/5" },
-            { label: "Tasks Due", value: "8", color: "border-orange-500/30 bg-orange-500/5" },
-            { label: "Team Members", value: "24", color: "border-green-500/30 bg-green-500/5" },
-            { label: "On Track", value: "92%", color: "border-purple-500/30 bg-purple-500/5" },
-          ].map((stat) => (
-            <div key={stat.label} className={`border rounded-lg p-2 ${stat.color}`}>
-              <p className="text-foreground text-sm font-bold">{stat.value}</p>
-              <p className="text-muted-foreground text-[8px]">{stat.label}</p>
+        <div className="flex-1 bg-gray-50 dark:bg-gray-900 p-4">
+          <div className="flex items-center justify-between mb-4">
+            <div>
+              <p className="text-foreground text-sm font-semibold">Good morning, Sarah 👋</p>
+              <p className="text-muted-foreground text-[10px]">Tuesday, Feb 17</p>
             </div>
-          ))}
-        </div>
-
-        <div className="bg-card border rounded-lg overflow-hidden">
-          <div className="grid grid-cols-[1fr_80px_60px_40px] gap-2 px-3 py-1.5 bg-muted/50 text-[9px] text-muted-foreground font-medium">
-            <span>Project</span>
-            <span>Progress</span>
-            <span>Status</span>
-            <span>Team</span>
+            <div className="flex items-center gap-2">
+              <Bell className="w-3.5 h-3.5 text-muted-foreground" />
+              <div className="bg-blue-500 text-white text-[9px] px-2 py-1 rounded-md font-semibold">+ New Project</div>
+            </div>
           </div>
-          {projects.map((p) => (
-            <div key={p.name} className="grid grid-cols-[1fr_80px_60px_40px] gap-2 px-3 py-2 border-t border-border items-center">
-              <span className="text-foreground text-[10px] font-medium">{p.name}</span>
-              <div className="flex items-center gap-1.5">
-                <div className="flex-1 h-1.5 bg-muted rounded-full overflow-hidden">
-                  <div
-                    className="h-full rounded-full bg-blue-500"
-                    style={{ width: `${p.progress}%` }}
-                  />
+
+          <div className="grid grid-cols-4 gap-2 mb-4">
+            {[
+              { label: "Active Projects", value: "12", color: "border-blue-500/30 bg-blue-500/5" },
+              { label: "Tasks Due", value: "8", color: "border-orange-500/30 bg-orange-500/5" },
+              { label: "Team Members", value: "24", color: "border-green-500/30 bg-green-500/5" },
+              { label: "On Track", value: "92%", color: "border-purple-500/30 bg-purple-500/5" },
+            ].map((stat) => (
+              <div key={stat.label} className={`border rounded-lg p-2 ${stat.color}`}>
+                <p className="text-foreground text-sm font-bold">{stat.value}</p>
+                <p className="text-muted-foreground text-[8px]">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-card border rounded-lg overflow-hidden">
+            <div className="grid grid-cols-[1fr_80px_60px_40px] gap-2 px-3 py-1.5 bg-muted/50 text-[9px] text-muted-foreground font-medium">
+              <span>Project</span>
+              <span>Progress</span>
+              <span>Status</span>
+              <span>Team</span>
+            </div>
+            {projects.map((p) => (
+              <div key={p.name} className="grid grid-cols-[1fr_80px_60px_40px] gap-2 px-3 py-2 border-t border-border items-center">
+                <span className="text-foreground text-[10px] font-medium">{p.name}</span>
+                <div className="flex items-center gap-1.5">
+                  <div className="flex-1 h-1.5 bg-muted rounded-full overflow-hidden">
+                    <div
+                      className="h-full rounded-full bg-blue-500"
+                      style={{ width: `${p.progress}%` }}
+                    />
+                  </div>
+                  <span className="text-[8px] text-muted-foreground">{p.progress}%</span>
                 </div>
-                <span className="text-[8px] text-muted-foreground">{p.progress}%</span>
+                <span className={`text-[8px] px-1.5 py-0.5 rounded-full font-medium ${p.statusColor}`}>
+                  {p.status}
+                </span>
+                <div className="flex -space-x-1">
+                  <div className="w-4 h-4 rounded-full bg-blue-400 border border-background" />
+                  <div className="w-4 h-4 rounded-full bg-purple-400 border border-background" />
+                </div>
               </div>
-              <span className={`text-[8px] px-1.5 py-0.5 rounded-full font-medium ${p.statusColor}`}>
-                {p.status}
-              </span>
-              <div className="flex -space-x-1">
-                <div className="w-4 h-4 rounded-full bg-blue-400 border border-background" />
-                <div className="w-4 h-4 rounded-full bg-purple-400 border border-background" />
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </BrowserFrame>
   );
 }
 
-function EcommerceProjectMockup() {
+function CorporateMockup() {
   return (
-    <div className="bg-white dark:bg-gray-50 min-h-[340px]">
-      <div className="flex items-center justify-between px-4 py-2.5 border-b border-gray-200">
-        <span className="text-gray-900 text-sm font-bold italic">LuxeWear</span>
-        <div className="flex items-center gap-3 text-[10px] text-gray-600">
-          <span>Women</span>
-          <span>Men</span>
-          <span className="text-red-500 font-semibold">Sale</span>
-          <span>About</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <Search className="w-3.5 h-3.5 text-gray-500" />
-          <div className="relative">
-            <ShoppingBag className="w-3.5 h-3.5 text-gray-500" />
-            <span className="absolute -top-1 -right-1 w-3 h-3 bg-black text-white text-[7px] rounded-full flex items-center justify-center">3</span>
+    <BrowserFrame url="houseofdevelopers.co.uk/projects/hartley-law" glowColor="#F59E0B">
+      <div className="min-h-[380px]">
+        <div className="flex items-center justify-between px-4 py-2.5 bg-slate-900">
+          <span className="text-white text-xs font-bold">Hartley & Associates</span>
+          <div className="flex items-center gap-3 text-[10px] text-slate-300">
+            <span>Practice Areas</span>
+            <span>Attorneys</span>
+            <span>About</span>
+            <span>Contact</span>
           </div>
+          <div className="bg-amber-500 text-white text-[9px] px-2.5 py-1 rounded font-semibold">Book Consultation</div>
         </div>
-      </div>
 
-      <div className="grid grid-cols-2 gap-0">
-        <div className="bg-gradient-to-br from-rose-100 to-pink-50 p-6 flex items-center justify-center min-h-[120px]">
-          <div className="text-center">
-            <Heart className="w-8 h-8 text-rose-300 mx-auto mb-2" />
-            <p className="text-gray-400 text-[9px]">Featured Look</p>
+        <div className="bg-gradient-to-br from-slate-800 to-slate-900 p-6 text-center">
+          <p className="text-white text-base font-bold">Experienced Legal Counsel</p>
+          <p className="text-slate-400 text-[10px] mt-1">Protecting Your Rights Since 1994</p>
+          <div className="flex gap-2 justify-center mt-3">
+            <div className="bg-amber-500 text-white text-[9px] px-3 py-1.5 rounded font-medium">Free Consultation</div>
+            <div className="border border-white/30 text-white text-[9px] px-3 py-1.5 rounded">Our Practice</div>
           </div>
         </div>
-        <div className="p-4 flex flex-col justify-center">
-          <span className="text-[8px] text-gray-500 uppercase tracking-wider">New Collection</span>
-          <p className="text-gray-900 text-sm font-bold mt-1">Spring / Summer 2025</p>
-          <p className="text-gray-500 text-[9px] mt-1.5 leading-relaxed">Discover the latest trends in premium fashion</p>
-          <div className="flex gap-2 mt-3">
-            <div className="bg-gray-900 text-white text-[9px] px-3 py-1.5 rounded font-medium">Shop Now</div>
-            <div className="text-gray-600 text-[9px] px-3 py-1.5 underline">View Lookbook</div>
-          </div>
-        </div>
-      </div>
 
-      <div className="px-4 py-3">
-        <div className="grid grid-cols-4 gap-2">
+        <div className="grid grid-cols-4 gap-0 bg-white dark:bg-gray-100 border-b border-gray-200">
+          {["30+ Years", "500+ Cases", "Legal 500", "Free Consult"].map((t) => (
+            <div key={t} className="text-center py-2 border-r border-gray-200 last:border-r-0">
+              <p className="text-gray-800 text-[9px] font-bold">{t}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="grid grid-cols-3 gap-2 p-3 bg-white dark:bg-gray-50">
           {[
-            { brand: "LUXE", name: "Silk Dress", price: "£189", color: "bg-rose-50" },
-            { brand: "MAISON", name: "Wool Blazer", price: "£249", color: "bg-blue-50" },
-            { brand: "LUXE", name: "Leather Bag", price: "£129", color: "bg-amber-50" },
-            { brand: "ATELIER", name: "Sneakers", price: "£89", color: "bg-green-50" },
-          ].map((p) => (
-            <div key={p.name} className="group">
-              <div className={`${p.color} rounded-lg aspect-[3/4] flex items-center justify-center`}>
-                <ShoppingBag className="w-5 h-5 text-gray-300" />
-              </div>
-              <p className="text-gray-400 text-[7px] mt-1.5 uppercase">{p.brand}</p>
-              <p className="text-gray-900 text-[9px] font-semibold">{p.name}</p>
-              <p className="text-gray-700 text-[9px] font-bold">{p.price}</p>
+            { icon: Building, label: "Corporate" },
+            { icon: Users, label: "Employment" },
+            { icon: Home, label: "Property" },
+            { icon: Shield, label: "Litigation" },
+            { icon: Users, label: "Family" },
+            { icon: CreditCard, label: "Tax" },
+          ].map((s) => (
+            <div key={s.label} className="bg-slate-50 dark:bg-gray-100 rounded-lg p-2 text-center border border-slate-200">
+              <s.icon className="w-3.5 h-3.5 text-amber-600 mx-auto mb-1" />
+              <p className="text-gray-800 text-[8px] font-medium">{s.label} Law</p>
             </div>
           ))}
         </div>
       </div>
-    </div>
+    </BrowserFrame>
   );
 }
 
-function LawFirmProjectMockup() {
+function PortfolioMockup() {
   return (
-    <div className="min-h-[340px]">
-      <div className="flex items-center justify-between px-4 py-2.5 bg-slate-900">
-        <span className="text-white text-xs font-bold">Hartley & Associates</span>
-        <div className="flex items-center gap-3 text-[10px] text-slate-300">
-          <span>Practice Areas</span>
-          <span>Attorneys</span>
-          <span>About</span>
-          <span>Contact</span>
-        </div>
-        <div className="bg-amber-500 text-white text-[9px] px-2.5 py-1 rounded font-semibold">Book Consultation</div>
-      </div>
-
-      <div className="bg-gradient-to-br from-slate-800 to-slate-900 p-6 text-center">
-        <p className="text-white text-base font-bold">Experienced Legal Counsel</p>
-        <p className="text-slate-400 text-[10px] mt-1">Protecting Your Rights Since 1994</p>
-        <div className="flex gap-2 justify-center mt-3">
-          <div className="bg-amber-500 text-white text-[9px] px-3 py-1.5 rounded font-medium">Free Consultation</div>
-          <div className="border border-white/30 text-white text-[9px] px-3 py-1.5 rounded">Our Practice</div>
-        </div>
-      </div>
-
-      <div className="grid grid-cols-4 gap-0 bg-white dark:bg-gray-100 border-b border-gray-200">
-        {["30+ Years", "500+ Cases", "Legal 500", "Free Consult"].map((t) => (
-          <div key={t} className="text-center py-2 border-r border-gray-200 last:border-r-0">
-            <p className="text-gray-800 text-[9px] font-bold">{t}</p>
+    <BrowserFrame url="houseofdevelopers.co.uk/projects/artisan-studio" glowColor="#8B5CF6">
+      <div className="min-h-[380px] bg-background">
+        <div className="flex items-center justify-between px-4 py-3 border-b border-border">
+          <div className="flex items-center gap-2">
+            <div className="w-6 h-6 rounded bg-purple-500 flex items-center justify-center">
+              <Palette className="w-3.5 h-3.5 text-white" />
+            </div>
+            <span className="text-foreground text-xs font-bold">Artisan Studio</span>
           </div>
-        ))}
-      </div>
-
-      <div className="grid grid-cols-3 gap-2 p-3 bg-white dark:bg-gray-50">
-        {[
-          { icon: Briefcase, label: "Corporate" },
-          { icon: UserCheck, label: "Employment" },
-          { icon: Home, label: "Property" },
-          { icon: Scale, label: "Litigation" },
-          { icon: Users, label: "Family" },
-          { icon: CreditCard, label: "Tax" },
-        ].map((s) => (
-          <div key={s.label} className="bg-slate-50 dark:bg-gray-100 rounded-lg p-2 text-center border border-slate-200">
-            <s.icon className="w-3.5 h-3.5 text-amber-600 mx-auto mb-1" />
-            <p className="text-gray-800 text-[8px] font-medium">{s.label} Law</p>
+          <div className="flex items-center gap-3 text-[10px] text-muted-foreground">
+            <span>Work</span>
+            <span>About</span>
+            <span>Services</span>
+            <span>Contact</span>
           </div>
-        ))}
+          <div className="bg-purple-500 text-white text-[9px] px-2.5 py-1 rounded font-semibold">Hire Us</div>
+        </div>
+
+        <div className="p-4">
+          <div className="text-center mb-4">
+            <div className="text-foreground text-base font-bold">Creative Design Studio</div>
+            <div className="text-muted-foreground text-[10px]">Branding · Web Design · UI/UX</div>
+          </div>
+
+          <div className="grid grid-cols-3 gap-2 mb-3">
+            {[
+              { bg: "bg-gradient-to-br from-purple-200 to-pink-100", label: "Brand Identity", tag: "Branding" },
+              { bg: "bg-gradient-to-br from-blue-200 to-cyan-100", label: "SaaS Dashboard", tag: "UI/UX" },
+              { bg: "bg-gradient-to-br from-amber-200 to-orange-100", label: "Mobile App", tag: "Design" },
+            ].map((item) => (
+              <div key={item.label}>
+                <div className={`${item.bg} rounded-lg aspect-[4/3] flex items-center justify-center`}>
+                  <Image className="w-5 h-5 text-gray-400" />
+                </div>
+                <p className="text-foreground text-[9px] font-semibold mt-1.5">{item.label}</p>
+                <p className="text-muted-foreground text-[7px]">{item.tag}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-3 gap-2 mb-3">
+            {[
+              { bg: "bg-gradient-to-br from-green-200 to-emerald-100", label: "E-Commerce", tag: "Web" },
+              { bg: "bg-gradient-to-br from-rose-200 to-red-100", label: "Restaurant", tag: "Branding" },
+              { bg: "bg-gradient-to-br from-indigo-200 to-blue-100", label: "Startup MVP", tag: "UI/UX" },
+            ].map((item) => (
+              <div key={item.label}>
+                <div className={`${item.bg} rounded-lg aspect-[4/3] flex items-center justify-center`}>
+                  <Image className="w-5 h-5 text-gray-400" />
+                </div>
+                <p className="text-foreground text-[9px] font-semibold mt-1.5">{item.label}</p>
+                <p className="text-muted-foreground text-[7px]">{item.tag}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-card border border-border rounded-lg p-3">
+            <div className="flex items-center justify-between">
+              <div>
+                <div className="text-foreground text-[10px] font-semibold">Client Reviews</div>
+                <div className="flex items-center gap-0.5 mt-0.5">
+                  {[1, 2, 3, 4, 5].map((s) => (
+                    <Star key={s} className="w-3 h-3 text-amber-400 fill-amber-400" />
+                  ))}
+                  <span className="text-muted-foreground text-[8px] ml-1">4.9 (127 reviews)</span>
+                </div>
+              </div>
+              <div className="bg-purple-500 text-white text-[8px] px-2 py-1 rounded">View All</div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </BrowserFrame>
   );
 }
 
-const services = [
+const showcaseTabs = [
+  { id: "ecommerce", label: "E-Commerce Store" },
+  { id: "saas", label: "SaaS Platform" },
+  { id: "corporate", label: "Corporate Website" },
+  { id: "portfolio", label: "Portfolio / Agency" },
+];
+
+const webServices = [
   {
     icon: Globe,
     gradient: "from-[#3B82F6] to-[#6366F1]",
     name: "Custom Website Development",
     description: "Bespoke websites built from scratch, tailored to your brand and business goals. Every pixel crafted for maximum impact and conversion.",
-    features: ["Pixel-perfect custom design", "Mobile-first responsive layout", "Lightning-fast performance", "SEO-optimised structure"],
-    tech: ["React", "Next.js", "Tailwind CSS", "TypeScript"],
-    link: "/services/custom-development",
+    examples: ["Marketing websites", "Portfolio sites", "Multi-page business sites"],
+    tech: ["React", "Next.js", "Tailwind CSS"],
   },
   {
     icon: ShoppingBag,
     gradient: "from-[#10B981] to-[#059669]",
     name: "E-Commerce Development",
     description: "High-converting online stores built with modern technology. From product pages to checkout flows optimised for maximum sales.",
-    features: ["Conversion-optimised checkout", "Inventory management", "Payment gateway integration", "Mobile shopping experience"],
-    tech: ["Shopify", "WooCommerce", "Stripe", "Next.js"],
-    link: "/services/web-development/cms/shopify",
+    examples: ["Fashion stores", "B2B wholesalers", "Subscription boxes"],
+    tech: ["Shopify", "WooCommerce", "Stripe"],
   },
   {
     icon: FileText,
     gradient: "from-[#8B5CF6] to-[#6366F1]",
     name: "CMS Development",
     description: "Powerful content management systems that put you in control. Update your website anytime without touching a single line of code.",
-    features: ["Easy content management", "Custom admin panels", "Multi-user roles", "Media management"],
-    tech: ["WordPress", "Sanity", "Contentful", "Strapi"],
-    link: "/services/cms-development",
+    examples: ["WordPress sites", "Blog platforms", "News portals"],
+    tech: ["WordPress", "Sanity", "Strapi"],
   },
   {
     icon: Layers,
     gradient: "from-[#F59E0B] to-[#EF4444]",
     name: "Web Application Development",
     description: "Complex, feature-rich web applications that solve real business problems. Built with scalable architecture for long-term success.",
-    features: ["Custom business logic", "Real-time functionality", "Third-party integrations", "Scalable architecture"],
-    tech: ["React", "Node.js", "PostgreSQL", "AWS"],
-    link: "/services/web-apps",
+    examples: ["SaaS platforms", "Client portals", "Dashboard tools"],
+    tech: ["React", "Node.js", "PostgreSQL"],
   },
   {
     icon: Target,
     gradient: "from-[#EC4899] to-[#8B5CF6]",
     name: "Landing Page Development",
     description: "High-converting landing pages designed to turn visitors into customers. A/B tested, optimised, and built for results.",
-    features: ["Conversion rate optimised", "A/B testing ready", "Fast load times (<1s)", "Lead capture forms"],
-    tech: ["Next.js", "React", "Framer Motion", "HubSpot"],
-    link: "/services/build-mvp",
+    examples: ["Product launches", "Lead gen pages", "Event registrations"],
+    tech: ["Next.js", "React", "Framer Motion"],
   },
   {
     icon: RefreshCw,
     gradient: "from-[#06B6D4] to-[#3B82F6]",
     name: "Website Redesign",
     description: "Transform your outdated website into a modern, high-performing digital asset. Keep your brand, lose the old design.",
-    features: ["Modern design transformation", "Performance improvements", "SEO preservation & boost", "Content migration"],
-    tech: ["React", "Next.js", "Figma", "Lighthouse"],
-    link: "/services/web-development",
+    examples: ["Legacy site updates", "Mobile-first rebuilds", "Performance overhauls"],
+    tech: ["React", "Next.js", "Figma"],
+  },
+];
+
+const industries = [
+  {
+    icon: ShoppingBag,
+    gradient: "from-green-500 to-green-600",
+    name: "E-Commerce & Retail",
+    description: "Beautiful online stores that convert browsers into buyers.",
+    useCases: ["Custom storefronts", "Product catalogues", "Shopping cart & checkout", "Inventory management"],
+  },
+  {
+    icon: Building,
+    gradient: "from-blue-500 to-blue-600",
+    name: "Professional Services",
+    description: "Websites that establish authority and generate leads.",
+    useCases: ["Law firm websites", "Consultancy sites", "Accounting portals", "Practice management"],
+  },
+  {
+    icon: Stethoscope,
+    gradient: "from-red-500 to-red-600",
+    name: "Healthcare",
+    description: "GDPR-compliant websites for medical practices and clinics.",
+    useCases: ["Clinic websites", "Patient booking", "Service directories", "Health information portals"],
+  },
+  {
+    icon: GraduationCap,
+    gradient: "from-purple-500 to-purple-600",
+    name: "Education",
+    description: "Engaging platforms that inform, educate, and enrol.",
+    useCases: ["School websites", "Course platforms", "Alumni portals", "Event registration"],
+  },
+  {
+    icon: Utensils,
+    gradient: "from-orange-500 to-orange-600",
+    name: "Hospitality",
+    description: "Stunning sites for restaurants, hotels, and venues.",
+    useCases: ["Restaurant menus & booking", "Hotel showcases", "Event venues", "Online ordering"],
+  },
+  {
+    icon: Home,
+    gradient: "from-cyan-500 to-cyan-600",
+    name: "Real Estate",
+    description: "Property listing sites that attract buyers and sellers.",
+    useCases: ["Property listings", "Agent profiles", "Virtual tours", "Mortgage calculators"],
   },
 ];
 
@@ -555,7 +711,7 @@ const techTabs = [
       { icon: FileCode, name: "TypeScript", description: "Type-safe JS" },
       { icon: Paintbrush, name: "Tailwind CSS", description: "Utility-first CSS" },
       { icon: Zap, name: "Vite", description: "Fast build tool" },
-      { icon: Smartphone, name: "React Native", description: "Mobile apps" },
+      { icon: Smartphone, name: "Responsive", description: "Mobile-first" },
     ],
   },
   {
@@ -616,52 +772,37 @@ const techTabs = [
   },
 ];
 
-const processSteps = [
+const caseStudies = [
   {
-    icon: Search,
-    title: "Discovery & Strategy",
-    points: [
-      "Deep-dive into your business goals and target audience",
-      "Competitor analysis and market research",
-      "Technical requirements and scope definition",
-    ],
+    gradient: "from-green-600 to-teal-600",
+    icon: ShoppingBag,
+    industry: "E-Commerce",
+    title: "LuxeWear - Premium Fashion Store",
+    description: "Complete online store for a premium fashion brand with custom design, advanced product filtering, wishlist functionality, and seamless Stripe checkout. Built on WooCommerce with a fully custom theme.",
+    features: ["🛍️ Custom product catalogue with advanced filters", "💳 Stripe checkout with Apple Pay & Google Pay", "❤️ Wishlist and saved items for returning customers", "📱 Fully responsive mobile shopping experience", "📊 Admin dashboard with sales analytics"],
+    tech: ["WordPress", "WooCommerce", "Stripe", "AWS CloudFront"],
+    timeline: "8 weeks • Fashion Brand, London",
   },
   {
-    icon: Palette,
-    title: "Design & Prototyping",
-    points: [
-      "Wireframes and user experience mapping",
-      "High-fidelity Figma designs for approval",
-      "Interactive prototype before development begins",
-    ],
+    gradient: "from-blue-600 to-purple-600",
+    icon: Layers,
+    industry: "SaaS Platform",
+    title: "ProjectHub - Team Management Tool",
+    description: "Full-featured SaaS platform for project management with real-time collaboration, task boards, file sharing, and team analytics. Built from scratch for a startup preparing for their Series A.",
+    features: ["📋 Kanban boards with drag-and-drop tasks", "👥 Real-time team collaboration and chat", "📊 Project analytics and progress tracking", "🔔 Smart notifications and deadline alerts", "📁 File sharing with version history"],
+    tech: ["Next.js", "React", "Node.js", "PostgreSQL", "AWS"],
+    timeline: "12 weeks • Tech Startup, Manchester",
   },
   {
-    icon: Code2,
-    title: "Development & Testing",
-    points: [
-      "Agile sprints with weekly progress updates",
-      "Cross-browser and device testing throughout",
-      "Performance and security audits before launch",
-    ],
+    gradient: "from-amber-600 to-orange-600",
+    icon: Building,
+    industry: "Professional Services",
+    title: "Hartley & Associates - Law Firm",
+    description: "Professional WordPress website for a leading law firm with case study system, attorney profiles, practice area pages, integrated booking, and SEO strategy that achieved #1 Google rankings.",
+    features: ["⚖️ Practice area pages with detailed content", "👨‍💼 Attorney profiles with credentials", "📅 Integrated appointment booking system", "📝 Blog and legal resources section", "🔍 SEO-optimised for local search rankings"],
+    tech: ["WordPress", "Custom Theme", "MySQL", "Cloudflare"],
+    timeline: "6 weeks • Law Firm, Birmingham",
   },
-  {
-    icon: Rocket,
-    title: "Launch & Growth",
-    points: [
-      "Smooth deployment with zero downtime",
-      "SEO setup, analytics, and monitoring configured",
-      "Ongoing support and continuous improvements",
-    ],
-  },
-];
-
-const industries = [
-  { icon: ShoppingBag, name: "E-Commerce", count: "35+ projects" },
-  { icon: Stethoscope, name: "Healthcare", count: "12+ projects" },
-  { icon: Building, name: "Professional Services", count: "28+ projects" },
-  { icon: GraduationCap, name: "Education", count: "15+ projects" },
-  { icon: Utensils, name: "Hospitality", count: "20+ projects" },
-  { icon: Home, name: "Real Estate", count: "18+ projects" },
 ];
 
 const faqs = [
@@ -705,12 +846,22 @@ const faqs = [
     q: "What happens after launch?",
     a: "Every project includes 30 days of post-launch support (bug fixes, tweaks). After that, we offer maintenance packages covering updates, backups, monitoring, and ongoing development. We're a long-term partner, not a one-time vendor.",
   },
+  {
+    q: "How much does a website cost?",
+    a: "Landing pages start at £3,000-£5,000. Business websites range from £5,000-£15,000. E-commerce stores run £10,000-£30,000. Complex web applications are £20,000+. We provide detailed, itemised quotes after a free discovery session.",
+  },
+  {
+    q: "Do you offer ongoing maintenance?",
+    a: "Yes, we offer monthly maintenance packages that include security updates, backups, performance monitoring, content updates, and priority support. Packages start at £300/month depending on the size and complexity of your website.",
+  },
 ];
 
 export default function WebDevelopmentPage() {
+  const [activeShowcase, setActiveShowcase] = useState("ecommerce");
+
   return (
-    <>
-      {/* HERO SECTION */}
+    <div className="min-h-screen">
+      {/* HERO */}
       <section className="py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -726,7 +877,7 @@ export default function WebDevelopmentPage() {
                 <Globe className="h-3 w-3 mr-1" /> Web Development
               </Badge>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground">
                 Web Development Services
               </h1>
 
@@ -734,11 +885,28 @@ export default function WebDevelopmentPage() {
                 Websites & Applications That Drive Real Business Growth
               </p>
 
-              <p className="text-xl text-muted-foreground mt-6 leading-relaxed">
+              <p className="text-lg text-muted-foreground mt-6 leading-relaxed">
                 From stunning marketing websites to complex SaaS platforms, we build web solutions that combine beautiful design with powerful functionality. Every project delivered on time, on budget, and built to scale.
               </p>
 
-              <div className="grid grid-cols-4 gap-6 mt-8">
+              <div className="flex flex-wrap gap-3 mt-6">
+                {[
+                  { icon: Palette, label: "Design-First" },
+                  { icon: Zap, label: "Lightning Fast" },
+                  { icon: Smartphone, label: "Mobile-First" },
+                  { icon: Search, label: "SEO Built-In" },
+                ].map((pill) => (
+                  <div
+                    key={pill.label}
+                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-muted border border-border text-sm"
+                  >
+                    <pill.icon className="w-3.5 h-3.5" style={{ color: WEB_DEV_COLOR }} />
+                    <span className="text-foreground text-sm">{pill.label}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="grid grid-cols-4 gap-4 mt-8">
                 {[
                   { stat: "150+", label: "Projects" },
                   { stat: "98%", label: "Satisfaction" },
@@ -754,9 +922,12 @@ export default function WebDevelopmentPage() {
 
               <div className="flex gap-4 mt-8 flex-wrap">
                 <Link href="/contact">
-                  <Button>Start Your Project</Button>
+                  <Button size="lg">
+                    Start Your Project
+                    <ArrowRight className="h-4 w-4 ml-1" />
+                  </Button>
                 </Link>
-                <Button variant="outline" onClick={() => { const el = document.getElementById("portfolio"); if (el) el.scrollIntoView({ behavior: "smooth" }); }}>
+                <Button variant="outline" size="lg" onClick={() => { const el = document.getElementById("portfolio"); if (el) el.scrollIntoView({ behavior: "smooth" }); }}>
                   View Our Work
                 </Button>
               </div>
@@ -768,241 +939,258 @@ export default function WebDevelopmentPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="hidden lg:block"
             >
-              <WebHeroMockup />
+              <HeroMockup />
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* SERVICES OVERVIEW */}
+      {/* WHY WEB DEVELOPMENT */}
       <section className="py-20 bg-muted/50">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground">Why Invest in Professional Web Development?</h2>
+              <p className="text-muted-foreground mt-4 leading-relaxed">
+                Your website is your most important digital asset. It's the first impression potential
+                customers have of your business. A professionally built website doesn't just look
+                good—it drives traffic, converts visitors, and grows your revenue.
+              </p>
+              <p className="text-muted-foreground mt-4 leading-relaxed">
+                DIY website builders promise quick results, but they come with hidden limitations:
+                poor performance, limited SEO, cookie-cutter designs, and vendor lock-in.
+                Professional development gives you a website that's truly yours—fast, unique, and
+                built to grow with your business.
+              </p>
+
+              <div className="mt-8">
+                <h3 className="text-lg font-semibold text-foreground mb-4">Signs You Need a Professional Website</h3>
+                <div className="space-y-3">
+                  {[
+                    "Your current site loads slowly or looks outdated",
+                    "You're losing customers to competitors with better sites",
+                    "Your website doesn't rank on Google",
+                    "You can't update content without developer help",
+                    "Your site doesn't work properly on mobile",
+                    "You need features that template builders can't provide",
+                  ].map((sign) => (
+                    <div key={sign} className="flex items-start gap-3">
+                      <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: WEB_DEV_COLOR }} />
+                      <span className="text-foreground">{sign}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <Card className="p-6">
+                <h3 className="text-lg font-bold text-foreground mb-4">Professional vs DIY Website Builders</h3>
+                <div className="overflow-hidden rounded-lg border border-border">
+                  <div className="grid grid-cols-3 bg-muted/50 px-4 py-2 text-sm font-semibold text-foreground border-b border-border">
+                    <span>Feature</span>
+                    <span className="text-center">Professional</span>
+                    <span className="text-center">DIY Builder</span>
+                  </div>
+                  {[
+                    { feature: "Unique custom design", pro: "✓", diy: "✗" },
+                    { feature: "Fast load times (<2s)", pro: "✓", diy: "⚠️" },
+                    { feature: "Full SEO control", pro: "✓", diy: "⚠️" },
+                    { feature: "Code ownership", pro: "✓", diy: "✗" },
+                    { feature: "Custom functionality", pro: "✓", diy: "✗" },
+                    { feature: "No monthly platform fees", pro: "✓", diy: "✗" },
+                    { feature: "Scales with business", pro: "✓", diy: "⚠️" },
+                    { feature: "Lower upfront cost", pro: "✗", diy: "✓" },
+                    { feature: "Quick to set up", pro: "✗", diy: "✓" },
+                    { feature: "Long-term value", pro: "✓", diy: "⚠️" },
+                  ].map((row) => (
+                    <div key={row.feature} className="grid grid-cols-3 px-4 py-2.5 text-sm border-b border-border last:border-0">
+                      <span className="text-foreground">{row.feature}</span>
+                      <span className={`text-center ${row.pro === "✓" ? "text-green-500" : "text-red-500"}`}>{row.pro}</span>
+                      <span className={`text-center ${row.diy === "✓" ? "text-green-500" : row.diy === "⚠️" ? "text-amber-500" : "text-red-500"}`}>{row.diy}</span>
+                    </div>
+                  ))}
+                </div>
+              </Card>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* WEB SERVICES */}
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold">Our Web Development Services</h2>
-            <p className="text-muted-foreground mt-3 text-lg">End-to-end solutions for every business need</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground">Our Web Development Services</h2>
+            <p className="text-muted-foreground mt-4">End-to-end solutions for every business need</p>
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
             variants={containerVariants}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
           >
-            {services.map((service) => (
-              <motion.div key={service.name} variants={itemVariants}>
-                <Card className="p-8 rounded-2xl h-full hover:shadow-2xl hover:-translate-y-2 hover:border-primary transition-all duration-300 group">
-                  <div
-                    className={`w-16 h-16 rounded-full bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-6`}
-                  >
-                    <service.icon className="w-7 h-7 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold">{service.name}</h3>
-                  <p className="text-muted-foreground mt-3 text-sm leading-relaxed">{service.description}</p>
-                  <ul className="mt-6 space-y-2">
-                    {service.features.map((f) => (
-                      <li key={f} className="flex items-center gap-2 text-sm">
-                        <CheckCircle2 className="w-4 h-4 text-blue-500 flex-shrink-0" />
-                        {f}
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="mt-6 flex gap-2 flex-wrap">
-                    {service.tech.map((t) => (
-                      <span key={t} className="bg-muted rounded-full px-3 py-1 text-xs">{t}</span>
-                    ))}
-                  </div>
-                  <Link
-                    href={service.link}
-                    className="mt-6 inline-flex items-center gap-1 text-blue-500 font-semibold text-sm hover:underline"
-                  >
-                    Explore {service.name.split(" ")[0]}
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </Card>
-              </motion.div>
-            ))}
+            {webServices.map((service) => {
+              const Icon = service.icon;
+              return (
+                <motion.div key={service.name} variants={itemVariants}>
+                  <Card className="p-6 h-full hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <div className={`w-14 h-14 rounded-full bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-4`}>
+                      <Icon className="w-7 h-7 text-white" />
+                    </div>
+                    <h3 className="text-xl font-bold text-foreground">{service.name}</h3>
+                    <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{service.description}</p>
+                    <div className="mt-4 space-y-1.5">
+                      {service.examples.map((ex) => (
+                        <div key={ex} className="flex items-center gap-2 text-sm text-foreground">
+                          <ArrowRight className="w-3 h-3 flex-shrink-0" style={{ color: WEB_DEV_COLOR }} />
+                          <span>{ex}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="flex flex-wrap gap-1.5 mt-4">
+                      {service.tech.map((t) => (
+                        <span key={t} className="text-[10px] px-2 py-0.5 rounded-full bg-muted border border-border text-muted-foreground">{t}</span>
+                      ))}
+                    </div>
+                  </Card>
+                </motion.div>
+              );
+            })}
           </motion.div>
         </div>
       </section>
 
       {/* CTA 1 */}
-      <CTASection
-        variant="gradient"
-        title="Not Sure Which Service You Need?"
-        description="Book a free consultation and we'll recommend the right solution for your business"
-        primaryCTA={{ text: "Get Free Advice", link: "/contact" }}
-        size="medium"
-      />
+      <div className="max-w-7xl mx-auto px-6">
+        <CTASection
+          variant="bordered"
+          title="Not Sure Which Service You Need?"
+          description="Book a free consultation and we'll recommend the right solution for your business"
+          primaryCTA={{ text: "Get Free Advice", link: "/contact" }}
+          size="medium"
+        />
+      </div>
 
-      {/* FEATURED WORK / PROJECT SHOWCASES */}
-      <section id="portfolio" className="py-20">
+      {/* INTERACTIVE WEB SHOWCASE */}
+      <section id="portfolio" className="py-20 bg-muted/50">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground">See What We Build</h2>
+            <p className="text-muted-foreground mt-4">Interactive previews of the types of websites we create</p>
+          </motion.div>
+
+          <div className="flex flex-wrap gap-2 justify-center mb-8">
+            {showcaseTabs.map((tab) => (
+              <Button
+                key={tab.id}
+                variant={activeShowcase === tab.id ? "default" : "outline"}
+                size="sm"
+                onClick={() => setActiveShowcase(tab.id)}
+                style={activeShowcase === tab.id ? { background: WEB_DEV_COLOR, borderColor: WEB_DEV_COLOR } : undefined}
+                className={activeShowcase === tab.id ? "text-white" : ""}
+              >
+                {tab.label}
+              </Button>
+            ))}
+          </div>
+
+          <motion.div
+            key={activeShowcase}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+            className="max-w-5xl mx-auto overflow-x-auto -mx-6 px-6 pb-4"
+          >
+            <div className="min-w-[640px]">
+              {activeShowcase === "ecommerce" && <EcommerceMockup />}
+              {activeShowcase === "saas" && <SaaSMockup />}
+              {activeShowcase === "corporate" && <CorporateMockup />}
+              {activeShowcase === "portfolio" && <PortfolioMockup />}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* INDUSTRIES */}
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold">Recent Web Development Projects</h2>
-            <p className="text-muted-foreground mt-3 text-lg">See what we've built for businesses like yours</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground">Industries We Build For</h2>
+            <p className="text-muted-foreground mt-4">Deep expertise across key sectors</p>
           </motion.div>
 
-          {/* PROJECT 1 - SaaS */}
           <motion.div
-            className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            variants={containerVariants}
+            initial="initial"
+            whileInView="animate"
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
           >
-            <BrowserFrame url="houseofdevelopers.co.uk/projecthub" glowColor="#3B82F6">
-              <SaaSProjectMockup />
-            </BrowserFrame>
-
-            <div>
-              <Badge className="bg-blue-500/10 text-blue-500 border-blue-500/20 mb-3">SaaS Web Application</Badge>
-              <h3 className="text-2xl md:text-3xl font-bold">ProjectHub - Team Management Platform</h3>
-              <p className="text-muted-foreground mt-3 leading-relaxed">
-                Complete project management SaaS built with Next.js and Node.js. Real-time updates, team collaboration, and advanced analytics.
-              </p>
-              <div className="grid grid-cols-2 gap-4 mt-6">
-                {[
-                  { value: "40ms", label: "Average page load" },
-                  { value: "99.9%", label: "Uptime SLA" },
-                  { value: "5,000+", label: "Active users" },
-                  { value: "2x", label: "Revenue after launch" },
-                ].map((r) => (
-                  <div key={r.label} className="bg-muted p-4 rounded-lg">
-                    <p className="text-xl font-bold text-blue-500">{r.value}</p>
-                    <p className="text-xs text-muted-foreground mt-0.5">{r.label}</p>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-6 flex gap-2 flex-wrap">
-                {["Next.js", "React", "Node.js", "PostgreSQL", "AWS", "Stripe"].map((t) => (
-                  <Badge key={t} variant="secondary" className="text-xs">{t}</Badge>
-                ))}
-              </div>
-              <p className="text-sm text-muted-foreground mt-4 flex items-center gap-1">
-                <Clock className="w-3.5 h-3.5" />
-                Delivered in 12 weeks
-              </p>
-            </div>
-          </motion.div>
-
-          {/* PROJECT 2 - E-Commerce (reversed) */}
-          <motion.div
-            className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="order-2 lg:order-1">
-              <Badge className="bg-green-500/10 text-green-500 border-green-500/20 mb-3">E-Commerce Platform</Badge>
-              <h3 className="text-2xl md:text-3xl font-bold">LuxeWear - Premium Fashion Store</h3>
-              <p className="text-muted-foreground mt-3 leading-relaxed">
-                Complete WooCommerce store with custom design, advanced filtering, and seamless Stripe checkout. Increased conversions by 156%.
-              </p>
-              <div className="grid grid-cols-2 gap-4 mt-6">
-                {[
-                  { value: "+156%", label: "Conversion increase" },
-                  { value: "£45K", label: "Revenue month 1" },
-                  { value: "2,000+", label: "Products listed" },
-                  { value: "1.2s", label: "Page load time" },
-                ].map((r) => (
-                  <div key={r.label} className="bg-muted p-4 rounded-lg">
-                    <p className="text-xl font-bold text-green-500">{r.value}</p>
-                    <p className="text-xs text-muted-foreground mt-0.5">{r.label}</p>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-6 flex gap-2 flex-wrap">
-                {["WordPress", "WooCommerce", "Stripe", "AWS CloudFront"].map((t) => (
-                  <Badge key={t} variant="secondary" className="text-xs">{t}</Badge>
-                ))}
-              </div>
-              <p className="text-sm text-muted-foreground mt-4 flex items-center gap-1">
-                <Clock className="w-3.5 h-3.5" />
-                Delivered in 8 weeks
-              </p>
-            </div>
-
-            <div className="order-1 lg:order-2">
-              <BrowserFrame url="houseofdevelopers.co.uk/luxewear" glowColor="#10B981">
-                <EcommerceProjectMockup />
-              </BrowserFrame>
-            </div>
-          </motion.div>
-
-          {/* PROJECT 3 - Law Firm */}
-          <motion.div
-            className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <BrowserFrame url="houseofdevelopers.co.uk/hartley-law" glowColor="#F59E0B">
-              <LawFirmProjectMockup />
-            </BrowserFrame>
-
-            <div>
-              <Badge className="bg-amber-500/10 text-amber-500 border-amber-500/20 mb-3">Corporate Website</Badge>
-              <h3 className="text-2xl md:text-3xl font-bold">Hartley & Associates - Law Firm Website</h3>
-              <p className="text-muted-foreground mt-3 leading-relaxed">
-                Professional WordPress website with custom design, case study system, attorney profiles, and integrated booking.
-              </p>
-              <div className="grid grid-cols-2 gap-4 mt-6">
-                {[
-                  { value: "+340%", label: "Organic traffic" },
-                  { value: "85", label: "Lighthouse score" },
-                  { value: "300+", label: "Monthly leads" },
-                  { value: "#1", label: "Google ranking" },
-                ].map((r) => (
-                  <div key={r.label} className="bg-muted p-4 rounded-lg">
-                    <p className="text-xl font-bold text-amber-500">{r.value}</p>
-                    <p className="text-xs text-muted-foreground mt-0.5">{r.label}</p>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-6 flex gap-2 flex-wrap">
-                {["WordPress", "Custom Theme", "MySQL", "Cloudflare"].map((t) => (
-                  <Badge key={t} variant="secondary" className="text-xs">{t}</Badge>
-                ))}
-              </div>
-              <p className="text-sm text-muted-foreground mt-4 flex items-center gap-1">
-                <Clock className="w-3.5 h-3.5" />
-                Delivered in 6 weeks
-              </p>
-            </div>
+            {industries.map((ind) => {
+              const Icon = ind.icon;
+              return (
+                <motion.div key={ind.name} variants={itemVariants}>
+                  <Card className="p-6 h-full hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <div className={`w-14 h-14 rounded-full bg-gradient-to-br ${ind.gradient} flex items-center justify-center mb-4`}>
+                      <Icon className="w-7 h-7 text-white" />
+                    </div>
+                    <h3 className="text-xl font-bold text-foreground">{ind.name}</h3>
+                    <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{ind.description}</p>
+                    <div className="mt-4 space-y-2">
+                      {ind.useCases.map((uc) => (
+                        <div key={uc} className="flex items-center gap-2 text-sm text-foreground">
+                          <ArrowRight className="w-3 h-3 flex-shrink-0" style={{ color: WEB_DEV_COLOR }} />
+                          <span>{uc}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </Card>
+                </motion.div>
+              );
+            })}
           </motion.div>
         </div>
       </section>
 
-      {/* CTA 2 */}
-      <CTASection
-        variant="bordered"
-        title="Ready to Build Something Great?"
-        description="Join 150+ businesses that trusted us to build their digital presence"
-        primaryCTA={{ text: "Start Your Project", link: "/contact" }}
-        secondaryCTA={{ text: "View All Services", link: "/services" }}
-        size="large"
-      />
-
-      {/* VALUE PROPOSITION */}
+      {/* WHY CHOOSE */}
       <section className="py-20 bg-muted/50">
         <div className="max-w-7xl mx-auto px-6">
           <ValueProposition
             title="Why Choose House of Developers"
             subtitle="What sets our web development apart"
             columns={3}
+            accentColor={WEB_DEV_COLOR}
             values={[
               { icon: Palette, title: "Design-First Approach", description: "Every project starts with UX research and wireframes before a single line of code is written" },
               { icon: Zap, title: "Performance Obsessed", description: "We target sub-2 second load times and 90+ Lighthouse scores on every project" },
@@ -1014,14 +1202,13 @@ export default function WebDevelopmentPage() {
               { icon: GitBranch, title: "Agile Process", description: "Weekly updates, transparent progress, and flexibility throughout development" },
               { icon: Award, title: "UK-Based Team", description: "All development done in-house by our UK team—no outsourcing, no surprises" },
             ]}
-            accentColor={WEB_DEV_COLOR}
           />
         </div>
       </section>
 
       {/* TECHNOLOGY STACK */}
       <section className="py-20">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6">
           <TechTabsSection
             title="Technologies We Build With"
             subtitle="Modern stack for modern web experiences"
@@ -1031,192 +1218,139 @@ export default function WebDevelopmentPage() {
         </div>
       </section>
 
-      {/* INDUSTRIES */}
-      <section className="py-20 bg-muted/50">
-        <div className="max-w-6xl mx-auto px-6">
-          <motion.div
-            className="text-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold">Industries We Serve</h2>
-            <p className="text-muted-foreground mt-3 text-lg">Deep expertise across key sectors</p>
-          </motion.div>
-
-          <motion.div
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6"
-            variants={containerVariants}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-          >
-            {industries.map((ind) => (
-              <motion.div key={ind.name} variants={itemVariants}>
-                <Card className="p-6 text-center hover:border-primary transition-colors duration-300 h-full">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center mx-auto mb-4">
-                    <ind.icon className="w-5 h-5 text-white" />
-                  </div>
-                  <p className="font-semibold text-sm">{ind.name}</p>
-                  <p className="text-xs text-muted-foreground mt-1">{ind.count}</p>
-                </Card>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
       {/* PROCESS */}
-      <section className="py-20">
-        <div className="max-w-5xl mx-auto px-6">
+      <section className="py-20 bg-muted/50">
+        <div className="max-w-7xl mx-auto px-6">
           <ZigzagTimeline
             title="Our Web Development Process"
             subtitle="A proven process delivering projects on time and on budget"
-            steps={processSteps}
+            steps={[
+              { icon: Search, title: "Discovery & Strategy", points: ["Deep-dive into your business goals and target audience", "Competitor analysis and market research", "Technical requirements and scope definition"] },
+              { icon: Palette, title: "Design & Prototyping", points: ["Wireframes and user experience mapping", "High-fidelity Figma designs for approval", "Interactive prototype before development begins"] },
+              { icon: Code2, title: "Development & Testing", points: ["Agile sprints with weekly progress updates", "Cross-browser and device testing throughout", "Performance and security audits before launch"] },
+              { icon: Rocket, title: "Launch & Growth", points: ["Smooth deployment with zero downtime", "SEO setup, analytics, and monitoring configured", "Ongoing support and continuous improvements"] },
+            ]}
             accentColor={WEB_DEV_COLOR}
           />
         </div>
       </section>
 
-      {/* MINI CASE STUDIES */}
-      <section className="py-20 bg-muted/50">
-        <div className="max-w-6xl mx-auto px-6">
+      {/* CTA 2 */}
+      <div className="max-w-7xl mx-auto px-6">
+        <CTASection
+          variant="gradient"
+          title="Ready to Build Something Great?"
+          description="Join 150+ businesses that trusted us to build their digital presence"
+          primaryCTA={{ text: "Start Your Project", link: "/contact" }}
+          secondaryCTA={{ text: "Call: +44 7429 917368", link: "tel:+447429917368" }}
+          size="large"
+        />
+      </div>
+
+      {/* CASE STUDIES */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-6">
           <motion.div
-            className="text-center mb-12"
+            className="text-center mb-16"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold">Results We've Delivered</h2>
-            <p className="text-muted-foreground mt-3 text-lg">Numbers that speak for themselves</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground">Web Development in Action</h2>
+            <p className="text-muted-foreground mt-4">Real websites built for real businesses</p>
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-3 gap-6"
             variants={containerVariants}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
           >
-            {[
-              {
-                gradientFrom: "from-blue-500",
-                gradientTo: "to-purple-500",
-                industry: "E-Commerce",
-                title: "Fashion Retailer",
-                challenge: "Outdated website with 0.8% conversion rate and 8-second load times",
-                results: [
-                  { label: "Conversion Rate", value: "0.8% → 2.9%" },
-                  { label: "Load Time", value: "8s → 1.2s" },
-                  { label: "Monthly Revenue", value: "+£28,000" },
-                  { label: "Organic Traffic", value: "+189%" },
-                ],
-                tech: "WooCommerce, AWS CloudFront",
-                duration: "8 weeks",
-              },
-              {
-                gradientFrom: "from-green-500",
-                gradientTo: "to-teal-500",
-                industry: "SaaS",
-                title: "Project Management Tool",
-                challenge: "MVP needed in 12 weeks for Series A fundraising",
-                results: [
-                  { label: "Launch", value: "On time, all features" },
-                  { label: "Load Time", value: "40ms average" },
-                  { label: "Users (Month 1)", value: "500+" },
-                  { label: "Series A", value: "Raised £2M" },
-                ],
-                tech: "Next.js, Node.js, PostgreSQL",
-                duration: "12 weeks",
-              },
-              {
-                gradientFrom: "from-purple-500",
-                gradientTo: "to-pink-500",
-                industry: "Professional Services",
-                title: "Law Firm",
-                challenge: "No digital presence, missing online leads",
-                results: [
-                  { label: "Google Rankings", value: "#1 for 12 terms" },
-                  { label: "Monthly Leads", value: "0 → 180+" },
-                  { label: "Lighthouse Score", value: "94/100" },
-                  { label: "Traffic Growth", value: "+340%" },
-                ],
-                tech: "WordPress, Custom Theme",
-                duration: "6 weeks",
-              },
-            ].map((cs) => (
-              <motion.div key={cs.title} variants={itemVariants}>
-                <Card className="overflow-hidden h-full">
-                  <div className={`h-1 bg-gradient-to-r ${cs.gradientFrom} ${cs.gradientTo}`} />
-                  <CardContent className="p-6">
-                    <Badge variant="secondary" className="text-xs mb-3">{cs.industry}</Badge>
-                    <h3 className="text-xl font-bold">{cs.title}</h3>
-                    <p className="text-sm text-muted-foreground mt-2">{cs.challenge}</p>
-                    <div className="mt-4 space-y-3">
-                      {cs.results.map((r) => (
-                        <div key={r.label} className="flex justify-between items-center text-sm">
-                          <span className="text-muted-foreground">{r.label}</span>
-                          <span className="font-bold text-green-500">{r.value}</span>
+            {caseStudies.map((study) => {
+              const Icon = study.icon;
+              return (
+                <motion.div key={study.title} variants={itemVariants}>
+                  <Card className="overflow-hidden h-full hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <div className={`h-48 bg-gradient-to-br ${study.gradient} flex flex-col items-center justify-center relative`}>
+                      <Icon className="w-12 h-12 text-white/80 mb-3" />
+                      <Badge className="bg-white/20 text-white border-0 backdrop-blur-sm">{study.industry}</Badge>
+                    </div>
+                    <div className="p-6">
+                      <h3 className="text-xl font-bold text-foreground">{study.title}</h3>
+                      <p className="text-sm text-muted-foreground mt-1">{study.industry}</p>
+                      <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{study.description}</p>
+
+                      <div className="mt-4">
+                        <p className="text-sm font-semibold text-foreground mb-2">Key Features Built</p>
+                        <div className="space-y-1.5">
+                          {study.features.map((f) => (
+                            <div key={f} className="text-sm text-muted-foreground">{f}</div>
+                          ))}
                         </div>
-                      ))}
+                      </div>
+
+                      <div className="flex flex-wrap gap-1.5 mt-4">
+                        {study.tech.map((t) => (
+                          <span key={t} className="text-[10px] px-2 py-0.5 rounded-full bg-muted border border-border text-muted-foreground">{t}</span>
+                        ))}
+                      </div>
+
+                      <div className="flex items-center gap-2 mt-4 text-sm text-muted-foreground">
+                        <Rocket className="w-4 h-4" style={{ color: WEB_DEV_COLOR }} />
+                        <span>Delivered in {study.timeline}</span>
+                      </div>
                     </div>
-                    <div className="mt-4 pt-4 border-t border-border">
-                      <p className="text-xs text-muted-foreground">
-                        <span className="font-medium">Tech:</span> {cs.tech}
-                      </p>
-                      <p className="text-xs text-muted-foreground mt-1 flex items-center gap-1">
-                        <Clock className="w-3 h-3" />
-                        {cs.duration}
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
+                  </Card>
+                </motion.div>
+              );
+            })}
           </motion.div>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="py-20">
+      <section className="py-20 bg-muted/50">
         <div className="max-w-4xl mx-auto px-6">
           <motion.div
             className="text-center mb-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold">Web Development FAQs</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground">Web Development FAQs</h2>
+            <p className="text-muted-foreground mt-4">Everything you need to know about our web development services</p>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.15 }}
-          >
-            <Accordion type="single" collapsible className="w-full">
-              {faqs.map((faq, i) => (
-                <AccordionItem key={i} value={`faq-${i}`}>
-                  <AccordionTrigger className="text-left">{faq.q}</AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground">{faq.a}</AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </motion.div>
+          <Accordion type="single" collapsible className="space-y-2">
+            {faqs.map((faq, i) => (
+              <AccordionItem key={i} value={`faq-${i}`} className="border border-border rounded-lg px-4 bg-card">
+                <AccordionTrigger className="text-left text-foreground font-medium">
+                  {faq.q}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground leading-relaxed">
+                  {faq.a}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </section>
 
       {/* CTA 3 */}
-      <CTASection
-        variant="gradient"
-        title="Let's Build Your Dream Website"
-        description="Free consultation, no obligation quote within 48 hours"
-        primaryCTA={{ text: "Book Free Consultation", link: "/contact" }}
-        secondaryCTA={{ text: "Call: +44 7429 917368", link: "tel:+447429917368" }}
-        showContactInfo={true}
-        size="large"
-      />
-    </>
+      <div className="max-w-7xl mx-auto px-6 pb-20">
+        <CTASection
+          variant="gradient"
+          title="Let's Build Your Dream Website"
+          description="Free consultation, no obligation quote within 48 hours"
+          primaryCTA={{ text: "Book Free Consultation", link: "/contact" }}
+          secondaryCTA={{ text: "View All Services", link: "/services" }}
+          showContactInfo={true}
+          size="large"
+        />
+      </div>
+    </div>
   );
 }
