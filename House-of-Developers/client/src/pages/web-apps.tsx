@@ -245,7 +245,7 @@ export default function WebAppsPage() {
                 ]}
               />
 
-              <span className="bg-gradient-to-r from-violet-600 to-purple-600 text-white px-4 py-2 rounded-full text-sm inline-block mb-4">
+              <span className="bg-gradient-to-r from-violet-600 to-purple-600 text-white px-4 py-2 rounded-full text-sm inline-block pt-[8px] pb-[8px] pl-[14px] pr-[14px] mt-[15px] mb-[15px]">
                 ⚡ Web Application Development
               </span>
 
