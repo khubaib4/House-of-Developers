@@ -124,6 +124,7 @@ shared/
 - `npm run dev` starts both Express backend and Vite frontend on port 5000
 
 ## Recent Changes
+- Redesigned Web Development hub page: Hero with 3 stacked browser mockups (SaaS, E-commerce, Corporate), gradient badge, feature pills, stats grid, 6 service cards with gradient icon circles and tech badges, 3 detailed project showcases (ProjectHub SaaS dashboard with sidebar/table/stats, LuxeWear fashion e-commerce with product grid, Hartley & Associates law firm with practice areas), ValueProposition 9 items, TechTabsSection 5 tabs (Frontend/Backend/CMS/Cloud/Design), Industries section 6 cards, ZigzagTimeline 4 phases, 3 mini case studies with results metrics, 10 FAQs, 3 CTAs. No pricing cards. Uses WEB_DEV_COLOR=#3B82F6.
 - Created reusable TechTabsSection component (`client/src/components/ui/TechTabsSection.tsx`). Interface: `{ title, subtitle?, tabs: Array<{id, label, items: Array<{icon: LucideIcon, name, description}>}>, accentColor? }`. Each tab has 8 items with Lucide icons. Replaced TechStackGrid and inline tabbed implementations across 13 pages: 5 CMS (Shopify, WordPress, Wix, WooCommerce, Webflow), 3 Mobile (Hybrid, iOS, Android), 2 Hire (Frontend, Backend), 3 AI (Agents, Chatbots, Services). TechStackGrid now deprecated (only used in component-demo.tsx).
 - Built AI Agents hub page: Hero with Agent Control Center mockup (3 active agents with progress bars, activity log), 6 agent type cards, 3 execution demos (Email/Analytics/Research with task timelines), ValueProposition 9 capabilities, multi-agent systems diagram, tabbed technologies (5 tabs), TaskFlow case study, pricing, ZigzagTimeline 4 phases, 12 FAQs, 3 CTAs. Uses AGENT_COLOR=#3B82F6.
 - Created reusable ZigzagTimeline component (alternating left/right cards, central vertical line with icons, mobile-responsive). Replaced ProcessTimeline across 20+ pages: AI Services, AI Chatbots, 6 CMS pages, 4 Mobile pages, 8 Hire Developer pages. ProcessTimeline now deprecated (only used in component-demo.tsx).
@@ -131,7 +132,7 @@ shared/
 - Redesigned AI Services hub page with AI Dashboard mockup, 5 service cards, 3 case studies, 3 interactive mockups, tabbed technologies section, ZigzagTimeline 5 phases, pricing section, 12 FAQs, 3 CTAs.
 
 ## Design Conventions
-- LAMP_COLOR: #8B5CF6 (purple), MEVN_COLOR: #42b883 (green), MEAN_COLOR: #DD0031 (red), MERN_COLOR: #00D8FF (cyan), FE_COLOR: #3B82F6 (blue), BE_COLOR: #10B981 (emerald), FS_COLOR: #6366F1 (indigo), CHATBOT_COLOR: #A855F7 (purple), AGENT_COLOR: #3B82F6 (blue)
+- LAMP_COLOR: #8B5CF6 (purple), MEVN_COLOR: #42b883 (green), MEAN_COLOR: #DD0031 (red), MERN_COLOR: #00D8FF (cyan), FE_COLOR: #3B82F6 (blue), BE_COLOR: #10B981 (emerald), FS_COLOR: #6366F1 (indigo), CHATBOT_COLOR: #A855F7 (purple), AGENT_COLOR: #3B82F6 (blue), WEB_DEV_COLOR: #3B82F6 (blue)
 - CTASection uses primaryCTA/secondaryCTA as {text, link} objects
 - ValueProposition uses `values` prop (not `items`)
 - PricingCard uses `packageName` (not `name`), `ctaText`/`ctaLink`

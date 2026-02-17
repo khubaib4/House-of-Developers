@@ -1,0 +1,790 @@
+Redesign the Web Development hub page for House of Developers.
+
+PAGE: /services/web-development/page.tsx
+
+A comprehensive, visually stunning hub page showcasing all web development services with beautiful mockups. NO pricing cards. Focus on quality, expertise, and compelling visuals.
+
+---
+
+HERO SECTION:
+
+Container: py-24, max-w-7xl mx-auto px-6
+
+Layout: Grid grid-cols-1 lg:grid-cols-2 gap-12 items-center
+
+Left Column:
+
+- Breadcrumb: "Home / Services / Web Development"
+  * text-sm text-muted-foreground, clickable, mb-6
+
+- Badge: "🌐 Web Development Services"
+  * bg-gradient (blue to purple), text-white, px-4 py-2, rounded-full, mb-4
+
+- H1: "Web Development Services"
+  * text-4xl md:text-5xl lg:text-6xl font-bold, mb-4
+
+- Tagline: "Websites & Applications That Drive Real Business Growth"
+  * text-xl md:text-2xl
+  * Gradient text from blue to purple
+  * font-semibold
+
+- Description (mt-6):
+  * text-xl text-muted-foreground leading-relaxed
+  * "From stunning marketing websites to complex SaaS platforms, we build web solutions that combine beautiful design with powerful functionality. Every project delivered on time, on budget, and built to scale."
+
+- Feature Pills (mt-6, flex gap-3 flex-wrap):
+  1. "Custom Design" (Palette icon)
+  2. "Mobile First" (Smartphone icon)
+  3. "SEO Optimised" (TrendingUp icon)
+  4. "Fast & Secure" (Zap icon)
+
+- Stats Grid (mt-8, grid-cols-4 gap-4):
+  Each stat (text-center, p-4, bg-card, border, rounded-xl):
+  - Number (text-3xl font-bold, gradient text blue to purple)
+  - Label (text-sm text-muted-foreground, mt-1)
+
+  1. "150+"
+     "Projects Delivered"
+
+  2. "98%"
+     "Client Satisfaction"
+
+  3. "8 Years"
+     "Experience"
+
+  4. "50ms"
+     "Avg Load Time"
+
+- CTA Buttons (mt-8, flex gap-4):
+  * Primary: "Start Your Project" → /contact
+    - bg-gradient (blue to purple), text-white
+    - h-14 px-8, rounded-xl, font-semibold
+  * Secondary: "View Our Work" → scroll to portfolio
+
+Right Column:
+
+- Multi-Layer Website Showcase Mockup:
+
+  Create stacked browser mockups showing 3 different sites:
+
+  BROWSER FRAME 1 (front, center, full width):
+  * Shadow: 2xl with blue glow
+  * URL: "saas-platform.com"
+  * Inside: Modern SaaS dashboard
+    - Dark navigation bar with logo
+    - Hero: "Grow Your Business" headline
+    - Gradient background (blue to purple)
+    - Stats row: 3 metric cards
+    - Dashboard preview showing charts
+    - CTA buttons with gradient
+    - Professional, modern aesthetic
+
+  BROWSER FRAME 2 (behind-left, slightly rotated -6deg):
+  * Smaller scale (90%)
+  * URL: "fashion-store.com"
+  * Inside: E-commerce storefront
+    - Clean white header
+    - Product grid (4 items)
+    - Sale badges
+    - Professional retail design
+
+  BROWSER FRAME 3 (behind-right, slightly rotated +6deg):
+  * Smaller scale (90%)
+  * URL: "law-firm.co.uk"
+  * Inside: Corporate website
+    - Navy/professional colors
+    - Service cards
+    - Trust indicators
+    - Professional aesthetic
+
+  Floating badges around mockups:
+  * "Next.js & React" (top-left)
+  * "99.9% Uptime" (top-right)
+  * "Mobile Responsive" (bottom-left)
+  * "SEO Optimised" (bottom-right)
+
+---
+
+SERVICES OVERVIEW SECTION:
+
+Container: py-20, bg-muted
+
+Header (centered):
+- H2: "Our Web Development Services"
+- Subtitle: "End-to-end solutions for every business need"
+- mb-16
+
+Services Grid: grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8, max-w-7xl mx-auto px-6
+
+6 SERVICE CARDS:
+
+CARD STRUCTURE (each):
+- Background: bg-card with border
+- Padding: p-8
+- Rounded: rounded-2xl
+- Hover: shadow-2xl, -translateY-2, border-primary
+- Transition: all 300ms
+
+Each card:
+1. Icon container (gradient circle, w-16 h-16, mb-6)
+2. Service name (text-2xl font-bold)
+3. Description (text-muted-foreground, mt-3, text-sm leading-relaxed)
+4. Key features list (mt-6, space-y-2):
+   - 4 items with CheckCircle2 icons (primary color)
+   - text-sm
+5. Tech badges (mt-6, flex gap-2 flex-wrap):
+   - 3-4 small technology pills
+   - bg-muted, rounded-full, px-3 py-1, text-xs
+6. Explore link (mt-6):
+   - "Explore [Service] →" 
+   - text-primary, font-semibold, hover:underline
+   - ArrowRight icon inline
+
+THE 6 SERVICES:
+
+SERVICE 1: CUSTOM WEBSITE DEVELOPMENT
+- Icon: Globe (blue gradient: #3B82F6 to #6366F1)
+- Name: "Custom Website Development"
+- Description: "Bespoke websites built from scratch, tailored to your brand and business goals. Every pixel crafted for maximum impact and conversion."
+- Features:
+  ✓ Pixel-perfect custom design
+  ✓ Mobile-first responsive layout
+  ✓ Lightning-fast performance
+  ✓ SEO-optimised structure
+- Tech: React, Next.js, Tailwind CSS, TypeScript
+- Link: /services/web-development/custom-websites
+
+SERVICE 2: E-COMMERCE DEVELOPMENT
+- Icon: ShoppingBag (green gradient: #10B981 to #059669)
+- Name: "E-Commerce Development"
+- Description: "High-converting online stores built with modern technology. From product pages to checkout flows optimised for maximum sales."
+- Features:
+  ✓ Conversion-optimised checkout
+  ✓ Inventory management
+  ✓ Payment gateway integration
+  ✓ Mobile shopping experience
+- Tech: Shopify, WooCommerce, Stripe, Next.js
+- Link: /services/web-development/ecommerce
+
+SERVICE 3: CMS DEVELOPMENT
+- Icon: FileText (purple gradient: #8B5CF6 to #6366F1)
+- Name: "CMS Development"
+- Description: "Powerful content management systems that put you in control. Update your website anytime without touching a single line of code."
+- Features:
+  ✓ Easy content management
+  ✓ Custom admin panels
+  ✓ Multi-user roles
+  ✓ Media management
+- Tech: WordPress, Sanity, Contentful, Strapi
+- Link: /services/web-development/cms
+
+SERVICE 4: WEB APPLICATION DEVELOPMENT
+- Icon: Layers (orange gradient: #F59E0B to #EF4444)
+- Name: "Web Application Development"
+- Description: "Complex, feature-rich web applications that solve real business problems. Built with scalable architecture for long-term success."
+- Features:
+  ✓ Custom business logic
+  ✓ Real-time functionality
+  ✓ Third-party integrations
+  ✓ Scalable architecture
+- Tech: React, Node.js, PostgreSQL, AWS
+- Link: /services/web-development/web-applications
+
+SERVICE 5: LANDING PAGE DEVELOPMENT
+- Icon: Target (pink gradient: #EC4899 to #8B5CF6)
+- Name: "Landing Page Development"
+- Description: "High-converting landing pages designed to turn visitors into customers. A/B tested, optimised, and built for results."
+- Features:
+  ✓ Conversion rate optimised
+  ✓ A/B testing ready
+  ✓ Fast load times (<1s)
+  ✓ Lead capture forms
+- Tech: Next.js, React, Framer Motion, HubSpot
+- Link: /services/web-development/landing-pages
+
+SERVICE 6: WEBSITE REDESIGN
+- Icon: RefreshCw (cyan gradient: #06B6D4 to #3B82F6)
+- Name: "Website Redesign"
+- Description: "Transform your outdated website into a modern, high-performing digital asset. Keep your brand, lose the old design."
+- Features:
+  ✓ Modern design transformation
+  ✓ Performance improvements
+  ✓ SEO preservation & boost
+  ✓ Content migration
+- Tech: React, Next.js, Figma, Lighthouse
+- Link: /services/web-development/redesign
+
+---
+
+FEATURED WORK MOCKUPS:
+
+Container: py-20
+
+Header (centered):
+- H2: "Recent Web Development Projects"
+- Subtitle: "See what we've built for businesses like yours"
+- mb-16
+
+Layout: max-w-7xl mx-auto px-6
+
+PROJECT SHOWCASE 1 (grid-cols-1 lg:grid-cols-2 gap-12 items-center):
+
+Left: Browser Mockup (SaaS Platform)
+
+Browser Frame (shadow-2xl, rounded-xl):
+* Header bar (dark bg):
+  - 3 dots (red, yellow, green)
+  - URL: "app.projecthub.io"
+  - Reload icon
+
+* Inside - SaaS Dashboard:
+  
+  Sidebar (left, w-48, dark bg):
+  * Logo: "ProjectHub" with icon
+  * Nav items with icons:
+    - Dashboard (home icon) - ACTIVE
+    - Projects (folder icon)
+    - Team (users icon)
+    - Analytics (bar chart)
+    - Settings (settings icon)
+  * User avatar bottom
+
+  Main Content (flex-1, bg-gray-50 dark:bg-gray-900):
+  
+  Top Bar:
+  * "Good morning, Sarah 👋"
+  * Date: "Tuesday, Feb 17"
+  * New Project button (blue gradient)
+  * Notification bell
+  
+  Stats Row (grid-cols-4 gap-4):
+  1. "Active Projects: 12" (blue card)
+  2. "Tasks Due: 8" (orange card)
+  3. "Team Members: 24" (green card)
+  4. "On Track: 92%" (purple card)
+  
+  Projects Table:
+  * 4 rows showing project names
+  * Progress bars (different colors)
+  * Status badges (On Track, At Risk, Complete)
+  * Team avatars
+  * Clean table design
+
+Right: Project Details:
+* Tag: "SaaS Web Application"
+* H3: "ProjectHub - Team Management Platform"
+* Description: "Complete project management SaaS built with Next.js and Node.js. Real-time updates, team collaboration, and advanced analytics."
+
+* Results Grid (grid-cols-2 gap-4, mt-6):
+  1. bg-muted, p-4, rounded-lg:
+     - "40ms" (large, bold, blue)
+     - "Average page load"
+  2. "99.9%" - "Uptime SLA"
+  3. "5,000+" - "Active users"
+  4. "2x" - "Revenue after launch"
+
+* Tech Stack (mt-6, flex gap-2 flex-wrap):
+  Badges: Next.js, React, Node.js, PostgreSQL, AWS, Stripe
+
+* Timeline (mt-4, text-sm text-muted-foreground):
+  * "Delivered in 12 weeks"
+
+---
+
+PROJECT SHOWCASE 2 (grid-cols-1 lg:grid-cols-2 gap-12 items-center, reverse on desktop):
+
+Right: Browser Mockup (E-Commerce)
+
+Browser Frame:
+* URL: "luxewear.co.uk"
+
+* Inside - Fashion E-Commerce:
+
+  Header (white, shadow):
+  * Logo: "LuxeWear" (elegant font)
+  * Nav: Women, Men, Sale, About
+  * Cart icon (3 items)
+  * Search icon
+
+  Hero Section:
+  * Split layout
+  * Left: Product image (model wearing dress)
+  * Right:
+    - "New Collection" badge
+    - "Spring / Summer 2024" (large heading)
+    - Description text
+    - "Shop Now" button (black)
+    - "View Lookbook" link
+
+  Product Grid (below hero):
+  * 4 product cards:
+    - Image (aspect-[3/4])
+    - Brand name (text-xs, gray)
+    - Product name (font-semibold)
+    - Price (£89.00)
+    - Quick add button on hover
+  * Clean, minimal design
+  * Hover effects visible
+
+Left: Project Details:
+* Tag: "E-Commerce Platform"
+* H3: "LuxeWear - Premium Fashion Store"
+* Description: "Complete WooCommerce store with custom design, advanced filtering, and seamless Stripe checkout. Increased conversions by 156%."
+
+* Results Grid:
+  1. "+156%" - "Conversion increase"
+  2. "£45K" - "Revenue month 1"
+  3. "2,000+" - "Products listed"
+  4. "1.2s" - "Page load time"
+
+* Tech Stack: WordPress, WooCommerce, Stripe, AWS CloudFront
+
+* Timeline: "Delivered in 8 weeks"
+
+---
+
+PROJECT SHOWCASE 3 (same as 1, left image right text):
+
+Left: Browser Mockup (Corporate Website)
+
+Browser Frame:
+* URL: "hartley-law.co.uk"
+
+* Inside - Law Firm Website:
+
+  Header (navy blue, white text):
+  * Logo: "Hartley & Associates"
+  * Nav: Practice Areas, Attorneys, About, Contact
+  * "Book Consultation" button (gold/amber)
+
+  Hero Section:
+  * Background: Professional courthouse image
+  * Dark overlay
+  * "Experienced Legal Counsel" (white, large)
+  * "Protecting Your Rights Since 1994"
+  * 2 CTA buttons
+
+  Trust Bar (below hero, white bg):
+  * 4 columns:
+    - "30+ Years Experience"
+    - "500+ Cases Won"
+    - "Legal 500 Ranked"
+    - "Free Consultation"
+
+  Practice Areas (grid-cols-3):
+  * 6 cards with icons:
+    - Corporate Law
+    - Employment Law
+    - Property Law
+    - Litigation
+    - Family Law
+    - Tax Law
+
+Right: Project Details:
+* Tag: "Corporate Website"
+* H3: "Hartley & Associates - Law Firm Website"
+* Description: "Professional WordPress website with custom design, case study system, attorney profiles, and integrated booking."
+
+* Results Grid:
+  1. "+340%" - "Organic traffic"
+  2. "85" - "Lighthouse score"
+  3. "300+" - "Monthly leads"
+  4. "#1" - "Google ranking"
+
+* Tech Stack: WordPress, Custom Theme, MySQL, Cloudflare
+
+* Timeline: "Delivered in 6 weeks"
+
+---
+
+WHAT MAKES US DIFFERENT:
+
+Container: py-20, bg-muted
+
+Use ValueProposition component:
+
+- Title: "Why Choose House of Developers"
+- Subtitle: "What sets our web development apart"
+- Columns: 3
+
+9 Values:
+
+1. Icon: Palette, Title: "Design-First Approach", Description: "Every project starts with UX research and wireframes before a single line of code is written"
+2. Icon: Zap, Title: "Performance Obsessed", Description: "We target sub-2 second load times and 90+ Lighthouse scores on every project"
+3. Icon: Smartphone, Title: "Mobile-First Always", Description: "Designed for mobile first, then scaled up—because 60% of traffic is mobile"
+4. Icon: TrendingUp, Title: "Built for SEO", Description: "Clean code structure, semantic HTML, Core Web Vitals optimised from day one"
+5. Icon: Lock, Title: "Security Built-In", Description: "SSL, input validation, OWASP compliance—security is never an afterthought"
+6. Icon: Headphones, Title: "Ongoing Support", Description: "We don't disappear after launch—dedicated support and maintenance packages"
+7. Icon: Code2, Title: "Clean Code", Description: "Documented, maintainable code your team can understand and extend"
+8. Icon: GitBranch, Title: "Agile Process", Description: "Weekly updates, transparent progress, and flexibility throughout development"
+9. Icon: Award, Title: "UK-Based Team", Description: "All development done in-house by our UK team—no outsourcing, no surprises"
+
+---
+
+TECHNOLOGY STACK (TABBED):
+
+Container: py-20
+
+Header (centered):
+- H2: "Technologies We Build With"
+- Subtitle: "Modern stack for modern web experiences"
+- mb-12
+
+Layout: max-w-6xl mx-auto px-6
+
+Tabbed Interface:
+
+TABS:
+1. "Frontend" (active by default)
+2. "Backend"
+3. "CMS & E-Commerce"
+4. "Cloud & DevOps"
+5. "Design & Tools"
+
+PANEL 1 - FRONTEND:
+Grid: grid-cols-2 md:grid-cols-4 gap-6
+
+Each card (bg-card, border, rounded-lg, p-4, text-center):
+- Icon: size 40, primary color, mb-3
+- Name: font-semibold, text-sm
+- Description: text-xs, text-muted-foreground
+
+8 technologies:
+1. Code2 icon: "React" - "UI library"
+2. ArrowRight icon: "Next.js" - "Full-stack React"
+3. Layers icon: "Vue.js" - "Progressive framework"
+4. Triangle icon: "Angular" - "Enterprise framework"
+5. FileCode icon: "TypeScript" - "Type-safe JS"
+6. Paintbrush icon: "Tailwind CSS" - "Utility-first CSS"
+7. Zap icon: "Vite" - "Fast build tool"
+8. Smartphone icon: "React Native" - "Mobile apps"
+
+PANEL 2 - BACKEND:
+8 technologies:
+1. Server icon: "Node.js" - "JS runtime"
+2. Zap icon: "Express.js" - "Web framework"
+3. Code2 icon: "Python" - "Versatile language"
+4. Server icon: "PHP" - "Server language"
+5. Database icon: "PostgreSQL" - "SQL database"
+6. Database icon: "MongoDB" - "NoSQL database"
+7. Zap icon: "Redis" - "Caching layer"
+8. Layers icon: "GraphQL" - "API query language"
+
+PANEL 3 - CMS & E-COMMERCE:
+8 technologies:
+1. FileText icon: "WordPress" - "Most popular CMS"
+2. ShoppingBag icon: "Shopify" - "E-commerce platform"
+3. ShoppingCart icon: "WooCommerce" - "WordPress store"
+4. Database icon: "Sanity" - "Headless CMS"
+5. FileCode icon: "Contentful" - "Content platform"
+6. Package icon: "Strapi" - "Open-source CMS"
+7. CreditCard icon: "Stripe" - "Payment processing"
+8. DollarSign icon: "PayPal" - "Payment gateway"
+
+PANEL 4 - CLOUD & DEVOPS:
+8 technologies:
+1. Cloud icon: "AWS" - "Cloud platform"
+2. Cloud icon: "Vercel" - "Frontend hosting"
+3. Globe icon: "Cloudflare" - "CDN & security"
+4. Package icon: "Docker" - "Containerisation"
+5. GitBranch icon: "GitHub" - "Version control"
+6. Zap icon: "CI/CD" - "Auto deployment"
+7. Activity icon: "Monitoring" - "Uptime tracking"
+8. Shield icon: "SSL/TLS" - "Security certs"
+
+PANEL 5 - DESIGN & TOOLS:
+8 technologies:
+1. Palette icon: "Figma" - "UI/UX design"
+2. Image icon: "Adobe XD" - "Prototyping"
+3. BarChart icon: "Analytics" - "User insights"
+4. Search icon: "SEO Tools" - "Search optimisation"
+5. TestTube icon: "Jest" - "Unit testing"
+6. CheckCircle icon: "Cypress" - "E2E testing"
+7. Zap icon: "Lighthouse" - "Performance"
+8. Activity icon: "Hotjar" - "User behaviour"
+
+Implementation:
+- React useState for active tab
+- Smooth fade transition between panels
+- Mobile: horizontal scroll on tabs
+- First tab active by default
+
+---
+
+INDUSTRIES WE SERVE:
+
+Container: py-20, bg-muted
+
+Header (centered):
+- H2: "Industries We Serve"
+- Subtitle: "Deep expertise across key sectors"
+- mb-12
+
+Grid: grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6, max-w-6xl mx-auto px-6
+
+6 Industry Cards:
+
+Each card (p-6, bg-card, border, rounded-xl, text-center, hover:border-primary):
+- Icon (primary gradient circle, size 48, mb-4)
+- Industry name (font-semibold, text-sm)
+- Project count (text-xs, text-muted-foreground)
+
+1. Icon: ShoppingBag - "E-Commerce" - "35+ projects"
+2. Icon: Stethoscope - "Healthcare" - "12+ projects"
+3. Icon: Building - "Professional Services" - "28+ projects"
+4. Icon: GraduationCap - "Education" - "15+ projects"
+5. Icon: Utensils - "Hospitality" - "20+ projects"
+6. Icon: Home - "Real Estate" - "18+ projects"
+
+---
+
+PROCESS SECTION:
+
+Container: py-20
+
+Use ZigzagTimeline component:
+
+Import statements:
+```javascript
+import { ZigzagTimeline } from "@/components/ui/ZigzagTimeline";
+import { 
+  Search, 
+  Palette, 
+  Code2, 
+  Rocket 
+} from "lucide-react";
+```
+
+Accent Color Constant:
+```javascript
+const WEB_DEV_COLOR = "#3B82F6"; // Blue for web development
+```
+
+Process Steps Array:
+```javascript
+const processSteps = [
+  {
+    icon: Search,
+    title: "Discovery & Strategy",
+    points: [
+      "Deep-dive into your business goals and target audience",
+      "Competitor analysis and market research",
+      "Technical requirements and scope definition"
+    ]
+  },
+  {
+    icon: Palette,
+    title: "Design & Prototyping",
+    points: [
+      "Wireframes and user experience mapping",
+      "High-fidelity Figma designs for approval",
+      "Interactive prototype before development begins"
+    ]
+  },
+  {
+    icon: Code2,
+    title: "Development & Testing",
+    points: [
+      "Agile sprints with weekly progress updates",
+      "Cross-browser and device testing throughout",
+      "Performance and security audits before launch"
+    ]
+  },
+  {
+    icon: Rocket,
+    title: "Launch & Growth",
+    points: [
+      "Smooth deployment with zero downtime",
+      "SEO setup, analytics, and monitoring configured",
+      "Ongoing support and continuous improvements"
+    ]
+  }
+];
+```
+
+Component Usage:
+```javascript
+<ZigzagTimeline
+  title="Our Web Development Process"
+  subtitle="A proven process delivering projects on time and on budget"
+  steps={processSteps}
+  accentColor={WEB_DEV_COLOR}
+/>
+```
+
+---
+
+MINI CASE STUDIES:
+
+Container: py-20, bg-muted
+
+Header (centered):
+- H2: "Results We've Delivered"
+- Subtitle: "Numbers that speak for themselves"
+- mb-12
+
+Grid: grid-cols-1 md:grid-cols-3 gap-8, max-w-6xl mx-auto px-6
+
+3 MINI CASE STUDIES:
+
+CASE 1 (bg-card, border, rounded-2xl, p-6):
+- Gradient top border (blue to purple, h-1)
+- Industry badge: "E-Commerce"
+- Title: "Fashion Retailer"
+- Challenge text (text-sm): "Outdated website with 0.8% conversion rate and 8-second load times"
+- Results (mt-4, space-y-3):
+  * Metric row (flex justify-between):
+    - Label: "Conversion Rate"
+    - Before → After: "0.8% → 2.9%" (green, font-bold)
+  * "Load Time: 8s → 1.2s" 
+  * "Monthly Revenue: +£28,000"
+  * "Organic Traffic: +189%"
+- Tech: WooCommerce, AWS CloudFront
+- Duration: "8 weeks"
+
+CASE 2:
+- Gradient: green to teal
+- Industry: "SaaS"
+- Title: "Project Management Tool"
+- Challenge: "MVP needed in 12 weeks for Series A fundraising"
+- Results:
+  * "Launch: On time, all features"
+  * "Load Time: 40ms average"
+  * "Users (Month 1): 500+"
+  * "Series A: Raised £2M"
+- Tech: Next.js, Node.js, PostgreSQL
+- Duration: "12 weeks"
+
+CASE 3:
+- Gradient: purple to pink
+- Industry: "Professional Services"
+- Title: "Law Firm"
+- Challenge: "No digital presence, missing online leads"
+- Results:
+  * "Google Rankings: #1 for 12 terms"
+  * "Monthly Leads: 0 → 180+"
+  * "Lighthouse Score: 94/100"
+  * "Traffic Growth: +340%"
+- Tech: WordPress, Custom Theme
+- Duration: "6 weeks"
+
+---
+
+FAQ SECTION:
+
+Container: py-20, max-w-4xl mx-auto px-6
+
+Header: "Web Development FAQs"
+
+10 Questions (Accordion):
+
+Q1: "How long does a website take to build?"
+A: "Timelines vary by project type. A landing page takes 1-2 weeks, a business website 4-6 weeks, an e-commerce store 6-10 weeks, and a complex web application 12-20 weeks. We provide a detailed project timeline after discovery. We always deliver on schedule."
+
+Q2: "What's included in a website project?"
+A: "Every project includes: UX research and wireframes, custom design (Figma), responsive development, cross-browser testing, SEO setup (meta tags, sitemap, robots.txt), Google Analytics, performance optimisation, SSL certificate, and 30-day post-launch support."
+
+Q3: "Do you work with existing brands or create new ones?"
+A: "Both! If you have a brand, we design within it. If you need branding, our design team can create logos, colour palettes, and brand guidelines as part of or alongside the web project."
+
+Q4: "Will my website work on mobile?"
+A: "Absolutely. We design mobile-first—starting with the smallest screen and scaling up. Every website is tested on iOS and Android phones, tablets, and desktops. We test on real devices, not just browser simulations."
+
+Q5: "Can I update the website myself?"
+A: "Yes! We build on user-friendly CMS platforms (WordPress, Sanity) so you can update content, add blog posts, change images, and manage products without touching code. We provide training and documentation."
+
+Q6: "Do you provide hosting?"
+A: "We can recommend and set up hosting, but you own it directly (no lock-in). We typically use AWS, Vercel, or DigitalOcean depending on your needs. We help you understand costs and manage the setup."
+
+Q7: "What about SEO?"
+A: "Every website is built with SEO best practices: semantic HTML, fast load times, Core Web Vitals optimisation, meta tags, Open Graph, structured data, sitemaps, and clean URL structure. We don't do ongoing SEO campaigns but build the perfect foundation."
+
+Q8: "How do you handle revisions?"
+A: "Our process includes structured feedback rounds: 2 design revision rounds and 1 development revision round. We use Figma for design feedback (comment directly on designs) and maintain clear communication throughout."
+
+Q9: "Will my website be secure?"
+A: "Security is built in from day one: SSL certificates, input validation, SQL injection prevention, regular updates, secure authentication, GDPR-compliant cookie handling, and OWASP guidelines. We never cut corners on security."
+
+Q10: "What happens after launch?"
+A: "Every project includes 30 days of post-launch support (bug fixes, tweaks). After that, we offer maintenance packages covering updates, backups, monitoring, and ongoing development. We're a long-term partner, not a one-time vendor."
+
+---
+
+CTA SECTIONS:
+
+Add 3 CTAs throughout:
+
+CTA 1 (After Services Overview):
+- Variant: 'gradient'
+- Title: "Not Sure Which Service You Need?"
+- Description: "Book a free consultation and we'll recommend the right solution for your business"
+- PrimaryCTA: "Get Free Advice" → /contact
+- Size: 'medium'
+
+CTA 2 (After Project Showcases):
+- Variant: 'bordered'
+- Title: "Ready to Build Something Great?"
+- Description: "Join 150+ businesses that trusted us to build their digital presence"
+- PrimaryCTA: "Start Your Project" → /contact
+- SecondaryCTA: "View All Services" → scroll to services
+- Size: 'large'
+
+CTA 3 (Final, After FAQ):
+- Variant: 'gradient'
+- Title: "Let's Build Your Dream Website"
+- Description: "Free consultation, no obligation quote within 48 hours"
+- PrimaryCTA: "Book Free Consultation" → /contact
+- SecondaryCTA: "Call: +44 7429 917368" → tel link
+- ShowContactInfo: true
+- Size: 'large'
+
+---
+
+GLOBAL REQUIREMENTS:
+
+1. SEO:
+   - Meta title: "Web Development Services UK | Custom Websites & Web Apps | House of Developers"
+   - Meta description: "Expert web development services. Custom websites, e-commerce, web apps, CMS. 150+ projects delivered. Free consultation."
+   - Schema: Service, Organization, FAQPage, BreadcrumbList
+
+2. NO PRICING CARDS: Remove all pricing. Focus on quality and results.
+
+3. MOCKUPS:
+   - Hero: 3 stacked browser frames (SaaS, E-commerce, Corporate)
+   - Project Showcase 1: SaaS dashboard (dark, modern)
+   - Project Showcase 2: Fashion e-commerce (clean, minimal)
+   - Project Showcase 3: Law firm (professional, navy)
+   - All mockups: realistic UI, proper colors, real content
+
+4. ZIGZAGTIMELINE:
+   - 4 steps: Discovery, Design, Development, Launch
+   - Accent color: #3B82F6 (blue)
+   - 3 bullet points per step
+   - Framer Motion animations
+
+5. TABBED TECH STACK:
+   - 5 tabs: Frontend, Backend, CMS & E-Commerce, Cloud & DevOps, Design & Tools
+   - 8 items per tab
+   - Smooth transitions
+
+6. COMPONENTS:
+   - ZigzagTimeline ✅
+   - ValueProposition ✅
+   - TechStackGrid (tabbed version) ✅
+   - CTASection (×3) ✅
+
+7. RESPONSIVE: Mobile-first throughout
+
+8. DARK/LIGHT MODE: All mockups adapt
+
+9. ANIMATIONS:
+   - Hero mockups: subtle float animation
+   - Service cards: hover lift effect
+   - Stats: count-up on scroll
+   - Browser frames: subtle shadow on hover
+
+10. COLOR THEME: Blue to purple gradient throughout
+
+11. NO PRICING: Zero pricing cards anywhere on page
+
+Build a stunning, comprehensive web development hub page that showcases expertise through beautiful project mockups, real results, and clear service categorisation.
