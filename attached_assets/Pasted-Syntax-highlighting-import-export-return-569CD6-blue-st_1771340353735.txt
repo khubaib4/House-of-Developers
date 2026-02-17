@@ -1,0 +1,1189 @@
+Syntax highlighting:
+* import/export/return: #569CD6 (blue)
+* strings: #CE9178 (orange)  
+* components: #4EC9B0 (teal)
+* props: #9CDCFE (light blue)
+* comments: #6A9955 (green)
+
+Animated cursor (blinking, absolute, after last line):
+* 2px wide, 14px tall, bg-white, animate-pulse
+
+Typing indicator at bottom:
+* "Building your application..." 
+* text-[#7C3AED], text-xs, mt-4
+* Animated dots ●●●
+
+Status bar (absolute bottom, bg-[#007ACC], 
+text-white, text-xs, px-3 py-1, flex justify-between):
+* Left: "TypeScript React"
+* Right: "Building... ▶"
+
+DIVIDING ARROW (absolute center, z-10):
+* Circle: bg-violet-600, size 40, 
+  flex items-center justify-center
+* Icon: ArrowRight (white, size 20)
+* Subtle glow: shadow-lg shadow-violet-500/50
+* Animate: subtle pulse
+
+RIGHT HALF - Live UI Preview:
+* Container: absolute right-0 top-0 w-1/2 h-full
+* bg-card, border-l border-violet-500/30, 
+  rounded-r-2xl, overflow-hidden
+
+Mini Browser Bar (bg-muted, p-2, flex items-center gap-2):
+* 3 dots
+* URL: "houseofdevelopers.co.uk/projects/appbuilder"
+* "LIVE" badge (bg-green-500, text-white, text-xs, px-2 rounded)
+
+App Preview (p-3, space-y-2):
+
+Animate elements fading in sequentially 
+(after code lines appear, UI builds):
+
+ELEMENT 1 - App Header (fades in first):
+* "AppDash" logo + nav items + avatar
+* Simple top bar, dark bg, h-8
+
+ELEMENT 2 - Stats Row (fades in second):
+* 3 mini stat cards (grid-cols-3 gap-2):
+  - "£24.5K" Revenue
+  - "1,247" Users  
+  - "94%" Uptime
+* Cards: bg-violet-500/10, border-violet-500/20, 
+  rounded, p-2, text-center, text-xs
+
+ELEMENT 3 - Chart Area (fades in third):
+* "Live Analytics" label (text-xs, font-semibold)
+* Chart visualization (h-24, bg-muted, rounded):
+  - SVG line chart with violet gradient fill
+  - Multiple data points
+  - Smooth curve line in violet
+
+ELEMENT 4 - User Table (fades in last):
+* "Active Users" label (text-xs, font-semibold)
+* 3 rows (text-xs):
+  - Avatar circle + Name + Role + Status badge
+  - Status: Online (green), Away (yellow), Active (violet)
+
+BUILD COMPLETE indicator (appears after all elements):
+* Bottom bar: bg-violet-500/10, text-violet-600
+* "✓ Application built successfully" text-xs
+
+Floating Annotations (around whole mockup, 
+animate in after build completes):
+* "React + TypeScript" (top-left, outside)
+* "Real-Time Updates" (top-right, outside)
+* "Production Ready" (bottom-left, outside)
+* "Fully Scalable" (bottom-right, outside)
+
+Each annotation:
+* bg-card, border, rounded-full, px-3 py-1, text-xs
+* Subtle shadow
+* Framer Motion fade-in with slight upward movement
+
+---
+
+WHAT ARE WEB APPLICATIONS SECTION:
+
+Container: py-20, bg-muted, max-w-6xl mx-auto px-6
+
+Header (centered, mb-12):
+- H2: "Web Apps vs Websites"
+- Subtitle: "Understanding what you actually need"
+
+Layout: grid-cols-1 lg:grid-cols-2 gap-12 items-start
+
+Left Column - Explanation:
+
+Text (text-lg leading-relaxed text-muted-foreground):
+"A website presents information. A web application does 
+work. If users log in, create data, interact with a system,
+or automate a process—you need a web application, not just 
+a website."
+
+Text (mt-4):
+"Modern web applications run entirely in the browser, work 
+across every device, and can rival desktop software in 
+power and speed. They're faster to build than native apps, 
+easier to update, and accessible from anywhere."
+
+When You Need a Web App (mt-8):
+* Heading: "You Need a Web App When..." (font-semibold, mb-4)
+* List (space-y-3):
+  Each (flex gap-3, items-start):
+  - CheckCircle2 icon (violet, size 20)
+  - Text (text-sm)
+
+  1. "Users need to log in and have personal data"
+  2. "You want to automate a business process"
+  3. "Multiple people collaborate on shared data"
+  4. "You need real-time updates or notifications"
+  5. "You're building a product to sell to customers"
+  6. "Data needs to be stored, processed, or analysed"
+
+Right Column - Comparison Table:
+
+Card (bg-card, border, rounded-2xl, p-6):
+Heading: "Website vs Web Application" (font-semibold, mb-6, text-center)
+
+Table (w-full, text-sm):
+Header row (bg-muted, rounded-t-lg):
+* Feature | Website | Web App
+
+Rows (alternating bg, py-3, px-4):
+1. "User authentication" | ✗ | ✓ (violet)
+2. "Stores user data" | ✗ | ✓
+3. "Processes information" | ✗ | ✓
+4. "Real-time updates" | ✗ | ✓
+5. "Role-based access" | ✗ | ✓
+6. "Automates workflows" | ✗ | ✓
+7. "Multi-user collaboration" | ✗ | ✓
+8. "Displays information" | ✓ | ✓
+
+✓ = CheckCircle2 (green-500)
+✗ = XCircle (red-400/60, muted)
+
+Note (text-xs text-muted-foreground, text-center, mt-4):
+"Not sure which you need? Book a free consultation."
+
+---
+
+TYPES OF WEB APPLICATIONS WE BUILD:
+
+Container: py-20
+
+Header (centered):
+- H2: "Web Applications We Build"
+- Subtitle: "Custom solutions for every business challenge"
+- mb-16
+
+Grid: grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8, 
+      max-w-7xl mx-auto px-6
+
+6 SOLUTION TYPE CARDS:
+
+Each card:
+- bg-card, border, rounded-2xl, p-8
+- Hover: shadow-2xl, -translateY-2, 
+         border-violet-500/50 transition-all 300ms
+- Top accent line: h-1, gradient violet to purple, 
+                   rounded-t-2xl (full width, absolute top)
+
+Structure:
+1. Icon container (violet gradient circle, w-16 h-16, mb-6)
+2. Name (text-xl font-bold)
+3. Description (text-sm text-muted-foreground, mt-3)
+4. Real Examples (mt-6):
+   * "Real-World Examples" label 
+     (text-xs font-semibold uppercase text-muted-foreground, mb-2)
+   * 3 items: "→ [example]" (text-xs, space-y-1)
+5. Tech pills (mt-6, flex gap-2 flex-wrap, text-xs)
+
+THE 6 TYPES:
+
+TYPE 1: SAAS PLATFORMS
+- Icon: Cloud (violet gradient)
+- Name: "SaaS Platforms"
+- Description: "Multi-tenant software products with 
+  subscriptions, user management, and the infrastructure 
+  to serve thousands of paying customers."
+- Examples:
+  → HR management platform for SMEs
+  → Restaurant booking SaaS for chains  
+  → Compliance tracker for law firms
+- Tech: Next.js, Node.js, Stripe, PostgreSQL
+
+TYPE 2: BUSINESS PROCESS TOOLS
+- Icon: Workflow (indigo gradient)
+- Name: "Business Process Tools"
+- Description: "Replace spreadsheets and manual workflows 
+  with custom tools built precisely around how your 
+  business operates."
+- Examples:
+  → Quoting system for a roofing company
+  → Job scheduling tool for field engineers
+  → Resource planner for marketing agency
+- Tech: React, Node.js, PostgreSQL, AWS
+
+TYPE 3: CLIENT PORTALS
+- Icon: Users (purple gradient)
+- Name: "Client Portals"
+- Description: "Secure branded portals where clients 
+  access documents, track progress, raise requests, 
+  and communicate with your team."
+- Examples:
+  → Legal document sharing portal
+  → Accountancy client self-service portal
+  → Creative agency project portal
+- Tech: Next.js, Auth0, PostgreSQL, AWS S3
+
+TYPE 4: REAL-TIME DASHBOARDS
+- Icon: BarChart2 (blue gradient)
+- Name: "Real-Time Dashboards"
+- Description: "Live data visualisation platforms pulling 
+  from multiple sources, updating in real time, and 
+  delivering insights at a glance."
+- Examples:
+  → Operations dashboard for logistics company
+  → Live sales metrics for retail chain
+  → IoT sensor monitoring platform
+- Tech: React, WebSockets, PostgreSQL, Redis
+
+TYPE 5: MARKETPLACE PLATFORMS
+- Icon: Store (green gradient)
+- Name: "Marketplace Platforms"
+- Description: "Two-sided marketplace applications 
+  connecting buyers and sellers, with listings, 
+  transactions, reviews, and dispute management."
+- Examples:
+  → Freelance services marketplace
+  → B2B supplier procurement platform
+  → Local services booking marketplace
+- Tech: Next.js, Node.js, Stripe Connect, PostgreSQL
+
+TYPE 6: API-FIRST APPLICATIONS
+- Icon: Network (orange gradient)
+- Name: "API-First Applications"
+- Description: "Headless backends and API layers powering 
+  mobile apps, third-party integrations, and complex 
+  multi-platform ecosystems."
+- Examples:
+  → REST API powering iOS and Android apps
+  → Data aggregation service for BI tools
+  → Webhook integration hub for enterprise
+- Tech: Node.js, GraphQL, PostgreSQL, Docker
+
+---
+
+APP SHOWCASE (TABBED MOCKUPS):
+
+Container: py-20, bg-muted
+
+Header (centered):
+- H2: "Real Applications We've Built"
+- Subtitle: "Explore our work across different application types"
+- mb-12
+
+Layout: max-w-6xl mx-auto px-6
+
+Tab Navigation (flex gap-2, border-b, mb-10, overflow-x-auto):
+* Tab 1: "Client Portal" (active by default)
+* Tab 2: "SaaS Dashboard"
+* Active: border-b-2 border-violet-600, text-violet-600
+* Inactive: text-muted-foreground, hover:text-foreground
+* Each tab: px-6 py-3, font-semibold, text-sm,
+            cursor-pointer, transition-all 200ms
+
+---
+
+TAB 1: CLIENT PORTAL
+URL: houseofdevelopers.co.uk/projects/clientvault
+
+Browser Frame (shadow-2xl, rounded-xl, overflow-hidden, bg-white dark:bg-slate-900):
+
+Browser Bar (bg-muted, px-4 py-2, flex items-center gap-3):
+* 3 dots (red yellow green)
+* URL bar: "houseofdevelopers.co.uk/projects/clientvault"
+* Lock icon (gray)
+
+APP CONTENT:
+
+Top Navigation (white bg, border-b, px-8 py-4, 
+flex items-center justify-between):
+* Left: "ClientVault" logo (violet gradient text, font-bold)
+* Center Nav: Overview | Documents | Messages | Invoices | Support
+* Right: 
+  - Bell icon (notification dot)
+  - "Emma Wilson" text
+  - Avatar (violet gradient circle, "EW")
+
+Left Sidebar (w-56, border-r, p-4, bg-slate-50 dark:bg-slate-800):
+
+Client Info Card (mb-6):
+* "Hartley Legal" (font-semibold)
+* "Premium Client" (violet badge)
+* Avatar logo
+
+Menu Items (space-y-1):
+Each item (flex items-center gap-3, px-3 py-2, rounded-lg, text-sm):
+* LayoutDashboard "Overview" (active - violet bg, violet text)
+* FileText "Documents"
+* MessageSquare "Messages" (badge: "2")
+* Receipt "Invoices"
+* LifeBuoy "Support"
+
+Quick Stats (mt-6, space-y-2):
+* "4 Active Matters"
+* "12 Documents"
+* "£2,450 Outstanding"
+Each: text-xs, text-muted-foreground
+
+Main Content Area (flex-1, p-8, bg-white dark:bg-slate-900):
+
+Page Header (flex justify-between mb-8):
+* Left:
+  - "Good morning, Emma 👋" (text-2xl font-bold)
+  - "Here's your latest updates" (text-muted-foreground)
+* Right:
+  - "New Request" button (violet gradient)
+
+Summary Cards Row (grid-cols-4 gap-4, mb-8):
+
+Card 1 (bg-violet-50 dark:bg-violet-950/20, 
+border border-violet-200, p-4, rounded-xl):
+* Icon: FolderOpen (violet)
+* "Active Matters"
+* "4" (text-2xl font-bold)
+
+Card 2 (same style, blue tones):
+* Icon: FileText (blue)
+* "Pending Documents"  
+* "2"
+
+Card 3 (green tones):
+* Icon: CheckCircle (green)
+* "Completed This Month"
+* "6"
+
+Card 4 (amber tones):
+* Icon: Clock (amber)
+* "Awaiting Response"
+* "1"
+
+Two Column Layout (grid-cols-3 gap-6):
+
+Left (col-span-2) - Recent Activity:
+* Heading: "Recent Activity" (font-semibold mb-4)
+* Activity List (space-y-3):
+  Each item (flex gap-3, p-3, bg-slate-50 rounded-lg):
+  - Icon circle (colored by type)
+  - Content:
+    * Title (text-sm font-medium)
+    * Description (text-xs text-muted-foreground)
+    * Time (text-xs text-muted-foreground)
+
+  Activity 1:
+  * Icon: Upload (violet circle)
+  * "Document uploaded"
+  * "Trademark_Application_v2.pdf was added"
+  * "2 hours ago"
+
+  Activity 2:
+  * Icon: MessageSquare (blue circle)
+  * "New message from Sarah Mitchell"
+  * "Re: Contract Review - please see my comments..."
+  * "Yesterday, 3:45 PM"
+
+  Activity 3:
+  * Icon: CheckCircle (green circle)
+  * "Matter closed: NDA Review"
+  * "Successfully completed and archived"
+  * "2 days ago"
+
+  Activity 4:
+  * Icon: Receipt (amber circle)
+  * "Invoice #INV-0234 sent"
+  * "£1,200.00 due in 14 days"
+  * "3 days ago"
+
+Right (col-span-1) - Active Matters:
+* Heading: "Active Matters" (font-semibold mb-4)
+* Matter Cards (space-y-3):
+
+  Each matter card (p-3, border, rounded-lg):
+  * Matter name (text-sm font-semibold)
+  * Type badge (small, colored)
+  * Progress bar (violet gradient)
+  * "% Complete" (text-xs)
+
+  Matter 1:
+  * "Trademark Registration"
+  * Type: "Intellectual Property" (violet badge)
+  * Progress: 65%
+
+  Matter 2:
+  * "Employment Contract Review"  
+  * Type: "Employment" (blue badge)
+  * Progress: 40%
+
+  Matter 3:
+  * "Property Acquisition"
+  * Type: "Property" (green badge)
+  * Progress: 20%
+
+---
+
+TAB 2: SAAS DASHBOARD
+URL: houseofdevelopers.co.uk/projects/taskmaster
+
+Browser Frame (same structure):
+
+Browser Bar:
+* URL: "houseofdevelopers.co.uk/projects/taskmaster"
+
+APP CONTENT:
+
+Top Navigation (dark bg #0F172A, px-6 py-3):
+* Left: "TaskMaster" (white, font-bold) + nav items 
+        (Dashboard, Projects, Team, Reports, Settings)
+        all white/gray text
+* Right: Search icon + Bell (1 dot) + 
+         "Pro" badge + Avatar
+
+Two-Panel Layout (flex, h-[500px]):
+
+Sidebar (w-52, bg-[#0F172A] border-r border-white/10, p-4):
+* "My Workspace" (text-xs uppercase text-gray-500, mb-3)
+* Project items (space-y-1):
+  Each (flex items-center gap-2, px-3 py-2, rounded-lg):
+  - Color dot + Project name + task count badge
+  
+  1. 🟣 "Website Redesign" (8) - ACTIVE 
+     (bg-violet-500/20, text-violet-300)
+  2. 🔵 "Mobile App" (12)
+  3. 🟢 "API Integration" (5)
+  4. 🟠 "Marketing Site" (3)
+  5. 🔴 "Bug Fixes" (7)
+
+* Divider
+* "Team Members" (text-xs uppercase, text-gray-500, mt-4 mb-2)
+* 4 rows (flex items-center gap-2, text-xs text-gray-400):
+  - Avatar + "Sarah K." + "Online" (green dot)
+  - Avatar + "James T." + "Away" (yellow)
+  - Avatar + "Emma R." + "Online"
+  - Avatar + "Mike P." + "Offline" (gray)
+
+Main Area (flex-1, bg-[#0F172A] p-6):
+
+Top Bar (flex justify-between mb-6):
+* Left:
+  - "Website Redesign" (text-xl font-bold text-white)
+  - "In Progress" badge (violet/20 bg, violet text)
+* Right:
+  - "Due Jun 30" (text-sm text-gray-400)
+  - "+ Add Task" button (violet gradient, small)
+
+Sprint Stats (grid-cols-4 gap-3, mb-6):
+Each (bg-white/5, border border-white/10, rounded-lg, p-3):
+- Metric (text-lg font-bold text-white)
+- Label (text-xs text-gray-400)
+
+1. "24/36" - "Tasks Complete"
+2. "12" - "Days Remaining"
+3. "5" - "Team Members"
+4. "78%" - "On Budget"
+
+Kanban Board (grid-cols-3 gap-4):
+
+Column "To Do" (bg-white/5, rounded-xl, p-3):
+* Header: "To Do" (text-xs uppercase text-gray-400) 
+          + "8" count badge
+* Task Cards (space-y-2):
+
+  Task Card (bg-white/10, rounded-lg, p-3):
+  * Priority badge: "High" (red, text-xs)
+  * Task name (text-sm text-white font-medium)
+  * Description (text-xs text-gray-400, truncated)
+  * Footer (flex justify-between):
+    - Avatar circles (3 stacked)
+    - Due date (text-xs text-gray-400)
+
+  3 task cards:
+  1. High | "Homepage Hero Animation"
+     "Create Framer Motion animation..."
+     Avatar + "Jun 18"
+  
+  2. Medium | "Mobile Responsive QA"  
+     "Test all breakpoints on..."
+     Avatar + "Jun 20"
+  
+  3. Low | "Update Documentation"
+     "Write API endpoint docs..."
+     Avatar + "Jun 25"
+
+Column "In Progress" (same style):
+* Header: "In Progress" + "5" count
+* 2 task cards with progress bars:
+
+  Task 1:
+  * "Design System Components" 
+  * Progress bar: 60% (violet)
+  * "James T." avatar
+
+  Task 2:
+  * "Backend API Integration"
+  * Progress bar: 35% (blue)
+  * "Sarah K." avatar
+
+Column "Done" (green tint):
+* Header: "Done ✓" + "16" count
+* 3 completed tasks:
+  - Checkmark icons
+  - Struck-through or dimmed names
+  - "Completed" labels
+
+Activity Feed (mt-4, border-t border-white/10, pt-4):
+* "Recent Activity" (text-xs uppercase text-gray-400 mb-2)
+* 2 items (flex gap-2 items-start, text-xs text-gray-400):
+  - "Sarah merged branch: feature/hero" (10m ago)
+  - "James completed: Navigation component" (1h ago)
+
+---
+
+CORE FEATURES SECTION:
+
+Container: py-20
+
+Header (centered):
+- H2: "Built-In From Day One"
+- Subtitle: "Enterprise features in every application we build"
+- mb-16
+
+Grid: grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6, 
+      max-w-6xl mx-auto px-6
+
+12 Feature Cards:
+
+Each card (bg-card, border, rounded-xl, p-5, 
+hover:border-violet-500/50 hover:shadow-lg transition-all):
+- Icon (violet, size 28, mb-3)
+- Title (font-semibold, text-sm, mb-2)
+- Description (text-xs text-muted-foreground)
+
+THE 12 FEATURES:
+
+1. Icon: Lock
+   Title: "Authentication & Roles"
+   Desc: "Secure login, SSO, and role-based access control"
+
+2. Icon: Zap
+   Title: "Real-Time Updates"
+   Desc: "WebSockets and live data without page refreshes"
+
+3. Icon: Plug
+   Title: "API Integrations"
+   Desc: "Connect any third-party service via REST or GraphQL"
+
+4. Icon: BarChart2
+   Title: "Data Visualisation"
+   Desc: "Interactive charts, graphs, and custom dashboards"
+
+5. Icon: Search
+   Title: "Advanced Search"
+   Desc: "Full-text search with filters, sorting and facets"
+
+6. Icon: Upload
+   Title: "File Management"
+   Desc: "Upload, store, and manage files with AWS S3"
+
+7. Icon: CreditCard
+   Title: "Payment Processing"
+   Desc: "Stripe subscriptions, one-time payments, invoicing"
+
+8. Icon: Bell
+   Title: "Notifications"
+   Desc: "In-app, email, and push notification systems"
+
+9. Icon: ClipboardList
+   Title: "Audit Logs"
+   Desc: "Full activity history for compliance and debugging"
+
+10. Icon: Building
+    Title: "Multi-Tenancy"
+    Desc: "Separate data per organisation in one codebase"
+
+11. Icon: Smartphone
+    Title: "Fully Responsive"
+    Desc: "Works perfectly on desktop, tablet, and mobile"
+
+12. Icon: WifiOff
+    Title: "Offline Support"
+    Desc: "PWA capabilities for offline-first applications"
+
+---
+
+INDUSTRIES & USE CASES:
+
+Container: py-20, bg-muted
+
+Header (centered):
+- H2: "Industries We Build For"
+- Subtitle: "Deep domain knowledge across key sectors"
+- mb-16
+
+Grid: grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8, 
+      max-w-7xl mx-auto px-6
+
+6 INDUSTRY CARDS:
+
+Each card (bg-card, border, rounded-2xl, p-6, 
+hover:border-violet-500/50):
+1. Icon (violet gradient circle, size 48, mb-4)
+2. Industry name (text-xl font-bold, mb-2)
+3. Description (text-sm text-muted-foreground, mb-4)
+4. Use cases (space-y-2):
+   Each (flex gap-2, text-xs, text-muted-foreground):
+   - ArrowRight icon (violet, size 14)
+   - Use case text
+
+THE 6 INDUSTRIES:
+
+1. PROFESSIONAL SERVICES
+- Icon: Briefcase
+- Name: "Professional Services"
+- Desc: "Law, accounting, consulting—complex client 
+         management and workflow automation"
+- Use Cases:
+  → Matter management for law firms
+  → Client portal for accountancy firms
+  → Time tracking and billing tool
+  → Compliance monitoring dashboard
+
+2. HEALTHCARE
+- Icon: Heart
+- Name: "Healthcare"
+- Desc: "GDPR-compliant patient management, scheduling, 
+         and clinical workflow systems"
+- Use Cases:
+  → Patient booking and records system
+  → Clinical staff scheduling tool
+  → Referral management platform
+  → Medical reporting dashboard
+
+3. LOGISTICS & OPERATIONS
+- Icon: Truck
+- Name: "Logistics & Operations"
+- Desc: "Fleet management, route optimisation, and 
+         operational workflow automation"
+- Use Cases:
+  → Real-time fleet tracking dashboard
+  → Driver and route management system
+  → Warehouse inventory platform
+  → Delivery scheduling tool
+
+4. FINANCE & FINTECH
+- Icon: TrendingUp
+- Name: "Finance & Fintech"
+- Desc: "Secure financial platforms for data management, 
+         reporting, and client services"
+- Use Cases:
+  → Investment portfolio tracker
+  → Financial reporting dashboard
+  → Client wealth management portal
+  → Expense management system
+
+5. EDUCATION & TRAINING
+- Icon: GraduationCap
+- Name: "Education & Training"
+- Desc: "Learning platforms, assessment tools, and 
+         student management systems"
+- Use Cases:
+  → Custom LMS with progress tracking
+  → Online assessment platform
+  → Corporate training portal
+  → Student engagement dashboard
+
+6. E-COMMERCE & RETAIL
+- Icon: ShoppingBag
+- Name: "E-Commerce & Retail"
+- Desc: "Beyond Shopify—custom platforms for unique 
+         products and complex operations"
+- Use Cases:
+  → Custom product configurator
+  → Multi-warehouse inventory system
+  → B2B wholesale ordering portal
+  → Subscription management platform
+
+---
+
+WHY CHOOSE US:
+
+Container: py-20
+
+Use ValueProposition component:
+- Title: "Why Choose Us For Your Web Application"
+- Subtitle: "What makes our builds different"
+- Columns: 3
+
+9 Benefits:
+
+1. Icon: Code2, 
+   Title: "You Own The Code", 
+   Desc: "Full source code ownership from day one. 
+          No lock-in, no licensing fees, forever yours."
+
+2. Icon: TrendingUp, 
+   Title: "Built to Scale", 
+   Desc: "Architecture designed for growth—start with 
+          10 users, scale to 100,000 without rebuilding."
+
+3. Icon: Layers, 
+   Title: "Clean Architecture", 
+   Desc: "Documented, tested, maintainable code your 
+          team can understand and extend for years."
+
+4. Icon: Shield, 
+   Title: "Security First", 
+   Desc: "OWASP compliant, pen-tested, encrypted, and 
+          GDPR-ready from architecture to deployment."
+
+5. Icon: Zap, 
+   Title: "Performance Obsessed", 
+   Desc: "Sub-100ms load times, optimised queries, 
+          and 99.9% uptime SLAs on every project."
+
+6. Icon: GitBranch, 
+   Title: "Agile Delivery", 
+   Desc: "2-week sprints, weekly demos, transparent 
+          progress. You're involved every step."
+
+7. Icon: Users, 
+   Title: "UX-Driven Design", 
+   Desc: "Every interface tested with real users before 
+          launch. Beautiful and functional."
+
+8. Icon: Headphones, 
+   Title: "Long-Term Partner", 
+   Desc: "We don't disappear after launch. Ongoing 
+          development and support packages available."
+
+9. Icon: Award, 
+   Title: "UK-Based Team", 
+   Desc: "All development in-house by our UK team. 
+          Same timezone, direct communication, no outsourcing."
+
+---
+
+TECHNOLOGIES SECTION (TABBED):
+
+Container: py-20, bg-muted
+
+Header (centered):
+- H2: "Technologies We Build With"
+- Subtitle: "Modern stack for powerful web applications"
+- mb-12
+
+Use TabbedTechStack component:
+
+Import:
+```javascript
+import { TabbedTechStack } from 
+  "@/components/ui/TabbedTechStack";
+```
+
+Tabs data:
+```javascript
+const tabs = [
+  {
+    label: "Frontend",
+    technologies: [
+      { name: "React", slug: "react" },
+      { name: "Next.js", slug: "nextdotjs" },
+      { name: "TypeScript", slug: "typescript" },
+      { name: "Tailwind CSS", slug: "tailwindcss" },
+      { name: "Framer Motion", slug: "framer" },
+      { name: "Redux", slug: "redux" },
+      { name: "GraphQL", slug: "graphql" },
+      { name: "Vite", slug: "vite" },
+    ]
+  },
+  {
+    label: "Backend",
+    technologies: [
+      { name: "Node.js", slug: "nodedotjs" },
+      { name: "Express.js", slug: "express" },
+      { name: "NestJS", slug: "nestjs" },
+      { name: "Python", slug: "python" },
+      { name: "FastAPI", slug: "fastapi" },
+      { name: "GraphQL", slug: "graphql" },
+      { name: "WebSockets", slug: "socketdotio" },
+      { name: "REST APIs", slug: "postman" },
+    ]
+  },
+  {
+    label: "Database",
+    technologies: [
+      { name: "PostgreSQL", slug: "postgresql" },
+      { name: "MongoDB", slug: "mongodb" },
+      { name: "Redis", slug: "redis" },
+      { name: "MySQL", slug: "mysql" },
+      { name: "Supabase", slug: "supabase" },
+      { name: "Elasticsearch", slug: "elasticsearch" },
+      { name: "Prisma", slug: "prisma" },
+      { name: "Firebase", slug: "firebase" },
+    ]
+  },
+  {
+    label: "Cloud & DevOps",
+    technologies: [
+      { name: "AWS", slug: "amazonaws" },
+      { name: "Docker", slug: "docker" },
+      { name: "Kubernetes", slug: "kubernetes" },
+      { name: "GitHub Actions", slug: "githubactions" },
+      { name: "Vercel", slug: "vercel" },
+      { name: "Cloudflare", slug: "cloudflare" },
+      { name: "Terraform", slug: "terraform" },
+      { name: "DigitalOcean", slug: "digitalocean" },
+    ]
+  },
+  {
+    label: "Security",
+    technologies: [
+      { name: "Auth0", slug: "auth0" },
+      { name: "Cloudflare", slug: "cloudflare" },
+      { name: "Let's Encrypt", slug: "letsencrypt" },
+      { name: "Sentry", slug: "sentry" },
+      { name: "Datadog", slug: "datadog" },
+      { name: "Grafana", slug: "grafana" },
+      { name: "GitHub", slug: "github" },
+      { name: "Stripe", slug: "stripe" },
+    ]
+  }
+];
+```
+
+Component:
+```javascript
+<TabbedTechStack
+  title="Technologies We Build With"
+  subtitle="Modern, proven stack for scalable web applications"
+  tabs={tabs}
+/>
+```
+
+---
+
+PROCESS SECTION:
+
+Container: py-20
+
+Use ZigzagTimeline component:
+
+Import:
+```javascript
+import { ZigzagTimeline } from 
+  "@/components/ui/ZigzagTimeline";
+import { Search, Layers, Code2, Rocket } from "lucide-react";
+```
+```javascript
+const WEB_APP_COLOR = "#7C3AED"; // Violet
+```
+```javascript
+const processSteps = [
+  {
+    icon: Search,
+    title: "Discovery & Architecture",
+    points: [
+      "Deep-dive into your workflows, users, and goals",
+      "Technical architecture and database schema design",
+      "Sprint roadmap with milestones and delivery dates"
+    ]
+  },
+  {
+    icon: Layers,
+    title: "Design & Prototyping",
+    points: [
+      "UX wireframes mapping every user journey and flow",
+      "High-fidelity Figma designs reviewed and approved",
+      "Clickable prototype tested before development starts"
+    ]
+  },
+  {
+    icon: Code2,
+    title: "Agile Development",
+    points: [
+      "2-week sprints with a live demo every Friday",
+      "Continuous testing, code review, and refinement",
+      "Weekly progress updates—no surprises at launch"
+    ]
+  },
+  {
+    icon: Rocket,
+    title: "Launch & Scale",
+    points: [
+      "Zero-downtime deployment to production environment",
+      "Team onboarding, documentation, and full handover",
+      "Ongoing support and feature development available"
+    ]
+  }
+];
+```
+```javascript
+<ZigzagTimeline
+  title="Our Web Application Development Process"
+  subtitle="A proven process that delivers on time, every time"
+  steps={processSteps}
+  accentColor={WEB_APP_COLOR}
+/>
+```
+
+---
+
+MINI CASE STUDIES:
+
+Container: py-20, bg-muted
+
+Header (centered):
+- H2: "Applications We've Built"
+- Subtitle: "Real software solving real business problems"
+- mb-12
+
+Grid: grid-cols-1 md:grid-cols-3 gap-8, 
+      max-w-6xl mx-auto px-6
+
+3 CASE STUDIES (industry variety, no before/after metrics):
+
+CASE STUDY 1:
+Top (h-48, gradient violet to indigo, rounded-t-2xl):
+* Icon: Truck (white, size 64, centered)
+* "Logistics & Operations" badge (white/20, top-left, p-2)
+
+Content (bg-card, border border-t-0, 
+rounded-b-2xl, p-6):
+* H3: "Fleet Operations Platform"
+* Industry: "Transport & Logistics, Birmingham"
+* Description (text-sm text-muted-foreground, mt-2):
+  "Built a real-time fleet and dispatch platform 
+  for a UK logistics company managing 45 vehicles. 
+  Route optimisation, driver scheduling, delivery 
+  confirmation, and live customer notifications—all 
+  in one application."
+* Features Built (mt-4):
+  Heading: "Key Features" (text-xs uppercase 
+            font-semibold text-muted-foreground, mb-2)
+  List (space-y-1.5, text-xs):
+  - "📍 Live GPS tracking for all 45 vehicles"
+  - "📋 Automated dispatch and route assignment"
+  - "📱 Driver app for delivery confirmation"
+  - "📊 Operations dashboard with live analytics"
+  - "📧 Automated customer delivery notifications"
+* Tech (mt-4, flex gap-2 flex-wrap):
+  React, Node.js, PostgreSQL, Google Maps, AWS
+* Footer (mt-4, text-xs text-muted-foreground):
+  "14 weeks • Full-stack web application"
+
+CASE STUDY 2:
+Top (h-48, gradient violet to pink):
+* Icon: Heart (white, size 64)
+* "Healthcare" badge
+
+Content:
+* H3: "Patient Management System"
+* Industry: "Private Dental Group, London"
+* Description: "Replaced a legacy system causing double 
+  bookings and lost records across 6 clinic locations. 
+  Custom patient management with online booking, 
+  digital records, and integrated payments."
+* Features:
+  - "🦷 Online booking with real-time availability"
+  - "📋 Digital patient records and treatment history"
+  - "💳 Integrated payments and insurance processing"
+  - "📱 Patient SMS and email reminder system"
+  - "📊 Multi-location management dashboard"
+* Tech: Next.js, Node.js, PostgreSQL, Twilio, Stripe
+* Footer: "16 weeks • Multi-location web application"
+
+CASE STUDY 3:
+Top (h-48, gradient violet to cyan):
+* Icon: TrendingUp (white, size 64)
+* "Finance" badge
+
+Content:
+* H3: "Investment Portfolio Platform"
+* Industry: "Independent Financial Adviser, Manchester"
+* Description: "White-label investment portal replacing 
+  manual PDF reports. Clients log in to view holdings, 
+  performance charts, and statements in real time. 
+  Fully branded per adviser."
+* Features:
+  - "📈 Real-time portfolio performance tracking"
+  - "📄 Automated monthly statement generation"
+  - "🔒 Two-factor authentication and bank-grade security"
+  - "📊 Interactive charts for holdings and returns"
+  - "👤 White-label portal with custom client branding"
+* Tech: React, Node.js, PostgreSQL, Chart.js, AWS
+* Footer: "12 weeks • SaaS web application"
+
+---
+
+FAQ SECTION:
+
+Container: py-20, max-w-4xl mx-auto px-6
+
+Header: "Web Application FAQs"
+
+12 Questions (Accordion):
+
+Q1: "How much does a web application cost?"
+A: "Web application costs vary significantly based on 
+complexity. A simple internal tool starts around 
+£15,000-£25,000. A mid-complexity application with 
+multiple user roles and integrations ranges from 
+£25,000-£60,000. A full SaaS platform with 
+multi-tenancy and payments runs £60,000-£150,000+. 
+We provide detailed, itemised quotes after a free 
+discovery session—you always know exactly what 
+you're paying for."
+
+Q2: "How long does it take to build a web application?"
+A: "Simple internal tool: 8-12 weeks. Mid-complexity 
+platform: 12-20 weeks. Full SaaS product: 16-28 weeks. 
+We work in 2-week Agile sprints with demos every Friday, 
+so you see real progress throughout. All timelines are 
+agreed and committed to upfront."
+
+Q3: "What's the difference between a web app and a website?"
+A: "A website presents information—brochure sites, blogs, 
+portfolios. A web application does work—users log in, 
+create data, automate processes, collaborate. If your 
+users need accounts, if data needs storing, or if you're 
+automating a workflow, you need a web application."
+
+Q4: "Do we own the source code?"
+A: "100% yes. Full source code, intellectual property, 
+and all assets are yours from day one. No licensing fees, 
+no vendor lock-in. The code is transferred to your 
+repository at project end and you can take it anywhere."
+
+Q5: "Can you build a web application that works on mobile?"
+A: "Every web application we build is fully responsive—
+designed mobile-first and tested on real iOS and Android 
+devices. We can also add Progressive Web App (PWA) 
+capabilities so users can install it on their home screen 
+and use it offline."
+
+Q6: "How do you handle complex integrations?"
+A: "Integration is core to what we do. We connect with 
+any system that exposes an API: Stripe, HubSpot, 
+Salesforce, ERPs, accounting software, government APIs. 
+If it doesn't have an API, we can often build a 
+connector or scrape data from it."
+
+Q7: "What if requirements change during development?"
+A: "Requirements always evolve—that's why we use Agile. 
+Minor scope changes within the sprint are absorbed at 
+no extra cost. Significant additions are scoped, quoted 
+transparently, and added to the roadmap. We never 
+surprise you with extra costs."
+
+Q8: "How do you approach security for sensitive data?"
+A: "Security is architected in from the start: encrypted 
+data at rest and in transit, OWASP-compliant code, 
+penetration testing, audit logs, GDPR-compliant data 
+handling, and Auth0 or custom authentication. For 
+healthcare or finance, we apply sector-specific 
+compliance standards."
+
+Q9: "Can we start with an MVP and build later?"
+A: "Absolutely—this is the recommended approach for new 
+products. We design scalable architecture but build only 
+what you need now. Launch an MVP, validate with real 
+users, then iterate and add features. Reduces risk and 
+gets you to market faster."
+
+Q10: "What are ongoing costs after launch?"
+A: "Infrastructure costs depend on usage (AWS typically 
+£50-500/month for most apps). After 60-day warranty, we 
+offer monthly maintenance retainers covering updates, 
+bug fixes, security patches, and new features. Retainers 
+start from £1,500/month."
+
+Q11: "Will the application scale as we grow?"
+A: "Yes—we design for scale from the start. Horizontal 
+scaling on AWS, database connection pooling, Redis 
+caching, CDN delivery, and async job queues. We've built 
+apps that started with 50 users and now serve 50,000."
+
+Q12: "Can you take over a project from another developer?"
+A: "Yes—we've rescued multiple projects. We audit the 
+existing codebase honestly, assess what's salvageable, 
+and recommend fix, refactor, or rebuild. We never push 
+for a full rebuild unless it's genuinely the right 
+answer. We can provide a codebase audit as a standalone 
+service."
+
+---
+
+CTA SECTIONS (3):
+
+CTA 1 (After Types of Web Apps):
+- Variant: 'bordered'
+- Title: "Not Sure What Type of App You Need?"
+- Description: "Book a free consultation—we'll map out 
+  the right solution for your exact requirements"
+- PrimaryCTA: "Book Free Discovery Call" → /contact
+- Size: 'medium'
+
+CTA 2 (After Case Studies):
+- Variant: 'gradient'
+- Title: "Ready to Build Your Web Application?"
+- Description: "Let's discuss your project. Free 
+  consultation, detailed quote within 48 hours."
+- PrimaryCTA: "Start Your Project" → /contact
+- SecondaryCTA: "Call: +44 7429 917368" → tel link
+- Size: 'large'
+
+CTA 3 (Final, After FAQ):
+- Variant: 'gradient'
+- Title: "Let's Build Something Powerful"
+- Description: "Every great application started with 
+  a conversation. Let's have ours—free, no obligation."
+- PrimaryCTA: "Book Free Consultation" → /contact
+- SecondaryCTA: "View All Web Services" → /services/web-development
+- ShowContactInfo: true
+- Size: 'large'
+
+---
+
+GLOBAL REQUIREMENTS:
+
+1. SEO:
+   - Meta title: "Web Application Development UK | 
+     Custom SaaS & Business Apps | House of Developers"
+   - Meta description: "Custom web application development. 
+     SaaS platforms, client portals, business tools. 
+     Scalable, secure, you own the code. Free consultation."
+   - Schema: Service, FAQPage, BreadcrumbList
+
+2. ACCENT COLOR: #7C3AED (Violet) throughout:
+   - Gradient: violet to purple
+   - Active states, hover borders
+   - ZigzagTimeline accent
+   - Feature icons
+   - Stat numbers
+   - CTA buttons
+
+3. ANIMATED HERO:
+   - Code lines appear one by one (Framer Motion stagger)
+   - UI elements fade in after code appears
+   - Connecting arrow pulses
+   - Floating badges animate in last
+   - Smooth, professional, not distracting
+
+4. APP SHOWCASE TABS:
+   - Client Portal (Tab 1, active default)
+   - SaaS Dashboard (Tab 2)
+   - Both URLs: houseofdevelopers.co.uk/projects/[name]
+   - Full browser frames with realistic content
+   - React useState for tab switching
+
+5. NO PRICING CARDS anywhere
+
+6. CASE STUDY URLS: All mockup URLs use
+   houseofdevelopers.co.uk/projects/[shortname]
+
+7. COMPONENTS:
+   - ZigzagTimeline ✅ (violet accent)
+   - TabbedTechStack ✅ (Simple Icons CDN)
+   - ValueProposition ✅
+   - CTASection × 3 ✅
+
+8. RESPONSIVE: Mobile-first throughout
+
+9. DARK/LIGHT MODE: Full support
+   - Code editor: always dark (#1e1e1e)
+   - App previews: adapt to theme
+
+10. NO BEFORE/AFTER METRICS in case studies
+
+Build a stunning, comprehensive web applications page that demonstrates technical depth through beautiful animated mockups and realistic application previews.
