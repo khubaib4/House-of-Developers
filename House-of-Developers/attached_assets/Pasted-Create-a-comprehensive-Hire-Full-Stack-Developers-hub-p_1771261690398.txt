@@ -1,0 +1,589 @@
+Create a comprehensive Hire Full-Stack Developers hub page for House of Developers.
+
+PAGE: /services/hire-developers/full-stack/page.tsx
+
+This is the hub page for hiring full-stack developers, showcasing different stacks (MEAN, MERN, MEVN, LAMP) and linking to individual stack pages.
+
+---
+
+HERO SECTION:
+
+Container: py-24, max-w-7xl mx-auto px-6
+
+Layout: Grid grid-cols-1 lg:grid-cols-2 gap-12 items-center
+
+Left Column:
+
+- Breadcrumb: "Home / Services / Hire Developers / Full-Stack"
+  * text-sm text-muted-foreground, clickable, mb-6
+
+- Badge: "⚡ Full-Stack Developers"
+  * bg-primary/10, text-primary, px-3 py-1.5, rounded-full, mb-4
+
+- H1: "Hire Full-Stack Developers"
+  * text-4xl md:text-6xl font-bold, mb-4
+
+- Tagline: "End-to-End Developers for Complete Solutions"
+  * text-xl md:text-2xl
+  * Gradient text from blue to purple
+  * font-semibold
+
+- Description (mt-6):
+  * text-xl text-muted-foreground leading-relaxed
+  * "Hire senior full-stack developers who handle everything from database design to frontend UI. Expert in modern JavaScript stacks (MERN, MEAN, MEVN) and traditional LAMP stack."
+
+- Feature Pills (mt-6, flex gap-3 flex-wrap):
+  1. "Frontend + Backend" (Layers icon)
+  2. "Database to UI" (Database icon)
+  3. "DevOps Ready" (Server icon)
+  4. "8+ Years Exp" (Award icon)
+
+- Stats Grid (mt-8, grid-cols-3 gap-6):
+  1. "18+ Developers"
+  2. "4 Tech Stacks"
+  3. "Available Now"
+
+- CTA Buttons (mt-8, flex gap-4):
+  * Primary: "Hire Full-Stack Developer" → /contact
+  * Secondary: "Compare Stacks" → scroll to comparison
+
+Right Column:
+
+- Full-Stack Developer Mockup:
+  * Create layered visual showing full-stack:
+  
+  3 Layers stacked vertically (slight 3D perspective):
+  
+  Layer 1 (Top - Frontend):
+  * Icon: Layout
+  * Label: "Frontend"
+  * Tech badges: React, Vue, Angular
+  
+  Layer 2 (Middle - Backend):
+  * Icon: Server
+  * Label: "Backend"
+  * Tech badges: Node.js, Express, APIs
+  
+  Layer 3 (Bottom - Database):
+  * Icon: Database
+  * Label: "Database"
+  * Tech badges: MongoDB, MySQL, PostgreSQL
+  
+  * Connecting lines between layers
+  * "Full-Stack Developer" label with arrow pointing to all layers
+  * Shadow: 2xl
+  * Modern card styling
+
+---
+
+WHAT IS FULL-STACK SECTION:
+
+Container: py-20, bg-muted, max-w-5xl mx-auto px-6, text-center
+
+- H2: "What is a Full-Stack Developer?"
+- Description (mt-4, text-lg):
+  "A full-stack developer handles both frontend (user interface) and backend (server, database, APIs). They build complete web applications from start to finish—saving you from coordinating multiple specialists."
+
+Benefits Grid (mt-12, grid-cols-1 md:grid-cols-3 gap-8):
+
+3 benefit cards:
+
+1. Icon: Zap
+   Title: "Faster Development"
+   Description: "One developer handles everything—no handoffs, no delays"
+
+2. Icon: DollarSign
+   Title: "Cost Effective"
+   Description: "Hire one senior full-stack vs frontend + backend separately"
+
+3. Icon: Users
+   Title: "Better Coordination"
+   Description: "Single point of contact who understands the entire system"
+
+---
+
+FULL-STACK COMPARISON SECTION:
+
+Container: py-20, max-w-7xl mx-auto px-6
+
+Header (centered):
+- H2: "Choose Your Full-Stack Technology"
+- Subtitle: "We have experts in all major JavaScript and PHP stacks"
+- mb-16
+
+Stack Cards Grid:
+- Grid: grid-cols-1 md:grid-cols-2 gap-8
+
+4 STACK CARDS:
+
+CARD STRUCTURE (each):
+- Background: card with border
+- Padding: p-8
+- Rounded: rounded-2xl
+- Hover: shadow-xl, border-primary, translateY(-4px)
+
+Each card:
+1. Stack logo/icon area (top):
+   - Container: w-16 h-16, bg-primary/10, rounded-lg, flex center
+   - Icon: Layers or Code2 (primary color, size 32)
+
+2. Stack name (text-2xl font-bold, mt-6)
+
+3. Stack acronym breakdown (text-sm text-muted-foreground, mt-2)
+
+4. Best for badge (mt-4):
+   - "Best for: [use case]"
+   - bg-accent/10, text-accent, px-3 py-1, rounded-full
+
+5. Tech stack breakdown (mt-6, space-y-3):
+   - 4 components with icons
+   - Each: flex items-center gap-2
+   - Icon (size 16) + Technology name
+
+6. Key strengths (mt-6, space-y-2):
+   - 3 bullet points with CheckCircle2 icons
+   - text-sm
+
+7. Developers available (mt-6):
+   - Badge: "5+ Developers Available"
+   - bg-muted, rounded-full, px-3 py-1, text-xs
+
+8. CTA button (mt-8):
+   - "Hire [Stack] Developer"
+   - Full width, border variant
+   - Link to specific stack page
+
+THE 4 STACKS:
+
+STACK 1: MERN
+- Icon: Layers
+- Name: "MERN Stack"
+- Breakdown: "MongoDB, Express, React, Node.js"
+- Best for: "Modern SaaS & Startups"
+- Components:
+  * Database icon: MongoDB (NoSQL database)
+  * Server icon: Express.js (Backend framework)
+  * Layout icon: React (Frontend library)
+  * Code2 icon: Node.js (JavaScript runtime)
+- Strengths:
+  * Single language (JavaScript) throughout
+  * Fast development with React
+  * Scalable and flexible
+- Available: "6+ Developers"
+- Link: /services/hire-developers/full-stack/mern
+
+STACK 2: MEAN
+- Icon: Layers
+- Name: "MEAN Stack"
+- Breakdown: "MongoDB, Express, Angular, Node.js"
+- Best for: "Enterprise Applications"
+- Components:
+  * Database icon: MongoDB (NoSQL database)
+  * Server icon: Express.js (Backend framework)
+  * Layout icon: Angular (Frontend framework)
+  * Code2 icon: Node.js (JavaScript runtime)
+- Strengths:
+  * TypeScript by default
+  * Enterprise-ready Angular
+  * Robust and structured
+- Available: "4+ Developers"
+- Link: /services/hire-developers/full-stack/mean
+
+STACK 3: MEVN
+- Icon: Layers
+- Name: "MEVN Stack"
+- Breakdown: "MongoDB, Express, Vue.js, Node.js"
+- Best for: "Lightweight SPAs"
+- Components:
+  * Database icon: MongoDB (NoSQL database)
+  * Server icon: Express.js (Backend framework)
+  * Layout icon: Vue.js (Frontend framework)
+  * Code2 icon: Node.js (JavaScript runtime)
+- Strengths:
+  * Easy to learn Vue.js
+  * Flexible and progressive
+  * Great performance
+- Available: "3+ Developers"
+- Link: /services/hire-developers/full-stack/mevn
+
+STACK 4: LAMP
+- Icon: Layers
+- Name: "LAMP Stack"
+- Breakdown: "Linux, Apache, MySQL, PHP"
+- Best for: "Traditional Web Apps & CMS"
+- Components:
+  * Server icon: Linux (Operating system)
+  * Globe icon: Apache (Web server)
+  * Database icon: MySQL (SQL database)
+  * Code2 icon: PHP (Server language)
+- Strengths:
+  * Battle-tested and stable
+  * WordPress & Laravel compatible
+  * Wide hosting support
+- Available: "5+ Developers"
+- Link: /services/hire-developers/full-stack/lamp
+
+---
+
+PRICING SECTION:
+
+Container: py-20, bg-muted
+
+Header (centered):
+- H2: "Full-Stack Developer Pricing"
+- Subtitle: "Same pricing across all stacks"
+- mb-12
+
+Pricing Cards Grid:
+- Grid: grid-cols-1 md:grid-cols-3 gap-8
+- Max-width: max-w-6xl mx-auto px-6
+
+3 PRICING TIERS:
+
+TIER 1: PART-TIME
+- Name: "Part-Time Full-Stack Developer"
+- Price: "£2,500/month"
+- Description: "80 hours/month (4 hours/day)"
+- Features:
+  * Frontend + backend development
+  * Database management
+  * API development
+  * Code reviews
+  * Weekly updates
+  * Flexible hours
+- CTA: "Hire Part-Time" → /contact
+
+TIER 2: FULL-TIME (POPULAR)
+- Name: "Full-Time Full-Stack Developer"
+- Price: "£4,500/month"
+- Description: "160 hours/month (8 hours/day)"
+- Features:
+  * Dedicated full-stack resource
+  * Complete feature ownership
+  * Daily standups
+  * Sprint planning
+  * DevOps & deployment
+  * Priority support
+- CTA: "Hire Full-Time" → /contact
+- isPopular: true
+
+TIER 3: TEAM
+- Name: "Full-Stack Team"
+- Price: "Custom Quote"
+- Description: "Multiple developers + PM"
+- Features:
+  * 2+ full-stack developers
+  * Project manager included
+  * Frontend & backend specialists
+  * QA engineer (optional)
+  * DevOps engineer (optional)
+  * Complete project delivery
+- CTA: "Build Team" → /contact
+
+---
+
+WHAT FULL-STACK DEVELOPERS DO SECTION:
+
+Container: py-20
+
+Use ValueProposition component:
+
+- Title: "What Our Full-Stack Developers Handle"
+- Subtitle: "Complete application development from database to deployment"
+- Columns: 3
+
+9 Capabilities:
+
+1. Icon: Layout, Title: "Frontend Development", Description: "React, Angular, Vue—responsive UIs with modern frameworks"
+2. Icon: Server, Title: "Backend APIs", Description: "RESTful APIs, GraphQL, authentication, business logic"
+3. Icon: Database, Title: "Database Design", Description: "Schema design, queries, optimization, migrations"
+4. Icon: Lock, Title: "Authentication", Description: "User auth, JWT, OAuth, role-based permissions"
+5. Icon: CreditCard, Title: "Payment Integration", Description: "Stripe, PayPal, subscription billing"
+6. Icon: Cloud, Title: "Cloud Deployment", Description: "AWS, DigitalOcean, Vercel—full DevOps"
+7. Icon: Zap, Title: "Performance Optimization", Description: "Caching, CDN, query optimization, load balancing"
+8. Icon: Bug, Title: "Testing & QA", Description: "Unit tests, integration tests, debugging"
+9. Icon: GitBranch, Title: "Version Control", Description: "Git workflows, code reviews, CI/CD"
+
+---
+
+SAMPLE FULL-STACK DEVELOPER PROFILES:
+
+Container: py-20, bg-muted, max-w-7xl mx-auto px-6
+
+Header (centered):
+- H2: "Meet Our Full-Stack Developers"
+- Subtitle: "Senior developers with 8+ years experience"
+- mb-12
+
+Profiles Grid: grid-cols-1 md:grid-cols-3 gap-8
+
+3 DEVELOPER PROFILES:
+
+PROFILE 1: MERN SPECIALIST
+- Avatar: User icon in circle, bg-primary/10
+- Name: "Senior Full-Stack Developer"
+- Specialty: "MERN Stack Expert"
+- Experience: "9+ years"
+- Status: "Available Now" (green dot)
+- Skills (badges):
+  * React
+  * Node.js
+  * MongoDB
+  * Express
+  * TypeScript
+  * AWS
+- Highlights:
+  * Built 15+ SaaS applications
+  * Expert in microservices
+  * Strong in DevOps & CI/CD
+- Projects:
+  * E-commerce platforms
+  * Real-time dashboards
+  * API-first applications
+- CTA: "Schedule Interview" → /contact
+
+PROFILE 2: MEAN SPECIALIST
+- Avatar: User icon in circle, bg-primary/10
+- Name: "Senior Full-Stack Developer"
+- Specialty: "MEAN Stack Architect"
+- Experience: "10+ years"
+- Status: "Available in 2 weeks"
+- Skills (badges):
+  * Angular
+  * Node.js
+  * MongoDB
+  * Express
+  * TypeScript
+  * Docker
+- Highlights:
+  * Enterprise application expert
+  * Scalable architecture design
+  * Team leadership experience
+- Projects:
+  * Enterprise CRM systems
+  * Admin dashboards
+  * Internal tools
+- CTA: "Schedule Interview" → /contact
+
+PROFILE 3: LAMP SPECIALIST
+- Avatar: User icon in circle, bg-primary/10
+- Name: "Senior Full-Stack Developer"
+- Specialty: "LAMP Stack & PHP Expert"
+- Experience: "12+ years"
+- Status: "Available Now" (green dot)
+- Skills (badges):
+  * PHP
+  * Laravel
+  * MySQL
+  * JavaScript
+  * WordPress
+  * Linux
+- Highlights:
+  * WordPress & Laravel expert
+  * 20+ production deployments
+  * Database optimization specialist
+- Projects:
+  * WordPress enterprise sites
+  * Laravel web apps
+  * E-commerce platforms
+- CTA: "Schedule Interview" → /contact
+
+---
+
+PROCESS SECTION:
+
+Container: py-20
+
+Use ProcessTimeline component:
+
+- Title: "Hiring Process for Full-Stack Developers"
+- Subtitle: "From requirement to developer starting work"
+
+Steps (4 phases):
+
+STEP 1:
+- phase: "Day 1"
+- title: "Tell Us Your Stack"
+- description: "Specify which stack you need (MERN, MEAN, MEVN, LAMP)"
+- deliverables:
+  * Free consultation call
+  * Discuss project requirements
+  * Choose technology stack
+  * Define senior vs mid-level needs
+  * Set engagement model
+
+STEP 2:
+- phase: "Day 2-3"
+- title: "Developer Matching"
+- description: "We send 2-3 full-stack developer profiles"
+- deliverables:
+  * Review developer CVs
+  * Portfolio of full-stack projects
+  * Technical skills assessment
+  * GitHub profiles
+  * Availability confirmation
+
+STEP 3:
+- phase: "Day 4-5"
+- title: "Technical Interview"
+- description: "Interview candidates on frontend, backend, and DevOps"
+- deliverables:
+  * Schedule video interviews
+  * Technical coding discussion
+  * System design questions
+  * Culture fit assessment
+  * Make final selection
+
+STEP 4:
+- phase: "Day 6-7"
+- title: "Onboarding & Start"
+- description: "Developer joins your team and starts coding"
+- deliverables:
+  * Contract signing
+  * Access to codebase
+  * Setup dev environment
+  * First sprint planning
+  * Daily standups begin
+
+---
+
+FULL-STACK VS SPECIALIZED SECTION:
+
+Container: py-20, bg-muted, max-w-6xl mx-auto px-6
+
+Header (centered):
+- H2: "Full-Stack vs Frontend/Backend Specialists"
+- Description: "When to hire full-stack vs separate developers"
+- mb-12
+
+Comparison Cards (grid-cols-1 md:grid-cols-2 gap-8):
+
+FULL-STACK CARD:
+- Background: card with border-primary
+- Icon: Layers
+- Title: "Hire Full-Stack Developer If..."
+- Features:
+  ✓ Small to medium project
+  ✓ Need quick MVP or prototype
+  ✓ Budget-conscious
+  ✓ Simple to moderate complexity
+  ✓ One person can handle scope
+  ✓ Faster coordination
+
+Example projects:
+- SaaS MVPs
+- Internal tools
+- CRUD applications
+- Small e-commerce
+
+SPECIALIZED CARD:
+- Background: card
+- Icon: Users
+- Title: "Hire Separate Frontend + Backend If..."
+- Features:
+  ✓ Large, complex application
+  ✓ Need deep expertise in each area
+  ✓ High-traffic application
+  ✓ Complex UI/UX requirements
+  ✓ Advanced backend logic
+  ✓ Dedicated specialists needed
+
+Example projects:
+- Enterprise platforms
+- Social networks
+- Complex marketplaces
+- Real-time systems
+
+Bottom note: "Not sure? Book a consultation and we'll recommend → /contact"
+
+---
+
+FAQ SECTION:
+
+Container: py-20, max-w-4xl mx-auto px-6
+
+Header: "Full-Stack Developer FAQs"
+
+10 Questions (Accordion):
+
+Q1: "What's the difference between MERN, MEAN, and MEVN?"
+A: "All three use JavaScript throughout: MongoDB (database), Express (backend), Node.js (runtime). The difference is the frontend: React (MERN), Angular (MEAN), or Vue (MEVN). MERN is most popular for startups, MEAN for enterprise, MEVN for lightweight apps."
+
+Q2: "Should I hire MERN or LAMP stack developer?"
+A: "MERN for modern SaaS, real-time apps, and single-page applications. LAMP for WordPress sites, traditional web apps, and if you need mature, battle-tested technology. We'll help you decide based on your project."
+
+Q3: "Can a full-stack developer handle DevOps too?"
+A: "Yes! Our senior full-stack developers handle deployment, CI/CD, Docker, AWS/DigitalOcean, and basic DevOps. For complex infrastructure, we recommend adding a dedicated DevOps engineer."
+
+Q4: "How experienced are your full-stack developers?"
+A: "Minimum 5 years, average 8+ years. They've built multiple production applications from scratch and understand both frontend and backend deeply."
+
+Q5: "Can they work with my existing codebase?"
+A: "Absolutely! Our developers quickly onboard to existing codebases. They review your code, understand architecture, and start contributing within days."
+
+Q6: "Do they write tests?"
+A: "Yes! Our developers write unit tests, integration tests, and follow TDD/BDD practices. Code quality is a priority."
+
+Q7: "Can a full-stack developer handle mobile apps?"
+A: "If you need React Native (for MERN) or hybrid apps, yes. For native iOS/Android, we recommend hiring mobile specialists."
+
+Q8: "What if my project uses a different stack?"
+A: "We also have developers for: Django (Python), Laravel (PHP), .NET, Ruby on Rails, and more. Tell us your stack and we'll match you."
+
+Q9: "Do full-stack developers cost more than specialists?"
+A: "No! Same pricing (£2,500-£4,500/month). Full-stack developers are actually more cost-effective than hiring frontend + backend separately."
+
+Q10: "Can I switch from one stack to another mid-project?"
+A: "It's possible but not ideal. We recommend committing to a stack. However, if business needs change, we can bring in developers for a new stack."
+
+---
+
+CTA SECTIONS:
+
+Add 3 CTAs:
+
+CTA 1 (After Stack Comparison):
+- Variant: 'bordered'
+- Title: "Not Sure Which Stack to Choose?"
+- Description: "Book a free tech consultation and we'll recommend the best stack for your project"
+- PrimaryCTA: "Get Stack Recommendation" → /contact
+- Size: 'medium'
+
+CTA 2 (After Profiles):
+- Variant: 'gradient'
+- Title: "Ready to Hire a Full-Stack Developer?"
+- Description: "Tell us your stack and we'll match you with senior developers in 48 hours"
+- PrimaryCTA: "Hire Full-Stack Developer" → /contact
+- SecondaryCTA: "View Pricing" → scroll to pricing
+- Size: 'large'
+
+CTA 3 (Final):
+- Variant: 'gradient'
+- Title: "Let's Find Your Perfect Full-Stack Developer"
+- Description: "Book a free consultation to discuss your project and meet our developers"
+- PrimaryCTA: "Book Consultation" → /contact
+- SecondaryCTA: "Call: +44 7429 917368" → tel link
+- ShowContactInfo: true
+- Size: 'large'
+
+---
+
+GLOBAL REQUIREMENTS:
+
+1. SEO:
+   - Meta title: "Hire Full-Stack Developers | MERN, MEAN, MEVN, LAMP | House of Developers"
+   - Meta description: "Hire senior full-stack developers. MERN, MEAN, MEVN, LAMP stacks. £2,500/month part-time, £4,500/month full-time. Start in 1 week."
+
+2. ICONS: Use Lucide React icons only
+3. COMPONENTS USED:
+   - ProcessTimeline ✅
+   - ValueProposition ✅
+   - CTASection (×3) ✅
+
+4. PRICING: Show actual prices (£2,500, £4,500, Custom)
+5. MOCKUPS: Full-stack layers visualization + developer profiles
+6. PROFILES: 3 generic examples (MERN, MEAN, LAMP specialists)
+7. RESPONSIVE: Mobile-first
+8. DARK/LIGHT MODE: Full support
+
+Build a comprehensive full-stack developers hub page that helps users choose the right stack and hire quickly.

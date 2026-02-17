@@ -1,0 +1,1151 @@
+Create a comprehensive AI Agents hub page for House of Developers.
+
+PAGE: /services/ai-services/ai-agents/page.tsx
+
+This is the main page for autonomous AI agent development services, showcasing different agent types and use cases.
+
+IMPORTANT: Include realistic examples with actual task execution flows. Use beautiful agent dashboard mockups. "Get Custom Quote" for pricing. Use TABBED technology section and ZIGZAGTIMELINE for process.
+
+---
+
+HERO SECTION:
+
+Container: py-24, max-w-7xl mx-auto px-6
+
+Layout: Grid grid-cols-1 lg:grid-cols-2 gap-12 items-center
+
+Left Column:
+
+- Breadcrumb: "Home / Services / AI Services / AI Agents"
+  * text-sm text-muted-foreground, clickable, mb-6
+
+- Badge: "🤖 Autonomous AI Agents"
+  * bg-gradient (blue to cyan), text-white, px-3 py-1.5, rounded-full, mb-4
+
+- H1: "Autonomous AI Agent Development"
+  * text-4xl md:text-5xl lg:text-6xl font-bold, mb-4
+
+- Tagline: "AI That Takes Action While You Sleep"
+  * text-xl md:text-2xl
+  * Gradient text from blue to cyan
+  * font-semibold
+
+- Description (mt-6):
+  * text-xl text-muted-foreground leading-relaxed
+  * "We build autonomous AI agents that execute tasks independently, make decisions, and take actions without human intervention. From email management to data analysis—AI agents work 24/7, completing workflows while you focus on strategy."
+
+- Feature Pills (mt-6, flex gap-3 flex-wrap):
+  1. "Autonomous" (Bot icon)
+  2. "Multi-Step Tasks" (ListChecks icon)
+  3. "Tool Use" (Wrench icon)
+  4. "Real-Time" (Zap icon)
+
+- Stats Grid (mt-8, grid-cols-3 gap-6):
+  Each stat (text-center):
+  - Number (text-3xl font-bold, gradient blue to cyan)
+  - Label (text-sm text-muted-foreground)
+  
+  1. "12+ Agents"
+     "Deployed"
+  
+  2. "18 Hrs/Week"
+     "Avg Time Saved"
+  
+  3. "95% Accuracy"
+     "Task Success"
+
+- CTA Buttons (mt-8, flex gap-4):
+  * Primary: "Build Your AI Agent" → /contact
+    - bg-gradient (blue to cyan), text-white
+    - h-14 px-8
+  
+  * Secondary: "See Agent Demo" → scroll to demo
+
+- Trust: "⭐ Trusted by teams automating complex workflows"
+
+Right Column:
+
+- AI Agent Dashboard Mockup (Primary):
+  * Create autonomous agent control panel
+  
+  Main Container (bg-card, border, rounded-2xl, p-6, shadow-2xl):
+  * Gradient border (blue to cyan, subtle glow)
+  
+  Dashboard Header (flex items-center justify-between, mb-6):
+  * Left: 
+    - "AI Agent Control Center" (text-xl font-bold)
+    - Status: "3 Agents Active" (text-sm, green dot)
+  * Right:
+    - Toggle: "Auto Mode: ON" (green, toggle switch visual)
+  
+  Active Agents Grid (space-y-4):
+  
+  AGENT 1 - Email Processing Agent:
+  * Container: bg-muted, border-l-4 border-blue-500, rounded-lg, p-4
+  * Header (flex items-center justify-between):
+    - Left: 
+      * Icon: Mail (blue, size 24)
+      * Name: "Email Agent" (font-semibold)
+    - Right:
+      * Status: "Running" (green badge, pulsing)
+  
+  * Current Task (mt-3):
+    - Text: "Processing inbox..." (text-sm)
+    - Progress bar: 67% complete (blue gradient)
+  
+  * Recent Actions (mt-3, text-xs, space-y-1):
+    ✓ Read 23 new emails (2 min ago)
+    ✓ Categorized by priority (2 min ago)
+    ⏳ Drafting responses (in progress)
+    - Draft 4/12 complete
+  
+  * Metrics (grid-cols-3 gap-2, mt-3, text-xs):
+    - "87 Today"
+    - "95% Auto"
+    - "2.3 min avg"
+  
+  AGENT 2 - Data Analysis Agent:
+  * Container: border-l-4 border-cyan-500
+  * Icon: BarChart (cyan)
+  * Name: "Analytics Agent"
+  * Status: "Running" (green, pulsing)
+  
+  * Current Task:
+    - Text: "Generating weekly report..."
+    - Progress: 85% (cyan gradient)
+  
+  * Recent Actions:
+    ✓ Fetched sales data (5 min ago)
+    ✓ Analyzed trends (3 min ago)
+    ✓ Created visualizations (1 min ago)
+    ⏳ Writing insights (in progress)
+  
+  * Metrics:
+    - "234 Records"
+    - "5 Charts"
+    - "3 Insights"
+  
+  AGENT 3 - Research Agent:
+  * Container: border-l-4 border-purple-500
+  * Icon: Search (purple)
+  * Name: "Research Agent"
+  * Status: "Idle" (gray badge)
+  
+  * Next Scheduled Task:
+    - Text: "Daily competitor scan"
+    - Time: "Starts at 9:00 AM"
+  
+  * Last Completed (text-xs):
+    ✓ Scanned 15 competitor sites
+    ✓ Found 3 new features
+    ✓ Sent summary to team
+    - Completed 1 hour ago
+  
+  Activity Log (mt-6, border-t, pt-4):
+  * Heading: "Recent Activity" (text-sm font-semibold, mb-2)
+  * Log entries (space-y-2, text-xs):
+    1. "Email Agent: Sent 12 auto-replies" (2 min ago)
+    2. "Analytics Agent: Report saved to Drive" (5 min ago)
+    3. "Research Agent: Found pricing change" (1 hr ago)
+    4. "Email Agent: Escalated urgent email" (1 hr ago)
+  
+  Action Buttons (mt-6, grid-cols-2 gap-3):
+  * [View All Agents] (primary, gradient)
+  * [Agent Settings] (secondary, border)
+  
+  Powered By (absolute, bottom-right, outside container):
+  * Small badge: "Powered by GPT-4 & Custom Tools"
+  
+  Floating Annotations (around dashboard):
+  * "Autonomous Execution" badge (top-left)
+  * "Multi-Agent System" badge (top-right)
+  * "Real-Time Monitoring" badge (bottom-left)
+  * "24/7 Active" badge (bottom-right)
+
+---
+
+WHAT ARE AI AGENTS SECTION:
+
+Container: py-20, bg-muted, max-w-5xl mx-auto px-6, text-center
+
+- H2: "What Are Autonomous AI Agents?"
+- Description (mt-4, text-lg, leading-relaxed):
+  "AI agents are autonomous systems powered by large language models that can plan, execute multi-step tasks, use tools, and make decisions independently. Unlike chatbots that react to questions, agents proactively complete workflows—reading emails, analyzing data, booking appointments, researching competitors—all without human intervention."
+
+How Agents Work Grid (mt-12, grid-cols-1 md:grid-cols-5 gap-6):
+
+5 steps with arrows between:
+
+Each step (p-5, bg-card, border, rounded-xl, relative):
+- Number badge (gradient text, text-2xl font-bold)
+- Icon (primary, size 32, mb-3)
+- Title (font-semibold, text-sm, mb-2)
+- Description (text-xs text-muted-foreground)
+- Arrow icon → (absolute, right, -mr-3, on desktop only)
+
+1. Number: "1"
+   Icon: Target
+   Title: "Goal Set"
+   Description: "You define the objective and constraints"
+
+2. Number: "2"
+   Icon: Brain
+   Title: "Plans Steps"
+   Description: "AI breaks goal into actionable sub-tasks"
+
+3. Number: "3"
+   Icon: Wrench
+   Title: "Uses Tools"
+   Description: "Executes using APIs, databases, web scraping"
+
+4. Number: "4"
+   Icon: GitBranch
+   Title: "Decides & Adapts"
+   Description: "Makes decisions based on outcomes"
+
+5. Number: "5"
+   Icon: CheckCircle
+   Title: "Completes Task"
+   Description: "Delivers result and reports back"
+
+---
+
+TYPES OF AI AGENTS WE BUILD:
+
+Container: py-20
+
+Header (centered):
+- H2: "AI Agent Solutions We Build"
+- Subtitle: "Autonomous agents for every business function"
+- mb-16
+
+Agent Types Grid: grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8, max-w-7xl mx-auto px-6
+
+6 AGENT TYPES:
+
+CARD STRUCTURE (each):
+- Background: card with gradient border
+- Padding: p-6
+- Rounded: rounded-xl
+- Hover: shadow-xl, scale-102
+
+Each card:
+1. Icon container (gradient circle, size 48)
+2. Type name (text-xl font-bold, mt-4)
+3. Description (text-sm text-muted-foreground, mt-2)
+4. What it does (mt-4, space-y-1.5):
+   - 4 checkmarks with capabilities
+   - text-xs
+5. Time saved badge (mt-4, bg-green-500/10, text-green-700, px-3 py-1, rounded-full, text-xs)
+6. Link: "Learn More" → /contact
+
+THE 6 AGENT TYPES:
+
+TYPE 1: EMAIL MANAGEMENT AGENT
+- Icon: Mail (blue gradient circle)
+- Name: "Email Management Agent"
+- Description: "Reads, categorizes, drafts responses, and manages your inbox autonomously"
+- Capabilities:
+  ✓ Auto-categorize emails by priority
+  ✓ Draft personalized responses
+  ✓ Flag urgent items for humans
+  ✓ Archive spam and newsletters
+- Time Saved: "12-15 hours/week"
+- Gradient border: blue to indigo
+
+TYPE 2: DATA ANALYSIS AGENT
+- Icon: BarChart (cyan gradient)
+- Name: "Data Analysis Agent"
+- Description: "Analyzes datasets, generates insights, creates reports, and visualizations"
+- Capabilities:
+  ✓ Pull data from multiple sources
+  ✓ Run statistical analysis
+  ✓ Generate charts and graphs
+  ✓ Write executive summaries
+- Time Saved: "8-10 hours/week"
+- Gradient border: cyan to teal
+
+TYPE 3: RESEARCH AGENT
+- Icon: Search (purple gradient)
+- Name: "Research & Intelligence Agent"
+- Description: "Monitors competitors, researches topics, summarizes findings autonomously"
+- Capabilities:
+  ✓ Monitor competitor websites daily
+  ✓ Track industry news and trends
+  ✓ Compile research summaries
+  ✓ Alert on important changes
+- Time Saved: "10-12 hours/week"
+- Gradient border: purple to pink
+
+TYPE 4: CUSTOMER SUPPORT AGENT
+- Icon: Headphones (green gradient)
+- Name: "Support Ticket Agent"
+- Description: "Processes support tickets, drafts responses, escalates complex issues"
+- Capabilities:
+  ✓ Read and categorize tickets
+  ✓ Draft initial responses
+  ✓ Pull relevant documentation
+  ✓ Escalate to humans when needed
+- Time Saved: "15-20 hours/week"
+- Gradient border: green to emerald
+
+TYPE 5: SALES OUTREACH AGENT
+- Icon: Target (orange gradient)
+- Name: "Sales Outreach Agent"
+- Description: "Researches prospects, drafts personalized emails, schedules follow-ups"
+- Capabilities:
+  ✓ Research prospect companies
+  ✓ Draft personalized outreach
+  ✓ Schedule follow-up sequences
+  ✓ Update CRM automatically
+- Time Saved: "6-8 hours/week"
+- Gradient border: orange to amber
+
+TYPE 6: CONTENT CREATION AGENT
+- Icon: FileText (indigo gradient)
+- Name: "Content Creation Agent"
+- Description: "Generates blog posts, social content, and marketing copy at scale"
+- Capabilities:
+  ✓ Research trending topics
+  ✓ Write SEO-optimized articles
+  ✓ Generate social media posts
+  ✓ Schedule publishing
+- Time Saved: "10-15 hours/week"
+- Gradient border: indigo to violet
+
+---
+
+REALISTIC AGENT DEMO - MULTIPLE SCENARIOS:
+
+Container: py-20, bg-muted
+
+Header (centered):
+- H2: "Watch AI Agents Work Autonomously"
+- Subtitle: "Real execution flows from deployed agents"
+- mb-12
+
+Layout: max-w-6xl mx-auto px-6, space-y-12
+
+3 REALISTIC AGENT EXECUTION DEMOS:
+
+DEMO 1: EMAIL PROCESSING AGENT
+- Scenario badge: "Email Management"
+- Agent: "Inbox Processing Agent"
+- Company: "Marketing Agency (50 employees)"
+
+Agent Execution Panel (bg-card, border, rounded-xl, p-6):
+
+Header:
+* "Email Agent - Live Execution" (font-semibold)
+* Status: "Processing" (green, pulsing)
+* Time: "Started at 9:00 AM"
+
+Task Timeline (vertical, space-y-4):
+
+STEP 1 - Completed (green checkmark):
+* Title: "Read Inbox" (font-semibold, text-sm)
+* Time: "9:00:15 AM" (text-xs, text-muted-foreground)
+* Details (text-xs, bg-muted, p-2, rounded, mt-1):
+  - "Found 47 new emails since last check"
+  - "Connected to Gmail API successfully"
+  - "Downloaded email content and metadata"
+
+STEP 2 - Completed (green checkmark):
+* Title: "Categorize & Prioritize"
+* Time: "9:00:48 AM"
+* Details:
+  - "High Priority: 3 emails"
+    * Client complaint (FashionCo)
+    * Urgent project request
+    * Invoice overdue notice
+  - "Medium Priority: 18 emails"
+  - "Low Priority: 26 emails (newsletters, updates)"
+
+STEP 3 - In Progress (blue spinner):
+* Title: "Draft Responses"
+* Time: "9:01:20 AM (in progress)"
+* Progress: "Draft 5/18 complete" (progress bar 28%)
+* Details:
+  - Example draft shown:
+To: john@example.com
+Subject: Re: Project Timeline Question
+
+Hi John,
+
+Thanks for reaching out about the timeline. 
+Based on our project plan, the design phase 
+will be completed by Friday, June 15th...
+
+[AI Draft - Pending Review]
+
+STEP 4 - Queued (gray clock icon):
+* Title: "Submit for Approval"
+* Status: "Awaiting step 3 completion"
+* Note: "High-priority drafts will be flagged for human review"
+
+STEP 5 - Queued (gray):
+* Title: "Send Auto-Replies"
+* Status: "After approval"
+* Expected: "Low-priority emails auto-sent"
+
+Decision Log (mt-6, border-t, pt-4):
+* Heading: "Agent Decisions" (text-sm font-semibold)
+* Decisions (space-y-2, text-xs):
+  1. ✓ "Client complaint → Escalate to manager (high priority)"
+  2. ✓ "Invoice reminder → Auto-reply with payment link"
+  3. ✓ "Newsletter → Archive (low value)"
+  4. ✓ "Project question → Draft helpful response"
+
+Metrics Display (grid-cols-4 gap-3, mt-4, text-xs):
+* "47 Emails Processed"
+* "3 Escalated"
+* "18 Drafts Created"
+* "26 Auto-Handled"
+
+Human Oversight Required (mt-4, bg-yellow-500/10, border border-yellow-500, p-3, rounded):
+* Icon: AlertTriangle (yellow)
+* Text: "3 high-priority emails flagged for review"
+* Button: [Review Now]
+
+DEMO 2: DATA ANALYSIS AGENT
+- Scenario: "Weekly Sales Report"
+- Agent: "Analytics Agent"
+- Company: "E-Commerce Store"
+
+Agent Execution Panel:
+
+Header:
+* "Analytics Agent - Report Generation"
+* Status: "Running" (green)
+* Time: "Started at 8:00 AM Monday"
+
+Task Timeline:
+
+STEP 1 - Completed:
+* Title: "Fetch Sales Data"
+* Time: "8:00:22 AM"
+* Details:
+  - "Connected to Shopify API"
+  - "Retrieved 1,247 orders (last 7 days)"
+  - "Downloaded customer and product data"
+
+STEP 2 - Completed:
+* Title: "Data Cleaning & Preparation"
+* Time: "8:01:45 AM"
+* Details:
+  - "Removed 12 test orders"
+  - "Standardized currency (all to GBP)"
+  - "Categorized 234 products into 12 categories"
+
+STEP 3 - Completed:
+* Title: "Statistical Analysis"
+* Time: "8:03:10 AM"
+* Analysis Results Shown:
+  - Total Revenue: £87,340 (+12% vs last week)
+  - Avg Order Value: £70.02 (+£3.40)
+  - Top Product: "Wireless Headphones" (89 units)
+  - Top Category: "Electronics" (42% of sales)
+
+STEP 4 - Completed:
+* Title: "Generate Visualizations"
+* Time: "8:04:55 AM"
+* Charts Created (shown as thumbnails):
+  1. "Revenue Trend (7-day line chart)"
+  2. "Sales by Category (pie chart)"
+  3. "Top 10 Products (bar chart)"
+  4. "Hourly Sales Pattern (heatmap)"
+
+STEP 5 - Completed:
+* Title: "Write Insights & Summary"
+* Time: "8:06:30 AM"
+* Insights Generated:
+KEY FINDINGS:
+
+Revenue up 12% - driven by Electronics surge
+Wireless Headphones are breakout product (89 units)
+Peak sales hours: 8-10 PM (optimize ad spend)
+Cart abandonment down to 42% (from 51%)
+
+RECOMMENDATIONS:
+
+Increase headphone inventory (trending product)
+Run evening promotions (peak conversion time)
+Continue cart recovery email strategy
+
+
+STEP 6 - In Progress:
+* Title: "Save Report & Notify Team"
+* Progress: "Saving to Google Drive..."
+* Actions:
+  - Uploading PDF report
+  - Sending Slack notification to #sales-team
+  - Updating dashboard
+
+Final Output (mt-6, bg-muted, p-4, rounded):
+* Document preview thumbnail
+* Filename: "Weekly_Sales_Report_Feb_10-16_2024.pdf"
+* Size: "2.4 MB, 8 pages"
+* Button: [Download Report] [View Dashboard]
+
+Time Saved (bg-green-500/10, p-3, rounded, mt-4):
+* "This task used to take Sarah 3.5 hours every Monday"
+* "Agent completed it in 6 minutes and 30 seconds"
+* "Time saved: 3 hours 23 minutes ⚡"
+
+DEMO 3: RESEARCH AGENT
+- Scenario: "Competitor Monitoring"
+- Agent: "Market Intelligence Agent"
+- Company: "SaaS Startup"
+
+Agent Execution Panel:
+
+Header:
+* "Research Agent - Daily Competitor Scan"
+* Status: "Running" (green)
+* Trigger: "Automated daily at 7:00 AM"
+
+Task Timeline:
+
+STEP 1 - Completed:
+* Title: "Visit Competitor Websites"
+* Time: "7:00:30 AM"
+* Details:
+  - "Scanned 5 competitor websites"
+  - "Downloaded pricing pages, feature lists, blogs"
+  - "Checked for changes since yesterday"
+
+STEP 2 - Completed:
+* Title: "Detect Changes"
+* Time: "7:02:15 AM"
+* Changes Found:
+  1. "Competitor A: New pricing tier added"
+     - "Enterprise plan: £499/mo (was £399)"
+     - "Added SSO feature"
+  2. "Competitor B: New blog post"
+     - "Announced integration with Slack"
+  3. "Competitor C: Feature update"
+     - "Mobile app redesign launched"
+
+STEP 3 - Completed:
+* Title: "Analyze Significance"
+* Time: "7:04:45 AM"
+* AI Analysis:
+IMPACT ASSESSMENT:
+Competitor A Price Increase:
+
+HIGH PRIORITY: They raised prices 25%
+Opportunity: We can highlight our lower pricing
+Risk: They added SSO (we don't have this yet)
+
+Competitor B Slack Integration:
+
+MEDIUM PRIORITY: Strategic partnership
+Action: Consider building Slack integration
+
+Competitor C Mobile Redesign:
+
+LOW PRIORITY: UI update only
+No competitive threat
+
+
+STEP 4 - Completed:
+* Title: "Compile Summary Report"
+* Time: "7:06:20 AM"
+* Report Generated:
+  - Executive summary (3 bullet points)
+  - Detailed findings (with screenshots)
+  - Recommended actions
+  - Competitive positioning analysis
+
+STEP 5 - In Progress:
+* Title: "Distribute Findings"
+* Actions:
+  - Email sent to product@company.com
+  - Slack message to #competitive-intel
+  - Saved to Google Drive
+  - Updated competitive matrix spreadsheet
+
+Next Steps (mt-6, border-t, pt-4):
+* "Agent will run again tomorrow at 7:00 AM"
+* "Monitoring 5 competitors continuously"
+* "Averaging 2-3 notable changes per week"
+
+Value Delivered (bg-blue-500/10, p-3, rounded, mt-4):
+* "Previous process: Junior analyst spent 1.5 hrs/day on this"
+* "Agent completes in 6 minutes with better coverage"
+* "Annual savings: £18,000 in analyst time 💰"
+
+---
+
+AGENT CAPABILITIES & FEATURES:
+
+Container: py-20
+
+Use ValueProposition component:
+
+- Title: "What AI Agents Can Do"
+- Subtitle: "Autonomous capabilities that replace hours of manual work"
+- Columns: 3
+
+9 Capabilities:
+
+1. Icon: Brain, Title: "Autonomous Planning", Description: "Breaks complex goals into step-by-step execution plans"
+2. Icon: Wrench, Title: "Tool Use & APIs", Description: "Uses 100+ tools—email, CRM, databases, web scraping"
+3. Icon: GitBranch, Title: "Decision Making", Description: "Makes intelligent decisions based on data and context"
+4. Icon: RefreshCw, Title: "Self-Correction", Description: "Detects errors and adjusts approach automatically"
+5. Icon: Database, Title: "Memory & Context", Description: "Remembers past actions and maintains long-term context"
+6. Icon: Zap, Title: "Real-Time Execution", Description: "Works 24/7 without breaks, holidays, or sick days"
+7. Icon: Users, Title: "Human Collaboration", Description: "Escalates to humans for complex or sensitive decisions"
+8. Icon: BarChart, Title: "Performance Tracking", Description: "Logs all actions and provides detailed analytics"
+9. Icon: Shield, Title: "Guardrails & Safety", Description: "Built-in constraints prevent unintended actions"
+
+---
+
+MULTI-AGENT SYSTEMS:
+
+Container: py-20, bg-muted
+
+Header (centered):
+- H2: "Multi-Agent Systems"
+- Subtitle: "Multiple agents working together on complex workflows"
+- mb-12
+
+Layout: max-w-5xl mx-auto px-6
+
+Multi-Agent Diagram:
+
+Container (bg-card, border, rounded-2xl, p-8):
+
+Workflow Visualization (flex, items-center, justify-between):
+
+AGENT 1 (left):
+* Icon: Mail (blue circle, size 64)
+* Name: "Email Agent"
+* Role: "Inbox Manager"
+* Arrow →
+
+COORDINATOR (center):
+* Icon: Bot (purple circle, size 80)
+* Name: "Orchestrator Agent"
+* Role: "Coordinates workflow"
+* Arrows: ← from Email, → to Research, ↓ to Data
+
+AGENT 2 (right-top):
+* Icon: Search (cyan circle)
+* Name: "Research Agent"
+* Role: "Information Gatherer"
+
+AGENT 3 (right-bottom):
+* Icon: BarChart (green circle)
+* Name: "Analysis Agent"
+* Role: "Data Processor"
+
+Example Workflow (mt-8, bg-muted, p-6, rounded-xl):
+* Heading: "Example: Lead Qualification Workflow"
+
+Flow Steps:
+1. Email Agent: "Detects new lead inquiry email"
+   ↓
+2. Orchestrator: "Assigns tasks to specialized agents"
+   ↓
+3. Research Agent: "Enriches company data (LinkedIn, website)"
+   ↓
+4. Analysis Agent: "Scores lead quality (0-100)"
+   ↓
+5. Email Agent: "Sends personalized follow-up or routes to sales"
+
+Benefits List (mt-6, grid-cols-2 gap-4):
+* ✓ "Faster: Each agent specialized for one task"
+* ✓ "Reliable: Agents work in parallel"
+* ✓ "Scalable: Add agents as needed"
+* ✓ "Intelligent: Agents share context"
+
+---
+
+TECHNOLOGIES SECTION (TABBED):
+
+Container: py-20
+
+Header (centered):
+- H2: "Technologies & Tools We Use"
+- Subtitle: "Advanced AI agent frameworks and integrations"
+- mb-12
+
+Layout: max-w-6xl mx-auto px-6
+
+Tabbed Interface:
+
+Tab Navigation (flex gap-4, border-b, mb-8, overflow-x-auto):
+* Each tab: px-6 py-3, cursor-pointer, font-semibold, transition
+* Active tab: border-b-2 border-primary, text-primary
+* Inactive: text-muted-foreground, hover:text-foreground
+
+TABS:
+1. "AI Models" (active by default)
+2. "Agent Frameworks"
+3. "Tool Integrations"
+4. "Data Sources"
+5. "Monitoring"
+
+Tab Content Panels:
+
+PANEL 1 - AI MODELS (default active):
+Grid: grid-cols-2 md:grid-cols-4 gap-6
+
+Each technology card:
+- Container: bg-card, border, rounded-lg, p-4, text-center
+- Icon: size 48, primary color, mb-3
+- Name: font-semibold, text-sm
+- Description: text-xs, text-muted-foreground, mt-1
+
+8 AI models:
+1. Sparkles icon: "GPT-4 Turbo" - "Advanced reasoning"
+2. Brain icon: "Claude 3 Opus" - "Long context"
+3. Sparkles icon: "GPT-4" - "Complex tasks"
+4. Brain icon: "Claude 3 Sonnet" - "Fast execution"
+5. Code2 icon: "GPT-4 Code Interpreter" - "Data analysis"
+6. Search icon: "GPT-4 with browsing" - "Web research"
+7. Image icon: "GPT-4 Vision" - "Image understanding"
+8. Database icon: "Custom fine-tuned" - "Specialized agents"
+
+PANEL 2 - AGENT FRAMEWORKS:
+Grid: grid-cols-2 md:grid-cols-4 gap-6
+
+8 frameworks:
+1. Link icon: "LangChain Agents" - "Agent orchestration"
+2. Bot icon: "AutoGPT" - "Autonomous agents"
+3. Users icon: "CrewAI" - "Multi-agent teams"
+4. Workflow icon: "Semantic Kernel" - "Microsoft framework"
+5. GitBranch icon: "LangGraph" - "Agent workflows"
+6. Zap icon: "Custom Framework" - "Proprietary system"
+7. Database icon: "AgentGPT" - "Browser-based agents"
+8. Code2 icon: "OpenAI Assistants API" - "Official API"
+
+PANEL 3 - TOOL INTEGRATIONS:
+Grid: grid-cols-2 md:grid-cols-4 gap-6
+
+8 tools:
+1. Mail icon: "Gmail / Outlook" - "Email access"
+2. Users icon: "HubSpot / Salesforce" - "CRM data"
+3. Globe icon: "Web Scraping" - "Data extraction"
+4. Database icon: "SQL / PostgreSQL" - "Database queries"
+5. FileText icon: "Google Docs / Sheets" - "Documents"
+6. Calendar icon: "Google Calendar" - "Scheduling"
+7. Code icon: "GitHub / GitLab" - "Code repos"
+8. BarChart icon: "Google Analytics" - "Analytics data"
+
+PANEL 4 - DATA SOURCES:
+Grid: grid-cols-2 md:grid-cols-4 gap-6
+
+8 sources:
+1. Search icon: "Google Search API" - "Web search"
+2. FileText icon: "Internal documents" - "Knowledge base"
+3. Database icon: "Company databases" - "Proprietary data"
+4. Cloud icon: "Cloud storage" - "Files & docs"
+5. Rss icon: "RSS feeds" - "News & updates"
+6. Globe icon: "Public APIs" - "External data"
+7. Table icon: "Spreadsheets" - "Structured data"
+8. Archive icon: "Data warehouses" - "BigQuery, Snowflake"
+
+PANEL 5 - MONITORING:
+Grid: grid-cols-2 md:grid-cols-4 gap-6
+
+8 monitoring tools:
+1. Activity icon: "Agent logs" - "Action tracking"
+2. BarChart icon: "Performance metrics" - "Success rates"
+3. AlertTriangle icon: "Error monitoring" - "Failure alerts"
+4. Clock icon: "Execution time" - "Speed tracking"
+5. DollarSign icon: "Cost tracking" - "API usage"
+6. Shield icon: "Security audit" - "Safety checks"
+7. Users icon: "Human oversight" - "Review system"
+8. TrendingUp icon: "Analytics dashboard" - "Real-time insights"
+
+Implementation Notes:
+- Use React state to manage active tab
+- Show/hide panels based on active tab
+- Smooth fade transitions between panels
+- Mobile: tabs scroll horizontally
+- First tab (AI Models) active by default
+
+---
+
+REALISTIC CASE STUDY:
+
+Container: py-20, bg-muted
+
+Header (centered):
+- H2: "AI Agent Success Story"
+- Subtitle: "Real transformation from a real business"
+- mb-12
+
+Case Study Container: max-w-5xl mx-auto px-6
+
+Background Card (bg-card, border, rounded-2xl, p-8):
+
+Company Header:
+* Industry badge: "SaaS - Project Management"
+* Company: "TaskFlow (B2B SaaS)"
+* Size: "28 employees, 5,000 customers"
+* Project: "Email Support Agent"
+
+Challenge Section (mt-6):
+* Heading: "The Challenge" (font-semibold, mb-3)
+* Text: "TaskFlow's support team (3 people) received 150-200 customer emails daily. Most were repetitive questions about features, account issues, and billing. The team spent 4+ hours daily just reading and categorizing emails before even responding."
+* Pain points (grid-cols-2 gap-3, mt-3):
+  - "Response time: 6-12 hours average"
+  - "Inconsistent answer quality"
+  - "Support team burnout"
+  - "Scaling support with growth impossible"
+
+Solution Section (mt-6):
+* Heading: "The AI Agent Solution"
+* Text: "We built an autonomous email agent using GPT-4 and LangChain that:"
+
+Agent Workflow (space-y-3, mt-4):
+* Step 1: "Monitors support@taskflow.com inbox 24/7"
+* Step 2: "Reads each email and determines: Category, Urgency, Customer context"
+* Step 3: "For 80% of emails (FAQs, basic issues):"
+  - Drafts complete, personalized response
+  - Pulls info from knowledge base
+  - Includes relevant help articles
+  - Sends automatically (low-risk) or flags for review (sensitive)
+* Step 4: "For 20% complex issues:"
+  - Creates detailed context summary
+  - Suggests response approach
+  - Assigns to appropriate team member
+  - Tracks until resolved
+
+Training Data Used:
+* "2.5 years of previous support emails (12,000+)"
+* "Product documentation and help center"
+* "Common troubleshooting steps"
+* "Billing policies and procedures"
+
+Results Section (mt-8):
+* Heading: "The Results (After 3 Months)"
+
+Results Grid (grid-cols-2 md:grid-cols-3 gap-6):
+
+Metric 1 (bg-muted, p-5, rounded-xl):
+* Icon: Clock
+* Label: "Response Time"
+* Before: "6-12 hours"
+* After: "15 minutes"
+* Improvement: "95% faster" (green)
+
+Metric 2:
+* Icon: MessageSquare
+* Label: "Emails Handled Daily"
+* Before: "60-80 manual"
+* After: "180+ total (145 auto)"
+* Detail: "80% fully automated"
+
+Metric 3:
+* Icon: DollarSign
+* Label: "Support Cost Savings"
+* Value: "£5,200/month"
+* Detail: "Avoided 2 new hires"
+
+Metric 4:
+* Icon: Users
+* Label: "Customer Satisfaction"
+* Before: "3.6/5"
+* After: "4.5/5"
+* Improvement: "+25%"
+
+Metric 5:
+* Icon: TrendingUp
+* Label: "Support Team Productivity"
+* Value: "+220%"
+* Detail: "Focus on complex issues"
+
+Metric 6:
+* Icon: Zap
+* Label: "Agent Accuracy"
+* Value: "92%"
+* Detail: "Auto-response quality"
+
+Team Impact (mt-8, border-l-4 border-blue-500, pl-6):
+* Text: "Our support team went from drowning in repetitive emails to focusing on complex customer success initiatives. The agent handles the volume, and our humans handle the nuance. Customer satisfaction is higher than ever."
+* Quote: "— James Carter, Head of Customer Success, TaskFlow"
+
+Implementation Details (mt-6, grid-cols-2 gap-4, text-sm):
+* "Development time: 4 weeks"
+* "Training period: 1 week"
+* "Deployed: November 2023"
+* "Monthly cost: £400 (API + hosting)"
+* "ROI timeframe: 1.2 months"
+
+Technologies:
+* GPT-4, LangChain, Gmail API, Zendesk, PostgreSQL
+
+---
+
+PRICING APPROACH:
+
+Container: py-20
+
+Header (centered):
+- H2: "AI Agent Development Pricing"
+- Subtitle: "Custom agents, transparent pricing"
+- mb-12
+
+Pricing Info: max-w-4xl mx-auto px-6
+
+Pricing Card (bg-card, border, rounded-2xl, p-8):
+
+Explanation:
+"Agent pricing depends on complexity, number of tools, and task automation scope. We provide detailed quotes after understanding your workflow."
+
+Pricing Factors (grid-cols-2 gap-6, mt-8):
+
+Factor 1:
+* Icon: Bot
+* Title: "Agent Complexity"
+* Description: "Single-task vs multi-step workflows"
+
+Factor 2:
+* Icon: Wrench
+* Title: "Tool Integrations"
+* Description: "Number of APIs and systems to connect"
+
+Factor 3:
+* Icon: Database
+* Title: "Data Volume"
+* Description: "Amount of data agent processes"
+
+Factor 4:
+* Icon: Users
+* Title: "Multi-Agent System"
+* Description: "Single agent vs coordinated team of agents"
+
+Typical Costs (mt-8, bg-muted, p-6, rounded-xl):
+
+Development:
+* "Simple single-task agent: £10,000 - £15,000"
+  - Example: Email categorization agent
+* "Multi-step workflow agent: £15,000 - £25,000"
+  - Example: Research + analysis agent
+* "Multi-agent system: £25,000 - £50,000"
+  - Example: End-to-end lead qualification
+
+Monthly Operational Costs:
+* "AI API costs: £200 - £800/month (usage-based)"
+* "Hosting & monitoring: £200/month"
+* "Example: Email agent processing 200/day ≈ £400/month"
+
+ROI Calculation (mt-6, border-l-4 border-green-500, pl-4):
+* "Average time saved: 15-20 hours/week"
+* "Value at £50/hour: £3,000-£4,000/month"
+* "Typical payback: 3-5 months"
+
+CTA (mt-8, text-center):
+* Button: "Get Custom Quote" → /contact
+* Note: "Free consultation • Workflow analysis • 48-hour quote"
+
+---
+
+PROCESS SECTION:
+
+Container: py-20, bg-muted
+
+Use ZigzagTimeline component:
+
+Import statements:
+```javascript
+import { ZigzagTimeline } from "@/components/ui/ZigzagTimeline";
+import { Target, Code2, TestTube, Rocket } from "lucide-react";
+```
+
+Accent Color Constant:
+```javascript
+const AGENT_COLOR = "#3B82F6"; // Blue for AI Agents
+```
+
+Process Steps Array:
+```javascript
+const processSteps = [
+  {
+    icon: Target,
+    title: "Workflow Analysis & Design",
+    points: [
+      "Workshop to map your current manual workflow",
+      "Identify automation opportunities and agent goals",
+      "Design autonomous task execution blueprint"
+    ]
+  },
+  {
+    icon: Code2,
+    title: "Agent Development & Training",
+    points: [
+      "Build agent with LangChain or custom framework",
+      "Integrate tools (email, CRM, APIs, databases)",
+      "Train on your data and implement guardrails"
+    ]
+  },
+  {
+    icon: TestTube,
+    title: "Testing & Optimization",
+    points: [
+      "Test 100+ task execution scenarios",
+      "Optimize accuracy and decision-making logic",
+      "Security audit and error recovery testing"
+    ]
+  },
+  {
+    icon: Rocket,
+    title: "Deploy & Monitor",
+    points: [
+      "Production deployment with monitoring dashboard",
+      "Team training on agent oversight and controls",
+      "Continuous optimization and 30-day support"
+    ]
+  }
+];
+```
+
+Component Usage:
+```javascript
+<ZigzagTimeline
+  title="Our AI Agent Development Process"
+  subtitle="From workflow analysis to autonomous execution in 4-6 weeks"
+  steps={processSteps}
+  accentColor={AGENT_COLOR}
+/>
+```
+
+Implementation Notes:
+- Desktop: Steps alternate left/right with central vertical line
+- Mobile: Stacks vertically with inline icons
+- Each step card uses Framer Motion stagger animation
+- Accent color (#3B82F6 blue) used for icons, borders, and chevrons
+- Lucide React icons only (Target, Code2, TestTube, Rocket)
+- 4 steps total (concise, not overwhelming)
+- Each step has exactly 3 bullet points (ChevronRight icons in accent color)
+
+---
+
+FAQ SECTION:
+
+Container: py-20, max-w-4xl mx-auto px-6
+
+Header: "AI Agent FAQs"
+
+12 Questions (Accordion):
+
+Q1: "What's the difference between AI agents and chatbots?"
+A: "Chatbots are reactive—they respond to user questions. AI agents are proactive—they autonomously execute tasks without waiting for input. Chatbots chat; agents act. Example: A chatbot answers 'What's my order status?' An agent checks order status daily and alerts you if there's a delay."
+
+Q2: "How do AI agents make decisions?"
+A: "Agents use large language models (GPT-4, Claude) to reason through problems. Given a goal like 'Qualify this lead,' the agent breaks it down: (1) Research company, (2) Analyze fit, (3) Score priority, (4) Route to sales or nurture. The AI plans steps, executes using tools (web scraping, CRM API), and decides next actions based on results."
+
+Q3: "Can agents make mistakes?"
+A: "Yes, which is why we build guardrails. Agents operate with constraints (e.g., 'Never send emails without approval for high-priority issues'), log all actions for review, and escalate uncertain decisions to humans. We aim for 90-95% accuracy, with human oversight for critical tasks."
+
+Q4: "What tools can AI agents use?"
+A: "Hundreds of tools via APIs: Email (Gmail, Outlook), CRM (HubSpot, Salesforce), databases (PostgreSQL, MongoDB), calendars, Slack, Google Sheets, web scraping, payment systems, analytics platforms. If it has an API or web interface, agents can likely use it."
+
+Q5: "How long does it take to build an AI agent?"
+A: "Simple single-task agent: 3-4 weeks. Multi-step workflow agent: 4-6 weeks. Multi-agent system: 6-10 weeks. Timeline depends on workflow complexity, number of integrations, and testing requirements."
+
+Q6: "Do agents work 24/7?"
+A: "Yes! Agents run continuously on cloud servers. They can process emails at 3 AM, run daily reports at 7 AM, monitor competitors hourly—all without human intervention. You set the schedule and triggers."
+
+Q7: "What happens if an agent encounters an error?"
+A: "Agents are built with error handling: (1) Retry failed actions (e.g., if API is down, try again in 5 min), (2) Log errors for debugging, (3) Escalate to humans if repeated failures, (4) Send alerts via email/Slack. They don't fail silently."
+
+Q8: "Can we supervise what agents do?"
+A: "Absolutely! We provide monitoring dashboards showing: Every action taken, Decisions made, Errors encountered, Time saved. You can set approval requirements for sensitive actions (e.g., 'Send email only after human approves')."
+
+Q9: "Can agents learn from experience?"
+A: "Yes, in several ways: (1) We retrain agents on new data periodically, (2) Agents use RAG (Retrieval-Augmented Generation) to learn from your docs, (3) Human feedback improves future performance, (4) Agents maintain memory of past actions for context."
+
+Q10: "What about security and data privacy?"
+A: "Agents access only what you authorize (via API keys, OAuth). Data is encrypted in transit and at rest. We can deploy agents on your infrastructure for full control. Compliance: GDPR-friendly, can be HIPAA-compliant if needed. No training on your data without permission."
+
+Q11: "Can agents replace entire roles?"
+A: "Agents replace tasks, not people. They handle repetitive, time-consuming work (reading emails, data entry, research), freeing humans for strategic, creative, and relationship work. Best use: Augment your team, not replace it. Example: Agent processes 80% of support tickets, humans handle the nuanced 20%."
+
+Q12: "What are monthly costs to run an agent?"
+A: "AI API costs: £200-800/month (depends on volume—GPT-4 is more expensive than GPT-3.5). Hosting: £100-200/month. Monitoring: Included. Example: Email agent processing 200 emails/day costs ~£400/month total. Much cheaper than hiring a full-time employee (£3,000+/month)."
+
+---
+
+CTA SECTIONS:
+
+Add 3 CTAs:
+
+CTA 1 (After Agent Types):
+- Variant: 'gradient'
+- Title: "Ready to Automate Your Workflow?"
+- Description: "Let's build an AI agent that saves your team 15+ hours every week"
+- PrimaryCTA: "Build My Agent" → /contact
+- Size: 'large'
+
+CTA 2 (After Case Study):
+- Variant: 'bordered'
+- Title: "Want Results Like TaskFlow?"
+- Description: "See how AI agents can cut response times 95% and boost satisfaction"
+- PrimaryCTA: "Get Agent Quote" → /contact
+- SecondaryCTA: "Watch Agent Demo" → scroll to demos
+- Size: 'medium'
+
+CTA 3 (Final):
+- Variant: 'gradient'
+- Title: "Let's Build Your Autonomous AI Agent"
+- Description: "Book a free consultation to analyze your workflow and design the perfect agent"
+- PrimaryCTA: "Book Free Consultation" → /contact
+- SecondaryCTA: "Call: +44 7429 917368" → tel link
+- ShowContactInfo: true
+- Size: 'large'
+
+---
+
+GLOBAL REQUIREMENTS:
+
+1. SEO:
+   - Meta title: "Autonomous AI Agent Development | GPT-4 Agents | House of Developers"
+   - Meta description: "Build AI agents that work autonomously. Email management, data analysis, research agents. Save 15+ hours/week. From £10,000. Free consultation."
+   - Schema: Service, FAQPage, BreadcrumbList
+
+2. REALISTIC EXECUTION FLOWS:
+   - Show actual agent task breakdowns
+   - Real decision-making processes
+   - Believable time savings
+   - Specific tool usage examples
+
+3. MOCKUPS:
+   - Agent control dashboard (blue/cyan gradient)
+   - 3 execution flow demos (email, analytics, research)
+   - Progress bars, status indicators
+   - Task timelines with real timestamps
+
+4. CASE STUDY:
+   - TaskFlow (SaaS company, realistic)
+   - Real metrics (6hr → 15min, £5,200 saved)
+   - Specific workflow details
+   - Actual implementation timeline
+
+5. COMPONENTS:
+   - ZigzagTimeline ✅ (NEW - replaces ProcessTimeline)
+   - ValueProposition ✅
+   - TABBED Tech Stack ✅
+   - CTASection (×3) ✅
+
+6. ACCENT COLOR: #3B82F6 (blue for agents)
+
+7. NO FIXED PRICING: "Get Custom Quote"
+
+8. TABBED TECHNOLOGIES: 5 tabs to save space
+
+9. ZIGZAG PROCESS: 4 steps with 3 bullets each
+
+10. RESPONSIVE: Mobile-first, dashboards adapt
+
+11. DARK/LIGHT MODE: Agent dashboards work in both
+
+12. ANIMATIONS: Progress bars animate, status pulses
+
+13. GRADIENT THEME: Blue to cyan (agent theme)
+
+Build a comprehensive AI Agents page with realistic autonomous execution examples, beautiful control panel mockups, detailed workflow demonstrations, and the new ZigzagTimeline component for the process section.

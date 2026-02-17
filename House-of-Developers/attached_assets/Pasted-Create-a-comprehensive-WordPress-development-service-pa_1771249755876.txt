@@ -1,0 +1,892 @@
+Create a comprehensive WordPress development service page for House of Developers.
+
+PAGE: /services/web-development/cms/wordpress/page.tsx
+
+This is a detailed page showcasing WordPress development services with real WordPress logo, platform-specific features, pricing alternatives (CTAs), and conversion elements.
+
+IMPORTANT: Use real brand logos from CDN throughout this page:
+- WordPress logo: https://cdn.simpleicons.org/wordpress/21759B
+- Elementor: https://cdn.simpleicons.org/elementor/92003B
+- WooCommerce: https://cdn.simpleicons.org/woocommerce/96588A
+- Yoast SEO: https://cdn.simpleicons.org/yoast/A4286A
+
+---
+
+HERO SECTION:
+
+Container: py-24, max-w-7xl mx-auto px-6
+
+Layout: Grid grid-cols-1 lg:grid-cols-2 gap-12 items-center
+
+Left Column:
+
+- Breadcrumb navigation:
+  * "Home / Services / Web Development / CMS / WordPress"
+  * Text: text-sm text-muted-foreground
+  * Each link clickable with hover:text-primary
+  * Separated by ChevronRight icons
+  * mb-6
+
+- WordPress Logo:
+  * Image from CDN: https://cdn.simpleicons.org/wordpress/21759B
+  * Size: w-16 h-16
+  * mb-4
+
+- Badge: "🎨 WordPress Development"
+  * Background: primary/10
+  * Text: primary color
+  * Padding: px-3 py-1.5
+  * Rounded: rounded-full
+  * Text: text-sm font-semibold
+  * mb-4
+
+- H1: "WordPress Development Services"
+  * Text: text-4xl md:text-5xl lg:text-6xl font-bold
+  * Leading: tight
+  * mb-4
+
+- Headline Enhancement:
+  * Subheading line: "The World's Most Popular CMS"
+  * Text: text-xl md:text-2xl
+  * Color: gradient from blue to teal
+  * Font: font-semibold
+
+- Description (mt-6):
+  * Text: text-xl text-muted-foreground leading-relaxed
+  * Content: "From corporate websites to WooCommerce stores, we build custom WordPress solutions that are fast, secure, and easy to manage. With 60,000+ plugins and unlimited customization, WordPress powers your vision."
+
+- Feature Pills (mt-6, flex gap-3 flex-wrap):
+  * 4 small badges:
+    1. "60K+ Plugins" (with Puzzle icon)
+    2. "Full Customization" (with Wrench icon)
+    3. "SEO-Ready" (with TrendingUp icon)
+    4. "Scalable" (with Zap icon)
+  * Each badge: bg-muted, px-3 py-1.5, rounded-full, text-sm, flex items-center gap-2
+
+- CTA Buttons (mt-8, flex gap-4, flex-wrap):
+  * Primary: "Start Your WordPress Project"
+    - bg-accent text-white
+    - h-14 px-8
+    - rounded-lg
+    - font-semibold text-lg
+    - hover: scale 1.05
+    - Link: /contact
+  
+  * Secondary: "View WordPress Examples"
+    - border variant
+    - Same size as primary
+    - Scroll to use cases section
+
+- Trust Badge (mt-6):
+  * Text: "⭐ Rated 4.9/5 by WordPress clients"
+  * Text: text-sm text-muted-foreground
+  * Flex items-center gap-2
+
+Right Column:
+
+- WordPress Dashboard Mockup:
+  * Create a realistic WordPress admin interface mockup
+  * Browser frame with WordPress logo in top bar
+  * Show sidebar with menu items (Dashboard, Posts, Media, Pages, etc.)
+  * Main content area showing page editor
+  * Use real WordPress colors (#21759B blue, white)
+  * Include mockup elements:
+    - "Edit Page" title
+    - Visual editor toolbar
+    - Content blocks
+    - "Publish" button (blue)
+  * Shadow: 2xl
+  * Border: subtle
+  * Rounded: rounded-xl
+  * Floating elements around mockup:
+    - Small WordPress logo badge
+    - "Live Preview" indicator
+    - Speed metric: "< 2s load time"
+
+---
+
+PLATFORM OVERVIEW SECTION:
+
+Container: py-20, bg-muted
+
+Content: max-w-5xl mx-auto px-6
+
+Header (centered):
+- Badge: "Why WordPress"
+- H2: "The Most Flexible CMS Platform"
+- Description (text-lg, mt-4):
+  "WordPress powers 43% of all websites on the internet. From simple blogs to complex enterprise sites, it's trusted by millions for good reason."
+- mb-12
+
+Stats Grid:
+- Grid: grid-cols-2 md:grid-cols-4 gap-8
+- 4 stat cards
+
+Each stat:
+- Text-center
+- Icon (top, size 32, primary color)
+- Number (text-4xl font-bold primary, mt-3)
+- Label (text-sm text-muted-foreground mt-2)
+
+THE 4 STATS:
+1. Globe icon: "43%" - "Of All Websites"
+2. Package icon: "60,000+" - "Plugins Available"
+3. Users icon: "500M+" - "Websites Worldwide"
+4. Award icon: "15+ Years" - "Industry Leader"
+
+---
+
+SPLIT FEATURE SHOWCASE SECTION:
+
+Container: py-20
+
+Use SplitFeatureShowcase component:
+
+- Badge: "💪 Our WordPress Expertise"
+- Title: "Custom WordPress Development, Not Just Themes"
+- Description: "We don't just install themes. We build custom WordPress solutions tailored to your exact requirements, with pixel-perfect design and blazing-fast performance."
+
+- Features (4 items):
+  
+  1. Icon: Palette
+     Title: "Custom Theme Development"
+     Description: "Bespoke themes built from scratch or heavily customized premium themes. Your brand, perfectly represented."
+  
+  2. Icon: Code2
+     Title: "Custom Plugin Development"
+     Description: "Need unique functionality? We build custom plugins that extend WordPress exactly how you need."
+  
+  3. Icon: Zap
+     Title: "Performance Optimization"
+     Description: "Sub-2-second load times with caching, CDN, image optimization, and code minification."
+  
+  4. Icon: Shield
+     Title: "Security Hardening"
+     Description: "SSL, firewalls, malware scanning, regular updates, and automated backups. Your site is protected 24/7."
+
+- MockupType: 'browser'
+- MockupContent: <WebAppMockup /> (showing WordPress Gutenberg editor)
+- Reversed: false
+
+---
+
+WHAT WE BUILD SECTION:
+
+Container: py-20, max-w-7xl mx-auto px-6
+
+Header (centered):
+- H2: "WordPress Solutions We Build"
+- Subtitle: "From blogs to enterprise platforms"
+- mb-12
+
+Grid: grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8
+
+6 Solution Cards using FeatureShowcaseCard component (simplified as cards):
+
+Each card:
+- Background: card with border
+- Padding: p-8
+- Rounded: rounded-xl
+- Hover: shadow-lg, border-primary
+
+Card structure:
+- Icon (size 40, primary color)
+- Title (text-xl font-semibold mt-4)
+- Description (text-muted-foreground mt-2)
+- Features list (mt-4, space-y-2):
+  * 3-4 key features
+  * CheckCircle2 icon + text
+- Link: "Learn More →" (text-primary, mt-4)
+
+THE 6 SOLUTIONS:
+
+1. Icon: BookOpen
+   Title: "Corporate Websites"
+   Description: "Professional sites for businesses, with custom designs and CMS control."
+   Features:
+   - Custom theme design
+   - Team & services pages
+   - Contact forms & maps
+   - Blog integration
+
+2. Icon: FileText
+   Title: "Blog Platforms"
+   Description: "SEO-optimized blogs with easy publishing and content management."
+   Features:
+   - Category & tag management
+   - Author profiles
+   - Newsletter integration
+   - Social sharing
+
+3. Icon: ShoppingBag
+   Title: "WooCommerce Stores"
+   Description: "Full e-commerce functionality with WordPress flexibility."
+   Features:
+   - Product catalogs
+   - Payment gateways
+   - Inventory management
+   - Order tracking
+
+4. Icon: Users
+   Title: "Membership Sites"
+   Description: "Member-only content with subscription management."
+   Features:
+   - Member registration
+   - Content restrictions
+   - Subscription billing
+   - Member dashboards
+
+5. Icon: Briefcase
+   Title: "Portfolio Sites"
+   Description: "Showcase your work with stunning galleries and case studies."
+   Features:
+   - Project showcases
+   - Gallery layouts
+   - Client testimonials
+   - Contact forms
+
+6. Icon: GraduationCap
+   Title: "Learning Platforms"
+   Description: "Online courses with video hosting and student management."
+   Features:
+   - Course builder
+   - Video hosting
+   - Quizzes & certificates
+   - Student progress tracking
+
+---
+
+WORDPRESS ECOSYSTEM SECTION:
+
+Container: py-20, bg-muted
+
+Use TechStackGrid component:
+
+- Title: "WordPress Ecosystem We Work With"
+- Description: "Premium plugins, page builders, and integrations we use to build powerful WordPress sites"
+- Columns: 6
+- ShowCategories: false
+
+Items (18 technologies with REAL logos from CDN):
+
+PAGE BUILDERS:
+1. name: "Elementor"
+   logo: "https://cdn.simpleicons.org/elementor/92003B"
+   category: "Page Builder"
+
+2. name: "WPBakery"
+   icon: Layout (if no logo available)
+   category: "Page Builder"
+
+3. name: "Divi"
+   icon: Grid (if no logo available)
+   category: "Page Builder"
+
+E-COMMERCE:
+4. name: "WooCommerce"
+   logo: "https://cdn.simpleicons.org/woocommerce/96588A"
+   category: "E-commerce"
+
+5. name: "Easy Digital Downloads"
+   icon: Download
+   category: "E-commerce"
+
+SEO:
+6. name: "Yoast SEO"
+   logo: "https://cdn.simpleicons.org/yoast/A4286A"
+   category: "SEO"
+
+7. name: "Rank Math"
+   icon: TrendingUp
+   category: "SEO"
+
+SECURITY:
+8. name: "Wordfence"
+   icon: Shield
+   category: "Security"
+
+9. name: "Sucuri"
+   icon: Lock
+   category: "Security"
+
+PERFORMANCE:
+10. name: "WP Rocket"
+    icon: Rocket
+    category: "Performance"
+
+11. name: "Cloudflare"
+    logo: "https://cdn.simpleicons.org/cloudflare/F38020"
+    category: "Performance"
+
+FORMS:
+12. name: "Gravity Forms"
+    icon: FileInput
+    category: "Forms"
+
+13. name: "Contact Form 7"
+    icon: Mail
+    category: "Forms"
+
+EMAIL:
+14. name: "Mailchimp"
+    logo: "https://cdn.simpleicons.org/mailchimp/FFE01B"
+    category: "Email"
+
+15. name: "Klaviyo"
+    icon: Send
+    category: "Email"
+
+MEMBERSHIP:
+16. name: "MemberPress"
+    icon: Users
+    category: "Membership"
+
+17. name: "LearnDash"
+    icon: GraduationCap
+    category: "Learning"
+
+BACKUP:
+18. name: "UpdraftPlus"
+    icon: HardDrive
+    category: "Backup"
+
+---
+
+PROCESS TIMELINE SECTION:
+
+Container: py-20
+
+Use ProcessTimeline component:
+
+- Title: "Our WordPress Development Process"
+- Subtitle: "From setup to launch in 2-4 weeks"
+
+- Steps (5 phases):
+
+  WEEK 1:
+  - phase: "Week 1"
+  - title: "Setup & Foundation"
+  - description: "We set up WordPress, choose the right hosting, and configure the foundation for your site."
+  - deliverables:
+    * Domain & hosting setup (or migration to better host)
+    * WordPress installation & configuration
+    * SSL certificate & security setup
+    * Theme selection or custom theme framework
+    * Essential plugin installation
+  - duration: "5-7 days"
+
+  WEEK 2:
+  - phase: "Week 2"
+  - title: "Design & Customization"
+  - description: "Custom theme development or extensive customization to match your brand perfectly."
+  - deliverables:
+    * Custom design implementation
+    * Brand colors, fonts, logo integration
+    * Page layouts & templates
+    * Mobile responsiveness
+    * Header, footer, sidebar design
+  - duration: "5-7 days"
+
+  WEEK 3:
+  - phase: "Week 3"
+  - title: "Content & Features"
+  - description: "Content migration, page building, and adding all functionality your site needs."
+  - deliverables:
+    * Content migration from old site
+    * Page creation with visual builder
+    * Blog setup & sample posts
+    * Contact forms & integrations
+    * WooCommerce setup (if e-commerce)
+  - duration: "5-7 days"
+
+  WEEK 4:
+  - phase: "Week 4"
+  - title: "Optimization & Launch"
+  - description: "Performance tuning, SEO setup, testing, and going live with full support."
+  - deliverables:
+    * Speed optimization (caching, CDN, minification)
+    * SEO setup (Yoast/Rank Math, sitemaps, schema)
+    * Cross-browser & device testing
+    * Team training on WordPress admin
+    * Launch & DNS configuration
+  - duration: "3-5 days"
+
+  POST-LAUNCH:
+  - phase: "Ongoing"
+  - title: "Support & Maintenance"
+  - description: "Ongoing support to keep your WordPress site secure, fast, and up-to-date."
+  - deliverables:
+    * Weekly backups
+    * Plugin & core updates
+    * Security monitoring
+    * Performance monitoring
+    * Content assistance (optional)
+  - duration: "Monthly packages available"
+
+---
+
+PACKAGE INCLUDES SECTION:
+
+Container: py-20, bg-muted
+
+Use PackageIncludes component:
+
+- Title: "What's Included in WordPress Development"
+- Subtitle: "Everything you need for a professional WordPress site"
+- Layout: 'accordion'
+
+Categories (6 categories):
+
+CATEGORY 1: DESIGN & DEVELOPMENT
+- name: "Design & Development"
+- icon: Palette
+- description: "Complete design and build of your WordPress site"
+- features:
+  1. name: "Custom Theme Development or Premium Theme Customization"
+     description: "We build from scratch or heavily customize premium themes"
+  2. name: "Mobile-First Responsive Design"
+     description: "Perfect on all devices from phone to desktop"
+  3. name: "Brand Integration (Colors, Fonts, Logo)"
+  4. name: "Page Builder Setup (Elementor, Divi, or WPBakery)"
+  5. name: "Unlimited Pages & Posts"
+  6. name: "Custom Post Types (if needed)"
+
+CATEGORY 2: FEATURES & FUNCTIONALITY
+- name: "Features & Functionality"
+- icon: Zap
+- features:
+  1. name: "Contact Forms with Spam Protection"
+  2. name: "Google Maps Integration"
+  3. name: "Social Media Integration"
+  4. name: "Newsletter Signup Forms"
+  5. name: "Image Galleries & Sliders"
+  6. name: "Video Embedding"
+  7. name: "Blog with Categories & Tags"
+  8. name: "Search Functionality"
+
+CATEGORY 3: E-COMMERCE (if WooCommerce)
+- name: "E-Commerce (WooCommerce)"
+- icon: ShoppingBag
+- description: "Full online store functionality"
+- features:
+  1. name: "WooCommerce Setup & Configuration"
+  2. name: "Product Catalog (Unlimited Products)"
+  3. name: "Payment Gateway Integration (Stripe, PayPal)"
+  4. name: "Shipping Configuration"
+  5. name: "Inventory Management"
+  6. name: "Order Management System"
+  7. name: "Customer Accounts"
+  8. name: "Coupon & Discount Codes"
+
+CATEGORY 4: SEO & PERFORMANCE
+- name: "SEO & Performance"
+- icon: TrendingUp
+- features:
+  1. name: "Yoast SEO or Rank Math Setup"
+  2. name: "XML Sitemap Generation"
+  3. name: "Schema Markup Implementation"
+  4. name: "Meta Tags Optimization"
+  5. name: "Image Optimization"
+  6. name: "Caching Setup (WP Rocket or similar)"
+  7. name: "CDN Integration (Cloudflare)"
+  8. name: "Code Minification"
+  9. name: "Target: <2s Load Time"
+
+CATEGORY 5: SECURITY & MAINTENANCE
+- name: "Security & Maintenance"
+- icon: Shield
+- features:
+  1. name: "SSL Certificate Installation"
+  2. name: "Security Plugin Setup (Wordfence/Sucuri)"
+  3. name: "Malware Scanning"
+  4. name: "Firewall Configuration"
+  5. name: "Automated Daily Backups"
+  6. name: "Spam Protection"
+  7. name: "Regular WordPress Updates (30 days)"
+
+CATEGORY 6: TRAINING & SUPPORT
+- name: "Training & Support"
+- icon: GraduationCap
+- features:
+  1. name: "Comprehensive Admin Training (2 sessions)"
+     description: "We teach you how to manage content, add pages, upload images, etc."
+  2. name: "Video Tutorials"
+  3. name: "Written Documentation"
+  4. name: "30 Days Post-Launch Support"
+     description: "Bug fixes, content assistance, questions answered"
+  5. name: "Email & Phone Support"
+
+---
+
+BEFORE/AFTER COMPARISON SECTION:
+
+Container: py-20
+
+Use BeforeAfterComparison component:
+
+- Title: "Real WordPress Results We've Delivered"
+- BeforeLabel: "Old Site"
+- AfterLabel: "New WordPress Site"
+- Description: "See the transformation from outdated website to modern WordPress powerhouse"
+
+- BeforeImage: Placeholder gradient (or actual screenshot if you have)
+- AfterImage: Placeholder gradient (or actual screenshot)
+
+- Metrics (6 metrics):
+  
+  1. label: "Page Load Time"
+     before: "8.5s"
+     after: "1.4s"
+     improvement: "83% faster"
+     icon: Zap
+
+  2. label: "Mobile Performance Score"
+     before: "42/100"
+     after: "96/100"
+     improvement: "+54 points"
+     icon: Smartphone
+
+  3. label: "SEO Score"
+     before: "58/100"
+     after: "94/100"
+     improvement: "+36 points"
+     icon: TrendingUp
+
+  4. label: "Organic Traffic"
+     before: "1,200/month"
+     after: "4,800/month"
+     improvement: "+300%"
+     icon: BarChart
+
+  5. label: "Bounce Rate"
+     before: "72%"
+     after: "38%"
+     improvement: "47% lower"
+     icon: Target
+
+  6. label: "Conversion Rate"
+     before: "1.2%"
+     after: "3.8%"
+     improvement: "+217%"
+     icon: TrendingUp
+
+---
+
+USE CASES SECTION:
+
+Container: py-20, bg-muted, max-w-7xl mx-auto px-6
+
+Header (centered):
+- H2: "WordPress Sites We've Built"
+- Subtitle: "Real projects across different industries"
+- mb-12
+
+Grid: grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8
+
+6 Use Case Cards:
+
+Each card:
+- Background: card
+- Rounded: rounded-xl
+- Border: subtle
+- Overflow: hidden
+- Hover: shadow-xl
+
+Structure:
+1. Image area (aspect-video):
+   - Gradient background (unique per card)
+   - Centered icon (size 48)
+   - Category badge (top-right, absolute)
+
+2. Content (p-6):
+   - Industry badge (small pill)
+   - Project title (text-xl font-bold mt-3)
+   - Description (text-sm text-muted-foreground mt-2)
+   - Features used (mt-4):
+     * Flex gap-2 flex-wrap
+     * Small tech badges
+   - Results (mt-4):
+     * 2 metric badges (green bg)
+
+THE 6 USE CASES:
+
+1. Industry: "Technology"
+   Title: "SaaS Company Blog"
+   Description: "Corporate blog with 100+ articles, author profiles, and newsletter integration."
+   Features: Elementor, Yoast SEO, Mailchimp
+   Results: "+250% traffic", "5,000 subscribers"
+   Icon: Laptop
+
+2. Industry: "E-commerce"
+   Title: "Fashion Store"
+   Description: "WooCommerce store with 500+ products, size guides, and wishlist functionality."
+   Features: WooCommerce, Stripe, Klaviyo
+   Results: "£80K first month", "4.2% conversion"
+   Icon: ShoppingBag
+
+3. Industry: "Education"
+   Title: "Online Learning Platform"
+   Description: "Membership site with video courses, quizzes, and student progress tracking."
+   Features: LearnDash, MemberPress
+   Results: "1,000 students", "£25K MRR"
+   Icon: GraduationCap
+
+4. Industry: "Professional Services"
+   Title: "Law Firm Website"
+   Description: "Professional site with attorney profiles, case studies, and contact forms."
+   Features: Custom Theme, Gravity Forms
+   Results: "+180% leads", "Top 3 Google"
+   Icon: Briefcase
+
+5. Industry: "Creative"
+   Title: "Photography Portfolio"
+   Description: "Stunning portfolio with full-screen galleries and client booking system."
+   Features: Custom Theme, Gallery Plugin
+   Results: "20+ bookings/month", "98 PageSpeed"
+   Icon: Camera
+
+6. Industry: "Non-Profit"
+   Title: "Charity Website"
+   Description: "Donation platform with campaign tracking and volunteer registration."
+   Features: GiveWP, Event Calendar
+   Results: "£150K raised", "500 volunteers"
+   Icon: Heart
+
+---
+
+WHY CHOOSE US FOR WORDPRESS SECTION:
+
+Container: py-20
+
+Use ValueProposition component:
+
+- Title: "Why Choose Us for WordPress Development"
+- Subtitle: "We're WordPress experts with proven results"
+- Columns: 3
+
+Values (6 items):
+
+1. Icon: Award
+   Title: "WordPress Certified"
+   Description: "Official WordPress developers with 100+ successful projects"
+   Stat: "100+ Projects"
+
+2. Icon: Zap
+   Title: "Performance Obsessed"
+   Description: "Every site we build scores 90+ on Google PageSpeed"
+   Stat: "< 2s Load Time"
+
+3. Icon: Code2
+   Title: "Custom Development"
+   Description: "We build custom themes and plugins, not just install templates"
+
+4. Icon: Shield
+   Title: "Security First"
+   Description: "SSL, firewalls, malware protection, and daily backups included"
+
+5. Icon: GraduationCap
+   Title: "Comprehensive Training"
+   Description: "We train your team so you can manage content independently"
+
+6. Icon: Headphones
+   Title: "Ongoing Support"
+   Description: "30 days included, then affordable monthly packages"
+
+---
+
+TESTIMONIALS SECTION:
+
+Container: py-20, bg-muted
+
+Use TestimonialSlider component:
+
+- Title: "What Our WordPress Clients Say"
+- AutoPlay: true
+- Interval: 6000
+
+Testimonials (4 items):
+
+1. quote: "House of Developers transformed our slow, outdated site into a lightning-fast WordPress powerhouse. Our traffic increased 300% in 3 months and we can finally manage content ourselves."
+   author: "David Richardson"
+   role: "Marketing Director"
+   company: "TechFlow Solutions"
+   rating: 5
+   project: "Corporate WordPress Site"
+
+2. quote: "They built our WooCommerce store in 3 weeks. The custom checkout flow they designed increased our conversion rate by 40%. Best investment we made."
+   author: "Emma Watson"
+   role: "Founder"
+   company: "Artisan Goods Co."
+   rating: 5
+   project: "WooCommerce E-commerce Store"
+
+3. quote: "We needed a membership site with online courses. House of Developers delivered exactly what we needed with LearnDash. Now we have 1,000+ paying students."
+   author: "Michael Chen"
+   role: "CEO"
+   company: "Digital Marketing Academy"
+   rating: 5
+   project: "WordPress Learning Platform"
+
+4. quote: "The training they provided was exceptional. Our team can now update the site, add blog posts, and manage content without bothering developers. Worth every penny."
+   author: "Sarah Johnson"
+   role: "Content Manager"
+   company: "Green Energy Ltd"
+   rating: 5
+   project: "WordPress Blog Platform"
+
+---
+
+FAQ SECTION:
+
+Container: py-20, max-w-4xl mx-auto px-6
+
+Header (centered):
+- H2: "WordPress Development FAQs"
+- Subtitle: "Common questions about our WordPress services"
+- mb-12
+
+Accordion with 12 questions:
+
+Q1: "Do you use custom themes or premium themes?"
+A: "Both! For simple projects, we customize premium themes like Astra or GeneratePress. For complex projects or unique designs, we build custom themes from scratch. We'll recommend the best approach based on your budget and requirements."
+
+Q2: "Can I update the content myself after launch?"
+A: "Absolutely! That's the beauty of WordPress. We provide comprehensive training (2 sessions + video tutorials) so you can easily add pages, update content, upload images, and manage your site without any coding knowledge."
+
+Q3: "What page builder do you use?"
+A: "We primarily use Elementor Pro for its flexibility and ease of use. We also work with Divi, WPBakery, and Gutenberg (WordPress default editor) based on your preference."
+
+Q4: "How long does a WordPress project take?"
+A: "Simple sites (5-10 pages): 2 weeks. Standard sites (10-20 pages): 3-4 weeks. Complex sites (WooCommerce, membership, custom features): 4-8 weeks. We'll give you an accurate timeline after our consultation."
+
+Q5: "Do you provide hosting or do I need my own?"
+A: "We can help with both options. We recommend managed WordPress hosts like WP Engine, Kinsta, or SiteGround. We'll set everything up for you or migrate to your existing host."
+
+Q6: "Can you migrate my existing site to WordPress?"
+A: "Yes! We migrate from any platform (Wix, Squarespace, custom HTML, old WordPress) to a new WordPress site. We preserve your content, URLs (for SEO), and improve the design and performance."
+
+Q7: "Is WordPress secure?"
+A: "When properly configured, yes! We implement security best practices: SSL, security plugins (Wordfence/Sucuri), regular updates, strong passwords, firewall, malware scanning, and daily backups. Your site will be protected."
+
+Q8: "What if I need e-commerce functionality?"
+A: "We integrate WooCommerce for full e-commerce capabilities. This includes product catalogs, shopping cart, payment gateways (Stripe, PayPal), inventory management, and order tracking."
+
+Q9: "Can you build custom features not available in plugins?"
+A: "Yes! If your needs are unique, we build custom plugins tailored to your requirements. Examples: custom calculators, booking systems, API integrations, workflow automation."
+
+Q10: "What's included in the 30 days of support?"
+A: "Bug fixes, content assistance, minor tweaks, answering questions, and helping you get comfortable with WordPress. After 30 days, we offer affordable monthly support packages."
+
+Q11: "Will my site be mobile-friendly?"
+A: "100%. All our WordPress sites are built mobile-first and tested on all devices and screen sizes. We ensure perfect responsiveness and fast mobile load times."
+
+Q12: "Do you offer ongoing maintenance?"
+A: "Yes! We offer monthly maintenance packages starting at £200/month including: WordPress core updates, plugin updates, security monitoring, backups, uptime monitoring, and priority support."
+
+---
+
+CTA SECTIONS:
+
+Add 3 CTASections throughout the page:
+
+CTA 1 (After Process Timeline):
+Use CTASection component:
+- Variant: 'bordered'
+- Title: "Ready to Start Your WordPress Project?"
+- Description: "Let's discuss your requirements and build a WordPress site that grows your business."
+- PrimaryCTA: 
+  * text: "Book Free Consultation"
+  * link: "/contact"
+- SecondaryCTA:
+  * text: "View WordPress Examples"
+  * link: "#use-cases"
+- Size: 'medium'
+
+CTA 2 (After Use Cases):
+- Variant: 'gradient'
+- Title: "Need a WooCommerce Store?"
+- Description: "We specialize in WordPress e-commerce. Let's build your online store."
+- PrimaryCTA:
+  * text: "Discuss E-commerce Project"
+  * link: "/contact"
+- Size: 'medium'
+
+CTA 3 (Final, After FAQ):
+- Variant: 'gradient'
+- Title: "Let's Build Your WordPress Site"
+- Description: "Book a free consultation and get a custom proposal for your WordPress project. No obligations, just expert advice."
+- PrimaryCTA:
+  * text: "Book Free Consultation"
+  * link: "/contact"
+- SecondaryCTA:
+  * text: "Call Us: +44 7429 917368"
+  * link: "tel:+447429917368"
+- ShowContactInfo: true
+- Size: 'large'
+
+---
+
+GLOBAL PAGE REQUIREMENTS:
+
+1. SEO:
+   - Meta title: "WordPress Development Services | Custom WordPress Sites | House of Developers"
+   - Meta description: "Expert WordPress development in UK. Custom themes, WooCommerce stores, performance optimization. From £3,000. Free consultation."
+   - Schema markup: Service, Organization, BreadcrumbList
+   - Alt text on all images
+   - Proper heading hierarchy
+
+2. REAL LOGOS:
+   - WordPress: https://cdn.simpleicons.org/wordpress/21759B
+   - WooCommerce: https://cdn.simpleicons.org/woocommerce/96588A
+   - Elementor: https://cdn.simpleicons.org/elementor/92003B
+   - Yoast: https://cdn.simpleicons.org/yoast/A4286A
+   - Cloudflare: https://cdn.simpleicons.org/cloudflare/F38020
+   - Mailchimp: https://cdn.simpleicons.org/mailchimp/FFE01B
+   - Use CDN URLs, not placeholder icons
+
+3. NAVIGATION:
+   - Breadcrumbs functional and clickable
+   - Link back to CMS overview page
+   - Update mega menu to highlight WordPress
+
+4. RESPONSIVE:
+   - Mobile-first design
+   - Test: 375px, 768px, 1024px, 1440px
+   - All mockups responsive
+   - Tables scroll on mobile
+
+5. DARK/LIGHT MODE:
+   - All sections work in both modes
+   - WordPress blue (#21759B) adjusts for dark mode
+   - Proper contrast throughout
+
+6. ANIMATIONS:
+   - Fade in sections on scroll
+   - Stagger cards and timeline items
+   - Smooth hover effects
+   - Respect prefers-reduced-motion
+
+7. PERFORMANCE:
+   - Lazy load images and mockups
+   - Optimize CDN logo loading
+   - Fast initial paint
+   - No layout shifts
+
+8. ACCESSIBILITY:
+   - Semantic HTML
+   - ARIA labels on all interactive elements
+   - Keyboard navigation
+   - Screen reader friendly
+   - Focus indicators
+
+9. COMPONENTS USED:
+   - SplitFeatureShowcase ✅
+   - ProcessTimeline ✅
+   - TechStackGrid ✅
+   - PackageIncludes ✅
+   - BeforeAfterComparison ✅
+   - TestimonialSlider ✅
+   - CTASection (×3) ✅
+   - ValueProposition ✅
+
+Build this comprehensive, conversion-focused WordPress development page that showcases our expertise and drives consultation bookings. Use REAL brand logos from CDN throughout.

@@ -1,0 +1,628 @@
+Create a detailed Hire MERN Stack Developers page for House of Developers.
+
+PAGE: /services/hire-developers/mern-stack/page.tsx
+
+A comprehensive page for hiring MERN stack developers with beautiful mockups and detailed information.
+
+IMPORTANT: Use slug "mern-stack" (not "full-stack/mern"). This is a direct technology page.
+
+---
+
+HERO SECTION:
+
+Container: py-24, max-w-7xl mx-auto px-6
+
+Layout: Grid grid-cols-1 lg:grid-cols-2 gap-12 items-center
+
+Left Column:
+
+- Breadcrumb: "Home / Services / Hire Developers / MERN Stack"
+  * text-sm text-muted-foreground, clickable, mb-6
+
+- Badge: "⚛️ MERN Stack Developers"
+  * bg-primary/10, text-primary, px-3 py-1.5, rounded-full, mb-4
+
+- H1: "Hire MERN Stack Developers"
+  * text-4xl md:text-6xl font-bold, mb-4
+
+- Tagline: "MongoDB, Express, React, Node.js Experts"
+  * text-xl md:text-2xl
+  * Gradient text from blue to green
+  * font-semibold
+
+- Description (mt-6):
+  * text-xl text-muted-foreground leading-relaxed
+  * "Hire senior MERN stack developers who build modern, scalable web applications using JavaScript throughout. From real-time dashboards to SaaS platforms—fast development with a single language across frontend and backend."
+
+- Feature Pills (mt-6, flex gap-3 flex-wrap):
+  1. "JavaScript Full-Stack" (Code2 icon)
+  2. "Fast Development" (Zap icon)
+  3. "Scalable" (TrendingUp icon)
+  4. "Modern Stack" (Sparkles icon)
+
+- Stats Grid (mt-8, grid-cols-3 gap-6):
+  1. "6+ Developers"
+  2. "8+ Years Avg"
+  3. "Available Now"
+
+- CTA Buttons (mt-8, flex gap-4):
+  * Primary: "Hire MERN Developer" → /contact
+  * Secondary: "See Examples" → scroll to projects
+
+Right Column:
+
+- MERN Stack Visual Mockup:
+  * Create beautiful layered stack visualization
+  
+  4 Layers stacked vertically with 3D effect:
+  
+  LAYER 1 (Top - React):
+  * Card: bg-gradient (blue), p-4, rounded-lg
+  * Icon: Layout (white, size 32)
+  * Label: "React" (white, font-bold)
+  * Subtitle: "Frontend UI"
+  * Small component preview: "<Component />"
+  
+  LAYER 2 (Express):
+  * Card: bg-gradient (purple), p-4, rounded-lg
+  * Icon: Server (white, size 32)
+  * Label: "Express.js"
+  * Subtitle: "Backend API"
+  * Code snippet: "app.get('/api')"
+  
+  LAYER 3 (Node.js):
+  * Card: bg-gradient (green), p-4, rounded-lg
+  * Icon: Code2 (white, size 32)
+  * Label: "Node.js"
+  * Subtitle: "JavaScript Runtime"
+  * Badge: "V8 Engine"
+  
+  LAYER 4 (Bottom - MongoDB):
+  * Card: bg-gradient (emerald), p-4, rounded-lg
+  * Icon: Database (white, size 32)
+  * Label: "MongoDB"
+  * Subtitle: "NoSQL Database"
+  * Schema preview: "{ user: {...} }"
+  
+  Connecting arrows/lines between layers
+  "MERN Stack" label with sparkle icon
+  
+  Floating badges around:
+  * "Single Language" (JavaScript icon)
+  * "Fast & Modern" (Zap icon)
+  * "Production Ready" (CheckCircle)
+  
+  * Shadow: 2xl, overall modern look
+
+---
+
+WHAT IS MERN STACK SECTION:
+
+Container: py-20, bg-muted, max-w-5xl mx-auto px-6, text-center
+
+- H2: "What is the MERN Stack?"
+- Description (mt-4, text-lg):
+  "MERN is a JavaScript-based technology stack for building full-stack web applications. MongoDB (database), Express (backend framework), React (frontend library), Node.js (runtime)—all using JavaScript/TypeScript throughout."
+
+MERN Components Grid (mt-12, grid-cols-1 md:grid-cols-4 gap-8):
+
+4 component cards:
+
+Each card (p-6, bg-card, border, rounded-xl):
+- Icon (primary, size 40, mb-4)
+- Letter badge (e.g., "M", "E", "R", "N" - large, font-bold, primary color)
+- Name (font-semibold, mt-2)
+- Full name (text-xs text-muted-foreground)
+- Purpose (text-sm, mt-2)
+
+1. Icon: Database
+   Letter: "M"
+   Name: "MongoDB"
+   Full: "NoSQL Database"
+   Purpose: "Flexible document storage, perfect for evolving schemas"
+
+2. Icon: Server
+   Letter: "E"
+   Name: "Express.js"
+   Full: "Backend Framework"
+   Purpose: "Fast, minimal web framework for Node.js APIs"
+
+3. Icon: Layout
+   Letter: "R"
+   Name: "React"
+   Full: "Frontend Library"
+   Purpose: "Component-based UI with virtual DOM for speed"
+
+4. Icon: Code2
+   Letter: "N"
+   Name: "Node.js"
+   Full: "JavaScript Runtime"
+   Purpose: "Run JavaScript on the server, non-blocking I/O"
+
+---
+
+WHY CHOOSE MERN SECTION:
+
+Container: py-20
+
+Use ValueProposition component:
+
+- Title: "Why Choose MERN Stack Development"
+- Subtitle: "The benefits of using JavaScript everywhere"
+- Columns: 3
+
+9 Benefits:
+
+1. Icon: Code2, Title: "Single Language", Description: "JavaScript/TypeScript across frontend, backend, and database queries"
+2. Icon: Zap, Title: "Fast Development", Description: "Reuse code, components, and knowledge between frontend and backend"
+3. Icon: Users, Title: "Huge Community", Description: "Largest developer community, endless resources and libraries"
+4. Icon: Package, Title: "NPM Ecosystem", Description: "2M+ packages available for any functionality you need"
+5. Icon: TrendingUp, Title: "Highly Scalable", Description: "Node.js handles concurrent connections, MongoDB scales horizontally"
+6. Icon: Smartphone, Title: "React Native Ready", Description: "Extend to mobile apps with React Native easily"
+7. Icon: Database, Title: "Flexible Schema", Description: "MongoDB's document model adapts as your app evolves"
+8. Icon: Sparkles, Title: "Modern & Popular", Description: "Most popular JavaScript stack, used by startups and enterprises"
+9. Icon: DollarSign, Title: "Cost Effective", Description: "One team, one language—lower development costs"
+
+---
+
+MERN STACK MOCKUP - FULL APPLICATION:
+
+Container: py-20, bg-muted
+
+Header (centered):
+- H2: "See What MERN Stack Developers Build"
+- Description: "Complete web applications with beautiful frontend and robust backend"
+- mb-12
+
+Layout: max-w-6xl mx-auto px-6
+
+Application Mockup:
+- Create browser window showing full MERN app
+
+Browser Frame:
+* Top bar with dots, URL: "app.example.com"
+
+Inside - Modern Dashboard Application:
+
+TOP SECTION - Navigation Bar:
+* Logo (left)
+* Nav items: Dashboard, Projects, Team, Settings
+* User avatar + name (right)
+* Notification bell icon
+
+MAIN CONTENT - Dashboard:
+* Page title: "Dashboard" with date
+* Stats cards (grid-cols-4):
+  1. Total Users: 1,234 (user icon, +12% trend)
+  2. Revenue: £45,890 (dollar icon, +8%)
+  3. Active Projects: 28 (folder icon)
+  4. Tasks: 156 (check icon, -5%)
+
+* Chart section (2 columns):
+  - Line chart (Revenue over time) - gradient fill
+  - Bar chart (Projects by status) - colored bars
+
+* Recent activity table:
+  - 4 rows with avatar, name, action, time
+  - Clean design with alternating row colors
+
+SIDEBAR (left):
+* Menu items with icons:
+  - Dashboard (home icon)
+  - Projects (folder icon)
+  - Team (users icon)
+  - Analytics (chart icon)
+  - Settings (settings icon)
+
+Colors: Use modern, professional palette (blues, purples, greens)
+Design: Material Design or modern aesthetic
+Spacing: Clean, organized, professional
+
+Annotations around mockup:
+* "React Components" (pointing to UI)
+* "Express API" (pointing to data)
+* "MongoDB Data" (pointing to table)
+* "Node.js Server" (pointing to backend)
+
+Code Preview Panel (bottom or side):
+* Small code snippet showing:
+  - React component example
+  - Express route example
+  - MongoDB query example
+* Syntax highlighting
+* "MERN in Action" label
+
+---
+
+WHAT MERN DEVELOPERS DO:
+
+Container: py-20
+
+Header (centered):
+- H2: "What Our MERN Stack Developers Deliver"
+- Subtitle: "Complete application development from database to UI"
+- mb-12
+
+Grid: grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6, max-w-6xl mx-auto px-6
+
+9 Capability Cards:
+
+Each card (p-6, bg-card, border, rounded-lg):
+- Icon (primary, size 28)
+- Title (font-semibold, mt-3)
+- Description (text-sm text-muted-foreground, mt-2)
+
+1. Icon: Layout, Title: "React UI Development", Description: "Component-based interfaces with hooks, context, and state management"
+
+2. Icon: Server, Title: "RESTful APIs", Description: "Express routes, middleware, authentication, and business logic"
+
+3. Icon: Database, Title: "MongoDB Integration", Description: "Schema design, Mongoose models, aggregations, and queries"
+
+4. Icon: Lock, Title: "Authentication", Description: "JWT, sessions, OAuth, passport.js for secure user login"
+
+5. Icon: Zap, Title: "Real-Time Features", Description: "Socket.io for chat, notifications, live updates"
+
+6. Icon: CreditCard, Title: "Payment Integration", Description: "Stripe, PayPal webhooks and subscription handling"
+
+7. Icon: Cloud, Title: "Deployment & DevOps", Description: "AWS, Heroku, DigitalOcean, Docker, CI/CD pipelines"
+
+8. Icon: TestTube, Title: "Testing", Description: "Jest, React Testing Library, Mocha, Chai for quality"
+
+9. Icon: TrendingUp, Title: "Performance Optimization", Description: "Code splitting, lazy loading, caching, database indexing"
+
+---
+
+PRICING SECTION:
+
+Container: py-20, bg-muted
+
+Header (centered):
+- H2: "MERN Stack Developer Pricing"
+- Subtitle: "Transparent pricing with no hidden costs"
+- mb-12
+
+Pricing Cards: grid-cols-1 md:grid-cols-3 gap-8, max-w-6xl mx-auto px-6
+
+3 TIERS:
+
+TIER 1: PART-TIME
+- Name: "Part-Time MERN Developer"
+- Price: "£2,500/month"
+- Description: "80 hours/month"
+- Features:
+  * React component development
+  * Express API endpoints
+  * MongoDB schema design
+  * Bug fixes & updates
+  * Code reviews
+  * Flexible 4 hours/day
+- CTA: "Hire Part-Time"
+
+TIER 2: FULL-TIME (POPULAR)
+- Name: "Full-Time MERN Developer"
+- Price: "£4,500/month"
+- Description: "160 hours/month"
+- Features:
+  * Complete feature ownership
+  * Frontend + backend development
+  * Database optimization
+  * Real-time features
+  * Testing & documentation
+  * Daily standups & sprints
+- CTA: "Hire Full-Time"
+- isPopular: true
+
+TIER 3: TEAM
+- Name: "MERN Development Team"
+- Price: "Custom Quote"
+- Description: "2+ developers"
+- Features:
+  * Frontend specialist
+  * Backend specialist
+  * Full-stack generalists
+  * UI/UX designer (optional)
+  * Project manager
+  * Complete app delivery
+- CTA: "Build Team"
+
+---
+
+SAMPLE MERN DEVELOPER PROFILES:
+
+Container: py-20
+
+Header (centered):
+- H2: "Meet Our MERN Stack Developers"
+- Subtitle: "Senior JavaScript engineers with production experience"
+- mb-12
+
+Profiles Grid: grid-cols-1 md:grid-cols-2 gap-8, max-w-5xl mx-auto px-6
+
+2 DEVELOPER PROFILES:
+
+PROFILE 1:
+- Avatar: User icon in circle, bg-primary/10
+- Name: "Senior MERN Stack Developer"
+- Experience: "9+ years in JavaScript development"
+- Status: "Available Now" (green dot)
+
+Skills (flex gap-2 flex-wrap):
+* React
+* Node.js
+* Express
+* MongoDB
+* TypeScript
+* Redux
+* Socket.io
+* AWS
+
+Expertise Highlights (space-y-2, mt-4):
+✓ Built 15+ production MERN applications
+✓ Expert in React hooks and performance
+✓ MongoDB schema design and optimization
+✓ Real-time features with Socket.io
+✓ AWS deployment and scaling
+
+Recent Projects:
+- SaaS dashboard with 50K+ users
+- Real-time collaboration tool
+- E-commerce platform with payments
+
+Availability: "Can start within 1 week"
+
+CTA: "Schedule Interview" → /contact
+
+PROFILE 2:
+- Avatar: User icon in circle, bg-primary/10
+- Name: "Senior MERN Stack Developer"
+- Experience: "8+ years full-stack JavaScript"
+- Status: "Available in 2 weeks"
+
+Skills:
+* React
+* Next.js
+* Node.js
+* Express
+* MongoDB
+* GraphQL
+* Jest
+* Docker
+
+Expertise Highlights:
+✓ GraphQL API design specialist
+✓ Next.js SSR/SSG expert
+✓ Microservices architecture
+✓ Jest/React Testing Library
+✓ DevOps and CI/CD pipelines
+
+Recent Projects:
+- Multi-tenant SaaS platform
+- Headless CMS with GraphQL
+- Analytics dashboard
+
+Availability: "2 weeks notice period"
+
+CTA: "Schedule Interview" → /contact
+
+---
+
+MERN STACK PROJECTS SHOWCASE:
+
+Container: py-20, bg-muted
+
+Header (centered):
+- H2: "MERN Stack Applications We've Built"
+- Subtitle: "Real projects delivered by our developers"
+- mb-12
+
+Projects Grid: grid-cols-1 md:grid-cols-3 gap-8, max-w-7xl mx-auto px-6
+
+3 PROJECT CARDS:
+
+Each card:
+- Image placeholder (aspect-video, gradient bg with icon)
+- Content (p-6)
+- Project type badge
+- Title
+- Description
+- Tech stack tags
+- Results/metrics
+
+PROJECT 1:
+- Image: Gradient (blue to purple) with LayoutDashboard icon
+- Badge: "SaaS Platform"
+- Title: "Project Management Dashboard"
+- Description: "Real-time collaboration tool with task management, team chat, and analytics"
+- Tech: React, Node.js, MongoDB, Socket.io, AWS
+- Results:
+  * 10,000+ active users
+  * Real-time updates
+  * 99.9% uptime
+- Icon: Briefcase
+
+PROJECT 2:
+- Image: Gradient (green to teal) with ShoppingCart icon
+- Badge: "E-Commerce"
+- Title: "Online Marketplace Platform"
+- Description: "Multi-vendor marketplace with product catalog, cart, and Stripe payments"
+- Tech: React, Express, MongoDB, Stripe, Redis
+- Results:
+  * £500K transactions/month
+  * 5,000+ products
+  * Mobile responsive
+- Icon: ShoppingBag
+
+PROJECT 3:
+- Image: Gradient (purple to pink) with BarChart icon
+- Badge: "Analytics Platform"
+- Title: "Business Intelligence Dashboard"
+- Description: "Data visualization platform with custom charts and export features"
+- Tech: React, Node.js, MongoDB, Chart.js, D3.js
+- Results:
+  * Process 1M+ data points
+  * Real-time analytics
+  * Custom reporting
+- Icon: TrendingUp
+
+---
+
+PROCESS TIMELINE:
+
+Container: py-20
+
+Use ProcessTimeline component:
+
+- Title: "Hiring MERN Stack Developers"
+- Subtitle: "From consultation to first feature delivery"
+
+Steps (4 phases):
+
+STEP 1:
+- phase: "Day 1"
+- title: "Discuss Your MERN Project"
+- description: "Share your requirements and we match you with developers"
+- deliverables:
+  * Free 30-minute consultation
+  * Discuss React frontend needs
+  * Define API requirements
+  * MongoDB schema planning
+  * Choose engagement model
+- duration: "Same day"
+
+STEP 2:
+- phase: "Day 2-3"
+- title: "Meet MERN Developers"
+- description: "Interview 2-3 pre-vetted MERN specialists"
+- deliverables:
+  * Developer profiles with portfolios
+  * MERN stack project examples
+  * Technical skills assessment
+  * GitHub profile review
+  * Schedule interviews
+- duration: "48 hours"
+
+STEP 3:
+- phase: "Day 4-5"
+- title: "Technical Assessment"
+- description: "Evaluate React, Node.js, and MongoDB skills"
+- deliverables:
+  * Video interviews
+  * React component discussion
+  * API design questions
+  * MongoDB query review
+  * Make hiring decision
+- duration: "2-3 days"
+
+STEP 4:
+- phase: "Day 6-7"
+- title: "Onboard & Start Coding"
+- description: "Developer joins your team and starts building"
+- deliverables:
+  * Contract and NDA signing
+  * Access to codebase
+  * Setup development environment
+  * First sprint planning
+  * Initial components/APIs delivered
+- duration: "1-2 days"
+
+---
+
+FAQ SECTION:
+
+Container: py-20, bg-muted, max-w-4xl mx-auto px-6
+
+Header: "MERN Stack Developer FAQs"
+
+10 Questions (Accordion):
+
+Q1: "Why choose MERN over other stacks?"
+A: "MERN uses JavaScript throughout (frontend, backend, database queries), meaning faster development, easier code reuse, and one team for everything. Perfect for startups and modern web apps. Choose MERN if you want speed, scalability, and JavaScript expertise."
+
+Q2: "Is MERN stack good for large applications?"
+A: "Yes! MERN scales well. MongoDB handles millions of documents, Node.js handles thousands of concurrent connections, and React powers apps like Facebook and Instagram. We've built MERN apps serving 100K+ users."
+
+Q3: "Can MERN developers also do mobile apps?"
+A: "Yes! With React Native, MERN developers can extend to iOS and Android apps, sharing code with the web version. Same React knowledge applies."
+
+Q4: "How experienced are your MERN developers?"
+A: "Minimum 5 years JavaScript, average 8+ years. They've built multiple production MERN applications and understand React hooks, Node.js async patterns, and MongoDB aggregations deeply."
+
+Q5: "Do they use TypeScript?"
+A: "Yes! Most of our MERN developers prefer TypeScript for type safety. They can work with JavaScript or TypeScript based on your preference."
+
+Q6: "Can they handle real-time features?"
+A: "Absolutely! Socket.io integration for real-time chat, notifications, collaborative editing, live updates—our developers have built real-time MERN apps."
+
+Q7: "What about state management in React?"
+A: "They're experts in Redux, Context API, Zustand, and React Query. They'll recommend the best state management solution for your app's complexity."
+
+Q8: "Do they write tests?"
+A: "Yes! Jest for backend, React Testing Library for frontend, and Cypress/Playwright for E2E tests. Code quality and testing are priorities."
+
+Q9: "Can they deploy MERN apps?"
+A: "Yes! AWS, Heroku, DigitalOcean, Vercel (frontend), MongoDB Atlas (database). They handle Docker, CI/CD, and production deployments."
+
+Q10: "What if I need GraphQL instead of REST?"
+A: "Our MERN developers build GraphQL APIs with Apollo Server. They'll design schemas, resolvers, and integrate Apollo Client in React."
+
+---
+
+CTA SECTIONS:
+
+Add 3 CTAs:
+
+CTA 1 (After MERN Components):
+- Variant: 'bordered'
+- Title: "Need a MERN Stack Expert?"
+- Description: "Our developers build production-ready applications with MongoDB, Express, React, and Node.js"
+- PrimaryCTA: "Hire MERN Developer" → /contact
+- Size: 'medium'
+
+CTA 2 (After Projects):
+- Variant: 'gradient'
+- Title: "Ready to Build Your MERN Application?"
+- Description: "From SaaS platforms to real-time dashboards—our MERN experts deliver fast"
+- PrimaryCTA: "Schedule Interview" → /contact
+- SecondaryCTA: "See Pricing" → scroll to pricing
+- Size: 'large'
+
+CTA 3 (Final):
+- Variant: 'gradient'
+- Title: "Let's Build with the MERN Stack"
+- Description: "Book a free consultation and meet our JavaScript full-stack developers"
+- PrimaryCTA: "Book Consultation" → /contact
+- SecondaryCTA: "Call: +44 7429 917368" → tel link
+- ShowContactInfo: true
+- Size: 'large'
+
+---
+
+GLOBAL REQUIREMENTS:
+
+1. SEO:
+   - Meta title: "Hire MERN Stack Developers | MongoDB, Express, React, Node.js | House of Developers"
+   - Meta description: "Hire senior MERN stack developers. £2,500/month part-time, £4,500/month full-time. JavaScript full-stack experts. Start in 1 week."
+
+2. SLUG: Use "mern-stack" not "full-stack/mern"
+
+3. ICONS: Lucide React icons only
+
+4. COMPONENTS:
+   - ProcessTimeline ✅
+   - ValueProposition ✅
+   - CTASection (×3) ✅
+
+5. MOCKUPS:
+   - Beautiful 4-layer MERN stack visualization
+   - Complete dashboard application mockup
+   - Project showcase with gradients
+
+6. PROFILES: 2 generic MERN developer examples
+
+7. RESPONSIVE: Mobile-first, beautiful on all devices
+
+8. DARK/LIGHT MODE: Full support with colorful mockups
+
+9. ANIMATIONS: Smooth, modern
+
+Build a beautiful, comprehensive MERN stack page with stunning mockups that showcase what MERN developers can build.

@@ -1,0 +1,101 @@
+Update the slug structure for the 4 stack pages to be nested under full-stack:
+
+TASK 1: UPDATE PAGE LOCATIONS
+
+Move these pages to new locations:
+
+OLD: /services/hire-developers/mern-stack/page.tsx
+NEW: /services/hire-developers/full-stack/mern/page.tsx
+
+OLD: /services/hire-developers/mean-stack/page.tsx
+NEW: /services/hire-developers/full-stack/mean/page.tsx
+
+OLD: /services/hire-developers/mevn-stack/page.tsx
+NEW: /services/hire-developers/full-stack/mevn/page.tsx
+
+OLD: /services/hire-developers/lamp-stack/page.tsx
+NEW: /services/hire-developers/full-stack/lamp/page.tsx
+
+TASK 2: UPDATE BREADCRUMBS IN EACH FILE
+
+Update breadcrumbs in all 4 stack pages:
+
+MERN page breadcrumb:
+OLD: "Home / Services / Hire Developers / MERN Stack"
+NEW: "Home / Services / Hire Developers / Full-Stack / MERN Stack"
+
+MEAN page breadcrumb:
+OLD: "Home / Services / Hire Developers / MEAN Stack"
+NEW: "Home / Services / Hire Developers / Full-Stack / MEAN Stack"
+
+MEVN page breadcrumb:
+OLD: "Home / Services / Hire Developers / MEVN Stack"
+NEW: "Home / Services / Hire Developers / Full-Stack / MEVN Stack"
+
+LAMP page breadcrumb:
+OLD: "Home / Services / Hire Developers / LAMP Stack"
+NEW: "Home / Services / Hire Developers / Full-Stack / LAMP Stack"
+
+TASK 3: UPDATE FULL-STACK HUB PAGE
+
+File: /services/hire-developers/full-stack/page.tsx
+
+Find the 4 stack cards section and update the links:
+
+STACK 1 - MERN:
+OLD: Link: /services/hire-developers/full-stack/mern
+NEW: Link: /services/hire-developers/full-stack/mern
+(Already correct if we built it right, but verify)
+
+STACK 2 - MEAN:
+OLD: Link: /services/hire-developers/full-stack/mean
+NEW: Link: /services/hire-developers/full-stack/mean
+(Verify)
+
+STACK 3 - MEVN:
+OLD: Link: /services/hire-developers/full-stack/mevn
+NEW: Link: /services/hire-developers/full-stack/mevn
+(Verify)
+
+STACK 4 - LAMP:
+OLD: Link: /services/hire-developers/full-stack/lamp
+NEW: Link: /services/hire-developers/full-stack/lamp
+(Verify)
+
+TASK 4: UPDATE SEO META IN EACH STACK PAGE
+
+Update meta titles to include "Full-Stack":
+
+MERN:
+Meta title: "Hire MERN Full-Stack Developers | MongoDB, Express, React, Node.js | House of Developers"
+
+MEAN:
+Meta title: "Hire MEAN Full-Stack Developers | MongoDB, Express, Angular, Node.js | House of Developers"
+
+MEVN:
+Meta title: "Hire MEVN Full-Stack Developers | MongoDB, Express, Vue.js, Node.js | House of Developers"
+
+LAMP:
+Meta title: "Hire LAMP Full-Stack Developers | Linux, Apache, MySQL, PHP | House of Developers"
+
+TASK 5: VERIFY FOLDER STRUCTURE
+
+Ensure the folder structure is:
+/services/hire-developers/
+├── page.tsx (main hub)
+├── full-stack/
+│   ├── page.tsx (full-stack hub)
+│   ├── mern/
+│   │   └── page.tsx
+│   ├── mean/
+│   │   └── page.tsx
+│   ├── mevn/
+│   │   └── page.tsx
+│   └── lamp/
+│       └── page.tsx
+├── frontend/
+│   └── page.tsx (frontend hub)
+└── backend/
+└── page.tsx (backend hub)
+
+Complete all 5 tasks to properly nest the stack pages under full-stack and update all navigation links.

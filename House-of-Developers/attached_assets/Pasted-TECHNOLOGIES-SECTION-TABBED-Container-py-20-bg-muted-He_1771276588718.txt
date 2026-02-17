@@ -1,0 +1,237 @@
+TECHNOLOGIES SECTION (TABBED):
+
+Container: py-20, bg-muted
+
+Header (centered):
+- H2: "Technologies & Integrations We Use"
+- Subtitle: "Cutting-edge AI models and tools"
+- mb-12
+
+Layout: max-w-6xl mx-auto px-6
+
+Tabbed Interface:
+
+Tab Navigation (flex gap-4, border-b, mb-8, overflow-x-auto):
+* Each tab: px-6 py-3, cursor-pointer, font-semibold, transition
+* Active tab: border-b-2 border-primary, text-primary
+* Inactive: text-muted-foreground, hover:text-foreground
+
+TABS:
+1. "AI Models" (active by default)
+2. "Frameworks"
+3. "Integrations"
+4. "Channels"
+5. "Analytics"
+
+Tab Content Panels:
+
+PANEL 1 - AI MODELS (active):
+Grid: grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6
+
+Each technology card:
+- Container: bg-card, border, rounded-lg, p-4, text-center
+- Icon: size 48, primary color, mb-3
+- Name: font-semibold, text-sm
+- Optional description: text-xs, text-muted-foreground, mt-1
+
+Technologies (8 items):
+
+1. Icon: Sparkles
+   Name: "GPT-4 Turbo"
+   Description: "Latest OpenAI model"
+
+2. Icon: Sparkles
+   Name: "GPT-4"
+   Description: "Best quality"
+
+3. Icon: Brain
+   Name: "Claude 3 Opus"
+   Description: "Anthropic's best"
+
+4. Icon: Brain
+   Name: "Claude 3 Sonnet"
+   Description: "Fast & capable"
+
+5. Icon: MessageCircle
+   Name: "GPT-3.5 Turbo"
+   Description: "Cost-effective"
+
+6. Icon: Image
+   Name: "DALL-E 3"
+   Description: "Image generation"
+
+7. Icon: Mic
+   Name: "Whisper"
+   Description: "Speech-to-text"
+
+8. Icon: Volume2
+   Name: "Text-to-Speech"
+   Description: "Voice output"
+
+PANEL 2 - FRAMEWORKS:
+Grid: grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6
+
+1. Icon: Link
+   Name: "LangChain"
+   Description: "LLM framework"
+
+2. Icon: Database
+   Name: "LlamaIndex"
+   Description: "Data framework"
+
+3. Icon: GitBranch
+   Name: "Pinecone"
+   Description: "Vector database"
+
+4. Icon: Database
+   Name: "ChromaDB"
+   Description: "Embeddings"
+
+5. Icon: Code2
+   Name: "OpenAI SDK"
+   Description: "Official SDK"
+
+6. Icon: Code2
+   Name: "Anthropic SDK"
+   Description: "Claude SDK"
+
+7. Icon: Zap
+   Name: "Vercel AI SDK"
+   Description: "AI streaming"
+
+8. Icon: Package
+   Name: "Custom APIs"
+   Description: "RESTful APIs"
+
+PANEL 3 - INTEGRATIONS:
+Grid: grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6
+
+1. Icon: Users
+   Name: "HubSpot"
+   Description: "CRM integration"
+
+2. Icon: Building
+   Name: "Salesforce"
+   Description: "Enterprise CRM"
+
+3. Icon: ShoppingBag
+   Name: "Shopify"
+   Description: "E-commerce"
+
+4. Icon: ShoppingCart
+   Name: "WooCommerce"
+   Description: "WordPress store"
+
+5. Icon: Headphones
+   Name: "Zendesk"
+   Description: "Support tickets"
+
+6. Icon: MessageSquare
+   Name: "Intercom"
+   Description: "Customer messaging"
+
+7. Icon: Calendar
+   Name: "Calendly"
+   Description: "Scheduling"
+
+8. Icon: Zap
+   Name: "Zapier"
+   Description: "Automation"
+
+PANEL 4 - CHANNELS:
+Grid: grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6
+
+1. Icon: Globe
+   Name: "Website Widget"
+   Description: "Live chat"
+
+2. Icon: MessageCircle
+   Name: "WhatsApp Business"
+   Description: "Messaging"
+
+3. Icon: Hash
+   Name: "Slack"
+   Description: "Team chat"
+
+4. Icon: MessageSquare
+   Name: "Facebook Messenger"
+   Description: "Social messaging"
+
+5. Icon: Smartphone
+   Name: "SMS (Twilio)"
+   Description: "Text messages"
+
+6. Icon: Instagram
+   Name: "Instagram DM"
+   Description: "Social direct"
+
+7. Icon: Mail
+   Name: "Email"
+   Description: "Email support"
+
+8. Icon: Phone
+   Name: "Voice (Twilio)"
+   Description: "Phone calls"
+
+PANEL 5 - ANALYTICS:
+Grid: grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6
+
+1. Icon: BarChart
+   Name: "Custom Dashboard"
+   Description: "Real-time analytics"
+
+2. Icon: TrendingUp
+   Name: "Google Analytics"
+   Description: "Web tracking"
+
+3. Icon: PieChart
+   Name: "Mixpanel"
+   Description: "Product analytics"
+
+4. Icon: Activity
+   Name: "Amplitude"
+   Description: "User behavior"
+
+5. Icon: Database
+   Name: "PostgreSQL"
+   Description: "Data storage"
+
+6. Icon: Table
+   Name: "BigQuery"
+   Description: "Data warehouse"
+
+7. Icon: BarChart3
+   Name: "Metabase"
+   Description: "BI dashboard"
+
+8. Icon: LineChart
+   Name: "Grafana"
+   Description: "Monitoring"
+
+IMPLEMENTATION NOTES:
+- Tabs should be clickable/functional
+- Active panel shows, others hidden
+- Mobile: horizontal scroll for tabs
+- Smooth transition between panels (fade in/out)
+- Persist active tab on refresh (optional)
+- First tab (AI Models) active by default
+
+State Management (React):
+```jsx
+const [activeTab, setActiveTab] = useState('ai-models');
+
+// Tab button
+<button 
+  onClick={() => setActiveTab('ai-models')}
+  className={activeTab === 'ai-models' ? 'active' : ''}
+>
+  AI Models
+</button>
+
+// Panel
+{activeTab === 'ai-models' && (
+  <div className="grid grid-cols-4 gap-6">
+    {/* AI Models content */}
+  </div>
+)}
+```

@@ -1,0 +1,963 @@
+Create a comprehensive AI Chatbots hub page for House of Developers.
+
+PAGE: /services/ai-services/ai-chatbots/page.tsx
+
+This is the main page for AI chatbot development services, showcasing different chatbot types and use cases.
+
+IMPORTANT: Include realistic examples with actual conversation flows. Use beautiful chat interface mockups. "Get Custom Quote" for pricing.
+
+---
+
+HERO SECTION:
+
+Container: py-24, max-w-7xl mx-auto px-6
+
+Layout: Grid grid-cols-1 lg:grid-cols-2 gap-12 items-center
+
+Left Column:
+
+- Breadcrumb: "Home / Services / AI Services / AI Chatbots"
+  * text-sm text-muted-foreground, clickable, mb-6
+
+- Badge: "💬 AI Chatbot Development"
+  * bg-gradient (purple to pink), text-white, px-3 py-1.5, rounded-full, mb-4
+
+- H1: "AI Chatbot Development Services"
+  * text-4xl md:text-5xl lg:text-6xl font-bold, mb-4
+
+- Tagline: "Intelligent Conversations That Scale Infinitely"
+  * text-xl md:text-2xl
+  * Gradient text from purple to pink
+  * font-semibold
+
+- Description (mt-6):
+  * text-xl text-muted-foreground leading-relaxed
+  * "We build custom AI chatbots powered by GPT-4 and Claude that handle customer support, qualify leads, and boost sales—24/7. Natural conversations, instant responses, unlimited scale."
+
+- Feature Pills (mt-6, flex gap-3 flex-wrap):
+  1. "GPT-4 Powered" (Sparkles icon)
+  2. "24/7 Available" (Clock icon)
+  3. "Multi-Channel" (Globe icon)
+  4. "90% Automation" (Zap icon)
+
+- Stats Grid (mt-8, grid-cols-3 gap-6):
+  Each stat (text-center):
+  - Number (text-3xl font-bold, gradient purple to pink)
+  - Label (text-sm text-muted-foreground)
+  
+  1. "15+ Chatbots"
+     "Deployed"
+  
+  2. "450K+ Chats"
+     "Handled"
+  
+  3. "8 Seconds"
+     "Avg Response"
+
+- CTA Buttons (mt-8, flex gap-4):
+  * Primary: "Build Your Chatbot" → /contact
+    - bg-gradient (purple to pink), text-white
+    - h-14 px-8
+  
+  * Secondary: "See Live Demo" → scroll to demo
+
+- Trust: "⭐ Powers customer support for 15+ businesses"
+
+Right Column:
+
+- Live Chat Widget Mockup (Primary):
+  * Create beautiful, realistic chat interface
+  
+  Main Container (relative):
+  
+  BACKGROUND - Website Preview (blurred):
+  * Simple e-commerce site layout
+  * Header with logo
+  * Product cards (3 visible, blurred)
+  * Shows context of "where chatbot lives"
+  
+  CHAT WIDGET (absolute, bottom-right, elevated):
+  * Container: w-96, bg-card, rounded-2xl, shadow-2xl, border
+  * Gradient border (purple to pink, subtle glow)
+  
+  Widget Header (gradient purple to pink, p-4, rounded-t-2xl):
+  * Left: Bot avatar (gradient circle with MessageSquare icon)
+  * Center: 
+    - "AI Assistant" (text-white, font-semibold)
+    - Status: "Online • Responds in seconds" (text-white/80, text-xs)
+  * Right: Minimize and Close icons (white)
+  
+  Messages Container (bg-card, p-4, h-96, overflow-auto):
+  
+  Welcome Message:
+  * Avatar: Bot icon (purple gradient circle, left)
+  * Bubble: bg-muted, rounded-2xl, rounded-tl-sm, p-3, max-w-80%
+  * Text: "Hi! 👋 I'm your AI shopping assistant. How can I help you today?"
+  * Time: "2:14 PM" (text-xs, text-muted-foreground, mt-1)
+  
+  Quick Reply Buttons (mt-2, flex gap-2 flex-wrap):
+  * [Track my order]
+  * [Product recommendations]
+  * [Return policy]
+  * [Talk to human]
+  
+  User Message 1:
+  * Avatar: User icon (gray circle, right)
+  * Bubble: bg-primary, text-white, rounded-2xl, rounded-tr-sm, p-3, ml-auto, max-w-80%
+  * Text: "I'm looking for running shoes under £100"
+  * Time: "2:15 PM" (text-right)
+  
+  Bot Message 2:
+  * Text: "Great choice! I found 3 popular options for you:"
+  * Time: "2:15 PM"
+  
+  Product Cards (mt-2, space-y-2, in chat):
+  * 3 mini product cards (each):
+    - Small product image (aspect-square, rounded-lg)
+    - Product name: "Nike Revolution 6 - £79.99"
+    - Quick specs: "4.5★ (234 reviews)"
+    - Button: "View Details" (small, outline)
+  
+  Bot Message 3:
+  * Text: "Would you like more details on any of these? I can also show you more options or answer questions about sizing, delivery, etc."
+  
+  User Message 2:
+  * Text: "Tell me about the Nike Revolution 6"
+  * Time: "2:16 PM"
+  
+  Bot Typing Indicator:
+  * Avatar: Bot icon
+  * Bubble: bg-muted, p-3, w-16
+  * Animated dots: ● ● ● (pulsing animation)
+  * Text: "AI is typing..."
+  
+  Input Area (border-t, p-4, bg-card, rounded-b-2xl):
+  * Flex container
+  * Input: "Type your message..." (flex-1, border, rounded-lg, px-4, py-2)
+  * Emoji button (smile icon, text-muted-foreground)
+  * Send button (gradient purple to pink, rounded-lg, p-2, ArrowUp icon)
+  
+  Powered By Badge (absolute, bottom, right, outside widget):
+  * Small badge: "Powered by GPT-4" (text-xs, bg-muted, px-2 py-1, rounded)
+  
+  Floating Annotations (around widget):
+  * "Natural Language" badge (top-left)
+  * "Product Integration" badge (right)
+  * "Instant Responses" badge (bottom-left)
+  * "CRM Connected" badge (top-right)
+
+---
+
+WHAT ARE AI CHATBOTS SECTION:
+
+Container: py-20, bg-muted, max-w-5xl mx-auto px-6, text-center
+
+- H2: "What Are AI Chatbots?"
+- Description (mt-4, text-lg, leading-relaxed):
+  "AI chatbots are conversational agents powered by large language models like GPT-4 or Claude. They understand natural language, maintain context, and respond intelligently—just like a human support agent, but available 24/7 and handling unlimited conversations simultaneously."
+
+How They Work Grid (mt-12, grid-cols-1 md:grid-cols-4 gap-8):
+
+4 steps:
+
+Each step (p-6, bg-card, border, rounded-xl):
+- Number badge (large, gradient text, font-bold)
+- Icon (primary, size 32, mb-3)
+- Title (font-semibold, mb-2)
+- Description (text-sm text-muted-foreground)
+
+1. Number: "1"
+   Icon: MessageSquare
+   Title: "User Asks"
+   Description: "Customer types question or request in natural language"
+
+2. Number: "2"
+   Icon: Brain
+   Title: "AI Understands"
+   Description: "GPT-4 analyzes intent, context, and retrieves relevant information"
+
+3. Number: "3"
+   Icon: Database
+   Title: "Data Retrieved"
+   Description: "Pulls from your FAQs, product catalog, order history, or CRM"
+
+4. Number: "4"
+   Icon: Sparkles
+   Title: "Intelligent Response"
+   Description: "Generates personalized, accurate answer in conversational tone"
+
+---
+
+TYPES OF CHATBOTS WE BUILD:
+
+Container: py-20
+
+Header (centered):
+- H2: "AI Chatbot Solutions We Build"
+- Subtitle: "Custom chatbots for every business need"
+- mb-16
+
+Chatbot Types Grid: grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8, max-w-7xl mx-auto px-6
+
+6 CHATBOT TYPES:
+
+CARD STRUCTURE (each):
+- Background: card with gradient border
+- Padding: p-6
+- Rounded: rounded-xl
+- Hover: shadow-xl, scale-102
+
+Each card:
+1. Icon container (gradient circle, size 48)
+2. Type name (text-xl font-bold, mt-4)
+3. Description (text-sm text-muted-foreground, mt-2)
+4. Use cases (mt-4, space-y-1.5):
+   - 3 checkmarks with use case names
+   - text-xs
+5. Ideal for badge (mt-4, bg-muted, px-3 py-1, rounded-full, text-xs)
+6. Link: "Learn More" → /contact (for now)
+
+THE 6 TYPES:
+
+TYPE 1: CUSTOMER SUPPORT CHATBOT
+- Icon: Headphones (purple gradient circle)
+- Name: "Customer Support Chatbot"
+- Description: "24/7 automated support handling FAQs, troubleshooting, and ticket creation"
+- Use Cases:
+  ✓ Answer common questions instantly
+  ✓ Troubleshoot technical issues
+  ✓ Create support tickets for complex cases
+- Ideal for: "E-commerce, SaaS, Tech Companies"
+- Gradient border: purple to pink
+
+TYPE 2: LEAD QUALIFICATION CHATBOT
+- Icon: Target (blue gradient)
+- Name: "Lead Qualification Bot"
+- Description: "Engage website visitors, qualify leads, and route hot prospects to sales"
+- Use Cases:
+  ✓ Capture visitor information
+  ✓ Ask qualifying questions
+  ✓ Schedule sales calls automatically
+- Ideal for: "B2B, Agencies, Professional Services"
+- Gradient border: blue to cyan
+
+TYPE 3: SALES ASSISTANT CHATBOT
+- Icon: ShoppingBag (green gradient)
+- Name: "Sales Assistant Bot"
+- Description: "Product recommendations, upselling, and guided shopping experience"
+- Use Cases:
+  ✓ Recommend products based on preferences
+  ✓ Answer product questions
+  ✓ Assist with checkout process
+- Ideal for: "E-commerce, Retail, Fashion"
+- Gradient border: green to teal
+
+TYPE 4: BOOKING & APPOINTMENT BOT
+- Icon: Calendar (orange gradient)
+- Name: "Booking Chatbot"
+- Description: "Automate appointment scheduling, calendar integration, and reminders"
+- Use Cases:
+  ✓ Check availability in real-time
+  ✓ Book appointments 24/7
+  ✓ Send automated reminders
+- Ideal for: "Healthcare, Salons, Consultants"
+- Gradient border: orange to amber
+
+TYPE 5: INTERNAL HELP DESK BOT
+- Icon: Users (indigo gradient)
+- Name: "Internal Support Bot"
+- Description: "Employee self-service for IT help desk, HR questions, and onboarding"
+- Use Cases:
+  ✓ IT troubleshooting guides
+  ✓ HR policy questions
+  ✓ Onboarding assistance
+- Ideal for: "Enterprises, Growing Teams"
+- Gradient border: indigo to purple
+
+TYPE 6: WHATSAPP & SMS CHATBOT
+- Icon: MessageCircle (pink gradient)
+- Name: "WhatsApp & SMS Bot"
+- Description: "Conversational AI on WhatsApp Business and SMS for mobile-first support"
+- Use Cases:
+  ✓ Order updates via WhatsApp
+  ✓ SMS appointment confirmations
+  ✓ Mobile-first customer service
+- Ideal for: "Delivery Services, Local Businesses"
+- Gradient border: pink to rose
+
+---
+
+REALISTIC CHATBOT DEMO - MULTIPLE SCENARIOS:
+
+Container: py-20, bg-muted
+
+Header (centered):
+- H2: "See AI Chatbots in Action"
+- Subtitle: "Real conversation examples from our deployed chatbots"
+- mb-12
+
+Layout: max-w-6xl mx-auto px-6, space-y-12
+
+3 REALISTIC CONVERSATION DEMOS:
+
+DEMO 1: E-COMMERCE SUPPORT
+- Scenario badge: "E-Commerce Customer Support"
+- Company: "TechGear Store (Electronics)"
+
+Chat Container (bg-card, border, rounded-xl, p-6, shadow-lg):
+
+Header:
+* "Customer Support Chat" (font-semibold)
+* Status: "AI Assistant - Online" (green dot)
+
+Conversation:
+
+Bot: "Hi! 👋 Welcome to TechGear. How can I help you today?"
+
+User: "I ordered a laptop 3 days ago but haven't received shipping confirmation"
+
+Bot: "I can help you with that! Let me check your order status. Could you provide your order number or the email address you used?"
+
+User: "Email is john@example.com"
+
+Bot: "Thanks! I found your order #TG-45892 for the Dell XPS 13. I see it's currently being prepared for shipment. The estimated ship date is tomorrow (June 15th) with 2-day delivery."
+* Embedded order card:
+  - Order #TG-45892
+  - Dell XPS 13, £1,299
+  - Status: Processing
+  - Est. Delivery: June 17th
+
+Bot: "You'll receive a tracking number via email within 24 hours. Is there anything else I can help you with?"
+
+User: "Can I change the delivery address?"
+
+Bot: "Since your order is still processing, I can help with that! However, address changes require verification. I'm connecting you with our support team who can update this securely. They typically respond within 5 minutes."
+* Button: [Continue with Support Team]
+
+User: "Thanks!"
+
+Bot: "You're welcome! Sarah from our team will message you shortly. Have a great day! 😊"
+
+Metrics display (bottom, small text):
+* "Response time: 8 seconds"
+* "90% resolved without human"
+* "Available 24/7"
+
+DEMO 2: LEAD QUALIFICATION
+- Scenario: "B2B Lead Qualification"
+- Company: "Marketing Agency"
+
+Chat Container:
+
+Bot: "Hi! I'm Alex, the AI assistant for Creative Solutions Agency. I'd love to learn about your marketing needs! What brings you to our site today?"
+
+User: "We need help with digital marketing for our e-commerce business"
+
+Bot: "Excellent! E-commerce marketing is one of our specialties. To better assist you, could you share:"
+* Quick reply buttons:
+  - [Company size]
+  - [Monthly budget]
+  - [Current challenges]
+
+User: (clicks "Company size") "We have about 25 employees"
+
+Bot: "Great! And what's your approximate monthly marketing budget?"
+* Options: [<£5K] [£5K-£15K] [£15K-£30K] [£30K+]
+
+User: (clicks "£15K-£30K")
+
+Bot: "Perfect! You're exactly the size we work best with. A few more questions:"
+* "What's your biggest marketing challenge right now?"
+
+User: "Our conversion rate is really low, around 0.8%"
+
+Bot: "I understand—conversion optimization is critical. We've helped similar e-commerce companies increase conversions from 0.8% to 2.5%+ using targeted campaigns and landing page optimization."
+
+Bot: "Based on your needs (e-commerce, 25 employees, £15K-£30K budget, conversion focus), I've scored you as a high-priority lead. Would you like to schedule a free strategy call with our senior strategist Sarah?"
+* Internal note shown: "Lead Score: 92/100 - High Priority"
+
+User: "Yes please"
+
+Bot: "Excellent! Sarah has availability:"
+* Calendar widget:
+  - Tomorrow 2:00 PM
+  - Tomorrow 4:30 PM  
+  - Friday 10:00 AM
+* "Which time works for you?"
+
+User: (clicks "Tomorrow 2:00 PM")
+
+Bot: "Perfect! I've booked you for tomorrow (June 13th) at 2:00 PM with Sarah. You'll receive a calendar invite and Zoom link at your email. Looking forward to helping grow your e-commerce business! 🚀"
+
+Metrics:
+* "Lead qualified in 90 seconds"
+* "Meeting booked automatically"
+* "Sales team notified"
+
+DEMO 3: PRODUCT RECOMMENDATION
+- Scenario: "Fashion E-Commerce"
+- Company: "StyleHub (Online Fashion)"
+
+Chat Container:
+
+Bot: "Welcome to StyleHub! 👗 I'm here to help you find the perfect outfit. What are you shopping for today?"
+
+User: "I need a dress for a wedding"
+
+Bot: "How exciting! Wedding guest dresses are my specialty. Let me ask a few questions to find your perfect match:"
+
+Bot: "What's the dress code?"
+* Options: [Casual] [Semi-Formal] [Formal] [Black Tie]
+
+User: (clicks "Formal")
+
+Bot: "What season is the wedding?"
+* Options: [Spring] [Summer] [Fall] [Winter]
+
+User: (clicks "Summer")
+
+Bot: "And what's your preferred length?"
+* Options: [Mini] [Midi] [Maxi] [Any]
+
+User: (clicks "Midi")
+
+Bot: "Perfect! What's your budget?"
+* Options: [Under £50] [£50-£100] [£100-£200] [£200+]
+
+User: (clicks "£100-£200")
+
+Bot: "Excellent taste! Based on your preferences (formal summer wedding, midi length, £100-£200), here are my top 3 recommendations:"
+
+* Product Card 1:
+  - Image: Floral midi dress
+  - "Floral Print Midi Dress"
+  - £149.99
+  - 4.8★ (127 reviews)
+  - "Breathable fabric, perfect for summer"
+  - [View Details] [Add to Cart]
+
+* Product Card 2:
+  - "Satin Wrap Dress"
+  - £179.99
+  - 4.9★ (89 reviews)
+
+* Product Card 3:
+  - "Pleated Chiffon Dress"
+  - £159.99
+  - 4.7★ (156 reviews)
+
+Bot: "All three have free returns and come in sizes 6-18. Would you like to know more about any of these, or should I show you more options?"
+
+User: "Tell me more about the floral one"
+
+Bot: "Great choice! The Floral Print Midi Dress is one of our bestsellers:"
+* Details shown:
+  - "Available in 3 colors (pink, blue, yellow)"
+  - "Sizes 6-18 in stock"
+  - "Lightweight polyester blend"
+  - "Machine washable"
+  - "Free delivery (order today, arrives in 3 days)"
+  - "30-day free returns"
+
+Bot: "It also pairs beautifully with our nude block heels (£49.99) and pearl clutch (£39.99). Would you like me to add those to a saved cart?"
+
+User: "Yes, add all three items"
+
+Bot: "Done! I've added:"
+* "Floral Midi Dress (Size 12) - £149.99"
+* "Nude Block Heels (Size 7) - £49.99"
+* "Pearl Clutch - £39.99"
+* "Total: £239.97"
+* [View Cart] [Checkout]
+
+Bot: "You're getting free delivery since your order is over £50! Ready to checkout or would you like to browse more?"
+
+Metrics:
+* "Avg order value: +47% with AI"
+* "Product discovery time: 2 min"
+* "Conversion rate: 4.2%"
+
+---
+
+BENEFITS OF AI CHATBOTS:
+
+Container: py-20
+
+Use ValueProposition component:
+
+- Title: "Why Choose AI Chatbots"
+- Subtitle: "Measurable benefits for your business"
+- Columns: 3
+
+9 Benefits:
+
+1. Icon: Clock, Title: "24/7 Availability", Description: "Never miss a customer inquiry—AI responds instantly, any time of day"
+2. Icon: DollarSign, Title: "70% Cost Reduction", Description: "AI chatbots cost 70% less than human support agents"
+3. Icon: Zap, Title: "Instant Responses", Description: "8-second average response time vs 12+ hours for email"
+4. Icon: Users, Title: "Unlimited Scale", Description: "Handle 1,000+ simultaneous conversations without hiring"
+5. Icon: TrendingUp, Title: "Higher Conversions", Description: "Proactive engagement increases conversion rates 30%"
+6. Icon: Target, Title: "Lead Qualification", Description: "Automatically qualify and route hot leads to sales"
+7. Icon: Globe, Title: "Multi-Channel", Description: "Deploy on website, WhatsApp, SMS, Slack, Facebook"
+8. Icon: Database, Title: "CRM Integration", Description: "Sync conversations to HubSpot, Salesforce, Pipedrive"
+9. Icon: BarChart, Title: "Data & Insights", Description: "Analyze conversations to understand customer needs"
+
+---
+
+CHATBOT FEATURES & CAPABILITIES:
+
+Container: py-20, bg-muted
+
+Header (centered):
+- H2: "Advanced Chatbot Features"
+- Subtitle: "Enterprise-grade capabilities"
+- mb-12
+
+Features Grid: grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6, max-w-6xl mx-auto px-6
+
+12 Features:
+
+Each feature (p-4, bg-card, border, rounded-lg):
+- Icon (primary, size 24)
+- Title (font-semibold, text-sm, mt-2)
+- Description (text-xs text-muted-foreground, mt-1)
+
+1. Icon: Brain
+   Title: "Natural Language Processing"
+   Description: "Understands intent, context, and nuance like humans"
+
+2. Icon: MessageSquare
+   Title: "Multi-Turn Conversations"
+   Description: "Maintains context across entire conversation"
+
+3. Icon: Globe
+   Title: "Multi-Language Support"
+   Description: "Communicate in 50+ languages automatically"
+
+4. Icon: Sparkles
+   Title: "Sentiment Analysis"
+   Description: "Detects frustration and escalates to humans"
+
+5. Icon: Share2
+   Title: "Handoff to Humans"
+   Description: "Seamless transfer to live agents when needed"
+
+6. Icon: Database
+   Title: "Knowledge Base Integration"
+   Description: "Pulls answers from your docs, FAQs, and help center"
+
+7. Icon: ShoppingCart
+   Title: "Product Catalog Access"
+   Description: "Search and recommend from your inventory"
+
+8. Icon: CreditCard
+   Title: "Payment Processing"
+   Description: "Handle transactions securely within chat"
+
+9. Icon: Calendar
+   Title: "Appointment Booking"
+   Description: "Schedule meetings with calendar integration"
+
+10. Icon: Mail
+    Title: "Email & SMS Capture"
+    Description: "Collect contact info for lead nurturing"
+
+11. Icon: BarChart
+    Title: "Analytics Dashboard"
+    Description: "Track conversations, satisfaction, and performance"
+
+12. Icon: Lock
+    Title: "Security & Compliance"
+    Description: "SOC 2, GDPR, HIPAA-compliant options"
+
+---
+
+INTEGRATION ECOSYSTEM:
+
+Container: py-20
+
+Use TechStackGrid component:
+
+- Title: "Chatbot Integrations"
+- Description: "Connect with your existing tools"
+- Columns: 6
+
+Items (18 integrations with Lucide icons):
+
+CRM & SALES:
+1. name: "HubSpot", icon: Users
+2. name: "Salesforce", icon: Building
+3. name: "Pipedrive", icon: TrendingUp
+4. name: "Intercom", icon: MessageSquare
+
+E-COMMERCE:
+5. name: "Shopify", icon: ShoppingBag
+6. name: "WooCommerce", icon: ShoppingCart
+7. name: "Stripe", icon: CreditCard
+8. name: "PayPal", icon: DollarSign
+
+COMMUNICATION:
+9. name: "WhatsApp Business", icon: MessageCircle
+10. name: "Slack", icon: Hash
+11. name: "Twilio SMS", icon: Smartphone
+12. name: "Facebook Messenger", icon: MessageSquare
+
+SUPPORT:
+13. name: "Zendesk", icon: Headphones
+14. name: "Freshdesk", icon: Ticket
+15. name: "Help Scout", icon: LifeBuoy
+
+PRODUCTIVITY:
+16. name: "Google Calendar", icon: Calendar
+17. name: "Calendly", icon: Clock
+18. name: "Zapier", icon: Zap
+
+---
+
+REALISTIC CASE STUDY:
+
+Container: py-20, bg-muted
+
+Header (centered):
+- H2: "Chatbot Success Story"
+- Subtitle: "Real results from a real business"
+- mb-12
+
+Case Study Container: max-w-5xl mx-auto px-6
+
+Background Card (bg-card, border, rounded-2xl, p-8):
+
+Company Header:
+* Industry badge: "E-Commerce - Beauty Products"
+* Company: "GlowCosmetics UK"
+* Size: "35 employees, £2M annual revenue"
+* Project: "AI Customer Support Chatbot"
+
+Challenge Section (mt-6):
+* Heading: "The Challenge" (font-semibold, mb-3)
+* Text: "GlowCosmetics was receiving 200+ customer inquiries daily via email and live chat. Their 3-person support team was overwhelmed, leading to:"
+* Pain points (grid-cols-2 gap-3, mt-3):
+  - "18-24 hour response times"
+  - "Customers abandoning carts"
+  - "Same questions asked repeatedly"
+  - "Support team working evenings"
+
+Solution Section (mt-6):
+* Heading: "The Solution"
+* Text: "We built a GPT-4 powered chatbot trained on:"
+* Training data (space-y-2):
+  ✓ 3 years of previous customer emails
+  ✓ Product catalog (150 SKUs)
+  ✓ Ingredient information and usage guides
+  ✓ Shipping and return policies
+  ✓ Order tracking integration with Shopify
+
+* Text: "The chatbot handles:"
+* Capabilities:
+  ✓ Product recommendations based on skin type
+  ✓ Ingredient questions and allergy concerns
+  ✓ Order status and tracking
+  ✓ Returns and exchanges
+  ✓ Escalation to humans for complex cases
+
+Results Section (mt-8):
+* Heading: "The Results" (text-xl font-bold, mb-6)
+
+Results Grid (grid-cols-2 md:grid-cols-3 gap-6):
+
+Metric Card 1 (bg-muted, p-5, rounded-xl):
+* Icon: Clock (primary)
+* Label: "Response Time"
+* Before: "18 hours" (line-through, text-muted-foreground)
+* After: "12 seconds" (text-2xl font-bold, gradient text)
+* Improvement: "99.3% faster" (green badge)
+
+Metric 2:
+* Icon: MessageSquare
+* Label: "Conversations Handled"
+* Value: "180/day automated"
+* Detail: "90% resolution rate"
+
+Metric 3:
+* Icon: DollarSign
+* Label: "Cost Savings"
+* Value: "£3,600/month"
+* Detail: "Avoided 2 new hires"
+
+Metric 4:
+* Icon: Users
+* Label: "Customer Satisfaction"
+* Before: "3.8/5"
+* After: "4.6/5"
+* Improvement: "+21%"
+
+Metric 5:
+* Icon: TrendingUp
+* Label: "Conversion Rate"
+* Before: "2.1%"
+* After: "2.9%"
+* Improvement: "+38%"
+
+Metric 6:
+* Icon: Clock
+* Label: "Support Team Time"
+* Value: "15 hours/week saved"
+* Detail: "Focus on complex issues"
+
+Quote Section (mt-8, border-l-4 border-primary, pl-6, italic):
+* Text: "The AI chatbot has been transformative. Our customers get instant answers day or night, and our team can focus on the nuanced skincare consultations that really drive sales. We saw ROI within the first month."
+* Author: "— Sarah Mitchell, Customer Experience Manager, GlowCosmetics"
+
+Technologies Used (mt-6, flex gap-2 flex-wrap):
+* Badge: GPT-4
+* Badge: Shopify API
+* Badge: WhatsApp Business
+* Badge: HubSpot CRM
+
+Timeline (mt-6, text-sm text-muted-foreground):
+* "Development: 3 weeks"
+* "Training: 1 week"
+* "Deployed: January 2024"
+
+---
+
+PRICING APPROACH:
+
+Container: py-20
+
+Header (centered):
+- H2: "AI Chatbot Pricing"
+- Subtitle: "Custom solutions, transparent pricing"
+- mb-12
+
+Pricing Info: max-w-4xl mx-auto px-6
+
+Pricing Card (bg-card, border, rounded-2xl, p-8):
+
+Explanation:
+"Chatbot pricing depends on complexity, integrations, and conversation volume. We provide transparent quotes after understanding your needs."
+
+Pricing Factors (grid-cols-1 md:grid-cols-2 gap-6, mt-8):
+
+Factor 1:
+* Icon: MessageSquare
+* Title: "Conversation Volume"
+* Description: "Expected monthly conversations affects API costs"
+
+Factor 2:
+* Icon: Brain
+* Title: "AI Model"
+* Description: "GPT-4 (best quality) vs GPT-3.5 (more economical)"
+
+Factor 3:
+* Icon: Plug
+* Title: "Integrations"
+* Description: "CRM, e-commerce, calendar, support tools"
+
+Factor 4:
+* Icon: Database
+* Title: "Training Data"
+* Description: "Volume of FAQs, docs, previous conversations"
+
+Typical Costs (mt-8, bg-muted, p-6, rounded-xl):
+
+Development Costs:
+* "Simple FAQ chatbot: £5,000 - £8,000"
+* "E-commerce chatbot: £10,000 - £15,000"
+* "Complex multi-channel bot: £15,000 - £25,000"
+
+Monthly Costs (mt-4):
+* "AI API costs: £100 - £500/month (based on volume)"
+* "Hosting & maintenance: £150/month"
+* "Example: 10,000 conversations/month ≈ £200 in API costs"
+
+ROI Note (mt-6, border-l-4 border-green-500, pl-4):
+* "Average client saves £3,500/month in support costs"
+* "Typical ROI: 3-6 months"
+
+CTA (mt-8, text-center):
+* Button: "Get Custom Quote" → /contact
+  - gradient bg, large
+* Note below: "Free consultation • No obligation quote in 48 hours"
+
+---
+
+PROCESS TIMELINE:
+
+Container: py-20, bg-muted
+
+Use ProcessTimeline component:
+
+- Title: "Chatbot Development Process"
+- Subtitle: "From concept to deployed chatbot"
+
+Steps (4 phases):
+
+STEP 1:
+- phase: "Week 1"
+- title: "Discovery & Training Data"
+- description: "Understand your use case and gather training data"
+- deliverables:
+  * Use case workshop
+  * Identify conversation flows
+  * Gather FAQs and documentation
+  * Define integrations needed
+  * Select AI model (GPT-4 vs GPT-3.5)
+- duration: "3-5 days"
+
+STEP 2:
+- phase: "Week 2-3"
+- title: "Build & Train"
+- description: "Develop chatbot and train on your data"
+- deliverables:
+  * Chatbot development
+  * Training on your FAQs/docs
+  * Conversation flow design
+  * Integration setup (CRM, etc.)
+  * Initial testing
+- duration: "1-2 weeks"
+
+STEP 3:
+- phase: "Week 3-4"
+- title: "Testing & Refinement"
+- description: "Test conversations and optimize responses"
+- deliverables:
+  * Internal testing (50+ test conversations)
+  * Response quality review
+  * Edge case handling
+  * Tone and personality tuning
+  * Performance optimization
+- duration: "5-7 days"
+
+STEP 4:
+- phase: "Week 4-5"
+- title: "Deployment & Training"
+- description: "Launch chatbot and train your team"
+- deliverables:
+  * Deploy to website/WhatsApp/channels
+  * Team training on monitoring
+  * Analytics dashboard setup
+  * Documentation
+  * 30-day support included
+- duration: "3-5 days"
+
+---
+
+FAQ SECTION:
+
+Container: py-20, max-w-4xl mx-auto px-6
+
+Header: "AI Chatbot FAQs"
+
+12 Questions (Accordion):
+
+Q1: "How accurate are AI chatbots?"
+A: "When properly trained, 85-95% accuracy for questions within their knowledge base. We train chatbots on your FAQs, documentation, and previous conversations. For questions outside their training, they gracefully admit uncertainty and escalate to humans. Accuracy improves over time as the bot learns from real conversations."
+
+Q2: "Can chatbots sound like our brand?"
+A: "Absolutely! We customize tone, personality, and language to match your brand. Professional and formal for B2B, friendly and casual for consumer brands, empathetic for healthcare, etc. We provide examples, and you approve the style before deployment."
+
+Q3: "What happens when the chatbot doesn't know the answer?"
+A: "Three safety mechanisms: (1) The bot admits 'I'm not sure about that' rather than guessing, (2) It offers to connect the user with a human agent, (3) It logs the question so we can add it to the training data. No hallucinations or made-up answers."
+
+Q4: "Can we update the chatbot ourselves?"
+A: "Yes! We provide a simple dashboard where you can update FAQs, add new information, and refine responses. For major changes (new integrations, conversation flows), we handle those as part of ongoing support."
+
+Q5: "How long does it take to build a chatbot?"
+A: "Simple FAQ bot: 2-3 weeks. E-commerce bot with product integration: 3-4 weeks. Complex multi-channel bot with CRM: 4-6 weeks. Timeline depends on training data preparation and integration complexity."
+
+Q6: "Can chatbots handle multiple languages?"
+A: "Yes! GPT-4 and Claude support 50+ languages. The bot can detect the user's language automatically and respond in that language. This works even if your training data is only in English—the AI translates intelligently."
+
+Q7: "What channels can chatbots work on?"
+A: "Website live chat, WhatsApp Business, Facebook Messenger, SMS via Twilio, Slack (internal), Instagram DM, and custom integrations. We deploy to whichever channels your customers prefer."
+
+Q8: "Do we need technical knowledge to use the chatbot?"
+A: "No! Once deployed, the chatbot runs automatically. We provide a simple dashboard to view conversations, see analytics, and make updates. No coding required. We train your team on basic management."
+
+Q9: "Can chatbots process payments?"
+A: "Yes! We integrate with Stripe, PayPal, or your payment provider. The chatbot can present products, accept orders, and process payments securely—all within the conversation. PCI-compliant."
+
+Q10: "What about privacy and data security?"
+A: "Conversations are encrypted. We can deploy on your infrastructure for full data control. GDPR-compliant, and we can make the chatbot HIPAA-compliant for healthcare. User data is never used to train public AI models."
+
+Q11: "Can chatbots replace our entire support team?"
+A: "Chatbots typically handle 60-90% of routine inquiries (FAQs, order tracking, product questions), freeing your team to focus on complex issues, complaints, and high-value customers. Best results come from AI + human collaboration, not full replacement."
+
+Q12: "What are ongoing costs after launch?"
+A: "AI API costs (£100-500/month depending on volume), hosting (£50/month), and optional maintenance/support (£500/month). For example, a chatbot handling 10,000 conversations/month costs about £300/month total to run."
+
+---
+
+CTA SECTIONS:
+
+Add 3 CTAs:
+
+CTA 1 (After Chatbot Types):
+- Variant: 'gradient'
+- Title: "Ready to Automate Customer Support?"
+- Description: "Let's build an AI chatbot that handles 90% of inquiries 24/7"
+- PrimaryCTA: "Get Chatbot Quote" → /contact
+- Size: 'large'
+
+CTA 2 (After Case Study):
+- Variant: 'bordered'
+- Title: "Want Results Like GlowCosmetics?"
+- Description: "See how AI chatbots can save 15+ hours per week and boost conversions"
+- PrimaryCTA: "Build My Chatbot" → /contact
+- SecondaryCTA: "See Live Demo" → scroll to demos
+- Size: 'medium'
+
+CTA 3 (Final):
+- Variant: 'gradient'
+- Title: "Let's Build Your AI Chatbot"
+- Description: "Book a free consultation and get a custom proposal for your business"
+- PrimaryCTA: "Book Free Consultation" → /contact
+- SecondaryCTA: "Call: +44 7429 917368" → tel link
+- ShowContactInfo: true
+- Size: 'large'
+
+---
+
+GLOBAL REQUIREMENTS:
+
+1. SEO:
+   - Meta title: "AI Chatbot Development Services | GPT-4 & Claude Chatbots | House of Developers"
+   - Meta description: "Custom AI chatbots for customer support, lead qualification, and sales. 24/7 automation, 90% resolution rate. From £5,000. Free consultation."
+   - Schema: Service, FAQPage, BreadcrumbList
+
+2. REALISTIC CONVERSATIONS:
+   - Use actual conversation flows
+   - Real product examples
+   - Believable questions/answers
+   - Show chatbot limitations (handoffs)
+
+3. MOCKUPS:
+   - Beautiful chat widget (purple/pink gradient)
+   - 3 different conversation demos
+   - Product cards in chat
+   - Typing indicators, timestamps
+   - Mobile-responsive chat interface
+
+4. CASE STUDY:
+   - Realistic business (GlowCosmetics)
+   - Real metrics (18hr → 12sec, £3,600 saved)
+   - Specific industry (beauty e-commerce)
+   - Actual challenges and solutions
+
+5. COMPONENTS:
+   - ProcessTimeline ✅
+   - ValueProposition ✅
+   - TechStackGrid ✅
+   - CTASection (×3) ✅
+
+6. NO FIXED PRICING: Use "Get Custom Quote"
+
+7. RESPONSIVE: Mobile-first, chat widgets look great on mobile
+
+8. DARK/LIGHT MODE: Chat interface adapts to theme
+
+9. ANIMATIONS: Typing indicators pulse, smooth message appearance
+
+10. GRADIENT THEME: Purple to pink (chatbot theme)
+
+Build a comprehensive AI Chatbots page with realistic conversation examples, beautiful chat mockups, and a detailed case study.

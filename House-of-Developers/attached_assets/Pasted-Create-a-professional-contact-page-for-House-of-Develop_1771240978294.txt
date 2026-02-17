@@ -1,0 +1,301 @@
+Create a professional contact page for House of Developers with a working contact form.
+
+CONTACT PAGE (/contact/page.tsx)
+
+HERO SECTION:
+
+Container:
+- Padding: py-24 (mobile: py-16)
+- max-w-7xl mx-auto px-6
+- Text align: center
+
+Content:
+- Small badge: "Get In Touch"
+- H1: "Let's Build Something Great Together"
+- Subtitle (text-xl text-muted-foreground, mt-4, max-w-2xl mx-auto):
+  "Book a free consultation to discuss your project. We typically respond within 2 hours during business hours."
+
+MAIN CONTACT SECTION:
+
+Container:
+- Padding: py-16
+- max-w-7xl mx-auto px-6
+- Grid: grid-cols-1 lg:grid-cols-3 gap-12
+
+LEFT COLUMN (2/3 width - lg:col-span-2):
+
+Contact Form Card:
+- Background: card with border
+- Padding: p-8
+- Border radius: rounded-xl
+- Shadow: subtle
+
+Form Header:
+- H2: "Send Us a Message"
+- Description: "Fill out the form below and we'll get back to you shortly."
+- mb-8
+
+Form Fields (using React Hook Form + Zod validation):
+
+1. Name Field:
+   - Label: "Full Name *"
+   - Input: text, placeholder "John Doe"
+   - Required validation
+   - Error message: "Name is required"
+
+2. Email Field:
+   - Label: "Email Address *"
+   - Input: email, placeholder "john@example.com"
+   - Required + email format validation
+   - Error message: "Valid email is required"
+
+3. Phone Field:
+   - Label: "Phone Number"
+   - Input: tel, placeholder "+44 7XXX XXXXXX"
+   - Optional field
+   - Hint text: "Include country code"
+
+4. Company Field:
+   - Label: "Company Name"
+   - Input: text, placeholder "Your Company Ltd"
+   - Optional field
+
+5. Service Interest Dropdown:
+   - Label: "Service Interested In *"
+   - Select dropdown with options:
+     * "30-Day MVP Program"
+     * "Web Development"
+     * "Mobile Development"
+     * "AI Services"
+     * "Custom Development"
+     * "Hire Developers"
+     * "SEO Services"
+     * "Not Sure / Multiple Services"
+   - Required validation
+   - Error message: "Please select a service"
+
+6. Budget Range Dropdown:
+   - Label: "Project Budget (Optional)"
+   - Select dropdown with options:
+     * "Under £10,000"
+     * "£10,000 - £25,000"
+     * "£25,000 - £50,000"
+     * "£50,000 - £100,000"
+     * "£100,000+"
+     * "Prefer not to say"
+   - Optional field
+
+7. Message Field:
+   - Label: "Project Details *"
+   - Textarea: rows 6, placeholder "Tell us about your project, goals, timeline, and any specific requirements..."
+   - Required validation, min 20 characters
+   - Error message: "Please provide at least 20 characters"
+   - Character counter below: "0 / 500"
+
+8. Timeline Dropdown:
+   - Label: "When do you want to start? *"
+   - Select dropdown with options:
+     * "ASAP (Within 2 weeks)"
+     * "1-2 months"
+     * "2-3 months"
+     * "3+ months"
+     * "Just exploring options"
+   - Required validation
+
+Form Styling:
+- All inputs: h-12, rounded-lg, border, px-4
+- Labels: font-medium, mb-2
+- Focus states: ring-2 ring-primary
+- Error states: border-red-500, text-red-500
+- Spacing between fields: mb-6
+
+Submit Button:
+- Text: "Send Message"
+- Full width on mobile, auto width on desktop
+- Height: h-12
+- Background: accent color (#00C853)
+- Hover: slightly darker, scale effect
+- Loading state: "Sending..." with spinner icon
+- Disabled state when form invalid or submitting
+
+Success/Error Messages:
+- Success (after submission):
+  * Green alert box with CheckCircle2 icon
+  * "Message sent successfully! We'll get back to you within 2 hours."
+  * Auto-dismiss after 5 seconds
+- Error (if submission fails):
+  * Red alert box with AlertCircle icon
+  * "Something went wrong. Please try again or email us directly."
+
+Form Validation:
+- Real-time validation on blur
+- Show errors only after user has touched field
+- Disable submit if form invalid
+- Use Zod schema for validation
+- All required fields must be filled
+
+RIGHT COLUMN (1/3 width - lg:col-span-1):
+
+Contact Information Cards (stacked vertically, gap-6):
+
+1. CONTACT DETAILS CARD:
+   - Background: muted
+   - Padding: p-6
+   - Border radius: rounded-xl
+
+   Content:
+   - Icon: Phone (primary color, size 24)
+   - Title: "Phone" (font-semibold, mt-3)
+   - Value: "+44 7429 917368" (text-muted-foreground, mt-1)
+   - Click to call link
+   
+   - Icon: Mail (primary color, size 24, mt-6)
+   - Title: "Email" (font-semibold, mt-3)
+   - Value: "khubaib@houseofdevelopers.co.uk"
+   - Click to email link
+   
+   - Icon: MapPin (primary color, size 24, mt-6)
+   - Title: "Address" (font-semibold, mt-3)
+   - Value: "Weybridge, England, KT13 9XE"
+
+2. WHATSAPP CARD:
+   - Background: gradient (primary to accent)
+   - Padding: p-6
+   - Border radius: rounded-xl
+   - Text color: white
+
+   Content:
+   - MessageCircle icon (white, size 32)
+   - Title: "Prefer WhatsApp?" (font-semibold, text-white, mt-3)
+   - Description: "Chat with us directly on WhatsApp for quick responses."
+   - Button: "Open WhatsApp" (white bg, primary text, mt-4, full width)
+   - Link: Opens WhatsApp with pre-filled message to +44 7429 917368
+   - Message: "Hi! I'm interested in discussing a project with House of Developers."
+
+3. CALENDLY BOOKING CARD:
+   - Background: card with border
+   - Padding: p-6
+   - Border radius: rounded-xl
+
+   Content:
+   - Calendar icon (primary color, size 24)
+   - Title: "Book a Call" (font-semibold, mt-3)
+   - Description: "Schedule a free 30-minute consultation at a time that works for you."
+   - Button: "View Available Times" (primary bg, white text, mt-4, full width)
+   - Link: Opens Calendly (placeholder link for now: "#calendly")
+   - Note below: "We'll send you a confirmation email"
+
+4. BUSINESS HOURS CARD:
+   - Background: muted
+   - Padding: p-6
+   - Border radius: rounded-xl
+
+   Content:
+   - Clock icon (primary color, size 24)
+   - Title: "Business Hours" (font-semibold, mt-3)
+   - Hours list:
+     * "Monday - Friday: 9:00 AM - 6:00 PM GMT"
+     * "Saturday: 10:00 AM - 2:00 PM GMT"
+     * "Sunday: Closed"
+   - Note: "We respond to emails within 2 hours during business hours"
+
+FAQ SECTION:
+
+Container:
+- Background: muted
+- Padding: py-20 (mobile: py-12)
+- max-w-4xl mx-auto px-6
+
+Header (centered):
+- H2: "Common Questions"
+- Subtitle: "Quick answers before you reach out"
+- mb-12
+
+FAQ Items (simple accordion or just visible):
+Create 4 FAQ items in a grid (2 cols on desktop, 1 on mobile)
+
+Each FAQ:
+- Background: card
+- Padding: p-6
+- Border radius: rounded-lg
+- Icon (top): HelpCircle (primary color)
+- Question (font-semibold, mt-3)
+- Answer (text-sm text-muted-foreground, mt-2)
+
+THE 4 FAQS:
+
+Q: "How long does a typical project take?"
+A: "MVPs: 30 days. Custom projects: 2-6 months depending on complexity. We'll give you an accurate timeline in our first call."
+
+Q: "What's your pricing structure?"
+A: "MVPs start at £15,000. Custom projects are quoted based on scope. We provide detailed proposals after initial consultation."
+
+Q: "Do you work with startups?"
+A: "Absolutely! 80% of our clients are early-stage startups. We understand the urgency and budget constraints."
+
+Q: "Can you sign an NDA?"
+A: "Yes, we're happy to sign NDAs before any project discussion. Just mention it in your message."
+
+TRUST SIGNALS SECTION:
+
+Container:
+- Padding: py-16
+- max-w-7xl mx-auto px-6
+- Text align: center
+
+Content:
+- H3: "Trusted by Startups Across the UK"
+- Stats row (grid-cols-3 gap-8, mt-8):
+  * "50+ Projects Launched"
+  * "98% Client Satisfaction"
+  * "2-Hour Response Time"
+
+FINAL CTA:
+
+Same gradient CTA section:
+- "Not Ready to Contact Yet?"
+- "Explore our services and case studies to learn more about what we do."
+- Button: "View Services" (links to /services)
+
+FORM FUNCTIONALITY:
+
+Set up React Hook Form with:
+- useForm hook with Zod resolver
+- Form state management
+- Validation schema (Zod):
+  * name: required, min 2 chars
+  * email: required, valid email format
+  * service: required
+  * message: required, min 20 chars, max 500 chars
+  * timeline: required
+  * phone: optional, valid phone format if provided
+  * company: optional
+  * budget: optional
+
+- onSubmit handler:
+  * Validate all fields
+  * Set loading state
+  * Console.log form data (for now - email integration later)
+  * Show success message
+  * Reset form after 2 seconds
+  * Scroll to top
+
+- Error handling:
+  * Show inline errors under each field
+  * Highlight invalid fields with red border
+  * Prevent submission if form invalid
+
+REQUIREMENTS:
+- Fully mobile-responsive (test on 375px)
+- All links clickable and functional
+- WhatsApp link with pre-filled message
+- Form validation working perfectly
+- Accessibility: proper labels, ARIA attributes, keyboard navigation
+- Dark/light mode compatible
+- Loading states for submit button
+- Success/error toast notifications or inline messages
+- Phone and email links should open native apps
+- Smooth scroll behavior
+- Focus management (auto-focus on first field)
+
+Build the complete contact page with working form validation. Make sure all contact methods are clearly visible and easily accessible on mobile.

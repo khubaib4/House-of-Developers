@@ -1,0 +1,641 @@
+Create a comprehensive Hire Backend Developers hub page for House of Developers.
+
+PAGE: /services/hire-developers/backend/page.tsx
+
+This is the hub page for hiring backend developers, showcasing different technologies (Node.js, Next.js, .NET, Python Django/Flask/FastAPI, PHP Laravel) and linking to individual technology pages.
+
+---
+
+HERO SECTION:
+
+Container: py-24, max-w-7xl mx-auto px-6
+
+Layout: Grid grid-cols-1 lg:grid-cols-2 gap-12 items-center
+
+Left Column:
+
+- Breadcrumb: "Home / Services / Hire Developers / Backend"
+  * text-sm text-muted-foreground, clickable, mb-6
+
+- Badge: "⚙️ Backend Developers"
+  * bg-primary/10, text-primary, px-3 py-1.5, rounded-full, mb-4
+
+- H1: "Hire Backend Developers"
+  * text-4xl md:text-6xl font-bold, mb-4
+
+- Tagline: "API & Database Experts Who Build Scalable Systems"
+  * text-xl md:text-2xl
+  * Gradient text from green to blue
+  * font-semibold
+
+- Description (mt-6):
+  * text-xl text-muted-foreground leading-relaxed
+  * "Hire senior backend developers who build robust APIs, databases, and server-side logic. Expert in Node.js, Python, .NET, PHP—handling authentication, payments, real-time features, and scaling to millions of users."
+
+- Feature Pills (mt-6, flex gap-3 flex-wrap):
+  1. "Scalable APIs" (Server icon)
+  2. "Database Expert" (Database icon)
+  3. "Security First" (Shield icon)
+  4. "Cloud Ready" (Cloud icon)
+
+- Stats Grid (mt-8, grid-cols-3 gap-6):
+  1. "18+ Developers"
+  2. "6 Technologies"
+  3. "Available Now"
+
+- CTA Buttons (mt-8, flex gap-4):
+  * Primary: "Hire Backend Developer" → /contact
+  * Secondary: "Compare Technologies" → scroll to comparison
+
+Right Column:
+
+- Backend Architecture Mockup:
+  * Create layered server architecture diagram
+  
+  3 Layers (stacked with connections):
+  
+  TOP LAYER - API Gateway:
+  * Container: card with border, p-4
+  * Icon: Globe or Wifi
+  * Label: "REST API / GraphQL"
+  * Endpoints shown: "/api/users", "/api/products"
+  * HTTP methods badges: GET, POST, PUT
+  
+  MIDDLE LAYER - Business Logic:
+  * Container: card with border, p-4
+  * Icon: Code2 or Cpu
+  * Label: "Backend Server"
+  * Tech badges: Node.js, Python, .NET, PHP
+  * Functions: "Authentication", "Validation", "Processing"
+  
+  BOTTOM LAYER - Database:
+  * Container: card with border, p-4
+  * Icon: Database
+  * Label: "Database Layer"
+  * DB badges: PostgreSQL, MongoDB, MySQL, Redis
+  
+  Connecting arrows between layers
+  
+  Floating annotations:
+  * "Scalable to 1M+ users" badge
+  * "Secure & Tested" checkmark
+  * "Cloud Deployed" (AWS/Azure icon)
+  
+  * Shadow: 2xl
+  * Technical, professional look
+
+---
+
+WHAT IS BACKEND SECTION:
+
+Container: py-20, bg-muted, max-w-5xl mx-auto px-6, text-center
+
+- H2: "What is a Backend Developer?"
+- Description (mt-4, text-lg):
+  "Backend developers build the server-side logic that powers applications—databases, APIs, authentication, business logic, integrations. They handle everything users don't see but rely on for apps to work."
+
+What They Build Grid (mt-12, grid-cols-1 md:grid-cols-4 gap-6):
+
+4 items:
+
+1. Icon: Server
+   Title: "REST APIs"
+   Description: "Server endpoints & routes"
+
+2. Icon: Database
+   Title: "Databases"
+   Description: "Data storage & queries"
+
+3. Icon: Lock
+   Title: "Authentication"
+   Description: "User login & security"
+
+4. Icon: Zap
+   Title: "Integrations"
+   Description: "Third-party services"
+
+---
+
+BACKEND TECHNOLOGIES COMPARISON:
+
+Container: py-20, max-w-7xl mx-auto px-6
+
+Header (centered):
+- H2: "Choose Your Backend Technology"
+- Subtitle: "We have experts across all major backend languages and frameworks"
+- mb-16
+
+Technology Cards Grid:
+- Grid: grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8
+
+6 TECHNOLOGY CARDS:
+
+CARD STRUCTURE (each):
+- Background: card with border
+- Padding: p-6
+- Rounded: rounded-xl
+- Hover: shadow-xl, border-primary, translateY(-4px)
+
+Each card:
+1. Tech icon (top):
+   - Container: w-14 h-14, bg-primary/10, rounded-lg, flex center
+   - Icon: Server, Code2, or Database (primary color, size 28)
+
+2. Technology name (text-xl font-bold, mt-4)
+
+3. Description (text-sm text-muted-foreground, mt-2)
+
+4. Best for badge (mt-4):
+   - Small pill with use case
+   - bg-accent/10, text-accent
+
+5. Key strengths (mt-4, space-y-1.5):
+   - 3 bullet points with CheckCircle2 icons
+   - text-xs
+
+6. Developers available (mt-4):
+   - Badge: "X+ Available"
+   - text-xs
+
+7. CTA button (mt-4):
+   - "Hire [Tech] Developer"
+   - Full width, border variant, text-sm
+   - Link to technology page
+
+THE 6 TECHNOLOGIES:
+
+TECHNOLOGY 1: NODE.JS
+- Icon: Server
+- Name: "Node.js Developers"
+- Description: "JavaScript runtime for fast, scalable backends"
+- Best for: "Real-Time Apps, APIs, Microservices"
+- Strengths:
+  ✓ JavaScript full-stack capability
+  ✓ Fast, non-blocking I/O
+  ✓ Huge npm ecosystem
+- Available: "6+ Developers"
+- Link: /services/hire-developers/backend/nodejs
+
+TECHNOLOGY 2: NEXT.JS
+- Icon: ArrowRight
+- Name: "Next.js Developers"
+- Description: "Full-stack React framework with API routes"
+- Best for: "SSR, Full-Stack React, Serverless"
+- Strengths:
+  ✓ React + backend in one framework
+  ✓ API routes built-in
+  ✓ Excellent SEO with SSR
+- Available: "4+ Developers"
+- Link: /services/hire-developers/backend/nextjs
+
+TECHNOLOGY 3: .NET
+- Icon: Code2
+- Name: ".NET Developers"
+- Description: "Microsoft's enterprise framework (C#)"
+- Best for: "Enterprise Apps, Windows Services"
+- Strengths:
+  ✓ Enterprise-grade and stable
+  ✓ Strong typing with C#
+  ✓ Azure integration
+- Available: "3+ Developers"
+- Link: /services/hire-developers/backend/dotnet
+
+TECHNOLOGY 4: PYTHON DJANGO
+- Icon: Database
+- Name: "Python Django Developers"
+- Description: "Batteries-included Python web framework"
+- Best for: "Data-Heavy Apps, Admin Panels"
+- Strengths:
+  ✓ Rapid development
+  ✓ Built-in admin panel
+  ✓ Great for AI/ML integration
+- Available: "4+ Developers"
+- Link: /services/hire-developers/backend/python-django
+
+TECHNOLOGY 5: PYTHON FLASK/FASTAPI
+- Icon: Zap
+- Name: "Python Flask/FastAPI Developers"
+- Description: "Lightweight Python frameworks for APIs"
+- Best for: "Microservices, ML APIs, Lightweight Apps"
+- Strengths:
+  ✓ Minimal and flexible
+  ✓ Perfect for APIs
+  ✓ Great for ML/AI backends
+- Available: "3+ Developers"
+- Link: /services/hire-developers/backend/python-flask
+
+TECHNOLOGY 6: PHP LARAVEL
+- Icon: Server
+- Name: "PHP Laravel Developers"
+- Description: "Modern PHP framework with elegant syntax"
+- Best for: "Web Apps, CMS, WordPress Integration"
+- Strengths:
+  ✓ Mature ecosystem
+  ✓ Great documentation
+  ✓ Wide hosting support
+- Available: "5+ Developers"
+- Link: /services/hire-developers/backend/php-laravel
+
+---
+
+PRICING SECTION:
+
+Container: py-20, bg-muted
+
+Header (centered):
+- H2: "Backend Developer Pricing"
+- Subtitle: "Same pricing across all technologies"
+- mb-12
+
+Pricing Cards Grid:
+- Grid: grid-cols-1 md:grid-cols-3 gap-8
+- Max-width: max-w-6xl mx-auto px-6
+
+3 PRICING TIERS:
+
+TIER 1: PART-TIME
+- Name: "Part-Time Backend Developer"
+- Price: "£2,500/month"
+- Description: "80 hours/month (4 hours/day)"
+- Features:
+  * API development & maintenance
+  * Database optimization
+  * Bug fixes & updates
+  * Code reviews
+  * Integration work
+  * Flexible scheduling
+- CTA: "Hire Part-Time" → /contact
+
+TIER 2: FULL-TIME (POPULAR)
+- Name: "Full-Time Backend Developer"
+- Price: "£4,500/month"
+- Description: "160 hours/month (8 hours/day)"
+- Features:
+  * Dedicated backend resource
+  * Complete API ownership
+  * Database architecture
+  * Security implementation
+  * Performance optimization
+  * DevOps & deployment
+- CTA: "Hire Full-Time" → /contact
+- isPopular: true
+
+TIER 3: TEAM
+- Name: "Backend Team"
+- Price: "Custom Quote"
+- Description: "Multiple developers + architect"
+- Features:
+  * 2+ backend developers
+  * Solution architect (optional)
+  * Microservices architecture
+  * DevOps engineer (optional)
+  * Database administrator (optional)
+  * Complete backend delivery
+- CTA: "Build Team" → /contact
+
+---
+
+WHAT BACKEND DEVELOPERS DO SECTION:
+
+Container: py-20
+
+Use ValueProposition component:
+
+- Title: "What Our Backend Developers Handle"
+- Subtitle: "Complete server-side development and infrastructure"
+- Columns: 3
+
+9 Capabilities:
+
+1. Icon: Server, Title: "RESTful APIs", Description: "Design and build scalable REST APIs with proper endpoints"
+2. Icon: Network, Title: "GraphQL APIs", Description: "Flexible GraphQL schemas and resolvers for complex data"
+3. Icon: Database, Title: "Database Design", Description: "Schema design, indexing, migrations, query optimization"
+4. Icon: Lock, Title: "Authentication & Authorization", Description: "JWT, OAuth, SSO, role-based access control"
+5. Icon: CreditCard, Title: "Payment Integration", Description: "Stripe, PayPal, subscription billing, webhooks"
+6. Icon: Zap, Title: "Real-Time Features", Description: "WebSockets, Socket.io, Server-Sent Events"
+7. Icon: Cloud, Title: "Cloud & DevOps", Description: "AWS, Azure, Docker, Kubernetes, CI/CD"
+8. Icon: Shield, Title: "Security", Description: "Encryption, SQL injection prevention, rate limiting"
+9. Icon: TrendingUp, Title: "Performance & Scaling", Description: "Caching (Redis), load balancing, database optimization"
+
+---
+
+SAMPLE BACKEND DEVELOPER PROFILES:
+
+Container: py-20, bg-muted, max-w-7xl mx-auto px-6
+
+Header (centered):
+- H2: "Meet Our Backend Developers"
+- Subtitle: "API and database specialists with production experience"
+- mb-12
+
+Profiles Grid: grid-cols-1 md:grid-cols-3 gap-8
+
+3 DEVELOPER PROFILES:
+
+PROFILE 1: NODE.JS SPECIALIST
+- Avatar: User icon, bg-primary/10
+- Name: "Senior Backend Developer"
+- Specialty: "Node.js & Express Expert"
+- Experience: "10+ years"
+- Status: "Available Now" (green dot)
+- Skills (badges):
+  * Node.js
+  * Express
+  * PostgreSQL
+  * Redis
+  * Docker
+  * AWS
+- Highlights:
+  * Built APIs serving 5M+ requests/day
+  * Microservices architecture expert
+  * Strong DevOps skills
+- Projects:
+  * Real-time chat platforms
+  * Payment processing systems
+  * RESTful APIs at scale
+- CTA: "Schedule Interview" → /contact
+
+PROFILE 2: PYTHON SPECIALIST
+- Avatar: User icon, bg-primary/10
+- Name: "Senior Backend Developer"
+- Specialty: "Python Django & ML APIs"
+- Experience: "8+ years"
+- Status: "Available in 1 week"
+- Skills (badges):
+  * Python
+  * Django
+  * FastAPI
+  * PostgreSQL
+  * Celery
+  * TensorFlow
+- Highlights:
+  * AI/ML integration specialist
+  * Data-heavy application expert
+  * API security expert
+- Projects:
+  * ML model APIs
+  * Admin dashboards
+  * Data processing pipelines
+- CTA: "Schedule Interview" → /contact
+
+PROFILE 3: PHP/LARAVEL SPECIALIST
+- Avatar: User icon, bg-primary/10
+- Name: "Senior Backend Developer"
+- Specialty: "PHP Laravel Architect"
+- Experience: "12+ years"
+- Status: "Available Now" (green dot)
+- Skills (badges):
+  * PHP
+  * Laravel
+  * MySQL
+  * Redis
+  * Vue.js
+  * Linux
+- Highlights:
+  * 30+ Laravel applications deployed
+  * E-commerce platform expert
+  * Database optimization specialist
+- Projects:
+  * E-commerce backends
+  * CMS platforms
+  * Booking systems
+- CTA: "Schedule Interview" → /contact
+
+---
+
+TECHNOLOGIES & DATABASES SECTION:
+
+Container: py-20
+
+Use TechStackGrid component:
+
+- Title: "Backend Technologies & Databases"
+- Description: "Languages, frameworks, and databases our developers master"
+- Columns: 6
+
+Items (18 technologies with Lucide icons):
+
+LANGUAGES & FRAMEWORKS:
+1. name: "Node.js", icon: Server
+2. name: "Python", icon: Code2
+3. name: "PHP", icon: Code
+4. name: ".NET/C#", icon: Code2
+5. name: "Go", icon: Zap
+6. name: "Express.js", icon: Server
+
+FRAMEWORKS:
+7. name: "Django", icon: Database
+8. name: "FastAPI", icon: Zap
+9. name: "Flask", icon: Code
+10. name: "Laravel", icon: Server
+11. name: "NestJS", icon: Layers
+12. name: "Next.js API", icon: ArrowRight
+
+DATABASES:
+13. name: "PostgreSQL", icon: Database
+14. name: "MongoDB", icon: Database
+15. name: "MySQL", icon: Database
+16. name: "Redis", icon: Zap
+17. name: "Elasticsearch", icon: Search
+18. name: "SQLite", icon: HardDrive
+
+---
+
+PROCESS SECTION:
+
+Container: py-20, bg-muted
+
+Use ProcessTimeline component:
+
+- Title: "Hiring Process for Backend Developers"
+- Subtitle: "From API design to production deployment"
+
+Steps (4 phases):
+
+STEP 1:
+- phase: "Day 1"
+- title: "Define Your Tech Stack"
+- description: "Tell us your backend requirements and technology preference"
+- deliverables:
+  * Free consultation call
+  * Discuss API requirements
+  * Choose technology (Node.js, Python, .NET, PHP)
+  * Define database needs
+  * Set engagement model
+
+STEP 2:
+- phase: "Day 2-3"
+- title: "Developer Matching"
+- description: "We send 2-3 backend developer profiles"
+- deliverables:
+  * Review developer CVs
+  * See previous API work
+  * Check system design experience
+  * GitHub/GitLab profiles
+  * Availability confirmation
+
+STEP 3:
+- phase: "Day 4-5"
+- title: "Technical Interview"
+- description: "Assess coding, system design, and database skills"
+- deliverables:
+  * Schedule video interviews
+  * API design discussion
+  * Database schema questions
+  * System architecture review
+  * Make final selection
+
+STEP 4:
+- phase: "Day 6-7"
+- title: "Onboarding & First API"
+- description: "Developer starts building backend services"
+- deliverables:
+  * Contract signing
+  * Access to repositories
+  * Database access setup
+  * First API endpoints delivered
+  * Establish deployment process
+
+---
+
+BACKEND VS FRONTEND SECTION:
+
+Container: py-20, max-w-6xl mx-auto px-6
+
+Header (centered):
+- H2: "Backend Specialist vs Full-Stack Developer"
+- Description: "When to hire a dedicated backend expert"
+- mb-12
+
+Comparison Cards (grid-cols-1 md:grid-cols-2 gap-8):
+
+BACKEND SPECIALIST CARD:
+- Background: card with border-primary
+- Icon: Server
+- Title: "Hire Backend Specialist If..."
+- Features:
+  ✓ Complex database requirements
+  ✓ High-traffic APIs (100K+ requests/day)
+  ✓ Microservices architecture
+  ✓ Real-time features (WebSockets)
+  ✓ ML/AI integration
+  ✓ DevOps & infrastructure needs
+
+Example projects:
+- Payment processing systems
+- Real-time chat platforms
+- API-first applications
+- Data processing pipelines
+
+FULL-STACK CARD:
+- Background: card
+- Icon: Layers
+- Title: "Hire Full-Stack Developer If..."
+- Features:
+  ✓ Simple CRUD APIs
+  ✓ Low to medium traffic
+  ✓ Need frontend + backend
+  ✓ Small team/budget
+  ✓ Standard integrations
+  ✓ Monolithic architecture
+
+Example projects:
+- Internal tools
+- Simple MVPs
+- Business websites
+- CRUD applications
+
+Bottom note: "Need both? Hire backend + frontend specialists → /services/hire-developers"
+
+---
+
+FAQ SECTION:
+
+Container: py-20, bg-muted, max-w-4xl mx-auto px-6
+
+Header: "Backend Developer FAQs"
+
+10 Questions (Accordion):
+
+Q1: "Node.js vs Python vs PHP vs .NET—which should I choose?"
+A: "Node.js for real-time apps and JavaScript full-stack. Python (Django/FastAPI) for data-heavy apps, ML/AI, or rapid development. PHP (Laravel) for web apps and CMS. .NET for enterprise Windows/Azure apps. We'll recommend based on your project."
+
+Q2: "Do backend developers handle databases too?"
+A: "Yes! Database design, migrations, optimization, and queries are core backend skills. For very large databases, we can add a specialized DBA."
+
+Q3: "Can they build GraphQL APIs?"
+A: "Absolutely! Our developers build both RESTful and GraphQL APIs. They'll recommend which is best for your use case."
+
+Q4: "Do they handle authentication and security?"
+A: "Yes! JWT authentication, OAuth, SSO, role-based permissions, encryption, SQL injection prevention—security is a core competency."
+
+Q5: "Can they integrate payment gateways?"
+A: "Yes! Stripe, PayPal, and other payment integrations including webhooks, subscriptions, and refunds."
+
+Q6: "Do backend developers do DevOps?"
+A: "Basic DevOps yes—Docker, CI/CD, AWS/Azure deployment. For complex infrastructure, Kubernetes, or large-scale systems, we recommend adding a DevOps engineer."
+
+Q7: "Can they work with my existing database?"
+A: "Absolutely! They can work with any existing schema, optimize queries, add new tables, and migrate data safely."
+
+Q8: "What about real-time features like chat?"
+A: "Yes! WebSockets, Socket.io, Server-Sent Events for real-time chat, notifications, live updates, collaborative features."
+
+Q9: "Can they build microservices architecture?"
+A: "Yes! Our senior developers design and build microservices with proper service boundaries, API gateways, and inter-service communication."
+
+Q10: "How do they handle API versioning and documentation?"
+A: "Proper API versioning (v1, v2), Swagger/OpenAPI documentation, and clear endpoint documentation are standard practices."
+
+---
+
+CTA SECTIONS:
+
+Add 3 CTAs:
+
+CTA 1 (After Technology Comparison):
+- Variant: 'bordered'
+- Title: "Not Sure Which Backend Technology to Choose?"
+- Description: "Book a free consultation and we'll recommend the best technology for your project"
+- PrimaryCTA: "Get Tech Recommendation" → /contact
+- Size: 'medium'
+
+CTA 2 (After Profiles):
+- Variant: 'gradient'
+- Title: "Ready to Hire a Backend Developer?"
+- Description: "Tell us your stack and we'll match you with API and database experts in 48 hours"
+- PrimaryCTA: "Hire Backend Developer" → /contact
+- SecondaryCTA: "View Pricing" → scroll to pricing
+- Size: 'large'
+
+CTA 3 (Final):
+- Variant: 'gradient'
+- Title: "Let's Build Your Backend Infrastructure"
+- Description: "Book a free consultation to discuss your API requirements and meet our developers"
+- PrimaryCTA: "Book Consultation" → /contact
+- SecondaryCTA: "Call: +44 7429 917368" → tel link
+- ShowContactInfo: true
+- Size: 'large'
+
+---
+
+GLOBAL REQUIREMENTS:
+
+1. SEO:
+   - Meta title: "Hire Backend Developers | Node.js, Python, .NET, PHP | House of Developers"
+   - Meta description: "Hire senior backend developers. Node.js, Python, .NET, PHP experts. £2,500/month part-time, £4,500/month full-time. API & database specialists."
+
+2. ICONS: Use Lucide React icons only
+3. COMPONENTS USED:
+   - ProcessTimeline ✅
+   - ValueProposition ✅
+   - TechStackGrid ✅
+   - CTASection (×3) ✅
+
+4. PRICING: Show actual prices (£2,500, £4,500, Custom)
+5. MOCKUPS: Backend architecture diagram (layered API/Server/Database)
+6. PROFILES: 3 generic examples (Node.js, Python, PHP specialists)
+7. RESPONSIVE: Mobile-first
+8. DARK/LIGHT MODE: Full support with technical architecture diagram
+
+Build a comprehensive backend developers hub page showcasing server-side expertise across all major technologies.

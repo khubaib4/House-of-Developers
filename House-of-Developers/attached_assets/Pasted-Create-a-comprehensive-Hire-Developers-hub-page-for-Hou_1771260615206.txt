@@ -1,0 +1,570 @@
+Create a comprehensive Hire Developers hub page for House of Developers.
+
+PAGE: /services/hire-developers/page.tsx
+
+This is the main overview page for hiring developers, linking to Full-Stack, Frontend, and Backend developer categories.
+
+---
+
+HERO SECTION:
+
+Container: py-24, max-w-7xl mx-auto px-6
+
+Layout: Grid grid-cols-1 lg:grid-cols-2 gap-12 items-center
+
+Left Column:
+
+- Breadcrumb: "Home / Services / Hire Developers"
+  * text-sm text-muted-foreground, clickable, mb-6
+
+- Badge: "👥 Hire Developers"
+  * bg-primary/10, text-primary, px-3 py-1.5, rounded-full, mb-4
+
+- H1: "Hire Vetted Developers for Your Projects"
+  * text-4xl md:text-5xl lg:text-6xl font-bold, mb-4
+
+- Tagline: "Pre-Screened. Senior-Level. Ready to Start."
+  * text-xl md:text-2xl
+  * Gradient text from blue to purple
+  * font-semibold
+
+- Description (mt-6):
+  * text-xl text-muted-foreground leading-relaxed
+  * "Scale your team with senior developers who integrate seamlessly with your workflow. Full-time, part-time, or dedicated teams—vetted, managed, and ready to deliver."
+
+- Feature Pills (mt-6, flex gap-3 flex-wrap):
+  1. "Pre-Vetted" (Shield icon)
+  2. "5+ Years Exp" (Award icon)
+  3. "Start in 1 Week" (Zap icon)
+  4. "No Long-Term Contracts" (FileText icon)
+
+- CTA Buttons (mt-8, flex gap-4):
+  * Primary: "View Developer Profiles" → scroll to profiles
+  * Secondary: "See Pricing" → scroll to pricing
+
+- Trust: "⭐ Trusted by 30+ companies"
+
+Right Column:
+
+- Developer Profiles Mockup:
+  * Create 3 developer profile cards stacked/overlapping
+  * Each card shows:
+    - Avatar placeholder (circle with initials or User icon)
+    - Name: "Senior Full-Stack Developer"
+    - Experience: "8+ years"
+    - Skills: 3-4 tech badges (React, Node.js, AWS, etc.)
+    - Status: "Available Now" (green dot)
+    - "View Profile" button
+  * Cards slightly rotated/offset for visual interest
+  * Shadow: 2xl
+  * Background: card color with border
+
+- Floating elements around cards:
+  * "Senior Level" badge
+  * "Pre-Vetted" checkmark
+  * "UK Time Zone" indicator
+
+---
+
+DEVELOPER CATEGORIES SECTION:
+
+Container: py-20, bg-muted, max-w-7xl mx-auto px-6
+
+Header (centered):
+- H2: "Hire Developers by Expertise"
+- Subtitle: "Find the right talent for your tech stack"
+- mb-16
+
+Categories Grid:
+- Grid: grid-cols-1 md:grid-cols-3 gap-8
+
+3 CATEGORY CARDS:
+
+CARD STRUCTURE (each):
+- Background: card with border
+- Padding: p-8
+- Rounded: rounded-2xl
+- Hover: shadow-xl, border-primary, translateY(-4px)
+- Transition: 300ms
+
+Each card:
+1. Icon (size 48, primary color, mb-6)
+2. Category name (text-2xl font-bold)
+3. Description (text-muted-foreground, mt-2)
+4. Developers available (mt-4):
+   - Small badge: "12+ Developers Available"
+   - bg-primary/10, text-primary
+5. Tech stack list (mt-6, space-y-2):
+   - 4-5 key technologies
+   - Flex gap-2 flex-wrap
+   - Small tech badges
+6. CTA button (mt-8):
+   - "View Full-Stack Developers" (or respective category)
+   - Full width, border variant
+   - Link to category page
+
+THE 3 CATEGORIES:
+
+CATEGORY 1: FULL-STACK DEVELOPERS
+- Icon: Layers
+- Name: "Full-Stack Developers"
+- Description: "End-to-end developers who handle frontend, backend, and deployment"
+- Available: "15+ Developers"
+- Tech Stack (badges):
+  * MERN Stack
+  * MEAN Stack
+  * MEVN Stack
+  * LAMP Stack
+  * Next.js Full-Stack
+- Link: /services/hire-developers/full-stack
+
+CATEGORY 2: FRONTEND DEVELOPERS
+- Icon: Layout
+- Name: "Frontend Developers"
+- Description: "UI/UX specialists who build beautiful, responsive user interfaces"
+- Available: "12+ Developers"
+- Tech Stack (badges):
+  * React
+  * Angular
+  * Vue.js
+  * TypeScript
+  * Tailwind CSS
+- Link: /services/hire-developers/frontend
+
+CATEGORY 3: BACKEND DEVELOPERS
+- Icon: Server
+- Name: "Backend Developers"
+- Description: "API and database experts who build scalable server-side systems"
+- Available: "18+ Developers"
+- Tech Stack (badges):
+  * Node.js
+  * Python Django
+  * PHP Laravel
+  * .NET Core
+  * Go
+- Link: /services/hire-developers/backend
+
+---
+
+PRICING & ENGAGEMENT MODELS SECTION:
+
+Container: py-20, max-w-7xl mx-auto px-6
+
+Header (centered):
+- H2: "Flexible Engagement Models"
+- Subtitle: "Choose what works for your team and budget"
+- mb-12
+
+Pricing Cards Grid:
+- Grid: grid-cols-1 md:grid-cols-3 gap-8
+- Max-width: max-w-6xl mx-auto
+
+3 PRICING TIERS:
+
+Use PricingCard-style component (but create inline, not imported):
+
+TIER 1: PART-TIME
+- Package Name: "Part-Time Developer"
+- Price: "£2,500/month"
+- Billing: "Monthly, no long-term contract"
+- Description: "Perfect for ongoing support and feature additions"
+- Features:
+  * 80 hours per month (4 hours/day)
+  * Flexible scheduling
+  * Direct communication (Slack/Teams)
+  * Weekly progress updates
+  * Code reviews included
+  * Easy to scale up
+- CTA: "Hire Part-Time" → /contact
+- isPopular: false
+
+TIER 2: FULL-TIME (POPULAR)
+- Package Name: "Full-Time Developer"
+- Price: "£4,500/month"
+- Billing: "Monthly, no long-term contract"
+- Description: "Dedicated resource for active development"
+- Features:
+  * 160 hours per month (8 hours/day)
+  * Fully dedicated to your project
+  * Daily standups & communication
+  * Sprint planning included
+  * Code reviews & documentation
+  * Priority support
+- CTA: "Hire Full-Time" → /contact
+- isPopular: true
+- Highlight with border-2 border-primary
+
+TIER 3: DEDICATED TEAM
+- Package Name: "Dedicated Team"
+- Price: "Custom Quote"
+- Billing: "Based on team size"
+- Description: "Complete team with project manager"
+- Features:
+  * 3+ developers (mix of roles)
+  * Project manager included
+  * Scrum/Agile ceremonies
+  * Team coordination & management
+  * Scalable team size
+  * Long-term partnership
+- CTA: "Build Your Team" → /contact
+- isPopular: false
+
+Pricing Notes (below cards, text-center, text-sm text-muted-foreground):
+- "All plans include 2-week trial period"
+- "No setup fees or hidden costs"
+- "Cancel or pause anytime"
+
+---
+
+HOW IT WORKS SECTION:
+
+Container: py-20, bg-muted
+
+Use ProcessTimeline component:
+
+- Title: "How Hiring Works"
+- Subtitle: "From consultation to developer onboarding in 1 week"
+
+Steps (5 phases):
+
+STEP 1:
+- phase: "Day 1"
+- title: "Consultation & Requirements"
+- description: "We understand your needs, tech stack, and team culture"
+- deliverables:
+  * Free consultation call (30 minutes)
+  * Discuss required skills and experience
+  * Define engagement model (part-time/full-time)
+  * Understand your project timeline
+  * Discuss budget and expectations
+
+STEP 2:
+- phase: "Day 2-3"
+- title: "Developer Matching"
+- description: "We match you with 2-3 pre-vetted candidates"
+- deliverables:
+  * Review our developer database
+  * Match based on skills and availability
+  * Send you 2-3 developer profiles
+  * Include CVs and portfolios
+  * Technical skill assessment results
+
+STEP 3:
+- phase: "Day 4-5"
+- title: "Interview & Selection"
+- description: "You interview candidates and choose the best fit"
+- deliverables:
+  * Schedule interviews with candidates
+  * Technical discussions
+  * Culture fit assessment
+  * Reference checks (if needed)
+  * Final candidate selection
+
+STEP 4:
+- phase: "Day 6-7"
+- title: "Onboarding & Setup"
+- description: "Developer gets access and starts working"
+- deliverables:
+  * Contract signing and paperwork
+  * Developer onboarding to your tools
+  * Access to codebase and systems
+  * Initial sprint planning
+  * Communication setup (Slack/Teams)
+
+STEP 5:
+- phase: "Ongoing"
+- title: "Work & Support"
+- description: "Developer delivers, we manage and support"
+- deliverables:
+  * Daily/weekly standups
+  * Code reviews and QA
+  * Progress tracking
+  * Monthly performance reviews
+  * Ongoing project management support
+
+---
+
+SAMPLE DEVELOPER PROFILES SECTION:
+
+Container: py-20, max-w-7xl mx-auto px-6
+
+Header (centered):
+- H2: "Meet Our Developers"
+- Subtitle: "Pre-vetted senior developers ready to join your team"
+- mb-12
+
+Profiles Grid:
+- Grid: grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8
+
+3 GENERIC DEVELOPER PROFILES:
+
+Each profile card:
+- Background: card with border
+- Padding: p-6
+- Rounded: rounded-xl
+- Hover: shadow-lg
+
+Card structure:
+1. Avatar (top):
+   - Circle: w-20 h-20, bg-primary/10, flex center
+   - User icon or initials placeholder
+   - Status indicator: green dot "Available Now"
+
+2. Name & Role (mt-4):
+   - Name: "Senior Full-Stack Developer" (font-bold, text-lg)
+   - Role type: "MERN Stack Specialist"
+
+3. Experience (mt-2):
+   - Icon: Briefcase
+   - Text: "8+ years experience"
+   - text-sm text-muted-foreground
+
+4. Skills (mt-4):
+   - Label: "Core Skills" (text-xs font-semibold, mb-2)
+   - Tech badges (flex gap-2 flex-wrap):
+     * Small pills with tech names
+     * bg-muted, rounded-full, px-2 py-1, text-xs
+
+5. Expertise highlights (mt-4, space-y-1):
+   - 3 bullet points with CheckCircle2 icons
+   - text-sm
+
+6. Availability (mt-4):
+   - Badge: "Available: Immediately"
+   - bg-green-500/10, text-green-700
+
+7. CTA button (mt-6):
+   - "View Full Profile" or "Schedule Interview"
+   - Full width, border variant
+
+THE 3 DEVELOPER PROFILES:
+
+PROFILE 1: SENIOR FULL-STACK DEVELOPER (MERN)
+- Name: "Senior Full-Stack Developer"
+- Specialty: "MERN Stack Specialist"
+- Experience: "8+ years"
+- Skills: MongoDB, Express, React, Node.js, TypeScript, AWS
+- Highlights:
+  * Built 20+ production web applications
+  * Expert in microservices architecture
+  * Experience with CI/CD and DevOps
+- Available: "Immediately"
+
+PROFILE 2: SENIOR FRONTEND DEVELOPER (REACT)
+- Name: "Senior Frontend Developer"
+- Specialty: "React & Next.js Expert"
+- Experience: "6+ years"
+- Skills: React, Next.js, TypeScript, Tailwind CSS, Redux, Jest
+- Highlights:
+  * Specialized in performance optimization
+  * Built 15+ SaaS dashboards
+  * Expert in responsive design & accessibility
+- Available: "2 weeks"
+
+PROFILE 3: SENIOR BACKEND DEVELOPER (NODE.JS)
+- Name: "Senior Backend Developer"
+- Specialty: "Node.js & API Architect"
+- Experience: "10+ years"
+- Skills: Node.js, Express, PostgreSQL, Redis, Docker, Kubernetes
+- Highlights:
+  * Designed APIs serving 1M+ requests/day
+  * Expert in database optimization
+  * Experience with AWS and GCP
+- Available: "Immediately"
+
+---
+
+WHY HIRE FROM US SECTION:
+
+Container: py-20, bg-muted
+
+Use ValueProposition component:
+
+- Title: "Why Hire Developers Through Us"
+- Subtitle: "We handle the hard parts so you can focus on building"
+- Columns: 3
+
+9 Values:
+
+1. Icon: Shield, Title: "Pre-Vetted & Tested", Description: "Every developer passes technical assessments and background checks"
+2. Icon: Award, Title: "Senior Level Only", Description: "5+ years minimum experience, no juniors", Stat: "5+ Years"
+3. Icon: Zap, Title: "Start in 1 Week", Description: "From consultation to developer starting work", Stat: "7 Days"
+4. Icon: Users, Title: "Perfect Culture Fit", Description: "We match personalities and work styles, not just skills"
+5. Icon: MessageSquare, Title: "Direct Communication", Description: "Developers work directly with you via Slack/Teams/Email"
+6. Icon: FileCheck, Title: "No Long-Term Contracts", Description: "Monthly billing, cancel or pause anytime"
+7. Icon: HeadphonesIcon, Title: "Ongoing Support", Description: "We manage payroll, HR, and performance reviews"
+8. Icon: TrendingUp, Title: "Easy to Scale", Description: "Add or remove developers as your needs change"
+9. Icon: DollarSign, Title: "Transparent Pricing", Description: "No hidden fees, setup costs, or surprises"
+
+---
+
+WHO HIRES OUR DEVELOPERS SECTION:
+
+Container: py-20, max-w-7xl mx-auto px-6
+
+Header (centered):
+- H2: "Who Hires Our Developers"
+- Subtitle: "Companies and teams that benefit from dedicated developers"
+- mb-12
+
+Grid: grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6
+
+4 Use Case Cards:
+
+Each card (p-6, bg-card, border, rounded-xl):
+- Icon (primary, size 32, mb-4)
+- Title (font-semibold, mb-2)
+- Description (text-sm text-muted-foreground)
+
+1. Icon: Rocket
+   Title: "Startups"
+   Description: "Scale engineering teams quickly without long hiring processes"
+
+2. Icon: Building
+   Title: "Agencies"
+   Description: "Handle overflow client work with reliable developers"
+
+3. Icon: Briefcase
+   Title: "Enterprises"
+   Description: "Fill specific skill gaps for internal projects"
+
+4. Icon: Code2
+   Title: "Product Teams"
+   Description: "Add capacity for new features and maintenance"
+
+---
+
+CODING WORKSPACE MOCKUP SECTION:
+
+Container: py-20, bg-muted
+
+Header (centered):
+- H2: "Your Developers, Your Workflow"
+- Description: "Seamlessly integrated into your existing tools and processes"
+- mb-12
+
+Layout: max-w-6xl mx-auto px-6
+
+Visual Mockup:
+- Create VS Code / IDE style mockup showing:
+  
+  Browser-style window with tabs:
+  * Tabs: "App.tsx", "api.ts", "database.ts", "README.md"
+  * Dark theme code editor
+  * Code snippet visible (React/TypeScript example)
+  * Sidebar with file tree
+  * Terminal at bottom showing git commands
+  
+  Annotations around mockup:
+  * "Your GitHub Repo" (pointing to file tree)
+  * "Daily Commits" (pointing to git terminal)
+  * "Code Reviews" (pointing to code)
+  * "Your Standards" (pointing to config files)
+
+Integrations row below (flex gap-6, justify-center, mt-8):
+- Small badges showing tool integrations:
+  * "GitHub" (icon)
+  * "Jira" (icon)
+  * "Slack" (icon)
+  * "Linear" (icon)
+  * "VS Code" (icon)
+  * "Figma" (icon)
+
+---
+
+FAQ SECTION:
+
+Container: py-20, max-w-4xl mx-auto px-6
+
+Header: "Frequently Asked Questions"
+
+12 Questions (Accordion):
+
+Q1: "How quickly can a developer start?"
+A: "Typically within 1 week. After our initial consultation, we match you with candidates within 48 hours. You interview and select, then the developer can start as soon as your onboarding is complete."
+
+Q2: "Can I interview developers before hiring?"
+A: "Absolutely! We encourage it. We'll send you 2-3 pre-vetted profiles. You interview them (technical discussion, culture fit) and choose who you want to work with."
+
+Q3: "What if I'm not satisfied with a developer?"
+A: "We offer a 2-week trial period. If you're not satisfied for any reason, we'll find a replacement at no additional cost. After the trial, you can pause or cancel anytime with 2 weeks notice."
+
+Q4: "How do you vet developers?"
+A: "Every developer goes through: (1) Technical assessment (coding challenges), (2) Portfolio review, (3) Reference checks, (4) Background verification, (5) English proficiency test. Only 5% of applicants make it through."
+
+Q5: "Do developers work in my timezone?"
+A: "Yes, most of our developers work UK hours (GMT/BST) or with 2-4 hour overlap with your timezone. We ensure smooth real-time collaboration."
+
+Q6: "What's included in the monthly cost?"
+A: "Everything: developer's salary, our management fee, payroll, benefits, HR, performance reviews, and support. No hidden costs."
+
+Q7: "Can I hire a developer permanently?"
+A: "Yes! After 6 months, you can directly hire the developer. We charge a one-time conversion fee (equivalent to 1 month's cost)."
+
+Q8: "How do you handle communication and updates?"
+A: "Developers communicate directly with you via Slack, Teams, email, or your preferred tool. They participate in your standups, use your project management tools (Jira, Linear), and follow your processes."
+
+Q9: "What if the developer takes sick leave or vacation?"
+A: "Developers get standard UK leave (28 days/year). For critical projects, we can provide temporary backup developers at no extra cost."
+
+Q10: "Do you offer project management?"
+A: "For dedicated teams (3+ developers), we include a project manager. For individual developers, we provide account management and check-ins, but day-to-day management is with your team."
+
+Q11: "Can I scale up or down?"
+A: "Yes! You can add developers, reduce hours (full-time to part-time), or pause with 2 weeks notice. Very flexible."
+
+Q12: "What technologies do your developers work with?"
+A: "We have developers across all major stacks: MERN, MEAN, LAMP, React, Angular, Vue, Node.js, Python (Django/Flask), PHP (Laravel), .NET, and more. Check our category pages for specific technologies."
+
+---
+
+CTA SECTIONS:
+
+Add 3 CTAs throughout:
+
+CTA 1 (After Categories):
+- Variant: 'bordered'
+- Title: "Need a Developer ASAP?"
+- Description: "We can match you with qualified candidates within 48 hours"
+- PrimaryCTA: "Get Matched Now" → /contact
+- Size: 'medium'
+
+CTA 2 (After Profiles):
+- Variant: 'gradient'
+- Title: "Ready to Hire Your Next Developer?"
+- Description: "Book a free consultation to discuss your needs and meet our developers"
+- PrimaryCTA: "Book Consultation" → /contact
+- SecondaryCTA: "View All Developers" → scroll to categories
+- Size: 'large'
+
+CTA 3 (Final):
+- Variant: 'gradient'
+- Title: "Let's Build Your Dream Team"
+- Description: "Tell us what you need and we'll find the perfect developers for your project"
+- PrimaryCTA: "Hire Developers Now" → /contact
+- SecondaryCTA: "Call: +44 7429 917368" → tel link
+- ShowContactInfo: true
+- Size: 'large'
+
+---
+
+GLOBAL REQUIREMENTS:
+
+1. SEO:
+   - Meta title: "Hire Vetted Developers | Full-Stack, Frontend, Backend | House of Developers"
+   - Meta description: "Hire pre-vetted senior developers. £2,500/month part-time, £4,500/month full-time. No long-term contracts. Start in 1 week. Free consultation."
+
+2. ICONS: Use Lucide React icons only
+3. COMPONENTS USED:
+   - ProcessTimeline ✅
+   - ValueProposition ✅
+   - CTASection (×3) ✅
+
+4. PRICING: Show actual prices (£2,500, £4,500, Custom)
+5. MOCKUPS: Both developer profile cards AND coding workspace
+6. PROFILES: Generic examples, not real people
+7. RESPONSIVE: Mobile-first
+8. DARK/LIGHT MODE: Full support
+9. ANIMATIONS: Professional
+
+Build a comprehensive hire developers hub page that showcases our talent pool, pricing transparency, and easy hiring process.

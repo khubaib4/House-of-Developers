@@ -1,0 +1,728 @@
+Create a detailed Hire MEAN Stack Developers page for House of Developers.
+
+PAGE: /services/hire-developers/mean-stack/page.tsx
+
+A comprehensive page for hiring MEAN stack developers with beautiful mockups and detailed information.
+
+IMPORTANT: Use slug "mean-stack" (not "full-stack/mean"). This is a direct technology page.
+
+---
+
+HERO SECTION:
+
+Container: py-24, max-w-7xl mx-auto px-6
+
+Layout: Grid grid-cols-1 lg:grid-cols-2 gap-12 items-center
+
+Left Column:
+
+- Breadcrumb: "Home / Services / Hire Developers / MEAN Stack"
+  * text-sm text-muted-foreground, clickable, mb-6
+
+- Badge: "🅰️ MEAN Stack Developers"
+  * bg-primary/10, text-primary, px-3 py-1.5, rounded-full, mb-4
+
+- H1: "Hire MEAN Stack Developers"
+  * text-4xl md:text-6xl font-bold, mb-4
+
+- Tagline: "MongoDB, Express, Angular, Node.js Experts"
+  * text-xl md:text-2xl
+  * Gradient text from red to blue (Angular colors)
+  * font-semibold
+
+- Description (mt-6):
+  * text-xl text-muted-foreground leading-relaxed
+  * "Hire senior MEAN stack developers who build enterprise-grade applications with TypeScript throughout. Angular's structured framework combined with Node.js backend—perfect for complex, scalable business applications."
+
+- Feature Pills (mt-6, flex gap-3 flex-wrap):
+  1. "TypeScript Native" (FileCode icon)
+  2. "Enterprise Ready" (Building icon)
+  3. "Structured" (Box icon)
+  4. "Google Backed" (Award icon)
+
+- Stats Grid (mt-8, grid-cols-3 gap-6):
+  1. "4+ Developers"
+  2. "10+ Years Avg"
+  3. "Available Now"
+
+- CTA Buttons (mt-8, flex gap-4):
+  * Primary: "Hire MEAN Developer" → /contact
+  * Secondary: "See Examples" → scroll to projects
+
+Right Column:
+
+- MEAN Stack Visual Mockup:
+  * Create beautiful layered stack visualization
+  
+  4 Layers stacked vertically with 3D effect:
+  
+  LAYER 1 (Top - Angular):
+  * Card: bg-gradient (red to pink), p-4, rounded-lg
+  * Icon: Code2 (white, size 32)
+  * Label: "Angular" (white, font-bold)
+  * Subtitle: "Frontend Framework"
+  * Small code preview: "@Component"
+  * TypeScript badge
+  
+  LAYER 2 (Express):
+  * Card: bg-gradient (purple to blue), p-4, rounded-lg
+  * Icon: Server (white, size 32)
+  * Label: "Express.js"
+  * Subtitle: "Backend API"
+  * Code snippet: "app.get('/api')"
+  
+  LAYER 3 (Node.js):
+  * Card: bg-gradient (green to teal), p-4, rounded-lg
+  * Icon: Zap (white, size 32)
+  * Label: "Node.js"
+  * Subtitle: "JavaScript Runtime"
+  * Badge: "TypeScript Support"
+  
+  LAYER 4 (Bottom - MongoDB):
+  * Card: bg-gradient (emerald to green), p-4, rounded-lg
+  * Icon: Database (white, size 32)
+  * Label: "MongoDB"
+  * Subtitle: "NoSQL Database"
+  * Schema preview: "{ data: {...} }"
+  
+  Connecting arrows/lines between layers (glowing effect)
+  "MEAN Stack" label with angular icon
+  
+  Floating badges around:
+  * "TypeScript Everywhere" (FileCode icon)
+  * "Enterprise Grade" (Building icon)
+  * "Google Angular" (Sparkles icon)
+  
+  * Shadow: 2xl with glow effect
+  * Modern, professional look
+
+---
+
+WHAT IS MEAN STACK SECTION:
+
+Container: py-20, bg-muted, max-w-5xl mx-auto px-6, text-center
+
+- H2: "What is the MEAN Stack?"
+- Description (mt-4, text-lg):
+  "MEAN is an enterprise-focused JavaScript stack using TypeScript. MongoDB (database), Express (backend), Angular (frontend framework by Google), Node.js (runtime)—structured, opinionated, and perfect for large teams and complex applications."
+
+MEAN Components Grid (mt-12, grid-cols-1 md:grid-cols-4 gap-8):
+
+4 component cards:
+
+Each card (p-6, bg-card, border, rounded-xl, hover effect):
+- Icon (size 40, mb-4)
+- Letter badge ("M", "E", "A", "N" - large, font-bold, gradient text)
+- Name (font-semibold, mt-2)
+- Full name (text-xs text-muted-foreground)
+- Purpose (text-sm, mt-2)
+
+1. Icon: Database
+   Letter: "M" (gradient green)
+   Name: "MongoDB"
+   Full: "NoSQL Database"
+   Purpose: "Flexible document storage for evolving enterprise data"
+
+2. Icon: Server
+   Letter: "E" (gradient purple)
+   Name: "Express.js"
+   Full: "Backend Framework"
+   Purpose: "Minimal framework for building robust Node.js APIs"
+
+3. Icon: Triangle (Angular shape style)
+   Letter: "A" (gradient red)
+   Name: "Angular"
+   Full: "Frontend Framework"
+   Purpose: "Complete TypeScript framework for large-scale apps"
+
+4. Icon: Zap
+   Letter: "N" (gradient green)
+   Name: "Node.js"
+   Full: "JavaScript Runtime"
+   Purpose: "Scalable server-side JavaScript execution"
+
+---
+
+WHY CHOOSE MEAN SECTION:
+
+Container: py-20
+
+Use ValueProposition component:
+
+- Title: "Why Choose MEAN Stack Development"
+- Subtitle: "Enterprise-grade architecture with TypeScript"
+- Columns: 3
+
+9 Benefits:
+
+1. Icon: FileCode, Title: "TypeScript Native", Description: "Angular uses TypeScript by default—type safety and fewer bugs"
+2. Icon: Building, Title: "Enterprise Ready", Description: "Angular's opinionated structure perfect for large teams"
+3. Icon: Box, Title: "Complete Framework", Description: "Angular includes routing, forms, HTTP—everything built-in"
+4. Icon: Users, Title: "Google Backed", Description: "Maintained by Google with long-term support and updates"
+5. Icon: Shield, Title: "Strong Typing", Description: "TypeScript throughout catches errors at compile time"
+6. Icon: Layers, Title: "Modular Architecture", Description: "Angular modules keep code organized and maintainable"
+7. Icon: TrendingUp, Title: "Highly Scalable", Description: "Node.js async + MongoDB scale to enterprise levels"
+8. Icon: TestTube, Title: "Testing Built-In", Description: "Angular includes Jasmine/Karma for comprehensive testing"
+9. Icon: Package, Title: "RxJS Reactive", Description: "Powerful reactive programming with RxJS observables"
+
+---
+
+MEAN STACK MOCKUP - ENTERPRISE APPLICATION:
+
+Container: py-20, bg-muted
+
+Header (centered):
+- H2: "Enterprise Applications Built with MEAN"
+- Description: "Complex business systems with Angular's powerful framework"
+- mb-12
+
+Layout: max-w-6xl mx-auto px-6
+
+Application Mockup:
+- Create browser window showing enterprise MEAN application
+
+Browser Frame:
+* Professional enterprise design
+* URL: "enterprise.app.com"
+
+Inside - Enterprise CRM Dashboard:
+
+TOP SECTION - Header:
+* Company logo (left)
+* Main navigation: 
+  - Dashboard
+  - Customers
+  - Sales Pipeline
+  - Reports
+  - Admin
+* Search bar (center)
+* Notifications + User menu (right)
+
+SIDEBAR (left) - Angular Module Navigation:
+* Dashboard module (home icon)
+* Customer Management (users icon)
+  - Customer List
+  - Add Customer
+  - Import/Export
+* Sales Pipeline (briefcase icon)
+  - Leads
+  - Opportunities
+  - Deals
+* Reporting (chart icon)
+* Settings (settings icon)
+
+MAIN CONTENT - Sales Dashboard:
+
+Header Section:
+* Page title: "Sales Dashboard"
+* Date range picker
+* Export buttons (PDF, Excel)
+
+KPI Cards (grid-cols-4):
+1. Total Revenue: £234,560 (up 15%)
+2. Active Deals: 48 (6 new)
+3. Conversion Rate: 32% (up 3%)
+4. Avg Deal Size: £12,340 (up 8%)
+
+Charts Section (2 columns):
+* Left: Line chart "Revenue Trend" (6 months)
+  - Multi-line (Actual vs Target)
+  - Gradient fills
+  - Angular Material Chart
+* Right: Donut chart "Deals by Stage"
+  - Colored segments
+  - Legend below
+
+Data Table - Recent Deals:
+* Columns: Company, Contact, Value, Stage, Owner, Date
+* 5 rows with data
+* Action buttons (View, Edit)
+* Pagination
+* Sorting indicators
+* Angular Material Table styling
+
+Professional Colors:
+- Primary: Deep blue (#1976D2)
+- Accent: Red (#DC004E) 
+- Success: Green
+- Clean, enterprise aesthetic
+
+Annotations around mockup:
+* "Angular Components" → UI elements
+* "TypeScript Models" → data structures
+* "RxJS Observables" → real-time updates
+* "Express API" → backend calls
+* "MongoDB Aggregations" → complex queries
+
+Code Snippet Panel (bottom-right):
+* TypeScript Angular component example
+* Shows @Component decorator
+* Observable pattern
+* Syntax highlighting
+* "Enterprise TypeScript" label
+
+---
+
+WHAT MEAN DEVELOPERS DO:
+
+Container: py-20
+
+Header (centered):
+- H2: "What Our MEAN Stack Developers Deliver"
+- Subtitle: "Enterprise application development with Angular expertise"
+- mb-12
+
+Grid: grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6, max-w-6xl mx-auto px-6
+
+9 Capability Cards:
+
+Each card (p-6, bg-card, border, rounded-lg):
+- Icon (primary, size 28)
+- Title (font-semibold, mt-3)
+- Description (text-sm text-muted-foreground, mt-2)
+
+1. Icon: Triangle, Title: "Angular Development", Description: "Components, modules, services, routing, and Angular CLI"
+
+2. Icon: FileCode, Title: "TypeScript Expertise", Description: "Strong typing, interfaces, generics, and decorators"
+
+3. Icon: Workflow, Title: "RxJS Observables", Description: "Reactive programming, operators, async data streams"
+
+4. Icon: Server, Title: "Express APIs", Description: "RESTful endpoints, middleware, authentication"
+
+5. Icon: Database, Title: "MongoDB Integration", Description: "Mongoose models, aggregations, schema design"
+
+6. Icon: TestTube, Title: "Angular Testing", Description: "Jasmine, Karma, unit tests, E2E with Protractor"
+
+7. Icon: Palette, Title: "Angular Material", Description: "Material Design components and theming"
+
+8. Icon: Lock, Title: "Authentication", Description: "JWT, Guards, role-based access control"
+
+9. Icon: Cloud, Title: "Deployment", Description: "Docker, AWS, Azure, CI/CD with Angular build optimization"
+
+---
+
+PRICING SECTION:
+
+Container: py-20, bg-muted
+
+Header (centered):
+- H2: "MEAN Stack Developer Pricing"
+- Subtitle: "Enterprise-grade developers at competitive rates"
+- mb-12
+
+Pricing Cards: grid-cols-1 md:grid-cols-3 gap-8, max-w-6xl mx-auto px-6
+
+3 TIERS:
+
+TIER 1: PART-TIME
+- Name: "Part-Time MEAN Developer"
+- Price: "£2,500/month"
+- Description: "80 hours/month"
+- Features:
+  * Angular component development
+  * TypeScript code reviews
+  * Express API endpoints
+  * MongoDB queries
+  * Bug fixes & maintenance
+  * Flexible 4 hours/day
+- CTA: "Hire Part-Time" → /contact
+
+TIER 2: FULL-TIME (POPULAR)
+- Name: "Full-Time MEAN Developer"
+- Price: "£4,500/month"
+- Description: "160 hours/month"
+- Features:
+  * Complete module ownership
+  * Angular + Node.js full-stack
+  * RxJS reactive patterns
+  * Testing & documentation
+  * Code architecture
+  * Daily standups & sprints
+- CTA: "Hire Full-Time" → /contact
+- isPopular: true
+- Highlight: border-2 border-primary
+
+TIER 3: TEAM
+- Name: "MEAN Development Team"
+- Price: "Custom Quote"
+- Description: "Enterprise teams"
+- Features:
+  * 2+ MEAN stack developers
+  * Angular architect
+  * Backend specialist
+  * QA engineer
+  * DevOps engineer (optional)
+  * Enterprise app delivery
+- CTA: "Build Team" → /contact
+
+---
+
+SAMPLE MEAN DEVELOPER PROFILES:
+
+Container: py-20
+
+Header (centered):
+- H2: "Meet Our MEAN Stack Developers"
+- Subtitle: "TypeScript and Angular specialists with enterprise experience"
+- mb-12
+
+Profiles Grid: grid-cols-1 md:grid-cols-2 gap-8, max-w-5xl mx-auto px-6
+
+2 DEVELOPER PROFILES:
+
+PROFILE 1:
+- Avatar: User icon in circle, bg-gradient (red to pink)
+- Name: "Senior MEAN Stack Developer"
+- Experience: "10+ years in enterprise JavaScript"
+- Status: "Available Now" (green dot)
+
+Skills (flex gap-2 flex-wrap):
+* Angular
+* TypeScript
+* RxJS
+* Node.js
+* Express
+* MongoDB
+* Jasmine
+* Azure
+
+Expertise Highlights (space-y-2, mt-4):
+✓ Built 12+ enterprise Angular applications
+✓ Expert in Angular Material and custom components
+✓ RxJS reactive patterns specialist
+✓ TypeScript advanced patterns
+✓ Microservices with Node.js
+
+Recent Projects:
+- Enterprise CRM with 500+ users
+- Financial dashboard for banking
+- Healthcare management system
+
+Certifications:
+- Google Cloud Certified
+- Microsoft Azure Developer
+
+Availability: "Can start immediately"
+
+CTA: "Schedule Interview" → /contact
+
+PROFILE 2:
+- Avatar: User icon in circle, bg-gradient (blue to purple)
+- Name: "Senior MEAN Stack Architect"
+- Experience: "12+ years full-stack TypeScript"
+- Status: "Available in 1 week"
+
+Skills:
+* Angular
+* TypeScript
+* NestJS
+* Node.js
+* MongoDB
+* GraphQL
+* Jest
+* Docker
+
+Expertise Highlights:
+✓ Angular architecture for large teams
+✓ NestJS for structured backends
+✓ MongoDB optimization expert
+✓ Led teams of 5+ developers
+✓ CI/CD and DevOps expertise
+
+Recent Projects:
+- Multi-tenant SaaS platform
+- Supply chain management system
+- Real-time analytics dashboard
+
+Leadership:
+- Technical team lead experience
+- Code review & mentoring
+
+Availability: "1 week notice"
+
+CTA: "Schedule Interview" → /contact
+
+---
+
+MEAN STACK PROJECTS SHOWCASE:
+
+Container: py-20, bg-muted
+
+Header (centered):
+- H2: "Enterprise MEAN Applications We've Built"
+- Subtitle: "Complex business systems delivered with Angular"
+- mb-12
+
+Projects Grid: grid-cols-1 md:grid-cols-3 gap-8, max-w-7xl mx-auto px-6
+
+3 PROJECT CARDS:
+
+PROJECT 1:
+- Image: Gradient (red to orange) with Building icon (size 64)
+- Badge: "Enterprise CRM"
+- Title: "Customer Relationship Management"
+- Description: "Complete CRM with sales pipeline, contact management, and reporting for 500+ sales team"
+- Tech: Angular 16, Node.js, MongoDB, RxJS, Azure
+- Results (grid-cols-3 gap-2, mt-4):
+  * "500+ Users"
+  * "50K Contacts"
+  * "Real-time Sync"
+- Features (text-xs, space-y-1, mt-3):
+  ✓ Role-based access control
+  ✓ Advanced filtering & search
+  ✓ Custom reporting engine
+  ✓ Email integration
+- Icon: Users
+
+PROJECT 2:
+- Image: Gradient (blue to cyan) with BarChart icon
+- Badge: "Financial Platform"
+- Title: "Trading Analytics Dashboard"
+- Description: "Real-time financial data visualization with complex calculations and charts"
+- Tech: Angular, TypeScript, Express, MongoDB, WebSockets
+- Results:
+  * "Real-time Data"
+  * "1M+ Records"
+  * "Sub-second Response"
+- Features:
+  ✓ Live market data
+  ✓ Complex calculations
+  ✓ Interactive charts
+  ✓ Export to Excel
+- Icon: TrendingUp
+
+PROJECT 3:
+- Image: Gradient (purple to pink) with Heart icon
+- Badge: "Healthcare System"
+- Title: "Patient Management Portal"
+- Description: "HIPAA-compliant healthcare platform with patient records and appointment scheduling"
+- Tech: Angular Material, NestJS, MongoDB, FHIR API
+- Results:
+  * "HIPAA Compliant"
+  * "10K Patients"
+  * "99.9% Uptime"
+- Features:
+  ✓ Electronic health records
+  ✓ Appointment booking
+  ✓ Secure messaging
+  ✓ Prescription management
+- Icon: Heart
+
+---
+
+MEAN VS MERN COMPARISON:
+
+Container: py-20
+
+Header (centered):
+- H2: "MEAN Stack vs MERN Stack"
+- Description: "When to choose Angular over React"
+- mb-12
+
+Comparison Cards: grid-cols-1 md:grid-cols-2 gap-8, max-w-5xl mx-auto px-6
+
+MEAN CARD:
+- Background: card with border-primary
+- Icon: Triangle (Angular style)
+- Title: "Choose MEAN Stack If..."
+- Features:
+  ✓ Enterprise application (large teams)
+  ✓ Need opinionated structure
+  ✓ TypeScript-first development
+  ✓ Complex forms and validation
+  ✓ Prefer complete framework
+  ✓ Google ecosystem preference
+
+Best for:
+- Enterprise CRMs
+- Financial dashboards
+- Healthcare systems
+- Government platforms
+- Large team projects
+
+MERN CARD:
+- Background: card
+- Icon: Layout (React style)
+- Title: "Choose MERN Stack If..."
+- Features:
+  ✓ Startup/SaaS application
+  ✓ Need flexibility
+  ✓ Prefer library over framework
+  ✓ Want React ecosystem
+  ✓ Rapid prototyping
+  ✓ Mobile app extension (React Native)
+
+Best for:
+- SaaS dashboards
+- Social platforms
+- E-commerce
+- Rapid MVPs
+- Startups
+
+Bottom note: "Both are excellent JavaScript stacks. We'll recommend based on your needs → /contact"
+
+---
+
+PROCESS TIMELINE:
+
+Container: py-20, bg-muted
+
+Use ProcessTimeline component:
+
+- Title: "Hiring MEAN Stack Developers"
+- Subtitle: "From consultation to Angular components delivery"
+
+Steps (4 phases):
+
+STEP 1:
+- phase: "Day 1"
+- title: "Enterprise Requirements"
+- description: "Discuss your Angular application needs"
+- deliverables:
+  * Free consultation call
+  * Discuss Angular version (latest 16+)
+  * Define TypeScript requirements
+  * MongoDB schema planning
+  * Team size & structure
+- duration: "Same day"
+
+STEP 2:
+- phase: "Day 2-3"
+- title: "Meet MEAN Experts"
+- description: "Interview enterprise Angular developers"
+- deliverables:
+  * Developer profiles & portfolios
+  * Enterprise Angular projects
+  * TypeScript code samples
+  * RxJS expertise review
+  * Schedule interviews
+- duration: "48 hours"
+
+STEP 3:
+- phase: "Day 4-5"
+- title: "Technical Assessment"
+- description: "Evaluate Angular, TypeScript, and architecture skills"
+- deliverables:
+  * Video interviews
+  * Angular component architecture
+  * RxJS observable patterns
+  * TypeScript advanced concepts
+  * Make hiring decision
+- duration: "2-3 days"
+
+STEP 4:
+- phase: "Day 6-7"
+- title: "Onboard & Start Building"
+- description: "Developer joins and starts Angular development"
+- deliverables:
+  * Contract and NDA
+  * Access to Angular project
+  * Setup development environment
+  * First Angular module/components
+  * Sprint planning
+- duration: "1-2 days"
+
+---
+
+FAQ SECTION:
+
+Container: py-20, max-w-4xl mx-auto px-6
+
+Header: "MEAN Stack Developer FAQs"
+
+10 Questions (Accordion):
+
+Q1: "Why choose MEAN over MERN for my project?"
+A: "Choose MEAN if you need Angular's opinionated structure, TypeScript by default, or building enterprise applications with large teams. MEAN is more structured; MERN (React) is more flexible. For complex business apps with many developers, MEAN's structure helps maintain consistency."
+
+Q2: "Is Angular harder to learn than React?"
+A: "Angular has a steeper learning curve but includes everything (routing, forms, HTTP). React is simpler to start but requires choosing libraries. Our developers are Angular experts, so learning curve doesn't affect delivery time."
+
+Q3: "Do MEAN developers use the latest Angular versions?"
+A: "Yes! Our developers stay current with Angular 16+ and leverage the latest features: standalone components, signals, improved performance, and modern TypeScript."
+
+Q4: "Can MEAN stack handle mobile apps?"
+A: "For hybrid mobile, use Ionic with Angular. For native, Angular developers can learn React Native. We typically recommend separate mobile developers for native apps, but Ionic works well for business apps."
+
+Q5: "What's RxJS and why is it important in MEAN?"
+A: "RxJS is Angular's reactive programming library using observables for async data. It's crucial for handling HTTP requests, forms, real-time updates. Our developers are RxJS experts for complex data flows."
+
+Q6: "Do MEAN developers use NestJS?"
+A: "Many do! NestJS is a TypeScript Node.js framework inspired by Angular. It provides structure on the backend similar to Angular on frontend. Great for enterprise MEAN apps."
+
+Q7: "Is Angular Material included?"
+A: "Yes! Our developers use Angular Material for enterprise UI components—tables, forms, dialogs, menus. Saves development time and provides consistent Google Material Design."
+
+Q8: "Can MEAN scale to large user bases?"
+A: "Absolutely! Node.js handles concurrent connections well, MongoDB scales horizontally, and Angular is used by Google apps serving billions. We've built MEAN apps for 100K+ users."
+
+Q9: "What about testing in Angular?"
+A: "Angular includes Jasmine (testing framework) and Karma (test runner). Our developers write unit tests for components, services, and E2E tests with Protractor or Cypress."
+
+Q10: "Can you migrate from AngularJS to modern Angular?"
+A: "Yes! Our developers can migrate legacy AngularJS (1.x) applications to modern Angular (16+). It requires rewriting components but maintains business logic."
+
+---
+
+CTA SECTIONS:
+
+Add 3 CTAs:
+
+CTA 1 (After MEAN Components):
+- Variant: 'bordered'
+- Title: "Need an Enterprise Angular Developer?"
+- Description: "Our MEAN stack experts build scalable TypeScript applications"
+- PrimaryCTA: "Hire MEAN Developer" → /contact
+- Size: 'medium'
+
+CTA 2 (After Projects):
+- Variant: 'gradient'
+- Title: "Ready to Build Your Enterprise Application?"
+- Description: "From CRMs to financial platforms—our MEAN developers deliver robust solutions"
+- PrimaryCTA: "Schedule Interview" → /contact
+- SecondaryCTA: "See Pricing" → scroll to pricing
+- Size: 'large'
+
+CTA 3 (Final):
+- Variant: 'gradient'
+- Title: "Let's Build with Angular & TypeScript"
+- Description: "Book a free consultation and meet our enterprise MEAN stack developers"
+- PrimaryCTA: "Book Consultation" → /contact
+- SecondaryCTA: "Call: +44 7429 917368" → tel link
+- ShowContactInfo: true
+- Size: 'large'
+
+---
+
+GLOBAL REQUIREMENTS:
+
+1. SEO:
+   - Meta title: "Hire MEAN Stack Developers | MongoDB, Express, Angular, Node.js | House of Developers"
+   - Meta description: "Hire senior MEAN stack developers. Angular + TypeScript experts. £2,500/month part-time, £4,500/month full-time. Enterprise applications."
+
+2. SLUG: Use "mean-stack" (not "full-stack/mean")
+
+3. ICONS: Lucide React icons only
+
+4. COMPONENTS:
+   - ProcessTimeline ✅
+   - ValueProposition ✅
+   - CTASection (×3) ✅
+
+5. MOCKUPS:
+   - Beautiful 4-layer MEAN stack visualization (Angular red gradient)
+   - Enterprise CRM dashboard mockup (professional)
+   - Project showcases with gradient backgrounds
+   - TypeScript code snippets
+
+6. PROFILES: 2 generic MEAN developer examples
+
+7. ANGULAR BRANDING: Use red/pink gradients for Angular elements
+
+8. RESPONSIVE: Mobile-first
+
+9. DARK/LIGHT MODE: Full support
+
+10. PROFESSIONAL TONE: Enterprise-focused
+
+Build a professional, enterprise-focused MEAN stack page with beautiful mockups showcasing Angular's power for business applications.

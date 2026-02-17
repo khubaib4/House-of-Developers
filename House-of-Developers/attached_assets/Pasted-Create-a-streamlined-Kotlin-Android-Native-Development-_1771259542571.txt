@@ -1,0 +1,561 @@
+Create a streamlined Kotlin/Android Native Development page for House of Developers.
+
+PAGE: /services/mobile-development/kotlin/page.tsx
+
+A focused page showcasing native Android app development services with Kotlin and Jetpack Compose using Lucide React icons only.
+
+IMPORTANT: Do NOT include any "Results Showcase" or "Before/After" metrics section in this page.
+
+---
+
+HERO SECTION:
+
+Container: py-24, max-w-7xl mx-auto px-6
+
+Layout: Grid grid-cols-1 lg:grid-cols-2 gap-12 items-center
+
+Left Column:
+
+- Breadcrumb: "Home / Services / Mobile Development / Android Development"
+  * text-sm text-muted-foreground, clickable, mb-6
+
+- Badge: "🤖 Android Development"
+  * bg-primary/10, text-primary, px-3 py-1.5, rounded-full, mb-4
+
+- H1: "Native Android App Development"
+  * text-4xl md:text-6xl font-bold, mb-4
+
+- Tagline: "Kotlin, Jetpack Compose & Google Play"
+  * text-xl md:text-2xl
+  * Gradient text from green to blue (Android gradient style)
+  * font-semibold
+
+- Description (mt-6):
+  * text-xl text-muted-foreground leading-relaxed
+  * "Build powerful Android apps with Kotlin and modern Jetpack Compose. Reach 3 billion Android users worldwide with native performance, Material Design 3, and seamless Google services integration."
+
+- Feature Pills (mt-6, flex gap-3 flex-wrap):
+  1. "100% Native" (Smartphone icon)
+  2. "Kotlin First" (Code2 icon)
+  3. "Material Design 3" (Palette icon)
+  4. "3B+ Users" (Users icon)
+
+- CTA Buttons (mt-8, flex gap-4):
+  * Primary: "Start Your Android App" → /contact
+  * Secondary: "View Examples" → scroll to use cases
+
+- Trust: "⭐ Built for Google Play Store"
+
+Right Column:
+
+- Android App Mockup:
+  * Android phone frame (Pixel/Samsung style)
+  * Showing modern Android app interface
+  * Include:
+    - Android status bar (signal, time, battery)
+    - Material Design 3 components
+    - Floating Action Button
+    - Bottom navigation or app bar
+  * Floating elements around mockup:
+    - "Kotlin" badge
+    - "Jetpack Compose" badge
+    - "Play Store Ready" badge
+    - "Material Design" indicator
+  * Include Android tablet in background (smaller)
+  * Shadow: 2xl
+  * Subtle animations
+
+---
+
+WHY NATIVE ANDROID SECTION:
+
+Container: py-20, bg-muted, max-w-5xl mx-auto px-6, text-center
+
+- H2: "Why Choose Native Android Development"
+- Description: "The largest mobile platform in the world"
+
+Stats Grid (grid-cols-2 md:grid-cols-4 gap-8, mt-12):
+
+1. Smartphone icon: "3B+" - "Active Devices"
+2. Globe icon: "72%" - "Global Market Share"
+3. TrendingUp icon: "85%" - "Emerging Markets"
+4. Package icon: "3.5M+" - "Apps on Play Store"
+
+---
+
+KOTLIN & JETPACK COMPOSE SECTION:
+
+Container: py-20, max-w-7xl mx-auto px-6
+
+Header (centered):
+- H2: "Modern Android with Kotlin & Jetpack Compose"
+- Description: "Google's official languages and frameworks"
+- mb-12
+
+Grid: grid-cols-1 md:grid-cols-2 gap-8, max-w-5xl mx-auto
+
+2 Technology Cards:
+
+KOTLIN CARD:
+- Background: card with border
+- Icon: Code2 icon (size 48, primary color)
+- Title: "Kotlin Programming Language"
+- Description: "Google's preferred language for Android"
+
+Features list (mt-6, space-y-3):
+✓ Concise & expressive syntax
+✓ 100% Java interoperable
+✓ Null safety built-in
+✓ Coroutines for async code
+✓ Google's official language (2019+)
+✓ Modern and actively developed
+
+Why Kotlin:
+- "40% less code than Java"
+- "Fewer crashes with null safety"
+- "Google's recommended language"
+
+JETPACK COMPOSE CARD:
+- Background: card with border
+- Icon: Layout icon (size 48, primary color)
+- Title: "Jetpack Compose Framework"
+- Description: "Modern declarative UI toolkit"
+
+Features list (mt-6, space-y-3):
+✓ Declarative UI (like SwiftUI/React)
+✓ Less boilerplate code
+✓ Built-in Material Design 3
+✓ Live preview in Android Studio
+✓ Reactive by default
+✓ Google's future of Android UI
+
+Why Jetpack Compose:
+- "50% less code than XML layouts"
+- "Faster UI development"
+- "Material Design 3 built-in"
+
+---
+
+WHAT WE BUILD SECTION:
+
+Container: py-20, bg-muted
+
+Header (centered):
+- H2: "Android Apps We Build"
+- Subtitle: "Reaching billions of Android users"
+- mb-12
+
+Grid: grid-cols-1 md:grid-cols-3 gap-8, max-w-7xl mx-auto px-6
+
+3 Solution Cards:
+
+1. Icon: Smartphone
+   Title: "Consumer Apps"
+   Description: "Feature-rich apps for the global Android user base"
+   Features:
+   - Social networking
+   - Media & entertainment
+   - Shopping & commerce
+   - Utilities & tools
+   Timeline: "10-14 weeks"
+
+2. Icon: Globe
+   Title: "Global Market Apps"
+   Description: "Apps for emerging markets and international audiences"
+   Features:
+   - Offline-first design
+   - Low-bandwidth optimization
+   - Multiple language support
+   - Lightweight APKs
+   Timeline: "12-16 weeks"
+
+3. Icon: Briefcase
+   Title: "Enterprise Apps"
+   Description: "Internal tools and productivity apps for businesses"
+   Features:
+   - MDM integration
+   - Custom enterprise features
+   - Security & compliance
+   - Device management
+   Timeline: "14-18 weeks"
+
+---
+
+ANDROID EXCLUSIVE FEATURES:
+
+Container: py-20
+
+Use ValueProposition component:
+
+- Title: "Android-Exclusive Features We Implement"
+- Subtitle: "Take advantage of Android's unique capabilities"
+- Columns: 3
+
+9 Android Features:
+
+1. Icon: Widget
+   Title: "Home Screen Widgets"
+   Description: "Interactive widgets on home screen with Glance API"
+
+2. Icon: Bell
+   Title: "Rich Notifications"
+   Description: "Expandable notifications with actions and custom layouts"
+
+3. Icon: Share2
+   Title: "Deep Intents & Sharing"
+   Description: "Share to any app, custom intent filters, app linking"
+
+4. Icon: Settings
+   Title: "Background Services"
+   Description: "Long-running background tasks and foreground services"
+
+5. Icon: MapPin
+   Title: "Location Services"
+   Description: "Google Maps SDK, geofencing, location tracking"
+
+6. Icon: CreditCard
+   Title: "Google Pay Integration"
+   Description: "One-tap payments with Google's payment system"
+
+7. Icon: Database
+   Title: "Room Database"
+   Description: "Robust local storage with SQLite abstraction"
+
+8. Icon: Cloud
+   Title: "Firebase Integration"
+   Description: "Analytics, Crashlytics, Cloud Messaging, Auth"
+
+9. Icon: Fingerprint
+   Title: "Biometric Auth"
+   Description: "Fingerprint, face unlock, pattern authentication"
+
+---
+
+MATERIAL DESIGN 3 SECTION:
+
+Container: py-20, bg-muted, max-w-6xl mx-auto px-6
+
+Header (centered):
+- H2: "Material Design 3 Excellence"
+- Description: "Google's latest design system built into every app"
+- mb-12
+
+Grid: grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6
+
+4 Material Design Principles:
+
+Each card (p-6, bg-card, rounded-xl, border):
+- Icon (primary color, size 32, mb-4)
+- Title (font-semibold, mb-2)
+- Description (text-sm text-muted-foreground)
+
+1. Icon: Palette
+   Title: "Dynamic Color"
+   Description: "Adapts to user's wallpaper for personalized experience"
+
+2. Icon: Sun
+   Title: "Light & Dark Themes"
+   Description: "Seamless theme switching with system preferences"
+
+3. Icon: Layers
+   Title: "Adaptive Layouts"
+   Description: "Responsive designs for phones, tablets, and foldables"
+
+4. Icon: Zap
+   Title: "Motion & Animation"
+   Description: "Smooth transitions and delightful micro-interactions"
+
+---
+
+PROCESS SECTION:
+
+Container: py-20
+
+Use ProcessTimeline component:
+
+- Title: "Our Android Development Process"
+- Subtitle: "From concept to Google Play Store"
+
+Steps (5 phases):
+
+PHASE 1:
+- phase: "Week 1-2"
+- title: "Discovery & Design"
+- description: "Understanding requirements and creating Material Design interfaces"
+- deliverables:
+  * User research & Android best practices
+  * Wireframes following Material Design
+  * Material Design 3 theme system
+  * Jetpack Compose design components
+  * Interactive prototype
+- duration: "10-14 days"
+
+PHASE 2:
+- phase: "Week 3-4"
+- title: "Development Setup"
+- description: "Android Studio project and architecture"
+- deliverables:
+  * Android Studio project setup
+  * Jetpack Compose architecture (MVVM)
+  * Kotlin coroutines & Flow
+  * Retrofit API integration
+  * Room database setup
+- duration: "7-10 days"
+
+PHASE 3:
+- phase: "Week 5-10"
+- title: "Feature Development"
+- description: "Building screens and functionality with Jetpack Compose"
+- deliverables:
+  * Compose UI screens
+  * Navigation component
+  * Core features implementation
+  * Firebase integration
+  * Google services (Maps, Auth, Pay)
+- duration: "4-6 weeks"
+
+PHASE 4:
+- phase: "Week 11-12"
+- title: "Testing & Optimization"
+- description: "QA across Android devices and versions"
+- deliverables:
+  * Testing on multiple devices (Samsung, Pixel, etc.)
+  * Android 12+ compatibility
+  * Performance optimization
+  * Memory profiling
+  * Bug fixes
+- duration: "1-2 weeks"
+
+PHASE 5:
+- phase: "Week 13-14"
+- title: "Play Store Submission"
+- description: "Deployment to Google Play Store"
+- deliverables:
+  * Play Console setup
+  * Screenshots and feature graphic
+  * Store listing optimization
+  * Beta testing track
+  * Production release
+- duration: "1-2 weeks"
+
+---
+
+USE CASES:
+
+Container: py-20, bg-muted, max-w-7xl mx-auto px-6
+
+Header: "Android Apps We've Built"
+
+Grid: grid-cols-1 md:grid-cols-3 gap-8
+
+3 Use Cases:
+
+1. Industry: "E-Commerce"
+   Title: "Shopping App with Google Pay"
+   Description: "Native Android app with product catalog, Google Pay, and push notifications"
+   Tech: Kotlin, Jetpack Compose, Firebase, Google Pay
+   Results: "150K downloads", "4.6★ rating"
+   Icon: ShoppingBag
+
+2. Industry: "Food Delivery"
+   Title: "Restaurant Ordering Platform"
+   Description: "Real-time order tracking with Google Maps and background services"
+   Tech: Kotlin, Compose, Google Maps, Firebase
+   Results: "50K orders", "4.7★ rating"
+   Icon: UtensilsCrossed
+
+3. Industry: "Education"
+   Title: "E-Learning App"
+   Description: "Offline-first video courses with Room database and WorkManager"
+   Tech: Kotlin, Compose, Room, WorkManager
+   Results: "200K students", "4.8★ rating"
+   Icon: GraduationCap
+
+---
+
+WHY CHOOSE US FOR ANDROID:
+
+Container: py-20
+
+Use ValueProposition component:
+
+- Title: "Why Choose Us for Android Development"
+- Columns: 3
+
+6 Values:
+
+1. Icon: Award, Title: "Android Experts", Description: "25+ native Android apps on Google Play", Stat: "25+ Apps"
+2. Icon: Code2, Title: "Kotlin & Compose Specialists", Description: "We use Google's latest official technologies"
+3. Icon: Star, Title: "4.7★ Average Rating", Description: "Our Android apps achieve high user satisfaction", Stat: "4.7/5"
+4. Icon: Globe, Title: "Global Reach", Description: "Built for international markets and diverse devices"
+5. Icon: Zap, Title: "Performance Optimized", Description: "Smooth on all devices, even budget phones"
+6. Icon: CheckCircle2, Title: "Play Store Approved", Description: "100% approval rate with Google's policies"
+
+---
+
+TECH STACK:
+
+Container: py-20, bg-muted
+
+Use TechStackGrid component:
+
+- Title: "Android Technologies We Use"
+- Description: "Google's native frameworks and tools"
+- Columns: 6
+
+Items (12 technologies with Lucide icons):
+
+CORE TECHNOLOGIES:
+1. name: "Kotlin", icon: Code2
+2. name: "Jetpack Compose", icon: Layout
+3. name: "Coroutines", icon: RefreshCw
+
+JETPACK LIBRARIES:
+4. name: "Navigation", icon: MapPin
+5. name: "Room Database", icon: Database
+6. name: "WorkManager", icon: Calendar
+7. name: "ViewModel", icon: Layers
+
+GOOGLE SERVICES:
+8. name: "Firebase", icon: Flame
+9. name: "Google Maps", icon: Map
+10. name: "Google Pay", icon: CreditCard
+11. name: "Material Design", icon: Palette
+12. name: "Play Services", icon: Play
+
+---
+
+ANDROID VS IOS COMPARISON:
+
+Container: py-20, max-w-7xl mx-auto px-6
+
+Header (centered):
+- H2: "Android vs iOS: Which Platform First?"
+- Description: "We help you choose based on your market"
+- mb-12
+
+Comparison Cards (grid-cols-1 md:grid-cols-2 gap-8, max-w-5xl mx-auto):
+
+ANDROID CARD:
+- Background: card with border-primary
+- Icon: Smartphone (Android style)
+- Title: "Build Android First If..."
+
+Features list (space-y-2):
+✓ Targeting global/emerging markets
+✓ Budget-conscious user base
+✓ Need maximum device diversity
+✓ Prioritize customization & flexibility
+✓ Want faster Play Store approval (hours not days)
+✓ 72% global market share matters
+
+Market Focus:
+"Asia, Africa, Latin America, Europe"
+
+IOS CARD:
+- Background: card
+- Icon: Smartphone (Apple style)
+- Title: "Build iOS First If..."
+
+Features list:
+✓ Targeting UK/US/Western markets
+✓ Premium user base
+✓ Higher revenue per user
+✓ Need latest features first
+✓ Apple ecosystem integration
+✓ 50% UK market share matters
+
+Market Focus:
+"UK, USA, Canada, Australia, Japan"
+
+Bottom note: "Or build both simultaneously with hybrid → /services/mobile-development/hybrid"
+
+---
+
+FAQ SECTION:
+
+Container: py-20, bg-muted, max-w-4xl mx-auto px-6
+
+Header: "Android Development FAQs"
+
+10 Questions (Accordion):
+
+Q1: "Why build native Android instead of hybrid?"
+A: "Native Android gives you full access to all Android-specific features (widgets, background services, deep system integration), better performance on budget devices, and 100% Material Design compliance. Choose native if you're Android-first or need platform-specific features."
+
+Q2: "What's the difference between Kotlin and Java for Android?"
+A: "Kotlin is Google's modern, official language (2017+)—safer, more concise, and more productive. Java is legacy. We exclusively use Kotlin for new Android projects. It's 40% less code and has null safety built-in."
+
+Q3: "What is Jetpack Compose?"
+A: "Jetpack Compose is Google's modern UI toolkit (like SwiftUI for iOS or React for web). It's declarative, requires 50% less code than XML layouts, and includes Material Design 3 out of the box. It's the future of Android UI development."
+
+Q4: "Can you build for phones AND tablets?"
+A: "Yes! Jetpack Compose makes it easy to create adaptive layouts that work across phones, tablets, foldables, and even ChromeOS. One codebase adapts to different screen sizes automatically."
+
+Q5: "How long does Play Store approval take?"
+A: "Typically a few hours to 1 day (much faster than Apple). We handle all Play Store requirements: screenshots, feature graphic, privacy policy, content rating, and submission."
+
+Q6: "Can you integrate Google Pay?"
+A: "Yes! We integrate Google Pay for one-tap payments. Users can pay instantly with their saved payment methods—no typing credit card numbers."
+
+Q7: "What Android versions do you support?"
+A: "We typically support Android 8.0+ (API 26+), covering 95%+ of active devices. We test on various devices: Samsung, Pixel, OnePlus, Xiaomi, and budget phones to ensure compatibility."
+
+Q8: "How do you handle Android fragmentation?"
+A: "We use Jetpack libraries that handle compatibility automatically, test on multiple devices and Android versions, and follow Material Design guidelines for consistent experiences across all devices."
+
+Q9: "Can you add features to my existing Android app?"
+A: "Yes! We take over existing apps for new features, redesigns, bug fixes, or migration from Java to Kotlin. We work with legacy code or modern Jetpack Compose projects."
+
+Q10: "How much does native Android development cost?"
+A: "Simple apps: £20,000-£35,000. Standard apps: £35,000-£60,000. Complex apps: £60,000-£120,000+. Similar to iOS pricing. We provide detailed quotes after understanding your requirements."
+
+---
+
+CTA SECTIONS:
+
+Add 2 CTAs:
+
+CTA 1 (After Process):
+- Variant: 'bordered'
+- Title: "Ready to Build Your Android App?"
+- Description: "Reach 3 billion Android users with native performance"
+- PrimaryCTA: "Start Your Project" → /contact
+- Size: 'medium'
+
+CTA 2 (Final):
+- Variant: 'gradient'
+- Title: "Let's Build Your Android App"
+- Description: "Book a free consultation to discuss your Android app idea with our Kotlin experts"
+- PrimaryCTA: "Book Free Consultation" → /contact
+- SecondaryCTA: "Call: +44 7429 917368" → tel link
+- ShowContactInfo: true
+- Size: 'large'
+
+---
+
+GLOBAL REQUIREMENTS:
+
+1. SEO:
+   - Meta title: "Android App Development Services | Kotlin & Jetpack Compose | House of Developers"
+   - Meta description: "Expert native Android development in UK. Kotlin, Jetpack Compose, Material Design 3. Apps for Google Play Store. Free consultation."
+
+2. ICONS: Use only Lucide React icons (NO CDN logos)
+   - All icons from lucide-react package
+   - Consistent sizing and styling
+   - Primary color for emphasis
+
+3. COMPONENTS USED:
+   - ProcessTimeline ✅
+   - ValueProposition (×2) ✅
+   - TechStackGrid ✅
+   - CTASection (×2) ✅
+
+4. NO RESULTS SECTION: Do not include any before/after metrics or results showcase section
+
+5. RESPONSIVE: Mobile-first (test on Android device sizes)
+6. DARK/LIGHT MODE: Full support with Material Design theming
+7. ANIMATIONS: Smooth Material Motion
+8. ACCESSIBILITY: TalkBack compatible
+
+Build a focused Android development page emphasizing global reach, Material Design, and Kotlin/Jetpack Compose expertise. Do NOT include results/metrics section.

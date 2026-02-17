@@ -1,0 +1,531 @@
+Create a streamlined iOS Native Development page for House of Developers.
+
+PAGE: /services/mobile-development/ios/page.tsx
+
+A focused page showcasing native iOS app development services with Swift and SwiftUI using Lucide React icons only.
+
+---
+
+HERO SECTION:
+
+Container: py-24, max-w-7xl mx-auto px-6
+
+Layout: Grid grid-cols-1 lg:grid-cols-2 gap-12 items-center
+
+Left Column:
+
+- Breadcrumb: "Home / Services / Mobile Development / iOS Development"
+  * text-sm text-muted-foreground, clickable, mb-6
+
+- Badge: "🍎 iOS Development"
+  * bg-primary/10, text-primary, px-3 py-1.5, rounded-full, mb-4
+
+- H1: "Native iOS App Development"
+  * text-4xl md:text-6xl font-bold, mb-4
+
+- Tagline: "Swift, SwiftUI & the Apple Ecosystem"
+  * text-xl md:text-2xl
+  * Gradient text from blue to purple (Apple gradient style)
+  * font-semibold
+
+- Description (mt-6):
+  * text-xl text-muted-foreground leading-relaxed
+  * "Build premium iOS apps that leverage the full power of Apple's ecosystem. From iPhone to iPad, Apple Watch to Mac—we create native experiences using Swift and SwiftUI that users love and Apple features first."
+
+- Feature Pills (mt-6, flex gap-3 flex-wrap):
+  1. "100% Native" (Smartphone icon)
+  2. "Latest iOS Features" (Sparkles icon)
+  3. "SwiftUI Modern" (Code2 icon)
+  4. "Apple Quality" (Award icon)
+
+- CTA Buttons (mt-8, flex gap-4):
+  * Primary: "Start Your iOS App" → /contact
+  * Secondary: "View Examples" → scroll to use cases
+
+- Trust: "⭐ Built for the App Store"
+
+Right Column:
+
+- iOS App Mockup:
+  * iPhone frame (latest iPhone style)
+  * Showing beautiful iOS app interface
+  * Include:
+    - iOS status bar (signal, time, battery)
+    - Clean modern interface
+    - SwiftUI-style design
+    - Bottom tab bar or navigation
+  * Floating elements around mockup:
+    - "Swift" badge
+    - "SwiftUI" badge
+    - "App Store Ready" badge
+    - "60 FPS" performance indicator
+  * Include smaller Apple devices in background (iPad, Apple Watch)
+  * Shadow: 2xl
+  * Subtle animations
+
+---
+
+WHY NATIVE iOS SECTION:
+
+Container: py-20, bg-muted, max-w-5xl mx-auto px-6, text-center
+
+- H2: "Why Choose Native iOS Development"
+- Description: "The premium choice for Apple's ecosystem"
+
+Stats Grid (grid-cols-2 md:grid-cols-4 gap-8, mt-12):
+
+1. Smartphone icon: "1.5B+" - "Active iPhones"
+2. TrendingUp icon: "50%" - "UK Market Share"
+3. Award icon: "4.8★" - "Higher Ratings"
+4. DollarSign icon: "2.5x" - "Higher Revenue"
+
+---
+
+SWIFT & SWIFTUI SECTION:
+
+Container: py-20, max-w-7xl mx-auto px-6
+
+Header (centered):
+- H2: "Modern iOS Development with Swift & SwiftUI"
+- Description: "Apple's latest technologies for best-in-class apps"
+- mb-12
+
+Grid: grid-cols-1 md:grid-cols-2 gap-8, max-w-5xl mx-auto
+
+2 Technology Cards:
+
+SWIFT CARD:
+- Background: card with border
+- Icon: Code2 icon (size 48, primary color)
+- Title: "Swift Programming Language"
+- Description: "Apple's modern, safe, and fast language"
+
+Features list (mt-6, space-y-3):
+✓ Type-safe & memory-safe
+✓ Fast performance (compiled)
+✓ Clean, readable syntax
+✓ Async/await for modern code
+✓ Full Apple platform support
+✓ Open source
+
+Why Swift:
+- "Faster than Objective-C"
+- "Safer with fewer crashes"
+- "Apple's recommended language"
+
+SWIFTUI CARD:
+- Background: card with border
+- Icon: Layout icon (size 48, primary color)
+- Title: "SwiftUI Framework"
+- Description: "Declarative UI framework by Apple"
+
+Features list (mt-6, space-y-3):
+✓ Declarative syntax (like React)
+✓ Live previews in Xcode
+✓ Built-in animations
+✓ Dark mode automatic
+✓ Cross-device layouts (iPhone/iPad/Mac)
+✓ Constantly evolving
+
+Why SwiftUI:
+- "50% less code than UIKit"
+- "Apple's future of iOS development"
+- "Beautiful interfaces faster"
+
+---
+
+WHAT WE BUILD SECTION:
+
+Container: py-20, bg-muted
+
+Header (centered):
+- H2: "iOS Apps We Build"
+- Subtitle: "Premium experiences for Apple users"
+- mb-12
+
+Grid: grid-cols-1 md:grid-cols-3 gap-8, max-w-7xl mx-auto px-6
+
+3 Solution Cards:
+
+1. Icon: Smartphone
+   Title: "Consumer Apps"
+   Description: "Beautiful consumer-facing apps for iPhone and iPad users"
+   Features:
+   - Social networking apps
+   - Lifestyle & entertainment
+   - Photo & video apps
+   - Games & utilities
+   Timeline: "10-14 weeks"
+
+2. Icon: Briefcase
+   Title: "Enterprise Apps"
+   Description: "Business tools for internal teams and productivity"
+   Features:
+   - Employee management
+   - Field service apps
+   - Sales & CRM tools
+   - Internal workflows
+   Timeline: "12-16 weeks"
+
+3. Icon: Heart
+   Title: "Health & Fitness Apps"
+   Description: "HealthKit integration for wellness and fitness tracking"
+   Features:
+   - Activity tracking
+   - HealthKit integration
+   - Workout logging
+   - Nutrition tracking
+   Timeline: "10-14 weeks"
+
+---
+
+IOS EXCLUSIVE FEATURES:
+
+Container: py-20
+
+Use ValueProposition component:
+
+- Title: "iOS-Exclusive Features We Implement"
+- Subtitle: "Take advantage of Apple's unique capabilities"
+- Columns: 3
+
+9 iOS Features:
+
+1. Icon: Fingerprint
+   Title: "Face ID & Touch ID"
+   Description: "Biometric authentication for secure, passwordless login"
+
+2. Icon: CreditCard
+   Title: "Apple Pay Integration"
+   Description: "One-tap payments with Apple's secure payment system"
+
+3. Icon: Watch
+   Title: "Apple Watch Apps"
+   Description: "Companion apps for watchOS with complications and notifications"
+
+4. Icon: MessageSquare
+   Title: "iMessage Extensions"
+   Description: "Custom stickers, apps, and experiences inside Messages"
+
+5. Icon: Share2
+   Title: "Share Extensions"
+   Description: "Share content to your app from any iOS app"
+
+6. Icon: Bell
+   Title: "Rich Push Notifications"
+   Description: "Interactive notifications with actions and media"
+
+7. Icon: Cloud
+   Title: "iCloud Sync"
+   Description: "Seamless data sync across iPhone, iPad, and Mac"
+
+8. Icon: Palette
+   Title: "Widgets (iOS 14+)"
+   Description: "Home screen widgets for quick information at a glance"
+
+9. Icon: Zap
+   Title: "Shortcuts & Siri"
+   Description: "Siri voice commands and Shortcuts app integration"
+
+---
+
+IOS DESIGN PRINCIPLES:
+
+Container: py-20, bg-muted, max-w-6xl mx-auto px-6
+
+Header (centered):
+- H2: "iOS Design Excellence"
+- Description: "We follow Apple's Human Interface Guidelines"
+- mb-12
+
+Grid: grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6
+
+4 Design Principles:
+
+Each card (p-6, bg-card, rounded-xl, border):
+- Icon (primary color, size 32, mb-4)
+- Title (font-semibold, mb-2)
+- Description (text-sm text-muted-foreground)
+
+1. Icon: Eye
+   Title: "Clarity"
+   Description: "Clear, legible text and crisp icons throughout the interface"
+
+2. Icon: Gauge
+   Title: "Deference"
+   Description: "Content takes center stage with subtle UI that doesn't compete"
+
+3. Icon: Layers
+   Title: "Depth"
+   Description: "Visual layers create hierarchy and understanding"
+
+4. Icon: TouchpadIcon (or Hand)
+   Title: "Consistency"
+   Description: "Familiar patterns users expect from iOS apps"
+
+---
+
+PROCESS SECTION:
+
+Container: py-20
+
+Use ProcessTimeline component:
+
+- Title: "Our iOS Development Process"
+- Subtitle: "From concept to App Store"
+
+Steps (5 phases):
+
+PHASE 1:
+- phase: "Week 1-2"
+- title: "Discovery & Design"
+- description: "Understanding requirements and creating iOS-specific designs"
+- deliverables:
+  * User research & iOS best practices
+  * Wireframes following iOS patterns
+  * SwiftUI design system
+  * iOS Human Interface Guidelines compliance
+  * Interactive prototype in Figma
+- duration: "10-14 days"
+
+PHASE 2:
+- phase: "Week 3-4"
+- title: "Development Setup"
+- description: "Xcode project and architecture"
+- deliverables:
+  * Xcode project setup
+  * SwiftUI architecture (MVVM)
+  * Combine framework for reactive code
+  * API layer with async/await
+  * Core Data or SwiftData setup
+- duration: "7-10 days"
+
+PHASE 3:
+- phase: "Week 5-10"
+- title: "Feature Development"
+- description: "Building screens and functionality"
+- deliverables:
+  * SwiftUI views and screens
+  * Navigation (NavigationStack)
+  * Core features implementation
+  * HealthKit, CloudKit integration (if needed)
+  * Face ID / Touch ID authentication
+- duration: "4-6 weeks"
+
+PHASE 4:
+- phase: "Week 11-12"
+- title: "Testing & Optimization"
+- description: "QA across iPhone and iPad devices"
+- deliverables:
+  * Testing on multiple devices (iPhone 12-16, iPad)
+  * Dark mode testing
+  * Performance optimization (Instruments)
+  * Memory leak detection
+  * Bug fixes
+- duration: "1-2 weeks"
+
+PHASE 5:
+- phase: "Week 13-14"
+- title: "App Store Submission"
+- description: "Deployment to Apple App Store"
+- deliverables:
+  * App Store Connect setup
+  * Screenshots and app preview video
+  * App Store description & metadata
+  * TestFlight beta testing
+  * App Store submission & approval
+- duration: "1-2 weeks"
+
+---
+
+RESULTS SHOWCASE:
+
+Container: py-20, bg-muted
+
+Header (centered): "Real iOS App Results"
+
+Visual Comparison (left) + Metrics (right)
+
+Before Mockup: Basic iOS app with outdated UIKit design
+After Mockup: Modern SwiftUI app with latest iOS features
+
+6 Metrics:
+1. User Rating: "3.8★" → "4.9★" (+29%)
+2. Crash Rate: "2.8%" → "0.3%" (90% lower)
+3. App Size: "85 MB" → "42 MB" (50% smaller)
+4. Load Time: "3.2s" → "0.8s" (75% faster)
+5. User Retention: "45%" → "78%" (+73%)
+6. Revenue per User: "£12" → "£34" (+183%)
+
+---
+
+USE CASES:
+
+Container: py-20, max-w-7xl mx-auto px-6
+
+Header: "iOS Apps We've Built"
+
+Grid: grid-cols-1 md:grid-cols-3 gap-8
+
+3 Use Cases:
+
+1. Industry: "Health & Fitness"
+   Title: "HealthKit Activity Tracker"
+   Description: "Native iOS app with Apple Watch companion and HealthKit integration"
+   Tech: Swift, SwiftUI, HealthKit, watchOS
+   Results: "100K downloads", "4.8★ rating"
+   Icon: Heart
+
+2. Industry: "Finance"
+   Title: "Personal Finance App"
+   Description: "Apple Pay integration, Face ID security, and iCloud sync"
+   Tech: Swift, SwiftUI, Apple Pay, CloudKit
+   Results: "50K users", "£2M tracked"
+   Icon: DollarSign
+
+3. Industry: "Productivity"
+   Title: "Task Management App"
+   Description: "Widgets, Siri Shortcuts, and cross-device sync (iPhone, iPad, Mac)"
+   Tech: Swift, SwiftUI, WidgetKit, Shortcuts
+   Results: "200K downloads", "4.9★ rating"
+   Icon: CheckSquare
+
+---
+
+WHY CHOOSE US FOR IOS:
+
+Container: py-20, bg-muted
+
+Use ValueProposition component:
+
+- Title: "Why Choose Us for iOS Development"
+- Columns: 3
+
+6 Values:
+
+1. Icon: Award, Title: "iOS Specialists", Description: "20+ native iOS apps in the App Store", Stat: "20+ Apps"
+2. Icon: Code2, Title: "Swift & SwiftUI Experts", Description: "We use Apple's latest technologies and best practices"
+3. Icon: Star, Title: "4.8★ Average Rating", Description: "Our iOS apps consistently achieve high user ratings", Stat: "4.8/5"
+4. Icon: Smartphone, Title: "Latest iOS Features", Description: "iOS 17+, HealthKit, Widgets, Face ID, Apple Pay"
+5. Icon: Zap, Title: "Performance First", Description: "Smooth 60 FPS animations and instant responsiveness"
+6. Icon: Shield, Title: "App Store Approved", Description: "100% approval rate with Apple's review process"
+
+---
+
+TECH STACK:
+
+Container: py-20
+
+Use TechStackGrid component:
+
+- Title: "iOS Technologies We Use"
+- Description: "Apple's native frameworks and tools"
+- Columns: 6
+
+Items (12 technologies with Lucide icons):
+
+LANGUAGES & FRAMEWORKS:
+1. name: "Swift", icon: Code2
+2. name: "SwiftUI", icon: Layout
+3. name: "Combine", icon: GitBranch
+
+APPLE FRAMEWORKS:
+4. name: "HealthKit", icon: Heart
+5. name: "CloudKit", icon: Cloud
+6. name: "WidgetKit", icon: Palette
+7. name: "StoreKit", icon: ShoppingCart
+8. name: "MapKit", icon: MapPin
+
+TOOLS & SERVICES:
+9. name: "Xcode", icon: Wrench
+10. name: "TestFlight", icon: Send
+11. name: "Firebase", icon: Flame
+12. name: "CoreData", icon: Database
+
+---
+
+FAQ SECTION:
+
+Container: py-20, bg-muted, max-w-4xl mx-auto px-6
+
+Header: "iOS Development FAQs"
+
+10 Questions (Accordion):
+
+Q1: "Why build native iOS instead of hybrid?"
+A: "Native iOS gives you 100% access to all Apple features the moment they're released, better performance (especially for complex UI/animations), and a truly native feel. Choose native if: you're iOS-first, need cutting-edge features (HealthKit, Widgets, AR), or want premium quality."
+
+Q2: "What's the difference between Swift and Objective-C?"
+A: "Swift is Apple's modern language (2014+)—safer, faster, and easier to read. Objective-C is legacy (1980s). We exclusively use Swift for new projects. It's Apple's recommended language and the future of iOS development."
+
+Q3: "What is SwiftUI and why use it?"
+A: "SwiftUI is Apple's declarative UI framework (like React for iOS). Benefits: 50% less code, live previews, automatic dark mode, easier animations, and cross-device support (iPhone/iPad/Mac from same code). It's the modern way to build iOS apps."
+
+Q4: "Can you build for iPhone, iPad, and Mac?"
+A: "Yes! With SwiftUI, we can create apps that work across iPhone, iPad, Apple Watch, and even Mac (via Catalyst or native SwiftUI). One codebase adapts to different screen sizes and input methods."
+
+Q5: "How long does App Store approval take?"
+A: "Typically 1-3 days for the initial review. We handle all App Store requirements: screenshots, privacy policy, app description, TestFlight beta testing, and submission. Our apps have a 100% approval rate."
+
+Q6: "Can you integrate Apple Pay?"
+A: "Yes! We integrate Apple Pay for one-tap payments using Stripe, Braintree, or direct StoreKit. Your users can pay instantly with Face ID—no typing credit card numbers."
+
+Q7: "Do you build Apple Watch apps?"
+A: "Yes! We build companion watchOS apps that sync with your iPhone app. Perfect for fitness tracking, notifications, quick interactions, and complications (watch face widgets)."
+
+Q8: "What's the cost difference vs Android or hybrid?"
+A: "Native iOS costs roughly the same as native Android (£25K-£60K depending on complexity). It's 40-50% more expensive than hybrid, but you get premium quality and full Apple ecosystem access."
+
+Q9: "Can you add features to my existing iOS app?"
+A: "Yes! We take over existing apps for new features, redesigns, bug fixes, or complete rebuilds. We work with legacy Objective-C code or modern Swift/SwiftUI projects."
+
+Q10: "How do you handle different iPhone sizes?"
+A: "SwiftUI automatically adapts to all iPhone and iPad sizes. We test on iPhone SE (smallest), standard iPhones, Plus/Pro Max (largest), and iPads to ensure perfect layouts everywhere."
+
+---
+
+CTA SECTIONS:
+
+Add 2 CTAs:
+
+CTA 1 (After Process):
+- Variant: 'bordered'
+- Title: "Ready to Build Your iOS App?"
+- Description: "Create a premium native experience for Apple users"
+- PrimaryCTA: "Start Your Project" → /contact
+- Size: 'medium'
+
+CTA 2 (Final):
+- Variant: 'gradient'
+- Title: "Let's Build Your iOS App"
+- Description: "Book a free consultation to discuss your iOS app idea with our Swift experts"
+- PrimaryCTA: "Book Free Consultation" → /contact
+- SecondaryCTA: "Call: +44 7429 917368" → tel link
+- ShowContactInfo: true
+- Size: 'large'
+
+---
+
+GLOBAL REQUIREMENTS:
+
+1. SEO:
+   - Meta title: "iOS App Development Services | Swift & SwiftUI | House of Developers"
+   - Meta description: "Expert native iOS development in UK. Swift, SwiftUI, HealthKit, Apple Pay. Premium apps for iPhone & iPad. Free consultation."
+
+2. ICONS: Use only Lucide React icons (NO CDN logos)
+   - All icons from lucide-react package
+   - Consistent sizing and styling
+   - Primary color for emphasis
+
+3. COMPONENTS USED:
+   - ProcessTimeline ✅
+   - ValueProposition (×2) ✅
+   - TechStackGrid ✅
+   - CTASection (×2) ✅
+
+4. RESPONSIVE: Mobile-first (test on actual iPhone sizes)
+5. DARK/LIGHT MODE: Full support (important for iOS apps!)
+6. ANIMATIONS: 60 FPS smooth (like iOS)
+7. ACCESSIBILITY: VoiceOver compatible
+
+Build a premium iOS development page emphasizing native quality, Apple ecosystem, and Swift/SwiftUI expertise.

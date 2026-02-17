@@ -1,0 +1,409 @@
+Create a streamlined WooCommerce development service page for House of Developers.
+
+PAGE: /services/web-development/cms/woocommerce/page.tsx
+
+A focused page showcasing WooCommerce e-commerce development services with real WooCommerce logo and essential conversion elements.
+
+IMPORTANT: Use real brand logos from CDN:
+- WooCommerce logo: https://cdn.simpleicons.org/woocommerce/96588A
+- WordPress logo: https://cdn.simpleicons.org/wordpress/21759B
+- Stripe: https://cdn.simpleicons.org/stripe/008CDD
+- PayPal: https://cdn.simpleicons.org/paypal/00457C
+
+---
+
+HERO SECTION:
+
+Container: py-24, max-w-7xl mx-auto px-6
+
+Layout: Grid grid-cols-1 lg:grid-cols-2 gap-12 items-center
+
+Left Column:
+
+- Breadcrumb: "Home / Services / Web Development / CMS / WooCommerce"
+  * text-sm text-muted-foreground, clickable links, mb-6
+
+- WooCommerce Logo:
+  * Image from CDN: https://cdn.simpleicons.org/woocommerce/96588A
+  * Size: w-16 h-16, mb-4
+
+- Badge: "🛒 WooCommerce Development"
+  * bg-primary/10, text-primary, px-3 py-1.5, rounded-full, mb-4
+
+- H1: "WooCommerce E-Commerce Development"
+  * text-4xl md:text-6xl font-bold, mb-4
+
+- Tagline: "WordPress-Powered E-Commerce at Its Best"
+  * text-xl md:text-2xl, gradient text (purple to pink), font-semibold
+
+- Description (mt-6):
+  * text-xl text-muted-foreground
+  * "Combine WordPress flexibility with powerful e-commerce. Sell physical products, digital downloads, or subscriptions with unlimited customization and no transaction fees."
+
+- Feature Pills (mt-6, flex gap-3 flex-wrap):
+  1. "No Limits" (Infinity icon)
+  2. "0% Fees" (DollarSign icon)
+  3. "Full Control" (Settings icon)
+  4. "5M+ Stores" (Store icon)
+
+- CTA Buttons (mt-8, flex gap-4):
+  * Primary: "Start Your Store" → /contact
+  * Secondary: "View Examples" → scroll to use cases
+
+- Trust: "⭐ Powers 28% of all online stores"
+
+Right Column:
+
+- WooCommerce Store Mockup:
+  * Browser frame showing WooCommerce storefront
+  * Product grid with images
+  * "Add to Cart" buttons
+  * Shopping cart sidebar
+  * Checkout preview
+  * Use WooCommerce purple accent (#96588A)
+  * Floating badges: "WordPress Powered", "Unlimited Products"
+
+---
+
+WHY WOOCOMMERCE SECTION:
+
+Container: py-20, bg-muted, max-w-5xl mx-auto px-6, text-center
+
+- H2: "Why Choose WooCommerce"
+- Description: "The world's most customizable e-commerce platform"
+
+Stats Grid (grid-cols-2 md:grid-cols-4 gap-8, mt-12):
+
+1. Store icon: "5M+" - "Active Stores"
+2. Package icon: "28%" - "Of All Online Stores"
+3. DollarSign icon: "$0" - "Transaction Fees"
+4. Infinity icon: "Unlimited" - "Products & Sales"
+
+---
+
+WHAT WE BUILD SECTION:
+
+Container: py-20, max-w-7xl mx-auto px-6
+
+Header: 
+- H2: "WooCommerce Solutions We Build"
+- Subtitle: "From simple stores to complex marketplaces"
+
+Grid: grid-cols-1 md:grid-cols-3 gap-8
+
+3 Solution Cards:
+
+1. Icon: ShoppingBag
+   Title: "Product Stores"
+   Description: "Physical and digital product catalogs with payment processing and shipping."
+   Features:
+   - Unlimited products
+   - Inventory management
+   - Multiple payment gateways
+   - Shipping zones & rates
+
+2. Icon: Repeat
+   Title: "Subscription Stores"
+   Description: "Recurring revenue with subscription products and membership plans."
+   Features:
+   - WooCommerce Subscriptions
+   - Recurring billing
+   - Free trials & signup fees
+   - Customer account management
+
+3. Icon: Users
+   Title: "Multi-Vendor Marketplaces"
+   Description: "Create platforms where multiple vendors can sell their products."
+   Features:
+   - Vendor registration
+   - Commission management
+   - Vendor dashboards
+   - Split payments
+
+---
+
+WOOCOMMERCE VS SHOPIFY COMPARISON:
+
+Container: py-20, bg-muted
+
+Header (centered):
+- H2: "WooCommerce vs Shopify: Which is Right?"
+- Description: "Both are excellent—here's how to choose"
+- mb-12
+
+Comparison Cards (max-w-5xl mx-auto, grid-cols-1 md:grid-cols-2 gap-8):
+
+WOOCOMMERCE CARD:
+- Background: card with border-primary
+- WooCommerce logo at top
+- Title: "Choose WooCommerce If..."
+- Features list (space-y-2):
+  ✓ You want unlimited customization
+  ✓ No transaction fees (0%)
+  ✓ You need specific plugins/features
+  ✓ You want full control & ownership
+  ✓ Growing or established business
+  ✓ Technical flexibility is important
+
+SHOPIFY CARD:
+- Background: card
+- Shopify logo at top
+- Title: "Choose Shopify If..."
+- Features list:
+  ✓ You want all-in-one simplicity
+  ✓ Hosted solution (no server management)
+  ✓ 24/7 official support
+  ✓ Quick setup (2-3 weeks)
+  ✓ Startup or small business
+  ✓ Ease of use over customization
+
+Bottom note: "Not sure? Book a consultation and we'll help you decide" → /contact
+
+---
+
+WOOCOMMERCE EXTENSIONS SECTION:
+
+Container: py-20
+
+Use TechStackGrid component:
+
+- Title: "WooCommerce Extensions We Use"
+- Description: "Essential plugins to power your store"
+- Columns: 6
+
+Items (12 extensions with real logos where available):
+
+1. name: "Stripe", logo: "https://cdn.simpleicons.org/stripe/008CDD"
+2. name: "PayPal", logo: "https://cdn.simpleicons.org/paypal/00457C"
+3. name: "WooCommerce Subscriptions", icon: Repeat
+4. name: "WooCommerce Bookings", icon: Calendar
+5. name: "WooCommerce Memberships", icon: Users
+6. name: "YITH WooCommerce", icon: Package
+7. name: "ShipStation", icon: Truck
+8. name: "Klaviyo", logo: "https://cdn.simpleicons.org/klaviyo/000000"
+9. name: "Mailchimp", logo: "https://cdn.simpleicons.org/mailchimp/FFE01B"
+10. name: "Google Analytics", logo: "https://cdn.simpleicons.org/googleanalytics/E37400"
+11. name: "Facebook Pixel", logo: "https://cdn.simpleicons.org/facebook/0866FF"
+12. name: "Cloudflare", logo: "https://cdn.simpleicons.org/cloudflare/F38020"
+
+---
+
+PROCESS SECTION:
+
+Container: py-20, bg-muted
+
+Use ProcessTimeline component:
+
+- Title: "Our WooCommerce Development Process"
+- Subtitle: "Launch in 3-5 weeks"
+
+Steps (4 phases):
+
+WEEK 1:
+- phase: "Week 1"
+- title: "WordPress & WooCommerce Setup"
+- description: "Foundation setup with theme and essential configuration"
+- deliverables:
+  * WordPress installation & hosting
+  * WooCommerce plugin installation
+  * Theme selection & customization
+  * Payment gateway setup
+  * SSL & security configuration
+
+WEEK 2-3:
+- phase: "Week 2-3"
+- title: "Store Build & Products"
+- description: "Design implementation and product catalog creation"
+- deliverables:
+  * Custom store design
+  * Product uploads (images, descriptions, pricing)
+  * Product categories & attributes
+  * Variable products (sizes, colors)
+  * Shipping zones & methods
+
+WEEK 3-4:
+- phase: "Week 3-4"
+- title: "Features & Extensions"
+- description: "Add functionality and integrate extensions"
+- deliverables:
+  * WooCommerce extensions (subscriptions, bookings, etc.)
+  * Email marketing integration
+  * Inventory management
+  * Tax configuration
+  * Coupon & discount setup
+
+WEEK 4-5:
+- phase: "Week 4-5"
+- title: "Testing & Launch"
+- description: "Checkout testing, optimization, and go-live"
+- deliverables:
+  * Checkout flow testing
+  * Payment gateway testing
+  * Performance optimization
+  * SEO setup
+  * Store launch & training
+
+---
+
+RESULTS SHOWCASE:
+
+Container: py-20
+
+Header: "Real WooCommerce Results We've Delivered"
+
+Visual Comparison (left) + Metrics (right)
+
+Before Mockup: Basic WooCommerce with default theme
+After Mockup: Custom branded WooCommerce store
+
+6 Metrics:
+1. Conversion Rate: "1.5%" → "3.8%" (+153%)
+2. Avg Order Value: "£42" → "£89" (+112%)
+3. Cart Abandonment: "75%" → "48%" (36% lower)
+4. Mobile Sales: "35%" → "62%" (+77%)
+5. Page Load Time: "4.5s" → "1.6s" (64% faster)
+6. Monthly Revenue: "£18K" → "£67K" (+272%)
+
+---
+
+USE CASES:
+
+Container: py-20, bg-muted, max-w-7xl mx-auto px-6
+
+Header: "WooCommerce Stores We've Built"
+
+Grid: grid-cols-1 md:grid-cols-3 gap-8
+
+3 Use Cases:
+
+1. Industry: "Home & Garden"
+   Title: "Furniture E-Commerce"
+   Description: "WooCommerce store with 2,000+ products, custom shipping calculator"
+   Results: "£150K/month", "4.2% conversion"
+   Icon: Home
+
+2. Industry: "Supplements"
+   Title: "Subscription Supplement Store"
+   Description: "WooCommerce Subscriptions with auto-replenishment"
+   Results: "3,000 subscribers", "£80K MRR"
+   Icon: Heart
+
+3. Industry: "Digital Products"
+   Title: "Course & Template Marketplace"
+   Description: "Digital downloads with automatic delivery and licensing"
+   Results: "£45K first quarter", "No inventory costs"
+   Icon: Download
+
+---
+
+WHY CHOOSE US:
+
+Container: py-20
+
+Use ValueProposition component:
+
+- Title: "Why Choose Us for WooCommerce"
+- Columns: 3
+
+6 Values:
+
+1. Icon: Award, Title: "WooCommerce Experts", Description: "Official WooCommerce partner with 40+ successful stores", Stat: "40+ Stores"
+2. Icon: Code2, Title: "Custom Development", Description: "We build custom features beyond standard plugins"
+3. Icon: Zap, Title: "Performance First", Description: "Optimized for speed and high traffic", Stat: "<2s Load Time"
+4. Icon: DollarSign, Title: "No Transaction Fees", Description: "Keep 100% of your revenue (unlike Shopify's 2%)"
+5. Icon: Infinity, Title: "Unlimited Scale", Description: "Handle thousands of products and orders"
+6. Icon: Headphones, Title: "Ongoing Support", Description: "Monthly maintenance and feature updates"
+
+---
+
+FAQ SECTION:
+
+Container: py-20, bg-muted, max-w-4xl mx-auto px-6
+
+Header: "WooCommerce Development FAQs"
+
+10 Questions (Accordion):
+
+Q1: "What's the difference between WooCommerce and Shopify?"
+A: "WooCommerce is a WordPress plugin (open-source, self-hosted) with no transaction fees and unlimited customization. Shopify is a hosted platform (easier setup) with monthly fees and transaction fees. WooCommerce gives you more control; Shopify is simpler."
+
+Q2: "Do I need to pay monthly fees for WooCommerce?"
+A: "WooCommerce itself is free. You pay for hosting (£10-50/month), domain, SSL certificate, and any premium extensions you need. No transaction fees on sales."
+
+Q3: "Can WooCommerce handle thousands of products?"
+A: "Yes! With proper hosting and optimization, WooCommerce can handle 10,000+ products and high traffic volumes. We've built stores with 50,000+ products."
+
+Q4: "What payment gateways does WooCommerce support?"
+A: "All major gateways: Stripe, PayPal, Square, Authorize.net, and 100+ others. We'll integrate whichever you prefer."
+
+Q5: "Can I sell subscriptions with WooCommerce?"
+A: "Yes! The WooCommerce Subscriptions extension enables recurring billing, subscription products, free trials, and automatic renewals."
+
+Q6: "Is WooCommerce secure?"
+A: "Yes, when properly configured. We implement SSL, PCI compliance, regular updates, security plugins, and follow WooCommerce security best practices."
+
+Q7: "Can you migrate my Shopify store to WooCommerce?"
+A: "Yes! We migrate products, customers, orders, and maintain your SEO. Common reasons to switch: lower costs, more customization, no transaction fees."
+
+Q8: "Do you provide training on managing the store?"
+A: "Yes! We train you on adding products, managing orders, processing refunds, creating coupons, and all day-to-day store management tasks."
+
+Q9: "What hosting do you recommend for WooCommerce?"
+A: "We recommend managed WordPress hosting like WP Engine, Kinsta, or SiteGround for WooCommerce. We can set this up for you or work with your existing host."
+
+Q10: "Can you build custom features not available in plugins?"
+A: "Absolutely! We develop custom WooCommerce extensions for unique requirements—custom checkout flows, wholesale pricing, marketplace features, API integrations, etc."
+
+---
+
+CTA SECTIONS:
+
+Add 2 CTAs:
+
+CTA 1 (After Process):
+- Variant: 'bordered'
+- Title: "Ready to Build Your WooCommerce Store?"
+- Description: "Let's create a powerful e-commerce solution with WordPress flexibility"
+- PrimaryCTA: "Start Your Project" → /contact
+- Size: 'medium'
+
+CTA 2 (Final):
+- Variant: 'gradient'
+- Title: "Let's Build Your WooCommerce Store"
+- Description: "Book a free consultation and discover why WooCommerce might be the perfect platform for your business"
+- PrimaryCTA: "Book Free Consultation" → /contact
+- SecondaryCTA: "Call: +44 7429 917368" → tel link
+- ShowContactInfo: true
+- Size: 'large'
+
+---
+
+GLOBAL REQUIREMENTS:
+
+1. SEO:
+   - Meta title: "WooCommerce Development Services | WordPress E-Commerce | House of Developers"
+   - Meta description: "Expert WooCommerce development in UK. Custom stores, subscriptions, marketplaces. No transaction fees. Unlimited customization. Free consultation."
+
+2. REAL LOGOS:
+   - WooCommerce: https://cdn.simpleicons.org/woocommerce/96588A
+   - WordPress: https://cdn.simpleicons.org/wordpress/21759B
+   - Stripe: https://cdn.simpleicons.org/stripe/008CDD
+   - PayPal: https://cdn.simpleicons.org/paypal/00457C
+   - Klaviyo: https://cdn.simpleicons.org/klaviyo/000000
+   - Mailchimp: https://cdn.simpleicons.org/mailchimp/FFE01B
+   - Google Analytics: https://cdn.simpleicons.org/googleanalytics/E37400
+   - Facebook: https://cdn.simpleicons.org/facebook/0866FF
+   - Cloudflare: https://cdn.simpleicons.org/cloudflare/F38020
+
+3. COMPONENTS USED:
+   - TechStackGrid ✅
+   - ProcessTimeline ✅
+   - ValueProposition ✅
+   - CTASection (×2) ✅
+
+4. RESPONSIVE: Mobile-first design
+5. DARK/LIGHT MODE: Full compatibility
+6. ANIMATIONS: Professional and smooth
+7. ACCESSIBILITY: Complete keyboard navigation
+
+Build a focused WooCommerce page emphasizing customization, no fees, and WordPress ecosystem power.

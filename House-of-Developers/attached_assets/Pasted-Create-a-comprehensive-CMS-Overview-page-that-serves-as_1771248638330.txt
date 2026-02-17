@@ -1,0 +1,612 @@
+Create a comprehensive CMS Overview page that serves as the hub for all CMS development services at House of Developers.
+
+PAGE: /services/web-development/cms/page.tsx
+
+This page introduces CMS development, compares different platforms, and links to detailed platform pages (WordPress, Shopify, Wix, WooCommerce, Bubble).
+
+---
+
+HERO SECTION:
+
+Container: py-24, max-w-7xl mx-auto px-6
+
+Layout: Grid grid-cols-1 lg:grid-cols-2 gap-12 items-center
+
+Left Column:
+- Breadcrumb navigation:
+  * "Services / Web Development / CMS Development"
+  * Text: text-sm text-muted-foreground
+  * Links separated by chevrons
+  * Each link clickable
+
+- Badge: "🎨 Content Management Systems"
+  * Background: primary/10
+  * Text: primary color
+  * Padding: px-3 py-1
+  * Rounded: rounded-full
+  * Text: text-sm font-medium
+  * mb-4
+
+- H1: "Content Management Systems That Empower Your Team"
+  * Text: text-4xl md:text-5xl lg:text-6xl font-bold
+  * Leading: tight
+  * Gradient text on "Empower Your Team" (optional):
+    - bg-gradient-to-r from-primary to-accent
+    - bg-clip-text text-transparent
+
+- Description (mt-6):
+  * Text: text-xl text-muted-foreground leading-relaxed
+  * Content: "From WordPress to Shopify, we build CMS solutions that let you manage content without touching code. Choose the right platform for your needs, or let us recommend one."
+
+- Stats Grid (mt-8):
+  * Grid: grid-cols-3 gap-6
+  * Each stat:
+    - Number: text-3xl font-bold primary color
+    - Label: text-sm text-muted-foreground
+  
+  Stats:
+  1. "50+ CMS Projects"
+  2. "5 Platforms"
+  3. "2-4 Week Delivery"
+
+- CTA Buttons (mt-8, flex gap-4):
+  * Primary: "Compare Platforms" (scroll to comparison section)
+  * Secondary: "Book Consultation" (link to /contact)
+
+Right Column:
+- Decorative visual:
+  * Create a mockup showing multiple CMS interfaces
+  * Grid of 4 platform logos/screenshots (WordPress, Shopify, Wix, Bubble)
+  * Each in a card with hover effect
+  * Staggered layout (masonry-style)
+  * Subtle animations (float/hover)
+  * Background: gradient with blur
+
+---
+
+WHAT IS CMS SECTION:
+
+Container: py-20, bg-muted
+
+Content: max-w-4xl mx-auto px-6 text-center
+
+- Badge: "The Basics"
+- H2: "What is a Content Management System?"
+- Description (mt-4, text-lg):
+  "A CMS lets you create, manage, and publish content on your website without writing code. Perfect for teams who need to update content frequently—blog posts, products, pages, images—all through an intuitive interface."
+
+- Feature Grid (mt-12):
+  * Grid: grid-cols-1 md:grid-cols-3 gap-8
+  * 3 value cards using ValueProposition component:
+
+  1. Icon: Edit3
+     Title: "Easy Editing"
+     Description: "Drag-and-drop page builders, visual editors, and WYSIWYG interfaces"
+     
+  2. Icon: Users
+     Title: "Team Collaboration"
+     Description: "Multiple users, role-based permissions, workflow management"
+     
+  3. Icon: Zap
+     Title: "No Code Required"
+     Description: "Your team can make changes instantly without developer help"
+
+---
+
+PLATFORM COMPARISON SECTION:
+
+Container: py-20, max-w-7xl mx-auto px-6
+
+Header (centered):
+- H2: "Choose Your Platform"
+- Subtitle: "We specialize in 5 leading CMS platforms. Each has unique strengths."
+- mb-16
+
+Platform Cards Grid:
+- Grid: grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8
+- 5 platform cards (2-2-1 layout on desktop)
+
+CARD STRUCTURE (each platform):
+- Container: bg-card border rounded-2xl p-8 hover:shadow-xl hover:border-primary transition-all duration-300
+- Hover: translateY(-4px)
+
+Each card contains:
+1. Platform logo area:
+   - Icon placeholder (use appropriate lucide icon or custom logo area)
+   - Background circle: w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center
+   - Icon: primary color, size 32
+
+2. Platform name (text-2xl font-bold mt-6)
+
+3. Tagline (text-sm text-muted-foreground mt-2)
+
+4. Best for label (mt-4):
+   - Small badge: "Best for:"
+   - Text: specific use case
+   - Background: accent/10
+   - Padding: px-3 py-1
+   - Rounded: full
+
+5. Key features list (mt-6, space-y-2):
+   - 4 features per platform
+   - Each: flex gap-2 items-center
+   - CheckCircle2 icon (size 16, primary)
+   - Text: text-sm
+
+6. Delivery time (mt-6):
+   - Clock icon + "Typical: X weeks"
+   - Text: text-sm text-muted-foreground
+
+7. CTA (mt-8):
+   - Button: "Learn More" or "Explore {Platform}"
+   - Full width
+   - Border variant
+   - Links to platform detail page
+
+THE 5 PLATFORMS:
+
+PLATFORM 1: WORDPRESS
+- Icon: FileText or custom WordPress icon
+- Tagline: "The world's most popular CMS"
+- Best for: "Blogs, Corporate Sites, E-commerce"
+- Features:
+  * 60,000+ plugins available
+  * Full design control
+  * SEO-friendly architecture
+  * Scalable for any size site
+- Delivery: "2-4 weeks"
+- Link: /services/web-development/cms/wordpress
+
+PLATFORM 2: SHOPIFY
+- Icon: ShoppingBag or custom Shopify icon
+- Tagline: "E-commerce made simple"
+- Best for: "Online Stores, Product Catalogs"
+- Features:
+  * Built-in payment processing
+  * Inventory management
+  * Mobile-optimized checkout
+  * App store for extensions
+- Delivery: "2-3 weeks"
+- Link: /services/web-development/cms/shopify
+
+PLATFORM 3: WIX
+- Icon: Layout or custom Wix icon
+- Tagline: "Drag-and-drop website builder"
+- Best for: "Small Businesses, Portfolios, Landing Pages"
+- Features:
+  * Visual drag-and-drop editor
+  * 500+ templates
+  * Built-in hosting
+  * No coding required
+- Delivery: "1-2 weeks"
+- Link: /services/web-development/cms/wix
+
+PLATFORM 4: WOOCOMMERCE
+- Icon: Store or custom WooCommerce icon
+- Tagline: "WordPress-powered e-commerce"
+- Best for: "WordPress E-commerce, Custom Stores"
+- Features:
+  * Full e-commerce functionality
+  * WordPress ecosystem
+  * Unlimited customization
+  * Payment gateway flexibility
+- Delivery: "3-4 weeks"
+- Link: /services/web-development/cms/woocommerce
+
+PLATFORM 5: BUBBLE
+- Icon: Zap or custom Bubble icon
+- Tagline: "No-code web app builder"
+- Best for: "Web Apps, SaaS MVPs, Marketplaces"
+- Features:
+  * Visual programming
+  * Database included
+  * User authentication built-in
+  * API integrations
+- Delivery: "3-5 weeks"
+- Link: /services/web-development/cms/bubble
+
+---
+
+PLATFORM COMPARISON TABLE SECTION:
+
+Container: py-20, bg-muted
+
+Header (centered):
+- H2: "Platform Comparison"
+- Subtitle: "Compare features side-by-side"
+- mb-12
+
+Comparison Table:
+- Container: overflow-x-auto (mobile scroll)
+- Max-width: max-w-6xl mx-auto
+
+Table structure:
+- Headers: Feature | WordPress | Shopify | Wix | WooCommerce | Bubble
+- Sticky header row
+- Border: subtle borders between rows
+
+COMPARISON ROWS (12 features):
+
+| Feature | WordPress | Shopify | Wix | WooCommerce | Bubble |
+|---------|-----------|---------|-----|-------------|--------|
+| Best For | Blogs, Corporate | E-commerce | Small Business | WP E-commerce | Web Apps |
+| Ease of Use | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐ |
+| Customization | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
+| E-commerce | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ |
+| SEO Tools | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ |
+| Monthly Cost | From £10 | From £25 | From £15 | From £10 | From £25 |
+| Hosting | Self-hosted | Included | Included | Self-hosted | Included |
+| Plugins/Apps | 60,000+ | 8,000+ | 500+ | Same as WP | API-based |
+| Mobile App | Via plugins | Native apps | Mobile editor | Via plugins | Responsive |
+| Support | Community | 24/7 | 24/7 | Community | Forum |
+| Learning Curve | Medium | Easy | Easy | Medium | Medium |
+| Scalability | Excellent | Excellent | Good | Excellent | Excellent |
+
+Use icons for ratings:
+- Star icons for ratings (filled/unfilled)
+- CheckCircle2 for "Yes" features
+- X for "No" features
+- Or display text values
+
+Styling:
+- Header row: bg-primary text-white font-semibold
+- Platform columns: alternate bg-muted/bg-card
+- Feature column: font-medium
+- Mobile: scroll horizontally, sticky first column
+
+---
+
+SPLIT FEATURE SHOWCASE SECTION:
+
+Container: py-20
+
+Use SplitFeatureShowcase component:
+
+- Badge: "💪 Our Approach"
+- Title: "We Don't Just Install—We Build Custom Solutions"
+- Description: "Off-the-shelf themes aren't enough. We customize every CMS to match your brand, optimize performance, and integrate with your existing tools."
+
+- Features (4 items):
+  1. Icon: Palette
+     Title: "Custom Design"
+     Description: "Bespoke themes and layouts tailored to your brand identity"
+     
+  2. Icon: Zap
+     Title: "Performance Optimization"
+     Description: "Fast loading times, caching, CDN integration, and image optimization"
+     
+  3. Icon: Plug
+     Title: "Third-Party Integrations"
+     Description: "CRM, email marketing, analytics, payment gateways—all connected"
+     
+  4. Icon: Lock
+     Title: "Security & Maintenance"
+     Description: "Regular updates, backups, SSL certificates, and monitoring"
+
+- MockupType: 'browser'
+- MockupContent: <WebAppMockup /> (showing CMS backend)
+- Reversed: false
+
+---
+
+PROCESS SECTION:
+
+Container: py-20, bg-muted
+
+Use ProcessTimeline component:
+
+- Title: "How We Build Your CMS"
+- Subtitle: "Our proven process for CMS projects"
+
+- Steps (4 phases):
+
+  PHASE 1:
+  - phase: "Week 1"
+  - title: "Discovery & Setup"
+  - description: "We learn your requirements, choose the right platform, and set up the foundation."
+  - deliverables:
+    * Platform selection and recommendation
+    * Domain and hosting setup
+    * CMS installation and configuration
+    * Initial theme/template selection
+  - duration: "5-7 days"
+
+  PHASE 2:
+  - phase: "Week 2"
+  - title: "Design & Customization"
+  - description: "Custom design implementation, brand integration, and page building."
+  - deliverables:
+    * Custom theme development or customization
+    * Brand colors, fonts, and logo integration
+    * Page templates and layouts
+    * Mobile responsiveness
+  - duration: "5-7 days"
+
+  PHASE 3:
+  - phase: "Week 3"
+  - title: "Content & Integrations"
+  - description: "Content migration, plugin setup, and third-party integrations."
+  - deliverables:
+    * Content migration from old site
+    * Plugin/app installation and configuration
+    * Payment gateway setup (if e-commerce)
+    * Analytics and SEO tools
+  - duration: "5-7 days"
+
+  PHASE 4:
+  - phase: "Week 4"
+  - title: "Testing & Launch"
+  - description: "Quality assurance, training, and go-live support."
+  - deliverables:
+    * Cross-browser and device testing
+    * Performance optimization
+    * Team training on CMS usage
+    * Launch and post-launch support
+  - duration: "3-5 days"
+
+---
+
+USE CASES SECTION:
+
+Container: py-20, max-w-7xl mx-auto px-6
+
+Header (centered):
+- H2: "CMS Solutions We've Built"
+- Subtitle: "Real projects, real results"
+- mb-12
+
+Use Cases Grid:
+- Grid: grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8
+- 6 use case cards
+
+Each card:
+- Background: card with border
+- Padding: p-6
+- Rounded: rounded-xl
+- Hover: shadow-lg
+
+Card structure:
+1. Platform badge (top):
+   - Small pill with platform name
+   - Background: primary/10
+   - Text: primary
+
+2. Image placeholder:
+   - Aspect: aspect-video
+   - Gradient background (different per card)
+   - Centered icon
+   - Rounded: rounded-lg
+
+3. Project title (text-xl font-semibold mt-4)
+
+4. Description (text-sm text-muted-foreground mt-2)
+
+5. Results (mt-4):
+   - Flex gap-4
+   - 2-3 metrics
+   - Each: text-xs with icon
+   - Examples: "+150% traffic", "2s load time", "100+ products"
+
+6. Tech stack tags (mt-4):
+   - Flex gap-2 flex-wrap
+   - Small badges with technologies used
+
+THE 6 USE CASES:
+
+1. Platform: WordPress
+   Title: "Corporate Blog for Tech Startup"
+   Description: "Custom WordPress site with 50+ blog posts, team management, and newsletter integration."
+   Results: "+200% organic traffic", "1.2s load time"
+   Tech: WordPress, Elementor, Yoast SEO
+
+2. Platform: Shopify
+   Title: "Fashion E-commerce Store"
+   Description: "Complete Shopify store with 500+ products, custom checkout, and subscription model."
+   Results: "£50K first month", "4.8% conversion"
+   Tech: Shopify, Klaviyo, ReCharge
+
+3. Platform: Wix
+   Title: "Portfolio for Creative Agency"
+   Description: "Stunning portfolio site with client login area and project showcases."
+   Results: "10 new clients", "98% mobile score"
+   Tech: Wix, Velo, Wix Bookings
+
+4. Platform: WooCommerce
+   Title: "B2B Wholesale Platform"
+   Description: "WordPress + WooCommerce for wholesale orders with custom pricing and bulk ordering."
+   Results: "1000+ SKUs", "Automated invoicing"
+   Tech: WooCommerce, WP All Import, Stripe
+
+5. Platform: Bubble
+   Title: "SaaS Marketplace MVP"
+   Description: "No-code marketplace connecting freelancers with clients, built in 30 days."
+   Results: "500 users", "30-day MVP"
+   Tech: Bubble, Stripe, SendGrid
+
+6. Platform: WordPress
+   Title: "Membership Site with Courses"
+   Description: "Learning platform with video courses, member areas, and payment integration."
+   Results: "200 members", "Recurring revenue"
+   Tech: WordPress, LearnDash, MemberPress
+
+---
+
+WHY CHOOSE US SECTION:
+
+Container: py-20, bg-muted
+
+Use ValueProposition component:
+
+- Title: "Why Choose House of Developers for CMS"
+- Subtitle: "We're not just installers—we're CMS experts"
+- Columns: 3
+
+Values (6 items in grid):
+
+1. Icon: Award
+   Title: "Platform Certified"
+   Description: "Official certifications and partnerships with leading CMS platforms"
+   Stat: "5 Platforms Mastered"
+
+2. Icon: Zap
+   Title: "Fast Delivery"
+   Description: "Most CMS projects delivered in 2-4 weeks, not months"
+   Stat: "2-4 Week Average"
+
+3. Icon: Wrench
+   Title: "Custom Development"
+   Description: "We build custom plugins, themes, and integrations unique to your needs"
+
+4. Icon: GraduationCap
+   Title: "Team Training Included"
+   Description: "Comprehensive training so your team can manage content confidently"
+
+5. Icon: Shield
+   Title: "Security First"
+   Description: "Regular updates, backups, SSL, and proactive security monitoring"
+
+6. Icon: Headphones
+   Title: "Ongoing Support"
+   Description: "Post-launch support packages to keep your CMS running smoothly"
+
+---
+
+TESTIMONIAL SECTION:
+
+Container: py-20
+
+Use TestimonialSlider component:
+
+- Title: "What Our CMS Clients Say"
+- Testimonials (3 items):
+
+  Testimonial 1:
+  - quote: "House of Developers migrated our entire blog to WordPress and improved our page speed by 300%. The custom theme they built is exactly what we needed."
+  - author: "Sarah Mitchell"
+  - role: "Marketing Director"
+  - company: "TechVision Ltd"
+  - rating: 5
+  - project: "WordPress Blog Migration"
+
+  Testimonial 2:
+  - quote: "Our Shopify store went live in 3 weeks. Sales increased 80% in the first month thanks to their optimized checkout flow and mobile design."
+  - author: "James Peterson"
+  - role: "Founder"
+  - company: "Urban Threads"
+  - rating: 5
+  - project: "Shopify E-commerce Store"
+
+  Testimonial 3:
+  - quote: "We needed a no-code solution fast. Bubble was the perfect choice and House of Developers built our MVP in 30 days. Now we have paying customers!"
+  - author: "Amanda Chen"
+  - role: "CEO"
+  - company: "ConnectHub"
+  - rating: 5
+  - project: "Bubble Marketplace MVP"
+
+---
+
+FAQ SECTION:
+
+Container: py-20, bg-muted, max-w-4xl mx-auto px-6
+
+Header (centered):
+- H2: "Common Questions About CMS Development"
+- mb-12
+
+FAQ Items (Accordion component, 10 questions):
+
+Q1: "Which CMS platform is best for my business?"
+A: "It depends on your needs. WordPress is great for blogs and corporate sites. Shopify is best for e-commerce. Wix is perfect for small businesses who want simplicity. WooCommerce is ideal if you want e-commerce on WordPress. Bubble is best for web apps and SaaS MVPs. We'll recommend the right platform during our consultation."
+
+Q2: "Can I manage the content myself after launch?"
+A: "Absolutely! That's the whole point of a CMS. We provide comprehensive training so you and your team can easily update content, add pages, upload images, and manage your site without any coding knowledge."
+
+Q3: "What if I want to switch platforms later?"
+A: "We can migrate your content to a different CMS if needed. While it requires some work, it's definitely possible. We'll help you choose the right platform from the start to avoid this."
+
+Q4: "Do you provide ongoing support after launch?"
+A: "Yes! We offer monthly support packages that include updates, backups, security monitoring, and content assistance. Packages start at £200/month."
+
+Q5: "Can you integrate my CMS with other tools?"
+A: "Yes, we integrate with email marketing (Mailchimp, Klaviyo), CRM (HubSpot, Salesforce), payment gateways (Stripe, PayPal), analytics (Google Analytics), and more."
+
+Q6: "How long does a CMS project take?"
+A: "Simple sites: 1-2 weeks. Standard sites: 2-4 weeks. Complex sites: 4-8 weeks. We'll give you an accurate timeline after understanding your requirements."
+
+Q7: "What's included in the cost?"
+A: "CMS setup, custom design/theme, content migration, plugin/app setup, training, and 30 days of post-launch support. Hosting and domain costs are separate."
+
+Q8: "Can you redesign my existing CMS site?"
+A: "Yes! We can redesign your existing WordPress, Shopify, or other CMS site with a fresh look, improved performance, and new features."
+
+Q9: "Do you build custom plugins or themes?"
+A: "Yes, if your project requires custom functionality beyond existing plugins, we build custom solutions tailored to your needs."
+
+Q10: "What if I have an existing website?"
+A: "We can migrate your existing content to the new CMS, preserving URLs for SEO and ensuring a smooth transition with minimal downtime."
+
+---
+
+FINAL CTA SECTION:
+
+Use CTASection component:
+
+- Variant: 'gradient'
+- Title: "Ready to Build Your CMS?"
+- Description: "Book a free consultation and we'll help you choose the right platform and build a content management system that empowers your team."
+- PrimaryCTA:
+  * text: "Book Free Consultation"
+  * link: "/contact"
+- SecondaryCTA:
+  * text: "Compare Platforms"
+  * link: "#platforms" (scroll to comparison)
+- ShowContactInfo: true
+- Size: 'large'
+
+---
+
+GLOBAL PAGE REQUIREMENTS:
+
+1. SEO:
+   - Meta title: "CMS Development Services | WordPress, Shopify, Wix | House of Developers"
+   - Meta description: "Expert CMS development for WordPress, Shopify, Wix, WooCommerce, and Bubble. Custom themes, migrations, and ongoing support. Get started today."
+   - Schema markup: Service schema
+   - Breadcrumb schema
+
+2. NAVIGATION:
+   - Update header mega menu to include link to this page
+   - Breadcrumbs functional
+   - Internal links to all 5 platform pages
+
+3. RESPONSIVE:
+   - Mobile-first design
+   - Test on all breakpoints
+   - Touch-friendly buttons and cards
+   - Horizontal scroll for comparison table on mobile
+
+4. DARK/LIGHT MODE:
+   - All sections compatible
+   - Table readable in both modes
+   - Proper contrast
+
+5. ANIMATIONS:
+   - Fade in sections on scroll
+   - Stagger platform cards
+   - Smooth transitions
+   - Hover effects on cards
+
+6. PERFORMANCE:
+   - Lazy load images
+   - Optimize table rendering
+   - Fast initial load
+   - Smooth scrolling
+
+7. ACCESSIBILITY:
+   - Proper heading hierarchy
+   - ARIA labels
+   - Keyboard navigation
+   - Screen reader friendly
+   - Focus states
+
+Build this comprehensive CMS overview page that serves as the perfect introduction to all CMS services and guides users to the right platform for their needs.

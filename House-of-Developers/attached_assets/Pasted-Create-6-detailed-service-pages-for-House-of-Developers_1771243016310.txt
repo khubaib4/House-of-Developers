@@ -1,0 +1,582 @@
+Create 6 detailed service pages for House of Developers. Each page should be comprehensive, conversion-focused, and use the SplitFeatureShowcase component we created.
+
+IMPORTANT: All pages must follow this proven structure:
+1. Hero section (compelling headline + CTA)
+2. Overview section (what it is, who it's for)
+3. Split-screen showcase (visual demonstration)
+4. Key benefits/features grid
+5. Process/How it works
+6. Pricing/Packages (or "Get Quote" CTA)
+7. Use cases/Examples
+8. FAQ section
+9. Testimonial (placeholder)
+10. Final CTA section
+
+---
+
+PAGE 1: WEB DEVELOPMENT (/services/web-development/page.tsx)
+
+HERO SECTION:
+
+Container: py-24, max-w-7xl mx-auto px-6
+
+Layout: Grid grid-cols-1 lg:grid-cols-2 gap-12 items-center
+
+Left Column:
+- Breadcrumb: "Services / Web Development"
+- Badge: "🌐 Web Development"
+- H1: "High-Performance Web Applications That Scale"
+- Description (text-lg, mt-4):
+  "From corporate websites to complex SaaS platforms. We build fast, secure, and scalable web applications using modern frameworks and best practices."
+- Stats row (mt-8, grid-cols-3 gap-6):
+  * "<3s Load Time"
+  * "99.9% Uptime"
+  * "SEO Optimized"
+- CTA buttons (mt-8, flex gap-4):
+  * "Start Your Project" (primary)
+  * "View Examples" (secondary, scroll to examples)
+
+Right Column:
+- Decorative gradient card with code snippet visual or web browser mockup
+- Floating tech icons (Next.js, React, Node.js)
+
+OVERVIEW SECTION:
+
+Container: py-16, max-w-4xl mx-auto px-6, text-center
+
+Content:
+- H2: "What We Build"
+- Description (text-lg, text-muted-foreground, mt-4):
+  "Whether you need a high-converting landing page or a full-stack web application, we deliver production-ready solutions that drive results."
+
+WHAT WE BUILD GRID:
+
+Grid: grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6, mt-12
+
+4 Cards:
+
+1. "Corporate Websites"
+   - Globe icon
+   - Description: "Professional websites that establish credibility and convert visitors."
+
+2. "Landing Pages"
+   - Layout icon
+   - Description: "High-converting pages optimized for campaigns and product launches."
+
+3. "SaaS Platforms"
+   - Layers icon
+   - Description: "Full-stack applications with user management, payments, and analytics."
+
+4. "Headless CMS"
+   - FileText icon
+   - Description: "Flexible content systems with modern frontends and easy editing."
+
+SPLIT-SCREEN SECTION:
+
+Use SplitFeatureShowcase component:
+- Badge: "💻 Enterprise Architecture"
+- Title: "Built for Performance and Scale"
+- Description: "Every website we build is optimized for speed, SEO, and user experience. Here's what you get under the hood."
+- Features:
+  1. Zap icon: "Lightning Fast" - "Optimized for Core Web Vitals. Sub-3 second load times guaranteed."
+  2. Search icon: "SEO Ready" - "Built-in meta tags, sitemaps, schema markup, and structured data."
+  3. Smartphone icon: "Mobile First" - "Responsive design that works perfectly on all devices."
+  4. Shield icon: "Security Hardened" - "SSL, CSP headers, XSS protection, and regular security audits."
+- MockupType: 'browser'
+- MockupContent: <WebAppMockup />
+
+KEY FEATURES SECTION:
+
+Container: py-20, bg-muted
+
+Header (centered):
+- H2: "Why Choose Our Web Development"
+- Subtitle: "Technology and expertise that sets us apart"
+
+Features Grid: grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8, mt-12
+
+9 Feature Cards (each with icon, title, description):
+
+1. Code2 icon: "Modern Frameworks"
+   "Next.js, React, Vue - we use the latest technologies for best performance."
+
+2. Database icon: "Scalable Backend"
+   "Node.js, PostgreSQL, Redis - infrastructure that grows with you."
+
+3. Gauge icon: "Performance Optimization"
+   "Image optimization, code splitting, CDN integration, caching strategies."
+
+4. Lock icon: "Enterprise Security"
+   "SSL, authentication, data encryption, GDPR compliance."
+
+5. Smartphone icon: "Progressive Web Apps"
+   "Offline support, push notifications, app-like experience."
+
+6. Palette icon: "Custom Design"
+   "Pixel-perfect implementation of your designs or our design system."
+
+7. Plug icon: "API Integrations"
+   "Payment gateways, CRM, analytics, email - seamless third-party integrations."
+
+8. BarChart icon: "Analytics Built-In"
+   "Google Analytics, heatmaps, conversion tracking, A/B testing."
+
+9. Headphones icon: "Ongoing Support"
+   "Post-launch maintenance, updates, and technical support."
+
+PROCESS SECTION:
+
+Container: py-20
+
+Header (centered):
+- H2: "Our Web Development Process"
+- Subtitle: "From concept to launch in 6-8 weeks"
+
+Timeline Steps (5 steps, vertical timeline with connecting line):
+
+Week 1-2: "Discovery & Planning"
+- Requirements gathering
+- Competitor analysis
+- Sitemap and user flows
+- Technology stack selection
+
+Week 2-3: "Design & Prototyping"
+- Wireframes
+- UI/UX design
+- Design system creation
+- Client review and approval
+
+Week 3-5: "Development"
+- Frontend development
+- Backend & API development
+- Database setup
+- Third-party integrations
+
+Week 5-6: "Testing & QA"
+- Cross-browser testing
+- Mobile responsiveness
+- Performance optimization
+- Security audit
+
+Week 6-8: "Launch & Deployment"
+- Domain and hosting setup
+- SSL configuration
+- Production deployment
+- Post-launch monitoring
+
+PRICING SECTION:
+
+Container: py-20, bg-muted
+
+Header (centered):
+- H2: "Transparent Pricing Packages"
+
+Pricing Grid: grid-cols-1 md:grid-cols-3 gap-8, max-w-6xl mx-auto
+
+3 Pricing Cards:
+
+STARTER PACKAGE:
+- "Landing Page"
+- "From £3,000"
+- Features list:
+  * Single page design
+  * Mobile responsive
+  * Contact form
+  * SEO basics
+  * 1 month support
+- Button: "Get Started"
+
+PROFESSIONAL PACKAGE:
+- "Corporate Website" (Popular badge)
+- "From £8,000"
+- Features list:
+  * Up to 10 pages
+  * Custom design
+  * CMS integration
+  * Advanced SEO
+  * Analytics setup
+  * 3 months support
+- Button: "Get Started" (primary, highlighted)
+
+ENTERPRISE PACKAGE:
+- "SaaS Platform"
+- "Custom Quote"
+- Features list:
+  * Unlimited pages
+  * Full-stack development
+  * User authentication
+  * Payment integration
+  * Custom features
+  * 6 months support
+- Button: "Contact Us"
+
+Note below: "All packages include source code ownership and hosting setup assistance."
+
+USE CASES SECTION:
+
+Container: py-20
+
+Header (centered):
+- H2: "What We've Built"
+- Subtitle: "Real examples from our portfolio"
+
+Use Cases Grid: grid-cols-1 md:grid-cols-2 gap-8
+
+4 Use Case Cards (each with image placeholder, title, description, tech stack):
+
+1. "E-Commerce Platform"
+   "Built a custom Shopify storefront with headless architecture. 150% increase in conversion rate."
+   Tech: Next.js, Shopify API, Stripe
+
+2. "SaaS Dashboard"
+   "Real-time analytics platform processing 1M+ events daily."
+   Tech: React, Node.js, PostgreSQL, Redis
+
+3. "Marketing Agency Site"
+   "High-converting website with integrated CMS and portfolio showcase."
+   Tech: Next.js, Sanity CMS, Tailwind
+
+4. "Booking Platform"
+   "Online booking system with calendar integration and payment processing."
+   Tech: React, Node.js, Stripe, Google Calendar API
+
+FAQ SECTION:
+
+Container: py-20, bg-muted, max-w-4xl mx-auto
+
+Header (centered):
+- H2: "Frequently Asked Questions"
+
+8 FAQ Items (Accordion component):
+
+Q: "What technologies do you use?"
+A: "We primarily use Next.js, React, Node.js, and PostgreSQL. We choose the tech stack based on your specific needs and scalability requirements."
+
+Q: "How long does a typical web project take?"
+A: "Landing pages: 2-3 weeks. Corporate websites: 6-8 weeks. SaaS platforms: 3-6 months. Timeline depends on complexity and features."
+
+Q: "Do you provide hosting?"
+A: "We help you set up hosting on platforms like Vercel, AWS, or DigitalOcean. We recommend hosting solutions but don't lock you into proprietary hosting."
+
+Q: "Can you work with my existing design?"
+A: "Absolutely! We can implement your existing designs or create new ones from scratch."
+
+Q: "Do you offer maintenance after launch?"
+A: "Yes, we offer monthly maintenance packages starting at £500/month including updates, monitoring, and support."
+
+Q: "Will my website be mobile-friendly?"
+A: "100%. All our websites are built mobile-first and tested across all devices and browsers."
+
+Q: "Can you integrate with my existing systems?"
+A: "Yes, we have extensive experience integrating with CRMs, payment gateways, email services, and custom APIs."
+
+Q: "Do I own the source code?"
+A: "Yes, you get full ownership of all code, designs, and assets upon project completion."
+
+TESTIMONIAL SECTION:
+
+Container: py-16
+
+Centered testimonial card:
+- Large quote mark icon
+- Testimonial text: "House of Developers delivered our SaaS platform on time and under budget. Their technical expertise and communication were outstanding."
+- Client: "Sarah Johnson, CEO at TechStart" (placeholder)
+- Avatar placeholder
+
+FINAL CTA:
+
+Gradient background section:
+- H2: "Ready to Start Your Web Project?"
+- Description: "Book a free consultation to discuss your requirements and get a detailed proposal."
+- Button: "Book Free Consultation"
+
+---
+
+PAGE 2: CUSTOM DEVELOPMENT (/services/custom-development/page.tsx)
+
+Use similar structure with these customizations:
+
+HERO:
+- H1: "Custom Software Development for Unique Business Needs"
+- Description: "Bespoke solutions tailored to your specific requirements. From internal tools to complex integrations, we build what off-the-shelf can't."
+
+WHAT WE BUILD (4 cards):
+1. "Admin Dashboards" - Custom control panels for managing your business
+2. "Internal Tools" - Workflow automation and productivity tools
+3. "API Integration" - Connect your systems seamlessly
+4. "Legacy Modernization" - Update outdated systems with modern tech
+
+SPLIT-SCREEN:
+- Title: "Built Exactly How You Need It"
+- Features focus on: Custom workflows, Scalable architecture, API-first design, Integration capabilities
+- MockupContent: <DashboardMockup />
+
+KEY FEATURES (9 items):
+- Custom business logic
+- Workflow automation
+- Third-party integrations
+- Real-time features
+- Role-based permissions
+- Advanced reporting
+- Data migration
+- API development
+- Documentation
+
+PROCESS:
+Same 5 steps adapted for custom development
+
+PRICING:
+- SMALL PROJECT: From £5,000 (Simple tools, basic features)
+- MEDIUM PROJECT: From £15,000 (Complex workflows, integrations)
+- LARGE PROJECT: Custom Quote (Enterprise solutions)
+
+USE CASES:
+1. "Inventory Management System"
+2. "Custom CRM Platform"
+3. "Workflow Automation Tool"
+4. "Data Processing Pipeline"
+
+8 FAQs specific to custom development
+
+---
+
+PAGE 3: WEB APPS (/services/web-apps/page.tsx)
+
+HERO:
+- H1: "Full-Stack Web Applications Built for Scale"
+- Description: "Complete SaaS platforms, marketplaces, and web applications. We handle everything from user auth to payment processing."
+
+WHAT WE BUILD (4 cards):
+1. "SaaS Platforms" - Multi-tenant applications with subscriptions
+2. "Marketplaces" - Connect buyers and sellers with payments
+3. "Social Platforms" - User-generated content and engagement
+4. "Enterprise Tools" - Internal applications at scale
+
+SPLIT-SCREEN:
+- Title: "Enterprise-Grade Features Out of the Box"
+- Features: User authentication, Payment processing, Real-time updates, Multi-tenancy
+- MockupContent: <DashboardMockup />
+
+KEY FEATURES (9 items):
+- User authentication & authorization
+- Payment gateway integration (Stripe, PayPal)
+- Subscription management
+- Email notifications
+- File uploads & storage
+- Real-time messaging
+- Analytics & reporting
+- Admin panel
+- API documentation
+
+PRICING:
+- MVP: From £20,000 (Core features, single tenant)
+- GROWTH: From £40,000 (Multi-tenant, payments, advanced features)
+- ENTERPRISE: Custom Quote (Custom integrations, white-label)
+
+USE CASES:
+1. "Project Management SaaS"
+2. "Freelance Marketplace"
+3. "Learning Management System"
+4. "Team Collaboration Tool"
+
+---
+
+PAGE 4: CMS DEVELOPMENT (/services/cms-development/page.tsx)
+
+HERO:
+- H1: "Content Management Systems for Easy Website Updates"
+- Description: "WordPress, Shopify, and headless CMS solutions. Empower your team to manage content without developer help."
+
+WHAT WE BUILD (4 cards):
+1. "WordPress Sites" - Custom themes with modern page builders
+2. "Shopify Stores" - E-commerce with custom functionality
+3. "Headless CMS" - Contentful, Sanity, or Strapi integration
+4. "Custom CMS" - Bespoke content management solutions
+
+SPLIT-SCREEN:
+- Title: "Easy Content Management, Powerful Technology"
+- Features: Drag-and-drop editing, Custom post types, Media management, Version control
+- MockupContent: <WebAppMockup /> (showing CMS interface)
+
+KEY FEATURES (9 items):
+- Modern page builders
+- SEO optimization
+- Media library
+- User roles & permissions
+- E-commerce ready
+- Multilingual support
+- Custom post types
+- Form builders
+- Plugin development
+
+PRICING:
+- WORDPRESS: From £4,000 (Custom theme, plugin setup)
+- SHOPIFY: From £6,000 (Custom store, theme, apps)
+- HEADLESS CMS: From £10,000 (Custom frontend + CMS)
+
+USE CASES:
+1. "Fashion E-commerce Store (Shopify)"
+2. "Corporate Blog (WordPress)"
+3. "Multi-brand Website (Headless)"
+4. "News Portal (Custom CMS)"
+
+---
+
+PAGE 5: HIRE DEVELOPERS (/services/hire-developers/page.tsx)
+
+HERO:
+- H1: "Hire Vetted Developers for Your Long-Term Projects"
+- Description: "Scale your team with senior developers. Full-time or part-time, integrated with your workflow, managed by us."
+
+WHAT WE OFFER (4 cards):
+1. "Frontend Developers" - React, Next.js, Vue experts
+2. "Backend Developers" - Node.js, Python, PHP specialists
+3. "Full-Stack Developers" - End-to-end development
+4. "Dedicated Teams" - Complete dev team for your project
+
+SPLIT-SCREEN:
+- Title: "Your Extended Development Team"
+- Features: Pre-vetted seniors, Direct communication, Flexible engagement, Project management included
+- MockupContent: <DashboardMockup /> (showing team collaboration)
+
+KEY FEATURES (9 items):
+- Pre-screened senior developers
+- 2-week trial period
+- Direct communication (Slack, email)
+- Daily/weekly updates
+- Code reviews included
+- Project management
+- NDA & IP protection
+- Flexible hours
+- Easy scaling (add/remove developers)
+
+PRICING MODEL:
+
+Container with 3 engagement options:
+
+PART-TIME:
+- "£2,500/month"
+- 80 hours/month
+- Perfect for: Ongoing maintenance, feature additions
+- Button: "Hire Part-Time"
+
+FULL-TIME:
+- "£4,500/month" (Popular)
+- 160 hours/month
+- Perfect for: Active development, dedicated resource
+- Button: "Hire Full-Time"
+
+DEDICATED TEAM:
+- "Custom Quote"
+- 3+ developers
+- Perfect for: Large projects, complete teams
+- Button: "Build Your Team"
+
+DEVELOPER PROFILES (sample):
+
+Grid with 3 developer profile cards:
+
+1. "Senior React Developer"
+   - 8+ years experience
+   - Skills: React, Next.js, TypeScript, Node.js
+   - Previous: Worked with 15+ startups
+   - Availability: Available now
+
+2. "Senior Backend Engineer"
+   - 10+ years experience
+   - Skills: Node.js, Python, PostgreSQL, AWS
+   - Previous: Led teams at SaaS companies
+   - Availability: Available in 2 weeks
+
+3. "Full-Stack Developer"
+   - 6+ years experience
+   - Skills: MERN stack, DevOps, CI/CD
+   - Previous: Built 20+ MVPs
+   - Availability: Available now
+
+Note: "All profiles are examples. We'll match you with developers based on your specific needs."
+
+FAQ (10 questions):
+- How do you vet developers?
+- Can I interview developers before hiring?
+- What if I'm not satisfied with a developer?
+- How do we communicate?
+- Do developers work in my timezone?
+- Can I hire them permanently?
+- What's included in project management?
+- How do you handle IP and NDAs?
+- Can I start with a trial period?
+- How quickly can we start?
+
+---
+
+PAGE 6: SEO SERVICES (already created in previous prompt, but enhance it)
+
+Add these sections if not already present:
+
+HERO:
+- H1: "SEO Services That Drive Real Organic Growth"
+- Description: "Technical SEO, content optimization, and link building for UK businesses. Increase organic traffic by 150% in 6 months."
+
+WHAT WE DO (4 cards):
+1. "Technical SEO" - Site speed, mobile optimization, core web vitals
+2. "On-Page SEO" - Content optimization, meta tags, internal linking
+3. "Local SEO" - Google My Business, local citations, reviews
+4. "Link Building" - Quality backlinks, guest posts, outreach
+
+SPLIT-SCREEN (already added in previous prompt):
+Keep the SEO dashboard mockup
+
+PRICING:
+- BASIC: £800/month (Small sites, local SEO)
+- GROWTH: £1,500/month (Competitive keywords, content)
+- ENTERPRISE: £3,000+/month (Large sites, aggressive growth)
+
+---
+
+GLOBAL REQUIREMENTS FOR ALL SERVICE PAGES:
+
+1. RESPONSIVE DESIGN:
+   - Mobile-first
+   - Test on 375px, 768px, 1024px, 1440px
+   - Touch-friendly CTAs
+
+2. SEO OPTIMIZATION:
+   - Unique meta title and description for each page
+   - Proper heading hierarchy (H1 → H2 → H3)
+   - Schema markup (Service schema)
+   - Alt text for all images
+
+3. CONVERSION ELEMENTS:
+   - Multiple CTAs (top, middle, bottom)
+   - Trust signals (stats, testimonials)
+   - Clear pricing (or "Get Quote")
+   - FAQ to address objections
+   - Social proof
+
+4. CONSISTENT STYLING:
+   - Use same spacing as homepage
+   - Consistent card designs
+   - Same button styles
+   - Matching color schemes
+   - Dark/light mode support
+
+5. NAVIGATION:
+   - Breadcrumbs at top
+   - "Back to Services" link
+   - Related services at bottom (optional)
+   - Sticky header with CTA
+
+6. ANIMATIONS:
+   - Fade-in on scroll for sections
+   - Hover effects on cards
+   - Smooth transitions
+   - Use Framer Motion
+
+7. PERFORMANCE:
+   - Lazy load images
+   - Optimize mockup components
+   - Code splitting
+   - Fast initial load
+
+Build all 6 service pages following this structure. Make them detailed, professional, and conversion-focused. Each page should standalone but maintain consistent branding and design patterns.

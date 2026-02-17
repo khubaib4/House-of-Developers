@@ -1,0 +1,500 @@
+Create a reusable luxury split-screen component and add it to key pages with interactive mockups and premium design.
+
+PART 1: CREATE REUSABLE SPLIT-FEATURE COMPONENT
+
+Create a new component: /components/ui/SplitFeatureShowcase.tsx
+
+This component should:
+
+PROPS INTERFACE:
+- badge: string (optional) - Small badge text above title
+- title: string - Main heading
+- description: string - Subheading/description
+- features: array of objects with { icon: LucideIcon, title: string, description: string }
+- mockupType: 'dashboard' | 'mobile' | 'browser' | 'calendar' | 'chat'
+- mockupContent: ReactNode - The actual mockup content
+- reversed: boolean (optional) - Swap left/right columns
+- theme: 'light' | 'dark' | 'gradient' (optional) - Mockup background style
+
+COMPONENT STRUCTURE:
+
+Container:
+- Section padding: py-24 (mobile: py-16)
+- Max width: max-w-7xl mx-auto px-6
+- Background: alternating (can accept bg prop)
+
+Grid Layout:
+- Grid: grid-cols-1 lg:grid-cols-2 gap-16 items-center
+- If reversed prop is true: direction changes (mockup on left, content on right)
+
+LEFT COLUMN (Content Side):
+
+Badge (if provided):
+- Small pill with icon
+- Background: primary/10, text primary
+- Padding: px-3 py-1
+- Border radius: rounded-full
+- Text: text-sm font-medium
+- mb-4
+
+Title:
+- H2: text-3xl lg:text-4xl font-bold
+- Margin bottom: mb-4
+
+Description:
+- Paragraph: text-lg text-muted-foreground
+- Leading: leading-relaxed
+- Margin bottom: mb-8
+
+Features List:
+- Space between items: space-y-6
+- Each feature item:
+  * Container: flex gap-4 items-start
+  * Icon container:
+    - Size: w-12 h-12
+    - Background: primary/10
+    - Border radius: rounded-lg
+    - Flex center
+    - Icon: primary color, size 24
+  * Content:
+    - Title: font-semibold text-lg
+    - Description: text-sm text-muted-foreground mt-1
+
+RIGHT COLUMN (Mockup Side):
+
+Mockup Container:
+- Position: relative
+- Perspective: for 3D effects
+- Animation: fade-in and slide-up on scroll (framer-motion)
+
+Browser Frame (for mockupType='browser'):
+- Background: card color
+- Border: subtle border
+- Border radius: rounded-xl (top) / rounded-lg (bottom)
+- Shadow: 2xl shadow with subtle glow
+- Padding: p-1
+
+- Top bar (browser controls):
+  * Height: h-10
+  * Background: muted
+  * Border radius: rounded-t-xl
+  * Flex items center
+  * Padding: px-4
+  * Dots (traffic lights):
+    - 3 circles: red (#FF5F56), yellow (#FFBD2E), green (#27C93F)
+    - Size: w-3 h-3
+    - Gap: gap-2
+  * URL bar (centered):
+    - Background: background color
+    - Padding: px-3 py-1
+    - Border radius: rounded
+    - Text: text-xs text-muted-foreground
+    - Content: "houseofdevelopers.co.uk"
+
+- Content area:
+  * Background: based on theme prop (gradient/solid)
+  * Padding: p-8
+  * Min height: min-h-[400px]
+  * Overflow: hidden
+  * Children: {mockupContent}
+
+Mobile Frame (for mockupType='mobile'):
+- iPhone-style frame
+- Aspect ratio: aspect-[9/19]
+- Max width: max-w-[320px] mx-auto
+- Background: #1a1a1a (dark bezel)
+- Border radius: rounded-[3rem]
+- Padding: p-3
+- Shadow: 2xl with glow
+
+- Notch (top):
+  * Width: w-40 h-6
+  * Background: #1a1a1a
+  * Border radius: rounded-b-2xl
+  * Position: absolute top-0 left-1/2 transform -translate-x-1/2
+  * Z-index: 10
+
+- Screen:
+  * Background: based on theme
+  * Border radius: rounded-[2.5rem]
+  * Overflow: hidden
+  * Height: full
+  * Children: {mockupContent}
+
+Dashboard Frame (for mockupType='dashboard'):
+- Similar to browser but with sidebar
+- Left sidebar: w-16, dark background, icons
+- Main content: mockupContent
+
+Calendar Frame (for mockupType='calendar'):
+- Browser-style frame
+- Optimized for calendar/timeline views
+
+Chat Frame (for mockupType='chat'):
+- Mobile or browser frame
+- Optimized for chat interfaces
+
+ANIMATIONS & INTERACTIONS:
+
+Framer Motion:
+- Container: fade-in and slide-up on scroll
+  * initial: opacity 0, y: 50
+  * whileInView: opacity 1, y: 0
+  * transition: duration 0.8, ease: "easeOut"
+  * viewport: once: true, margin: "-100px"
+
+- Mockup: parallax effect on scroll
+  * Subtle movement (3-5px) on scroll
+  * Scale on hover: 1.02
+  * Transition: smooth 300ms
+
+- Feature items: stagger animation
+  * Each item appears with 100ms delay
+  * Slide from left with opacity
+
+Hover Effects:
+- Mockup container: lift effect (translateY: -4px)
+- Shadow enhancement on hover
+- Smooth transitions
+
+3D Tilt Effect (optional, subtle):
+- On mouse move, mockup tilts slightly (5-10 degrees max)
+- Smooth spring animation
+- Only on desktop
+
+Glassmorphism:
+- Mockup background option: backdrop-blur-xl
+- Semi-transparent backgrounds
+- Border: 1px solid rgba(255,255,255,0.1)
+
+RESPONSIVE BEHAVIOR:
+
+Mobile (< 1024px):
+- Stack vertically (content on top, mockup below)
+- Full width mockup
+- Reduced padding
+- Smaller mockup sizes
+- Disable parallax/3D effects
+
+Desktop:
+- Side-by-side layout
+- Mockup fills available space
+- All animations enabled
+
+ACCESSIBILITY:
+- Semantic HTML (section, article tags)
+- ARIA labels for decorative elements
+- Keyboard focus states
+- Reduced motion support (prefers-reduced-motion)
+
+---
+
+PART 2: CREATE MOCKUP CONTENT COMPONENTS
+
+Create these mockup content components in /components/mockups/
+
+1. DashboardMockup.tsx:
+
+Create a realistic dashboard UI with:
+- Header with stats cards (3-4 metrics)
+  * Each card: icon, number (large, primary color), label, trend indicator
+  * Examples: "Active Projects: 12", "Team Members: 8", "Tasks Completed: 156"
+
+- Charts section (2 columns on desktop):
+  * Line chart placeholder (gradient area)
+  * Bar chart placeholder
+  * Use simple SVG or div-based visualizations
+
+- Recent activity table:
+  * 4-5 rows
+  * Columns: Status (colored dot), Task, Assignee (avatar), Date
+  * Clean borders, alternating row colors
+
+- Sidebar (if dashboard frame):
+  * Navigation icons (Home, Projects, Team, Settings, etc.)
+
+Colors:
+- Use theme colors (primary, accent)
+- Gradients for chart backgrounds
+- Subtle shadows and borders
+
+2. MVPTimelineMockup.tsx:
+
+Create a project timeline/calendar view:
+- Month header: "March 2024" with navigation arrows
+- Calendar grid or timeline view
+- 4 project milestones with status:
+  * Week 1: "Discovery & Design" - Completed (green)
+  * Week 2: "Core Development" - In Progress (blue)
+  * Week 3: "Feature Build" - Upcoming (gray)
+  * Week 4: "Launch" - Upcoming (gray)
+
+Each milestone:
+- Left color bar (status color)
+- Title and date
+- Progress indicator
+- Team avatar (circular)
+
+Bottom stats:
+- "28 Days Total" | "14 Days Completed" | "On Track ✓"
+
+3. MobileAppMockup.tsx:
+
+Create mobile app screens:
+- Screen 1: Login/Welcome
+  * App logo at top
+  * Clean form (email, password)
+  * Primary CTA button
+  * Social login options
+
+- Screen 2 (transition): Dashboard
+  * Header with profile
+  * Cards grid
+  * Bottom navigation
+
+Use smooth transitions between screens (auto-rotate every 3s or on interval)
+
+4. ChatbotMockup.tsx:
+
+Create chat interface:
+- Chat header:
+  * Bot avatar (left)
+  * "AI Assistant" title
+  * Status: "Online" (green dot)
+
+- Message bubbles (4-5 messages):
+  * User messages (right, primary color bg)
+  * Bot messages (left, muted bg)
+  * Timestamps
+  * Avatar for bot messages
+
+Messages:
+- User: "Can you help me build an MVP?"
+- Bot: "Absolutely! I can help you build a launch-ready MVP in 30 days. What's your product idea?"
+- User: "A SaaS platform for project management"
+- Bot: "Great! Let me connect you with our team. We specialize in SaaS platforms..."
+
+- Typing indicator at bottom (3 animated dots)
+
+- Input field at bottom:
+  * Placeholder: "Type your message..."
+  * Send button (primary color)
+
+5. WebAppMockup.tsx:
+
+Create web application interface:
+- Navigation bar (top)
+- Sidebar with menu items
+- Main content area with:
+  * Data table
+  * Action buttons
+  * Filters/search
+  * Pagination
+
+Clean, modern UI with proper spacing
+
+6. SEODashboardMockup.tsx:
+
+Create SEO analytics dashboard:
+- Top metrics cards:
+  * Organic Traffic (graph icon, number, +12% trend)
+  * Keywords Ranked (target icon)
+  * Backlinks (link icon)
+  * Domain Authority (gauge icon)
+
+- Traffic graph (line chart, upward trend)
+- Top keywords table (3-4 rows)
+- Competitor comparison (bar chart)
+
+---
+
+PART 3: ADD SPLIT-SCREEN SECTIONS TO PAGES
+
+HOMEPAGE - Add after Services Grid:
+
+Section 1: "Build, Launch, Scale - All In One Platform"
+- Badge: "⚡ Our Platform"
+- Title: "Everything You Need to Launch Your Startup"
+- Description: "From idea to launch, our platform gives you complete visibility and control over your MVP development."
+- Features:
+  1. LayoutDashboard icon: "Real-Time Dashboard" - "Track progress, milestones, and team activity in real-time."
+  2. Zap icon: "Automated Deployments" - "Push to production with one click. CI/CD pipelines included."
+  3. LineChart icon: "Performance Analytics" - "Monitor app performance, user metrics, and system health."
+  4. Shield icon: "Enterprise Security" - "Bank-grade encryption, SOC 2 compliant infrastructure."
+- MockupType: 'browser'
+- MockupContent: <DashboardMockup />
+- Theme: 'gradient'
+
+BUILD MVP PAGE - Add after "What's Included":
+
+Section 1: "See Your MVP Process In Action"
+- Badge: "📅 30-Day Timeline"
+- Title: "Track Every Milestone, Every Day"
+- Description: "Our project management system keeps you updated on every stage of development."
+- Features:
+  1. Calendar icon: "Week-by-Week Breakdown" - "Clear milestones for each of the 4 weeks."
+  2. Users icon: "Daily Stand-ups" - "Quick updates and demos throughout the build."
+  3. CheckCircle2 icon: "Automated Testing" - "QA and testing at every stage."
+  4. Rocket icon: "Launch Checklist" - "Pre-launch verification and go-live support."
+- MockupType: 'calendar'
+- MockupContent: <MVPTimelineMockup />
+- Reversed: true
+
+BUILD MVP PAGE - Add before Pricing:
+
+Section 2: "Your MVP Dashboard From Day 1"
+- Title: "Built-In Project Management"
+- Description: "Get access to our client portal where you can track development, communicate with the team, and see live progress."
+- Features:
+  1. Activity icon: "Live Updates" - "See what's being built in real-time."
+  2. MessageSquare icon: "Direct Communication" - "Chat directly with your dev team."
+  3. FileText icon: "Documentation Hub" - "All specs, designs, and docs in one place."
+  4. Download icon: "Instant Deploys" - "Preview your MVP at any stage."
+- MockupType: 'dashboard'
+- MockupContent: <DashboardMockup />
+
+SERVICES PAGE - Add after Process Section:
+
+Section: "Built With Modern Technology"
+- Badge: "💻 Tech Stack"
+- Title: "Enterprise-Grade Architecture"
+- Description: "We use proven, scalable technologies that grow with your business."
+- Features:
+  1. Code2 icon: "Modern Frameworks" - "Next.js, React, Node.js - battle-tested and fast."
+  2. Database icon: "Scalable Databases" - "PostgreSQL, MongoDB - designed for millions of users."
+  3. Cloud icon: "Cloud Infrastructure" - "AWS, Vercel - 99.99% uptime guaranteed."
+  4. Shield icon: "Security First" - "SSL, encryption, GDPR compliance built-in."
+- MockupType: 'browser'
+- MockupContent: <WebAppMockup />
+
+AI SERVICES PAGE (create new page: /services/ai-services/page.tsx):
+
+Add split-screen section:
+- Badge: "🤖 AI in Action"
+- Title: "See How AI Transforms Your Business"
+- Description: "Our AI chatbots and automation systems work 24/7 to support your customers and streamline operations."
+- Features:
+  1. MessageCircle icon: "Intelligent Conversations" - "Natural language understanding and context-aware responses."
+  2. Zap icon: "Workflow Automation" - "Automate repetitive tasks and save 20+ hours per week."
+  3. TrendingUp icon: "Lead Qualification" - "AI qualifies leads and schedules meetings automatically."
+  4. BarChart icon: "Analytics & Insights" - "Track conversations, sentiment, and conversion rates."
+- MockupType: 'chat'
+- MockupContent: <ChatbotMockup />
+- Reversed: true
+
+MOBILE DEVELOPMENT PAGE (create new: /services/mobile-development/page.tsx):
+
+Add split-screen section:
+- Badge: "📱 Cross-Platform"
+- Title: "Beautiful Apps, One Codebase"
+- Description: "React Native apps that feel native on both iOS and Android. Deploy to both stores simultaneously."
+- Features:
+  1. Smartphone icon: "Native Performance" - "60 FPS animations, native modules, hardware acceleration."
+  2. Users icon: "User Authentication" - "Biometric login, social auth, secure sessions."
+  3. Bell icon: "Push Notifications" - "Engage users with timely, targeted notifications."
+  4. CreditCard icon: "In-App Payments" - "Apple Pay, Google Pay, Stripe integration."
+- MockupType: 'mobile'
+- MockupContent: <MobileAppMockup />
+
+SEO SERVICES PAGE (create new: /services/seo-services/page.tsx):
+
+Add split-screen section:
+- Badge: "📈 Growth"
+- Title: "Data-Driven SEO That Delivers"
+- Description: "Our SEO strategies are backed by real data and proven to increase organic traffic by 150% on average."
+- Features:
+  1. Target icon: "Keyword Research" - "Find high-intent keywords your competitors are missing."
+  2. FileSearch icon: "Technical SEO" - "Site speed, mobile optimization, schema markup."
+  3. TrendingUp icon: "Content Strategy" - "SEO-optimized content that ranks and converts."
+  4. BarChart2 icon: "Performance Tracking" - "Monthly reports with clear metrics and ROI."
+- MockupType: 'browser'
+- MockupContent: <SEODashboardMockup />
+- Reversed: true
+
+---
+
+PART 4: DESIGN SPECIFICATIONS
+
+MOCKUP DESIGN GUIDELINES:
+
+Color Palette for Mockups:
+- Primary actions: Use theme primary color
+- Success states: #00C853 (green)
+- Warning states: #FFA726 (orange)
+- Error states: #EF5350 (red)
+- Neutral backgrounds: theme muted colors
+- Text: theme foreground colors
+
+Typography in Mockups:
+- UI labels: text-xs or text-sm
+- Numbers/metrics: text-2xl to text-4xl, font-bold
+- Descriptions: text-sm, text-muted-foreground
+
+Spacing:
+- Consistent padding: p-4, p-6, p-8
+- Gaps between elements: gap-4, gap-6
+- Card spacing: space-y-4
+
+Charts/Graphs:
+- Use CSS gradients for backgrounds
+- Simple line/bar representations with divs
+- Animated on scroll (optional)
+- Color: primary or accent gradients
+
+Data Tables:
+- Clean borders (border-b)
+- Alternating row backgrounds (even:bg-muted/50)
+- Sticky headers
+- Proper alignment
+
+Icons:
+- Consistent size (16-24px)
+- Primary color for active states
+- Muted for inactive
+
+Shadows & Depth:
+- Cards: shadow-sm
+- Elevated elements: shadow-md
+- Mockup frames: shadow-2xl
+- Hover states: shadow-lg
+
+Animations:
+- Subtle pulse on live indicators
+- Fade-in for charts
+- Typing animation for chat
+- Smooth transitions (200-300ms)
+
+DARK/LIGHT MODE:
+- All mockup content must support both modes
+- Use theme colors consistently
+- Adjust contrast for readability
+- Test in both modes
+
+PERFORMANCE:
+- Lazy load mockup components
+- Use CSS transforms for animations (GPU accelerated)
+- Optimize SVGs if used
+- Minimize re-renders
+
+ACCESSIBILITY:
+- All mockup content is decorative (aria-hidden="true")
+- Actual information is in the text content (features list)
+- Proper color contrast
+- Animations respect prefers-reduced-motion
+
+---
+
+BUILD INSTRUCTIONS:
+
+1. Create SplitFeatureShowcase component first
+2. Create all mockup components
+3. Add split-screen sections to homepage
+4. Add to Build MVP page
+5. Add to Services page
+6. Create AI Services, Mobile Dev, and SEO Services pages with split-screens
+7. Test all animations and interactions
+8. Verify mobile responsiveness
+9. Test dark/light mode on all mockups
+10. Ensure smooth scroll behavior
+
+Make all mockups look premium, modern, and realistic. Use subtle animations and glassmorphism effects where appropriate. Ensure everything is mobile-responsive and performs well.

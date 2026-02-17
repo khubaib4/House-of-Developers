@@ -1,0 +1,476 @@
+Create a streamlined Hybrid/Cross-Platform Mobile Development page for House of Developers.
+
+PAGE: /services/mobile-development/hybrid/page.tsx
+
+A focused page showcasing React Native and Flutter development services for cross-platform mobile apps.
+
+---
+
+HERO SECTION:
+
+Container: py-24, max-w-7xl mx-auto px-6
+
+Layout: Grid grid-cols-1 lg:grid-cols-2 gap-12 items-center
+
+Left Column:
+
+- Breadcrumb: "Home / Services / Mobile Development / Hybrid Apps"
+  * text-sm text-muted-foreground, clickable, mb-6
+
+- Badge: "⚡ Hybrid Development"
+  * bg-primary/10, text-primary, px-3 py-1.5, rounded-full, mb-4
+
+- H1: "Cross-Platform Mobile App Development"
+  * text-4xl md:text-6xl font-bold, mb-4
+
+- Tagline: "One Codebase, iOS & Android"
+  * text-xl md:text-2xl
+  * Gradient text from blue to green
+  * font-semibold
+
+- Description (mt-6):
+  * text-xl text-muted-foreground leading-relaxed
+  * "Build your app once, deploy to both iOS and Android. Using React Native or Flutter, we create native-quality apps that look and feel perfect on both platforms—40% faster and more cost-effective than building separately."
+
+- Feature Pills (mt-6, flex gap-3 flex-wrap):
+  1. "40% Faster" (Zap icon)
+  2. "Single Codebase" (Code2 icon)
+  3. "Native Performance" (Gauge icon)
+  4. "Both Platforms" (Layers icon)
+
+- CTA Buttons (mt-8, flex gap-4):
+  * Primary: "Start Your Hybrid App" → /contact
+  * Secondary: "View Examples" → scroll to use cases
+
+- Trust: "⭐ Used by Instagram, Discord, Airbnb"
+
+Right Column:
+
+- Hybrid App Mockup:
+  * 2 phones side by side (iPhone + Android)
+  * Both showing same app interface
+  * Visual connection between them (shared codebase indicator)
+  * Annotations:
+    - "Same UI" pointing to both screens
+    - "Single codebase" in center
+    - "React Native" or "Flutter" badge
+  * Floating elements:
+    - "iOS & Android" badge
+    - "60 FPS" performance
+    - "Native APIs" access
+  * Shadow: 2xl
+
+---
+
+WHY HYBRID SECTION:
+
+Container: py-20, bg-muted, max-w-5xl mx-auto px-6, text-center
+
+- H2: "Why Choose Hybrid Development"
+- Description: "The smart choice for startups and businesses"
+
+Stats Grid (grid-cols-2 md:grid-cols-4 gap-8, mt-12):
+
+1. Zap icon: "40%" - "Faster Development"
+2. DollarSign icon: "35%" - "Lower Cost"
+3. Users icon: "100%" - "Platform Coverage"
+4. TrendingUp icon: "90%+" - "Code Reuse"
+
+---
+
+REACT NATIVE VS FLUTTER SECTION:
+
+Container: py-20, max-w-7xl mx-auto px-6
+
+Header (centered):
+- H2: "React Native or Flutter?"
+- Description: "We work with both—here's how to choose"
+- mb-12
+
+Comparison Cards (grid-cols-1 md:grid-cols-2 gap-8, max-w-5xl mx-auto):
+
+REACT NATIVE CARD:
+- Background: card with border-primary
+- Icon: Code2 (or React logo style)
+- Title: "React Native"
+- Subtitle: "By Facebook/Meta"
+
+Best for:
+- Text: "Choose React Native if..."
+- Features list (space-y-2):
+  ✓ You have React/JavaScript developers
+  ✓ Large developer community important
+  ✓ You need web version later (React)
+  ✓ Hot reload for faster development
+  ✓ Mature ecosystem (8+ years)
+  ✓ Used by: Instagram, Discord, Shopify
+
+Tech Stack:
+- JavaScript/TypeScript
+- React components
+- Native modules
+- Expo (optional)
+
+FLUTTER CARD:
+- Background: card
+- Icon: Layers (or Flutter logo style)
+- Title: "Flutter"
+- Subtitle: "By Google"
+
+Best for:
+- Text: "Choose Flutter if..."
+- Features list:
+  ✓ You want best UI performance
+  ✓ Pixel-perfect custom designs
+  ✓ Faster animations (120 FPS)
+  ✓ Material Design out of box
+  ✓ Growing rapidly (newer)
+  ✓ Used by: Google Pay, BMW, Alibaba
+
+Tech Stack:
+- Dart language
+- Widget system
+- Skia graphics engine
+- Hot reload
+
+Bottom note: "Not sure? We'll recommend based on your project" → /contact
+
+---
+
+WHAT WE BUILD SECTION:
+
+Container: py-20, bg-muted
+
+Header (centered):
+- H2: "Hybrid Apps We Build"
+- Subtitle: "Perfect for startups and businesses"
+- mb-12
+
+Grid: grid-cols-1 md:grid-cols-3 gap-8, max-w-7xl mx-auto px-6
+
+3 Solution Cards:
+
+1. Icon: Rocket
+   Title: "MVP Apps"
+   Description: "Launch your startup idea on both platforms simultaneously"
+   Features:
+   - Core features only
+   - Fast time to market
+   - User authentication
+   - Basic CRUD operations
+   Timeline: "6-8 weeks"
+
+2. Icon: ShoppingBag
+   Title: "E-Commerce Apps"
+   Description: "Mobile shopping with cart, checkout, and payments"
+   Features:
+   - Product catalogs
+   - Stripe/PayPal integration
+   - Push notifications
+   - Order tracking
+   Timeline: "10-14 weeks"
+
+3. Icon: Users
+   Title: "Social & Community Apps"
+   Description: "User profiles, feeds, messaging, real-time features"
+   Features:
+   - User authentication
+   - Real-time chat
+   - Image/video uploads
+   - Activity feeds
+   Timeline: "12-16 weeks"
+
+---
+
+HYBRID FEATURES & CAPABILITIES:
+
+Container: py-20
+
+Use ValueProposition component:
+
+- Title: "What You Get with Hybrid Apps"
+- Subtitle: "Native capabilities with cross-platform efficiency"
+- Columns: 3
+
+9 Features:
+
+1. Icon: Smartphone, Title: "Native Performance", Description: "60 FPS animations, smooth scrolling, native feel"
+2. Icon: Camera, Title: "Camera & Media", Description: "Access camera, photo library, video recording"
+3. Icon: Bell, Title: "Push Notifications", Description: "Firebase Cloud Messaging for both platforms"
+4. Icon: MapPin, Title: "Location Services", Description: "GPS, geolocation, maps integration"
+5. Icon: Wifi, Title: "Offline Support", Description: "Local storage, SQLite, offline-first apps"
+6. Icon: CreditCard, Title: "In-App Payments", Description: "Stripe, Apple Pay, Google Pay"
+7. Icon: Share2, Title: "Native Sharing", Description: "Share to social media, contacts, apps"
+8. Icon: Fingerprint, Title: "Biometric Auth", Description: "Face ID, Touch ID, fingerprint"
+9. Icon: Zap, Title: "Native APIs", Description: "Access all device features via native modules"
+
+---
+
+PROCESS SECTION:
+
+Container: py-20, bg-muted
+
+Use ProcessTimeline component:
+
+- Title: "Our Hybrid App Development Process"
+- Subtitle: "From concept to dual-platform launch"
+
+Steps (5 phases):
+
+PHASE 1:
+- phase: "Week 1-2"
+- title: "Discovery & Design"
+- description: "Requirements and UI/UX design for both platforms"
+- deliverables:
+  * Platform recommendation (React Native vs Flutter)
+  * User research & feature prioritization
+  * Wireframes & user flows
+  * UI design (iOS & Android variants)
+  * Interactive prototype
+- duration: "7-10 days"
+
+PHASE 2:
+- phase: "Week 3-4"
+- title: "Development Setup"
+- description: "Project foundation and architecture"
+- deliverables:
+  * React Native/Flutter project setup
+  * Navigation structure
+  * State management (Redux/Provider)
+  * API integration setup
+  * Authentication system
+- duration: "7-10 days"
+
+PHASE 3:
+- phase: "Week 5-8"
+- title: "Feature Development"
+- description: "Building core features and screens"
+- deliverables:
+  * Screen implementation (all)
+  * Core functionality
+  * Database integration
+  * Third-party API integrations
+  * Push notifications setup
+- duration: "3-4 weeks"
+
+PHASE 4:
+- phase: "Week 9-10"
+- title: "Testing & Optimization"
+- description: "QA across devices and performance tuning"
+- deliverables:
+  * iOS device testing (iPhone, iPad)
+  * Android device testing (various devices)
+  * Performance optimization
+  * Bug fixes
+  * Platform-specific adjustments
+- duration: "1-2 weeks"
+
+PHASE 5:
+- phase: "Week 11-12"
+- title: "Launch & Deploy"
+- description: "App Store submission and deployment"
+- deliverables:
+  * App Store submission (Apple)
+  * Google Play submission
+  * App approval & launch
+  * Production deployment
+  * Post-launch monitoring
+- duration: "1-2 weeks"
+
+---
+
+RESULTS SHOWCASE:
+
+Container: py-20
+
+Header (centered): "Real Hybrid App Results"
+
+Visual Comparison (left) + Metrics (right)
+
+Before Mockup: "Building Native Separately"
+- 2 separate development tracks
+- 2 codebases
+- 2 teams
+
+After Mockup: "Hybrid Development"
+- Single codebase
+- Unified development
+- Faster deployment
+
+6 Metrics:
+1. Development Time: "20 weeks" → "12 weeks" (40% faster)
+2. Development Cost: "£80K" → "£50K" (37% savings)
+3. Code Reuse: "0%" → "95%" (shared codebase)
+4. Team Size: "4 developers" → "2 developers" (50% smaller)
+5. Maintenance Cost: "£3K/month" → "£1.5K/month" (50% lower)
+6. Feature Parity: "Delayed" → "Simultaneous" (same features both platforms)
+
+---
+
+USE CASES:
+
+Container: py-20, bg-muted, max-w-7xl mx-auto px-6
+
+Header: "Hybrid Apps We've Built"
+
+Grid: grid-cols-1 md:grid-cols-3 gap-8
+
+3 Use Cases:
+
+1. Industry: "Fitness"
+   Title: "Workout Tracking App"
+   Description: "React Native app with exercise library, progress tracking, and social features"
+   Tech: React Native, Firebase, Stripe
+   Results: "50K downloads", "4.6★ rating"
+   Icon: Dumbbell
+
+2. Industry: "E-Commerce"
+   Title: "Fashion Shopping App"
+   Description: "Flutter app with product catalog, wishlist, and Apple/Google Pay"
+   Tech: Flutter, Stripe, Firebase
+   Results: "£200K sales", "4.8★ rating"
+   Icon: ShoppingBag
+
+3. Industry: "Food Delivery"
+   Title: "Restaurant Ordering App"
+   Description: "React Native app with real-time order tracking and driver GPS"
+   Tech: React Native, Google Maps, Stripe
+   Results: "10K orders/month", "4.5★ rating"
+   Icon: UtensilsCrossed
+
+---
+
+WHY CHOOSE US FOR HYBRID:
+
+Container: py-20
+
+Use ValueProposition component:
+
+- Title: "Why Choose Us for Hybrid Development"
+- Columns: 3
+
+6 Values:
+
+1. Icon: Award, Title: "Cross-Platform Experts", Description: "30+ React Native & Flutter apps delivered", Stat: "30+ Apps"
+2. Icon: Zap, Title: "40% Faster Delivery", Description: "Launch on both platforms simultaneously", Stat: "40% Faster"
+3. Icon: DollarSign, Title: "Cost Effective", Description: "35% cheaper than building native separately", Stat: "35% Savings"
+4. Icon: Code2, Title: "React Native & Flutter", Description: "We master both frameworks—pick the best for you"
+5. Icon: Smartphone, Title: "Native Quality", Description: "Apps that feel truly native on both platforms"
+6. Icon: Users, Title: "Proven Results", Description: "Apps with 4.5+ ratings and 100K+ downloads"
+
+---
+
+TECH STACK:
+
+Container: py-20, bg-muted
+
+Use TechStackGrid component:
+
+- Title: "Technologies We Use for Hybrid Apps"
+- Description: "Modern tools and frameworks"
+- Columns: 6
+
+Items (12 technologies with icons):
+
+FRAMEWORKS:
+1. name: "React Native", icon: Code2
+2. name: "Flutter", icon: Layers
+3. name: "Expo", icon: Smartphone
+
+STATE MANAGEMENT:
+4. name: "Redux", icon: Database
+5. name: "MobX", icon: GitBranch
+6. name: "Provider", icon: Package
+
+BACKEND & DATABASE:
+7. name: "Firebase", icon: Flame
+8. name: "AWS", icon: Cloud
+9. name: "Node.js", icon: Server
+
+PAYMENT & SERVICES:
+10. name: "Stripe", icon: CreditCard
+11. name: "Google Maps", icon: MapPin
+12. name: "OneSignal", icon: Bell (push notifications)
+
+---
+
+FAQ SECTION:
+
+Container: py-20, max-w-4xl mx-auto px-6
+
+Header: "Hybrid Development FAQs"
+
+10 Questions (Accordion):
+
+Q1: "Is hybrid performance as good as native?"
+A: "Modern hybrid frameworks (React Native, Flutter) deliver near-native performance—60 FPS animations, smooth scrolling, and instant responses. For 95% of apps, users can't tell the difference. Only extremely graphics-intensive apps (3D games, AR) truly need pure native."
+
+Q2: "React Native or Flutter—which is better?"
+A: "React Native if you have JavaScript/React developers or want web code reuse. Flutter if you prioritize UI performance and custom animations. Both are excellent—we'll recommend based on your team, requirements, and timeline."
+
+Q3: "Can hybrid apps use device features like camera, GPS, etc?"
+A: "Yes! Hybrid apps access all device features—camera, GPS, contacts, fingerprint, Face ID, push notifications, bluetooth, etc. through native modules and plugins."
+
+Q4: "Will my hybrid app be accepted in App Store and Google Play?"
+A: "Absolutely! Thousands of hybrid apps are in both stores, including major apps like Instagram (React Native) and Google Pay (Flutter). Stores don't care about the framework, only the user experience."
+
+Q5: "How much faster is hybrid development?"
+A: "40-50% faster than building native iOS and Android separately. Instead of 20 weeks (10 weeks × 2 platforms), expect 12 weeks total. You save time by writing code once instead of twice."
+
+Q6: "What's the cost difference vs native development?"
+A: "Hybrid costs 30-40% less than building native separately. If native iOS + Android costs £80K, hybrid costs around £50K. You're paying one team instead of two."
+
+Q7: "Can I convert my web app to hybrid mobile app?"
+A: "Partially. If your web app is React, React Native shares similar syntax (but not the same components). You'll need mobile-specific UI and native features. Expect 60-70% new code, not a direct port."
+
+Q8: "What if I need to add native code later?"
+A: "Both React Native and Flutter support custom native modules. If you need platform-specific features, we can write native Swift/Kotlin code and bridge it to your hybrid app."
+
+Q9: "How do updates work for hybrid apps?"
+A: "App Store updates: Standard review process (1-3 days). Over-the-air updates: For non-native code changes, we can push updates instantly without app store approval (using CodePush for React Native)."
+
+Q10: "Can hybrid apps work offline?"
+A: "Yes! We implement local storage, SQLite databases, and offline-first architecture. Your app can function without internet and sync when connection returns."
+
+---
+
+CTA SECTIONS:
+
+Add 2 CTAs:
+
+CTA 1 (After Process):
+- Variant: 'bordered'
+- Title: "Ready to Build Your Cross-Platform App?"
+- Description: "Launch on iOS and Android simultaneously with hybrid development"
+- PrimaryCTA: "Start Your Project" → /contact
+- Size: 'medium'
+
+CTA 2 (Final):
+- Variant: 'gradient'
+- Title: "Let's Build Your Hybrid Mobile App"
+- Description: "Book a free consultation to discuss React Native or Flutter for your app idea"
+- PrimaryCTA: "Book Free Consultation" → /contact
+- SecondaryCTA: "Call: +44 7429 917368" → tel link
+- ShowContactInfo: true
+- Size: 'large'
+
+---
+
+GLOBAL REQUIREMENTS:
+
+1. SEO:
+   - Meta title: "Hybrid Mobile App Development | React Native & Flutter | House of Developers"
+   - Meta description: "Cross-platform mobile apps with React Native and Flutter. One codebase for iOS & Android. 40% faster, 35% cheaper. Free consultation."
+
+2. COMPONENTS USED:
+   - ProcessTimeline ✅
+   - ValueProposition (×2) ✅
+   - TechStackGrid ✅
+   - CTASection (×2) ✅
+
+3. RESPONSIVE: Mobile-first
+4. DARK/LIGHT MODE: Full support
+5. ANIMATIONS: Smooth
+6. ACCESSIBILITY: Complete
+
+Build a focused hybrid development page emphasizing speed, cost savings, and cross-platform efficiency.

@@ -1,0 +1,385 @@
+Create a streamlined Wix development service page for House of Developers.
+
+PAGE: /services/web-development/cms/wix/page.tsx
+
+A focused page showcasing Wix website development services with real Wix logo and essential conversion elements.
+
+IMPORTANT: Use real brand logos from CDN:
+- Wix logo: https://cdn.simpleicons.org/wix/0C6EFC
+- Google: https://cdn.simpleicons.org/google/4285F4
+- Mailchimp: https://cdn.simpleicons.org/mailchimp/FFE01B
+- Facebook: https://cdn.simpleicons.org/facebook/0866FF
+
+---
+
+HERO SECTION:
+
+Container: py-24, max-w-7xl mx-auto px-6
+
+Layout: Grid grid-cols-1 lg:grid-cols-2 gap-12 items-center
+
+Left Column:
+
+- Breadcrumb: "Home / Services / Web Development / CMS / Wix"
+  * text-sm text-muted-foreground, clickable links, mb-6
+
+- Wix Logo:
+  * Image from CDN: https://cdn.simpleicons.org/wix/0C6EFC
+  * Size: w-16 h-16, mb-4
+
+- Badge: "✨ Wix Development"
+  * bg-primary/10, text-primary, px-3 py-1.5, rounded-full, mb-4
+
+- H1: "Wix Website Development Services"
+  * text-4xl md:text-6xl font-bold, mb-4
+
+- Tagline: "Drag-and-Drop Simplicity, Professional Results"
+  * text-xl md:text-2xl, gradient text (blue to purple), font-semibold
+
+- Description (mt-6):
+  * text-xl text-muted-foreground
+  * "Perfect for small businesses and entrepreneurs who need a professional website fast. We build stunning Wix sites with drag-and-drop editing, so you can update content yourself."
+
+- Feature Pills (mt-6, flex gap-3 flex-wrap):
+  1. "500+ Templates" (Layout icon)
+  2. "No Coding" (CheckCircle2 icon)
+  3. "Hosting Included" (Server icon)
+  4. "Mobile Editor" (Smartphone icon)
+
+- CTA Buttons (mt-8, flex gap-4):
+  * Primary: "Start Your Wix Site" → /contact
+  * Secondary: "View Examples" → scroll to use cases
+
+- Trust: "⭐ Perfect for startups and small businesses"
+
+Right Column:
+
+- Wix Editor Mockup:
+  * Browser frame showing Wix drag-and-drop editor
+  * Left sidebar with elements panel
+  * Canvas in center with website preview
+  * Right panel with design settings
+  * Use Wix blue accent color (#0C6EFC)
+  * Floating badges: "Drag & Drop", "Live Preview"
+
+---
+
+WHY WIX SECTION:
+
+Container: py-20, bg-muted, max-w-5xl mx-auto px-6, text-center
+
+- H2: "Why Choose Wix for Your Website"
+- Description: "The easiest way to create a professional website"
+
+Stats Grid (grid-cols-2 md:grid-cols-4 gap-8, mt-12):
+
+1. Globe icon: "200M+" - "Websites Created"
+2. Layout icon: "500+" - "Templates"
+3. Clock icon: "1-2 Weeks" - "Launch Time"
+4. Users icon: "Easy" - "For Anyone"
+
+---
+
+WHAT WE BUILD SECTION:
+
+Container: py-20, max-w-7xl mx-auto px-6
+
+Header: 
+- H2: "Wix Solutions We Build"
+- Subtitle: "From portfolios to business sites"
+
+Grid: grid-cols-1 md:grid-cols-3 gap-8
+
+3 Solution Cards:
+
+1. Icon: Briefcase
+   Title: "Business Websites"
+   Description: "Professional sites for small businesses, consultants, and service providers."
+   Features:
+   - Custom template design
+   - Contact forms & booking
+   - Google Maps integration
+   - Mobile-optimized
+
+2. Icon: Camera
+   Title: "Portfolio Sites"
+   Description: "Showcase your work with stunning galleries and project pages."
+   Features:
+   - Full-screen galleries
+   - Project case studies
+   - Client testimonials
+   - Video backgrounds
+
+3. Icon: Calendar
+   Title: "Booking Sites"
+   Description: "Appointment scheduling with Wix Bookings integration."
+   Features:
+   - Calendar integration
+   - Payment processing
+   - Automated reminders
+   - Client management
+
+---
+
+WIX FEATURES & APPS SECTION:
+
+Container: py-20, bg-muted
+
+Use TechStackGrid component:
+
+- Title: "Wix Features We Use"
+- Description: "Built-in tools and apps to power your site"
+- Columns: 6
+
+Items (12 features with icons):
+
+1. name: "Wix Editor", icon: Edit3
+2. name: "Wix ADI", icon: Sparkles (AI design)
+3. name: "Wix Stores", icon: ShoppingCart
+4. name: "Wix Bookings", icon: Calendar
+5. name: "Wix Blog", icon: FileText
+6. name: "Wix SEO", icon: TrendingUp
+7. name: "Google Workspace", logo: "https://cdn.simpleicons.org/google/4285F4"
+8. name: "Mailchimp", logo: "https://cdn.simpleicons.org/mailchimp/FFE01B"
+9. name: "Facebook Pixel", logo: "https://cdn.simpleicons.org/facebook/0866FF"
+10. name: "Instagram Feed", logo: "https://cdn.simpleicons.org/instagram/E4405F"
+11. name: "Wix Chat", icon: MessageSquare
+12. name: "Wix Forms", icon: FileInput
+
+---
+
+PROCESS SECTION:
+
+Container: py-20
+
+Use ProcessTimeline component:
+
+- Title: "Our Wix Development Process"
+- Subtitle: "Launch in 1-2 weeks"
+
+Steps (3 phases):
+
+WEEK 1:
+- phase: "Week 1"
+- title: "Design & Build"
+- description: "Template selection, customization, and page creation"
+- deliverables:
+  * Template selection & purchase
+  * Brand customization (colors, fonts, logo)
+  * Page creation & content layout
+  * Image sourcing & optimization
+  * Mobile editor customization
+
+WEEK 2:
+- phase: "Week 2"
+- title: "Features & Launch"
+- description: "Add functionality, optimize, and go live"
+- deliverables:
+  * Contact forms & booking setup
+  * SEO optimization (meta tags, URLs)
+  * Google integration (Analytics, Maps)
+  * Final testing & QA
+  * Domain connection & launch
+
+ONGOING:
+- phase: "Ongoing"
+- title: "Support & Updates"
+- description: "Training and optional maintenance"
+- deliverables:
+  * Editor training (video tutorials)
+  * Content update assistance
+  * Monthly maintenance (optional)
+  * Performance monitoring
+
+---
+
+RESULTS SHOWCASE:
+
+Container: py-20, bg-muted
+
+Header: "Real Wix Results We've Delivered"
+
+Visual Comparison (left) + Metrics (right)
+
+Before Mockup: Generic template
+After Mockup: Custom branded Wix site
+
+6 Metrics:
+1. Design Quality: "Template" → "Custom Brand" (+100%)
+2. Mobile Score: "72/100" → "94/100" (+22 points)
+3. Page Speed: "3.8s" → "1.9s" (50% faster)
+4. SEO Score: "65/100" → "88/100" (+23 points)
+5. Lead Generation: "5/month" → "35/month" (+600%)
+6. Time to Launch: "8 weeks" → "2 weeks" (75% faster)
+
+---
+
+USE CASES:
+
+Container: py-20, max-w-7xl mx-auto px-6
+
+Header: "Wix Sites We've Built"
+
+Grid: grid-cols-1 md:grid-cols-3 gap-8
+
+3 Use Cases:
+
+1. Industry: "Consulting"
+   Title: "Business Consultant Portfolio"
+   Description: "Professional site with booking system and client testimonials"
+   Results: "50+ bookings", "Top 5 Google"
+   Icon: Briefcase
+
+2. Industry: "Photography"
+   Title: "Wedding Photography Studio"
+   Description: "Stunning gallery site with inquiry forms and pricing packages"
+   Results: "80 inquiries/month", "4.9/5 rating"
+   Icon: Camera
+
+3. Industry: "Fitness"
+   Title: "Personal Training Business"
+   Description: "Wix Bookings integration for class scheduling and payments"
+   Results: "200 clients", "£15K/month"
+   Icon: Dumbbell
+
+---
+
+WHY CHOOSE US:
+
+Container: py-20
+
+Use ValueProposition component:
+
+- Title: "Why Choose Us for Wix Development"
+- Columns: 3
+
+6 Values:
+
+1. Icon: Zap, Title: "Fast Delivery", Description: "Launch in 1-2 weeks, not months", Stat: "1-2 Weeks"
+2. Icon: Award, Title: "Wix Experts", Description: "Official Wix Partner with 30+ successful sites", Stat: "30+ Sites"
+3. Icon: Palette, Title: "Custom Design", Description: "We don't just use templates—we customize them heavily"
+4. Icon: GraduationCap, Title: "Full Training", Description: "You'll be able to update content yourself confidently"
+5. Icon: TrendingUp, Title: "SEO Optimized", Description: "Proper SEO setup from day one"
+6. Icon: DollarSign, Title: "Affordable", Description: "Perfect for small business budgets"
+
+---
+
+WIX VS WORDPRESS COMPARISON:
+
+Container: py-20, bg-muted, max-w-4xl mx-auto px-6
+
+Header: 
+- H2: "Wix vs WordPress: Which is Right for You?"
+- Description: "We help you choose the best platform"
+
+Comparison Cards (grid-cols-1 md:grid-cols-2 gap-8):
+
+WIX CARD:
+- Background: card with border-primary
+- Icon: Layout icon + Wix logo
+- Title: "Choose Wix If..."
+- Features list (space-y-2):
+  ✓ You want to launch quickly (1-2 weeks)
+  ✓ You need drag-and-drop editing
+  ✓ You want hosting included
+  ✓ You prefer simplicity over complexity
+  ✓ Small to medium business
+  ✓ Budget: £1,000 - £3,000
+
+WORDPRESS CARD:
+- Background: card
+- Icon: FileText icon + WordPress logo
+- Title: "Choose WordPress If..."
+- Features list:
+  ✓ You need maximum customization
+  ✓ You plan to scale significantly
+  ✓ You want 60,000+ plugins
+  ✓ You need complex functionality
+  ✓ Growing business or enterprise
+  ✓ Budget: £3,000 - £15,000+
+
+Link: "Not sure? We'll help you decide" → /contact
+
+---
+
+FAQ SECTION:
+
+Container: py-20, max-w-4xl mx-auto px-6
+
+Header: "Wix Development FAQs"
+
+8 Questions (Accordion):
+
+Q1: "Can I update the content myself after launch?"
+A: "Yes! That's the beauty of Wix. The drag-and-drop editor makes it incredibly easy to update text, images, add pages, and make changes without any coding knowledge."
+
+Q2: "Is Wix good for SEO?"
+A: "Yes! Wix has significantly improved its SEO capabilities. We implement proper meta tags, alt text, clean URLs, sitemaps, and schema markup. Many Wix sites rank well on Google."
+
+Q3: "What's included in Wix hosting?"
+A: "Wix includes hosting, SSL certificate, CDN, and 99.9% uptime. You just pay the monthly Wix subscription (starting at £15/month for basic sites)."
+
+Q4: "Can I add e-commerce to my Wix site?"
+A: "Yes! Wix has built-in e-commerce functionality. You can sell products, accept payments, manage inventory, and track orders. Perfect for small online stores."
+
+Q5: "How long does a Wix project take?"
+A: "Simple sites (5-10 pages): 1 week. Standard sites (10-20 pages): 2 weeks. Complex sites with e-commerce or booking: 3-4 weeks."
+
+Q6: "Can you migrate my existing site to Wix?"
+A: "Yes! We can migrate content from any platform to Wix. However, we usually recommend Wix for new sites or simple migrations, not for complex WordPress sites."
+
+Q7: "What if I outgrow Wix?"
+A: "For most small-medium businesses, Wix is sufficient. If you need enterprise features, we can migrate you to WordPress or a custom solution later."
+
+Q8: "Do you provide training?"
+A: "Yes! We provide comprehensive video training on how to use the Wix editor, update content, add pages, and manage your site independently."
+
+---
+
+CTA SECTIONS:
+
+Add 2 CTAs:
+
+CTA 1 (After Process):
+- Variant: 'bordered'
+- Title: "Ready to Launch Your Wix Site?"
+- Description: "Get a professional website up and running in just 1-2 weeks"
+- PrimaryCTA: "Start Your Project" → /contact
+- Size: 'medium'
+
+CTA 2 (Final):
+- Variant: 'gradient'
+- Title: "Let's Build Your Wix Website"
+- Description: "Book a free consultation and we'll show you how Wix can work for your business"
+- PrimaryCTA: "Book Free Consultation" → /contact
+- SecondaryCTA: "Call: +44 7429 917368" → tel link
+- ShowContactInfo: true
+- Size: 'large'
+
+---
+
+GLOBAL REQUIREMENTS:
+
+1. SEO:
+   - Meta title: "Wix Development Services | Professional Wix Sites | House of Developers"
+   - Meta description: "Expert Wix development in UK. Custom design, drag-and-drop editing, fast launch. Perfect for small businesses. From £1,000."
+
+2. REAL LOGOS:
+   - Wix: https://cdn.simpleicons.org/wix/0C6EFC
+   - Google: https://cdn.simpleicons.org/google/4285F4
+   - Mailchimp: https://cdn.simpleicons.org/mailchimp/FFE01B
+   - Facebook: https://cdn.simpleicons.org/facebook/0866FF
+   - Instagram: https://cdn.simpleicons.org/instagram/E4405F
+
+3. COMPONENTS USED:
+   - TechStackGrid ✅
+   - ProcessTimeline ✅
+   - ValueProposition ✅
+   - CTASection (×2) ✅
+
+4. RESPONSIVE: Mobile-first, all breakpoints
+5. DARK/LIGHT MODE: Full compatibility
+6. ANIMATIONS: Smooth, professional
+7. ACCESSIBILITY: Full keyboard navigation
+
+Build a focused Wix page emphasizing ease of use, speed, and affordability for small businesses.

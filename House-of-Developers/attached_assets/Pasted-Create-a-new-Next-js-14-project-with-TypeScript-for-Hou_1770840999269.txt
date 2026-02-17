@@ -1,0 +1,150 @@
+Create a new Next.js 14 project with TypeScript for "House of Developers" - a premium UK-based digital product development agency.
+
+PROJECT SETUP:
+
+1. Initialize Next.js 14 with App Router and TypeScript
+2. Install these dependencies:
+   - tailwindcss
+   - @shadcn/ui (button, card, dialog components)
+   - next-themes
+   - framer-motion
+   - lucide-react
+   - @next/font
+
+3. Configure Tailwind CSS with this custom theme:
+
+Colors:
+Light Mode:
+  primary: '#0066FF'
+  background: '#FFFFFF'
+  foreground: '#0A0A0A'
+  secondary: '#F8F9FA'
+  accent: '#00C853'
+  border: '#E5E7EB'
+  muted: '#F3F4F6'
+
+Dark Mode:
+  primary: '#3B82F6'
+  background: '#0A0A0A'
+  card: '#1A1A1A'
+  foreground: '#F5F5F5'
+  secondary: '#1F1F1F'
+  border: '#2A2A2A'
+  muted: '#2A2A2A'
+
+Typography:
+  - Font family: Inter (from Google Fonts)
+  - H1: text-5xl font-bold (mobile: text-4xl)
+  - H2: text-4xl font-bold (mobile: text-3xl)
+  - H3: text-2xl font-semibold (mobile: text-xl)
+  - Body: text-base leading-relaxed
+
+4. Set up next-themes provider for dark/light mode switching
+
+5. Create this folder structure:
+   /app
+     /page.tsx (homepage)
+     /layout.tsx (root layout)
+     /globals.css
+   /components
+     /ui (shadcn components)
+     /layout
+       /Header.tsx
+       /Footer.tsx
+       /ThemeToggle.tsx
+     /home
+       /Hero.tsx
+       /ServicesGrid.tsx
+       /WhyChoose.tsx
+       /ProjectsShowcase.tsx
+       /TechStack.tsx
+       /CTASection.tsx
+   /lib
+     /utils.ts
+
+MOBILE-FIRST HEADER COMPONENT:
+
+Create a sticky header with:
+- Logo: Icon (Home icon from lucide-react) + "House of Developers" text
+- Navigation (desktop): Services (dropdown), Case Studies, About, Contact
+- Mobile: Hamburger menu (slide-in from right)
+- Theme toggle button (sun/moon icon)
+- "Book a Call" button (accent color, prominent)
+- Background: backdrop-blur with border-bottom
+- Height: 72px
+- Responsive breakpoint: 768px (md)
+
+Header behavior:
+- Sticky on scroll
+- Smooth backdrop blur effect
+- Mobile menu: Full-screen overlay with smooth animation
+- Theme toggle should work instantly with no flash
+
+MOBILE-FIRST FOOTER COMPONENT:
+
+Create footer with:
+- 4 columns on desktop, stacked on mobile
+  Column 1: About
+    - Logo + tagline: "Building launch-ready digital products"
+    - Short description (2 lines)
+  
+  Column 2: Services
+    - Build MVP
+    - Web Development
+    - Mobile Development
+    - AI Services
+  
+  Column 3: Company
+    - Case Studies
+    - About Us
+    - Contact
+    - Privacy Policy
+  
+  Column 4: Contact
+    - Address: Weybridge, England, KT13 9XE
+    - Phone: +44 7429 917368
+    - Email: khubaib@houseofdevelopers.co.uk
+    - Social icons: LinkedIn, Twitter, GitHub
+
+- Bottom bar: Copyright © 2024 House of Developers. All rights reserved.
+- Background: muted color
+- Padding: py-16 (mobile: py-12)
+- Links hover effect: text-primary transition
+
+MOBILE-FIRST HOMEPAGE - HERO SECTION:
+
+Create hero section with:
+- Gradient background (subtle, dark mode compatible)
+- Max-width container: max-w-7xl mx-auto
+- Padding: px-6 py-24 (mobile: py-16)
+
+Content (centered):
+- Badge/pill: "🚀 30-Day MVP Program Available" (small, accent color)
+- H1: "We Build Launch-Ready Digital Products"
+  - Gradient text effect on "Launch-Ready"
+  - Mobile: text-4xl, Desktop: text-6xl
+  
+- Subheading (text-xl, muted color):
+  "From MVP to scale. We're the technical partner for startups who need to move fast and build right."
+
+- CTA buttons (flex, gap-4, mobile: flex-col):
+  Primary: "Book Free Consultation" (accent bg, white text, h-12, px-8, rounded-lg)
+  Secondary: "View Our Work" (border, primary color, h-12, px-8, rounded-lg)
+
+- Stats row (3 stats, grid, mobile: gap-8):
+  * "50+ Projects Delivered"
+  * "5+ Years Experience"
+  * "98% Client Satisfaction"
+  Each stat: number (text-4xl, bold, primary color) + label (text-sm, muted)
+
+- Animated gradient orbs in background (subtle, framer-motion)
+
+REQUIREMENTS:
+- Mobile-first responsive design
+- Smooth animations (framer-motion fade-in, slide-up)
+- Perfect on iPhone SE (375px) to 4K screens
+- Dark/light mode support for all components
+- Accessible (ARIA labels, keyboard navigation)
+- Fast loading (optimized images with next/image)
+
+Build the project setup, header, footer, and hero section first. Make them pixel-perfect and mobile-responsive. Use Tailwind utility classes. Add smooth hover states and transitions.

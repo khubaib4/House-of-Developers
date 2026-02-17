@@ -1,0 +1,617 @@
+Create a comprehensive Hire Frontend Developers hub page for House of Developers.
+
+PAGE: /services/hire-developers/frontend/page.tsx
+
+This is the hub page for hiring frontend developers, showcasing different frameworks (React, Angular, Vue) and linking to individual framework pages.
+
+---
+
+HERO SECTION:
+
+Container: py-24, max-w-7xl mx-auto px-6
+
+Layout: Grid grid-cols-1 lg:grid-cols-2 gap-12 items-center
+
+Left Column:
+
+- Breadcrumb: "Home / Services / Hire Developers / Frontend"
+  * text-sm text-muted-foreground, clickable, mb-6
+
+- Badge: "🎨 Frontend Developers"
+  * bg-primary/10, text-primary, px-3 py-1.5, rounded-full, mb-4
+
+- H1: "Hire Frontend Developers"
+  * text-4xl md:text-6xl font-bold, mb-4
+
+- Tagline: "UI/UX Specialists Who Build Beautiful Interfaces"
+  * text-xl md:text-2xl
+  * Gradient text from blue to pink
+  * font-semibold
+
+- Description (mt-6):
+  * text-xl text-muted-foreground leading-relaxed
+  * "Hire senior frontend developers who create pixel-perfect, responsive user interfaces. Expert in React, Angular, Vue, TypeScript, and modern CSS frameworks—delivering exceptional user experiences."
+
+- Feature Pills (mt-6, flex gap-3 flex-wrap):
+  1. "Pixel Perfect" (Palette icon)
+  2. "Mobile First" (Smartphone icon)
+  3. "Performance" (Zap icon)
+  4. "Accessibility" (Eye icon)
+
+- Stats Grid (mt-8, grid-cols-3 gap-6):
+  1. "12+ Developers"
+  2. "3 Frameworks"
+  3. "Available Now"
+
+- CTA Buttons (mt-8, flex gap-4):
+  * Primary: "Hire Frontend Developer" → /contact
+  * Secondary: "Compare Frameworks" → scroll to comparison
+
+Right Column:
+
+- Frontend Development Mockup:
+  * Create browser window showing beautiful UI
+  
+  Browser Frame:
+  * Top bar with dots (red, yellow, green)
+  * URL: "yourapp.com"
+  
+  Inside browser - Beautiful UI preview:
+  * Modern landing page design
+  * Hero section with gradient background
+  * Card components grid (3 cards)
+  * Navigation bar (clean, minimal)
+  * Buttons with hover states
+  * Use colorful gradients (blue, purple, pink)
+  
+  Code overlay (semi-transparent, bottom-right):
+  * Small code snippet showing React/Vue component
+  * Syntax highlighting
+  * "< Component />" visible
+  
+  Floating annotations:
+  * "Responsive Design" badge
+  * "React/Vue/Angular" tech badge
+  * "60 FPS Animations" performance badge
+  
+  * Shadow: 2xl
+  * Modern, colorful, attractive design
+
+---
+
+WHAT IS FRONTEND SECTION:
+
+Container: py-20, bg-muted, max-w-5xl mx-auto px-6, text-center
+
+- H2: "What is a Frontend Developer?"
+- Description (mt-4, text-lg):
+  "Frontend developers build everything users see and interact with—the visual interface, animations, forms, navigation. They turn designs into beautiful, functional web applications using HTML, CSS, JavaScript, and modern frameworks."
+
+What They Build Grid (mt-12, grid-cols-1 md:grid-cols-4 gap-6):
+
+4 items:
+
+1. Icon: Layout
+   Title: "User Interfaces"
+   Description: "Beautiful, intuitive UIs"
+
+2. Icon: Smartphone
+   Title: "Responsive Design"
+   Description: "Perfect on all devices"
+
+3. Icon: Zap
+   Title: "Animations"
+   Description: "Smooth interactions"
+
+4. Icon: Palette
+   Title: "Design Systems"
+   Description: "Consistent components"
+
+---
+
+FRONTEND FRAMEWORKS COMPARISON:
+
+Container: py-20, max-w-7xl mx-auto px-6
+
+Header (centered):
+- H2: "Choose Your Frontend Framework"
+- Subtitle: "We have experts in React, Angular, and Vue"
+- mb-16
+
+Framework Cards Grid:
+- Grid: grid-cols-1 md:grid-cols-3 gap-8
+
+3 FRAMEWORK CARDS:
+
+CARD STRUCTURE (each):
+- Background: card with border
+- Padding: p-8
+- Rounded: rounded-2xl
+- Hover: shadow-xl, border-primary, translateY(-4px)
+
+Each card:
+1. Framework icon (top):
+   - Container: w-16 h-16, bg-primary/10, rounded-lg, flex center
+   - Icon: Layout or Code2 (primary color, size 32)
+
+2. Framework name (text-2xl font-bold, mt-6)
+
+3. Tagline (text-sm text-muted-foreground, mt-2)
+
+4. Best for badge (mt-4):
+   - "Best for: [use case]"
+   - bg-accent/10, text-accent, px-3 py-1, rounded-full
+
+5. Key features (mt-6, space-y-2):
+   - 4 bullet points with CheckCircle2 icons
+   - text-sm
+
+6. Popularity (mt-6):
+   - Badge with stat
+   - "Most Popular" or "Enterprise Standard" or "Growing Fast"
+
+7. Used by (mt-4):
+   - Small text: "Used by: [companies]"
+   - text-xs text-muted-foreground, italic
+
+8. Developers available (mt-6):
+   - Badge: "X+ Developers Available"
+   - bg-muted, rounded-full
+
+9. CTA button (mt-8):
+   - "Hire [Framework] Developer"
+   - Full width, border variant
+   - Link to framework page
+
+THE 3 FRAMEWORKS:
+
+FRAMEWORK 1: REACT
+- Icon: Layout
+- Name: "React Developers"
+- Tagline: "The most popular JavaScript library"
+- Best for: "SaaS, Dashboards, SPAs"
+- Features:
+  ✓ Component-based architecture
+  ✓ Virtual DOM for performance
+  ✓ Huge ecosystem & community
+  ✓ React Hooks for state management
+- Popularity: "Most Popular" (badge with star icon)
+- Used by: "Facebook, Netflix, Airbnb, Instagram"
+- Available: "6+ Developers"
+- Link: /services/hire-developers/frontend/react
+
+FRAMEWORK 2: ANGULAR
+- Icon: Code2
+- Name: "Angular Developers"
+- Tagline: "Enterprise-grade TypeScript framework"
+- Best for: "Enterprise Apps, Complex Systems"
+- Features:
+  ✓ TypeScript by default
+  ✓ Complete framework (routing, forms, HTTP)
+  ✓ Strong typing & structure
+  ✓ Perfect for large teams
+- Popularity: "Enterprise Standard" (badge with building icon)
+- Used by: "Google, Microsoft, Forbes, IBM"
+- Available: "4+ Developers"
+- Link: /services/hire-developers/frontend/angular
+
+FRAMEWORK 3: VUE
+- Icon: Layers
+- Name: "Vue.js Developers"
+- Tagline: "Progressive and easy-to-learn framework"
+- Best for: "Lightweight Apps, Rapid Development"
+- Features:
+  ✓ Easy learning curve
+  ✓ Flexible & progressive
+  ✓ Great documentation
+  ✓ Fast and lightweight
+- Popularity: "Growing Fast" (badge with trending icon)
+- Used by: "Alibaba, GitLab, Nintendo, Adobe"
+- Available: "3+ Developers"
+- Link: /services/hire-developers/frontend/vue
+
+---
+
+PRICING SECTION:
+
+Container: py-20, bg-muted
+
+Header (centered):
+- H2: "Frontend Developer Pricing"
+- Subtitle: "Same pricing across all frameworks"
+- mb-12
+
+Pricing Cards Grid:
+- Grid: grid-cols-1 md:grid-cols-3 gap-8
+- Max-width: max-w-6xl mx-auto px-6
+
+3 PRICING TIERS:
+
+TIER 1: PART-TIME
+- Name: "Part-Time Frontend Developer"
+- Price: "£2,500/month"
+- Description: "80 hours/month (4 hours/day)"
+- Features:
+  * UI component development
+  * Responsive design implementation
+  * Bug fixes & updates
+  * Code reviews
+  * Design system maintenance
+  * Flexible scheduling
+- CTA: "Hire Part-Time" → /contact
+
+TIER 2: FULL-TIME (POPULAR)
+- Name: "Full-Time Frontend Developer"
+- Price: "£4,500/month"
+- Description: "160 hours/month (8 hours/day)"
+- Features:
+  * Dedicated frontend resource
+  * Complete feature ownership
+  * Daily standups
+  * Sprint planning
+  * Performance optimization
+  * Cross-browser testing
+- CTA: "Hire Full-Time" → /contact
+- isPopular: true
+
+TIER 3: TEAM
+- Name: "Frontend Team"
+- Price: "Custom Quote"
+- Description: "Multiple developers + designer"
+- Features:
+  * 2+ frontend developers
+  * UI/UX designer (optional)
+  * Design system creation
+  * Component library
+  * Figma to code conversion
+  * Complete UI delivery
+- CTA: "Build Team" → /contact
+
+---
+
+WHAT FRONTEND DEVELOPERS DO SECTION:
+
+Container: py-20
+
+Use ValueProposition component:
+
+- Title: "What Our Frontend Developers Handle"
+- Subtitle: "Complete UI development from design to deployment"
+- Columns: 3
+
+9 Capabilities:
+
+1. Icon: Palette, Title: "UI Implementation", Description: "Convert Figma/Sketch designs into pixel-perfect code"
+2. Icon: Smartphone, Title: "Responsive Design", Description: "Mobile-first, works on all screen sizes"
+3. Icon: Component, Title: "Component Development", Description: "Reusable, maintainable component libraries"
+4. Icon: Zap, Title: "Performance Optimization", Description: "Fast load times, lazy loading, code splitting"
+5. Icon: Eye, Title: "Accessibility (A11y)", Description: "WCAG compliant, screen reader friendly"
+6. Icon: TestTube, Title: "Testing", Description: "Unit tests, integration tests, E2E tests"
+7. Icon: Paintbrush, Title: "Animations", Description: "Smooth CSS/JS animations and transitions"
+8. Icon: Workflow, Title: "State Management", Description: "Redux, Context API, Vuex, NgRx"
+9. Icon: Code2, Title: "API Integration", Description: "REST APIs, GraphQL, real-time WebSockets"
+
+---
+
+SAMPLE FRONTEND DEVELOPER PROFILES:
+
+Container: py-20, bg-muted, max-w-7xl mx-auto px-6
+
+Header (centered):
+- H2: "Meet Our Frontend Developers"
+- Subtitle: "UI/UX specialists with design and code expertise"
+- mb-12
+
+Profiles Grid: grid-cols-1 md:grid-cols-3 gap-8
+
+3 DEVELOPER PROFILES:
+
+PROFILE 1: REACT SPECIALIST
+- Avatar: User icon, bg-primary/10
+- Name: "Senior Frontend Developer"
+- Specialty: "React & Next.js Expert"
+- Experience: "7+ years"
+- Status: "Available Now" (green dot)
+- Skills (badges):
+  * React
+  * Next.js
+  * TypeScript
+  * Tailwind CSS
+  * Redux
+  * Jest
+- Highlights:
+  * Built 25+ React applications
+  * Expert in performance optimization
+  * Strong UI/UX design skills
+- Projects:
+  * SaaS dashboards
+  * E-commerce frontends
+  * Admin panels
+- CTA: "Schedule Interview" → /contact
+
+PROFILE 2: ANGULAR SPECIALIST
+- Avatar: User icon, bg-primary/10
+- Name: "Senior Frontend Developer"
+- Specialty: "Angular & TypeScript Architect"
+- Experience: "9+ years"
+- Status: "Available in 1 week"
+- Skills (badges):
+  * Angular
+  * TypeScript
+  * RxJS
+  * Material Design
+  * NgRx
+  * Jasmine
+- Highlights:
+  * Enterprise application specialist
+  * Scalable architecture design
+  * Team mentoring experience
+- Projects:
+  * Enterprise CRM interfaces
+  * Financial dashboards
+  * Admin systems
+- CTA: "Schedule Interview" → /contact
+
+PROFILE 3: VUE SPECIALIST
+- Avatar: User icon, bg-primary/10
+- Name: "Senior Frontend Developer"
+- Specialty: "Vue.js & Nuxt Expert"
+- Experience: "6+ years"
+- Status: "Available Now" (green dot)
+- Skills (badges):
+  * Vue.js
+  * Nuxt
+  * JavaScript
+  * Vuex
+  * SCSS
+  * Vitest
+- Highlights:
+  * Rapid prototyping specialist
+  * Design system creation
+  * Performance optimization expert
+- Projects:
+  * Marketing websites
+  * Content platforms
+  * User portals
+- CTA: "Schedule Interview" → /contact
+
+---
+
+TECHNOLOGIES & TOOLS SECTION:
+
+Container: py-20
+
+Use TechStackGrid component:
+
+- Title: "Frontend Technologies Our Developers Master"
+- Description: "Modern tools and frameworks for world-class UIs"
+- Columns: 6
+
+Items (18 technologies with Lucide icons):
+
+FRAMEWORKS:
+1. name: "React", icon: Code2
+2. name: "Angular", icon: Code2
+3. name: "Vue.js", icon: Layers
+4. name: "Next.js", icon: ArrowRight
+5. name: "Nuxt", icon: ArrowRight
+
+LANGUAGES & STYLING:
+6. name: "TypeScript", icon: FileCode
+7. name: "JavaScript", icon: Code
+8. name: "HTML5", icon: FileText
+9. name: "CSS3", icon: Palette
+10. name: "Tailwind CSS", icon: Paintbrush
+11. name: "SCSS/SASS", icon: Droplet
+
+STATE & TOOLS:
+12. name: "Redux", icon: Database
+13. name: "Zustand", icon: Box
+14. name: "Webpack", icon: Package
+15. name: "Vite", icon: Zap
+
+TESTING:
+16. name: "Jest", icon: TestTube
+17. name: "Cypress", icon: CheckCircle
+18. name: "Playwright", icon: Play
+
+---
+
+PROCESS SECTION:
+
+Container: py-20, bg-muted
+
+Use ProcessTimeline component:
+
+- Title: "Hiring Process for Frontend Developers"
+- Subtitle: "From design to deployment-ready developers"
+
+Steps (4 phases):
+
+STEP 1:
+- phase: "Day 1"
+- title: "Share Your Designs"
+- description: "Tell us your framework preference and share designs"
+- deliverables:
+  * Free consultation call
+  * Discuss Figma/Sketch designs
+  * Choose framework (React/Angular/Vue)
+  * Define design system needs
+  * Set engagement model
+
+STEP 2:
+- phase: "Day 2-3"
+- title: "Developer Matching"
+- description: "We send 2-3 frontend developer profiles"
+- deliverables:
+  * Review developer portfolios
+  * See previous UI work
+  * Check framework expertise
+  * Review GitHub profiles
+  * Availability confirmation
+
+STEP 3:
+- phase: "Day 4-5"
+- title: "Design & Code Review"
+- description: "Interview candidates on UI implementation"
+- deliverables:
+  * Schedule video interviews
+  * UI coding challenge (optional)
+  * Discuss component architecture
+  * Review design eye for detail
+  * Make final selection
+
+STEP 4:
+- phase: "Day 6-7"
+- title: "Onboarding & First Components"
+- description: "Developer starts building UI components"
+- deliverables:
+  * Contract signing
+  * Access to design files
+  * Setup component library
+  * First components delivered
+  * Establish code review process
+
+---
+
+FRONTEND VS FULL-STACK SECTION:
+
+Container: py-20, max-w-6xl mx-auto px-6
+
+Header (centered):
+- H2: "Frontend Specialist vs Full-Stack Developer"
+- Description: "When to hire a dedicated frontend expert"
+- mb-12
+
+Comparison Cards (grid-cols-1 md:grid-cols-2 gap-8):
+
+FRONTEND SPECIALIST CARD:
+- Background: card with border-primary
+- Icon: Layout
+- Title: "Hire Frontend Specialist If..."
+- Features:
+  ✓ Complex UI/UX requirements
+  ✓ Design-heavy application
+  ✓ Animation & interaction focus
+  ✓ Need pixel-perfect implementation
+  ✓ Performance-critical frontend
+  ✓ Design system creation
+
+Example projects:
+- SaaS dashboards
+- E-commerce storefronts
+- Admin panels
+- Marketing websites
+
+FULL-STACK CARD:
+- Background: card
+- Icon: Layers
+- Title: "Hire Full-Stack Developer If..."
+- Features:
+  ✓ Simple UI requirements
+  ✓ Backend-heavy application
+  ✓ Need end-to-end ownership
+  ✓ Small team/budget
+  ✓ Basic CRUD interfaces
+  ✓ Standard component usage
+
+Example projects:
+- Internal tools
+- Simple MVPs
+- API-first apps
+- Backend-focused systems
+
+Bottom note: "Need both? Hire a frontend + backend developer → /services/hire-developers"
+
+---
+
+FAQ SECTION:
+
+Container: py-20, bg-muted, max-w-4xl mx-auto px-6
+
+Header: "Frontend Developer FAQs"
+
+10 Questions (Accordion):
+
+Q1: "React vs Angular vs Vue—which should I choose?"
+A: "React for flexibility and ecosystem (most popular). Angular for enterprise apps with TypeScript (structured). Vue for quick development and gentle learning curve. We'll recommend based on your team and project."
+
+Q2: "Do frontend developers handle design too?"
+A: "Our developers implement designs (Figma to code). They have a good design eye and can suggest improvements, but they're not UI/UX designers. We can provide designers separately if needed."
+
+Q3: "Can frontend developers work with our backend team?"
+A: "Absolutely! They integrate with any backend (REST APIs, GraphQL). They collaborate closely with your backend developers or our full-stack developers."
+
+Q4: "Do they write tests?"
+A: "Yes! Our frontend developers write unit tests (Jest, Vitest), integration tests, and can setup E2E tests (Cypress, Playwright)."
+
+Q5: "What's included in responsive design?"
+A: "Mobile-first approach, works perfectly on phones, tablets, desktops, and large screens. Tested on real devices and browsers."
+
+Q6: "Can they convert Figma designs to code?"
+A: "Yes! Pixel-perfect Figma/Sketch to React/Angular/Vue conversion is a core skill. They match spacing, colors, fonts, and interactions exactly."
+
+Q7: "Do they handle accessibility?"
+A: "Yes! WCAG 2.1 AA compliance, screen reader support, keyboard navigation, proper ARIA labels—accessibility is standard practice."
+
+Q8: "Can they optimize performance?"
+A: "Absolutely! Code splitting, lazy loading, image optimization, bundle size reduction, lighthouse scoring—performance is a priority."
+
+Q9: "What if we need custom animations?"
+A: "Our developers create smooth CSS animations, JavaScript interactions, and can use libraries like Framer Motion, GSAP, or Anime.js."
+
+Q10: "Can frontend developers handle DevOps/deployment?"
+A: "Basic deployment to Vercel, Netlify, or similar platforms—yes. For complex CI/CD and infrastructure, we recommend adding a DevOps engineer."
+
+---
+
+CTA SECTIONS:
+
+Add 3 CTAs:
+
+CTA 1 (After Framework Comparison):
+- Variant: 'bordered'
+- Title: "Not Sure Which Framework to Choose?"
+- Description: "Book a free consultation and we'll recommend React, Angular, or Vue based on your needs"
+- PrimaryCTA: "Get Framework Recommendation" → /contact
+- Size: 'medium'
+
+CTA 2 (After Profiles):
+- Variant: 'gradient'
+- Title: "Ready to Hire a Frontend Developer?"
+- Description: "Tell us your framework and we'll match you with senior UI specialists in 48 hours"
+- PrimaryCTA: "Hire Frontend Developer" → /contact
+- SecondaryCTA: "View Pricing" → scroll to pricing
+- Size: 'large'
+
+CTA 3 (Final):
+- Variant: 'gradient'
+- Title: "Let's Build Beautiful User Interfaces"
+- Description: "Book a free consultation to discuss your designs and meet our frontend developers"
+- PrimaryCTA: "Book Consultation" → /contact
+- SecondaryCTA: "Call: +44 7429 917368" → tel link
+- ShowContactInfo: true
+- Size: 'large'
+
+---
+
+GLOBAL REQUIREMENTS:
+
+1. SEO:
+   - Meta title: "Hire Frontend Developers | React, Angular, Vue | House of Developers"
+   - Meta description: "Hire senior frontend developers. React, Angular, Vue experts. £2,500/month part-time, £4,500/month full-time. Pixel-perfect UI implementation."
+
+2. ICONS: Use Lucide React icons only
+3. COMPONENTS USED:
+   - ProcessTimeline ✅
+   - ValueProposition ✅
+   - TechStackGrid ✅
+   - CTASection (×3) ✅
+
+4. PRICING: Show actual prices (£2,500, £4,500, Custom)
+5. MOCKUPS: Beautiful UI in browser + code overlay
+6. PROFILES: 3 generic examples (React, Angular, Vue specialists)
+7. RESPONSIVE: Mobile-first
+8. DARK/LIGHT MODE: Full support with beautiful UI mockup
+
+Build a comprehensive frontend developers hub page that showcases UI expertise and helps users choose the right framework.

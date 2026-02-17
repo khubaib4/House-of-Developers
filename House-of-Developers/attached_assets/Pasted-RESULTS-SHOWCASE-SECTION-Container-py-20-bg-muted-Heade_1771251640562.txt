@@ -1,0 +1,238 @@
+RESULTS SHOWCASE SECTION:
+
+Container: py-20, bg-muted
+
+Header (centered):
+- H2: "Real WordPress Results We've Delivered"
+- Description: "See the transformation from outdated website to modern WordPress powerhouse"
+- mb-12
+
+Layout: max-w-7xl mx-auto px-6
+Grid: grid-cols-1 lg:grid-cols-2 gap-12 items-start
+
+LEFT SIDE - Visual Comparison:
+
+Container: space-y-8
+
+BEFORE MOCKUP:
+- Label badge (top-left):
+  * Text: "Old Site"
+  * Background: red-500/10
+  * Text: red-700
+  * Padding: px-3 py-1.5
+  * Rounded: rounded-full
+  * Font: text-sm font-semibold
+
+- Browser Frame:
+  * Background: card with border
+  * Rounded: rounded-xl
+  * Shadow: lg
+  * Overflow: hidden
+
+- Browser Top Bar:
+  * Height: h-8
+  * Background: muted
+  * Padding: px-3
+  * Flex items-center gap-2
+  * 3 dots (red, yellow, green): w-2.5 h-2.5 rounded-full
+  * URL bar: text-xs text-muted-foreground "oldcompany.com"
+
+- Old Website Content (aspect-video, p-6):
+  * Background: linear gradient from gray-100 to gray-200 (light mode)
+  * Background: linear gradient from gray-800 to gray-900 (dark mode)
+  * Border: 2px border-red-200
+  
+  Content inside (showing outdated design):
+  
+  1. Header area:
+     - Text: "COMPANY NAME" 
+     - Font: Comic Sans or similar outdated font style
+     - Color: gray-600
+     - Size: text-2xl
+     - Border-bottom: thick border
+  
+  2. Navigation (ugly old style):
+     - Flex gap-4
+     - 5 nav items: "Home | About | Services | Products | Contact"
+     - Text: text-xs
+     - Color: blue (old hyperlink blue)
+     - Underline
+  
+  3. Main content area:
+     - 3 gray boxes representing old layout:
+       * Left sidebar: w-1/4, bg-gray-300, h-32
+       * Main content: w-2/4, bg-gray-200, h-32
+       * Right sidebar: w-1/4, bg-gray-300, h-32
+     - Old-style borders around boxes
+  
+  4. Footer:
+     - Small text: "Copyright 1999"
+     - Centered
+     - Gray color
+
+  5. Add some "problems" indicators:
+     - Slow loading icon (spinning loader)
+     - "Not mobile friendly" warning badge
+     - Broken image icon placeholder
+
+AFTER MOCKUP:
+- Label badge:
+  * Text: "New WordPress Site"
+  * Background: green-500/10
+  * Text: green-700
+  * Same styling as before badge
+
+- Browser Frame (same structure as before)
+
+- Browser Top Bar:
+  * WordPress admin bar at top:
+    - Small WordPress logo (real logo from CDN)
+    - Text: "Edit Page"
+    - Background: #23282d (WordPress admin color)
+    - Height: h-6
+    - Text: white, text-xs
+
+- Modern WordPress Content (aspect-video):
+  * Background: white (light mode) / #0a0a0a (dark mode)
+  * Clean, modern design
+  
+  Content inside (showing modern design):
+  
+  1. Modern Header:
+     - Logo area (colored circle with icon)
+     - Text: "Company Name"
+     - Font: Modern sans-serif
+     - Clean navigation: horizontal, spaced
+     - CTA button (blue, rounded)
+  
+  2. Hero Section:
+     - Gradient background (primary to accent)
+     - Large heading: "Welcome"
+     - Subheading
+     - CTA buttons (2): primary + secondary
+     - Modern spacing
+  
+  3. Content Cards (3 cards):
+     - Grid: 3 columns
+     - Each card:
+       * Icon at top (colored circle)
+       * Title
+       * Description lines (2-3)
+       * Shadow effect
+       * Rounded corners
+       * Clean spacing
+  
+  4. Footer (modern):
+     - Dark background
+     - 3 columns layout
+     - Social icons
+     - Copyright text
+
+  5. Add "improvements" indicators:
+     - Speed badge: "1.4s load time"
+     - Mobile icon: "Mobile optimized"
+     - SEO badge: "SEO ready"
+
+Visual Slider (between mockups):
+- Vertical blue line separator between before/after
+- Draggable handle in center (circle with pause icon ||)
+- On hover: cursor changes to ew-resize
+- Can slide left/right to reveal more of before or after
+- Default position: 50%
+- Interactive drag functionality (optional, can be static at 50%)
+
+RIGHT SIDE - Metrics:
+
+Title: "The Results"
+- Font: text-2xl font-bold
+- mb-8
+
+Metrics Stack (space-y-6):
+
+Create 6 metric cards, each with:
+
+Card structure:
+- Padding: p-4
+- Background: card
+- Border: subtle
+- Rounded: rounded-lg
+- Hover: shadow-md
+
+Each metric contains:
+1. Icon + Label (top):
+   - Icon: small, primary color
+   - Label: text-sm font-semibold text-muted-foreground
+
+2. Comparison row (flex items-center gap-3 mt-2):
+   - Before value:
+     * Font: text-lg text-muted-foreground
+     * Decoration: line-through
+   
+   - Arrow icon:
+     * ArrowRight from lucide
+     * Color: primary
+     * Size: 20
+   
+   - After value:
+     * Font: text-2xl md:text-3xl font-bold
+     * Color: primary
+   
+3. Improvement badge (mt-2):
+   - Background: green-500/10
+   - Text: green-700 (dark: green-400)
+   - Padding: px-2.5 py-1
+   - Rounded: rounded-full
+   - Font: text-xs font-semibold
+   - Flex items-center gap-1
+   - TrendingUp icon (size 12)
+
+THE 6 METRICS:
+
+1. Icon: Zap
+   Label: "Page Load Time"
+   Before: "8.5s"
+   After: "1.4s"
+   Improvement: "83% faster"
+
+2. Icon: Smartphone
+   Label: "Mobile Performance Score"
+   Before: "42/100"
+   After: "96/100"
+   Improvement: "+54 points"
+
+3. Icon: TrendingUp
+   Label: "SEO Score"
+   Before: "58/100"
+   After: "94/100"
+   Improvement: "+36 points"
+
+4. Icon: BarChart
+   Label: "Organic Traffic"
+   Before: "1,200/month"
+   After: "4,800/month"
+   Improvement: "+300%"
+
+5. Icon: Target
+   Label: "Bounce Rate"
+   Before: "72%"
+   After: "38%"
+   Improvement: "47% lower"
+
+6. Icon: TrendingUp
+   Label: "Conversion Rate"
+   Before: "1.2%"
+   After: "3.8%"
+   Improvement: "+217%"
+
+RESPONSIVE BEHAVIOR:
+- Desktop: Side-by-side (mockups on left, metrics on right)
+- Mobile: Stack vertically (mockups on top, metrics below)
+- Mockups: reduce size on mobile, maintain aspect ratio
+- Slider: static on mobile (no drag), shows 50/50 split
+
+STYLING NOTES:
+- Old mockup should look intentionally dated (90s/2000s web aesthetic)
+- New mockup should look clean, modern, professional
+- Use subtle shadows and depth
+- Smooth transitions on all hover states
+- Make the visual difference obvious and impactful

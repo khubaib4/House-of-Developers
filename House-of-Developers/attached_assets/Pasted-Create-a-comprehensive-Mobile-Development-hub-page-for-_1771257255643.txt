@@ -1,0 +1,456 @@
+Create a comprehensive Mobile Development hub page for House of Developers.
+
+PAGE: /services/mobile-development/page.tsx
+
+This page introduces mobile app development services and links to Hybrid, iOS, and Kotlin development pages.
+
+---
+
+HERO SECTION:
+
+Container: py-24, max-w-7xl mx-auto px-6
+
+Layout: Grid grid-cols-1 lg:grid-cols-2 gap-12 items-center
+
+Left Column:
+
+- Breadcrumb: "Home / Services / Mobile Development"
+  * text-sm text-muted-foreground, clickable, mb-6
+
+- Badge: "📱 Mobile Development"
+  * bg-primary/10, text-primary, px-3 py-1.5, rounded-full, mb-4
+
+- H1: "Mobile App Development Services"
+  * text-4xl md:text-5xl lg:text-6xl font-bold, mb-4
+
+- Tagline: "Native iOS, Android & Cross-Platform Apps"
+  * text-xl md:text-2xl
+  * Gradient text from blue to purple
+  * font-semibold
+
+- Description (mt-6):
+  * text-xl text-muted-foreground leading-relaxed
+  * "From MVPs to enterprise apps, we build mobile applications that users love. Native iOS, native Android, or cross-platform—we'll recommend the best approach for your needs and budget."
+
+- Stats Grid (mt-8, grid-cols-3 gap-6):
+  1. "50+ Apps Built"
+  2. "4.8★ Avg Rating"
+  3. "2M+ Downloads"
+
+- CTA Buttons (mt-8, flex gap-4):
+  * Primary: "Discuss Your App Idea" → /contact
+  * Secondary: "Compare Platforms" → scroll to comparison
+
+Right Column:
+
+- Mobile App Mockup:
+  * Create 3 phone frames (iPhone style) slightly overlapping
+  * Each showing different app screen
+  * Mockup 1: Login/onboarding screen
+  * Mockup 2: Dashboard with cards
+  * Mockup 3: Profile/settings
+  * Floating elements around:
+    - "iOS & Android" badge
+    - "React Native" badge
+    - "60 FPS" performance indicator
+  * Animated subtle float/bounce effect
+  * Shadow: 2xl
+
+---
+
+MOBILE PLATFORMS OVERVIEW:
+
+Container: py-20, bg-muted, max-w-7xl mx-auto px-6
+
+Header (centered):
+- H2: "Choose Your Mobile Platform"
+- Subtitle: "We build native and cross-platform apps to fit your needs"
+- mb-16
+
+Platform Cards Grid:
+- Grid: grid-cols-1 md:grid-cols-3 gap-8
+
+3 PLATFORM CARDS:
+
+CARD STRUCTURE (each):
+- Background: card with border
+- Padding: p-8
+- Rounded: rounded-2xl
+- Hover: shadow-xl, border-primary, translateY(-4px)
+- Transition: 300ms
+
+Each card:
+1. Icon area (top):
+   - Icon container: w-16 h-16, bg-primary/10, rounded-full, flex center
+   - Icon: primary color, size 32
+
+2. Platform name (text-2xl font-bold mt-6)
+
+3. Tagline (text-sm text-muted-foreground mt-2)
+
+4. Best for badge (mt-4):
+   - Background: accent/10
+   - Text: "Best for:"
+   - Specific use case
+
+5. Key features (mt-6, space-y-2):
+   - 4 features per platform
+   - CheckCircle2 icon + text
+
+6. Development time (mt-6):
+   - Clock icon + timeframe
+   - text-sm text-muted-foreground
+
+7. CTA button (mt-8):
+   - "Learn More" or "Explore {Platform}"
+   - Full width, border variant
+   - Link to detail page
+
+THE 3 PLATFORMS:
+
+PLATFORM 1: HYBRID/CROSS-PLATFORM
+- Icon: Layers (representing cross-platform)
+- Name: "Hybrid Apps"
+- Tagline: "One codebase, iOS & Android"
+- Best for: "Startups, MVPs, Budget-Conscious"
+- Features:
+  * Single codebase for both platforms
+  * React Native or Flutter
+  * 40% faster development
+  * Native-like performance
+- Time: "6-12 weeks"
+- Link: /services/mobile-development/hybrid
+
+PLATFORM 2: iOS
+- Icon: Smartphone (Apple style)
+- Name: "Native iOS"
+- Tagline: "Swift/SwiftUI for iPhone & iPad"
+- Best for: "iOS-First, Premium Apps"
+- Features:
+  * 100% native performance
+  * Latest iOS features first
+  * SwiftUI modern interface
+  * Apple ecosystem integration
+- Time: "8-16 weeks"
+- Link: /services/mobile-development/ios
+
+PLATFORM 3: KOTLIN/ANDROID
+- Icon: Smartphone (Android style)
+- Name: "Native Android"
+- Tagline: "Kotlin for Android devices"
+- Best for: "Android-First, Global Reach"
+- Features:
+  * Pure native performance
+  * Material Design 3
+  * Jetpack Compose
+  * Google services integration
+- Time: "8-16 weeks"
+- Link: /services/mobile-development/kotlin
+
+---
+
+PLATFORM COMPARISON TABLE:
+
+Container: py-20, max-w-7xl mx-auto px-6
+
+Header (centered):
+- H2: "Platform Comparison"
+- Subtitle: "Compare features to choose the right approach"
+- mb-12
+
+Comparison Table:
+- Overflow-x-auto (mobile scroll)
+- Table with sticky header
+
+Table Structure:
+Headers: Feature | Hybrid (React Native) | iOS (Swift) | Android (Kotlin)
+
+COMPARISON ROWS (12 features):
+
+| Feature | Hybrid | iOS | Android |
+|---------|--------|-----|---------|
+| Development Speed | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐ |
+| Cost | Lower | Higher | Higher |
+| Performance | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
+| Code Sharing | iOS + Android | iOS only | Android only |
+| Native Features | Most | All | All |
+| Development Time | 6-12 weeks | 8-16 weeks | 8-16 weeks |
+| Maintenance | Single codebase | iOS updates | Android updates |
+| Team Size | Smaller | Larger | Larger |
+| App Store Distribution | Both | Apple only | Google only |
+| User Base | Both platforms | 1.5B users | 3B users |
+| Best For | MVPs, Startups | Premium apps | Global reach |
+| Popular Apps | Instagram, Discord | Apple apps | Google apps |
+
+Styling:
+- Use stars for ratings
+- Use CheckCircle2/X for yes/no
+- Color-code: Green (advantage), Yellow (neutral), Red (limitation)
+- Mobile: horizontal scroll, sticky first column
+
+---
+
+WHAT WE BUILD SECTION:
+
+Container: py-20, bg-muted
+
+Header (centered):
+- H2: "Mobile Apps We Build"
+- Subtitle: "From concept to App Store"
+- mb-12
+
+Grid: grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8, max-w-7xl mx-auto px-6
+
+6 APP TYPES:
+
+Each card:
+- Icon (size 40, primary)
+- Title (text-xl font-semibold mt-4)
+- Description (text-muted-foreground mt-2)
+- Examples (text-xs, mt-4, italic)
+
+1. Icon: ShoppingBag
+   Title: "E-Commerce Apps"
+   Description: "Mobile shopping experiences with cart, checkout, and payments"
+   Examples: "Fashion stores, marketplaces, food delivery"
+
+2. Icon: Users
+   Title: "Social & Community Apps"
+   Description: "User profiles, feeds, messaging, and engagement features"
+   Examples: "Social networks, forums, dating apps"
+
+3. Icon: Calendar
+   Title: "Booking & Scheduling"
+   Description: "Appointment booking, calendar sync, and notifications"
+   Examples: "Salon booking, fitness classes, consultations"
+
+4. Icon: DollarSign
+   Title: "FinTech Apps"
+   Description: "Banking, payments, budgeting, and financial management"
+   Examples: "Digital wallets, expense trackers, crypto"
+
+5. Icon: Heart
+   Title: "Health & Fitness"
+   Description: "Activity tracking, wellness, nutrition, and meditation"
+   Examples: "Workout apps, calorie counters, yoga"
+
+6. Icon: GraduationCap
+   Title: "Education & E-Learning"
+   Description: "Courses, quizzes, video lessons, and progress tracking"
+   Examples: "Language learning, skill courses, tutoring"
+
+---
+
+MOBILE FEATURES SECTION:
+
+Container: py-20
+
+Use ValueProposition component:
+
+- Title: "Essential Mobile Features We Implement"
+- Subtitle: "Everything your app needs to succeed"
+- Columns: 3
+
+9 Features:
+
+1. Icon: User, Title: "User Authentication", Description: "Email, social login, biometrics, 2FA"
+2. Icon: Bell, Title: "Push Notifications", Description: "Engage users with timely alerts and updates"
+3. Icon: CreditCard, Title: "In-App Payments", Description: "Stripe, Apple Pay, Google Pay integration"
+4. Icon: Camera, Title: "Camera & Gallery", Description: "Photo upload, image editing, QR scanning"
+5. Icon: MapPin, Title: "Location Services", Description: "GPS, maps, geofencing, location tracking"
+6. Icon: Wifi, Title: "Offline Mode", Description: "Work without internet, sync when online"
+7. Icon: Share2, Title: "Social Sharing", Description: "Share to Instagram, Facebook, Twitter"
+8. Icon: BarChart, Title: "Analytics", Description: "Firebase, Mixpanel, custom analytics"
+9. Icon: Zap, Title: "Real-Time Features", Description: "Chat, live updates, WebSocket connections"
+
+---
+
+PROCESS SECTION:
+
+Container: py-20, bg-muted
+
+Use ProcessTimeline component:
+
+- Title: "Our Mobile App Development Process"
+- Subtitle: "From idea to App Store in 8-16 weeks"
+
+Steps (6 phases):
+
+PHASE 1:
+- phase: "Week 1-2"
+- title: "Discovery & Design"
+- description: "Understanding requirements and creating designs"
+- deliverables:
+  * Requirements gathering & user research
+  * Wireframes & user flows
+  * UI/UX design (all screens)
+  * Design system & style guide
+  * Interactive prototype
+
+PHASE 2:
+- phase: "Week 3-4"
+- title: "Development Setup"
+- description: "Project architecture and foundation"
+- deliverables:
+  * Project setup & repository
+  * Architecture & folder structure
+  * API design & documentation
+  * Database schema
+  * Authentication system
+
+PHASE 3:
+- phase: "Week 5-8"
+- title: "Core Development"
+- description: "Building main features and functionality"
+- deliverables:
+  * Screen implementation
+  * Core feature development
+  * API integration
+  * State management
+  * Navigation setup
+
+PHASE 4:
+- phase: "Week 9-12"
+- title: "Advanced Features"
+- description: "Adding complex functionality"
+- deliverables:
+  * Push notifications
+  * Payment integration
+  * Camera/gallery features
+  * Location services
+  * Offline mode
+
+PHASE 5:
+- phase: "Week 13-14"
+- title: "Testing & QA"
+- description: "Quality assurance and bug fixing"
+- deliverables:
+  * Unit & integration testing
+  * Device testing (iOS & Android)
+  * Performance optimization
+  * Security audit
+  * Bug fixes
+
+PHASE 6:
+- phase: "Week 15-16"
+- title: "Launch & Support"
+- description: "App Store submission and deployment"
+- deliverables:
+  * App Store submission (Apple)
+  * Google Play submission
+  * App approval & launch
+  * Post-launch monitoring
+  * 30 days support included
+
+---
+
+WHY CHOOSE US:
+
+Container: py-20
+
+Use ValueProposition component:
+
+- Title: "Why Choose House of Developers for Mobile Apps"
+- Columns: 3
+
+6 Values:
+
+1. Icon: Award, Title: "50+ Apps Delivered", Description: "Experience across industries and platforms", Stat: "50+ Apps"
+2. Icon: Star, Title: "4.8★ Average Rating", Description: "Our apps consistently achieve high user ratings", Stat: "4.8/5"
+3. Icon: Zap, Title: "Fast Development", Description: "Launch in 8-16 weeks, not 6 months", Stat: "8-16 Weeks"
+4. Icon: Smartphone, Title: "Cross-Platform Expertise", Description: "React Native, iOS, and Android specialists"
+5. Icon: Users, Title: "User-Centric Design", Description: "Beautiful interfaces that users love"
+6. Icon: Headphones, Title: "Post-Launch Support", Description: "Updates, maintenance, and feature additions"
+
+---
+
+FAQ SECTION:
+
+Container: py-20, bg-muted, max-w-4xl mx-auto px-6
+
+Header: "Mobile App Development FAQs"
+
+12 Questions (Accordion):
+
+Q1: "Should I build native or cross-platform?"
+A: "For MVPs and startups: cross-platform (React Native/Flutter) is faster and cheaper. For premium apps or heavy performance needs: native (Swift/Kotlin) is better. We'll recommend based on your specific requirements."
+
+Q2: "How long does mobile app development take?"
+A: "Simple apps: 6-10 weeks. Standard apps: 10-14 weeks. Complex apps: 14-20 weeks. Timeline depends on features, complexity, and platforms."
+
+Q3: "Do I need both iOS and Android?"
+A: "In the UK, iOS has 50% market share. For maximum reach, build both. Start with one platform (based on your target audience) then add the other later, or use cross-platform to launch both simultaneously."
+
+Q4: "How much does mobile app development cost?"
+A: "Simple apps: £15,000-£25,000. Standard apps: £25,000-£50,000. Complex apps: £50,000-£150,000+. We provide detailed quotes after understanding your requirements."
+
+Q5: "Can you help with App Store submission?"
+A: "Yes! We handle the entire submission process for both Apple App Store and Google Play Store, including app optimization, screenshots, descriptions, and approval management."
+
+Q6: "What happens after the app is launched?"
+A: "We provide 30 days of post-launch support (bug fixes, minor updates). After that, we offer monthly maintenance packages for ongoing updates, feature additions, and technical support."
+
+Q7: "Can you integrate with my existing backend/API?"
+A: "Absolutely! We integrate with any REST API, GraphQL API, or backend system. We can also build custom backends if needed (Node.js, Python, Firebase)."
+
+Q8: "Do you design the app or just develop it?"
+A: "We do both! Our process includes full UI/UX design, wireframes, prototypes, and design systems. You'll see exactly what the app looks like before we start coding."
+
+Q9: "What technologies do you use?"
+A: "Cross-platform: React Native, Flutter. iOS: Swift, SwiftUI. Android: Kotlin, Jetpack Compose. Backend: Node.js, Firebase, AWS. We choose based on your needs."
+
+Q10: "Can I see the app before launch?"
+A: "Yes! We provide TestFlight (iOS) and beta builds (Android) so you can test the app on your device throughout development. We also do weekly demos."
+
+Q11: "Do you provide analytics and crash reporting?"
+A: "Yes, we integrate Firebase Analytics, Crashlytics, and/or Mixpanel so you can track user behavior, crashes, and app performance from day one."
+
+Q12: "Can you update my existing app?"
+A: "Yes! We take over existing apps for updates, new features, bug fixes, or complete redesigns. We work with apps built by other teams or legacy codebases."
+
+---
+
+CTA SECTIONS:
+
+Add 2 CTAs:
+
+CTA 1 (After Comparison Table):
+- Variant: 'bordered'
+- Title: "Not Sure Which Platform to Choose?"
+- Description: "Book a free consultation and we'll help you decide the best approach"
+- PrimaryCTA: "Get Expert Advice" → /contact
+- Size: 'medium'
+
+CTA 2 (Final):
+- Variant: 'gradient'
+- Title: "Ready to Build Your Mobile App?"
+- Description: "From idea to App Store, we handle everything. Book a free consultation to discuss your app concept."
+- PrimaryCTA: "Discuss Your App Idea" → /contact
+- SecondaryCTA: "Call: +44 7429 917368" → tel link
+- ShowContactInfo: true
+- Size: 'large'
+
+---
+
+GLOBAL REQUIREMENTS:
+
+1. SEO:
+   - Meta title: "Mobile App Development Services | iOS, Android, Hybrid | House of Developers"
+   - Meta description: "Expert mobile app development in UK. Native iOS, Android, and cross-platform apps. React Native, Swift, Kotlin. From £15,000. Free consultation."
+
+2. NAVIGATION:
+   - Update mega menu to include mobile development
+   - Breadcrumbs functional
+   - Links to all 3 platform pages
+
+3. COMPONENTS USED:
+   - ProcessTimeline ✅
+   - ValueProposition (×2) ✅
+   - CTASection (×2) ✅
+
+4. RESPONSIVE: Mobile-first (ironic but important!)
+5. DARK/LIGHT MODE: Full support
+6. ANIMATIONS: Smooth, professional
+7. ACCESSIBILITY: Complete keyboard nav
+
+Build a comprehensive mobile development hub page that guides users to choose the right platform for their needs.

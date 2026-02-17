@@ -1,0 +1,404 @@
+Create two new pages for House of Developers: Services overview page and Build MVP service page.
+
+PAGE 1: SERVICES OVERVIEW PAGE (/services/page.tsx)
+
+Create a comprehensive services page with all offerings.
+
+HERO SECTION:
+
+Container:
+- Padding: py-24 (mobile: py-16)
+- max-w-7xl mx-auto px-6
+- Text align: center
+
+Content:
+- Small badge: "What We Do" (primary color, mb-4)
+- H1: "Services Built for Startups & Scale"
+- Subtitle (text-xl text-muted-foreground, mt-4, max-w-3xl mx-auto):
+  "From MVP to enterprise. We build digital products that startups need to launch, scale, and succeed."
+- Decorative gradient background (subtle)
+
+ALL SERVICES SECTION:
+
+Create detailed service cards for ALL services. Each service gets a full card.
+
+Grid layout:
+- Grid: grid-cols-1 lg:grid-cols-2 gap-8
+- Padding: py-16
+- max-w-7xl mx-auto px-6
+
+Service card structure (consistent for all):
+- Background: card with border
+- Padding: p-8
+- Border radius: rounded-xl
+- Hover effect: shadow and border-primary
+
+Each card contains:
+1. Icon (top-left, size 48, primary color)
+2. Title (text-2xl font-bold, mt-4)
+3. Description (text-muted-foreground, mt-3, leading-relaxed)
+4. Key Deliverables section:
+   - Label: "What's Included:" (font-semibold, mt-6, mb-3)
+   - List: 4-5 bullet points with checkmark icons (CheckCircle2)
+   - Each item: flex gap-2, items-start
+5. "Learn More →" link (text-primary, mt-6, inline-flex items-center)
+
+THE SERVICES TO CREATE:
+
+1. BUILD MVP (Rocket icon)
+   Title: "30-Day MVP Program"
+   Description: "Launch your startup in 30 days. We handle discovery, design, development, cloud setup, and launch—everything you need to go from idea to market."
+   
+   Deliverables:
+   - Discovery workshop & strategy session
+   - UI/UX design & prototyping
+   - Core feature development (web or mobile)
+   - Cloud infrastructure & deployment
+   - Post-launch support & iterations
+   
+   Link to: /services/build-mvp
+
+2. WEB DEVELOPMENT (Globe icon)
+   Title: "Web Development"
+   Description: "From corporate websites to high-performance web applications. We build fast, scalable, and conversion-optimized web platforms."
+   
+   Deliverables:
+   - Custom web applications & SaaS platforms
+   - Corporate websites & landing pages
+   - Headless CMS integration
+   - E-commerce solutions
+   - Performance optimization & SEO
+   
+   Link to: /services/web-development
+
+3. CUSTOM DEVELOPMENT (Code2 icon)
+   Title: "Custom Development"
+   Description: "Bespoke solutions for unique business needs. Admin dashboards, internal tools, API integrations, and complex web applications."
+   
+   Deliverables:
+   - Custom web applications from scratch
+   - Admin dashboards & CMS systems
+   - Third-party API integrations
+   - Real-time systems & WebSocket apps
+   - Database design & optimization
+   
+   Link to: /services/custom-development
+
+4. WEB APPS (Layout icon)
+   Title: "Web Applications"
+   Description: "Full-stack SaaS platforms and web apps built for scale. Real-time features, payment integration, and enterprise-grade architecture."
+   
+   Deliverables:
+   - Complete SaaS platform development
+   - User authentication & authorization
+   - Payment gateway integration (Stripe, PayPal)
+   - Real-time features & notifications
+   - Multi-tenant architecture
+   
+   Link to: /services/web-apps
+
+5. MOBILE DEVELOPMENT (Smartphone icon)
+   Title: "Mobile App Development"
+   Description: "Native iOS, Android, and cross-platform mobile apps. Beautiful interfaces, smooth performance, app store deployment."
+   
+   Deliverables:
+   - iOS & Android native development
+   - React Native cross-platform apps
+   - App Store & Play Store deployment
+   - Push notifications & analytics
+   - Backend API development
+   
+   Link to: /services/mobile-development
+
+6. AI SERVICES (Brain icon)
+   Title: "AI Integration & Automation"
+   Description: "AI-powered features that transform your business. Chatbots, automation systems, intelligent workflows, and AI agents."
+   
+   Deliverables:
+   - AI chatbots & virtual assistants
+   - Business process automation
+   - Workflow automation systems
+   - Custom AI agent development
+   - Integration with OpenAI, Claude, etc.
+   
+   Link to: /services/ai-services
+
+7. CMS DEVELOPMENT (FileText icon)
+   Title: "CMS Development"
+   Description: "Content management systems for easy website updates. WordPress, Shopify, and headless CMS solutions."
+   
+   Deliverables:
+   - WordPress with modern page builders
+   - Shopify store development
+   - Headless CMS (Contentful, Sanity)
+   - Custom theme development
+   - Plugin customization & integration
+   
+   Link to: /services/cms-development
+
+8. HIRE DEVELOPERS (Users icon)
+   Title: "Hire Dedicated Developers"
+   Description: "Scale your team with vetted developers. Full-time or part-time, integrated with your workflow, managed by us."
+   
+   Deliverables:
+   - Pre-vetted senior developers
+   - Full-time or part-time engagement
+   - Direct communication & collaboration
+   - Project management included
+   - Flexible hiring models
+   
+   Link to: /services/hire-developers
+
+9. SEO SERVICES (TrendingUp icon)
+   Title: "SEO & Growth Marketing"
+   Description: "Technical SEO, content optimization, and growth strategies to drive organic traffic and conversions."
+   
+   Deliverables:
+   - Technical SEO audit & fixes
+   - On-page optimization
+   - Local SEO for UK businesses
+   - Content strategy & optimization
+   - Performance tracking & reporting
+   
+   Link to: /services/seo-services
+
+PROCESS SECTION:
+
+After all services, add a "How We Work" section:
+
+Container:
+- Background: muted
+- Padding: py-20 (mobile: py-12)
+- max-w-7xl mx-auto px-6
+
+Header (centered):
+- H2: "Our Process"
+- Subtitle: "From discovery to launch, we've got you covered."
+- mb-16
+
+Process Steps:
+- Grid: grid-cols-1 md:grid-cols-5 gap-8
+- 5 steps with connecting arrows (desktop only)
+
+Each step:
+- Number badge (w-12 h-12, rounded-full, bg-primary, text-white, centered)
+- Title (font-semibold, mt-4)
+- Description (text-sm text-muted-foreground, mt-2)
+
+THE 5 STEPS:
+
+1. Discovery
+   "We understand your vision, goals, and technical requirements."
+
+2. Design
+   "UI/UX design and prototyping for validation before development."
+
+3. Build
+   "Agile development with weekly updates and demos."
+
+4. Launch
+   "Deployment, testing, and go-live support."
+
+5. Support
+   "Post-launch monitoring, updates, and iterations."
+
+CTA SECTION:
+
+Same as homepage CTA:
+- Gradient background
+- "Ready to Start Your Project?"
+- "Book a free consultation" CTA
+
+---
+
+PAGE 2: BUILD MVP PAGE (/services/build-mvp/page.tsx)
+
+Create a dedicated landing page for the 30-Day MVP Program.
+
+HERO SECTION:
+
+Container:
+- Padding: py-24 (mobile: py-16)
+- max-w-7xl mx-auto px-6
+- Grid: grid-cols-1 lg:grid-cols-2 gap-12 items-center
+
+Left column:
+- Badge: "🚀 30-Day MVP Program"
+- H1: "Launch Your MVP in 30 Days"
+- Description (text-lg text-muted-foreground, mt-4):
+  "Stop waiting. Stop overthinking. We build launch-ready MVPs in 30 days—from discovery to deployment. No shortcuts, just smart execution."
+- CTA buttons (mt-8, flex gap-4):
+  * "Book Free Consultation" (primary)
+  * "See Pricing" (secondary, scroll to pricing section)
+
+Right column:
+- Placeholder illustration/graphic (gradient card with icon)
+- Stats overlay:
+  * "30 Days to Launch"
+  * "Full Stack Included"
+  * "Post-Launch Support"
+
+WHAT'S INCLUDED SECTION:
+
+Container: py-20, max-w-7xl mx-auto px-6
+
+Header (centered):
+- H2: "Everything You Need to Launch"
+- Subtitle: "No hidden costs. No surprises. Everything included."
+- mb-12
+
+Features grid:
+- Grid: grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8
+- 6 feature cards
+
+Each card:
+- Icon (CheckCircle2, primary color, size 32)
+- Title (font-semibold, mt-4)
+- Description (text-sm text-muted-foreground, mt-2)
+
+THE 6 FEATURES:
+
+1. Discovery & Strategy
+   "Full discovery workshop, competitive analysis, and feature prioritization."
+
+2. UI/UX Design
+   "Complete design system, wireframes, and high-fidelity prototypes."
+
+3. Full-Stack Development
+   "Frontend, backend, database, authentication—everything."
+
+4. Cloud Infrastructure
+   "AWS/Vercel setup, CI/CD pipelines, and production deployment."
+
+5. Testing & QA
+   "Comprehensive testing, bug fixes, and performance optimization."
+
+6. Launch Support
+   "Go-live support and 30 days of post-launch maintenance."
+
+30-DAY TIMELINE SECTION:
+
+Container:
+- Background: muted
+- Padding: py-20
+- max-w-5xl mx-auto px-6
+
+Header (centered):
+- H2: "The 30-Day Breakdown"
+- Subtitle: "Week by week, here's what happens."
+- mb-12
+
+Timeline:
+- Vertical timeline with 4 weeks
+- Each week: connector line, week number badge, content card
+
+Week structure (card with left border, primary color):
+- Week badge (text-sm font-semibold, primary color)
+- Title (text-xl font-bold)
+- Tasks list (4-5 items, text-sm, with bullet points)
+
+THE 4 WEEKS:
+
+Week 1: Discovery & Design
+- Kickoff meeting & requirements gathering
+- User research & competitive analysis
+- Wireframing & user flow mapping
+- Design system creation
+- High-fidelity mockups & prototypes
+
+Week 2: Core Development
+- Frontend development setup
+- Backend architecture & API design
+- Database schema & models
+- Authentication & user management
+- Core feature implementation (50%)
+
+Week 3: Feature Completion
+- Complete all core features
+- Third-party integrations
+- Payment gateway setup (if needed)
+- Admin dashboard development
+- Internal testing & bug fixes
+
+Week 4: Testing & Launch
+- QA testing & bug fixing
+- Performance optimization
+- Security audit
+- Production deployment
+- Launch & handover
+
+PRICING SECTION (id="pricing"):
+
+Container: py-20, max-w-4xl mx-auto px-6
+
+Header (centered):
+- H2: "Simple, Transparent Pricing"
+- mb-12
+
+Pricing card (centered, max-w-md):
+- Background: card with thick primary border
+- Padding: p-10
+- Border radius: rounded-2xl
+
+Content:
+- Label: "30-Day MVP Program"
+- Price: "Starting from £15,000" (text-5xl font-bold, primary color)
+- Description: "All-inclusive. No hidden fees."
+- Features list (mt-8):
+  * Everything listed above
+  * 30 days delivery guarantee
+  * Source code ownership
+  * Post-launch support included
+  * No monthly fees
+
+CTA button: "Get Custom Quote" (full width, mt-8)
+
+Note below: "Final pricing depends on complexity. Book a call for accurate estimate."
+
+FAQ SECTION:
+
+Container: py-20, max-w-3xl mx-auto px-6
+
+Header (centered):
+- H2: "Frequently Asked Questions"
+- mb-12
+
+FAQ items (accordion-style):
+Create 6 FAQ items using shadcn Accordion component
+
+THE 6 FAQS:
+
+Q: "What if my MVP needs more than 30 days?"
+A: "We scope projects to fit 30 days. If you need additional features, we can extend or add them post-launch."
+
+Q: "Do I own the source code?"
+A: "Yes, 100%. All code, designs, and assets are yours."
+
+Q: "What tech stack do you use?"
+A: "We recommend Next.js, Node.js, and PostgreSQL—but we adapt based on your needs."
+
+Q: "Can you work with my existing design?"
+A: "Absolutely. We can start from your designs or create new ones."
+
+Q: "What happens after 30 days?"
+A: "You get 30 days of free support. After that, we offer maintenance packages or dedicated developers."
+
+Q: "Do you sign NDAs?"
+A: "Yes, we're happy to sign NDAs before any discussion."
+
+FINAL CTA:
+
+Same gradient CTA as other pages:
+- "Ready to Launch Your MVP?"
+- "Book your free consultation now"
+
+REQUIREMENTS:
+- Both pages fully mobile-responsive
+- Dark/light mode compatible
+- Smooth scroll to pricing section
+- All CTAs should link to contact page (we'll build next)
+- Breadcrumbs at top of service pages
+- SEO meta tags for both pages
+- Proper heading hierarchy (h1, h2, h3)
+
+Build both pages with consistent styling and spacing from the homepage.

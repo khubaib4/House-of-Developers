@@ -1,0 +1,569 @@
+Create 8 reusable components for House of Developers CMS service pages. These components focus on value demonstration, process transparency, and driving consultation bookings. NO PRICING COMPONENTS.
+
+COMPONENT 1: CTA SECTION (/components/ui/CTASection.tsx)
+
+Create a compelling CTA section to drive consultation bookings.
+
+PROPS:
+- variant: 'default' | 'gradient' | 'bordered' | 'minimal'
+- title: string
+- description: string
+- primaryCTA: { text: string, link: string }
+- secondaryCTA?: { text: string, link: string }
+- showContactInfo?: boolean (shows phone/email below)
+- icon?: LucideIcon (optional decorative icon)
+- size?: 'small' | 'medium' | 'large'
+
+DESIGN VARIANTS:
+
+DEFAULT:
+- Background: muted
+- Padding: py-16 (small), py-20 (medium), py-24 (large)
+- Max width: max-w-4xl mx-auto
+- Text align: center
+
+GRADIENT:
+- Background: linear gradient from primary to accent
+- Text color: white
+- Box shadow: 2xl with glow
+- Premium feel
+
+BORDERED:
+- Border: 2px border-primary
+- Background: card
+- Subtle shadow
+
+MINIMAL:
+- No background
+- Simple border-t
+- Clean and understated
+
+STRUCTURE:
+- Icon (if provided, size 48, primary color, mb-4, centered)
+- Title (text-3xl md:text-4xl font-bold)
+- Description (text-lg text-muted-foreground or white/90, mt-4, max-w-2xl mx-auto)
+- Buttons container (mt-8, flex gap-4, justify-center, flex-wrap):
+  * Primary button:
+    - If gradient variant: bg-white text-primary
+    - Else: bg-accent text-white
+    - Height: h-12 md:h-14
+    - Padding: px-8
+    - Rounded: rounded-lg
+    - Font: font-semibold text-lg
+    - Hover: scale 1.05, shadow
+  * Secondary button (if provided):
+    - Border variant
+    - Same size as primary
+    - Hover effects
+- Contact info (if showContactInfo):
+  * mt-8, flex gap-6, justify-center, text-sm
+  * Phone icon + number
+  * Mail icon + email
+  * Each clickable
+
+RESPONSIVE:
+- Mobile: Stack buttons vertically, smaller text
+- Desktop: Horizontal buttons
+
+USAGE EXAMPLES:
+- Between sections as conversion points
+- End of page final CTA
+- After feature showcases
+- Multiple times per page with different messaging
+
+---
+
+COMPONENT 2: VALUE PROPOSITION (/components/ui/ValueProposition.tsx)
+
+Showcase why choose us with compelling value cards.
+
+PROPS:
+- title: string (section heading)
+- subtitle?: string
+- values: array of {
+    icon: LucideIcon,
+    title: string,
+    description: string,
+    stat?: string (e.g., "98% Success Rate")
+  }
+- layout: 'grid' | 'carousel' (grid for 2-4 items, carousel for 5+)
+- columns?: number (default: 3)
+
+DESIGN:
+- Header (centered):
+  * Title: text-3xl font-bold
+  * Subtitle: text-muted-foreground mt-2
+  * mb-12
+
+- Grid layout:
+  * Grid: grid-cols-1 md:grid-cols-2 lg:grid-cols-{columns}
+  * Gap: gap-8
+  * Max-width: max-w-7xl mx-auto
+
+Each value card:
+- Background: card with subtle border
+- Padding: p-8
+- Border radius: rounded-xl
+- Hover: shadow-lg, border-primary, translateY(-4px)
+- Transition: smooth 300ms
+
+Card structure:
+- Icon container:
+  * Size: w-14 h-14
+  * Background: primary/10
+  * Rounded: rounded-lg
+  * Flex center
+  * Icon: primary color, size 28
+- Title (text-xl font-semibold mt-4)
+- Description (text-muted-foreground mt-2 leading-relaxed)
+- Stat (if provided):
+  * mt-4
+  * Text: text-2xl font-bold primary color
+  * Small label below
+
+RESPONSIVE:
+- Mobile: 1 column
+- Tablet: 2 columns
+- Desktop: 3-4 columns
+
+---
+
+COMPONENT 3: PROCESS TIMELINE (/components/ui/ProcessTimeline.tsx)
+
+Visual project timeline showing how we work.
+
+PROPS:
+- title?: string (default: "Our Process")
+- subtitle?: string
+- steps: array of {
+    phase: string (e.g., "Week 1", "Phase 1"),
+    title: string,
+    description: string,
+    deliverables: array of strings,
+    duration?: string (e.g., "5-7 days")
+  }
+- layout: 'vertical' | 'horizontal'
+
+DESIGN:
+
+Header (if title provided):
+- Title: text-3xl font-bold text-center
+- Subtitle: text-muted-foreground mt-2
+- mb-12
+
+VERTICAL LAYOUT (default, better for 4+ steps):
+- Container: space-y-0 relative
+- Connecting line: absolute left-8 top-0 bottom-0 w-0.5 bg-border
+
+Each step:
+- Container: relative flex gap-6 pb-12 last:pb-0
+- Phase badge (left):
+  * Position: relative z-10
+  * Circle: w-16 h-16
+  * Background: card with border-2 border-primary
+  * Number/icon: centered, text-xl font-bold primary
+  * Shadow: md
+- Content (right):
+  * Phase label: text-sm text-muted-foreground uppercase tracking-wide
+  * Title: text-2xl font-semibold mt-1
+  * Duration badge (if provided): inline, text-xs bg-muted px-2 py-1 rounded-full
+  * Description: text-muted-foreground mt-2 leading-relaxed
+  * Deliverables:
+    - Label: "Deliverables:" font-semibold mt-4 mb-2
+    - List: space-y-2
+    - Each item: flex gap-2, CheckCircle2 icon (primary, size 16), text-sm
+
+HORIZONTAL LAYOUT (for 3-4 steps):
+- Grid: grid-cols-1 md:grid-cols-{steps.length}
+- Gap: gap-8
+- Connecting arrows between steps (desktop only)
+
+ANIMATION:
+- Fade in and slide up on scroll
+- Stagger: each step with 150ms delay
+
+RESPONSIVE:
+- Mobile: Always vertical
+- Desktop: Horizontal if 3-4 steps, vertical if 5+
+
+---
+
+COMPONENT 4: TECH STACK GRID (/components/ui/TechStackGrid.tsx)
+
+Display technologies, plugins, or integrations.
+
+PROPS:
+- title: string
+- description?: string
+- items: array of {
+    name: string,
+    icon?: LucideIcon,
+    logo?: string (URL to logo image),
+    category?: string
+  }
+- columns?: number (default: 6)
+- showCategories?: boolean (group by category)
+
+DESIGN:
+
+Header:
+- Title: text-3xl font-bold text-center
+- Description: text-muted-foreground mt-2
+- mb-12
+
+Grid:
+- Grid: grid-cols-3 md:grid-cols-4 lg:grid-cols-{columns}
+- Gap: gap-6
+- Max-width: max-w-6xl mx-auto
+
+Each item card:
+- Container: flex flex-col items-center p-6 rounded-xl border bg-card
+- Hover: bg-muted, shadow-md, scale-105
+- Transition: 200ms
+
+Card content:
+- Icon/Logo:
+  * If logo (image): w-16 h-16 object-contain grayscale hover:grayscale-0
+  * If icon: size 40, muted-foreground hover:primary
+- Name: text-sm font-medium text-center mt-3
+- Category (if provided): text-xs text-muted-foreground mt-1
+
+If showCategories:
+- Group items by category
+- Category headers above each group
+- Dividers between categories
+
+RESPONSIVE:
+- Mobile: 2-3 columns
+- Tablet: 4 columns
+- Desktop: 6 columns
+
+---
+
+COMPONENT 5: FEATURE SHOWCASE CARD (/components/ui/FeatureShowcaseCard.tsx)
+
+Large feature highlight with optional visual.
+
+PROPS:
+- icon: LucideIcon
+- title: string
+- description: string
+- benefits: array of strings (bullet points)
+- image?: string (mockup/screenshot)
+- reversed?: boolean (swap content/image position)
+- backgroundColor?: string (custom bg color)
+
+DESIGN:
+- Container: rounded-2xl overflow-hidden
+- Background: card or custom color
+- Border: subtle
+- Padding: p-8 md:p-12
+
+Grid layout:
+- Grid: grid-cols-1 lg:grid-cols-2 gap-12 items-center
+- If reversed: reverse on desktop
+
+Content side:
+- Icon:
+  * Size: w-16 h-16
+  * Background: primary/10
+  * Rounded: rounded-xl
+  * Padding: p-3
+  * Icon: primary color, size 32
+- Title: text-3xl font-bold mt-6
+- Description: text-lg text-muted-foreground mt-4 leading-relaxed
+- Benefits list (mt-8):
+  * Each benefit: flex gap-3 items-start mb-4
+  * Sparkles or CheckCircle2 icon (accent color)
+  * Text: text-base font-medium
+
+Visual side (if image provided):
+- Image container:
+  * Rounded: rounded-xl
+  * Shadow: 2xl
+  * Border: subtle
+  * Overflow: hidden
+- Image: aspect-video or aspect-square, object-cover
+- Or gradient placeholder with icon if no image
+
+RESPONSIVE:
+- Mobile: Stack vertically, content first
+- Desktop: Side by side
+
+---
+
+COMPONENT 6: TESTIMONIAL SLIDER (/components/ui/TestimonialSlider.tsx)
+
+Client testimonial carousel.
+
+PROPS:
+- title?: string (default: "What Our Clients Say")
+- testimonials: array of {
+    quote: string,
+    author: string,
+    role: string,
+    company: string,
+    avatar?: string,
+    rating?: number (1-5),
+    project?: string (e.g., "WordPress E-commerce Site")
+  }
+- autoPlay?: boolean (default: true)
+- interval?: number (default: 5000ms)
+
+DESIGN:
+
+Header (if title):
+- Title: text-3xl font-bold text-center
+- mb-12
+
+Carousel container:
+- Max-width: max-w-4xl mx-auto
+- Position: relative
+- Padding: px-12 (space for arrows)
+
+Testimonial card:
+- Background: gradient or muted
+- Padding: p-8 md:p-12
+- Border radius: rounded-2xl
+- Shadow: lg
+- Min height: min-h-[300px]
+
+Card content:
+- Quote icon (Quote lucide icon):
+  * Size: 48
+  * Color: primary with opacity
+  * Position: absolute top-8 left-8
+- Rating stars (if provided):
+  * Flex gap-1
+  * Star icons (filled based on rating)
+  * Color: gold (#fbbf24)
+  * mb-4
+- Quote text:
+  * Text: text-xl md:text-2xl
+  * Font: font-medium
+  * Leading: relaxed
+  * Italic
+  * Margin: mb-8
+- Author section:
+  * Flex items-center gap-4
+  * Border-top: pt-6
+  * Avatar: w-14 h-14 rounded-full (or placeholder with initials)
+  * Info:
+    - Name: font-semibold text-lg
+    - Role & Company: text-sm text-muted-foreground
+    - Project (if provided): text-xs text-primary mt-1
+
+Navigation:
+- Previous/Next buttons:
+  * Position: absolute left-0/right-0 top-1/2
+  * Size: w-12 h-12
+  * Background: card with border
+  * Rounded: full
+  * ChevronLeft/Right icons
+  * Hover: bg-primary, text-white
+  * Disabled state: opacity-50, cursor-not-allowed
+- Dot indicators (bottom):
+  * Flex gap-2 justify-center mt-8
+  * Each dot: w-2 h-2 rounded-full
+  * Active: w-8 bg-primary
+  * Inactive: bg-muted-foreground/30
+  * Clickable
+
+Auto-play:
+- Transition every 5 seconds
+- Pause on hover
+- Resume on mouse leave
+- Smooth fade transition
+
+RESPONSIVE:
+- Mobile: Smaller padding, text
+- Desktop: Full size
+
+---
+
+COMPONENT 7: BEFORE/AFTER COMPARISON (/components/ui/BeforeAfterComparison.tsx)
+
+Visual results showcase with metrics.
+
+PROPS:
+- title: string
+- beforeImage?: string
+- afterImage?: string
+- beforeLabel?: string (default: "Before")
+- afterLabel?: string (default: "After")
+- metrics: array of {
+    label: string,
+    before: string,
+    after: string,
+    improvement: string (e.g., "+150%", "3x faster")
+    icon?: LucideIcon
+  }
+- description?: string
+
+DESIGN:
+
+Header:
+- Title: text-3xl font-bold text-center
+- Description: text-muted-foreground mt-2
+- mb-12
+
+Grid layout:
+- Grid: grid-cols-1 lg:grid-cols-2 gap-12
+- Items: center aligned
+
+Image comparison (if images provided):
+- Container: relative aspect-video rounded-xl overflow-hidden
+- Before image: full width
+- Slider control:
+  * Vertical line at 50% (draggable)
+  * Handle: circle with arrows
+  * After image: clipped based on slider position
+- Labels: absolute, top corners, badges with "Before"/"After"
+- Interactive: drag to compare
+
+OR Simple side-by-side if no slider:
+- Before card: image + "Before" label
+- After card: image + "After" label
+- Arrow between them
+
+Metrics section:
+- Grid: space-y-6
+- Each metric card:
+  * Background: card with border
+  * Padding: p-6
+  * Rounded: rounded-xl
+  * Icon (if provided): top-left, primary color
+  * Label: font-semibold
+  * Comparison row (mt-3):
+    - Before value: text-lg text-muted-foreground line-through
+    - Arrow icon (ArrowRight, primary)
+    - After value: text-2xl font-bold primary color
+  * Improvement badge:
+    - Background: green/10
+    - Text: green, font-semibold
+    - Padding: px-3 py-1
+    - Rounded: rounded-full
+    - Text: improvement value
+
+RESPONSIVE:
+- Mobile: Stack vertically
+- Desktop: Side by side
+
+---
+
+COMPONENT 8: PACKAGE INCLUDES (/components/ui/PackageIncludes.tsx)
+
+Detailed deliverables organized by category.
+
+PROPS:
+- title?: string (default: "What's Included")
+- subtitle?: string
+- categories: array of {
+    name: string,
+    icon: LucideIcon,
+    description?: string,
+    features: array of {
+      name: string,
+      description?: string
+    }
+  }
+- layout: 'accordion' | 'tabs' | 'grid'
+
+DESIGN:
+
+Header:
+- Title: text-3xl font-bold text-center
+- Subtitle: text-muted-foreground mt-2
+- mb-12
+
+ACCORDION LAYOUT (default, best for mobile):
+- Each category: accordion item
+- Header (clickable):
+  * Flex items-center justify-between
+  * Icon + Category name
+  * ChevronDown (rotates when open)
+  * Padding: p-4
+  * Border: border-b
+  * Hover: bg-muted
+- Content (when expanded):
+  * Padding: p-6
+  * Background: muted/50
+  * Features list:
+    - Each feature: flex gap-3 items-start mb-4
+    - CheckCircle2 icon (primary color)
+    - Feature name: font-medium
+    - Description: text-sm text-muted-foreground mt-1
+
+TABS LAYOUT (desktop):
+- Tab buttons at top
+- Active tab: border-b-2 border-primary
+- Content area shows selected category
+- Smooth transition
+
+GRID LAYOUT (for few categories):
+- Grid: grid-cols-1 md:grid-cols-2 lg:grid-cols-3
+- Each category as card
+- Always visible
+
+RESPONSIVE:
+- Mobile: Accordion
+- Desktop: Tabs or Grid based on prop
+
+---
+
+GLOBAL REQUIREMENTS FOR ALL COMPONENTS:
+
+1. TYPESCRIPT:
+   - Proper TypeScript interfaces
+   - Type-safe props
+   - Default values where needed
+   - Export interfaces for reuse
+
+2. RESPONSIVE DESIGN:
+   - Mobile-first approach
+   - Test: 375px, 768px, 1024px, 1440px
+   - Smooth breakpoint transitions
+   - Touch-friendly on mobile
+
+3. DARK/LIGHT MODE:
+   - Use theme colors consistently
+   - Test in both modes
+   - Proper contrast ratios
+   - Readable in all conditions
+
+4. ANIMATIONS:
+   - Framer Motion for complex animations
+   - CSS transitions for simple effects
+   - Duration: 200-300ms for UI, 500-800ms for page elements
+   - Respect prefers-reduced-motion
+   - Smooth, not jarring
+
+5. ACCESSIBILITY:
+   - Semantic HTML (section, article, etc.)
+   - ARIA labels and roles
+   - Keyboard navigation (Tab, Enter, Escape)
+   - Focus indicators (ring-2 ring-primary)
+   - Screen reader friendly
+   - Color contrast WCAG AA minimum
+
+6. PERFORMANCE:
+   - Lazy load images
+   - Optimize re-renders (React.memo where needed)
+   - No layout shifts
+   - Fast initial paint
+   - Efficient animations (transform, opacity)
+
+7. STYLING:
+   - Tailwind CSS utilities
+   - Consistent spacing scale
+   - Match design system
+   - Professional polish
+   - Hover states on interactive elements
+
+8. DOCUMENTATION:
+   - JSDoc comments for props
+   - Usage examples in comments
+   - Clear prop descriptions
+   - Default value documentation
+
+Build all 8 components as production-ready, reusable modules in /components/ui/. Each component should be self-contained, well-typed, and thoroughly tested for responsiveness and accessibility.

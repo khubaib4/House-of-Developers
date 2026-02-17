@@ -1,0 +1,162 @@
+---
+
+ANIMATIONS & INTERACTIONS:
+
+Framer Motion Variants:
+
+Mega Menu Container:
+- initial: { opacity: 0, y: -20 }
+- animate: { opacity: 1, y: 0 }
+- exit: { opacity: 0, y: -10 }
+- transition: { duration: 0.2, ease: "easeOut" }
+
+Menu Items (stagger):
+- Container: staggerChildren with 0.03s delay
+- Children: fade and slide from left
+  * initial: { opacity: 0, x: -10 }
+  * animate: { opacity: 1, x: 0 }
+
+Featured Cards:
+- Hover: scale 1.02, border color change
+- Transition: 200ms ease
+
+Hover States:
+- All clickable items: hover:bg-muted
+- Icons: group-hover color change to primary
+- Smooth transitions (200-300ms)
+
+---
+
+ACCESSIBILITY:
+
+Keyboard Navigation:
+- Tab through all menu items
+- Enter/Space to activate links
+- Escape to close menu
+- Focus trap when menu is open
+- Focus first item when opening
+- Return focus to trigger when closing
+
+ARIA Attributes:
+- Menu trigger: aria-expanded, aria-haspopup="true"
+- Menu container: role="menu"
+- Menu items: role="menuitem"
+- Proper aria-labels for all links
+
+Screen Readers:
+- Announce when menu opens/closes
+- Descriptive labels for all items
+
+---
+
+RESPONSIVE BEHAVIOR:
+
+Desktop (≥ 1024px):
+- Full mega menu with 3 columns
+- Hover to open (with delay)
+- Click to toggle
+
+Tablet (768px - 1023px):
+- Simplified 2-column layout
+- Remove featured cards or stack them
+- Adjust spacing
+
+Mobile (< 768px):
+- No mega menu
+- Use accordion in mobile hamburger menu
+- Simple nested list of services
+- Full-screen mobile menu overlay
+
+---
+
+DARK/LIGHT MODE:
+
+Light Mode:
+- Background: white with subtle backdrop-blur
+- Borders: gray-200
+- Hover: gray-100
+- Featured cards: gray-50
+
+Dark Mode:
+- Background: #1a1a1a with backdrop-blur
+- Borders: gray-800
+- Hover: #2a2a2a
+- Featured cards: #222
+
+Ensure all text has proper contrast in both modes
+
+---
+
+PERFORMANCE:
+
+- Lazy render mega menu content (only render when opened first time)
+- Prefetch linked pages on hover
+- Optimize icons (use lucide-react treeshaking)
+- Minimal re-renders
+- Smooth 60fps animations
+
+---
+
+CLOSE BEHAVIOR:
+
+Mega menu should close when:
+- User clicks outside menu
+- User hovers away for 300ms
+- User presses Escape key
+- User clicks a menu item (navigate away)
+- User scrolls down significantly (optional)
+
+Mega menu should NOT close when:
+- User hovers within menu area
+- User is tabbing through items
+- Mouse briefly passes through gap between trigger and menu
+
+---
+
+STYLING REFINEMENTS:
+
+Typography:
+- Section headers: text-xs font-semibold uppercase tracking-wider
+- Item titles: text-sm font-semibold
+- Item descriptions: text-xs text-muted-foreground
+- Consistent line heights
+
+Spacing:
+- Section spacing: mb-6
+- Item spacing: space-y-1
+- Grid gaps: gap-8 (large), gap-4 (medium)
+- Padding: p-3 (items), p-6 (cards)
+
+Icons:
+- Service icons: 20px
+- Featured card icons: 32px
+- Consistent stroke width
+- Primary color or muted on hover
+
+Borders:
+- Subtle: border-gray-200 (light) / border-gray-800 (dark)
+- 1px solid
+- Rounded corners: rounded-lg (items), rounded-xl (cards)
+
+Shadows:
+- Mega menu container: shadow-2xl
+- Featured cards on hover: shadow-md
+- Subtle and professional
+
+---
+
+IMPLEMENTATION STEPS:
+
+1. Create MegaMenu.tsx component
+2. Update Header.tsx to integrate mega menu
+3. Add hover/click logic with proper delays
+4. Implement animations with framer-motion
+5. Add keyboard navigation
+6. Test accessibility (screen reader, keyboard only)
+7. Verify responsive behavior (mobile accordion)
+8. Test dark/light mode
+9. Optimize performance
+10. Test close behaviors
+11. Add focus management
+
+Build a professional, accessible, and smooth mega menu that enhances navigation and showcases all services beautifully. Make it feel premium and well-crafted.

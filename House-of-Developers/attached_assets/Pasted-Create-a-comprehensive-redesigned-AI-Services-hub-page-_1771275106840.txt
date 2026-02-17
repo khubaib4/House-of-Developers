@@ -1,0 +1,913 @@
+Create a comprehensive, redesigned AI Services hub page for House of Developers.
+
+PAGE: /services/ai-services/page.tsx
+
+This is the main overview page for all AI services, linking to AI Chatbots, AI Agents, AI Automation, AI Integration, and Machine Learning categories.
+
+IMPORTANT: Include realistic case studies with actual metrics and real-world data. Use "Get Custom Quote" instead of fixed pricing.
+
+---
+
+HERO SECTION:
+
+Container: py-24, max-w-7xl mx-auto px-6
+
+Layout: Grid grid-cols-1 lg:grid-cols-2 gap-12 items-center
+
+Left Column:
+
+- Breadcrumb: "Home / Services / AI Services"
+  * text-sm text-muted-foreground, clickable, mb-6
+
+- Badge: "🤖 AI Development Services"
+  * bg-gradient (purple to blue), text-white, px-3 py-1.5, rounded-full, mb-4
+
+- H1: "AI Development & Integration Services"
+  * text-4xl md:text-5xl lg:text-6xl font-bold, mb-4
+
+- Tagline: "Custom AI Solutions That Transform Your Business"
+  * text-xl md:text-2xl
+  * Gradient text from purple to cyan
+  * font-semibold
+
+- Description (mt-6):
+  * text-xl text-muted-foreground leading-relaxed
+  * "We build custom AI solutions powered by GPT-4, Claude, and advanced machine learning. From intelligent chatbots to autonomous agents—automate tasks, enhance customer experiences, and unlock insights from your data."
+
+- Feature Pills (mt-6, flex gap-3 flex-wrap):
+  1. "GPT-4 & Claude" (Sparkles icon)
+  2. "Custom AI Agents" (Bot icon)
+  3. "Automation" (Zap icon)
+  4. "24/7 Support" (Clock icon)
+
+- Stats Grid (mt-8, grid-cols-3 gap-6):
+  Each stat:
+  - Number (text-3xl font-bold, gradient text purple to cyan)
+  - Label (text-sm text-muted-foreground)
+  
+  1. "30+ AI Projects"
+  2. "70% Cost Savings"
+  3. "24/7 Automated"
+
+- CTA Buttons (mt-8, flex gap-4):
+  * Primary: "Book AI Consultation" → /contact
+    - bg-gradient (purple to blue), text-white
+    - h-14 px-8, rounded-lg, font-semibold
+  
+  * Secondary: "Explore AI Services" → scroll to services
+    - border variant
+
+- Trust: "⭐ Powered by OpenAI, Anthropic, and custom ML models"
+
+Right Column:
+
+- AI Hub Mockup (Showcase All AI Services):
+  * Create central dashboard showing AI capabilities
+  
+  Main Container (bg-card, border, rounded-2xl, p-6, shadow-2xl):
+  
+  Top Bar:
+  * "AI Services Dashboard"
+  * Status: "All Systems Operational" (green dot)
+  
+  Grid of 5 AI Service Cards (2x3 layout):
+  
+  CARD 1 - AI Chatbots:
+  * Icon: MessageSquare (in gradient purple circle)
+  * Title: "AI Chatbots"
+  * Metric: "1,247 conversations today"
+  * Status: "Active" (green)
+  * Mini chat bubble preview
+  
+  CARD 2 - AI Agents:
+  * Icon: Bot (in gradient blue circle)
+  * Title: "AI Agents"
+  * Metric: "24 tasks completed"
+  * Status: "Running" (green)
+  * Progress bar (85%)
+  
+  CARD 3 - Automation:
+  * Icon: Zap (in gradient orange circle)
+  * Title: "Automation"
+  * Metric: "18 hours saved today"
+  * Status: "Active" (green)
+  * Flow diagram mini preview
+  
+  CARD 4 - AI Integration:
+  * Icon: Plug (in gradient cyan circle)
+  * Title: "API Integration"
+  * Metric: "523 API calls"
+  * Status: "Connected" (green)
+  * Connection nodes
+  
+  CARD 5 - Machine Learning:
+  * Icon: Brain (in gradient pink circle)
+  * Title: "ML Models"
+  * Metric: "94% accuracy"
+  * Status: "Training" (yellow)
+  * Mini chart showing accuracy curve
+  
+  Bottom Info Bar:
+  * "Last updated: 2 seconds ago"
+  * "Powered by GPT-4, Claude 3"
+  
+  Floating elements around mockup:
+  * "Real-time Processing" badge
+  * "OpenAI Powered" badge
+  * "Custom ML" badge
+  
+  * Shadow: 2xl with purple glow
+  * Modern, futuristic aesthetic
+
+---
+
+WHAT WE BUILD SECTION:
+
+Container: py-20, bg-muted, max-w-7xl mx-auto px-6
+
+Header (centered):
+- H2: "AI Solutions We Build"
+- Subtitle: "From chatbots to custom machine learning models"
+- mb-16
+
+AI Services Grid:
+- Grid: grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8
+
+5 AI SERVICE CARDS (3 in first row, 2 in second):
+
+CARD STRUCTURE (each):
+- Background: card with gradient border (changes per service)
+- Padding: p-8
+- Rounded: rounded-2xl
+- Hover: shadow-2xl, scale-105, border glow
+
+Each card:
+1. Icon container (top):
+   - Gradient circle: w-16 h-16
+   - Icon: size 32, white
+   - Unique gradient per service
+
+2. Service name (text-2xl font-bold, mt-6)
+
+3. Description (text-muted-foreground, mt-3)
+
+4. Key features (mt-6, space-y-2):
+   - 4 bullet points with Sparkles icons
+   - text-sm
+
+5. Popular use cases (mt-4):
+   - Badge list (flex gap-2 flex-wrap)
+   - Small pills with use case names
+
+6. CTA button (mt-8):
+   - "Explore [Service]" with ArrowRight icon
+   - Full width, gradient bg matching service color
+   - Link to service category page
+
+THE 5 AI SERVICES:
+
+SERVICE 1: AI CHATBOTS (Most Popular)
+- Icon: MessageSquare
+- Gradient: Purple to Pink (#8B5CF6 to #EC4899)
+- Name: "AI Chatbots"
+- Description: "Intelligent conversational AI for customer support, sales, and engagement. Available 24/7, handles thousands of conversations simultaneously."
+- Features:
+  ✨ Natural language understanding (GPT-4/Claude)
+  ✨ Context-aware conversations
+  ✨ Multi-channel (web, WhatsApp, Slack)
+  ✨ CRM & tool integration
+- Use Cases:
+  * Customer Support
+  * Lead Qualification
+  * Sales Assistant
+  * FAQ Automation
+- Link: /services/ai-services/ai-chatbots
+- Badge: "Most Popular" (top-right corner)
+
+SERVICE 2: AI AGENTS (Trending)
+- Icon: Bot
+- Gradient: Blue to Cyan (#3B82F6 to #06B6D4)
+- Name: "Autonomous AI Agents"
+- Description: "Self-operating AI that executes tasks, makes decisions, and automates complex workflows without human intervention."
+- Features:
+  ✨ Multi-step task execution
+  ✨ Tool use & API calls
+  ✨ Real-time decision making
+  ✨ Continuous learning
+- Use Cases:
+  * Email Management
+  * Research & Analysis
+  * Data Processing
+  * Task Automation
+- Link: /services/ai-services/ai-agents
+- Badge: "Trending" (top-right corner)
+
+SERVICE 3: AI AUTOMATION
+- Icon: Zap
+- Gradient: Orange to Amber (#F59E0B to #FBBF24)
+- Name: "Workflow Automation"
+- Description: "AI-powered automation that eliminates repetitive tasks and streamlines business processes with intelligent workflows."
+- Features:
+  ✨ Smart process automation
+  ✨ Trigger-based workflows
+  ✨ Data extraction & routing
+  ✨ Integration with existing tools
+- Use Cases:
+  * Lead Routing
+  * Document Processing
+  * Report Generation
+  * Data Entry
+- Link: /services/ai-services/ai-automation
+
+SERVICE 4: AI INTEGRATION
+- Icon: Plug
+- Gradient: Indigo to Purple (#6366F1 to #8B5CF6)
+- Name: "AI Integration Services"
+- Description: "Seamlessly integrate OpenAI, Claude, or custom AI models into your existing applications and workflows."
+- Features:
+  ✨ OpenAI & Anthropic API integration
+  ✨ Custom model deployment
+  ✨ Prompt engineering
+  ✨ RAG (Retrieval-Augmented Generation)
+- Use Cases:
+  * GPT-4 Integration
+  * Claude API Setup
+  * Custom LLM Deployment
+  * Knowledge Base AI
+- Link: /services/ai-services/ai-integration
+
+SERVICE 5: MACHINE LEARNING
+- Icon: Brain
+- Gradient: Pink to Rose (#EC4899 to #F43F5E)
+- Name: "Machine Learning Models"
+- Description: "Custom ML models for predictions, classifications, recommendations, and computer vision trained on your data."
+- Features:
+  ✨ Predictive analytics
+  ✨ Custom model training
+  ✨ Computer vision (image/video)
+  ✨ Recommendation engines
+- Use Cases:
+  * Sales Forecasting
+  * Image Recognition
+  * Fraud Detection
+  * Product Recommendations
+- Link: /services/ai-services/machine-learning
+
+---
+
+HOW AI TRANSFORMS BUSINESS SECTION:
+
+Container: py-20
+
+Use ValueProposition component:
+
+- Title: "How AI Transforms Your Business"
+- Subtitle: "Real benefits our clients experience"
+- Columns: 3
+
+9 Benefits:
+
+1. Icon: Clock, Title: "Save 20+ Hours/Week", Description: "Automate repetitive tasks and free up your team for strategic work"
+2. Icon: DollarSign, Title: "Reduce Costs 70%", Description: "AI chatbots cost 70% less than human support teams"
+3. Icon: Zap, Title: "Instant Responses", Description: "AI responds in seconds, not hours—improving customer satisfaction"
+4. Icon: TrendingUp, Title: "Increase Conversions", Description: "AI-powered personalization boosts conversion rates 30%+"
+5. Icon: Users, Title: "Scale Infinitely", Description: "Handle 1,000 conversations simultaneously with AI"
+6. Icon: Target, Title: "Better Insights", Description: "ML models uncover patterns humans miss in your data"
+7. Icon: Globe, Title: "24/7 Availability", Description: "AI never sleeps—serve customers around the clock"
+8. Icon: CheckCircle, Title: "Consistent Quality", Description: "AI delivers perfect responses every single time"
+9. Icon: Rocket, Title: "Competitive Edge", Description: "Early AI adopters gain 2-3 year market advantage"
+
+---
+
+REALISTIC CASE STUDIES SECTION:
+
+Container: py-20, bg-muted
+
+Header (centered):
+- H2: "AI Success Stories"
+- Subtitle: "Real results from real businesses"
+- mb-12
+
+Case Studies Grid: grid-cols-1 md:grid-cols-3 gap-8, max-w-7xl mx-auto px-6
+
+3 REALISTIC CASE STUDIES (with actual data):
+
+CASE STUDY 1: E-COMMERCE CHATBOT
+- Background: gradient (purple to pink), p-1, rounded-xl
+- Card: bg-card, p-6, rounded-lg
+
+Header:
+* Industry badge: "E-Commerce"
+* Company: "Fashion Retailer (UK)"
+* Project: "AI Customer Support Chatbot"
+
+Challenge (text-sm, mt-4):
+"Online fashion store receiving 500+ customer inquiries daily. Support team of 3 couldn't keep up, leading to 12-hour response times and lost sales."
+
+Solution (mt-4):
+* Implemented GPT-4 powered chatbot
+* Trained on 2,000 previous conversations
+* Integrated with Shopify and inventory system
+* Handles product questions, order tracking, returns
+
+Results Grid (mt-6, grid-cols-2 gap-4):
+1. Metric card (bg-muted, p-3, rounded):
+   * "Response Time"
+   * "12 hours → 8 seconds" (large, bold)
+   * "99.5% faster" (green, small)
+
+2. "Conversations Handled"
+   * "450/day automated"
+   * "90% resolution rate"
+
+3. "Cost Savings"
+   * "£4,200/month saved"
+   * "2 support staff redeployed"
+
+4. "Customer Satisfaction"
+   * "CSAT: 4.7/5"
+   * "+23% improvement"
+
+Technologies (mt-4, flex gap-2):
+* GPT-4
+* Shopify API
+* WhatsApp Business
+
+Link: "View Full Case Study" → /contact (or case study page if exists)
+
+CASE STUDY 2: AUTONOMOUS EMAIL AGENT
+- Background: gradient (blue to cyan)
+- Card: same structure
+
+Header:
+* Industry: "SaaS Company"
+* Company: "Project Management Tool (100K users)"
+* Project: "AI Email Support Agent"
+
+Challenge:
+"Receiving 200+ support emails daily. Manual categorization and response drafting taking 4 hours/day. Inconsistent response quality."
+
+Solution:
+* Built autonomous AI agent with Claude
+* Reads emails, categorizes by urgency/type
+* Drafts personalized responses
+* Auto-replies to common questions
+* Flags complex issues for humans
+
+Results:
+1. "Email Processing"
+   * "180/day automated"
+   * "90% auto-resolved"
+
+2. "Time Saved"
+   * "3.5 hours/day"
+   * "17.5 hours/week"
+
+3. "Response Quality"
+   * "Consistent tone"
+   * "95% approval rate"
+
+4. "Cost Impact"
+   * "£1,800/month saved"
+   * "ROI: 450%"
+
+Technologies:
+* Claude 3 Opus
+* Gmail API
+* Custom Agent Framework
+
+CASE STUDY 3: LEAD QUALIFICATION AUTOMATION
+- Background: gradient (orange to amber)
+- Card: same structure
+
+Header:
+* Industry: "B2B Services"
+* Company: "Marketing Agency"
+* Project: "AI Lead Qualification System"
+
+Challenge:
+"100+ leads per week from website forms. Sales team spending 10 hours/week manually qualifying leads, missing hot prospects."
+
+Solution:
+* AI analyzes form submissions in real-time
+* Extracts company info, budget signals
+* Scores leads (0-100) using ML model
+* Routes hot leads (80+) to sales instantly
+* Nurtures cold leads automatically
+
+Results:
+1. "Lead Processing"
+   * "Instant analysis"
+   * "100% coverage"
+
+2. "Sales Team Time"
+   * "10 hours/week saved"
+   * "Focus on closing"
+
+3. "Conversion Rate"
+   * "18% → 32%"
+   * "+78% increase"
+
+4. "Revenue Impact"
+   * "£45K additional/month"
+   * "From better lead routing"
+
+Technologies:
+* GPT-4
+* Custom ML Model
+* HubSpot API
+
+---
+
+INTERACTIVE AI DEMO MOCKUPS:
+
+Container: py-20
+
+Header (centered):
+- H2: "See AI in Action"
+- Subtitle: "Interactive examples of what we build"
+- mb-12
+
+Layout: max-w-6xl mx-auto px-6, space-y-16
+
+3 INTERACTIVE MOCKUPS:
+
+MOCKUP 1: CHATBOT INTERFACE
+- Heading: "AI Chatbot Example" (text-xl font-bold, mb-6)
+
+Create live chat widget mockup:
+
+Browser window (bg-white dark:bg-slate-900, rounded-xl, shadow-2xl):
+
+Website preview (simplified):
+* Top: "TechStore.com" logo + nav
+* Product grid (3 items with images)
+
+Chat Widget (bottom-right, absolute):
+* Container: w-96, bg-card, border, rounded-2xl, shadow-xl
+* Header (gradient purple to pink, p-4, rounded-t-2xl):
+  - "AI Assistant" with bot icon
+  - Status: "Online" (green dot)
+  - Minimize/Close buttons
+
+* Messages (p-4, space-y-3, h-96, overflow-auto):
+  
+  Bot message 1:
+  - Avatar: Bot icon (purple circle)
+  - Bubble: bg-muted, rounded-2xl, p-3
+  - Text: "Hi! 👋 I'm here to help. What are you looking for today?"
+  - Time: "2:34 PM"
+  
+  User message:
+  - Avatar: User icon (gray circle, right side)
+  - Bubble: bg-primary, text-white, rounded-2xl, p-3
+  - Text: "Do you have wireless headphones under £100?"
+  - Time: "2:34 PM"
+  
+  Bot message 2:
+  - Text: "Yes! I found 3 options for you:"
+  - Product cards (3 mini cards):
+    * Image, name, price, "View" button
+    * Example: "Sony WH-CH520 - £89"
+  
+  Bot message 3:
+  - Text: "Would you like to know more about any of these?"
+  
+  Quick reply buttons:
+  - [Tell me about Sony]
+  - [Compare all three]
+  - [Show more options]
+  
+  Typing indicator:
+  - "AI is typing..." with animated dots ●●●
+
+* Input (p-4, border-t):
+  - Text input: "Type your message..."
+  - Send button (gradient, icon)
+  - Emoji button
+
+Annotations (floating around):
+* "Natural Conversations" (pointing to chat)
+* "Product Recommendations" (pointing to cards)
+* "Instant Responses" (pointing to bot)
+
+MOCKUP 2: AI AGENT DASHBOARD
+- Heading: "Autonomous AI Agent" (mb-6)
+
+Agent Control Panel:
+
+Container (bg-card, border, rounded-2xl, p-6, shadow-xl):
+
+Top Section:
+* "Email Processing Agent" (text-xl font-bold)
+* Status: "Running" (green, pulsing)
+* Toggle: "Auto Mode: ON"
+
+Agent Activity Timeline (vertical):
+
+Step 1 (completed):
+* Checkmark (green)
+* "Read 23 new emails" 
+* Time: "9:00 AM"
+* Details: "Inbox scanned successfully"
+
+Step 2 (completed):
+* Checkmark (green)
+* "Categorized by urgency"
+* Time: "9:00 AM"
+* Breakdown: "High: 3, Medium: 12, Low: 8"
+
+Step 3 (in progress):
+* Spinner icon (blue, rotating)
+* "Drafting responses..."
+* Time: "9:01 AM"
+* Progress: "Draft 5/12" with progress bar (40%)
+
+Step 4 (waiting):
+* Clock icon (gray)
+* "Awaiting approval"
+* Status: "Pending human review"
+
+Step 5 (queued):
+* Dot icon (gray)
+* "Send approved emails"
+* Status: "Queued"
+
+Stats Panel (grid-cols-3, gap-4, mt-6):
+1. "Emails Processed"
+   * "234 today"
+   * Chart: small line graph trending up
+
+2. "Auto-Resolved"
+   * "87%"
+   * Green percentage
+
+3. "Time Saved"
+   * "18.5 hours"
+   * This week
+
+Action Buttons (mt-6):
+* [Review Drafts] (primary)
+* [View All Emails] (secondary)
+* [Agent Settings] (ghost)
+
+Annotations:
+* "Multi-Step Execution"
+* "Real-Time Decisions"
+* "Human Oversight"
+
+MOCKUP 3: AUTOMATION WORKFLOW
+- Heading: "AI Workflow Automation" (mb-6)
+
+Workflow Builder Interface:
+
+Container (bg-card, border, rounded-2xl, p-6):
+
+Flow Diagram (left to right):
+
+NODE 1 - TRIGGER:
+* Icon: Bell in circle (blue)
+* Label: "New Form Submission"
+* Arrow →
+
+NODE 2 - AI PROCESSING:
+* Icon: Sparkles in circle (purple gradient)
+* Label: "AI Analysis"
+* Subtext: "Extract & Score Lead"
+* Box showing:
+  - "Company: TechCorp"
+  - "Budget: £50K"
+  - "Score: 92/100"
+* Arrow →
+
+NODE 3 - DECISION:
+* Diamond shape
+* "Score > 80?"
+* Two paths:
+  - YES (green arrow, top)
+  - NO (gray arrow, bottom)
+
+NODE 4A - HIGH SCORE (top path):
+* Icon: User in circle (green)
+* Label: "Notify Sales Team"
+* Slack notification preview
+* Arrow →
+* "Send to CRM"
+
+NODE 4B - LOW SCORE (bottom path):
+* Icon: Mail in circle (gray)
+* Label: "Send Nurture Email"
+* Email preview
+* Arrow →
+* "Add to Drip Campaign"
+
+Results Box (bottom):
+* "⏱ Total Time: 8 seconds"
+* "💰 Manual Time Saved: 15 min per lead"
+* "📊 95% accuracy in routing"
+
+Annotations:
+* "Instant Processing"
+* "Smart Routing"
+* "Zero Manual Work"
+
+---
+
+TECHNOLOGIES & MODELS SECTION:
+
+Container: py-20, bg-muted
+
+Use TechStackGrid component:
+
+- Title: "AI Technologies We Use"
+- Description: "Cutting-edge models and frameworks"
+- Columns: 6
+
+Items (18 technologies with Lucide icons):
+
+AI MODELS:
+1. name: "GPT-4", icon: Sparkles
+2. name: "GPT-4 Turbo", icon: Zap
+3. name: "Claude 3 Opus", icon: Brain
+4. name: "Claude 3 Sonnet", icon: MessageSquare
+5. name: "GPT-3.5", icon: MessageCircle
+6. name: "DALL-E 3", icon: Image
+
+FRAMEWORKS & TOOLS:
+7. name: "LangChain", icon: Link
+8. name: "LlamaIndex", icon: Database
+9. name: "Pinecone", icon: GitBranch (vector DB)
+10. name: "OpenAI API", icon: Plug
+11. name: "Anthropic API", icon: Plug
+12. name: "Hugging Face", icon: Heart
+
+ML & DATA:
+13. name: "TensorFlow", icon: Brain
+14. name: "PyTorch", icon: Flame
+15. name: "scikit-learn", icon: TrendingUp
+16. name: "Pandas", icon: Table
+
+INTEGRATION:
+17. name: "REST APIs", icon: Network
+18. name: "WebSockets", icon: Wifi
+
+---
+
+PROCESS TIMELINE:
+
+Container: py-20
+
+Use ProcessTimeline component:
+
+- Title: "Our AI Development Process"
+- Subtitle: "From concept to deployed AI solution"
+
+Steps (5 phases):
+
+STEP 1:
+- phase: "Week 1"
+- title: "Discovery & Strategy"
+- description: "Understand your business problem and design AI solution"
+- deliverables:
+  * Free AI consultation call
+  * Use case definition
+  * Data requirements analysis
+  * AI model recommendation
+  * Technical architecture design
+  * Project timeline & quote
+- duration: "3-5 days"
+
+STEP 2:
+- phase: "Week 2-3"
+- title: "Development & Training"
+- description: "Build AI models, train on your data, and integrate"
+- deliverables:
+  * AI model development
+  * Training on your data/use case
+  * Prompt engineering & optimization
+  * API integration
+  * Testing & refinement
+- duration: "1-2 weeks"
+
+STEP 3:
+- phase: "Week 4"
+- title: "Testing & Optimization"
+- description: "Rigorous testing and performance optimization"
+- deliverables:
+  * Accuracy testing
+  * Load testing (if applicable)
+  * Edge case handling
+  * Response quality review
+  * Performance optimization
+- duration: "3-5 days"
+
+STEP 4:
+- phase: "Week 5"
+- title: "Deployment & Integration"
+- description: "Deploy to production and integrate with your systems"
+- deliverables:
+  * Production deployment
+  * Integration with existing tools
+  * User training & documentation
+  * Monitoring setup
+  * Go-live support
+- duration: "3-5 days"
+
+STEP 5:
+- phase: "Ongoing"
+- title: "Monitoring & Improvement"
+- description: "Continuous monitoring and model improvement"
+- deliverables:
+  * Performance monitoring
+  * Usage analytics
+  * Model retraining (as needed)
+  * Feature enhancements
+  * Ongoing support
+- duration: "Monthly support packages"
+
+---
+
+PRICING APPROACH SECTION:
+
+Container: py-20, bg-muted
+
+Header (centered):
+- H2: "Custom AI Solutions, Custom Pricing"
+- Subtitle: "Every AI project is unique—get a tailored quote"
+- mb-12
+
+Layout: max-w-4xl mx-auto px-6
+
+Pricing Info Card (bg-card, border, rounded-2xl, p-8):
+
+Explanation Text:
+"AI project costs vary based on complexity, data requirements, model training, and integrations. We provide transparent, customized quotes after understanding your specific needs."
+
+Pricing Factors (mt-8, grid-cols-1 md:grid-cols-2 gap-6):
+
+Factor 1:
+* Icon: Layers
+* Title: "Project Complexity"
+* Description: "Simple chatbot vs. complex multi-agent system"
+
+Factor 2:
+* Icon: Database
+* Title: "Data Requirements"
+* Description: "Training data volume and quality"
+
+Factor 3:
+* Icon: Zap
+* Title: "AI Model Choice"
+* Description: "GPT-4, Claude, or custom ML models"
+
+Factor 4:
+* Icon: Plug
+* Title: "Integrations Needed"
+* Description: "CRM, databases, APIs, tools"
+
+Typical Project Ranges (mt-8, space-y-4):
+
+Note: "Ballpark estimates for planning:"
+
+Range 1 (flex items-center justify-between, p-4, bg-muted, rounded-lg):
+* Left: "Simple AI Chatbot"
+* Right: "From £5,000"
+
+Range 2:
+* "Custom AI Agent"
+* "From £10,000"
+
+Range 3:
+* "Full AI Automation"
+* "From £15,000"
+
+Range 4:
+* "ML Model Development"
+* "From £20,000"
+
+CTA (mt-8, text-center):
+* Large button: "Get Custom Quote" → /contact
+  - gradient bg (purple to blue)
+  - h-14 px-10
+  - text-lg font-semibold
+
+Note below:
+"Free consultation included. No obligation quote within 48 hours."
+
+---
+
+FAQ SECTION:
+
+Container: py-20, max-w-4xl mx-auto px-6
+
+Header: "AI Services FAQs"
+
+12 Questions (Accordion):
+
+Q1: "What's the difference between AI chatbots and AI agents?"
+A: "AI chatbots are conversational—they chat with users via text. AI agents are autonomous—they execute tasks independently (read emails, analyze data, make decisions). Chatbots are reactive (respond to users); agents are proactive (take initiative). Both use LLMs like GPT-4 or Claude."
+
+Q2: "Which AI model do you recommend: GPT-4 or Claude?"
+A: "GPT-4 is excellent for general tasks, creative content, and code. Claude 3 Opus excels at long-context analysis (100K+ tokens), nuanced conversations, and following complex instructions. We often use both—GPT-4 for speed, Claude for depth. We'll recommend based on your use case."
+
+Q3: "Can AI integrate with our existing systems?"
+A: "Yes! We integrate AI with any system that has an API—CRMs (HubSpot, Salesforce), support tools (Zendesk, Intercom), databases, Slack, WhatsApp, email, and custom applications. AI can read/write data from your tools."
+
+Q4: "How accurate are AI chatbots?"
+A: "When properly trained, 85-95% accuracy for common queries. We train on your FAQs, past conversations, and product data. For complex questions requiring human judgment, we route to your team. Accuracy improves over time as AI learns."
+
+Q5: "What data do you need to build AI solutions?"
+A: "Depends on the project. Chatbots need FAQs, previous conversations, product docs. AI agents need task examples and tool APIs. ML models need historical data (100s-1000s of examples). We help you prepare data if you don't have it ready."
+
+Q6: "How long does AI development take?"
+A: "Simple chatbot: 2-3 weeks. Custom AI agent: 3-5 weeks. Complex automation: 4-8 weeks. ML model development: 6-12 weeks. Timeline depends on data preparation, integrations, and testing requirements."
+
+Q7: "What are ongoing costs after deployment?"
+A: "AI API costs (OpenAI/Anthropic charge per token), hosting, and optional maintenance. For example, a chatbot handling 10K conversations/month costs £100-300/month in API fees. We provide transparent cost estimates."
+
+Q8: "Can AI replace our entire support team?"
+A: "AI can handle 60-90% of routine queries, but we recommend hybrid approach. AI handles FAQs, order tracking, basic troubleshooting. Humans handle complex issues, complaints, and edge cases. Best results come from AI + humans working together."
+
+Q9: "What if AI gives wrong answers?"
+A: "We implement safety measures: (1) Confidence thresholds—AI admits when unsure, (2) Human review for high-stakes decisions, (3) Fallback to human agents, (4) Continuous monitoring and improvement. AI learns from mistakes."
+
+Q10: "Do you provide training for our team?"
+A: "Yes! We provide comprehensive training on using, monitoring, and improving your AI solution. Documentation, video tutorials, and live sessions. You'll understand how to update responses, monitor performance, and optimize over time."
+
+Q11: "Can we use our own AI models?"
+A: "Absolutely! If you have custom models or prefer specific providers, we can integrate them. We also build custom models trained specifically on your data for unique use cases where generic LLMs aren't sufficient."
+
+Q12: "What industries do you work with?"
+A: "E-commerce, SaaS, healthcare (HIPAA-compliant), finance, education, professional services, real estate, and more. AI applications are universal—every industry can benefit from automation, chatbots, or ML models."
+
+---
+
+CTA SECTIONS:
+
+Add 3 CTAs throughout:
+
+CTA 1 (After AI Services Grid):
+- Variant: 'gradient'
+- Title: "Ready to Explore AI for Your Business?"
+- Description: "Book a free consultation to discuss how AI can transform your operations"
+- PrimaryCTA: "Book AI Consultation" → /contact
+- Size: 'large'
+
+CTA 2 (After Case Studies):
+- Variant: 'bordered'
+- Title: "Want Results Like These?"
+- Description: "See how AI chatbots and agents can save your team 20+ hours per week"
+- PrimaryCTA: "Get Custom Quote" → /contact
+- SecondaryCTA: "Explore AI Chatbots" → /services/ai-services/ai-chatbots
+- Size: 'medium'
+
+CTA 3 (Final, After FAQ):
+- Variant: 'gradient'
+- Title: "Let's Build Your AI Solution"
+- Description: "From chatbots to autonomous agents—book a free consultation and get a custom proposal"
+- PrimaryCTA: "Book Free Consultation" → /contact
+- SecondaryCTA: "Call: +44 7429 917368" → tel link
+- ShowContactInfo: true
+- Size: 'large'
+
+---
+
+GLOBAL REQUIREMENTS:
+
+1. SEO:
+   - Meta title: "AI Development Services | Chatbots, AI Agents, Automation | House of Developers"
+   - Meta description: "Custom AI solutions with GPT-4, Claude, and ML. AI chatbots, autonomous agents, workflow automation. 70% cost savings. Free consultation."
+   - Schema: Service, Organization, FAQPage, BreadcrumbList
+
+2. REALISTIC CASE STUDIES:
+   - Use actual business scenarios (e-commerce, SaaS, B2B)
+   - Real metrics (response times, cost savings, conversion rates)
+   - Specific technologies (GPT-4, Claude 3, APIs)
+   - Believable numbers (not "1000% improvement")
+
+3. MOCKUPS:
+   - Chat interface (purple/pink gradient theme)
+   - AI agent dashboard (blue/cyan theme)
+   - Workflow automation (orange/amber theme)
+   - All interactive-looking
+   - Show real AI concepts
+
+4. ICONS: Lucide React only
+
+5. COMPONENTS:
+   - ProcessTimeline ✅
+   - ValueProposition ✅
+   - TechStackGrid ✅
+   - CTASection (×3) ✅
+
+6. NO FIXED PRICING: Use "Get Custom Quote" approach
+
+7. RESPONSIVE: Mobile-first
+
+8. DARK/LIGHT MODE: Full support with AI-themed gradients
+
+9. ANIMATIONS: Futuristic, smooth (typing indicators, pulse effects)
+
+10. GRADIENT THEME: Purple/blue/cyan AI aesthetic throughout
+
+Build a comprehensive, realistic AI Services hub page with working case studies, beautiful mockups, and strong SEO focus.

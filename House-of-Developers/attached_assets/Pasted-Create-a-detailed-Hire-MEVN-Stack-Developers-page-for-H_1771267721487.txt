@@ -1,0 +1,716 @@
+Create a detailed Hire MEVN Stack Developers page for House of Developers.
+
+PAGE: /services/hire-developers/mevn-stack/page.tsx
+
+A comprehensive page for hiring MEVN stack developers with beautiful mockups and detailed information.
+
+IMPORTANT: Use slug "mevn-stack" (not "full-stack/mevn"). This is a direct technology page.
+
+---
+
+HERO SECTION:
+
+Container: py-24, max-w-7xl mx-auto px-6
+
+Layout: Grid grid-cols-1 lg:grid-cols-2 gap-12 items-center
+
+Left Column:
+
+- Breadcrumb: "Home / Services / Hire Developers / MEVN Stack"
+  * text-sm text-muted-foreground, clickable, mb-6
+
+- Badge: "💚 MEVN Stack Developers"
+  * bg-primary/10, text-primary, px-3 py-1.5, rounded-full, mb-4
+
+- H1: "Hire MEVN Stack Developers"
+  * text-4xl md:text-6xl font-bold, mb-4
+
+- Tagline: "MongoDB, Express, Vue.js, Node.js Experts"
+  * text-xl md:text-2xl
+  * Gradient text from green to teal (Vue colors)
+  * font-semibold
+
+- Description (mt-6):
+  * text-xl text-muted-foreground leading-relaxed
+  * "Hire senior MEVN stack developers who build fast, lightweight web applications with Vue.js. Approachable, progressive, and performant—perfect for modern SPAs, content platforms, and rapid development."
+
+- Feature Pills (mt-6, flex gap-3 flex-wrap):
+  1. "Easy to Learn" (Smile icon)
+  2. "Progressive" (TrendingUp icon)
+  3. "Lightweight" (Feather icon)
+  4. "Fast Performance" (Zap icon)
+
+- Stats Grid (mt-8, grid-cols-3 gap-6):
+  1. "3+ Developers"
+  2. "6+ Years Avg"
+  3. "Available Now"
+
+- CTA Buttons (mt-8, flex gap-4):
+  * Primary: "Hire MEVN Developer" → /contact
+  * Secondary: "See Examples" → scroll to projects
+
+Right Column:
+
+- MEVN Stack Visual Mockup:
+  * Create beautiful layered stack visualization
+  
+  4 Layers stacked vertically with 3D effect:
+  
+  LAYER 1 (Top - Vue.js):
+  * Card: bg-gradient (green to emerald), p-4, rounded-lg
+  * Icon: Layers (white, size 32)
+  * Label: "Vue.js" (white, font-bold)
+  * Subtitle: "Progressive Framework"
+  * Small code preview: "<template>"
+  * Badge: "v3 Composition API"
+  
+  LAYER 2 (Express):
+  * Card: bg-gradient (teal to cyan), p-4, rounded-lg
+  * Icon: Server (white, size 32)
+  * Label: "Express.js"
+  * Subtitle: "Backend API"
+  * Code snippet: "app.get('/api')"
+  
+  LAYER 3 (Node.js):
+  * Card: bg-gradient (blue to indigo), p-4, rounded-lg
+  * Icon: Code2 (white, size 32)
+  * Label: "Node.js"
+  * Subtitle: "JavaScript Runtime"
+  * Badge: "Async/Await"
+  
+  LAYER 4 (Bottom - MongoDB):
+  * Card: bg-gradient (purple to pink), p-4, rounded-lg
+  * Icon: Database (white, size 32)
+  * Label: "MongoDB"
+  * Subtitle: "NoSQL Database"
+  * Schema preview: "{ data: {...} }"
+  
+  Connecting arrows/lines between layers (gradient)
+  "MEVN Stack" label with Vue icon
+  
+  Floating badges around:
+  * "Progressive & Flexible" (Sparkles icon)
+  * "Lightweight" (Feather icon)
+  * "120 FPS Animations" (Zap icon)
+  
+  * Shadow: 2xl with subtle green glow
+  * Modern, friendly look
+
+---
+
+WHAT IS MEVN STACK SECTION:
+
+Container: py-20, bg-muted, max-w-5xl mx-auto px-6, text-center
+
+- H2: "What is the MEVN Stack?"
+- Description (mt-4, text-lg):
+  "MEVN is a JavaScript stack using Vue.js as the frontend framework. MongoDB (database), Express (backend), Vue.js (progressive framework), Node.js (runtime)—approachable, flexible, and perfect for developers who want simplicity without sacrificing power."
+
+MEVN Components Grid (mt-12, grid-cols-1 md:grid-cols-4 gap-8):
+
+4 component cards:
+
+Each card (p-6, bg-card, border, rounded-xl, hover effect):
+- Icon (size 40, mb-4)
+- Letter badge ("M", "E", "V", "N" - large, font-bold, gradient text)
+- Name (font-semibold, mt-2)
+- Full name (text-xs text-muted-foreground)
+- Purpose (text-sm, mt-2)
+
+1. Icon: Database
+   Letter: "M" (gradient emerald)
+   Name: "MongoDB"
+   Full: "NoSQL Database"
+   Purpose: "Flexible document storage for dynamic data"
+
+2. Icon: Server
+   Letter: "E" (gradient cyan)
+   Name: "Express.js"
+   Full: "Backend Framework"
+   Purpose: "Fast, unopinionated Node.js web framework"
+
+3. Icon: Layers
+   Letter: "V" (gradient green)
+   Name: "Vue.js"
+   Full: "Progressive Framework"
+   Purpose: "Approachable, performant, and versatile UI framework"
+
+4. Icon: Zap
+   Letter: "N" (gradient blue)
+   Name: "Node.js"
+   Full: "JavaScript Runtime"
+   Purpose: "Efficient server-side JavaScript execution"
+
+---
+
+WHY CHOOSE MEVN SECTION:
+
+Container: py-20
+
+Use ValueProposition component:
+
+- Title: "Why Choose MEVN Stack Development"
+- Subtitle: "Vue.js simplicity with JavaScript full-stack power"
+- Columns: 3
+
+9 Benefits:
+
+1. Icon: Smile, Title: "Easy to Learn", Description: "Vue.js has the gentlest learning curve of all major frameworks"
+2. Icon: TrendingUp, Title: "Progressive Framework", Description: "Start small, add features as needed—truly progressive"
+3. Icon: Feather, Title: "Lightweight", Description: "Vue is only 20KB gzipped—faster load times than React or Angular"
+4. Icon: Zap, Title: "Fast Performance", Description: "Virtual DOM + efficient reactivity = blazing fast apps"
+5. Icon: FileCode, Title: "Single File Components", Description: "HTML, CSS, JS in one .vue file—easy to understand"
+6. Icon: Package, Title: "Vue Ecosystem", Description: "Vue Router, Vuex/Pinia, Nuxt.js—official, well-documented tools"
+7. Icon: Code2, Title: "Template Syntax", Description: "Familiar HTML-like templates easier than JSX"
+8. Icon: Users, Title: "Growing Community", Description: "Used by Alibaba, GitLab, Nintendo—rapidly growing"
+9. Icon: DollarSign, Title: "Rapid Development", Description: "Build faster with Vue's simplicity—lower costs"
+
+---
+
+MEVN STACK MOCKUP - CONTENT PLATFORM:
+
+Container: py-20, bg-muted
+
+Header (centered):
+- H2: "Beautiful Content Platforms Built with MEVN"
+- Description: "Vue.js creates stunning, performant user interfaces"
+- mb-12
+
+Layout: max-w-6xl mx-auto px-6
+
+Application Mockup:
+- Create browser window showing modern Vue.js application
+
+Browser Frame:
+* Clean, modern design
+* URL: "blog.platform.com"
+
+Inside - Content Platform / Blog Application:
+
+TOP SECTION - Header:
+* Logo with gradient (green to teal)
+* Navigation (centered):
+  - Home
+  - Articles
+  - Categories
+  - Authors
+  - About
+* Search icon
+* User avatar (right)
+* Theme toggle (sun/moon icon)
+
+HERO SECTION:
+* Large featured article card:
+  - Background image (gradient overlay green to transparent)
+  - Category badge: "Web Development"
+  - Article title (large, bold): "Getting Started with Vue 3"
+  - Author info (avatar + name + date)
+  - Read time: "5 min read"
+  - "Read More" button (Vue green accent)
+
+CONTENT GRID - Latest Articles:
+* Grid: 3 columns
+* 6 article cards with:
+  - Thumbnail image (aspect-video)
+  - Category badge (small, colored)
+  - Article title
+  - Author + date
+  - Excerpt (2 lines)
+  - Read more link
+  - Clean card design with hover effects
+
+SIDEBAR (right):
+* "Popular Categories" widget:
+  - Vue.js (32 articles)
+  - JavaScript (28)
+  - Web Design (15)
+  - Each with icon and count
+
+* "Newsletter" widget:
+  - Email input
+  - Subscribe button (Vue green)
+  - Clean form design
+
+FOOTER:
+* Newsletter signup (wider)
+* Social links (Twitter, GitHub, LinkedIn)
+* Copyright
+
+Vue.js Design Features:
+- Smooth transitions on hover
+- Clean, modern aesthetic
+- Vue green accents (#42b883)
+- Professional typography
+- Organized layout
+
+Annotations around mockup:
+* "Vue Components" → reusable UI elements
+* "Vuex Store" → state management
+* "Vue Router" → page navigation
+* "Express API" → content delivery
+* "MongoDB" → article storage
+
+Code Snippet Panel (bottom-right):
+* Vue 3 Single File Component example:
+```vue
+<template>
+  <div class="article-card">
+    <h3>{{ article.title }}</h3>
+  </div>
+</template>
+
+<script setup>
+import { ref } from 'vue'
+</script>
+```
+* Syntax highlighting
+* "Vue 3 Composition API" label
+
+---
+
+WHAT MEVN DEVELOPERS DO:
+
+Container: py-20
+
+Header (centered):
+- H2: "What Our MEVN Stack Developers Deliver"
+- Subtitle: "Full-stack applications with Vue.js simplicity"
+- mb-12
+
+Grid: grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6, max-w-6xl mx-auto px-6
+
+9 Capability Cards:
+
+Each card (p-6, bg-card, border, rounded-lg):
+- Icon (primary, size 28)
+- Title (font-semibold, mt-3)
+- Description (text-sm text-muted-foreground, mt-2)
+
+1. Icon: Layers, Title: "Vue.js Development", Description: "Components, directives, Composition API, and reactive data"
+
+2. Icon: FileCode, Title: "Single File Components", Description: "Clean .vue files with template, script, and styles together"
+
+3. Icon: Workflow, Title: "Vuex/Pinia State", Description: "Centralized state management for complex applications"
+
+4. Icon: MapPin, Title: "Vue Router", Description: "Client-side routing with nested routes and navigation guards"
+
+5. Icon: Server, Title: "Express APIs", Description: "RESTful backends with Node.js and Express middleware"
+
+6. Icon: Database, Title: "MongoDB Integration", Description: "Mongoose schemas, queries, and aggregations"
+
+7. Icon: Zap, Title: "Nuxt.js (SSR/SSG)", Description: "Server-side rendering and static generation with Nuxt"
+
+8. Icon: Palette, Title: "Vuetify/PrimeVue", Description: "Material Design or PrimeVue component libraries"
+
+9. Icon: Cloud, Title: "Deployment", Description: "Vercel, Netlify, AWS—optimized Vue build deployment"
+
+---
+
+PRICING SECTION:
+
+Container: py-20, bg-muted
+
+Header (centered):
+- H2: "MEVN Stack Developer Pricing"
+- Subtitle: "Fast development at competitive rates"
+- mb-12
+
+Pricing Cards: grid-cols-1 md:grid-cols-3 gap-8, max-w-6xl mx-auto px-6
+
+3 TIERS:
+
+TIER 1: PART-TIME
+- Name: "Part-Time MEVN Developer"
+- Price: "£2,500/month"
+- Description: "80 hours/month"
+- Features:
+  * Vue component development
+  * Express API endpoints
+  * MongoDB queries
+  * Bug fixes & features
+  * Code reviews
+  * Flexible 4 hours/day
+- CTA: "Hire Part-Time" → /contact
+
+TIER 2: FULL-TIME (POPULAR)
+- Name: "Full-Time MEVN Developer"
+- Price: "£4,500/month"
+- Description: "160 hours/month"
+- Features:
+  * Complete feature ownership
+  * Frontend + backend work
+  * Vuex/Pinia state management
+  * Testing & documentation
+  * Performance optimization
+  * Daily standups & sprints
+- CTA: "Hire Full-Time" → /contact
+- isPopular: true
+
+TIER 3: TEAM
+- Name: "MEVN Development Team"
+- Price: "Custom Quote"
+- Description: "2+ developers"
+- Features:
+  * Frontend Vue specialist
+  * Backend Node.js developer
+  * Full-stack generalists
+  * UI/UX designer (optional)
+  * Project manager
+  * Complete app delivery
+- CTA: "Build Team" → /contact
+
+---
+
+SAMPLE MEVN DEVELOPER PROFILES:
+
+Container: py-20
+
+Header (centered):
+- H2: "Meet Our MEVN Stack Developers"
+- Subtitle: "Vue.js specialists with modern JavaScript expertise"
+- mb-12
+
+Profiles Grid: grid-cols-1 md:grid-cols-2 gap-8, max-w-5xl mx-auto px-6
+
+2 DEVELOPER PROFILES:
+
+PROFILE 1:
+- Avatar: User icon in circle, bg-gradient (green to emerald)
+- Name: "Senior MEVN Stack Developer"
+- Experience: "6+ years Vue.js & Node.js"
+- Status: "Available Now" (green dot)
+
+Skills (flex gap-2 flex-wrap):
+* Vue 3
+* Nuxt.js
+* Node.js
+* Express
+* MongoDB
+* Pinia
+* TypeScript
+* Tailwind
+
+Expertise Highlights (space-y-2, mt-4):
+✓ Built 18+ Vue.js applications
+✓ Vue 3 Composition API expert
+✓ Nuxt.js SSR/SSG specialist
+✓ Performance optimization pro
+✓ Clean, maintainable code
+
+Recent Projects:
+- Content management platform with 20K users
+- E-commerce storefront with Vue + Nuxt
+- Admin dashboard with Vuetify
+
+Specialties:
+- Rapid prototyping
+- SEO-optimized Vue apps with Nuxt
+- State management (Vuex/Pinia)
+
+Availability: "Can start immediately"
+
+CTA: "Schedule Interview" → /contact
+
+PROFILE 2:
+- Avatar: User icon in circle, bg-gradient (teal to cyan)
+- Name: "Senior MEVN Stack Developer"
+- Experience: "7+ years full-stack JavaScript"
+- Status: "Available in 1 week"
+
+Skills:
+* Vue.js
+* Nuxt
+* Node.js
+* Express
+* MongoDB
+* GraphQL
+* Vite
+* Docker
+
+Expertise Highlights:
+✓ Vue 2 to Vue 3 migration expert
+✓ GraphQL API design
+✓ MongoDB aggregation specialist
+✓ Component library creation
+✓ DevOps & CI/CD
+
+Recent Projects:
+- SaaS platform with multi-tenancy
+- Real-time chat application
+- Vue component library
+
+Leadership:
+- Mentored junior Vue developers
+- Open source contributor
+
+Availability: "1 week notice"
+
+CTA: "Schedule Interview" → /contact
+
+---
+
+MEVN STACK PROJECTS SHOWCASE:
+
+Container: py-20, bg-muted
+
+Header (centered):
+- H2: "Modern Applications Built with MEVN"
+- Subtitle: "Fast, beautiful, and performant Vue.js apps"
+- mb-12
+
+Projects Grid: grid-cols-1 md:grid-cols-3 gap-8, max-w-7xl mx-auto px-6
+
+3 PROJECT CARDS:
+
+PROJECT 1:
+- Image: Gradient (green to teal) with BookOpen icon (size 64)
+- Badge: "Content Platform"
+- Title: "Tech Blog & Learning Platform"
+- Description: "Vue.js-powered blog with markdown support, search, and user authentication"
+- Tech: Vue 3, Nuxt.js, MongoDB, Express, Algolia
+- Results (grid-cols-3 gap-2, mt-4):
+  * "15K Articles"
+  * "50K Users"
+  * "SEO Optimized"
+- Features (text-xs, space-y-1, mt-3):
+  ✓ Server-side rendering (Nuxt)
+  ✓ Full-text search
+  ✓ Markdown editor
+  ✓ User comments
+- Icon: BookOpen
+
+PROJECT 2:
+- Image: Gradient (emerald to green) with ShoppingBag icon
+- Badge: "E-Commerce"
+- Title: "Fashion E-Commerce Store"
+- Description: "Lightning-fast Vue storefront with product catalog and cart"
+- Tech: Vue 3, Nuxt, Stripe, MongoDB, Express
+- Results:
+  * "£200K Sales"
+  * "1.2s Load Time"
+  * "4.5% Conversion"
+- Features:
+  ✓ Product filtering
+  ✓ Stripe checkout
+  ✓ Wishlist & reviews
+  ✓ Mobile optimized
+- Icon: ShoppingBag
+
+PROJECT 3:
+- Image: Gradient (cyan to blue) with LayoutDashboard icon
+- Badge: "Admin Panel"
+- Title: "Analytics Dashboard"
+- Description: "Real-time admin dashboard with charts and data visualization"
+- Tech: Vue 3, Vuetify, Chart.js, Node.js, MongoDB
+- Results:
+  * "Real-time Data"
+  * "500K Records"
+  * "Custom Reports"
+- Features:
+  ✓ Interactive charts
+  ✓ Data export (CSV/PDF)
+  ✓ Role-based access
+  ✓ Dark mode
+- Icon: BarChart
+
+---
+
+VUE.JS ADVANTAGES SECTION:
+
+Container: py-20
+
+Header (centered):
+- H2: "Why Developers Love Vue.js"
+- Subtitle: "The progressive JavaScript framework"
+- mb-12
+
+Grid: grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6, max-w-6xl mx-auto px-6
+
+4 Advantage Cards:
+
+Each card (p-6, bg-card, border, rounded-lg, text-center):
+- Icon (green gradient, size 40, mb-4)
+- Title (font-semibold, mb-2)
+- Description (text-sm text-muted-foreground)
+
+1. Icon: Smile
+   Title: "Easy to Learn"
+   Description: "Gentlest learning curve. HTML templates, not JSX."
+
+2. Icon: Zap
+   Title: "Fast Performance"
+   Description: "20KB gzipped. 120 FPS animations. Lightning fast."
+
+3. Icon: TrendingUp
+   Title: "Progressive"
+   Description: "Start small, scale up. Add features incrementally."
+
+4. Icon: Heart
+   Title: "Great DX"
+   Description: "Developer experience matters. Vue is a joy to use."
+
+---
+
+PROCESS TIMELINE:
+
+Container: py-20, bg-muted
+
+Use ProcessTimeline component:
+
+- Title: "Hiring MEVN Stack Developers"
+- Subtitle: "From consultation to Vue.js app deployment"
+
+Steps (4 phases):
+
+STEP 1:
+- phase: "Day 1"
+- title: "Discuss Your Vue.js Project"
+- description: "Share your requirements and we match you with MEVN developers"
+- deliverables:
+  * Free consultation call
+  * Discuss Vue 3 vs Vue 2
+  * Nuxt.js SSR/SSG needs
+  * MongoDB schema design
+  * Choose engagement model
+- duration: "Same day"
+
+STEP 2:
+- phase: "Day 2-3"
+- title: "Meet Vue.js Experts"
+- description: "Interview 2-3 MEVN stack developers"
+- deliverables:
+  * Developer profiles & portfolios
+  * Vue.js project examples
+  * Component library samples
+  * GitHub profile review
+  * Schedule interviews
+- duration: "48 hours"
+
+STEP 3:
+- phase: "Day 4-5"
+- title: "Technical Assessment"
+- description: "Evaluate Vue, Node.js, and MongoDB skills"
+- deliverables:
+  * Video interviews
+  * Vue component discussion
+  * Composition API knowledge
+  * State management patterns
+  * Make hiring decision
+- duration: "2-3 days"
+
+STEP 4:
+- phase: "Day 6-7"
+- title: "Onboard & Start Building"
+- description: "Developer joins and starts Vue.js development"
+- deliverables:
+  * Contract and NDA
+  * Access to Vue project
+  * Setup Vite/Nuxt environment
+  * First components delivered
+  * Sprint planning
+- duration: "1-2 days"
+
+---
+
+FAQ SECTION:
+
+Container: py-20, max-w-4xl mx-auto px-6
+
+Header: "MEVN Stack Developer FAQs"
+
+10 Questions (Accordion):
+
+Q1: "Why choose MEVN over MERN or MEAN?"
+A: "Choose MEVN if you want Vue.js's simplicity and performance. Vue is easier to learn than React or Angular, has cleaner syntax than React (no JSX), and is more lightweight than Angular. Perfect for content platforms, marketing sites, and rapid development."
+
+Q2: "Is Vue.js as popular as React or Angular?"
+A: "Vue has a smaller but passionate community. It's used by Alibaba, GitLab, Nintendo, Adobe. While React is more popular in the US, Vue is huge in Asia and growing rapidly worldwide. Quality over quantity—Vue developers love it."
+
+Q3: "What's Vue 3 Composition API?"
+A: "Vue 3's Composition API is a new way to organize component logic (similar to React Hooks). It's more flexible than Options API, better for TypeScript, and helps with code reuse. Our developers are Vue 3 experts."
+
+Q4: "Do MEVN developers use Nuxt.js?"
+A: "Yes! Nuxt.js is Vue's equivalent to Next.js for React. It adds server-side rendering (SSR), static site generation (SSG), and automatic routing. Perfect for SEO and performance."
+
+Q5: "Can Vue.js handle large applications?"
+A: "Absolutely! GitLab's entire frontend is Vue.js. With Vuex/Pinia for state management and proper architecture, Vue scales to large, complex apps. Our developers have built apps with 50K+ users."
+
+Q6: "What's the difference between Vuex and Pinia?"
+A: "Vuex is Vue's traditional state management (like Redux). Pinia is the new, official recommendation—simpler, better TypeScript support, less boilerplate. Our developers use both based on project needs."
+
+Q7: "Does Vue.js have component libraries?"
+A: "Yes! Vuetify (Material Design), PrimeVue (comprehensive UI), Element Plus (enterprise), Quasar (full framework). Vue has excellent UI libraries for rapid development."
+
+Q8: "Can MEVN developers do TypeScript?"
+A: "Yes! Vue 3 has excellent TypeScript support. Our developers write Vue with TypeScript for type safety, especially in larger projects."
+
+Q9: "Is Vue good for SEO?"
+A: "With Nuxt.js (SSR/SSG), yes! Nuxt pre-renders pages on the server for perfect SEO. Without Nuxt, Vue is a SPA like React—SEO requires extra work."
+
+Q10: "Can you migrate from Vue 2 to Vue 3?"
+A: "Yes! Our developers can migrate Vue 2 applications to Vue 3, updating to Composition API, Vite build tool, and Vue 3 ecosystem. Gradual migration is possible too."
+
+---
+
+CTA SECTIONS:
+
+Add 3 CTAs:
+
+CTA 1 (After MEVN Components):
+- Variant: 'bordered'
+- Title: "Need a Vue.js Expert?"
+- Description: "Our MEVN developers build fast, beautiful applications with Vue.js"
+- PrimaryCTA: "Hire MEVN Developer" → /contact
+- Size: 'medium'
+
+CTA 2 (After Projects):
+- Variant: 'gradient'
+- Title: "Ready to Build with Vue.js?"
+- Description: "From content platforms to e-commerce—our MEVN experts deliver fast"
+- PrimaryCTA: "Schedule Interview" → /contact
+- SecondaryCTA: "See Pricing" → scroll to pricing
+- Size: 'large'
+
+CTA 3 (Final):
+- Variant: 'gradient'
+- Title: "Let's Build with Vue.js & MEVN Stack"
+- Description: "Book a free consultation and meet our progressive JavaScript developers"
+- PrimaryCTA: "Book Consultation" → /contact
+- SecondaryCTA: "Call: +44 7429 917368" → tel link
+- ShowContactInfo: true
+- Size: 'large'
+
+---
+
+GLOBAL REQUIREMENTS:
+
+1. SEO:
+   - Meta title: "Hire MEVN Stack Developers | MongoDB, Express, Vue.js, Node.js | House of Developers"
+   - Meta description: "Hire senior MEVN stack developers. Vue.js + Node.js experts. £2,500/month part-time, £4,500/month full-time. Fast, lightweight apps."
+
+2. SLUG: Use "mevn-stack" (not "full-stack/mevn")
+
+3. ICONS: Lucide React icons only
+
+4. COMPONENTS:
+   - ProcessTimeline ✅
+   - ValueProposition ✅
+   - CTASection (×3) ✅
+
+5. MOCKUPS:
+   - Beautiful 4-layer MEVN stack visualization (Vue green gradients)
+   - Content platform/blog mockup (clean, modern)
+   - Project showcases with green/teal gradients
+   - Vue.js code snippets
+
+6. PROFILES: 2 generic MEVN developer examples
+
+7. VUE.JS BRANDING: Use green/teal gradients (#42b883)
+
+8. RESPONSIVE: Mobile-first
+
+9. DARK/LIGHT MODE: Full support
+
+10. FRIENDLY TONE: Approachable, progressive (like Vue)
+
+Build a beautiful, approachable MEVN stack page with green-themed mockups showcasing Vue.js's simplicity and performance.

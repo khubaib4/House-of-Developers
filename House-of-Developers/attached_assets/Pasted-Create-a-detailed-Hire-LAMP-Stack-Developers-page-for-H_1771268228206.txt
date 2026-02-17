@@ -1,0 +1,745 @@
+Create a detailed Hire LAMP Stack Developers page for House of Developers.
+
+PAGE: /services/hire-developers/lamp-stack/page.tsx
+
+A comprehensive page for hiring LAMP stack developers with professional mockups and detailed information.
+
+IMPORTANT: Use slug "lamp-stack" (not "full-stack/lamp"). This is a direct technology page.
+
+---
+
+HERO SECTION:
+
+Container: py-24, max-w-7xl mx-auto px-6
+
+Layout: Grid grid-cols-1 lg:grid-cols-2 gap-12 items-center
+
+Left Column:
+
+- Breadcrumb: "Home / Services / Hire Developers / LAMP Stack"
+  * text-sm text-muted-foreground, clickable, mb-6
+
+- Badge: "🐘 LAMP Stack Developers"
+  * bg-primary/10, text-primary, px-3 py-1.5, rounded-full, mb-4
+
+- H1: "Hire LAMP Stack Developers"
+  * text-4xl md:text-6xl font-bold, mb-4
+
+- Tagline: "Linux, Apache, MySQL, PHP Experts"
+  * text-xl md:text-2xl
+  * Gradient text from orange to purple (PHP colors)
+  * font-semibold
+
+- Description (mt-6):
+  * text-xl text-muted-foreground leading-relaxed
+  * "Hire senior LAMP stack developers who build battle-tested web applications with PHP. The proven, stable stack powering WordPress, Drupal, and millions of websites—perfect for traditional web apps, CMS platforms, and e-commerce."
+
+- Feature Pills (mt-6, flex gap-3 flex-wrap):
+  1. "Battle-Tested" (Shield icon)
+  2. "Wide Hosting" (Globe icon)
+  3. "WordPress Ready" (FileText icon)
+  4. "Stable & Mature" (Award icon)
+
+- Stats Grid (mt-8, grid-cols-3 gap-6):
+  1. "5+ Developers"
+  2. "12+ Years Avg"
+  3. "Available Now"
+
+- CTA Buttons (mt-8, flex gap-4):
+  * Primary: "Hire LAMP Developer" → /contact
+  * Secondary: "See Examples" → scroll to projects
+
+Right Column:
+
+- LAMP Stack Visual Mockup:
+  * Create traditional server stack visualization
+  
+  4 Layers stacked vertically with classic server aesthetic:
+  
+  LAYER 1 (Top - PHP):
+  * Card: bg-gradient (purple to indigo), p-4, rounded-lg
+  * Icon: Code (white, size 32)
+  * Label: "PHP" (white, font-bold)
+  * Subtitle: "Server Language"
+  * Small code preview: "<?php"
+  * Badge: "Laravel/Symfony"
+  
+  LAYER 2 (MySQL):
+  * Card: bg-gradient (blue to cyan), p-4, rounded-lg
+  * Icon: Database (white, size 32)
+  * Label: "MySQL"
+  * Subtitle: "Relational Database"
+  * Code snippet: "SELECT * FROM"
+  * Badge: "SQL"
+  
+  LAYER 3 (Apache):
+  * Card: bg-gradient (red to orange), p-4, rounded-lg
+  * Icon: Server (white, size 32)
+  * Label: "Apache"
+  * Subtitle: "Web Server"
+  * Config preview: ".htaccess"
+  * Badge: "HTTP Server"
+  
+  LAYER 4 (Bottom - Linux):
+  * Card: bg-gradient (slate to gray), p-4, rounded-lg
+  * Icon: Terminal (white, size 32)
+  * Label: "Linux"
+  * Subtitle: "Operating System"
+  * Command: "$ sudo systemctl"
+  * Badge: "Ubuntu/CentOS"
+  
+  Connecting arrows/lines between layers
+  "LAMP Stack" label with server icon
+  
+  Floating badges around:
+  * "WordPress Compatible" (FileText icon)
+  * "Industry Standard" (Award icon)
+  * "Widely Hosted" (Globe icon)
+  
+  * Shadow: 2xl
+  * Professional, classic server aesthetic
+
+---
+
+WHAT IS LAMP STACK SECTION:
+
+Container: py-20, bg-muted, max-w-5xl mx-auto px-6, text-center
+
+- H2: "What is the LAMP Stack?"
+- Description (mt-4, text-lg):
+  "LAMP is the classic web development stack that's powered the internet for 20+ years. Linux (operating system), Apache (web server), MySQL (database), PHP (programming language)—proven, stable, and widely supported by every hosting provider."
+
+LAMP Components Grid (mt-12, grid-cols-1 md:grid-cols-4 gap-8):
+
+4 component cards:
+
+Each card (p-6, bg-card, border, rounded-xl, hover effect):
+- Icon (size 40, mb-4)
+- Letter badge ("L", "A", "M", "P" - large, font-bold, gradient text)
+- Name (font-semibold, mt-2)
+- Full name (text-xs text-muted-foreground)
+- Purpose (text-sm, mt-2)
+
+1. Icon: Terminal
+   Letter: "L" (gradient slate)
+   Name: "Linux"
+   Full: "Operating System"
+   Purpose: "Stable, secure, and free Unix-like OS for servers"
+
+2. Icon: Server
+   Letter: "A" (gradient red)
+   Name: "Apache"
+   Full: "Web Server"
+   Purpose: "Most popular HTTP server, powers 30%+ of websites"
+
+3. Icon: Database
+   Letter: "M" (gradient blue)
+   Name: "MySQL"
+   Full: "SQL Database"
+   Purpose: "Reliable relational database with ACID compliance"
+
+4. Icon: Code
+   Letter: "P" (gradient purple)
+   Name: "PHP"
+   Full: "Server Language"
+   Purpose: "Popular server-side language, powers WordPress & more"
+
+---
+
+WHY CHOOSE LAMP SECTION:
+
+Container: py-20
+
+Use ValueProposition component:
+
+- Title: "Why Choose LAMP Stack Development"
+- Subtitle: "The proven, battle-tested web stack"
+- Columns: 3
+
+9 Benefits:
+
+1. Icon: Award, Title: "Battle-Tested", Description: "20+ years of production use, billions of websites"
+2. Icon: Shield, Title: "Stable & Mature", Description: "Fewer breaking changes, long-term support"
+3. Icon: Globe, Title: "Universal Hosting", Description: "Every web host supports LAMP—easy deployment"
+4. Icon: DollarSign, Title: "Cost Effective", Description: "All components are open-source and free"
+5. Icon: FileText, Title: "WordPress Native", Description: "Powers WordPress, Drupal, Joomla—60% of web"
+6. Icon: Users, Title: "Large Talent Pool", Description: "Millions of PHP developers worldwide"
+7. Icon: Book, Title: "Extensive Resources", Description: "20+ years of tutorials, docs, and solutions"
+8. Icon: Package, Title: "Rich Ecosystem", Description: "Laravel, Symfony, Composer—modern PHP tools"
+9. Icon: Wrench, Title: "Easy Maintenance", Description: "Simple, well-understood stack—easy to maintain"
+
+---
+
+LAMP STACK MOCKUP - WORDPRESS E-COMMERCE:
+
+Container: py-20, bg-muted
+
+Header (centered):
+- H2: "Traditional Web Applications Built with LAMP"
+- Description: "WordPress, e-commerce, and CMS platforms on proven technology"
+- mb-12
+
+Layout: max-w-6xl mx-auto px-6
+
+Application Mockup:
+- Create browser window showing WordPress/e-commerce site
+
+Browser Frame:
+* Classic professional design
+* URL: "shop.example.com"
+
+Inside - E-Commerce Website (WordPress/WooCommerce):
+
+TOP SECTION - Header:
+* Logo (left)
+* Main navigation:
+  - Home
+  - Shop
+  - Categories
+  - About
+  - Contact
+* Search bar (center)
+* Cart icon (3 items) + Account (right)
+
+HERO SECTION - Banner:
+* Large promotional banner
+* Headline: "Summer Sale - Up to 50% Off"
+* Background image with overlay
+* "Shop Now" CTA button
+* Breadcrumb: Home > Shop
+
+PRODUCT GRID - Main Content:
+
+Sidebar (left - 25%):
+* "Categories" widget:
+  - Electronics (45)
+  - Clothing (128)
+  - Home & Garden (89)
+  - Books (234)
+* "Filter by Price" slider
+* "Filter by Rating" (stars)
+* "Brands" checkboxes
+
+Main Content (right - 75%):
+* Page title: "Shop" 
+* Results: "Showing 1-12 of 248 results"
+* Sort dropdown: "Sort by popularity"
+
+Product Grid (4 columns):
+* 8 product cards showing:
+  - Product image (aspect-square)
+  - Product name
+  - Star rating (4.5/5)
+  - Price (£29.99, was £49.99)
+  - Sale badge (red)
+  - "Add to Cart" button
+  - Quick view icon
+
+Pagination (bottom):
+* Page numbers: 1, 2, 3, 4, 5, ... Next
+
+FOOTER:
+* 4 columns:
+  - About Us
+  - Customer Service
+  - My Account
+  - Newsletter signup
+* Payment icons (Visa, Mastercard, PayPal)
+* Copyright
+
+Classic WooCommerce/WordPress Design:
+- Clean, professional
+- Traditional layouts
+- PHP-generated HTML
+- MySQL-powered product catalog
+- Apache .htaccess rewrites
+
+Annotations around mockup:
+* "WordPress/WooCommerce" → CMS
+* "PHP Templates" → dynamic pages
+* "MySQL Database" → products, orders
+* "Apache Rewrites" → clean URLs
+* ".htaccess Rules" → URL routing
+
+Code Snippet Panel (bottom-right):
+* PHP code example:
+```php
+<?php
+// WordPress/Laravel PHP
+$products = Product::where('active', 1)
+    ->orderBy('created_at', 'desc')
+    ->get();
+
+foreach ($products as $product) {
+    echo $product->name;
+}
+?>
+```
+* Syntax highlighting
+* "Classic PHP" label
+
+---
+
+WHAT LAMP DEVELOPERS DO:
+
+Container: py-20
+
+Header (centered):
+- H2: "What Our LAMP Stack Developers Deliver"
+- Subtitle: "Traditional web development with modern PHP practices"
+- mb-12
+
+Grid: grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6, max-w-6xl mx-auto px-6
+
+9 Capability Cards:
+
+Each card (p-6, bg-card, border, rounded-lg):
+- Icon (primary, size 28)
+- Title (font-semibold, mt-3)
+- Description (text-sm text-muted-foreground, mt-2)
+
+1. Icon: Code, Title: "PHP Development", Description: "Modern PHP 8+, Laravel, Symfony frameworks"
+
+2. Icon: FileText, Title: "WordPress Development", Description: "Custom themes, plugins, WooCommerce stores"
+
+3. Icon: Database, Title: "MySQL Databases", Description: "Schema design, queries, optimization, indexing"
+
+4. Icon: Server, Title: "Apache Configuration", Description: "Virtual hosts, .htaccess, SSL, rewrites"
+
+5. Icon: ShoppingBag, Title: "E-Commerce", Description: "WooCommerce, Magento, custom shopping carts"
+
+6. Icon: Layout, Title: "CMS Platforms", Description: "WordPress, Drupal, Joomla, custom CMS"
+
+7. Icon: Lock, Title: "Security", Description: "SQL injection prevention, XSS protection, auth"
+
+8. Icon: Zap, Title: "Performance", Description: "Caching (Redis, Memcached), query optimization"
+
+9. Icon: Cloud, Title: "Deployment", Description: "cPanel, Plesk, AWS, DigitalOcean, traditional hosting"
+
+---
+
+PRICING SECTION:
+
+Container: py-20, bg-muted
+
+Header (centered):
+- H2: "LAMP Stack Developer Pricing"
+- Subtitle: "Traditional stack, modern rates"
+- mb-12
+
+Pricing Cards: grid-cols-1 md:grid-cols-3 gap-8, max-w-6xl mx-auto px-6
+
+3 TIERS:
+
+TIER 1: PART-TIME
+- Name: "Part-Time LAMP Developer"
+- Price: "£2,500/month"
+- Description: "80 hours/month"
+- Features:
+  * PHP/Laravel development
+  * WordPress customization
+  * MySQL database work
+  * Bug fixes & updates
+  * Code reviews
+  * Flexible 4 hours/day
+- CTA: "Hire Part-Time" → /contact
+
+TIER 2: FULL-TIME (POPULAR)
+- Name: "Full-Time LAMP Developer"
+- Price: "£4,500/month"
+- Description: "160 hours/month"
+- Features:
+  * Complete feature ownership
+  * Full LAMP stack work
+  * WordPress/Laravel expertise
+  * Database optimization
+  * Server configuration
+  * Daily standups & sprints
+- CTA: "Hire Full-Time" → /contact
+- isPopular: true
+
+TIER 3: TEAM
+- Name: "LAMP Development Team"
+- Price: "Custom Quote"
+- Description: "2+ developers"
+- Features:
+  * PHP backend developers
+  * WordPress specialists
+  * Database administrator
+  * Server/DevOps engineer
+  * QA tester (optional)
+  * Complete app delivery
+- CTA: "Build Team" → /contact
+
+---
+
+SAMPLE LAMP DEVELOPER PROFILES:
+
+Container: py-20
+
+Header (centered):
+- H2: "Meet Our LAMP Stack Developers"
+- Subtitle: "PHP and WordPress veterans with deep expertise"
+- mb-12
+
+Profiles Grid: grid-cols-1 md:grid-cols-2 gap-8, max-w-5xl mx-auto px-6
+
+2 DEVELOPER PROFILES:
+
+PROFILE 1:
+- Avatar: User icon in circle, bg-gradient (purple to pink)
+- Name: "Senior LAMP Stack Developer"
+- Experience: "12+ years PHP & MySQL"
+- Status: "Available Now" (green dot)
+
+Skills (flex gap-2 flex-wrap):
+* PHP 8
+* Laravel
+* MySQL
+* WordPress
+* Apache
+* Linux
+* Redis
+* Git
+
+Expertise Highlights (space-y-2, mt-4):
+✓ Built 30+ WordPress sites
+✓ Laravel framework expert
+✓ MySQL optimization specialist
+✓ E-commerce platform veteran
+✓ Security best practices
+
+Recent Projects:
+- WordPress e-commerce with 10K products
+- Laravel SaaS platform
+- Custom CMS for enterprise
+
+Specialties:
+- WooCommerce customization
+- Laravel API development
+- Database performance tuning
+
+Availability: "Can start immediately"
+
+CTA: "Schedule Interview" → /contact
+
+PROFILE 2:
+- Avatar: User icon in circle, bg-gradient (orange to red)
+- Name: "Senior LAMP Stack Developer"
+- Experience: "15+ years full-stack PHP"
+- Status: "Available in 1 week"
+
+Skills:
+* PHP
+* Symfony
+* MySQL
+* WordPress
+* Drupal
+* jQuery
+* Bootstrap
+* Composer
+
+Expertise Highlights:
+✓ WordPress plugin development
+✓ Drupal 9/10 expert
+✓ MySQL stored procedures
+✓ Apache/Nginx configuration
+✓ Legacy PHP modernization
+
+Recent Projects:
+- Multi-site WordPress network
+- Drupal content platform
+- PHP 5.6 to 8.0 migration
+
+Leadership:
+- Led teams of 4+ developers
+- WordPress agency experience
+
+Availability: "1 week notice"
+
+CTA: "Schedule Interview" → /contact
+
+---
+
+LAMP STACK PROJECTS SHOWCASE:
+
+Container: py-20, bg-muted
+
+Header (centered):
+- H2: "Proven LAMP Applications We've Built"
+- Subtitle: "Traditional web platforms that work"
+- mb-12
+
+Projects Grid: grid-cols-1 md:grid-cols-3 gap-8, max-w-7xl mx-auto px-6
+
+3 PROJECT CARDS:
+
+PROJECT 1:
+- Image: Gradient (blue to purple) with ShoppingCart icon (size 64)
+- Badge: "WordPress E-Commerce"
+- Title: "Fashion WooCommerce Store"
+- Description: "Complete WordPress/WooCommerce shop with 2,000+ products and custom checkout"
+- Tech: WordPress, WooCommerce, MySQL, Apache, PHP
+- Results (grid-cols-3 gap-2, mt-4):
+  * "£150K/month"
+  * "2,000 Products"
+  * "30K Orders"
+- Features (text-xs, space-y-1, mt-3):
+  ✓ Custom WooCommerce theme
+  ✓ Payment gateway integration
+  ✓ Inventory management
+  ✓ Email automation
+- Icon: ShoppingBag
+
+PROJECT 2:
+- Image: Gradient (orange to yellow) with Globe icon
+- Badge: "Corporate Website"
+- Title: "Law Firm WordPress Site"
+- Description: "Professional WordPress site with case studies, attorney profiles, and contact forms"
+- Tech: WordPress, Custom Theme, MySQL, Gravity Forms
+- Results:
+  * "50K Visitors"
+  * "300 Leads/month"
+  * "Top 3 SEO"
+- Features:
+  ✓ Custom WordPress theme
+  ✓ Attorney directory
+  ✓ Case study system
+  ✓ Multi-location support
+- Icon: Briefcase
+
+PROJECT 3:
+- Image: Gradient (red to pink) with Layout icon
+- Badge: "Laravel Platform"
+- Title: "Booking Management System"
+- Description: "Laravel-based booking platform with calendar, payments, and automated reminders"
+- Tech: Laravel, MySQL, Apache, Stripe, Twilio
+- Results:
+  * "500 Businesses"
+  * "10K Bookings/mo"
+  * "Automated SMS"
+- Features:
+  ✓ Calendar synchronization
+  ✓ Payment processing
+  ✓ SMS reminders
+  ✓ Multi-user accounts
+- Icon: Calendar
+
+---
+
+LAMP VS MODERN STACKS SECTION:
+
+Container: py-20
+
+Header (centered):
+- H2: "LAMP Stack vs Modern JavaScript Stacks"
+- Description: "When to choose the proven classic"
+- mb-12
+
+Comparison Cards: grid-cols-1 md:grid-cols-2 gap-8, max-w-5xl mx-auto px-6
+
+LAMP CARD:
+- Background: card with border-primary
+- Icon: Server
+- Title: "Choose LAMP Stack If..."
+- Features:
+  ✓ Building with WordPress/Drupal
+  ✓ Need universal hosting support
+  ✓ Traditional web application
+  ✓ Proven, stable technology
+  ✓ Lower hosting costs
+  ✓ PHP/MySQL expertise in-house
+
+Best for:
+- WordPress sites
+- E-commerce (WooCommerce)
+- Content management
+- Traditional web apps
+- PHP-first projects
+
+MODERN STACKS CARD:
+- Background: card
+- Icon: Zap
+- Title: "Choose MERN/MEAN/MEVN If..."
+- Features:
+  ✓ Modern SPA/PWA application
+  ✓ Real-time features needed
+  ✓ Want JavaScript full-stack
+  ✓ React/Angular/Vue preference
+  ✓ API-first architecture
+  ✓ Microservices approach
+
+Best for:
+- SaaS dashboards
+- Real-time apps
+- SPAs (Single Page Apps)
+- Modern startups
+- JavaScript-first teams
+
+Bottom note: "Both are excellent choices. We'll recommend based on your needs → /contact"
+
+---
+
+PROCESS TIMELINE:
+
+Container: py-20, bg-muted
+
+Use ProcessTimeline component:
+
+- Title: "Hiring LAMP Stack Developers"
+- Subtitle: "From consultation to WordPress/Laravel deployment"
+
+Steps (4 phases):
+
+STEP 1:
+- phase: "Day 1"
+- title: "Discuss Your PHP Project"
+- description: "Share your LAMP requirements and platform needs"
+- deliverables:
+  * Free consultation call
+  * Discuss WordPress vs Laravel vs custom
+  * MySQL schema planning
+  * Hosting requirements
+  * Choose engagement model
+- duration: "Same day"
+
+STEP 2:
+- phase: "Day 2-3"
+- title: "Meet PHP Experts"
+- description: "Interview 2-3 LAMP stack developers"
+- deliverables:
+  * Developer profiles & portfolios
+  * WordPress/Laravel projects
+  * PHP code samples
+  * MySQL expertise review
+  * Schedule interviews
+- duration: "48 hours"
+
+STEP 3:
+- phase: "Day 4-5"
+- title: "Technical Assessment"
+- description: "Evaluate PHP, MySQL, and WordPress/Laravel skills"
+- deliverables:
+  * Video interviews
+  * PHP coding discussion
+  * MySQL query optimization
+  * WordPress theme/plugin knowledge
+  * Make hiring decision
+- duration: "2-3 days"
+
+STEP 4:
+- phase: "Day 6-7"
+- title: "Onboard & Start Coding"
+- description: "Developer joins and starts PHP development"
+- deliverables:
+  * Contract and NDA
+  * Access to codebase
+  * Setup local LAMP environment
+  * First features delivered
+  * Sprint planning
+- duration: "1-2 days"
+
+---
+
+FAQ SECTION:
+
+Container: py-20, max-w-4xl mx-auto px-6
+
+Header: "LAMP Stack Developer FAQs"
+
+10 Questions (Accordion):
+
+Q1: "Is LAMP stack still relevant in 2024?"
+A: "Absolutely! LAMP powers 60%+ of websites including WordPress (43% of all sites). It's battle-tested, stable, and supported everywhere. Perfect for WordPress, e-commerce, CMS, and traditional web apps. Modern PHP (Laravel, Symfony) is excellent."
+
+Q2: "What's the difference between LAMP and LEMP?"
+A: "LEMP replaces Apache (A) with Nginx (E). Both work with PHP and MySQL. Apache is easier to configure (.htaccess), Nginx is faster for static files. Our developers work with both."
+
+Q3: "Do LAMP developers use modern PHP?"
+A: "Yes! Our developers use PHP 8+ with Laravel or Symfony frameworks. Modern PHP has type safety, async features, and is much faster than old PHP 5.x."
+
+Q4: "Can LAMP handle high traffic?"
+A: "Yes! With proper caching (Redis, Varnish), CDN, and database optimization, LAMP scales well. Facebook started on LAMP. Proper architecture matters more than the stack."
+
+Q5: "Is WordPress development part of LAMP?"
+A: "Yes! WordPress runs on LAMP (Linux, Apache, MySQL, PHP). Our LAMP developers are WordPress experts—custom themes, plugins, WooCommerce, and optimization."
+
+Q6: "What about Laravel vs raw PHP?"
+A: "Laravel is a modern PHP framework (like Rails for Ruby). It provides structure, security, and speed. We use Laravel for custom web apps and raw PHP for WordPress/simple projects."
+
+Q7: "Do LAMP developers work with cPanel/Plesk?"
+A: "Yes! Most LAMP developers are familiar with cPanel, Plesk, and traditional hosting. They can also work with AWS, DigitalOcean, and cloud servers."
+
+Q8: "Can you migrate from WordPress to something else?"
+A: "Yes, but often not recommended. WordPress is excellent for content sites. We can migrate to Laravel or Node.js if needed, but WordPress is usually the right choice for CMS needs."
+
+Q9: "What databases besides MySQL?"
+A: "PostgreSQL, MariaDB (MySQL fork), SQLite. Most LAMP developers know MySQL/MariaDB deeply and can learn PostgreSQL. For NoSQL, we'd recommend MERN/MEAN instead."
+
+Q10: "Is LAMP cheaper to host than MERN/MEAN?"
+A: "Often yes! Shared hosting for LAMP starts at £3/month. Node.js apps usually need VPS (£10+/month). For WordPress sites, LAMP hosting is abundant and cheap."
+
+---
+
+CTA SECTIONS:
+
+Add 3 CTAs:
+
+CTA 1 (After LAMP Components):
+- Variant: 'bordered'
+- Title: "Need a WordPress or PHP Expert?"
+- Description: "Our LAMP developers build proven web applications with PHP and MySQL"
+- PrimaryCTA: "Hire LAMP Developer" → /contact
+- Size: 'medium'
+
+CTA 2 (After Projects):
+- Variant: 'gradient'
+- Title: "Ready to Build with LAMP Stack?"
+- Description: "From WordPress sites to Laravel apps—our PHP experts deliver reliable solutions"
+- PrimaryCTA: "Schedule Interview" → /contact
+- SecondaryCTA: "See Pricing" → scroll to pricing
+- Size: 'large'
+
+CTA 3 (Final):
+- Variant: 'gradient'
+- Title: "Let's Build with PHP & MySQL"
+- Description: "Book a free consultation and meet our battle-tested LAMP stack developers"
+- PrimaryCTA: "Book Consultation" → /contact
+- SecondaryCTA: "Call: +44 7429 917368" → tel link
+- ShowContactInfo: true
+- Size: 'large'
+
+---
+
+GLOBAL REQUIREMENTS:
+
+1. SEO:
+   - Meta title: "Hire LAMP Stack Developers | Linux, Apache, MySQL, PHP | House of Developers"
+   - Meta description: "Hire senior LAMP stack developers. PHP, WordPress, Laravel experts. £2,500/month part-time, £4,500/month full-time. Battle-tested web development."
+
+2. SLUG: Use "lamp-stack" (not "full-stack/lamp")
+
+3. ICONS: Lucide React icons only
+
+4. COMPONENTS:
+   - ProcessTimeline ✅
+   - ValueProposition ✅
+   - CTASection (×3) ✅
+
+5. MOCKUPS:
+   - Classic 4-layer LAMP stack visualization (professional server aesthetic)
+   - WordPress/WooCommerce e-commerce mockup (traditional design)
+   - Project showcases with classic web design
+   - PHP code snippets
+
+6. PROFILES: 2 generic LAMP developer examples (experienced veterans)
+
+7. CLASSIC AESTHETIC: Professional, proven, stable feel
+
+8. RESPONSIVE: Mobile-first
+
+9. DARK/LIGHT MODE: Full support
+
+10. PROFESSIONAL TONE: Proven, reliable, battle-tested
+
+Build a professional LAMP stack page with classic mockups showcasing PHP and WordPress expertise.
