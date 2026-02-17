@@ -13,7 +13,7 @@ import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { ZigzagTimeline } from "@/components/ui/ZigzagTimeline";
 import { ValueProposition } from "@/components/ui/ValueProposition";
 import { CTASection } from "@/components/ui/CTASection";
-import { TechStackIcons } from "@/components/ui/TechStackIcons";
+import { TabbedTechStack } from "@/components/ui/TabbedTechStack";
 import {
   Layers,
   Layout,
@@ -42,25 +42,72 @@ import {
 
 const FS_COLOR = "#6366F1";
 
-const fullstackTechnologies = [
-  { name: "React", slug: "react" },
-  { name: "Angular", slug: "angular" },
-  { name: "Vue.js", slug: "vuedotjs" },
-  { name: "TypeScript", slug: "typescript" },
-  { name: "Node.js", slug: "nodedotjs" },
-  { name: "Python", slug: "python" },
-  { name: "PHP", slug: "php" },
-  { name: "PostgreSQL", slug: "postgresql" },
-  { name: "MongoDB", slug: "mongodb" },
-  { name: "MySQL", slug: "mysql" },
-  { name: "Redis", slug: "redis" },
-  { name: "AWS", slug: "amazonaws" },
-  { name: "Docker", slug: "docker" },
-  { name: "GitHub", slug: "github" },
-  { name: "Figma", slug: "figma" },
-  { name: "Express", slug: "express" },
-  { name: "NestJS", slug: "nestjs" },
-  { name: "GraphQL", slug: "graphql" },
+const fullstackTechTabs = [
+  {
+    label: "Frontend",
+    technologies: [
+      { name: "React", slug: "react" },
+      { name: "Next.js", slug: "nextdotjs" },
+      { name: "Vue.js", slug: "vuedotjs" },
+      { name: "Angular", slug: "angular" },
+      { name: "TypeScript", slug: "typescript" },
+      { name: "Tailwind CSS", slug: "tailwindcss" },
+      { name: "Vite", slug: "vite" },
+      { name: "Redux", slug: "redux" },
+    ],
+  },
+  {
+    label: "Backend",
+    technologies: [
+      { name: "Node.js", slug: "nodedotjs" },
+      { name: "Express.js", slug: "express" },
+      { name: "NestJS", slug: "nestjs" },
+      { name: "Python", slug: "python" },
+      { name: "PHP", slug: "php" },
+      { name: "GraphQL", slug: "graphql" },
+      { name: "FastAPI", slug: "fastapi" },
+      { name: "Django", slug: "django" },
+    ],
+  },
+  {
+    label: "Database",
+    technologies: [
+      { name: "PostgreSQL", slug: "postgresql" },
+      { name: "MongoDB", slug: "mongodb" },
+      { name: "MySQL", slug: "mysql" },
+      { name: "Redis", slug: "redis" },
+      { name: "Supabase", slug: "supabase" },
+      { name: "Firebase", slug: "firebase" },
+      { name: "Prisma", slug: "prisma" },
+      { name: "Elasticsearch", slug: "elasticsearch" },
+    ],
+  },
+  {
+    label: "DevOps",
+    technologies: [
+      { name: "AWS", slug: "amazonaws" },
+      { name: "Docker", slug: "docker" },
+      { name: "Kubernetes", slug: "kubernetes" },
+      { name: "GitHub Actions", slug: "githubactions" },
+      { name: "Vercel", slug: "vercel" },
+      { name: "Cloudflare", slug: "cloudflare" },
+      { name: "DigitalOcean", slug: "digitalocean" },
+      { name: "Terraform", slug: "terraform" },
+    ],
+  },
+  {
+    label: "Tools",
+    technologies: [
+      { name: "GitHub", slug: "github" },
+      { name: "Figma", slug: "figma" },
+      { name: "Jest", slug: "jest" },
+      { name: "Cypress", slug: "cypress" },
+      { name: "Sentry", slug: "sentry" },
+      { name: "Stripe", slug: "stripe" },
+      { name: "Datadog", slug: "datadog" },
+      { name: "Grafana", slug: "grafana" },
+    ],
+  },
 ];
 
 const stacks = [
@@ -951,9 +998,10 @@ export default function HireFullStackPage() {
       </section>
 
       {/* TECH STACK */}
-      <TechStackIcons
+      <TabbedTechStack
         title="Technologies We Use"
-        technologies={fullstackTechnologies}
+        subtitle="Our full-stack developers are proficient across the full technology spectrum."
+        tabs={fullstackTechTabs}
       />
 
       {/* FAQ */}

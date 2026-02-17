@@ -13,7 +13,7 @@ import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { ZigzagTimeline } from "@/components/ui/ZigzagTimeline";
 import { ValueProposition } from "@/components/ui/ValueProposition";
 import { CTASection } from "@/components/ui/CTASection";
-import { TechStackIcons } from "@/components/ui/TechStackIcons";
+import { TabbedTechStack } from "@/components/ui/TabbedTechStack";
 import {
   Users,
   ArrowRight,
@@ -255,25 +255,72 @@ const faqs = [
   { q: "What technologies do your developers work with?", a: "We have developers across all major stacks: MERN, MEAN, LAMP, React, Angular, Vue, Node.js, Python (Django/Flask), PHP (Laravel), .NET, and more. Check our category pages for specific technologies." },
 ];
 
-const hireTechnologies = [
-  { name: "React", slug: "react" },
-  { name: "Next.js", slug: "nextdotjs" },
-  { name: "TypeScript", slug: "typescript" },
-  { name: "Node.js", slug: "nodedotjs" },
-  { name: "Python", slug: "python" },
-  { name: "PHP", slug: "php" },
-  { name: "PostgreSQL", slug: "postgresql" },
-  { name: "MongoDB", slug: "mongodb" },
-  { name: "AWS", slug: "amazonaws" },
-  { name: "Docker", slug: "docker" },
-  { name: "GitHub", slug: "github" },
-  { name: "Figma", slug: "figma" },
-  { name: "Flutter", slug: "flutter" },
-  { name: "Swift", slug: "swift" },
-  { name: "Kotlin", slug: "kotlin" },
-  { name: "Angular", slug: "angular" },
-  { name: "Vue.js", slug: "vuedotjs" },
-  { name: "WordPress", slug: "wordpress" },
+const hireTechTabs = [
+  {
+    label: "Frontend",
+    technologies: [
+      { name: "React", slug: "react" },
+      { name: "Next.js", slug: "nextdotjs" },
+      { name: "Vue.js", slug: "vuedotjs" },
+      { name: "Angular", slug: "angular" },
+      { name: "TypeScript", slug: "typescript" },
+      { name: "Tailwind CSS", slug: "tailwindcss" },
+      { name: "Vite", slug: "vite" },
+      { name: "Framer Motion", slug: "framer" },
+    ],
+  },
+  {
+    label: "Backend",
+    technologies: [
+      { name: "Node.js", slug: "nodedotjs" },
+      { name: "Python", slug: "python" },
+      { name: "PHP", slug: "php" },
+      { name: "Express.js", slug: "express" },
+      { name: "NestJS", slug: "nestjs" },
+      { name: "Django", slug: "django" },
+      { name: "FastAPI", slug: "fastapi" },
+      { name: "GraphQL", slug: "graphql" },
+    ],
+  },
+  {
+    label: "Mobile",
+    technologies: [
+      { name: "React Native", slug: "react" },
+      { name: "Flutter", slug: "flutter" },
+      { name: "Swift", slug: "swift" },
+      { name: "Kotlin", slug: "kotlin" },
+      { name: "Expo", slug: "expo" },
+      { name: "Firebase", slug: "firebase" },
+      { name: "Supabase", slug: "supabase" },
+      { name: "Redux", slug: "redux" },
+    ],
+  },
+  {
+    label: "Databases",
+    technologies: [
+      { name: "PostgreSQL", slug: "postgresql" },
+      { name: "MongoDB", slug: "mongodb" },
+      { name: "MySQL", slug: "mysql" },
+      { name: "Redis", slug: "redis" },
+      { name: "Elasticsearch", slug: "elasticsearch" },
+      { name: "Supabase", slug: "supabase" },
+      { name: "Firebase", slug: "firebase" },
+      { name: "Prisma", slug: "prisma" },
+    ],
+  },
+  {
+    label: "Cloud & DevOps",
+    technologies: [
+      { name: "AWS", slug: "amazonaws" },
+      { name: "Docker", slug: "docker" },
+      { name: "Kubernetes", slug: "kubernetes" },
+      { name: "GitHub Actions", slug: "githubactions" },
+      { name: "Vercel", slug: "vercel" },
+      { name: "Cloudflare", slug: "cloudflare" },
+      { name: "DigitalOcean", slug: "digitalocean" },
+      { name: "Terraform", slug: "terraform" },
+    ],
+  },
 ];
 
 const integrationTools = [
@@ -931,10 +978,10 @@ export default function HireDevelopersPage() {
       </section>
 
       {/* TECH STACK */}
-      <TechStackIcons
+      <TabbedTechStack
         title="Our Tech Stack"
         subtitle="We use industry-leading technologies to build products that are fast, reliable, and maintainable."
-        technologies={hireTechnologies}
+        tabs={hireTechTabs}
       />
 
       {/* FAQ */}
