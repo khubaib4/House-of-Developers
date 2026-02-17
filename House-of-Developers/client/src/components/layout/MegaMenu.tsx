@@ -275,7 +275,7 @@ export function MegaMenu({ isOpen, onClose, onNavigate, triggerRef, onFocusWithi
                       <button
                         role="menuitem"
                         onClick={() => handleItemClick(category.href)}
-                        className="flex items-start gap-2.5 group cursor-pointer w-full text-left"
+                        className="flex items-start gap-2.5 group cursor-pointer w-full text-left outline-none focus:outline-none focus-visible:ring-0"
                         data-testid={`mega-menu-category-${category.name.toLowerCase().replace(/\s+/g, "-")}`}
                       >
                         <div
@@ -296,7 +296,7 @@ export function MegaMenu({ isOpen, onClose, onNavigate, triggerRef, onFocusWithi
                             <button
                               role="menuitem"
                               onClick={() => handleItemClick(service.href)}
-                              className="group/item flex items-start gap-2 w-full text-left text-[13px] text-muted-foreground hover:text-foreground transition-colors leading-relaxed"
+                              className="group/item flex items-start gap-2 w-full text-left text-[13px] text-muted-foreground hover:text-foreground transition-colors leading-relaxed outline-none focus:outline-none focus-visible:ring-0"
                               data-testid={`mega-menu-${service.name.toLowerCase().replace(/\s+/g, "-")}`}
                             >
                               <span className="flex-1 min-w-0">
