@@ -59,7 +59,7 @@ import { useState, useRef, useCallback } from "react";
 import { Link } from "wouter";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { ZigzagTimeline } from "@/components/ui/ZigzagTimeline";
-import { TechTabsSection } from "@/components/ui/TechTabsSection";
+import { TechStackIcons } from "@/components/ui/TechStackIcons";
 import { ValueProposition } from "@/components/ui/ValueProposition";
 import { CTASection } from "@/components/ui/CTASection";
 
@@ -108,49 +108,19 @@ const solutions = [
   },
 ];
 
-const techTabs = [
-  {
-    id: "design",
-    label: "Design Tools",
-    items: [
-      { icon: PenTool, name: "Figma", description: "Collaborative UI/UX design tool" },
-      { icon: Palette, name: "Adobe XD", description: "Vector-based design and prototyping" },
-      { icon: Sparkles, name: "GSAP", description: "Professional-grade animation library" },
-      { icon: Play, name: "Lottie", description: "Lightweight JSON-based animations" },
-      { icon: Video, name: "After Effects", description: "Motion graphics and visual effects" },
-      { icon: Box, name: "Spline 3D", description: "Real-time 3D design for the web" },
-      { icon: Image, name: "Unsplash", description: "High-quality stock photography" },
-      { icon: Type, name: "Google Fonts", description: "Open-source web font library" },
-    ],
-  },
-  {
-    id: "webflow",
-    label: "Webflow Features",
-    items: [
-      { icon: Layers, name: "Webflow CMS", description: "Dynamic content management system" },
-      { icon: Settings, name: "Webflow Logic", description: "Visual automation workflows" },
-      { icon: ShoppingCart, name: "Webflow Ecommerce", description: "Native online store builder" },
-      { icon: Users, name: "Webflow Memberships", description: "Gated content and user accounts" },
-      { icon: Code, name: "Client-First", description: "Scalable class naming methodology" },
-      { icon: Zap, name: "Finsweet", description: "Advanced Webflow attribute tools" },
-      { icon: LayoutGrid, name: "Relume", description: "Component library and site builder" },
-      { icon: FileCode, name: "Custom Code", description: "HTML, CSS, and JS embeds" },
-    ],
-  },
-  {
-    id: "integrations",
-    label: "Integrations",
-    items: [
-      { icon: Workflow, name: "Zapier", description: "Workflow automation connector" },
-      { icon: Database, name: "Airtable", description: "Flexible database and spreadsheet" },
-      { icon: Mail, name: "Mailchimp", description: "Email marketing automation" },
-      { icon: Users, name: "HubSpot", description: "CRM and inbound marketing suite" },
-      { icon: BarChart3, name: "Google Analytics", description: "Traffic and conversion tracking" },
-      { icon: CreditCard, name: "Stripe", description: "Payment processing integration" },
-      { icon: Target, name: "Facebook Pixel", description: "Conversion tracking and retargeting" },
-      { icon: RefreshCw, name: "Make", description: "Advanced automation scenarios" },
-    ],
-  },
+const webflowTechnologies = [
+  { name: "Webflow", slug: "webflow" },
+  { name: "JavaScript", slug: "javascript" },
+  { name: "React", slug: "react" },
+  { name: "Node.js", slug: "nodedotjs" },
+  { name: "TypeScript", slug: "typescript" },
+  { name: "Figma", slug: "figma" },
+  { name: "AWS", slug: "amazonaws" },
+  { name: "Cloudflare", slug: "cloudflare" },
+  { name: "GitHub", slug: "github" },
+  { name: "Stripe", slug: "stripe" },
+  { name: "MongoDB", slug: "mongodb" },
+  { name: "Tailwind CSS", slug: "tailwindcss" },
 ];
 
 const zigzagSteps = [
@@ -772,11 +742,10 @@ export default function WebflowDevelopmentPage() {
       {/* Integrations */}
       <section className="py-20" data-testid="section-integrations">
         <div className="max-w-7xl mx-auto px-6">
-          <TechTabsSection
-            title="Webflow Integrations & Tools"
-            subtitle="Design tools, automation, and marketing integrations"
-            tabs={techTabs}
-            accentColor={WF_COLOR}
+          <TechStackIcons
+            title="Technologies We Use"
+            subtitle="We use industry-leading technologies to build products that are fast, reliable, and maintainable."
+            technologies={webflowTechnologies}
           />
         </div>
       </section>

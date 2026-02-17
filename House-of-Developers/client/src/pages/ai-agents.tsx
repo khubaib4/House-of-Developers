@@ -72,7 +72,7 @@ import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { CTASection } from "@/components/ui/CTASection";
 import { ValueProposition } from "@/components/ui/ValueProposition";
 import { ZigzagTimeline } from "@/components/ui/ZigzagTimeline";
-import { TechTabsSection } from "@/components/ui/TechTabsSection";
+import { TechStackIcons } from "@/components/ui/TechStackIcons";
 import { Link as WouterLink } from "wouter";
 
 const AGENT_COLOR = "#3B82F6";
@@ -309,77 +309,25 @@ const agentTypes = [
   },
 ];
 
-const techTabs = [
-  {
-    id: "models",
-    label: "AI Models",
-    items: [
-      { name: "GPT-4 Turbo", description: "Advanced reasoning", icon: Brain },
-      { name: "GPT-4o", description: "Multimodal tasks", icon: Eye },
-      { name: "Claude 3.5", description: "Long context", icon: MessageSquare },
-      { name: "Gemini Pro", description: "Google integration", icon: Sparkles },
-      { name: "Llama 3", description: "Open source", icon: Code },
-      { name: "Mistral Large", description: "European AI", icon: Globe },
-      { name: "Cohere Command", description: "Enterprise RAG", icon: Database },
-      { name: "Custom Fine-tuned", description: "Domain-specific", icon: Settings },
-    ],
-  },
-  {
-    id: "frameworks",
-    label: "Agent Frameworks",
-    items: [
-      { name: "LangChain", description: "Agent orchestration", icon: Link },
-      { name: "AutoGen", description: "Multi-agent systems", icon: Users },
-      { name: "CrewAI", description: "Agent collaboration", icon: Network },
-      { name: "LangGraph", description: "Stateful agents", icon: GitBranch },
-      { name: "Semantic Kernel", description: "Microsoft stack", icon: Cpu },
-      { name: "Haystack", description: "Pipeline builder", icon: Layers },
-      { name: "Custom Framework", description: "Bespoke solutions", icon: Wrench },
-      { name: "OpenAI Assistants", description: "Native agents", icon: Bot },
-    ],
-  },
-  {
-    id: "tools",
-    label: "Tool Integrations",
-    items: [
-      { name: "Gmail / Outlook", description: "Email automation", icon: Mail },
-      { name: "Salesforce", description: "CRM integration", icon: Target },
-      { name: "Slack / Teams", description: "Messaging", icon: Send },
-      { name: "Google Sheets", description: "Data processing", icon: Table },
-      { name: "Zapier / Make", description: "Workflow tools", icon: Workflow },
-      { name: "Stripe", description: "Payment data", icon: CreditCard },
-      { name: "HubSpot", description: "Marketing CRM", icon: TrendingUp },
-      { name: "Jira / Linear", description: "Project tracking", icon: LayoutGrid },
-    ],
-  },
-  {
-    id: "data",
-    label: "Data Sources",
-    items: [
-      { name: "PostgreSQL", description: "Relational DB", icon: Database },
-      { name: "MongoDB", description: "Document store", icon: Archive },
-      { name: "Pinecone", description: "Vector search", icon: Search },
-      { name: "Redis", description: "Cache & queues", icon: Zap },
-      { name: "REST APIs", description: "Web services", icon: Unplug },
-      { name: "GraphQL", description: "Query language", icon: Code },
-      { name: "Web Scraping", description: "Data extraction", icon: Globe },
-      { name: "S3 / Cloud", description: "File storage", icon: Cloud },
-    ],
-  },
-  {
-    id: "monitoring",
-    label: "Monitoring",
-    items: [
-      { name: "LangSmith", description: "Agent tracing", icon: Search },
-      { name: "Datadog", description: "Infrastructure", icon: Activity },
-      { name: "Sentry", description: "Error tracking", icon: Bug },
-      { name: "Grafana", description: "Dashboards", icon: LineChart },
-      { name: "Custom Logging", description: "Action audit trail", icon: Scroll },
-      { name: "Prometheus", description: "Metrics", icon: Gauge },
-      { name: "PagerDuty", description: "Alerting", icon: Bell },
-      { name: "Weights & Biases", description: "ML monitoring", icon: FlaskConical },
-    ],
-  },
+const agentTechnologies = [
+  { name: "OpenAI", slug: "openai" },
+  { name: "Python", slug: "python" },
+  { name: "Node.js", slug: "nodedotjs" },
+  { name: "FastAPI", slug: "fastapi" },
+  { name: "PostgreSQL", slug: "postgresql" },
+  { name: "MongoDB", slug: "mongodb" },
+  { name: "Redis", slug: "redis" },
+  { name: "AWS", slug: "amazonaws" },
+  { name: "Docker", slug: "docker" },
+  { name: "GitHub", slug: "github" },
+  { name: "Slack", slug: "slack" },
+  { name: "HubSpot", slug: "hubspot" },
+  { name: "TensorFlow", slug: "tensorflow" },
+  { name: "PyTorch", slug: "pytorch" },
+  { name: "TypeScript", slug: "typescript" },
+  { name: "React", slug: "react" },
+  { name: "Next.js", slug: "nextdotjs" },
+  { name: "Zapier", slug: "zapier" },
 ];
 
 const faqData = [
@@ -1104,13 +1052,10 @@ export default function AIAgentsPage() {
 
       {/* TECHNOLOGIES */}
       <section className="py-20" data-testid="technologies-section">
-        <div className="max-w-7xl mx-auto px-6">
-          <TechTabsSection
-            title="Technologies & Tools We Use"
-            tabs={techTabs}
-            accentColor={AGENT_COLOR}
-          />
-        </div>
+        <TechStackIcons
+          title="Technologies & Tools We Use"
+          technologies={agentTechnologies}
+        />
       </section>
 
       {/* CASE STUDY */}

@@ -12,7 +12,7 @@ import { Link } from "wouter";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { ZigzagTimeline } from "@/components/ui/ZigzagTimeline";
 import { ValueProposition } from "@/components/ui/ValueProposition";
-import { TechTabsSection } from "@/components/ui/TechTabsSection";
+import { TechStackIcons } from "@/components/ui/TechStackIcons";
 import { CTASection } from "@/components/ui/CTASection";
 import { PricingCard } from "@/components/ui/PricingCard";
 import {
@@ -242,63 +242,22 @@ const profiles = [
   },
 ];
 
-const techTabs = [
-  {
-    id: "languages",
-    label: "Languages",
-    items: [
-      { icon: Server, name: "Node.js", description: "JavaScript runtime for scalable server apps" },
-      { icon: Code2, name: "Python", description: "Versatile language for APIs and data science" },
-      { icon: Code, name: "PHP", description: "Widely-used server-side scripting language" },
-      { icon: Code2, name: ".NET/C#", description: "Enterprise framework by Microsoft" },
-      { icon: Zap, name: "Go", description: "Fast, concurrent language by Google" },
-      { icon: Gem, name: "Ruby", description: "Elegant language for rapid development" },
-      { icon: Coffee, name: "Java", description: "Enterprise-grade object-oriented language" },
-      { icon: Shield, name: "Rust", description: "Memory-safe systems programming language" },
-    ],
-  },
-  {
-    id: "frameworks",
-    label: "Frameworks",
-    items: [
-      { icon: Server, name: "Express.js", description: "Minimal and flexible Node.js web framework" },
-      { icon: Database, name: "Django", description: "Batteries-included Python web framework" },
-      { icon: Zap, name: "FastAPI", description: "High-performance async Python API framework" },
-      { icon: Code, name: "Flask", description: "Lightweight Python micro-framework" },
-      { icon: Server, name: "Laravel", description: "Elegant PHP framework with rich ecosystem" },
-      { icon: Layers, name: "NestJS", description: "Progressive Node.js framework with TypeScript" },
-      { icon: Leaf, name: "Spring Boot", description: "Java framework for production-grade apps" },
-      { icon: Train, name: "Rails", description: "Convention-over-configuration Ruby framework" },
-    ],
-  },
-  {
-    id: "databases",
-    label: "Databases",
-    items: [
-      { icon: Database, name: "PostgreSQL", description: "Advanced open-source relational database" },
-      { icon: Database, name: "MongoDB", description: "Flexible NoSQL document database" },
-      { icon: Database, name: "MySQL", description: "Popular open-source relational database" },
-      { icon: Zap, name: "Redis", description: "In-memory data store for caching" },
-      { icon: Search, name: "Elasticsearch", description: "Distributed search and analytics engine" },
-      { icon: HardDrive, name: "SQLite", description: "Lightweight embedded SQL database" },
-      { icon: Cloud, name: "DynamoDB", description: "AWS managed NoSQL database service" },
-      { icon: Database, name: "Supabase", description: "Open-source Firebase alternative with Postgres" },
-    ],
-  },
-  {
-    id: "devops",
-    label: "DevOps & Tools",
-    items: [
-      { icon: Box, name: "Docker", description: "Containerization for consistent deployments" },
-      { icon: Cloud, name: "AWS", description: "Comprehensive cloud computing platform" },
-      { icon: Settings, name: "Kubernetes", description: "Container orchestration at scale" },
-      { icon: GitBranch, name: "GitHub Actions", description: "CI/CD automation for repositories" },
-      { icon: Server, name: "Nginx", description: "High-performance web server and proxy" },
-      { icon: Code, name: "GraphQL", description: "Flexible API query language" },
-      { icon: Layers, name: "gRPC", description: "High-performance remote procedure calls" },
-      { icon: Wrench, name: "Terraform", description: "Infrastructure as code provisioning" },
-    ],
-  },
+const backendTechnologies = [
+  { name: "Node.js", slug: "nodedotjs" },
+  { name: "Python", slug: "python" },
+  { name: "PHP", slug: "php" },
+  { name: "PostgreSQL", slug: "postgresql" },
+  { name: "MongoDB", slug: "mongodb" },
+  { name: "MySQL", slug: "mysql" },
+  { name: "Redis", slug: "redis" },
+  { name: "Docker", slug: "docker" },
+  { name: "AWS", slug: "amazonaws" },
+  { name: "GitHub", slug: "github" },
+  { name: "Express", slug: "express" },
+  { name: "Django", slug: "django" },
+  { name: "FastAPI", slug: "fastapi" },
+  { name: "Laravel", slug: "laravel" },
+  { name: "GraphQL", slug: "graphql" },
 ];
 
 const zigzagSteps = [
@@ -877,16 +836,10 @@ export default function HireBackendPage() {
       />
 
       {/* TECH STACK */}
-      <section className="py-20" data-testid="section-tech">
-        <div className="max-w-7xl mx-auto px-6">
-          <TechTabsSection
-            title="Backend Technologies & Databases"
-            subtitle="Enterprise-grade tools our developers master"
-            tabs={techTabs}
-            accentColor={BE_COLOR}
-          />
-        </div>
-      </section>
+      <TechStackIcons
+        title="Technologies We Use"
+        technologies={backendTechnologies}
+      />
 
       {/* PROCESS */}
       <section className="py-20 bg-muted" data-testid="section-process">

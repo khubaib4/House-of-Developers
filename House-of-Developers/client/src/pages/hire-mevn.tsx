@@ -15,6 +15,7 @@ import { ZigzagTimeline } from "@/components/ui/ZigzagTimeline";
 import { ValueProposition } from "@/components/ui/ValueProposition";
 import { CTASection } from "@/components/ui/CTASection";
 import { PricingCard } from "@/components/ui/PricingCard";
+import { TechStackIcons } from "@/components/ui/TechStackIcons";
 import {
   Layers,
   Server,
@@ -55,6 +56,21 @@ import {
 } from "lucide-react";
 
 const MEVN_COLOR = "#42b883";
+
+const mevnTechnologies = [
+  { name: "Vue.js", slug: "vuedotjs" },
+  { name: "Node.js", slug: "nodedotjs" },
+  { name: "MongoDB", slug: "mongodb" },
+  { name: "Express", slug: "express" },
+  { name: "TypeScript", slug: "typescript" },
+  { name: "AWS", slug: "amazonaws" },
+  { name: "Docker", slug: "docker" },
+  { name: "GitHub", slug: "github" },
+  { name: "Redis", slug: "redis" },
+  { name: "GraphQL", slug: "graphql" },
+  { name: "Jest", slug: "jest" },
+  { name: "Figma", slug: "figma" },
+];
 
 const whyChooseValues = [
   { icon: Smile, title: "Easy to Learn", description: "Vue.js has the gentlest learning curve of all major frameworks" },
@@ -959,6 +975,12 @@ export default function HireMEVNPage() {
           />
         </div>
       </section>
+
+      <TechStackIcons
+        title="Technologies We Use"
+        subtitle="We use industry-leading technologies to build products that are fast, reliable, and maintainable."
+        technologies={mevnTechnologies}
+      />
 
       <section className="py-20" data-testid="section-faq">
         <div className="max-w-4xl mx-auto px-6">

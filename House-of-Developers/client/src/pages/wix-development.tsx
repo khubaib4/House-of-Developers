@@ -56,7 +56,7 @@ import { useState, useRef, useCallback } from "react";
 import { Link } from "wouter";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { ZigzagTimeline } from "@/components/ui/ZigzagTimeline";
-import { TechTabsSection } from "@/components/ui/TechTabsSection";
+import { TechStackIcons } from "@/components/ui/TechStackIcons";
 import { ValueProposition } from "@/components/ui/ValueProposition";
 import { CTASection } from "@/components/ui/CTASection";
 
@@ -103,49 +103,19 @@ const solutions = [
   },
 ];
 
-const techTabs = [
-  {
-    id: "tools",
-    label: "Wix Tools",
-    items: [
-      { icon: Edit3, name: "Wix Editor", description: "Drag-and-drop visual website builder" },
-      { icon: Sparkles, name: "Wix ADI", description: "AI-powered automatic design intelligence" },
-      { icon: PenTool, name: "Wix Studio", description: "Advanced design and development platform" },
-      { icon: Code, name: "Wix Velo", description: "Full-stack development environment" },
-      { icon: Layers, name: "Wix Blocks", description: "Custom widget and app builder" },
-      { icon: LayoutGrid, name: "Wix Dashboard", description: "Centralised site management hub" },
-      { icon: Package, name: "Wix App Market", description: "Third-party app marketplace" },
-      { icon: BarChart3, name: "Wix Analytics", description: "Built-in traffic and behaviour analytics" },
-    ],
-  },
-  {
-    id: "features",
-    label: "Features",
-    items: [
-      { icon: ShoppingCart, name: "Wix Stores", description: "Built-in e-commerce storefront" },
-      { icon: Calendar, name: "Wix Bookings", description: "Appointment and class scheduling" },
-      { icon: FileText, name: "Wix Blog", description: "Content management and publishing" },
-      { icon: FileInput, name: "Wix Forms", description: "Custom form builder with automations" },
-      { icon: MessageSquare, name: "Wix Chat", description: "Live chat for visitor engagement" },
-      { icon: TrendingUp, name: "Wix SEO", description: "Built-in SEO tools and wizard" },
-      { icon: Calendar, name: "Wix Events", description: "Event creation and ticket sales" },
-      { icon: Users, name: "Wix Members", description: "Member areas and gated content" },
-    ],
-  },
-  {
-    id: "integrations",
-    label: "Integrations",
-    items: [
-      { icon: Globe, name: "Google Workspace", description: "Business email and productivity suite" },
-      { icon: Mail, name: "Mailchimp", description: "Email marketing automation" },
-      { icon: Target, name: "Facebook Pixel", description: "Conversion tracking and retargeting" },
-      { icon: Camera, name: "Instagram Feed", description: "Social media feed integration" },
-      { icon: BarChart3, name: "Google Analytics", description: "Traffic and conversion tracking" },
-      { icon: Workflow, name: "Zapier", description: "Workflow automation connector" },
-      { icon: Users, name: "HubSpot", description: "CRM and inbound marketing suite" },
-      { icon: CreditCard, name: "Stripe", description: "Payment processing integration" },
-    ],
-  },
+const wixTechnologies = [
+  { name: "JavaScript", slug: "javascript" },
+  { name: "React", slug: "react" },
+  { name: "Node.js", slug: "nodedotjs" },
+  { name: "MongoDB", slug: "mongodb" },
+  { name: "Stripe", slug: "stripe" },
+  { name: "AWS", slug: "amazonaws" },
+  { name: "GitHub", slug: "github" },
+  { name: "Figma", slug: "figma" },
+  { name: "TypeScript", slug: "typescript" },
+  { name: "Cloudflare", slug: "cloudflare" },
+  { name: "PayPal", slug: "paypal" },
+  { name: "Redis", slug: "redis" },
 ];
 
 const zigzagSteps = [
@@ -705,11 +675,10 @@ export default function WixDevelopmentPage() {
       {/* Features & Apps */}
       <section className="py-20 bg-muted" data-testid="section-features">
         <div className="max-w-7xl mx-auto px-6">
-          <TechTabsSection
-            title="Wix Features We Use"
-            subtitle="Built-in tools and apps to power your site"
-            tabs={techTabs}
-            accentColor="#0C6EFC"
+          <TechStackIcons
+            title="Technologies We Use"
+            subtitle="We use industry-leading technologies to build products that are fast, reliable, and maintainable."
+            technologies={wixTechnologies}
           />
         </div>
       </section>

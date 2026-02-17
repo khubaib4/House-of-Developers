@@ -63,7 +63,7 @@ import {
 import { Link } from "wouter";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { ZigzagTimeline } from "@/components/ui/ZigzagTimeline";
-import { TechTabsSection } from "@/components/ui/TechTabsSection";
+import { TechStackIcons } from "@/components/ui/TechStackIcons";
 import { ValueProposition } from "@/components/ui/ValueProposition";
 import { CTASection } from "@/components/ui/CTASection";
 
@@ -198,49 +198,25 @@ const whyChooseValues = [
   { icon: Shield, title: "App Store Approved", description: "100% approval rate with Apple's review process" },
 ];
 
-const techTabs = [
-  {
-    id: "languages",
-    label: "Languages & UI",
-    items: [
-      { icon: Code2, name: "Swift", description: "Apple's modern programming language" },
-      { icon: Layout, name: "SwiftUI", description: "Declarative UI framework for Apple platforms" },
-      { icon: Code, name: "Objective-C", description: "Legacy language for iOS compatibility" },
-      { icon: Layers, name: "UIKit", description: "Imperative UI framework for fine control" },
-      { icon: GitBranch, name: "Combine", description: "Reactive programming for async events" },
-      { icon: Zap, name: "Swift Concurrency", description: "Async/await and structured concurrency" },
-      { icon: Wrench, name: "Xcode", description: "Apple's integrated development environment" },
-      { icon: Palette, name: "Interface Builder", description: "Visual UI design tool in Xcode" },
-    ],
-  },
-  {
-    id: "frameworks",
-    label: "Apple Frameworks",
-    items: [
-      { icon: Heart, name: "HealthKit", description: "Health and fitness data integration" },
-      { icon: Cloud, name: "CloudKit", description: "iCloud backend storage and sync" },
-      { icon: Sparkles, name: "WidgetKit", description: "Home screen and lock screen widgets" },
-      { icon: ShoppingCart, name: "StoreKit", description: "In-app purchases and subscriptions" },
-      { icon: MapPin, name: "MapKit", description: "Apple Maps integration and navigation" },
-      { icon: Database, name: "CoreData", description: "Persistent data storage framework" },
-      { icon: Box, name: "ARKit", description: "Augmented reality experiences on iOS" },
-      { icon: Brain, name: "CoreML", description: "On-device machine learning models" },
-    ],
-  },
-  {
-    id: "tools",
-    label: "Tools & Services",
-    items: [
-      { icon: Send, name: "TestFlight", description: "Beta testing and app distribution" },
-      { icon: Flame, name: "Firebase", description: "Analytics, push notifications and auth" },
-      { icon: Package, name: "CocoaPods", description: "Dependency manager for Swift projects" },
-      { icon: Package, name: "Swift Package Manager", description: "Apple's native dependency manager" },
-      { icon: TestTube, name: "XCTest", description: "Unit and UI testing framework" },
-      { icon: Gauge, name: "Instruments", description: "Performance profiling and debugging" },
-      { icon: Rocket, name: "Fastlane", description: "Automated build and release pipeline" },
-      { icon: Globe, name: "App Store Connect", description: "App submission and analytics portal" },
-    ],
-  },
+const iosTechnologies = [
+  { name: "Swift", slug: "swift" },
+  { name: "React", slug: "react" },
+  { name: "TypeScript", slug: "typescript" },
+  { name: "Node.js", slug: "nodedotjs" },
+  { name: "PostgreSQL", slug: "postgresql" },
+  { name: "MongoDB", slug: "mongodb" },
+  { name: "Firebase", slug: "firebase" },
+  { name: "AWS", slug: "amazonaws" },
+  { name: "Docker", slug: "docker" },
+  { name: "GitHub", slug: "github" },
+  { name: "Figma", slug: "figma" },
+  { name: "Stripe", slug: "stripe" },
+  { name: "PayPal", slug: "paypal" },
+  { name: "Twilio", slug: "twilio" },
+  { name: "Supabase", slug: "supabase" },
+  { name: "Redux", slug: "redux" },
+  { name: "GraphQL", slug: "graphql" },
+  { name: "Jest", slug: "jest" },
 ];
 
 const faqs = [
@@ -698,11 +674,9 @@ export default function IOSDevelopmentPage() {
       {/* Tech Stack */}
       <section className="py-20" data-testid="section-tech-stack">
         <div className="max-w-7xl mx-auto px-6">
-          <TechTabsSection
+          <TechStackIcons
             title="iOS Technologies We Use"
-            subtitle="Apple's latest frameworks and tools"
-            tabs={techTabs}
-            accentColor="#007AFF"
+            technologies={iosTechnologies}
           />
         </div>
       </section>

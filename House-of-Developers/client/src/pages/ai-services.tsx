@@ -13,7 +13,7 @@ import { Link } from "wouter";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { CTASection } from "@/components/ui/CTASection";
 import { ValueProposition } from "@/components/ui/ValueProposition";
-import { TechTabsSection } from "@/components/ui/TechTabsSection";
+import { TechStackIcons } from "@/components/ui/TechStackIcons";
 import { Eye, Cpu, TestTube, RefreshCw } from "lucide-react";
 import { ZigzagTimeline } from "@/components/ui/ZigzagTimeline";
 import {
@@ -617,77 +617,25 @@ const caseStudies = [
 
 const AI_COLOR = "#8B5CF6";
 
-const aiServicesTechTabs = [
-  {
-    id: "ai-models",
-    label: "AI Models",
-    items: [
-      { icon: Sparkles, name: "GPT-4 Turbo", description: "Latest OpenAI model" },
-      { icon: Sparkles, name: "GPT-4", description: "Best quality" },
-      { icon: Brain, name: "Claude 3 Opus", description: "Anthropic's best" },
-      { icon: Brain, name: "Claude 3 Sonnet", description: "Fast & capable" },
-      { icon: MessageCircle, name: "GPT-3.5 Turbo", description: "Cost-effective" },
-      { icon: Image, name: "DALL-E 3", description: "Image generation" },
-      { icon: Mic, name: "Whisper", description: "Speech-to-text" },
-      { icon: Volume2, name: "Text-to-Speech", description: "Voice output" },
-    ],
-  },
-  {
-    id: "frameworks",
-    label: "Frameworks",
-    items: [
-      { icon: Link2, name: "LangChain", description: "LLM framework" },
-      { icon: Database, name: "LlamaIndex", description: "Data framework" },
-      { icon: GitBranch, name: "Pinecone", description: "Vector database" },
-      { icon: Database, name: "ChromaDB", description: "Embeddings" },
-      { icon: Code2, name: "OpenAI SDK", description: "Official SDK" },
-      { icon: Code2, name: "Anthropic SDK", description: "Claude SDK" },
-      { icon: Zap, name: "Vercel AI SDK", description: "AI streaming" },
-      { icon: Package, name: "Custom APIs", description: "RESTful APIs" },
-    ],
-  },
-  {
-    id: "integrations",
-    label: "Integrations",
-    items: [
-      { icon: Users, name: "HubSpot", description: "CRM integration" },
-      { icon: Globe, name: "Salesforce", description: "Enterprise CRM" },
-      { icon: ShoppingBag, name: "Shopify", description: "E-commerce" },
-      { icon: ShoppingCart, name: "WooCommerce", description: "WordPress store" },
-      { icon: Headphones, name: "Zendesk", description: "Support tickets" },
-      { icon: MessageSquare, name: "Intercom", description: "Customer messaging" },
-      { icon: Calendar, name: "Calendly", description: "Scheduling" },
-      { icon: Zap, name: "Zapier", description: "Automation" },
-    ],
-  },
-  {
-    id: "channels",
-    label: "Channels",
-    items: [
-      { icon: Globe, name: "Website Widget", description: "Live chat" },
-      { icon: MessageCircle, name: "WhatsApp Business", description: "Messaging" },
-      { icon: Hash, name: "Slack", description: "Team chat" },
-      { icon: MessageSquare, name: "Facebook Messenger", description: "Social messaging" },
-      { icon: Smartphone, name: "SMS (Twilio)", description: "Text messages" },
-      { icon: Mail, name: "Instagram DM", description: "Social direct" },
-      { icon: Mail, name: "Email", description: "Email support" },
-      { icon: Phone, name: "Voice (Twilio)", description: "Phone calls" },
-    ],
-  },
-  {
-    id: "analytics",
-    label: "Analytics",
-    items: [
-      { icon: BarChart, name: "Custom Dashboard", description: "Real-time analytics" },
-      { icon: TrendingUp, name: "Google Analytics", description: "Web tracking" },
-      { icon: PieChart, name: "Mixpanel", description: "Product analytics" },
-      { icon: Activity, name: "Amplitude", description: "User behavior" },
-      { icon: Database, name: "PostgreSQL", description: "Data storage" },
-      { icon: Table, name: "BigQuery", description: "Data warehouse" },
-      { icon: BarChart3, name: "Metabase", description: "BI dashboard" },
-      { icon: LineChart, name: "Grafana", description: "Monitoring" },
-    ],
-  },
+const aiTechnologies = [
+  { name: "OpenAI", slug: "openai" },
+  { name: "Python", slug: "python" },
+  { name: "TensorFlow", slug: "tensorflow" },
+  { name: "PyTorch", slug: "pytorch" },
+  { name: "Node.js", slug: "nodedotjs" },
+  { name: "React", slug: "react" },
+  { name: "PostgreSQL", slug: "postgresql" },
+  { name: "MongoDB", slug: "mongodb" },
+  { name: "Docker", slug: "docker" },
+  { name: "AWS", slug: "amazonaws" },
+  { name: "GitHub", slug: "github" },
+  { name: "FastAPI", slug: "fastapi" },
+  { name: "Next.js", slug: "nextdotjs" },
+  { name: "TypeScript", slug: "typescript" },
+  { name: "Redis", slug: "redis" },
+  { name: "Stripe", slug: "stripe" },
+  { name: "Hugging Face", slug: "huggingface" },
+  { name: "Supabase", slug: "supabase" },
 ];
 
 const zigzagSteps = [
@@ -1173,16 +1121,13 @@ export default function AIServicesPage() {
         </div>
       </section>
 
-      {/* TECHNOLOGIES & INTEGRATIONS (TABBED) */}
+      {/* TECHNOLOGIES & INTEGRATIONS */}
       <section className="py-20 bg-muted px-6" data-testid="section-ai-technologies">
-        <div className="max-w-6xl mx-auto">
-          <TechTabsSection
-            title="Technologies & Integrations We Use"
-            subtitle="Cutting-edge AI models and tools"
-            tabs={aiServicesTechTabs}
-            accentColor={AI_COLOR}
-          />
-        </div>
+        <TechStackIcons
+          title="AI Technologies We Use"
+          subtitle="We use industry-leading technologies to build products that are fast, reliable, and maintainable."
+          technologies={aiTechnologies}
+        />
       </section>
 
       {/* PROCESS TIMELINE - ZIGZAG */}

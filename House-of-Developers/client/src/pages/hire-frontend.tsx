@@ -12,7 +12,7 @@ import { Link } from "wouter";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { ZigzagTimeline } from "@/components/ui/ZigzagTimeline";
 import { ValueProposition } from "@/components/ui/ValueProposition";
-import { TechTabsSection } from "@/components/ui/TechTabsSection";
+import { TechStackIcons } from "@/components/ui/TechStackIcons";
 import { CTASection } from "@/components/ui/CTASection";
 import { PricingCard } from "@/components/ui/PricingCard";
 import {
@@ -219,63 +219,22 @@ const profiles = [
   },
 ];
 
-const techTabs = [
-  {
-    id: "frameworks",
-    label: "Frameworks",
-    items: [
-      { icon: Code2, name: "React", description: "Component-based UI library by Meta" },
-      { icon: Code2, name: "Angular", description: "Enterprise TypeScript framework by Google" },
-      { icon: Layers, name: "Vue.js", description: "Progressive and approachable framework" },
-      { icon: ArrowRight, name: "Next.js", description: "Full-stack React framework with SSR" },
-      { icon: ArrowRight, name: "Nuxt", description: "Vue meta-framework with SSR support" },
-      { icon: Zap, name: "Svelte", description: "Compile-time reactive UI framework" },
-      { icon: RefreshCw, name: "Remix", description: "Full-stack web framework with nested routes" },
-      { icon: Globe, name: "Gatsby", description: "Static site generator for fast websites" },
-    ],
-  },
-  {
-    id: "languages",
-    label: "Languages & Styling",
-    items: [
-      { icon: FileCode, name: "TypeScript", description: "Typed superset of JavaScript" },
-      { icon: Code, name: "JavaScript", description: "Core language of the web platform" },
-      { icon: FileText, name: "HTML5", description: "Semantic markup and modern APIs" },
-      { icon: Palette, name: "CSS3", description: "Styling with grid, flexbox, and animations" },
-      { icon: Paintbrush, name: "Tailwind CSS", description: "Utility-first CSS framework" },
-      { icon: Droplet, name: "SCSS/SASS", description: "CSS preprocessor with variables and mixins" },
-      { icon: Box, name: "Styled Components", description: "CSS-in-JS with tagged template literals" },
-      { icon: LayoutGrid, name: "CSS Modules", description: "Scoped CSS with local class names" },
-    ],
-  },
-  {
-    id: "state-tools",
-    label: "State & Build Tools",
-    items: [
-      { icon: Database, name: "Redux", description: "Predictable state container for JS apps" },
-      { icon: Box, name: "Zustand", description: "Lightweight state management library" },
-      { icon: RefreshCw, name: "React Query", description: "Server-state management and caching" },
-      { icon: GitBranch, name: "MobX", description: "Reactive state with observable patterns" },
-      { icon: Package, name: "Webpack", description: "Powerful module bundler and asset pipeline" },
-      { icon: Zap, name: "Vite", description: "Next-generation fast build tool" },
-      { icon: Rocket, name: "Turbopack", description: "Rust-powered incremental bundler" },
-      { icon: Package, name: "pnpm", description: "Fast, disk-efficient package manager" },
-    ],
-  },
-  {
-    id: "testing",
-    label: "Testing",
-    items: [
-      { icon: TestTube, name: "Jest", description: "Delightful JavaScript testing framework" },
-      { icon: CheckCircle, name: "Cypress", description: "End-to-end testing for web apps" },
-      { icon: Play, name: "Playwright", description: "Cross-browser automation and testing" },
-      { icon: Zap, name: "Vitest", description: "Blazing fast Vite-native unit testing" },
-      { icon: Code2, name: "React Testing Library", description: "Test React components by behavior" },
-      { icon: Book, name: "Storybook", description: "UI component explorer and documentation" },
-      { icon: Eye, name: "Chromatic", description: "Visual regression testing for UI" },
-      { icon: Shield, name: "MSW", description: "API mocking for browser and Node.js" },
-    ],
-  },
+const frontendTechnologies = [
+  { name: "React", slug: "react" },
+  { name: "Next.js", slug: "nextdotjs" },
+  { name: "Vue.js", slug: "vuedotjs" },
+  { name: "Angular", slug: "angular" },
+  { name: "TypeScript", slug: "typescript" },
+  { name: "JavaScript", slug: "javascript" },
+  { name: "Tailwind CSS", slug: "tailwindcss" },
+  { name: "Figma", slug: "figma" },
+  { name: "GitHub", slug: "github" },
+  { name: "Jest", slug: "jest" },
+  { name: "Cypress", slug: "cypress" },
+  { name: "Vite", slug: "vite" },
+  { name: "Framer", slug: "framer" },
+  { name: "Redux", slug: "redux" },
+  { name: "Playwright", slug: "playwright" },
 ];
 
 const zigzagSteps = [
@@ -841,16 +800,10 @@ export default function HireFrontendPage() {
       />
 
       {/* TECH STACK */}
-      <section className="py-20" data-testid="section-tech">
-        <div className="max-w-7xl mx-auto px-6">
-          <TechTabsSection
-            title="Frontend Technologies Our Developers Master"
-            subtitle="Modern tools and frameworks for world-class UIs"
-            tabs={techTabs}
-            accentColor={FE_COLOR}
-          />
-        </div>
-      </section>
+      <TechStackIcons
+        title="Technologies We Use"
+        technologies={frontendTechnologies}
+      />
 
       {/* PROCESS */}
       <section className="py-20 bg-muted" data-testid="section-process">

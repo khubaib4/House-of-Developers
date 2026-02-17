@@ -58,7 +58,7 @@ import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { ValueProposition } from "@/components/ui/ValueProposition";
 import { ZigzagTimeline } from "@/components/ui/ZigzagTimeline";
 import { CTASection } from "@/components/ui/CTASection";
-import { TechTabsSection } from "@/components/ui/TechTabsSection";
+import { TechStackIcons } from "@/components/ui/TechStackIcons";
 
 const CUSTOM_DEV_COLOR = "#F59E0B";
 
@@ -726,77 +726,25 @@ const industries = [
   },
 ];
 
-const techTabs = [
-  {
-    id: "frontend",
-    label: "Frontend",
-    items: [
-      { icon: Code2, name: "React", description: "UI library" },
-      { icon: ArrowRight, name: "Next.js", description: "Full-stack" },
-      { icon: FileCode, name: "TypeScript", description: "Type safety" },
-      { icon: Paintbrush, name: "Tailwind CSS", description: "Styling" },
-      { icon: Zap, name: "Framer Motion", description: "Animations" },
-      { icon: Package, name: "Redux", description: "State mgmt" },
-      { icon: TestTube, name: "Jest", description: "Testing" },
-      { icon: CheckCircle, name: "Cypress", description: "E2E tests" },
-    ],
-  },
-  {
-    id: "backend",
-    label: "Backend",
-    items: [
-      { icon: Server, name: "Node.js", description: "Runtime" },
-      { icon: Code2, name: "Express.js", description: "Framework" },
-      { icon: Layers, name: "NestJS", description: "Enterprise Node" },
-      { icon: Code, name: "Python", description: "Data & ML" },
-      { icon: Network, name: "GraphQL", description: "API queries" },
-      { icon: Shield, name: "JWT/OAuth", description: "Auth" },
-      { icon: Zap, name: "WebSockets", description: "Real-time" },
-      { icon: Package, name: "REST APIs", description: "Integration" },
-    ],
-  },
-  {
-    id: "database",
-    label: "Database",
-    items: [
-      { icon: Database, name: "PostgreSQL", description: "Primary DB" },
-      { icon: Database, name: "MongoDB", description: "Document DB" },
-      { icon: Zap, name: "Redis", description: "Caching" },
-      { icon: Table, name: "MySQL", description: "SQL DB" },
-      { icon: Search, name: "Elasticsearch", description: "Search" },
-      { icon: Cloud, name: "Supabase", description: "Backend-as-service" },
-      { icon: Archive, name: "Prisma ORM", description: "DB toolkit" },
-      { icon: GitBranch, name: "Migrations", description: "DB versioning" },
-    ],
-  },
-  {
-    id: "cloud",
-    label: "Cloud & DevOps",
-    items: [
-      { icon: Cloud, name: "AWS", description: "Cloud platform" },
-      { icon: Cloud, name: "DigitalOcean", description: "Hosting" },
-      { icon: Package, name: "Docker", description: "Containers" },
-      { icon: Layers, name: "Kubernetes", description: "Orchestration" },
-      { icon: GitBranch, name: "GitHub Actions", description: "CI/CD" },
-      { icon: Globe, name: "Cloudflare", description: "CDN" },
-      { icon: Activity, name: "Datadog", description: "Monitoring" },
-      { icon: Shield, name: "Terraform", description: "Infrastructure" },
-    ],
-  },
-  {
-    id: "security",
-    label: "Security",
-    items: [
-      { icon: Lock, name: "SSL/TLS", description: "Encryption" },
-      { icon: Shield, name: "OWASP", description: "Security standard" },
-      { icon: Key, name: "Auth0", description: "Authentication" },
-      { icon: FileCheck, name: "GDPR", description: "Compliance" },
-      { icon: AlertTriangle, name: "Pen Testing", description: "Vulnerability" },
-      { icon: Eye, name: "Audit Logs", description: "Activity tracking" },
-      { icon: Database, name: "Encryption", description: "Data at rest" },
-      { icon: RefreshCw, name: "Auto Backups", description: "Disaster recovery" },
-    ],
-  },
+const customDevTechnologies = [
+  { name: "React", slug: "react" },
+  { name: "Next.js", slug: "nextdotjs" },
+  { name: "TypeScript", slug: "typescript" },
+  { name: "Node.js", slug: "nodedotjs" },
+  { name: "NestJS", slug: "nestjs" },
+  { name: "Python", slug: "python" },
+  { name: "PostgreSQL", slug: "postgresql" },
+  { name: "MongoDB", slug: "mongodb" },
+  { name: "Redis", slug: "redis" },
+  { name: "GraphQL", slug: "graphql" },
+  { name: "Docker", slug: "docker" },
+  { name: "AWS", slug: "amazonaws" },
+  { name: "Kubernetes", slug: "kubernetes" },
+  { name: "GitHub Actions", slug: "githubactions" },
+  { name: "Figma", slug: "figma" },
+  { name: "Jest", slug: "jest" },
+  { name: "Cypress", slug: "cypress" },
+  { name: "Stripe", slug: "stripe" },
 ];
 
 const caseStudies = [
@@ -1208,11 +1156,10 @@ export default function CustomDevelopmentPage() {
       {/* TECHNOLOGIES */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6">
-          <TechTabsSection
+          <TechStackIcons
             title="Technologies We Use"
-            subtitle="The right tools for every custom build"
-            tabs={techTabs}
-            accentColor={CUSTOM_DEV_COLOR}
+            subtitle="We use industry-leading technologies to build products that are fast, reliable, and maintainable."
+            technologies={customDevTechnologies}
           />
         </div>
       </section>

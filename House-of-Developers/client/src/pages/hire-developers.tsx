@@ -13,6 +13,7 @@ import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { ZigzagTimeline } from "@/components/ui/ZigzagTimeline";
 import { ValueProposition } from "@/components/ui/ValueProposition";
 import { CTASection } from "@/components/ui/CTASection";
+import { TechStackIcons } from "@/components/ui/TechStackIcons";
 import {
   Users,
   ArrowRight,
@@ -252,6 +253,27 @@ const faqs = [
   { q: "Do you offer project management?", a: "For dedicated teams (3+ developers), we include a project manager. For individual developers, we provide account management and check-ins, but day-to-day management is with your team." },
   { q: "Can I scale up or down?", a: "Yes! You can add developers, reduce hours (full-time to part-time), or pause with 2 weeks notice. Very flexible." },
   { q: "What technologies do your developers work with?", a: "We have developers across all major stacks: MERN, MEAN, LAMP, React, Angular, Vue, Node.js, Python (Django/Flask), PHP (Laravel), .NET, and more. Check our category pages for specific technologies." },
+];
+
+const hireTechnologies = [
+  { name: "React", slug: "react" },
+  { name: "Next.js", slug: "nextdotjs" },
+  { name: "TypeScript", slug: "typescript" },
+  { name: "Node.js", slug: "nodedotjs" },
+  { name: "Python", slug: "python" },
+  { name: "PHP", slug: "php" },
+  { name: "PostgreSQL", slug: "postgresql" },
+  { name: "MongoDB", slug: "mongodb" },
+  { name: "AWS", slug: "amazonaws" },
+  { name: "Docker", slug: "docker" },
+  { name: "GitHub", slug: "github" },
+  { name: "Figma", slug: "figma" },
+  { name: "Flutter", slug: "flutter" },
+  { name: "Swift", slug: "swift" },
+  { name: "Kotlin", slug: "kotlin" },
+  { name: "Angular", slug: "angular" },
+  { name: "Vue.js", slug: "vuedotjs" },
+  { name: "WordPress", slug: "wordpress" },
 ];
 
 const integrationTools = [
@@ -907,6 +929,13 @@ export default function HireDevelopersPage() {
           </motion.div>
         </div>
       </section>
+
+      {/* TECH STACK */}
+      <TechStackIcons
+        title="Our Tech Stack"
+        subtitle="We use industry-leading technologies to build products that are fast, reliable, and maintainable."
+        technologies={hireTechnologies}
+      />
 
       {/* FAQ */}
       <section className="py-20" data-testid="section-hire-faq">

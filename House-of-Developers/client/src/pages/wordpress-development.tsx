@@ -62,7 +62,7 @@ import { SplitFeatureShowcase } from "@/components/shared/SplitFeatureShowcase";
 import { WordPressDashboardMockup } from "@/components/mockups/WordPressDashboardMockup";
 import { GutenbergEditorMockup } from "@/components/mockups/GutenbergEditorMockup";
 import { ZigzagTimeline } from "@/components/ui/ZigzagTimeline";
-import { TechTabsSection } from "@/components/ui/TechTabsSection";
+import { TechStackIcons } from "@/components/ui/TechStackIcons";
 import { PackageIncludes } from "@/components/ui/PackageIncludes";
 
 import { ValueProposition } from "@/components/ui/ValueProposition";
@@ -137,63 +137,19 @@ const solutions = [
   },
 ];
 
-const techTabs = [
-  {
-    id: "builders",
-    label: "Page Builders",
-    items: [
-      { icon: Layers, name: "Elementor", description: "Drag-and-drop visual page builder" },
-      { icon: LayoutGrid, name: "Gutenberg", description: "WordPress native block editor" },
-      { icon: Palette, name: "Divi", description: "Visual theme and page builder" },
-      { icon: Wrench, name: "Beaver Builder", description: "Flexible front-end page builder" },
-      { icon: Code2, name: "WPBakery", description: "Classic shortcode-based builder" },
-      { icon: Zap, name: "Oxygen", description: "Advanced visual site builder" },
-      { icon: Box, name: "Kadence Blocks", description: "Gutenberg block toolkit" },
-      { icon: Package, name: "GenerateBlocks", description: "Lightweight block builder" },
-    ],
-  },
-  {
-    id: "seo-security",
-    label: "SEO & Security",
-    items: [
-      { icon: Search, name: "Yoast SEO", description: "On-page SEO optimisation plugin" },
-      { icon: Search, name: "Rank Math", description: "Advanced SEO analysis toolkit" },
-      { icon: BarChart3, name: "Semrush", description: "Competitive SEO research tool" },
-      { icon: Shield, name: "Wordfence", description: "Firewall and malware scanner" },
-      { icon: Shield, name: "Sucuri", description: "Website security and CDN" },
-      { icon: Globe, name: "All in One SEO", description: "Comprehensive SEO plugin" },
-      { icon: Lock, name: "iThemes Security", description: "WordPress hardening and protection" },
-      { icon: Cloud, name: "Cloudflare", description: "CDN, DDoS protection, and DNS" },
-    ],
-  },
-  {
-    id: "performance",
-    label: "Performance",
-    items: [
-      { icon: Rocket, name: "WP Rocket", description: "Premium caching and optimisation" },
-      { icon: Cloud, name: "Cloudflare", description: "Global CDN and edge caching" },
-      { icon: Zap, name: "LiteSpeed Cache", description: "Server-level caching plugin" },
-      { icon: Image, name: "Smush", description: "Image compression and lazy loading" },
-      { icon: Image, name: "ShortPixel", description: "Lossy and lossless image optimisation" },
-      { icon: Database, name: "WP Super Cache", description: "Static HTML file caching" },
-      { icon: Settings, name: "Autoptimize", description: "CSS, JS, and HTML minification" },
-      { icon: Gauge, name: "GTmetrix", description: "Page speed monitoring and reports" },
-    ],
-  },
-  {
-    id: "integrations",
-    label: "Integrations",
-    items: [
-      { icon: ShoppingCart, name: "WooCommerce", description: "Full e-commerce functionality" },
-      { icon: MapPin, name: "Google Maps", description: "Embedded maps and locations" },
-      { icon: FileText, name: "Contact Form 7", description: "Flexible contact form builder" },
-      { icon: Mail, name: "Mailchimp", description: "Email marketing automation" },
-      { icon: Mail, name: "Klaviyo", description: "Advanced email and SMS marketing" },
-      { icon: Users, name: "HubSpot", description: "CRM and inbound marketing suite" },
-      { icon: BarChart3, name: "Google Analytics", description: "Traffic and conversion tracking" },
-      { icon: Cloud, name: "UpdraftPlus", description: "Automated backups and restoration" },
-    ],
-  },
+const wordpressTechnologies = [
+  { name: "WordPress", slug: "wordpress" },
+  { name: "PHP", slug: "php" },
+  { name: "MySQL", slug: "mysql" },
+  { name: "JavaScript", slug: "javascript" },
+  { name: "AWS", slug: "amazonaws" },
+  { name: "Cloudflare", slug: "cloudflare" },
+  { name: "Docker", slug: "docker" },
+  { name: "GitHub", slug: "github" },
+  { name: "Figma", slug: "figma" },
+  { name: "Stripe", slug: "stripe" },
+  { name: "WooCommerce", slug: "woocommerce" },
+  { name: "Tailwind CSS", slug: "tailwindcss" },
 ];
 
 const zigzagSteps = [
@@ -894,11 +850,10 @@ export default function WordPressDevelopmentPage() {
       {/* WordPress Ecosystem */}
       <section className="py-20" data-testid="section-ecosystem">
         <div className="max-w-7xl mx-auto px-6">
-          <TechTabsSection
-            title="WordPress Plugins & Tools"
-            subtitle="Essential plugins and integrations"
-            tabs={techTabs}
-            accentColor="#21759B"
+          <TechStackIcons
+            title="Technologies We Use"
+            subtitle="We use industry-leading technologies to build products that are fast, reliable, and maintainable."
+            technologies={wordpressTechnologies}
           />
         </div>
       </section>

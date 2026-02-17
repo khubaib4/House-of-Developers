@@ -13,7 +13,7 @@ import { Link } from "wouter";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { ValueProposition } from "@/components/ui/ValueProposition";
 import { ZigzagTimeline } from "@/components/ui/ZigzagTimeline";
-import { TechTabsSection } from "@/components/ui/TechTabsSection";
+import { TechStackIcons } from "@/components/ui/TechStackIcons";
 import { CTASection } from "@/components/ui/CTASection";
 import {
   Globe,
@@ -675,77 +675,25 @@ const industries = [
   },
 ];
 
-const techTabs = [
-  {
-    id: "frontend",
-    label: "Frontend",
-    items: [
-      { icon: Code2, name: "React", description: "UI library" },
-      { icon: ArrowRight, name: "Next.js", description: "Full-stack React" },
-      { icon: Layers, name: "Vue.js", description: "Progressive framework" },
-      { icon: Triangle, name: "Angular", description: "Enterprise framework" },
-      { icon: FileCode, name: "TypeScript", description: "Type-safe JS" },
-      { icon: Paintbrush, name: "Tailwind CSS", description: "Utility-first CSS" },
-      { icon: Zap, name: "Vite", description: "Fast build tool" },
-      { icon: Smartphone, name: "Responsive", description: "Mobile-first" },
-    ],
-  },
-  {
-    id: "backend",
-    label: "Backend",
-    items: [
-      { icon: Server, name: "Node.js", description: "JS runtime" },
-      { icon: Zap, name: "Express.js", description: "Web framework" },
-      { icon: Code2, name: "Python", description: "Versatile language" },
-      { icon: Server, name: "PHP", description: "Server language" },
-      { icon: Database, name: "PostgreSQL", description: "SQL database" },
-      { icon: Database, name: "MongoDB", description: "NoSQL database" },
-      { icon: Zap, name: "Redis", description: "Caching layer" },
-      { icon: Layers, name: "GraphQL", description: "API query language" },
-    ],
-  },
-  {
-    id: "cms",
-    label: "CMS & E-Commerce",
-    items: [
-      { icon: FileText, name: "WordPress", description: "Most popular CMS" },
-      { icon: ShoppingBag, name: "Shopify", description: "E-commerce platform" },
-      { icon: ShoppingCart, name: "WooCommerce", description: "WordPress store" },
-      { icon: Database, name: "Sanity", description: "Headless CMS" },
-      { icon: FileCode, name: "Contentful", description: "Content platform" },
-      { icon: Package, name: "Strapi", description: "Open-source CMS" },
-      { icon: CreditCard, name: "Stripe", description: "Payment processing" },
-      { icon: DollarSign, name: "PayPal", description: "Payment gateway" },
-    ],
-  },
-  {
-    id: "cloud",
-    label: "Cloud & DevOps",
-    items: [
-      { icon: Cloud, name: "AWS", description: "Cloud platform" },
-      { icon: Cloud, name: "Vercel", description: "Frontend hosting" },
-      { icon: Globe, name: "Cloudflare", description: "CDN & security" },
-      { icon: Package, name: "Docker", description: "Containerisation" },
-      { icon: GitBranch, name: "GitHub", description: "Version control" },
-      { icon: Zap, name: "CI/CD", description: "Auto deployment" },
-      { icon: Activity, name: "Monitoring", description: "Uptime tracking" },
-      { icon: Shield, name: "SSL/TLS", description: "Security certs" },
-    ],
-  },
-  {
-    id: "design",
-    label: "Design & Tools",
-    items: [
-      { icon: Palette, name: "Figma", description: "UI/UX design" },
-      { icon: Image, name: "Adobe XD", description: "Prototyping" },
-      { icon: BarChart, name: "Analytics", description: "User insights" },
-      { icon: Search, name: "SEO Tools", description: "Search optimisation" },
-      { icon: TestTube, name: "Jest", description: "Unit testing" },
-      { icon: CheckCircle, name: "Cypress", description: "E2E testing" },
-      { icon: Zap, name: "Lighthouse", description: "Performance" },
-      { icon: Activity, name: "Hotjar", description: "User behaviour" },
-    ],
-  },
+const webDevTechnologies = [
+  { name: "React", slug: "react" },
+  { name: "Next.js", slug: "nextdotjs" },
+  { name: "TypeScript", slug: "typescript" },
+  { name: "Vue.js", slug: "vuedotjs" },
+  { name: "Angular", slug: "angular" },
+  { name: "Node.js", slug: "nodedotjs" },
+  { name: "Python", slug: "python" },
+  { name: "PHP", slug: "php" },
+  { name: "PostgreSQL", slug: "postgresql" },
+  { name: "MongoDB", slug: "mongodb" },
+  { name: "WordPress", slug: "wordpress" },
+  { name: "Shopify", slug: "shopify" },
+  { name: "WooCommerce", slug: "woocommerce" },
+  { name: "AWS", slug: "amazonaws" },
+  { name: "Docker", slug: "docker" },
+  { name: "Figma", slug: "figma" },
+  { name: "Stripe", slug: "stripe" },
+  { name: "GitHub", slug: "github" },
 ];
 
 const caseStudies = [
@@ -1200,11 +1148,10 @@ export default function WebDevelopmentPage() {
       {/* TECHNOLOGY STACK */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6">
-          <TechTabsSection
+          <TechStackIcons
             title="Technologies We Build With"
-            subtitle="Modern stack for modern web experiences"
-            tabs={techTabs}
-            accentColor={WEB_DEV_COLOR}
+            subtitle="We use industry-leading technologies to build products that are fast, reliable, and maintainable."
+            technologies={webDevTechnologies}
           />
         </div>
       </section>

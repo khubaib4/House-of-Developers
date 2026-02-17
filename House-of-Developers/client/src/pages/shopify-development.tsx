@@ -55,7 +55,7 @@ import { useState, useRef, useCallback } from "react";
 import { Link } from "wouter";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { ZigzagTimeline } from "@/components/ui/ZigzagTimeline";
-import { TechTabsSection } from "@/components/ui/TechTabsSection";
+import { TechStackIcons } from "@/components/ui/TechStackIcons";
 import { ValueProposition } from "@/components/ui/ValueProposition";
 import { CTASection } from "@/components/ui/CTASection";
 
@@ -102,49 +102,19 @@ const solutions = [
   },
 ];
 
-const techTabs = [
-  {
-    id: "payments",
-    label: "Payments & Shipping",
-    items: [
-      { icon: CreditCard, name: "Stripe", description: "Payment processing for online stores" },
-      { icon: Wallet, name: "PayPal", description: "Global payment gateway integration" },
-      { icon: DollarSign, name: "Shopify Payments", description: "Native Shopify payment solution" },
-      { icon: Clock, name: "AfterPay", description: "Buy now, pay later checkout option" },
-      { icon: Truck, name: "ShipStation", description: "Multi-carrier shipping automation" },
-      { icon: Package, name: "Royal Mail", description: "UK postal service integration" },
-      { icon: Globe, name: "DHL Express", description: "International shipping and tracking" },
-      { icon: Send, name: "Shopify Shipping", description: "Built-in shipping label generation" },
-    ],
-  },
-  {
-    id: "marketing",
-    label: "Marketing & SEO",
-    items: [
-      { icon: BarChart3, name: "Google Analytics", description: "Traffic and conversion tracking" },
-      { icon: Mail, name: "Mailchimp", description: "Email marketing automation" },
-      { icon: Users, name: "HubSpot", description: "CRM and inbound marketing suite" },
-      { icon: Target, name: "Meta Ads", description: "Facebook and Instagram advertising" },
-      { icon: Pin, name: "Pinterest", description: "Product pins and shopping ads" },
-      { icon: Video, name: "TikTok", description: "Short-form video marketing channel" },
-      { icon: Send, name: "Klaviyo", description: "Advanced email and SMS marketing" },
-      { icon: TrendingUp, name: "Google Ads", description: "Search and display advertising" },
-    ],
-  },
-  {
-    id: "support",
-    label: "Support & Reviews",
-    items: [
-      { icon: Headphones, name: "Zendesk", description: "Customer support ticketing system" },
-      { icon: Flame, name: "Hotjar", description: "Heatmaps and session recordings" },
-      { icon: Star, name: "Trustpilot", description: "Customer review collection platform" },
-      { icon: MessageSquare, name: "Tidio Chat", description: "Live chat and chatbot support" },
-      { icon: Star, name: "Judge.me", description: "Product reviews with photo uploads" },
-      { icon: Headphones, name: "Gorgias", description: "E-commerce helpdesk automation" },
-      { icon: ThumbsUp, name: "Yotpo", description: "Reviews, loyalty, and referral programs" },
-      { icon: Camera, name: "Loox", description: "Visual reviews with customer photos" },
-    ],
-  },
+const shopifyTechnologies = [
+  { name: "Shopify", slug: "shopify" },
+  { name: "JavaScript", slug: "javascript" },
+  { name: "React", slug: "react" },
+  { name: "Node.js", slug: "nodedotjs" },
+  { name: "Stripe", slug: "stripe" },
+  { name: "AWS", slug: "amazonaws" },
+  { name: "Cloudflare", slug: "cloudflare" },
+  { name: "GitHub", slug: "github" },
+  { name: "Figma", slug: "figma" },
+  { name: "TypeScript", slug: "typescript" },
+  { name: "GraphQL", slug: "graphql" },
+  { name: "MongoDB", slug: "mongodb" },
 ];
 
 const zigzagSteps = [
@@ -689,11 +659,10 @@ export default function ShopifyDevelopmentPage() {
       {/* Apps & Integrations */}
       <section className="py-20 bg-muted" data-testid="section-integrations">
         <div className="max-w-7xl mx-auto px-6">
-          <TechTabsSection
-            title="Shopify Apps We Integrate"
-            subtitle="Essential apps to power your store"
-            tabs={techTabs}
-            accentColor="#7AB55C"
+          <TechStackIcons
+            title="Technologies We Use"
+            subtitle="We use industry-leading technologies to build products that are fast, reliable, and maintainable."
+            technologies={shopifyTechnologies}
           />
         </div>
       </section>

@@ -15,6 +15,7 @@ import { ZigzagTimeline } from "@/components/ui/ZigzagTimeline";
 import { ValueProposition } from "@/components/ui/ValueProposition";
 import { CTASection } from "@/components/ui/CTASection";
 import { PricingCard } from "@/components/ui/PricingCard";
+import { TechStackIcons } from "@/components/ui/TechStackIcons";
 import {
   Terminal,
   Server,
@@ -55,6 +56,21 @@ import {
 } from "lucide-react";
 
 const LAMP_COLOR = "#8B5CF6";
+
+const lampTechnologies = [
+  { name: "PHP", slug: "php" },
+  { name: "MySQL", slug: "mysql" },
+  { name: "WordPress", slug: "wordpress" },
+  { name: "Laravel", slug: "laravel" },
+  { name: "JavaScript", slug: "javascript" },
+  { name: "AWS", slug: "amazonaws" },
+  { name: "Docker", slug: "docker" },
+  { name: "GitHub", slug: "github" },
+  { name: "Redis", slug: "redis" },
+  { name: "Stripe", slug: "stripe" },
+  { name: "Figma", slug: "figma" },
+  { name: "Python", slug: "python" },
+];
 
 const whyChooseValues = [
   { icon: Award, title: "Battle-Tested", description: "20+ years of production use, billions of websites" },
@@ -1064,6 +1080,12 @@ export default function HireLAMPPage() {
           />
         </div>
       </section>
+
+      <TechStackIcons
+        title="Technologies We Use"
+        subtitle="We use industry-leading technologies to build products that are fast, reliable, and maintainable."
+        technologies={lampTechnologies}
+      />
 
       <section className="py-20" data-testid="section-faq">
         <div className="max-w-4xl mx-auto px-6">

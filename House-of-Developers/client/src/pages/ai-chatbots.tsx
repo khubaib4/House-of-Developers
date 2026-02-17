@@ -63,7 +63,7 @@ import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { CTASection } from "@/components/ui/CTASection";
 import { ValueProposition } from "@/components/ui/ValueProposition";
 import { ZigzagTimeline } from "@/components/ui/ZigzagTimeline";
-import { TechTabsSection } from "@/components/ui/TechTabsSection";
+import { TechStackIcons } from "@/components/ui/TechStackIcons";
 import { Link } from "wouter";
 
 const CHATBOT_COLOR = "#A855F7";
@@ -564,77 +564,25 @@ const caseStudyMetrics = [
   { icon: Clock, label: "Support Team Time", value: "15 hours/week saved", detail: "Focus on complex issues" },
 ];
 
-const chatbotTechTabs = [
-  {
-    id: "ai-models",
-    label: "AI Models",
-    items: [
-      { icon: Sparkles, name: "GPT-4 Turbo", description: "Latest OpenAI model" },
-      { icon: Sparkles, name: "GPT-4", description: "Best quality" },
-      { icon: Brain, name: "Claude 3 Opus", description: "Anthropic's best" },
-      { icon: Brain, name: "Claude 3 Sonnet", description: "Fast & capable" },
-      { icon: MessageCircle, name: "GPT-3.5 Turbo", description: "Cost-effective" },
-      { icon: Image, name: "DALL-E 3", description: "Image generation" },
-      { icon: Mic, name: "Whisper", description: "Speech-to-text" },
-      { icon: Volume2, name: "Text-to-Speech", description: "Voice output" },
-    ],
-  },
-  {
-    id: "frameworks",
-    label: "Frameworks",
-    items: [
-      { icon: Link2, name: "LangChain", description: "LLM framework" },
-      { icon: Database, name: "LlamaIndex", description: "Data framework" },
-      { icon: GitBranch, name: "Pinecone", description: "Vector database" },
-      { icon: Database, name: "ChromaDB", description: "Embeddings" },
-      { icon: Code2, name: "OpenAI SDK", description: "Official SDK" },
-      { icon: Code2, name: "Anthropic SDK", description: "Claude SDK" },
-      { icon: Zap, name: "Vercel AI SDK", description: "AI streaming" },
-      { icon: Package, name: "Custom APIs", description: "RESTful APIs" },
-    ],
-  },
-  {
-    id: "integrations",
-    label: "Integrations",
-    items: [
-      { icon: Users, name: "HubSpot", description: "CRM integration" },
-      { icon: Building, name: "Salesforce", description: "Enterprise CRM" },
-      { icon: ShoppingBag, name: "Shopify", description: "E-commerce" },
-      { icon: ShoppingCart, name: "WooCommerce", description: "WordPress store" },
-      { icon: Headphones, name: "Zendesk", description: "Support tickets" },
-      { icon: MessageSquare, name: "Intercom", description: "Customer messaging" },
-      { icon: Calendar, name: "Calendly", description: "Scheduling" },
-      { icon: Zap, name: "Zapier", description: "Automation" },
-    ],
-  },
-  {
-    id: "channels",
-    label: "Channels",
-    items: [
-      { icon: Globe, name: "Website Widget", description: "Live chat" },
-      { icon: MessageCircle, name: "WhatsApp Business", description: "Messaging" },
-      { icon: Hash, name: "Slack", description: "Team chat" },
-      { icon: MessageSquare, name: "Facebook Messenger", description: "Social messaging" },
-      { icon: Smartphone, name: "SMS (Twilio)", description: "Text messages" },
-      { icon: Mail, name: "Instagram DM", description: "Social direct" },
-      { icon: Mail, name: "Email", description: "Email support" },
-      { icon: Phone, name: "Voice (Twilio)", description: "Phone calls" },
-    ],
-  },
-  {
-    id: "analytics",
-    label: "Analytics",
-    items: [
-      { icon: BarChart, name: "Custom Dashboard", description: "Real-time analytics" },
-      { icon: TrendingUp, name: "Google Analytics", description: "Web tracking" },
-      { icon: PieChart, name: "Mixpanel", description: "Product analytics" },
-      { icon: Activity, name: "Amplitude", description: "User behavior" },
-      { icon: Database, name: "PostgreSQL", description: "Data storage" },
-      { icon: Table, name: "BigQuery", description: "Data warehouse" },
-      { icon: BarChart3, name: "Metabase", description: "BI dashboard" },
-      { icon: LineChart, name: "Grafana", description: "Monitoring" },
-    ],
-  },
+const chatbotTechnologies = [
+  { name: "OpenAI", slug: "openai" },
+  { name: "Python", slug: "python" },
+  { name: "Node.js", slug: "nodedotjs" },
+  { name: "React", slug: "react" },
+  { name: "PostgreSQL", slug: "postgresql" },
+  { name: "MongoDB", slug: "mongodb" },
+  { name: "Redis", slug: "redis" },
+  { name: "AWS", slug: "amazonaws" },
+  { name: "Docker", slug: "docker" },
+  { name: "Stripe", slug: "stripe" },
+  { name: "Twilio", slug: "twilio" },
+  { name: "Slack", slug: "slack" },
+  { name: "HubSpot", slug: "hubspot" },
+  { name: "Shopify", slug: "shopify" },
+  { name: "WordPress", slug: "wordpress" },
+  { name: "GitHub", slug: "github" },
+  { name: "TypeScript", slug: "typescript" },
+  { name: "Next.js", slug: "nextdotjs" },
 ];
 
 export default function AIChatbotsPage() {
@@ -949,16 +897,12 @@ export default function AIChatbotsPage() {
         </div>
       </section>
 
-      {/* TECHNOLOGIES & INTEGRATIONS (TABBED) */}
+      {/* TECHNOLOGIES & INTEGRATIONS */}
       <section className="py-20 bg-muted" data-testid="section-chatbot-technologies">
-        <div className="max-w-6xl mx-auto px-6">
-          <TechTabsSection
-            title="Technologies & Integrations We Use"
-            subtitle="Cutting-edge AI models and tools"
-            tabs={chatbotTechTabs}
-            accentColor={CHATBOT_COLOR}
-          />
-        </div>
+        <TechStackIcons
+          title="Technologies & Integrations We Use"
+          technologies={chatbotTechnologies}
+        />
       </section>
 
       {/* CASE STUDY */}

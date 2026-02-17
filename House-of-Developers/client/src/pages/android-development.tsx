@@ -63,7 +63,7 @@ import {
 import { Link } from "wouter";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { ZigzagTimeline } from "@/components/ui/ZigzagTimeline";
-import { TechTabsSection } from "@/components/ui/TechTabsSection";
+import { TechStackIcons } from "@/components/ui/TechStackIcons";
 import { ValueProposition } from "@/components/ui/ValueProposition";
 import { CTASection } from "@/components/ui/CTASection";
 
@@ -198,49 +198,25 @@ const whyChooseValues = [
   { icon: CheckCircle2, title: "Play Store Approved", description: "100% approval rate with Google's policies" },
 ];
 
-const techTabs = [
-  {
-    id: "languages",
-    label: "Languages & UI",
-    items: [
-      { icon: Code2, name: "Kotlin", description: "Google's preferred language for Android" },
-      { icon: Layout, name: "Jetpack Compose", description: "Modern declarative UI toolkit" },
-      { icon: FileCode, name: "XML Layouts", description: "Traditional Android view system" },
-      { icon: Palette, name: "Material Design 3", description: "Google's latest design system" },
-      { icon: RefreshCw, name: "Coroutines", description: "Lightweight async programming" },
-      { icon: GitBranch, name: "Flow", description: "Reactive data streams in Kotlin" },
-      { icon: Wrench, name: "Hilt/Dagger", description: "Dependency injection framework" },
-      { icon: Settings, name: "KSP", description: "Kotlin Symbol Processing for codegen" },
-    ],
-  },
-  {
-    id: "jetpack",
-    label: "Jetpack Libraries",
-    items: [
-      { icon: MapPin, name: "Navigation", description: "In-app navigation component" },
-      { icon: Database, name: "Room Database", description: "SQLite abstraction for local storage" },
-      { icon: Calendar, name: "WorkManager", description: "Background task scheduling" },
-      { icon: Layers, name: "ViewModel", description: "Lifecycle-aware UI state holder" },
-      { icon: HardDrive, name: "DataStore", description: "Modern key-value and proto storage" },
-      { icon: List, name: "Paging 3", description: "Incremental data loading library" },
-      { icon: Camera, name: "CameraX", description: "Camera API for all Android devices" },
-      { icon: Play, name: "Media3", description: "Media playback and streaming" },
-    ],
-  },
-  {
-    id: "tools",
-    label: "Tools & Services",
-    items: [
-      { icon: Flame, name: "Firebase", description: "Analytics, Crashlytics and Cloud Messaging" },
-      { icon: Map, name: "Google Maps", description: "Maps SDK and location services" },
-      { icon: CreditCard, name: "Google Pay", description: "One-tap payment integration" },
-      { icon: Smartphone, name: "Play Services", description: "Google APIs and device features" },
-      { icon: Code, name: "Android Studio", description: "Official Android IDE by Google" },
-      { icon: Package, name: "Gradle", description: "Build automation and dependency management" },
-      { icon: TestTube, name: "Espresso Testing", description: "UI testing framework for Android" },
-      { icon: Globe, name: "Play Console", description: "App publishing and analytics dashboard" },
-    ],
-  },
+const androidTechnologies = [
+  { name: "Kotlin", slug: "kotlin" },
+  { name: "React", slug: "react" },
+  { name: "TypeScript", slug: "typescript" },
+  { name: "Node.js", slug: "nodedotjs" },
+  { name: "PostgreSQL", slug: "postgresql" },
+  { name: "MongoDB", slug: "mongodb" },
+  { name: "Firebase", slug: "firebase" },
+  { name: "AWS", slug: "amazonaws" },
+  { name: "Docker", slug: "docker" },
+  { name: "GitHub", slug: "github" },
+  { name: "Figma", slug: "figma" },
+  { name: "Stripe", slug: "stripe" },
+  { name: "PayPal", slug: "paypal" },
+  { name: "Twilio", slug: "twilio" },
+  { name: "Supabase", slug: "supabase" },
+  { name: "Redux", slug: "redux" },
+  { name: "GraphQL", slug: "graphql" },
+  { name: "Jest", slug: "jest" },
 ];
 
 const faqs = [
@@ -697,11 +673,9 @@ export default function AndroidDevelopmentPage() {
       {/* Tech Stack */}
       <section className="py-20" data-testid="section-tech-stack">
         <div className="max-w-7xl mx-auto px-6">
-          <TechTabsSection
+          <TechStackIcons
             title="Android Technologies We Use"
-            subtitle="Google's modern development tools"
-            tabs={techTabs}
-            accentColor="#3DDC84"
+            technologies={androidTechnologies}
           />
         </div>
       </section>

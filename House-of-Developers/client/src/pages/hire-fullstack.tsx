@@ -13,6 +13,7 @@ import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { ZigzagTimeline } from "@/components/ui/ZigzagTimeline";
 import { ValueProposition } from "@/components/ui/ValueProposition";
 import { CTASection } from "@/components/ui/CTASection";
+import { TechStackIcons } from "@/components/ui/TechStackIcons";
 import {
   Layers,
   Layout,
@@ -40,6 +41,27 @@ import {
 } from "lucide-react";
 
 const FS_COLOR = "#6366F1";
+
+const fullstackTechnologies = [
+  { name: "React", slug: "react" },
+  { name: "Angular", slug: "angular" },
+  { name: "Vue.js", slug: "vuedotjs" },
+  { name: "TypeScript", slug: "typescript" },
+  { name: "Node.js", slug: "nodedotjs" },
+  { name: "Python", slug: "python" },
+  { name: "PHP", slug: "php" },
+  { name: "PostgreSQL", slug: "postgresql" },
+  { name: "MongoDB", slug: "mongodb" },
+  { name: "MySQL", slug: "mysql" },
+  { name: "Redis", slug: "redis" },
+  { name: "AWS", slug: "amazonaws" },
+  { name: "Docker", slug: "docker" },
+  { name: "GitHub", slug: "github" },
+  { name: "Figma", slug: "figma" },
+  { name: "Express", slug: "express" },
+  { name: "NestJS", slug: "nestjs" },
+  { name: "GraphQL", slug: "graphql" },
+];
 
 const stacks = [
   {
@@ -927,6 +949,12 @@ export default function HireFullStackPage() {
           </motion.div>
         </div>
       </section>
+
+      {/* TECH STACK */}
+      <TechStackIcons
+        title="Technologies We Use"
+        technologies={fullstackTechnologies}
+      />
 
       {/* FAQ */}
       <section className="py-20" data-testid="faq-section">

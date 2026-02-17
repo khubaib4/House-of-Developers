@@ -44,6 +44,28 @@ import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { ZigzagTimeline } from "@/components/ui/ZigzagTimeline";
 import { ValueProposition } from "@/components/ui/ValueProposition";
 import { CTASection } from "@/components/ui/CTASection";
+import { TechStackIcons } from "@/components/ui/TechStackIcons";
+
+const mobileTechnologies = [
+  { name: "React", slug: "react" },
+  { name: "Flutter", slug: "flutter" },
+  { name: "Swift", slug: "swift" },
+  { name: "Kotlin", slug: "kotlin" },
+  { name: "TypeScript", slug: "typescript" },
+  { name: "Node.js", slug: "nodedotjs" },
+  { name: "Python", slug: "python" },
+  { name: "PostgreSQL", slug: "postgresql" },
+  { name: "MongoDB", slug: "mongodb" },
+  { name: "Firebase", slug: "firebase" },
+  { name: "AWS", slug: "amazonaws" },
+  { name: "Docker", slug: "docker" },
+  { name: "GitHub", slug: "github" },
+  { name: "Figma", slug: "figma" },
+  { name: "Stripe", slug: "stripe" },
+  { name: "PayPal", slug: "paypal" },
+  { name: "Expo", slug: "expo" },
+  { name: "Supabase", slug: "supabase" },
+];
 
 const MOBILE_COLOR = "#6366F1";
 
@@ -592,6 +614,17 @@ export default function MobileDevelopmentPage() {
             values={whyChooseValues}
             columns={3}
             accentColor={MOBILE_COLOR}
+          />
+        </div>
+      </section>
+
+      {/* Tech Stack */}
+      <section className="py-20" data-testid="section-tech-stack">
+        <div className="max-w-7xl mx-auto px-6">
+          <TechStackIcons
+            title="Technologies We Use"
+            subtitle="We use industry-leading technologies to build products that are fast, reliable, and maintainable."
+            technologies={mobileTechnologies}
           />
         </div>
       </section>

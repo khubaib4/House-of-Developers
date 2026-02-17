@@ -15,6 +15,7 @@ import { ZigzagTimeline } from "@/components/ui/ZigzagTimeline";
 import { ValueProposition } from "@/components/ui/ValueProposition";
 import { CTASection } from "@/components/ui/CTASection";
 import { PricingCard } from "@/components/ui/PricingCard";
+import { TechStackIcons } from "@/components/ui/TechStackIcons";
 import {
   Triangle,
   Server,
@@ -57,6 +58,21 @@ import {
 } from "lucide-react";
 
 const MEAN_COLOR = "#DD0031";
+
+const meanTechnologies = [
+  { name: "Angular", slug: "angular" },
+  { name: "Node.js", slug: "nodedotjs" },
+  { name: "MongoDB", slug: "mongodb" },
+  { name: "Express", slug: "express" },
+  { name: "TypeScript", slug: "typescript" },
+  { name: "AWS", slug: "amazonaws" },
+  { name: "Docker", slug: "docker" },
+  { name: "GitHub", slug: "github" },
+  { name: "Redis", slug: "redis" },
+  { name: "GraphQL", slug: "graphql" },
+  { name: "Jest", slug: "jest" },
+  { name: "Figma", slug: "figma" },
+];
 
 const whyChooseValues = [
   { icon: FileCode, title: "TypeScript Native", description: "Angular uses TypeScript by default\u2014type safety and fewer bugs" },
@@ -1064,6 +1080,12 @@ export default function HireMEANPage() {
           />
         </div>
       </section>
+
+      <TechStackIcons
+        title="Technologies We Use"
+        subtitle="We use industry-leading technologies to build products that are fast, reliable, and maintainable."
+        technologies={meanTechnologies}
+      />
 
       <section className="py-20" data-testid="section-faq">
         <div className="max-w-4xl mx-auto px-6">

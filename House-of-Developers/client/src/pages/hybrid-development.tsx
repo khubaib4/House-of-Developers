@@ -55,7 +55,7 @@ import { useState, useRef, useCallback } from "react";
 import { Link } from "wouter";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { ZigzagTimeline } from "@/components/ui/ZigzagTimeline";
-import { TechTabsSection } from "@/components/ui/TechTabsSection";
+import { TechStackIcons } from "@/components/ui/TechStackIcons";
 import { ValueProposition } from "@/components/ui/ValueProposition";
 import { CTASection } from "@/components/ui/CTASection";
 
@@ -192,49 +192,25 @@ const whyChooseValues = [
   { icon: Users, title: "Proven Results", description: "Apps with 4.5+ ratings and 100K+ downloads" },
 ];
 
-const techTabs = [
-  {
-    id: "frameworks",
-    label: "Frameworks",
-    items: [
-      { icon: Smartphone, name: "React Native", description: "Cross-platform mobile framework by Meta" },
-      { icon: Feather, name: "Flutter", description: "Google's UI toolkit for natively compiled apps" },
-      { icon: Zap, name: "Expo", description: "Managed workflow for React Native development" },
-      { icon: Code, name: "Dart", description: "Programming language optimised for Flutter" },
-      { icon: FileCode, name: "TypeScript", description: "Type-safe JavaScript for React Native" },
-      { icon: Code2, name: "JavaScript", description: "Core language for React Native apps" },
-      { icon: Layers, name: "Kotlin Bridge", description: "Native Kotlin modules for platform features" },
-      { icon: Cpu, name: "Swift Bridge", description: "Native Swift modules for iOS integration" },
-    ],
-  },
-  {
-    id: "state-backend",
-    label: "State & Backend",
-    items: [
-      { icon: Database, name: "Redux", description: "Predictable state container for JS apps" },
-      { icon: GitBranch, name: "MobX", description: "Simple, scalable reactive state management" },
-      { icon: Box, name: "Zustand", description: "Lightweight state management for React" },
-      { icon: Flame, name: "Firebase", description: "Google's app development platform" },
-      { icon: Cloud, name: "AWS Amplify", description: "Cloud backend and hosting services" },
-      { icon: Server, name: "Node.js", description: "JavaScript runtime for backend APIs" },
-      { icon: Code, name: "GraphQL", description: "Flexible query language for APIs" },
-      { icon: Globe, name: "REST APIs", description: "Standard HTTP-based API architecture" },
-    ],
-  },
-  {
-    id: "tools",
-    label: "Tools & Services",
-    items: [
-      { icon: CreditCard, name: "Stripe", description: "Payment processing and subscriptions" },
-      { icon: MapPin, name: "Google Maps", description: "Maps, geocoding and location services" },
-      { icon: Bell, name: "OneSignal", description: "Cross-platform push notification service" },
-      { icon: RefreshCw, name: "CodePush", description: "Over-the-air updates without app store" },
-      { icon: Rocket, name: "Fastlane", description: "Automated build and release pipeline" },
-      { icon: TestTube2, name: "Detox Testing", description: "End-to-end testing for mobile apps" },
-      { icon: Shield, name: "Sentry", description: "Error tracking and performance monitoring" },
-      { icon: Settings, name: "App Center", description: "CI/CD, analytics and crash reporting" },
-    ],
-  },
+const hybridTechnologies = [
+  { name: "React", slug: "react" },
+  { name: "Flutter", slug: "flutter" },
+  { name: "TypeScript", slug: "typescript" },
+  { name: "JavaScript", slug: "javascript" },
+  { name: "Node.js", slug: "nodedotjs" },
+  { name: "PostgreSQL", slug: "postgresql" },
+  { name: "MongoDB", slug: "mongodb" },
+  { name: "Firebase", slug: "firebase" },
+  { name: "AWS", slug: "amazonaws" },
+  { name: "Docker", slug: "docker" },
+  { name: "GitHub", slug: "github" },
+  { name: "Figma", slug: "figma" },
+  { name: "Expo", slug: "expo" },
+  { name: "Stripe", slug: "stripe" },
+  { name: "Twilio", slug: "twilio" },
+  { name: "Redux", slug: "redux" },
+  { name: "GraphQL", slug: "graphql" },
+  { name: "Supabase", slug: "supabase" },
 ];
 
 const faqs = [
@@ -869,11 +845,9 @@ export default function HybridDevelopmentPage() {
       {/* Tech Stack */}
       <section className="py-20 bg-muted" data-testid="section-tech-stack">
         <div className="max-w-7xl mx-auto px-6">
-          <TechTabsSection
+          <TechStackIcons
             title="Technologies We Use for Hybrid Apps"
-            subtitle="Modern tools and frameworks"
-            tabs={techTabs}
-            accentColor={HYBRID_COLOR}
+            technologies={hybridTechnologies}
           />
         </div>
       </section>

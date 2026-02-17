@@ -54,7 +54,7 @@ import { useState, useRef, useCallback } from "react";
 import { Link } from "wouter";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { ZigzagTimeline } from "@/components/ui/ZigzagTimeline";
-import { TechTabsSection } from "@/components/ui/TechTabsSection";
+import { TechStackIcons } from "@/components/ui/TechStackIcons";
 import { ValueProposition } from "@/components/ui/ValueProposition";
 import { CTASection } from "@/components/ui/CTASection";
 
@@ -103,49 +103,19 @@ const solutions = [
   },
 ];
 
-const techTabs = [
-  {
-    id: "payments",
-    label: "Payments & Shipping",
-    items: [
-      { icon: CreditCard, name: "Stripe", description: "Payment processing for online stores" },
-      { icon: Wallet, name: "PayPal", description: "Global payment gateway integration" },
-      { icon: CreditCard, name: "Square", description: "In-person and online payments" },
-      { icon: ShoppingCart, name: "Amazon Pay", description: "Checkout with Amazon credentials" },
-      { icon: Truck, name: "ShipStation", description: "Multi-carrier shipping automation" },
-      { icon: Package, name: "Royal Mail", description: "UK postal service integration" },
-      { icon: Globe, name: "DHL", description: "International shipping and tracking" },
-      { icon: Map, name: "Table Rate Shipping", description: "Flexible shipping rate rules" },
-    ],
-  },
-  {
-    id: "extensions",
-    label: "Extensions",
-    items: [
-      { icon: Repeat, name: "WooCommerce Subscriptions", description: "Recurring billing and subscriptions" },
-      { icon: Calendar, name: "WooCommerce Bookings", description: "Appointment and reservation system" },
-      { icon: Users, name: "WooCommerce Memberships", description: "Member-only content and perks" },
-      { icon: Package, name: "YITH WooCommerce", description: "Premium extension suite" },
-      { icon: Layers, name: "Product Bundles", description: "Grouped product offerings" },
-      { icon: Plus, name: "Product Add-Ons", description: "Custom fields and options" },
-      { icon: Settings, name: "Min/Max Quantities", description: "Order quantity restrictions" },
-      { icon: Star, name: "Points & Rewards", description: "Customer loyalty programme" },
-    ],
-  },
-  {
-    id: "marketing",
-    label: "Marketing & Analytics",
-    items: [
-      { icon: Mail, name: "Mailchimp", description: "Email marketing automation" },
-      { icon: Send, name: "Brevo", description: "Email, SMS, and chat marketing" },
-      { icon: BarChart3, name: "Google Analytics", description: "Traffic and conversion tracking" },
-      { icon: Target, name: "Facebook Pixel", description: "Conversion tracking and retargeting" },
-      { icon: Mail, name: "Klaviyo", description: "Advanced email and SMS marketing" },
-      { icon: Users, name: "HubSpot", description: "CRM and inbound marketing suite" },
-      { icon: Search, name: "SEO by Yoast", description: "On-page SEO optimisation" },
-      { icon: Cloud, name: "Cloudflare", description: "CDN and performance optimisation" },
-    ],
-  },
+const woocommerceTechnologies = [
+  { name: "WordPress", slug: "wordpress" },
+  { name: "WooCommerce", slug: "woocommerce" },
+  { name: "PHP", slug: "php" },
+  { name: "MySQL", slug: "mysql" },
+  { name: "Stripe", slug: "stripe" },
+  { name: "PayPal", slug: "paypal" },
+  { name: "AWS", slug: "amazonaws" },
+  { name: "Cloudflare", slug: "cloudflare" },
+  { name: "GitHub", slug: "github" },
+  { name: "Figma", slug: "figma" },
+  { name: "JavaScript", slug: "javascript" },
+  { name: "Redis", slug: "redis" },
 ];
 
 const zigzagSteps = [
@@ -760,11 +730,10 @@ export default function WooCommerceDevelopmentPage() {
       {/* Extensions */}
       <section className="py-20" data-testid="section-extensions">
         <div className="max-w-7xl mx-auto px-6">
-          <TechTabsSection
-            title="WooCommerce Extensions We Use"
-            subtitle="Essential plugins to power your store"
-            tabs={techTabs}
-            accentColor="#96588A"
+          <TechStackIcons
+            title="Technologies We Use"
+            subtitle="We use industry-leading technologies to build products that are fast, reliable, and maintainable."
+            technologies={woocommerceTechnologies}
           />
         </div>
       </section>

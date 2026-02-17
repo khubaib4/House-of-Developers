@@ -15,6 +15,7 @@ import { ZigzagTimeline } from "@/components/ui/ZigzagTimeline";
 import { ValueProposition } from "@/components/ui/ValueProposition";
 import { CTASection } from "@/components/ui/CTASection";
 import { PricingCard } from "@/components/ui/PricingCard";
+import { TechStackIcons } from "@/components/ui/TechStackIcons";
 import {
   Layout,
   Server,
@@ -50,6 +51,21 @@ import {
 } from "lucide-react";
 
 const MERN_COLOR = "#00D8FF";
+
+const mernTechnologies = [
+  { name: "React", slug: "react" },
+  { name: "Node.js", slug: "nodedotjs" },
+  { name: "MongoDB", slug: "mongodb" },
+  { name: "Express", slug: "express" },
+  { name: "TypeScript", slug: "typescript" },
+  { name: "AWS", slug: "amazonaws" },
+  { name: "Docker", slug: "docker" },
+  { name: "GitHub", slug: "github" },
+  { name: "Redis", slug: "redis" },
+  { name: "GraphQL", slug: "graphql" },
+  { name: "Jest", slug: "jest" },
+  { name: "Figma", slug: "figma" },
+];
 
 const whyChooseValues = [
   { icon: Code2, title: "Single Language", description: "JavaScript/TypeScript across frontend, backend, and database queries" },
@@ -888,6 +904,12 @@ export default function HireMERNPage() {
           />
         </div>
       </section>
+
+      <TechStackIcons
+        title="Technologies We Use"
+        subtitle="We use industry-leading technologies to build products that are fast, reliable, and maintainable."
+        technologies={mernTechnologies}
+      />
 
       {/* FAQ */}
       <section className="py-20 bg-muted" data-testid="section-faq">
