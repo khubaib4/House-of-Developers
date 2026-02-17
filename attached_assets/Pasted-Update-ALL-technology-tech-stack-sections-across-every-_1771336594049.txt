@@ -1,0 +1,423 @@
+Update ALL technology/tech stack sections across every page on the website to use Simple Icons CDN logos instead of Lucide icons. Match exactly the design style shown on the homepage "Our Tech Stack" section - gray monochrome icons with name labels below, clean grid layout, no descriptions, no cards with borders.
+
+---
+
+DESIGN REFERENCE (Match Homepage Style Exactly):
+
+Layout:
+- Clean grid of icons (6 columns desktop, 4 tablet, 3 mobile)
+- Each item: centered icon + name label below
+- No card borders or backgrounds
+- No descriptions under names
+- Generous spacing between items
+- Section title + subtitle centered above grid
+- Clean, minimal, premium feel
+
+Each Technology Item:
+```jsx
+<div className="flex flex-col items-center gap-3">
+  <img
+    src={`https://cdn.simpleicons.org/${slug}/9CA3AF`}
+    alt={name}
+    className="w-12 h-12"
+    loading="lazy"
+  />
+  <span className="text-sm font-medium text-muted-foreground">
+    {name}
+  </span>
+</div>
+```
+
+Color: All icons use #9CA3AF (Tailwind gray-400) - monochrome
+Hover effect: opacity-100 from opacity-70, smooth transition 200ms
+Grid: grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-8 md:gap-12
+
+---
+
+SIMPLE ICONS SLUG REFERENCE:
+
+Use these EXACT slugs for cdn.simpleicons.org:
+
+FRONTEND FRAMEWORKS:
+- React → "react"
+- Next.js → "nextdotjs"
+- Vue.js → "vuedotjs"
+- Angular → "angular"
+- TypeScript → "typescript"
+- JavaScript → "javascript"
+- Tailwind CSS → "tailwindcss"
+- Vite → "vite"
+- Nuxt.js → "nuxtdotjs"
+
+BACKEND:
+- Node.js → "nodedotjs"
+- Express.js → "express"
+- Python → "python"
+- PHP → "php"
+- Django → "django"
+- Laravel → "laravel"
+- FastAPI → "fastapi"
+- NestJS → "nestjs"
+- Go → "go"
+
+DATABASES:
+- PostgreSQL → "postgresql"
+- MongoDB → "mongodb"
+- MySQL → "mysql"
+- Redis → "redis"
+- Supabase → "supabase"
+- Firebase → "firebase"
+- SQLite → "sqlite"
+
+MOBILE:
+- Flutter → "flutter"
+- React Native → "react" (use React icon)
+- Swift → "swift"
+- Kotlin → "kotlin"
+- Expo → "expo"
+
+CLOUD & DEVOPS:
+- AWS → "amazonaws"
+- Docker → "docker"
+- Kubernetes → "kubernetes"
+- Vercel → "vercel"
+- DigitalOcean → "digitalocean"
+- Cloudflare → "cloudflare"
+- GitHub → "github"
+- GitHub Actions → "githubactions"
+
+CMS & E-COMMERCE:
+- WordPress → "wordpress"
+- Shopify → "shopify"
+- WooCommerce → "woocommerce"
+- Webflow → "webflow"
+- Strapi → "strapi"
+- Contentful → "contentful"
+- Sanity → "sanity"
+
+DESIGN & TOOLS:
+- Figma → "figma"
+- Adobe XD → "adobexd"
+- Framer → "framer"
+
+AI & ML:
+- OpenAI → "openai"
+- TensorFlow → "tensorflow"
+- PyTorch → "pytorch"
+- Hugging Face → "huggingface"
+
+PAYMENTS & INTEGRATIONS:
+- Stripe → "stripe"
+- PayPal → "paypal"
+- Twilio → "twilio"
+- HubSpot → "hubspot"
+- Slack → "slack"
+- Zapier → "zapier"
+- Shopify → "shopify"
+
+TESTING:
+- Jest → "jest"
+- Cypress → "cypress"
+- Playwright → "playwright"
+
+---
+
+PAGES TO UPDATE:
+
+Update the tech stack / technologies section on ALL of these pages:
+
+1. /services/web-development/page.tsx
+   Current section: "Technologies We Build With" (tabbed)
+   Replace tabs with: Single clean grid
+   Technologies (18):
+   React, Next.js, TypeScript, Vue.js, Angular,
+   Node.js, Python, PHP, PostgreSQL, MongoDB,
+   WordPress, Shopify, WooCommerce, AWS, Docker,
+   Figma, Stripe, GitHub
+
+2. /services/web-development/custom-development/page.tsx
+   Current: "Technologies We Build With" (tabbed)
+   Technologies (18):
+   React, Next.js, TypeScript, Node.js, NestJS,
+   Python, PostgreSQL, MongoDB, Redis, GraphQL,
+   Docker, AWS, Kubernetes, GitHub Actions,
+   Figma, Jest, Cypress, Stripe
+
+3. /services/ai-services/page.tsx
+   Current: "AI Technologies We Use" (tabbed)
+   Technologies (18):
+   OpenAI, Python, TensorFlow, PyTorch,
+   Node.js, React, PostgreSQL, MongoDB,
+   Docker, AWS, GitHub, FastAPI,
+   Next.js, TypeScript, Redis, Stripe,
+   Hugging Face, Supabase
+
+4. /services/ai-services/ai-chatbots/page.tsx
+   Current: "Technologies & Integrations We Use" (tabbed)
+   Technologies (18):
+   OpenAI, Python, Node.js, React,
+   PostgreSQL, MongoDB, Redis, AWS,
+   Docker, Stripe, Twilio, Slack,
+   HubSpot, Shopify, WordPress, GitHub,
+   TypeScript, Next.js
+
+5. /services/ai-services/ai-agents/page.tsx
+   Current: "Technologies & Tools We Use" (tabbed)
+   Technologies (18):
+   OpenAI, Python, Node.js, FastAPI,
+   PostgreSQL, MongoDB, Redis, AWS,
+   Docker, GitHub, Slack, HubSpot,
+   TensorFlow, PyTorch, TypeScript,
+   React, Next.js, Zapier
+
+6. /services/mobile-development/page.tsx
+   Current: Tech stack section
+   Technologies (18):
+   React, Flutter, Swift, Kotlin,
+   TypeScript, Node.js, Python, PostgreSQL,
+   MongoDB, Firebase, AWS, Docker,
+   GitHub, Figma, Stripe, PayPal,
+   Expo, Supabase
+
+7. /services/mobile-development/hybrid/page.tsx
+   Current: Tech stack section
+   Technologies (18):
+   React, Flutter, TypeScript, JavaScript,
+   Node.js, PostgreSQL, MongoDB, Firebase,
+   AWS, Docker, GitHub, Figma,
+   Expo, Stripe, Twilio, Redux,
+   GraphQL, Supabase
+
+8. /services/mobile-development/ios/page.tsx
+   Current: Tech stack section
+   Technologies (18):
+   Swift, React, TypeScript, Node.js,
+   PostgreSQL, MongoDB, Firebase, AWS,
+   Docker, GitHub, Figma, Stripe,
+   PayPal, Twilio, Supabase, Redux,
+   GraphQL, Jest
+
+9. /services/mobile-development/kotlin/page.tsx
+   Current: Tech stack section  
+   Technologies (18):
+   Kotlin, React, TypeScript, Node.js,
+   PostgreSQL, MongoDB, Firebase, AWS,
+   Docker, GitHub, Figma, Stripe,
+   PayPal, Twilio, Supabase, Redux,
+   GraphQL, Jest
+
+10. /services/hire-developers/page.tsx
+    Current: Tech stack section
+    Technologies (18):
+    React, Next.js, TypeScript, Node.js,
+    Python, PHP, PostgreSQL, MongoDB,
+    AWS, Docker, GitHub, Figma,
+    Flutter, Swift, Kotlin, Angular,
+    Vue.js, WordPress
+
+11. /services/hire-developers/full-stack/page.tsx
+    Current: Tech stack section
+    Technologies (18):
+    React, Angular, Vue.js, TypeScript,
+    Node.js, Python, PHP, PostgreSQL,
+    MongoDB, MySQL, Redis, AWS,
+    Docker, GitHub, Figma, Express,
+    NestJS, GraphQL
+
+12. /services/hire-developers/full-stack/mern/page.tsx
+    Technologies (12):
+    React, Node.js, MongoDB, Express,
+    TypeScript, AWS, Docker, GitHub,
+    Redis, GraphQL, Jest, Figma
+
+13. /services/hire-developers/full-stack/mean/page.tsx
+    Technologies (12):
+    Angular, Node.js, MongoDB, Express,
+    TypeScript, AWS, Docker, GitHub,
+    Redis, GraphQL, Jest, Figma
+
+14. /services/hire-developers/full-stack/mevn/page.tsx
+    Technologies (12):
+    Vue.js, Node.js, MongoDB, Express,
+    TypeScript, AWS, Docker, GitHub,
+    Redis, GraphQL, Jest, Figma
+
+15. /services/hire-developers/full-stack/lamp/page.tsx
+    Technologies (12):
+    PHP, MySQL, WordPress, Laravel,
+    JavaScript, AWS, Docker, GitHub,
+    Redis, Stripe, Figma, Python
+
+16. /services/hire-developers/frontend/page.tsx
+    Technologies (15):
+    React, Next.js, Vue.js, Angular,
+    TypeScript, JavaScript, Tailwind CSS,
+    Figma, GitHub, Jest, Cypress,
+    Vite, Framer, Redux, Playwright
+
+17. /services/hire-developers/backend/page.tsx
+    Technologies (15):
+    Node.js, Python, PHP, PostgreSQL,
+    MongoDB, MySQL, Redis, Docker,
+    AWS, GitHub, Express, Django,
+    FastAPI, Laravel, GraphQL
+
+18. /services/web-development/cms/wordpress/page.tsx
+    Technologies (12):
+    WordPress, PHP, MySQL, JavaScript,
+    AWS, Cloudflare, Docker, GitHub,
+    Figma, Stripe, WooCommerce, Tailwind CSS
+
+19. /services/web-development/cms/shopify/page.tsx
+    Technologies (12):
+    Shopify, JavaScript, React, Node.js,
+    Stripe, AWS, Cloudflare, GitHub,
+    Figma, TypeScript, GraphQL, MongoDB
+
+20. /services/web-development/cms/woocommerce/page.tsx
+    Technologies (12):
+    WordPress, WooCommerce, PHP, MySQL,
+    Stripe, PayPal, AWS, Cloudflare,
+    GitHub, Figma, JavaScript, Redis
+
+21. /services/web-development/cms/wix/page.tsx
+    Technologies (12):
+    JavaScript, React, Node.js, MongoDB,
+    Stripe, AWS, GitHub, Figma,
+    TypeScript, Cloudflare, PayPal, Redis
+
+---
+
+REUSABLE COMPONENT TO CREATE:
+
+Create a reusable TechStackIcons component:
+
+FILE: client/src/components/ui/TechStackIcons.tsx
+```tsx
+import React from "react";
+
+interface Tech {
+  name: string;
+  slug: string;
+}
+
+interface TechStackIconsProps {
+  title?: string;
+  subtitle?: string;
+  technologies: Tech[];
+  className?: string;
+}
+
+export function TechStackIcons({
+  title = "Technologies We Use",
+  subtitle,
+  technologies,
+  className = "",
+}: TechStackIconsProps) {
+  return (
+    <div className={`py-20 ${className}`}>
+      <div className="max-w-6xl mx-auto px-6">
+        {title && (
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{title}</h2>
+            {subtitle && (
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                {subtitle}
+              </p>
+            )}
+          </div>
+        )}
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-8 md:gap-12">
+          {technologies.map((tech) => (
+            <div
+              key={tech.name}
+              className="flex flex-col items-center gap-3 group"
+            >
+              <img
+                src={`https://cdn.simpleicons.org/${tech.slug}/9CA3AF`}
+                alt={tech.name}
+                className="w-12 h-12 opacity-70 group-hover:opacity-100 transition-opacity duration-200"
+                loading="lazy"
+                onError={(e) => {
+                  // Fallback if icon not found
+                  e.currentTarget.style.display = "none";
+                }}
+              />
+              <span className="text-sm font-medium text-muted-foreground text-center">
+                {tech.name}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+```
+
+---
+
+USAGE EXAMPLE (for each page):
+```tsx
+import { TechStackIcons } from "@/components/ui/TechStackIcons";
+
+// Define technologies for this specific page
+const technologies = [
+  { name: "React", slug: "react" },
+  { name: "Next.js", slug: "nextdotjs" },
+  { name: "TypeScript", slug: "typescript" },
+  { name: "Node.js", slug: "nodedotjs" },
+  { name: "PostgreSQL", slug: "postgresql" },
+  { name: "MongoDB", slug: "mongodb" },
+  { name: "AWS", slug: "amazonaws" },
+  { name: "Docker", slug: "docker" },
+  { name: "GitHub", slug: "github" },
+  { name: "Figma", slug: "figma" },
+  { name: "Stripe", slug: "stripe" },
+  { name: "Redis", slug: "redis" },
+];
+
+// In JSX:
+<TechStackIcons
+  title="Technologies We Use"
+  subtitle="We use industry-leading technologies to build products that are fast, reliable, and maintainable."
+  technologies={technologies}
+/>
+```
+
+---
+
+SECTION BACKGROUND ALTERNATION:
+
+Match with existing page pattern:
+- If section before is bg-muted → use bg-background (white/dark)
+- If section before is bg-background → use bg-muted
+- Keep consistent with rest of page rhythm
+
+---
+
+IMPORTANT NOTES:
+
+1. REMOVE old tabbed tech stack sections completely
+2. REPLACE with new TechStackIcons component
+3. Keep section title and subtitle consistent:
+   - Title: "Technologies We Use" (or "Our Tech Stack" for hub pages)
+   - Subtitle: "We use industry-leading technologies to build products that are fast, reliable, and maintainable."
+
+4. DO NOT change any other sections on these pages
+   - Only replace the tech stack / technologies section
+   - Keep all other content exactly as is
+
+5. FALLBACK: Add onError handler so if a slug is wrong,
+   the broken image is hidden gracefully
+
+6. DARK MODE: Icons use #9CA3AF which works in both
+   light and dark mode as a neutral gray
+
+7. HOMEPAGE: Do NOT change homepage - it already has
+   the correct design that we're matching
+
+8. CREATE the TechStackIcons component first,
+   then update each page to use it
+
+Complete all 21 pages plus create the reusable component.
