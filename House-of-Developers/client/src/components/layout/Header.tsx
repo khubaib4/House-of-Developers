@@ -189,7 +189,10 @@ export function Header() {
                   <button
                     ref={triggerRef}
                     type="button"
-                    onClick={() => setMegaMenuOpen((prev) => !prev)}
+                    onClick={() => {
+                      setMegaMenuOpen(false);
+                      handleNavClick(item.href, item.isRoute);
+                    }}
                     className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-muted-foreground transition-colors rounded-md hover-elevate"
                     aria-expanded={megaMenuOpen}
                     aria-haspopup="true"
