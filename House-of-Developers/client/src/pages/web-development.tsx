@@ -118,102 +118,155 @@ function BrowserFrame({
   );
 }
 
-function HeroSaaSMockup() {
+function WebHeroMockup() {
   return (
-    <div className="bg-gradient-to-br from-blue-600 to-purple-700 p-4 min-h-[220px]">
-      <div className="bg-gray-900/40 rounded-lg px-3 py-2 mb-3 flex items-center justify-between">
-        <span className="text-white text-xs font-semibold">SaaS Platform</span>
-        <div className="flex gap-2">
-          <div className="w-6 h-1.5 rounded bg-white/30" />
-          <div className="w-6 h-1.5 rounded bg-white/30" />
-        </div>
-      </div>
-      <div className="text-center mb-3">
-        <p className="text-white font-bold text-sm">Grow Your Business</p>
-        <p className="text-white/60 text-[10px] mt-1">Analytics & insights in real-time</p>
-      </div>
-      <div className="grid grid-cols-3 gap-2 mb-3">
-        {[
-          { label: "Revenue", value: "$48.2K" },
-          { label: "Users", value: "12,847" },
-          { label: "Growth", value: "+23%" },
-        ].map((s) => (
-          <div key={s.label} className="bg-white/10 backdrop-blur rounded-lg p-2 text-center">
-            <p className="text-white font-bold text-xs">{s.value}</p>
-            <p className="text-white/50 text-[9px]">{s.label}</p>
-          </div>
-        ))}
-      </div>
-      <div className="bg-white/10 backdrop-blur rounded-lg p-3">
-        <div className="flex items-end gap-1 h-12">
-          {[40, 65, 45, 80, 55, 90, 70, 85, 60, 95, 75, 88].map((h, i) => (
-            <div
-              key={i}
-              className="flex-1 rounded-t bg-gradient-to-t from-blue-400 to-purple-400"
-              style={{ height: `${h}%` }}
-            />
-          ))}
-        </div>
-      </div>
-      <div className="flex gap-2 mt-3 justify-center">
-        <div className="bg-white rounded-full px-3 py-1 text-[10px] font-semibold text-purple-700">Get Started</div>
-        <div className="border border-white/40 rounded-full px-3 py-1 text-[10px] text-white">Learn More</div>
-      </div>
-    </div>
-  );
-}
-
-function HeroEcommerceMockup() {
-  return (
-    <div className="bg-white dark:bg-gray-100 p-3 min-h-[200px]">
-      <div className="flex items-center justify-between mb-2">
-        <span className="text-gray-800 text-xs font-semibold">FashionStore</span>
-        <div className="flex gap-2">
-          <div className="w-4 h-1 rounded bg-gray-300" />
-          <div className="w-4 h-1 rounded bg-gray-300" />
-        </div>
-      </div>
-      <div className="grid grid-cols-2 gap-2">
-        {[
-          { name: "Summer Dress", price: "£89", color: "bg-pink-100" },
-          { name: "Blazer", price: "£129", color: "bg-blue-100" },
-          { name: "Sneakers", price: "£95", color: "bg-green-100" },
-          { name: "Handbag", price: "£149", color: "bg-amber-100" },
-        ].map((p) => (
-          <div key={p.name} className="rounded-lg overflow-hidden">
-            <div className={`${p.color} h-16 flex items-center justify-center`}>
-              <ShoppingBag className="w-5 h-5 text-gray-400" />
+    <div className="relative flex items-center justify-center" style={{ minHeight: 380 }}>
+      {[
+        { offset: -80, z: 1, rotate: -8, type: "ecommerce" },
+        { offset: 0, z: 3, rotate: 0, type: "saas" },
+        { offset: 80, z: 2, rotate: 8, type: "corporate" },
+      ].map((frame, idx) => (
+        <motion.div
+          key={frame.type}
+          className="absolute"
+          style={{ left: `calc(50% + ${frame.offset}px - 80px)`, zIndex: frame.z }}
+          initial={{ opacity: 0, y: 30, rotate: frame.rotate }}
+          animate={{ opacity: 1, y: 0, rotate: frame.rotate }}
+          transition={{ duration: 0.6, delay: 0.2 + idx * 0.15 }}
+        >
+          <div className="w-[160px] md:w-[190px] bg-background border-2 border-border rounded-xl shadow-2xl overflow-hidden">
+            <div className="h-5 bg-muted flex items-center gap-1.5 px-2">
+              <div className="flex gap-1">
+                <div className="w-1.5 h-1.5 rounded-full bg-red-500" />
+                <div className="w-1.5 h-1.5 rounded-full bg-yellow-500" />
+                <div className="w-1.5 h-1.5 rounded-full bg-green-500" />
+              </div>
+              <div className="flex-1 flex justify-center">
+                <div className="bg-background/80 rounded px-1.5 py-0.5 text-[6px] text-muted-foreground">
+                  {frame.type === "saas" ? "saas-platform.com" : frame.type === "ecommerce" ? "fashion-store.com" : "law-firm.co.uk"}
+                </div>
+              </div>
             </div>
-            <div className="p-1.5">
-              <p className="text-gray-800 text-[9px] font-medium">{p.name}</p>
-              <p className="text-gray-600 text-[9px] font-bold">{p.price}</p>
+
+            {frame.type === "saas" && (
+              <div className="p-3 space-y-2" style={{ minHeight: 200 }}>
+                <div className="flex items-center justify-between">
+                  <div className="text-[8px] font-bold">Dashboard</div>
+                  <Bell className="h-2.5 w-2.5 text-muted-foreground" />
+                </div>
+                <div className="grid grid-cols-2 gap-1">
+                  {[
+                    { label: "Revenue", val: "$48.2K" },
+                    { label: "Users", val: "12,847" },
+                  ].map((s) => (
+                    <div key={s.label} className="rounded p-1.5 text-center" style={{ backgroundColor: `${WEB_DEV_COLOR}10` }}>
+                      <div className="text-[9px] font-bold" style={{ color: WEB_DEV_COLOR }}>{s.val}</div>
+                      <div className="text-[6px] text-muted-foreground">{s.label}</div>
+                    </div>
+                  ))}
+                </div>
+                <div className="h-14 rounded bg-muted/50 border border-border flex items-end px-1 pb-1 gap-0.5">
+                  {[40, 60, 45, 70, 55, 80, 65].map((h, i) => (
+                    <div key={i} className="flex-1 rounded-t" style={{ height: `${h}%`, backgroundColor: `${WEB_DEV_COLOR}${i === 5 ? "" : "60"}` }} />
+                  ))}
+                </div>
+                <div className="space-y-1">
+                  {["Active Projects: 12", "On Track: 92%"].map((t) => (
+                    <div key={t} className="flex items-center gap-1 rounded p-1 bg-muted/50">
+                      <div className="w-3 h-3 rounded-full" style={{ backgroundColor: `${WEB_DEV_COLOR}20` }} />
+                      <span className="text-[6px]">{t}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {frame.type === "ecommerce" && (
+              <div className="p-3 space-y-2" style={{ minHeight: 200 }}>
+                <div className="flex items-center justify-between">
+                  <div className="text-[8px] font-bold italic">LuxeWear</div>
+                  <ShoppingBag className="h-2.5 w-2.5 text-muted-foreground" />
+                </div>
+                <div className="h-12 rounded bg-gradient-to-br from-rose-100 to-pink-50 flex items-center justify-center">
+                  <Heart className="w-4 h-4 text-rose-300" />
+                </div>
+                <div className="grid grid-cols-2 gap-1">
+                  {[
+                    { name: "Silk Dress", price: "£189", color: "bg-rose-50" },
+                    { name: "Blazer", price: "£249", color: "bg-blue-50" },
+                    { name: "Leather Bag", price: "£129", color: "bg-amber-50" },
+                    { name: "Sneakers", price: "£89", color: "bg-green-50" },
+                  ].map((p) => (
+                    <div key={p.name}>
+                      <div className={`${p.color} rounded h-8 flex items-center justify-center`}>
+                        <ShoppingBag className="w-2.5 h-2.5 text-gray-300" />
+                      </div>
+                      <p className="text-[6px] font-semibold mt-0.5">{p.name}</p>
+                      <p className="text-[6px] text-muted-foreground">{p.price}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {frame.type === "corporate" && (
+              <div style={{ minHeight: 200 }}>
+                <div className="bg-slate-800 p-2 text-center">
+                  <p className="text-white text-[8px] font-bold">Hartley & Associates</p>
+                  <p className="text-slate-400 text-[6px] mt-0.5">Protecting Your Rights</p>
+                  <div className="mt-1.5">
+                    <div className="bg-amber-500 rounded px-2 py-0.5 text-[6px] text-white font-semibold inline-block">Consult</div>
+                  </div>
+                </div>
+                <div className="p-2 space-y-1.5">
+                  <div className="grid grid-cols-2 gap-1">
+                    {["30+ Years", "500+ Cases"].map((t) => (
+                      <div key={t} className="text-center p-1 bg-muted/50 rounded">
+                        <p className="text-[6px] font-bold">{t}</p>
+                      </div>
+                    ))}
+                  </div>
+                  {["Corporate Law", "Employment Law", "Property Law"].map((item) => (
+                    <div key={item} className="flex items-center justify-between rounded p-1.5 bg-muted/50">
+                      <span className="text-[6px]">{item}</span>
+                      <ArrowRight className="h-2 w-2 text-muted-foreground" />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <div className="h-3 bg-muted flex items-center justify-center">
+              <div className="w-8 h-1 bg-muted-foreground/30 rounded-full" />
             </div>
           </div>
-        ))}
-      </div>
-    </div>
-  );
-}
+        </motion.div>
+      ))}
 
-function HeroCorporateMockup() {
-  return (
-    <div className="bg-slate-900 p-3 min-h-[200px]">
-      <div className="flex items-center justify-between mb-3">
-        <span className="text-white text-xs font-semibold">Law Firm</span>
-        <div className="bg-amber-500 rounded px-2 py-0.5 text-[8px] text-white font-semibold">Consult</div>
-      </div>
-      <div className="bg-slate-800 rounded-lg p-3 mb-2 text-center">
-        <p className="text-white text-xs font-bold">Experienced Legal Counsel</p>
-        <p className="text-slate-400 text-[9px] mt-1">Protecting Your Rights Since 1994</p>
-      </div>
-      <div className="grid grid-cols-2 gap-1.5">
-        {["Corporate", "Employment", "Property", "Litigation"].map((s) => (
-          <div key={s} className="bg-slate-800 rounded p-2 text-center">
-            <Scale className="w-3 h-3 text-amber-500 mx-auto mb-1" />
-            <p className="text-white text-[8px]">{s}</p>
-          </div>
-        ))}
-      </div>
+      <motion.div
+        className="absolute -top-2 right-4 md:right-8 z-10"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 0.8 }}
+      >
+        <Badge className="text-white border-0 shadow-lg text-xs" style={{ backgroundColor: WEB_DEV_COLOR }}>Next.js & React</Badge>
+      </motion.div>
+      <motion.div
+        className="absolute bottom-4 left-2 md:left-6 z-10"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 1.0 }}
+      >
+        <Badge className="text-white border-0 shadow-lg text-xs" style={{ backgroundColor: WEB_DEV_COLOR }}>99.9% Uptime</Badge>
+      </motion.div>
+      <motion.div
+        className="absolute bottom-4 right-2 md:right-6 z-10"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 1.2 }}
+      >
+        <Badge variant="outline" className="shadow-lg text-xs bg-background">SEO Optimised</Badge>
+      </motion.div>
     </div>
   );
 }
@@ -660,81 +713,51 @@ export default function WebDevelopmentPage() {
       {/* HERO SECTION */}
       <section className="py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-6">
-          <Breadcrumbs
-            items={[
-              { label: "Services", href: "/services" },
-              { label: "Web Development" },
-            ]}
-          />
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-6">
-            <motion.div
-              variants={fadeInUp}
-              initial="initial"
-              animate="animate"
-              transition={{ duration: 0.5 }}
-            >
-              <span className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium mb-4">
-                🌐 Web Development Services
-              </span>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
+              <Breadcrumbs
+                items={[
+                  { label: "Services", href: "/services" },
+                  { label: "Web Development" },
+                ]}
+              />
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
+              <Badge variant="secondary" className="mt-6 mb-4">
+                <Globe className="h-3 w-3 mr-1" /> Web Development
+              </Badge>
+
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
                 Web Development Services
               </h1>
 
-              <p className="mt-4 text-xl md:text-2xl font-semibold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+              <p className="text-xl md:text-2xl font-semibold mt-4 bg-clip-text text-transparent" style={{ backgroundImage: `linear-gradient(to right, ${WEB_DEV_COLOR}, #a855f7)` }}>
                 Websites & Applications That Drive Real Business Growth
               </p>
 
-              <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
+              <p className="text-xl text-muted-foreground mt-6 leading-relaxed">
                 From stunning marketing websites to complex SaaS platforms, we build web solutions that combine beautiful design with powerful functionality. Every project delivered on time, on budget, and built to scale.
               </p>
 
-              <div className="mt-6 flex gap-3 flex-wrap">
+              <div className="grid grid-cols-4 gap-6 mt-8">
                 {[
-                  { icon: Palette, label: "Custom Design" },
-                  { icon: Smartphone, label: "Mobile First" },
-                  { icon: TrendingUp, label: "SEO Optimised" },
-                  { icon: Zap, label: "Fast & Secure" },
-                ].map((pill) => (
-                  <span
-                    key={pill.label}
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-muted text-sm text-foreground border border-border"
-                  >
-                    <pill.icon className="w-3.5 h-3.5 text-blue-500" />
-                    {pill.label}
-                  </span>
-                ))}
-              </div>
-
-              <div className="mt-8 grid grid-cols-4 gap-4">
-                {[
-                  { number: "150+", label: "Projects Delivered" },
-                  { number: "98%", label: "Client Satisfaction" },
-                  { number: "8 Years", label: "Experience" },
-                  { number: "50ms", label: "Avg Load Time" },
-                ].map((stat) => (
-                  <div key={stat.label} className="text-center p-4 bg-card border border-border rounded-xl">
-                    <p className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
-                      {stat.number}
-                    </p>
-                    <p className="text-xs text-muted-foreground mt-1">{stat.label}</p>
+                  { stat: "150+", label: "Projects" },
+                  { stat: "98%", label: "Satisfaction" },
+                  { stat: "8 Yrs", label: "Experience" },
+                  { stat: "50ms", label: "Load Time" },
+                ].map((s) => (
+                  <div key={s.label} className="text-center">
+                    <div className="text-2xl md:text-3xl font-bold" style={{ color: WEB_DEV_COLOR }}>{s.stat}</div>
+                    <div className="text-sm text-muted-foreground">{s.label}</div>
                   </div>
                 ))}
               </div>
 
-              <div className="mt-8 flex gap-4 flex-wrap">
-                <Button
-                  size="lg"
-                  className="h-14 px-8 rounded-xl font-semibold bg-gradient-to-r from-blue-500 to-purple-600 text-white border-0 hover:from-blue-600 hover:to-purple-700"
-                  asChild
-                >
-                  <Link href="/contact">
-                    Start Your Project
-                    <ArrowRight className="w-4 h-4 ml-1" />
-                  </Link>
-                </Button>
-                <Button variant="outline" size="lg" className="h-14 px-8 rounded-xl font-semibold" asChild>
-                  <a href="#portfolio">View Our Work</a>
+              <div className="flex gap-4 mt-8 flex-wrap">
+                <Link href="/contact">
+                  <Button>Start Your Project</Button>
+                </Link>
+                <Button variant="outline" onClick={() => { const el = document.getElementById("portfolio"); if (el) el.scrollIntoView({ behavior: "smooth" }); }}>
+                  View Our Work
                 </Button>
               </div>
             </motion.div>
@@ -742,83 +765,10 @@ export default function WebDevelopmentPage() {
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="relative hidden lg:block"
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="hidden lg:block"
             >
-              <div className="relative">
-                <motion.div
-                  className="absolute -left-6 top-4 w-[85%] origin-center"
-                  style={{ transform: "rotate(-6deg)" }}
-                  animate={{ y: [0, -5, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                >
-                  <BrowserFrame url="fashion-store.com" className="opacity-60">
-                    <HeroEcommerceMockup />
-                  </BrowserFrame>
-                </motion.div>
-
-                <motion.div
-                  className="absolute -right-6 top-4 w-[85%] origin-center"
-                  style={{ transform: "rotate(6deg)" }}
-                  animate={{ y: [0, -5, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                >
-                  <BrowserFrame url="law-firm.co.uk" className="opacity-60">
-                    <HeroCorporateMockup />
-                  </BrowserFrame>
-                </motion.div>
-
-                <motion.div
-                  className="relative z-10"
-                  animate={{ y: [0, -8, 0] }}
-                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                >
-                  <BrowserFrame url="saas-platform.com" glowColor="#3B82F6">
-                    <HeroSaaSMockup />
-                  </BrowserFrame>
-                </motion.div>
-
-                <motion.div
-                  className="absolute -top-2 -left-4 z-20 bg-card border border-border rounded-lg px-3 py-1.5 shadow-lg"
-                  animate={{ y: [0, -4, 0] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                >
-                  <p className="text-xs font-semibold flex items-center gap-1">
-                    <Code2 className="w-3 h-3 text-blue-500" />
-                    Next.js & React
-                  </p>
-                </motion.div>
-                <motion.div
-                  className="absolute -top-2 -right-4 z-20 bg-card border border-border rounded-lg px-3 py-1.5 shadow-lg"
-                  animate={{ y: [0, -4, 0] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                >
-                  <p className="text-xs font-semibold flex items-center gap-1">
-                    <Shield className="w-3 h-3 text-green-500" />
-                    99.9% Uptime
-                  </p>
-                </motion.div>
-                <motion.div
-                  className="absolute -bottom-2 -left-4 z-20 bg-card border border-border rounded-lg px-3 py-1.5 shadow-lg"
-                  animate={{ y: [0, 4, 0] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                >
-                  <p className="text-xs font-semibold flex items-center gap-1">
-                    <Smartphone className="w-3 h-3 text-purple-500" />
-                    Mobile Responsive
-                  </p>
-                </motion.div>
-                <motion.div
-                  className="absolute -bottom-2 -right-4 z-20 bg-card border border-border rounded-lg px-3 py-1.5 shadow-lg"
-                  animate={{ y: [0, 4, 0] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-                >
-                  <p className="text-xs font-semibold flex items-center gap-1">
-                    <TrendingUp className="w-3 h-3 text-orange-500" />
-                    SEO Optimised
-                  </p>
-                </motion.div>
-              </div>
+              <WebHeroMockup />
             </motion.div>
           </div>
         </div>
