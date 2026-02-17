@@ -37,6 +37,7 @@ import HireLAMPPage from "@/pages/hire-lamp";
 import AIChatbotsPage from "@/pages/ai-chatbots";
 import AIAgentsPage from "@/pages/ai-agents";
 import ComponentDemo from "@/pages/component-demo";
+import { StickyCallButton } from "@/components/ui/StickyCallButton";
 import { useEffect } from "react";
 import { useLocation } from "wouter";
 
@@ -99,6 +100,7 @@ function App() {
             </main>
             <Footer />
           </div>
+          <StickyCallButton />
           <Toaster />
         </ThemeProvider>
       </TooltipProvider>

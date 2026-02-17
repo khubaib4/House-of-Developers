@@ -1,0 +1,432 @@
+Add a sticky "Book a Call" button on mobile devices across 
+every page. It must use Apple Liquid Glass UI effect — 
+fully transparent, frosted, with subtle blur and border.
+Small, premium, unobtrusive.
+
+---
+
+COMPONENT TO CREATE:
+
+FILE: client/src/components/ui/StickyCallButton.tsx
+
+FULL COMPONENT CODE:
+```tsx
+"use client";
+
+import { Phone } from "lucide-react";
+import { Link, useLocation } from "wouter";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
+
+export function StickyCallButton() {
+  const [isVisible, setIsVisible] = useState(false);
+  const [location] = useLocation();
+
+  // Don't show on contact page
+  if (location === "/contact") return null;
+
+  useEffect(() => {
+    let timer: ReturnType<typeof setTimeout>;
+
+    const showButton = () => setIsVisible(true);
+    const hideButton = () => {
+      if (window.scrollY <= 50) setIsVisible(false);
+    };
+
+    const handleScroll = () => {
+      if (window.scrollY > 80) {
+        showButton();
+      } else {
+        hideButton();
+      }
+    };
+
+    // Show after 3 seconds even without scrolling
+    timer = setTimeout(showButton, 3000);
+
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      clearTimeout(timer);
+    };
+  }, []);
+
+  return (
+    <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 pointer-events-none">
+      <AnimatePresence>
+        {isVisible && (
+          <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 100, opacity: 0 }}
+            transition={{
+              type: "spring",
+              stiffness: 280,
+              damping: 26,
+            }}
+            className="pointer-events-auto"
+          >
+            {/* Outer wrapper - frosted glass panel */}
+            <div
+              className="
+                mx-4
+                mb-4
+                rounded-2xl
+                overflow-hidden
+              "
+              style={{
+                marginBottom: "max(1rem, env(safe-area-inset-bottom))",
+              }}
+            >
+              <Link href="/contact">
+                <button
+                  aria-label="Book a consultation call"
+                  className="
+                    w-full
+                    flex items-center justify-center gap-2.5
+                    h-14
+                    rounded-2xl
+                    font-semibold
+                    text-sm
+                    tracking-wide
+                    transition-all
+                    duration-200
+                    active:scale-[0.97]
+                    select-none
+                    relative
+                    overflow-hidden
+                  "
+                  style={{
+                    /* Apple Liquid Glass Core */
+                    background: "rgba(255, 255, 255, 0.08)",
+                    backdropFilter: "blur(24px) saturate(180%)",
+                    WebkitBackdropFilter: "blur(24px) saturate(180%)",
+
+                    /* Subtle layered border */
+                    border: "1px solid rgba(255, 255, 255, 0.18)",
+                    boxShadow: `
+                      0 0 0 0.5px rgba(255,255,255,0.08) inset,
+                      0 1px 0 rgba(255,255,255,0.15) inset,
+                      0 8px 32px rgba(0, 0, 0, 0.18),
+                      0 2px 8px rgba(0, 0, 0, 0.12)
+                    `,
+
+                    /* Text: white in dark, near-black in light */
+                    color: "var(--foreground)",
+                  }}
+                >
+                  {/* Top specular highlight - gives "glass" depth */}
+                  <span
+                    aria-hidden="true"
+                    className="
+                      absolute top-0 left-0 right-0
+                      h-px
+                      rounded-t-2xl
+                    "
+                    style={{
+                      background:
+                        "linear-gradient(90deg, transparent 10%, rgba(255,255,255,0.35) 50%, transparent 90%)",
+                    }}
+                  />
+
+                  {/* Left edge subtle glint */}
+                  <span
+                    aria-hidden="true"
+                    className="
+                      absolute top-2 bottom-2 left-0
+                      w-px
+                    "
+                    style={{
+                      background:
+                        "linear-gradient(180deg, transparent, rgba(255,255,255,0.2), transparent)",
+                    }}
+                  />
+
+                  {/* Icon */}
+                  <span
+                    className="
+                      flex items-center justify-center
+                      w-7 h-7
+                      rounded-full
+                    "
+                    style={{
+                      background: "rgba(255,255,255,0.12)",
+                      border: "1px solid rgba(255,255,255,0.16)",
+                      boxShadow: "0 1px 3px rgba(0,0,0,0.15)",
+                    }}
+                  >
+                    <Phone size={13} strokeWidth={2.5} />
+                  </span>
+
+                  {/* Label */}
+                  <span className="font-semibold text-[13px] tracking-[0.01em]">
+                    Book a Call
+                  </span>
+
+                  {/* Subtle shimmer on press (active pseudo) */}
+                  <span
+                    aria-hidden="true"
+                    className="
+                      absolute inset-0 rounded-2xl
+                      opacity-0 active:opacity-100
+                      transition-opacity duration-100
+                    "
+                    style={{
+                      background:
+                        "radial-gradient(ellipse at center, rgba(255,255,255,0.08) 0%, transparent 70%)",
+                    }}
+                  />
+                </button>
+              </Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
+```
+
+---
+
+LIQUID GLASS EFFECT BREAKDOWN:
+
+The effect uses 5 layered techniques:
+
+1. TRANSPARENT BACKGROUND:
+   background: "rgba(255, 255, 255, 0.08)"
+   → Nearly invisible base, just 8% white tint
+   → Works on ANY background color or image
+
+2. BACKDROP BLUR + SATURATE:
+   backdropFilter: "blur(24px) saturate(180%)"
+   → Blurs whatever is BEHIND the button
+   → Saturate(180%) makes colors beneath pop
+   → This is the core Apple glass technique
+
+3. LAYERED BORDER:
+   border: "1px solid rgba(255, 255, 255, 0.18)"
+   → Thin translucent white border = glass edge
+
+4. BOX SHADOW (4 layers):
+   → Inset top glow: top inner highlight
+   → Inset overall: inner glass depth
+   → Outer blur: soft drop shadow
+   → Outer tight: crisp shadow for lift
+   
+   Combined these make the button look like it's 
+   floating above the content like real glass
+
+5. SPECULAR HIGHLIGHTS (pseudo elements):
+   → Top edge: horizontal white gradient line
+   → Left edge: vertical white gradient line
+   → Mimics how light catches glass edges
+   → Gives the premium Apple "visionOS" look
+
+6. ICON CIRCLE:
+   → Small frosted circle wrapping phone icon
+   → rgba(255,255,255,0.12) background
+   → Same glass effect scaled down
+   → Makes icon feel premium not flat
+
+---
+
+DARK MODE COMPATIBILITY:
+
+Light mode:
+- 8% white tint = very subtle on white/light bg
+- Text: dark foreground
+- Border: white at 18% opacity
+- Looks like frosted glass over light content
+
+Dark mode (automatically adapts):
+- 8% white tint = subtle glow on dark bg
+- Text: light foreground (var(--foreground))
+- Specular highlights more visible
+- Looks like Apple visionOS glass on dark
+
+No @media dark mode queries needed — 
+rgba values and CSS variables handle it.
+
+---
+
+POSITIONING & SIZE:
+
+Container:
+- mx-4: 16px left/right margins (doesn't touch edges)
+- mb-4 + safe area: respects iPhone home bar
+- rounded-2xl: premium pill-like corners
+- NOT full width (leaves breathing room on sides)
+
+Button:
+- h-14: 56px height (comfortable touch target)
+- rounded-2xl: matches container
+- Full width within container
+
+Why mx-4 not full-width:
+- Full-width feels like a toolbar
+- Floating with margins feels like a premium widget
+- Shows the content beneath (glass effect is visible)
+- More Apple-like aesthetic
+
+---
+
+VISUAL LAYOUT ON SCREEN:
+
+┌──────────────────────────────────────┐
+│                                      │
+│      (page content scrolling)        │
+│                                      │
+│                                      │
+│  ┌────────────────────────────────┐  │  ← 16px margin sides
+│  │  ◯  Book a Call               │  │  ← h-14 glass button
+│  └────────────────────────────────┘  │
+│                                      │  ← safe area
+└──────────────────────────────────────┘
+
+Glass effect shows page content THROUGH button:
+┌────────────────────────────────┐
+│░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│  ← top specular line
+│                                │
+│  [○] Book a Call               │  ← blurred content behind
+│                                │
+└────────────────────────────────┘
+         ↑ 
+  page content blurred through glass
+
+---
+
+BEHAVIOR:
+
+Visibility Logic:
+- Hidden on initial page load (no distraction)
+- Appears after 3 seconds (passive engagement)
+- OR appears after scrolling 80px (active engagement)
+- Hides again if user scrolls back to very top (< 50px)
+- Never shows on /contact page
+
+Animation:
+- Slides up from bottom with spring physics
+- type: "spring", stiffness: 280, damping: 26
+- Feels like native iOS bottom sheet
+- exit: slides back down smoothly
+
+Press State:
+- active:scale-[0.97] — subtle squish on tap
+- Shimmer overlay on press center
+- duration-200 on all transitions
+
+---
+
+ADD TO GLOBAL LAYOUT:
+
+Find the root layout/App component. It will be in one of:
+- client/src/App.tsx
+- client/src/main.tsx
+- client/src/layouts/RootLayout.tsx
+
+Import and add AFTER the Footer, before closing tag:
+```tsx
+import { StickyCallButton } from 
+  "@/components/ui/StickyCallButton";
+
+export default function App() {
+  return (
+    <div className="min-h-screen">
+      <Navigation />
+      
+      <main>
+        {/* Router / page content */}
+      </main>
+      
+      <Footer />
+
+      {/* 
+        Sticky mobile CTA 
+        - Only visible on mobile (md:hidden inside)
+        - Appears on ALL pages except /contact
+        - Apple Liquid Glass effect
+      */}
+      <StickyCallButton />
+    </div>
+  );
+}
+```
+
+---
+
+EXCLUDE FROM THESE PAGES:
+```tsx
+// Inside StickyCallButton.tsx
+const excludedPaths = ["/contact"];
+
+if (excludedPaths.includes(location)) return null;
+```
+
+Can extend to exclude more paths if needed:
+```tsx
+const excludedPaths = [
+  "/contact",
+  // add more here if needed
+];
+```
+
+---
+
+FINAL REQUIREMENTS CHECKLIST:
+
+1. ✅ Apple Liquid Glass UI effect
+   - backdrop-blur(24px) saturate(180%)
+   - rgba(255,255,255,0.08) transparent base
+   - Layered box-shadow for depth
+   - Specular highlight lines
+
+2. ✅ Fully transparent - no solid color
+   - Shows content THROUGH the button
+   - Works on any background
+
+3. ✅ Mobile only
+   - md:hidden wrapper
+   - Never shows on desktop/tablet
+
+4. ✅ Global - every page
+   - Added to root layout once
+   - Automatic on all pages
+
+5. ✅ Excluded on /contact
+   - useLocation() check
+   - Returns null early
+
+6. ✅ Compact and premium
+   - h-14 button (not too big)
+   - mx-4 floating (not full-width)
+   - Small icon in frosted circle
+
+7. ✅ iPhone safe area
+   - env(safe-area-inset-bottom)
+   - max() function for minimum spacing
+
+8. ✅ Spring animation
+   - Native feel slide-up
+   - Proper exit animation
+
+9. ✅ Dark/Light mode
+   - CSS variables for text color
+   - rgba values adapt naturally
+
+10. ✅ Accessible
+    - aria-label on button
+    - 56px touch target (above 44px minimum)
+    - Proper contrast via foreground variable
+
+11. ✅ Performant
+    - Passive scroll listener
+    - Proper cleanup on unmount
+    - AnimatePresence for clean mount/unmount
+
+Build the StickyCallButton component and add it to 
+the global root layout. Do not modify any individual 
+page files.
