@@ -1123,12 +1123,14 @@ export default function CustomDevelopmentPage() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
-            className="max-w-5xl mx-auto"
+            className="max-w-5xl mx-auto overflow-x-auto -mx-6 px-6 pb-4"
           >
-            {activeShowcase === "saas" && <SaaSDashboardMockup />}
-            {activeShowcase === "portal" && <ClientPortalMockup />}
-            {activeShowcase === "internal" && <InternalToolMockup />}
-            {activeShowcase === "data" && <DataPlatformMockup />}
+            <div className="min-w-[640px]">
+              {activeShowcase === "saas" && <SaaSDashboardMockup />}
+              {activeShowcase === "portal" && <ClientPortalMockup />}
+              {activeShowcase === "internal" && <InternalToolMockup />}
+              {activeShowcase === "data" && <DataPlatformMockup />}
+            </div>
           </motion.div>
         </div>
       </section>
