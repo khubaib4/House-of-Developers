@@ -1,0 +1,1037 @@
+Redesign the SEO Services hub page for House of Developers.
+
+PAGE: /services/seo/page.tsx
+
+Comprehensive SEO services hub page with a keyword position 
+dashboard hero mockup showing rankings climbing, 3 focused 
+service cards (SEO Audits, Technical SEO, Local SEO), and 
+green accent color throughout. NO pricing cards. Case study 
+URLs use houseofdevelopers.co.uk/projects/[shortname].
+
+ACCENT COLOR: #10B981 (Emerald Green) used for gradients, 
+borders, active states, icons, ZigzagTimeline, and 
+highlights throughout.
+
+---
+
+HERO SECTION:
+
+Container: py-24, max-w-7xl mx-auto px-6
+Layout: Grid grid-cols-1 lg:grid-cols-2 gap-12 items-center
+
+Left Column:
+
+- Breadcrumb: "Home / Services / SEO Services"
+  * text-sm text-muted-foreground, clickable, mb-6
+
+- Badge: "🔍 SEO Services"
+  * bg-gradient (emerald to green), text-white,
+    px-4 py-2, rounded-full, mb-4
+
+- H1: "SEO Services That Get You Found on Google"
+  * text-4xl md:text-5xl lg:text-6xl font-bold, mb-4
+
+- Tagline: "Rank Higher. Get More Traffic. Grow Revenue."
+  * text-xl md:text-2xl
+  * Gradient text from emerald to green
+  * font-semibold
+
+- Description (mt-6):
+  * text-xl text-muted-foreground leading-relaxed
+  * "We help businesses rank on page 1 of Google through
+    technical excellence, strategic content, and proven
+    optimisation. Real rankings, real traffic, real
+    revenue growth—not vanity metrics."
+
+- Feature Pills (mt-6, flex gap-3 flex-wrap):
+  1. "Page 1 Rankings" (TrendingUp icon)
+  2. "Technical Audits" (Search icon)
+  3. "Local SEO" (MapPin icon)
+  4. "Monthly Reports" (BarChart icon)
+
+- Stats Grid (mt-8, grid-cols-4 gap-4):
+  Each stat (text-center, p-4, bg-card, border, rounded-xl):
+  - Number (text-3xl font-bold, gradient emerald to green)
+  - Label (text-sm text-muted-foreground, mt-1)
+
+  1. "94%"  / "Clients on Page 1"
+  2. "2,400+" / "Keywords Ranked"
+  3. "6 Months" / "Avg to Page 1"
+  4. "180%" / "Avg Traffic Growth"
+
+- CTA Buttons (mt-8, flex gap-4):
+  * Primary: "Get Free SEO Audit" → /contact
+    bg-gradient emerald to green, text-white, h-14 px-8
+  * Secondary: "See Our Results" → scroll to case studies
+
+- Trust (mt-6, text-sm text-muted-foreground):
+  "⭐ Trusted by 40+ UK businesses for SEO growth"
+
+Right Column:
+
+KEYWORD POSITION DASHBOARD MOCKUP:
+
+Main Container (bg-card, border, rounded-2xl, 
+shadow-2xl, overflow-hidden):
+* Subtle green glow: box-shadow with emerald/20
+
+Dashboard Header (bg-muted, border-b, px-6 py-4,
+flex items-center justify-between):
+* Left:
+  - "SEO Rankings Dashboard" (font-semibold)
+  - "houseofdevelopers.co.uk/projects/seodash" 
+    (text-xs text-muted-foreground)
+* Right:
+  - Date range: "Last 90 days" (text-xs badge)
+  - Green dot + "Live" (text-xs, green)
+
+Top Summary Row (grid-cols-3 gap-4, p-4, border-b):
+
+Summary Card 1 (bg-emerald-500/10, border border-emerald-500/20, rounded-xl, p-3):
+* Icon: TrendingUp (emerald, size 20)
+* "Total Keywords"
+* "248" (text-2xl font-bold text-emerald-600)
+* "+34 this month" (text-xs green, flex items-center, ArrowUp icon)
+
+Summary Card 2 (bg-blue-500/10, border border-blue-500/20):
+* Icon: BarChart (blue)
+* "Avg Position"
+* "8.4" 
+* "↑ from 14.2" (green, improved)
+
+Summary Card 3 (bg-purple-500/10, border border-purple-500/20):
+* Icon: Eye (purple)
+* "Monthly Clicks"
+* "12,450"
+* "+180% vs last year" (green)
+
+Keyword Position Tracker (p-4):
+
+Heading (flex justify-between mb-4):
+* "Keyword Rankings" (text-sm font-semibold)
+* "248 keywords tracked" (text-xs text-muted-foreground)
+
+Keywords Table (space-y-2):
+
+Each keyword row (flex items-center gap-3, p-3, 
+bg-muted/50, rounded-lg):
+
+ROW STRUCTURE:
+* LEFT: Keyword text (text-sm font-medium, flex-1)
+* MIDDLE: Mini sparkline chart (w-16, h-8)
+  - SVG path showing position trend
+  - Green line going DOWN (lower = better rank)
+  - Small dots at data points
+* RIGHT SECTION (flex items-center gap-3):
+  - Previous position (text-xs, text-muted-foreground, line-through)
+  - Arrow icon (↑ green or ↓ red)
+  - Current position badge:
+    * Position 1-3: bg-emerald-500, text-white, rounded-full
+    * Position 4-10: bg-green-100, text-green-700, rounded-full
+    * Position 11-20: bg-yellow-100, text-yellow-700
+  - Change badge ("+X positions", text-xs, green)
+
+10 KEYWORD ROWS (realistic UK business keywords):
+
+1. Keyword: "web development agency uk"
+   Sparkline: declining line (position improving)
+   Previous: #18  →  Current: #3 ↑  Change: +15
+   Badge: emerald (top 3)
+
+2. Keyword: "custom website development london"
+   Previous: #24  →  Current: #7 ↑  Change: +17
+   Badge: green (page 1)
+
+3. Keyword: "ecommerce website builder uk"
+   Previous: #31  →  Current: #9 ↑  Change: +22
+   Badge: green
+
+4. Keyword: "hire react developer uk"
+   Previous: #45  →  Current: #4 ↑  Change: +41
+   Badge: emerald
+
+5. Keyword: "mobile app development agency"
+   Previous: #12  →  Current: #2 ↑  Change: +10
+   Badge: emerald
+
+6. Keyword: "wordpress development services"
+   Previous: #8  →  Current: #1 ↑  Change: +7
+   Badge: emerald (position 1!)
+
+7. Keyword: "ai chatbot development uk"
+   Previous: #52  →  Current: #11 ↑  Change: +41
+   Badge: green (page 2 → page 1)
+
+8. Keyword: "shopify developer near me"
+   Previous: #19  →  Current: #6 ↑  Change: +13
+   Badge: green
+
+9. Keyword: "saas development company uk"
+   Previous: #33  →  Current: #8 ↑  Change: +25
+   Badge: green
+
+10. Keyword: "technical seo agency london"
+    Previous: #41  →  Current: #5 ↑  Change: +36
+    Badge: emerald
+
+Bottom Traffic Graph (border-t, p-4):
+
+Heading: "Organic Traffic Growth" (text-sm font-semibold, mb-3)
+
+SVG Line Chart (w-full, h-28):
+* X-axis: Month labels (Aug, Sep, Oct, Nov, Dec, Jan)
+* Y-axis: implied by chart height
+* Line: smooth bezier curve, emerald color
+* Area fill: emerald gradient, opacity fading to 0
+* Data shows clear upward trend:
+  Aug: low, Sep: slight rise, Oct: jump,
+  Nov: bigger jump, Dec: plateau, Jan: new high
+* Dots at each month: emerald filled circles
+* Current value callout: "12,450 visits/mo"
+  (absolute, top-right of chart, bg-emerald-500, 
+   text-white, px-2 py-1, rounded, text-xs)
+
+Month labels (flex justify-between, 
+text-xs text-muted-foreground, mt-1):
+Aug | Sep | Oct | Nov | Dec | Jan
+
+Floating Annotations (around dashboard, outside):
+* "94% on Page 1" (top-left, green badge)
+* "Zero paid ads" (top-right, badge)
+* "Organic only" (bottom-right, badge)
+
+---
+
+WHAT IS SEO SECTION:
+
+Container: py-20, bg-muted, max-w-6xl mx-auto px-6
+
+Header (centered, mb-12):
+- H2: "What Is SEO & Why Does It Matter?"
+- Subtitle: "The long-term strategy that compounds over time"
+
+Layout: grid-cols-1 lg:grid-cols-2 gap-12 items-start
+
+Left Column - Explanation:
+
+Text (text-lg leading-relaxed text-muted-foreground):
+"SEO (Search Engine Optimisation) is the process of 
+improving your website so it appears higher in Google 
+search results. When someone searches for your service, 
+you want to be the first result they see—not your 
+competitor."
+
+Text (mt-4):
+"Unlike paid ads that stop the moment you stop paying,
+SEO builds compounding value. A page that ranks today 
+keeps driving traffic for months and years. It's the 
+highest-ROI marketing channel for most businesses."
+
+The 3 Pillars (mt-8):
+* Heading: "The 3 Pillars of SEO" (font-semibold, mb-4)
+* 3 items (space-y-4):
+
+  Each (flex gap-4, p-4, bg-card, border, rounded-xl):
+  - Icon circle (emerald gradient, size 40)
+  - Content:
+    * Title (font-semibold, text-sm)
+    * Description (text-xs text-muted-foreground)
+
+  Pillar 1:
+  * Icon: Settings (technical)
+  * Title: "Technical SEO"
+  * Desc: "Site speed, crawlability, structured data,
+           Core Web Vitals, mobile-friendliness"
+
+  Pillar 2:
+  * Icon: FileText
+  * Title: "On-Page SEO"
+  * Desc: "Keywords, meta tags, content quality,
+           internal linking, user experience"
+
+  Pillar 3:
+  * Icon: Link
+  * Title: "Off-Page SEO"
+  * Desc: "Backlinks, domain authority, brand mentions,
+           digital PR, local citations"
+
+Right Column - SEO vs Paid Ads:
+
+Comparison Card (bg-card, border, rounded-2xl, p-6):
+
+Heading: "SEO vs Paid Ads" (font-semibold, mb-6, text-center)
+
+Table (w-full, text-sm):
+Header: Feature | SEO | Paid Ads
+
+Rows:
+1. "Costs per click" | Free ✓ | £0.50-£15 ✗
+2. "Stops when you pause" | No ✓ | Yes ✗
+3. "Builds over time" | Yes ✓ | No ✗
+4. "Trust from users" | High ✓ | Low ✗
+5. "Long-term ROI" | Excellent ✓ | Poor ✗
+6. "Results timeline" | 3-6 months ⚠️ | Instant ✓
+7. "Compounding value" | Yes ✓ | No ✗
+8. "Brand authority" | Builds ✓ | Minimal ✗
+
+✓ = CheckCircle2 (green-500)
+✗ = XCircle (red-400)
+⚠️ = Clock (amber)
+
+Note below table (text-xs text-muted-foreground, 
+text-center, mt-4, border-l-4 border-emerald-500, 
+pl-3, text-left):
+"SEO takes 3-6 months to show results but then works 
+for free indefinitely. Most clients see positive ROI 
+within 9 months."
+
+---
+
+SEO SERVICES WE OFFER:
+
+Container: py-20
+
+Header (centered):
+- H2: "Our SEO Services"
+- Subtitle: "Focused, proven SEO that delivers real rankings"
+- mb-16
+
+Grid: grid-cols-1 md:grid-cols-3 gap-8, 
+      max-w-5xl mx-auto px-6
+
+3 SERVICE CARDS:
+
+Each card:
+- bg-card, border, rounded-2xl, p-8
+- Top accent bar: h-1.5 gradient (unique color per card)
+- Hover: shadow-2xl, -translateY-2, border-emerald-500/40
+- Transition: all 300ms
+
+Structure:
+1. Icon container (gradient circle, w-16 h-16, mb-6)
+2. "Most Popular" or other badge (optional, top-right)
+3. Service name (text-2xl font-bold, mt-2)
+4. Description (text-sm text-muted-foreground, mt-3)
+5. What's included (mt-6, space-y-2):
+   - 6 items with CheckCircle2 icons (emerald)
+   - text-sm
+6. Best for (mt-6, bg-muted, p-3, rounded-lg):
+   - "Best for:" label (text-xs font-semibold)
+   - Value (text-xs text-muted-foreground)
+7. CTA link (mt-6):
+   "Explore [Service] →" (emerald text, font-semibold)
+   Link to sub-page
+
+---
+
+SERVICE CARD 1: SEO AUDITS
+- Accent bar: emerald to green gradient
+- Icon: Search (emerald gradient circle)
+- Badge: "Start Here" (bg-emerald-500/10, 
+          text-emerald-600, text-xs, rounded-full)
+- Name: "SEO Audits"
+- Description: "A comprehensive deep-dive into your 
+  website's SEO health. We uncover every issue holding 
+  you back from page 1 rankings and give you a 
+  prioritised action plan."
+- What's Included:
+  ✓ Full technical SEO analysis (150+ checkpoints)
+  ✓ Keyword gap analysis vs competitors
+  ✓ On-page optimisation audit
+  ✓ Backlink profile review
+  ✓ Core Web Vitals assessment
+  ✓ Prioritised action plan with quick wins
+- Best for: "Any business wanting to know exactly 
+             why they're not ranking"
+- Link: /services/seo/seo-audit
+
+SERVICE CARD 2: TECHNICAL SEO
+- Accent bar: blue to cyan gradient
+- Icon: Settings (blue gradient circle)
+- Badge: "Most Impactful" (bg-blue-500/10, 
+          text-blue-600, text-xs)
+- Name: "Technical SEO"
+- Description: "Fix the under-the-hood issues that 
+  prevent Google from properly crawling, indexing, 
+  and ranking your website. The foundation every 
+  SEO strategy needs."
+- What's Included:
+  ✓ Core Web Vitals optimisation
+  ✓ Site speed improvements
+  ✓ Crawl error fixes and XML sitemaps
+  ✓ Structured data / schema markup
+  ✓ Mobile-first optimisation
+  ✓ Internal linking architecture
+- Best for: "Websites with good content that 
+             still aren't ranking"
+- Link: /services/seo/technical-seo
+
+SERVICE CARD 3: LOCAL SEO
+- Accent bar: purple to violet gradient
+- Icon: MapPin (purple gradient circle)
+- Badge: "High ROI" (bg-purple-500/10, 
+          text-purple-600, text-xs)
+- Name: "Local SEO"
+- Description: "Dominate Google's local search results 
+  and Google Maps in your area. Get found by customers 
+  searching for your services nearby."
+- What's Included:
+  ✓ Google Business Profile optimisation
+  ✓ Local keyword targeting
+  ✓ Local citation building
+  ✓ Review generation strategy
+  ✓ Local landing page creation
+  ✓ Google Maps ranking optimisation
+- Best for: "Businesses serving customers in 
+             specific locations"
+- Link: /services/seo/local-seo
+
+---
+
+HOW SEO WORKS - VISUAL EXPLAINER:
+
+Container: py-20, bg-muted
+
+Header (centered, mb-12):
+- H2: "How Google Rankings Work"
+- Subtitle: "Understanding what actually moves the needle"
+- max-w-3xl mx-auto
+
+Layout: max-w-5xl mx-auto px-6
+
+Google Algorithm Visual (bg-card, border, 
+rounded-2xl, p-8):
+
+3 Column Grid (grid-cols-1 md:grid-cols-3 gap-8):
+
+Each column (text-center):
+- Large number (text-5xl font-bold, gradient emerald)
+- Title (text-xl font-bold, mt-2)
+- Description (text-sm text-muted-foreground, mt-3)
+- 4 factor pills (mt-4, flex flex-col gap-2):
+  Each pill (bg-muted, rounded-lg, px-3 py-2, text-xs, text-left):
+  - Icon + factor name
+
+COLUMN 1 - "200+" (Ranking Factors):
+* Title: "Google's Algorithm"
+* Desc: "Google uses 200+ signals to rank pages"
+* Factors:
+  - ⚡ "Page speed"
+  - 📱 "Mobile usability"
+  - 🔗 "Backlink quality"
+  - 📝 "Content relevance"
+
+COLUMN 2 - "3.5B" (Searches Per Day):
+* Title: "Daily Searches"
+* Desc: "3.5 billion Google searches happen every day"
+* Factors:
+  - 🎯 "Search intent matching"
+  - 🔑 "Keyword optimisation"
+  - 📊 "Click-through rate"
+  - ⏱ "Dwell time"
+
+COLUMN 3 - "75%" (Never Click Page 2):
+* Title: "Page 1 or Nothing"
+* Desc: "75% of users never scroll past page 1"
+* Factors:
+  - #1 "Gets 31% of all clicks"
+  - #2 "Gets 14% of clicks"
+  - #3 "Gets 8% of clicks"
+  - #10 "Gets 2% of clicks"
+
+Divider
+
+Ranking Timeline (mt-8, pt-8, border-t):
+Heading: "Realistic SEO Timeline" (font-semibold, mb-6, text-center)
+
+Horizontal Timeline (flex items-start gap-0, 
+overflow-x-auto, pb-4):
+
+5 milestones:
+
+Each milestone:
+- Circle (w-10 h-10, border-2, rounded-full, 
+  flex items-center justify-center, text-sm font-bold)
+- Connecting line (flex-1, h-0.5, bg-border, mt-5)
+- Label below (text-xs text-center, mt-2, w-24)
+- Description (text-xs text-muted-foreground, mt-1, text-center)
+
+Milestone 1 (Month 1):
+* Circle: emerald filled
+* Label: "Month 1"
+* Desc: "Audit & technical fixes"
+
+Milestone 2 (Month 2-3):
+* Circle: emerald outline
+* Label: "Month 2-3"
+* Desc: "On-page optimisation"
+
+Milestone 3 (Month 3-4):
+* Circle: emerald outline
+* Label: "Month 3-4"
+* Desc: "First rankings appear"
+
+Milestone 4 (Month 4-6):
+* Circle: emerald outline  
+* Label: "Month 4-6"
+* Desc: "Page 1 for targets"
+
+Milestone 5 (Month 6+):
+* Circle: emerald gradient (success)
+* Label: "Month 6+"
+* Desc: "Compounding growth"
+
+---
+
+WHY CHOOSE US FOR SEO:
+
+Container: py-20
+
+Use ValueProposition component:
+- Title: "Why Choose House of Developers for SEO"
+- Subtitle: "What makes our SEO approach different"
+- Columns: 3
+
+9 Benefits:
+
+1. Icon: Code2,
+   Title: "Technical-First Approach",
+   Desc: "We're developers who do SEO—we fix 
+          technical issues others can't touch"
+
+2. Icon: BarChart,
+   Title: "Data-Driven Decisions",
+   Desc: "Every recommendation backed by data from 
+          Ahrefs, Semrush, and Search Console"
+
+3. Icon: FileText,
+   Title: "No Vanity Metrics",
+   Desc: "We report on rankings, traffic, and revenue—
+          not impressions or reach"
+
+4. Icon: TrendingUp,
+   Title: "Long-Term Strategy",
+   Desc: "We build sustainable rankings that last,
+          not quick tricks that get penalised"
+
+5. Icon: Users,
+   Title: "Dedicated SEO Manager",
+   Desc: "One point of contact who knows your 
+          business and reports monthly"
+
+6. Icon: Search,
+   Title: "Competitor Analysis",
+   Desc: "We reverse-engineer what your top 
+          competitors are doing and do it better"
+
+7. Icon: Globe,
+   Title: "UK-Focused SEO",
+   Desc: "Specialists in UK search behaviour, 
+          local results, and British audiences"
+
+8. Icon: Link,
+   Title: "White-Hat Only",
+   Desc: "Zero black-hat tactics. Everything we do 
+          follows Google's guidelines permanently"
+
+9. Icon: Headphones,
+   Title: "Monthly Reporting",
+   Desc: "Transparent monthly reports showing 
+          exactly what we did and what moved"
+
+---
+
+TECHNOLOGIES & TOOLS (TABBED):
+
+Container: py-20, bg-muted
+
+Header (centered):
+- H2: "SEO Tools & Technologies We Use"
+- Subtitle: "Industry-leading tools for data-driven SEO"
+- mb-12
+
+Use TabbedTechStack component:
+```javascript
+const tabs = [
+  {
+    label: "Research & Analysis",
+    technologies: [
+      { name: "Ahrefs", slug: "ahrefs" },
+      { name: "Semrush", slug: "semrush" },
+      { name: "Moz", slug: "moz" },
+      { name: "Majestic", slug: "majestic" },
+      { name: "Google Search Console", slug: "googlesearchconsole" },
+      { name: "Google Analytics", slug: "googleanalytics" },
+      { name: "Screaming Frog", slug: "screamingfrog" },
+      { name: "Sitebulb", slug: "sitebulb" },
+    ]
+  },
+  {
+    label: "Technical SEO",
+    technologies: [
+      { name: "Google Search Console", slug: "googlesearchconsole" },
+      { name: "PageSpeed Insights", slug: "google" },
+      { name: "Cloudflare", slug: "cloudflare" },
+      { name: "WordPress", slug: "wordpress" },
+      { name: "Yoast SEO", slug: "yoastseo" },
+      { name: "Schema.org", slug: "schemaorg" },
+      { name: "GTmetrix", slug: "gtmetrix" },
+      { name: "Lighthouse", slug: "lighthouse" },
+    ]
+  },
+  {
+    label: "Content & Keywords",
+    technologies: [
+      { name: "Ahrefs", slug: "ahrefs" },
+      { name: "Semrush", slug: "semrush" },
+      { name: "Google Trends", slug: "google" },
+      { name: "AnswerThePublic", slug: "answerthepublic" },
+      { name: "Surfer SEO", slug: "surferseo" },
+      { name: "Clearscope", slug: "clearscope" },
+      { name: "Frase", slug: "frase" },
+      { name: "MarketMuse", slug: "marketmuse" },
+    ]
+  },
+  {
+    label: "Local SEO",
+    technologies: [
+      { name: "Google Business", slug: "googlemybusiness" },
+      { name: "BrightLocal", slug: "brightlocal" },
+      { name: "Whitespark", slug: "whitespark" },
+      { name: "Moz Local", slug: "moz" },
+      { name: "Yext", slug: "yext" },
+      { name: "Google Maps", slug: "googlemaps" },
+      { name: "Semrush", slug: "semrush" },
+      { name: "Ahrefs", slug: "ahrefs" },
+    ]
+  },
+  {
+    label: "Reporting",
+    technologies: [
+      { name: "Google Analytics", slug: "googleanalytics" },
+      { name: "Google Search Console", slug: "googlesearchconsole" },
+      { name: "Google Data Studio", slug: "looker" },
+      { name: "Ahrefs", slug: "ahrefs" },
+      { name: "Semrush", slug: "semrush" },
+      { name: "Hotjar", slug: "hotjar" },
+      { name: "Microsoft Clarity", slug: "microsoftclarity" },
+      { name: "Databox", slug: "databox" },
+    ]
+  }
+];
+```
+
+NOTE: Some SEO tools may not have Simple Icons slugs.
+For any tool without a Simple Icons CDN icon, use a 
+fallback Lucide icon (Search, BarChart, TrendingUp) 
+styled to match the gray monochrome design. Use the 
+onError handler to catch missing icons gracefully.
+```javascript
+<TabbedTechStack
+  title="SEO Tools & Technologies We Use"
+  subtitle="Industry-leading tools for data-driven decisions"
+  tabs={tabs}
+/>
+```
+
+---
+
+PROCESS SECTION:
+
+Container: py-20
+
+Use ZigzagTimeline component:
+```javascript
+import { ZigzagTimeline } from "@/components/ui/ZigzagTimeline";
+import { Search, Target, Wrench, BarChart } from "lucide-react";
+
+const SEO_COLOR = "#10B981"; // Emerald green
+```
+```javascript
+const processSteps = [
+  {
+    icon: Search,
+    title: "SEO Audit & Discovery",
+    points: [
+      "Full technical audit covering 150+ SEO checkpoints",
+      "Competitor keyword gap and backlink analysis",
+      "Opportunity mapping and priority action plan"
+    ]
+  },
+  {
+    icon: Target,
+    title: "Strategy & Keyword Mapping",
+    points: [
+      "Target keyword research based on intent and volume",
+      "Content gap analysis vs top-ranking competitors",
+      "12-month SEO roadmap with clear milestones"
+    ]
+  },
+  {
+    icon: Wrench,
+    title: "Implementation & Optimisation",
+    points: [
+      "Technical fixes, on-page optimisation, schema markup",
+      "Content creation and existing page improvements",
+      "Link building and local citation management"
+    ]
+  },
+  {
+    icon: BarChart,
+    title: "Report & Refine",
+    points: [
+      "Monthly ranking and traffic report with full transparency",
+      "Strategy refinement based on what's working",
+      "Continuous improvements compounding over time"
+    ]
+  }
+];
+```
+```javascript
+<ZigzagTimeline
+  title="Our SEO Process"
+  subtitle="A structured approach that delivers consistent, lasting results"
+  steps={processSteps}
+  accentColor={SEO_COLOR}
+/>
+```
+
+---
+
+INDUSTRIES WE DO SEO FOR:
+
+Container: py-20, bg-muted
+
+Header (centered):
+- H2: "Industries We Rank"
+- Subtitle: "Deep SEO expertise across competitive sectors"
+- mb-16
+
+Grid: grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6,
+      max-w-6xl mx-auto px-6
+
+6 INDUSTRY CARDS:
+
+Each card (p-6, bg-card, border, rounded-xl, 
+text-center, hover:border-emerald-500/50,
+transition-all 300ms):
+1. Icon (emerald gradient circle, size 48, mb-4)
+2. Industry name (font-semibold, text-sm)
+3. Example keyword (text-xs, text-muted-foreground, mt-1)
+
+1. Icon: ShoppingBag
+   Name: "E-Commerce"
+   Keyword: '"buy [product] uk"'
+
+2. Icon: Briefcase
+   Name: "Professional Services"
+   Keyword: '"[service] near me"'
+
+3. Icon: Heart
+   Name: "Healthcare"
+   Keyword: '"private [treatment] london"'
+
+4. Icon: Building2
+   Name: "Real Estate"
+   Keyword: '"estate agent [location]"'
+
+5. Icon: Utensils
+   Name: "Hospitality"
+   Keyword: '"best restaurant [city]"'
+
+6. Icon: GraduationCap
+   Name: "Education"
+   Keyword: '"online [course] uk"'
+
+---
+
+MINI CASE STUDIES:
+
+Container: py-20
+
+Header (centered):
+- H2: "SEO Results We've Delivered"
+- Subtitle: "Real campaigns, real rankings"
+- mb-12
+
+Grid: grid-cols-1 md:grid-cols-3 gap-8,
+      max-w-6xl mx-auto px-6
+
+3 CASE STUDIES (industry variety, no before/after metrics):
+
+CASE STUDY 1:
+Top (h-48, gradient emerald to green, rounded-t-2xl,
+relative overflow-hidden):
+* Background pattern: subtle grid or dots
+* Icon: Briefcase (white, size 48, centered)
+* "Professional Services" badge 
+  (white/20, top-left corner, px-3 py-1, text-xs)
+
+Content (bg-card, border border-t-0, rounded-b-2xl, p-6):
+* H3: "Law Firm SEO Campaign"
+* Location: "Manchester, UK"
+* Description (text-sm text-muted-foreground, mt-2):
+  "Comprehensive SEO campaign for a 12-solicitor law 
+  firm with zero digital presence. Technical audit 
+  revealed 47 critical issues. Full technical 
+  remediation, local SEO setup, and content strategy 
+  targeting high-intent legal keywords."
+* What We Did (mt-4):
+  Heading: "Approach" 
+  (text-xs uppercase font-semibold text-muted-foreground, mb-2)
+  List (space-y-1.5, text-xs text-muted-foreground):
+  - "🔧 Fixed 47 technical SEO issues"
+  - "📍 Set up and optimised Google Business Profile"
+  - "📝 Created 24 location and practice area pages"
+  - "🔗 Built 60 high-quality local citations"
+  - "📊 Targeting 35 high-intent legal keywords"
+* Timeline (mt-4, text-xs text-muted-foreground):
+  "Campaign duration: 8 months ongoing"
+* Tech (mt-4, flex gap-2 flex-wrap):
+  Pills: WordPress, Yoast SEO, Ahrefs, Google Search Console
+
+CASE STUDY 2:
+Top (h-48, gradient emerald to teal):
+* Icon: ShoppingBag (white)
+* "E-Commerce" badge
+
+Content:
+* H3: "Online Garden Centre SEO"
+* Location: "Yorkshire, UK"
+* Description: "Full SEO overhaul for a family-run 
+  garden centre expanding online. Site had 800 products 
+  but virtually no organic traffic. Technical SEO, 
+  category page optimisation, and seasonal content 
+  strategy targeting garden and plant keywords."
+* What We Did:
+  - "⚡ Improved page speed from 42 to 91 (PageSpeed)"
+  - "🏷️ Optimised 800 product and 45 category pages"
+  - "📝 Built seasonal blog content strategy"
+  - "🗺️ Added structured data to all product pages"
+  - "📱 Fixed mobile usability across entire site"
+* Timeline: "Campaign duration: 10 months ongoing"
+* Tech: WooCommerce, Semrush, Screaming Frog, GTmetrix
+
+CASE STUDY 3:
+Top (h-48, gradient emerald to blue):
+* Icon: MapPin (white)
+* "Local SEO" badge
+
+Content:
+* H3: "Multi-Location Dental SEO"
+* Location: "London & Surrey, UK"
+* Description: "Local SEO campaign for a private 
+  dental group with 4 clinic locations. Required 
+  individual location strategies, Google Business 
+  Profile management, and review generation across 
+  all clinics targeting high-value dental keywords."
+* What We Did:
+  - "📍 Optimised 4 separate Google Business Profiles"
+  - "📝 Built individual location landing pages"
+  - "⭐ Implemented review generation system"
+  - "🔗 Built 120 local citations across 4 locations"
+  - "🎯 Targeting 28 keywords per location (112 total)"
+* Timeline: "Campaign duration: 12 months ongoing"
+* Tech: WordPress, BrightLocal, Google Business, Ahrefs
+
+---
+
+FAQ SECTION:
+
+Container: py-20, bg-muted, max-w-4xl mx-auto px-6
+
+Header: "SEO Services FAQs"
+
+12 Questions (Accordion):
+
+Q1: "How long does SEO take to work?"
+A: "SEO typically takes 3-6 months to show meaningful 
+results. Month 1-2: technical fixes and on-page 
+optimisation. Month 3-4: rankings start to appear. 
+Month 4-6: page 1 rankings for target keywords. Month 
+6+: compounding growth as authority builds. The timeline 
+depends on your starting position, competition level, 
+and how aggressively we implement."
+
+Q2: "How much does SEO cost?"
+A: "SEO pricing varies by scope. A one-time SEO audit 
+starts from £997. Monthly SEO retainers typically range 
+from £800-£3,000/month depending on competition, number 
+of keywords, and content requirements. We provide 
+detailed proposals after understanding your goals. SEO 
+is an investment—most clients see positive ROI within 
+9-12 months."
+
+Q3: "What's the difference between Technical SEO and 
+regular SEO?"
+A: "Regular SEO covers on-page factors (keywords, 
+meta tags, content). Technical SEO fixes the 
+under-the-hood issues that prevent Google from properly 
+crawling and indexing your site—page speed, Core Web 
+Vitals, crawl errors, structured data, mobile issues. 
+Technical SEO is the foundation; without it, everything 
+else is less effective."
+
+Q4: "Do you guarantee page 1 rankings?"
+A: "No ethical SEO agency can guarantee specific 
+rankings—Google's algorithm is outside anyone's control.
+What we do guarantee: transparent work, proven 
+methodology, and monthly reporting on real progress. 
+Our track record speaks for itself—94% of clients 
+reach page 1 within 6 months for their target keywords."
+
+Q5: "What is Local SEO and do I need it?"
+A: "Local SEO optimises your visibility in location-based 
+searches ('plumber near me', 'dentist London'). If you 
+serve customers in specific geographic areas, Local SEO 
+is essential. It includes Google Business Profile 
+optimisation, local citations, location pages, and 
+review management. Businesses with physical locations 
+or service areas need Local SEO."
+
+Q6: "What is an SEO audit?"
+A: "An SEO audit is a comprehensive analysis of your 
+website covering 150+ technical and on-page factors. 
+It identifies exactly what's preventing you from ranking 
+higher—technical errors, slow pages, thin content, 
+missing meta tags, crawl issues, backlink problems. You 
+receive a prioritised action plan with quick wins and 
+long-term recommendations."
+
+Q7: "Will you write content for us?"
+A: "Yes. Content creation is part of our SEO retainers. 
+We create SEO-optimised blog posts, landing pages, and 
+service pages targeting keywords your customers are 
+searching for. All content is researched, human-written, 
+and aligned with search intent—no AI-generated fluff."
+
+Q8: "Do you do link building?"
+A: "Yes, ethical white-hat link building is part of our 
+SEO process. We build links through digital PR, 
+guest posting on relevant sites, local citations, and 
+supplier/partner links. We never buy links or use 
+private blog networks—tactics that risk Google penalties."
+
+Q9: "Can you do SEO on any website platform?"
+A: "Yes. We've done SEO on WordPress, Shopify, 
+WooCommerce, Wix, Squarespace, Webflow, and custom-built 
+sites. Some platforms are more SEO-friendly than others
+—we'll advise if your platform is limiting your potential 
+and whether a migration would be beneficial."
+
+Q10: "How do you measure SEO success?"
+A: "We track keyword rankings (position for target 
+keywords), organic traffic (visitors from Google), 
+click-through rates from Search Console, conversions 
+from organic traffic, and domain authority growth. 
+Monthly reports cover all metrics transparently—
+we never hide behind vanity numbers."
+
+Q11: "Will my rankings drop if I stop SEO?"
+A: "Rankings can decline over time without ongoing 
+optimisation, particularly in competitive markets where 
+competitors continue their SEO. However, good SEO 
+builds lasting foundations—a well-optimised site with 
+strong backlinks will hold rankings better than one 
+built on quick fixes. We build for long-term resilience."
+
+Q12: "Do you work with businesses outside London?"
+A: "Absolutely. We work with businesses across the 
+entire UK—London, Manchester, Birmingham, Leeds, 
+Edinburgh, and everywhere in between. Most of our work 
+is done remotely with monthly calls. For Local SEO, 
+your location matters (we optimise for it). For 
+national SEO, location is irrelevant."
+
+---
+
+CTA SECTIONS (3):
+
+CTA 1 (After SEO Services Cards):
+- Variant: 'gradient'
+- Title: "Not Sure Which SEO Service You Need?"
+- Description: "Start with a free SEO audit—we'll show 
+  you exactly where you stand and what to fix first"
+- PrimaryCTA: "Get Free SEO Audit" → /contact
+- Size: 'medium'
+
+CTA 2 (After Case Studies):
+- Variant: 'bordered'
+- Title: "Ready to Start Ranking on Google?"
+- Description: "Free consultation, honest assessment, 
+  and a clear SEO roadmap for your business"
+- PrimaryCTA: "Book SEO Consultation" → /contact
+- SecondaryCTA: "View SEO Audit Service" → /services/seo/seo-audit
+- Size: 'large'
+
+CTA 3 (Final, After FAQ):
+- Variant: 'gradient'
+- Title: "Let's Get You on Page 1"
+- Description: "Book a free SEO consultation. We'll 
+  audit your site live, show you the opportunities, 
+  and give you a no-obligation proposal."
+- PrimaryCTA: "Book Free Consultation" → /contact
+- SecondaryCTA: "Call: +44 7429 917368" → tel link
+- ShowContactInfo: true
+- Size: 'large'
+
+---
+
+GLOBAL REQUIREMENTS:
+
+1. SEO META:
+   - Title: "SEO Services UK | Technical SEO, Local SEO 
+     & SEO Audits | House of Developers"
+   - Description: "Expert SEO services in the UK. 
+     Technical SEO, Local SEO, and SEO Audits. 94% of 
+     clients reach page 1 in 6 months. Free audit."
+   - Schema: Service, FAQPage, BreadcrumbList, 
+     LocalBusiness
+
+2. ACCENT COLOR: #10B981 (Emerald) throughout:
+   - All gradients: emerald to green
+   - Active states, hover borders
+   - ZigzagTimeline accent color
+   - Stat numbers and icons
+   - CTA buttons and highlights
+
+3. HERO MOCKUP:
+   - Keyword position dashboard
+   - 10 realistic UK-relevant keywords
+   - All showing position improvements (↑)
+   - Traffic graph trending up
+   - Emerald color theme throughout mockup
+
+4. SERVICE CARDS: 3 only
+   - SEO Audits (start here)
+   - Technical SEO (most impactful)
+   - Local SEO (high ROI)
+   - Each links to sub-page
+
+5. NO PRICING CARDS: 
+   - Mention ranges in FAQ only
+   - Focus on value and results
+
+6. CASE STUDY URLS: All mockup URLs use
+   houseofdevelopers.co.uk/projects/[shortname]
+
+7. COMPONENTS:
+   - ZigzagTimeline ✅ (emerald accent)
+   - TabbedTechStack ✅ (Simple Icons CDN)
+   - ValueProposition ✅
+   - CTASection × 3 ✅
+
+8. RESPONSIVE: Mobile-first throughout
+
+9. DARK/LIGHT MODE: Full support
+
+10. NO BEFORE/AFTER METRICS in case studies
+
+11. ICON FALLBACK: For SEO tools not in Simple Icons
+    CDN, use Lucide icons (Search, BarChart, TrendingUp)
+    styled in gray monochrome to match the design
+
+Build a comprehensive, authoritative SEO services page 
+that ranks well for SEO-related keywords while 
+demonstrating deep expertise through realistic 
+dashboard mockups and honest content.
