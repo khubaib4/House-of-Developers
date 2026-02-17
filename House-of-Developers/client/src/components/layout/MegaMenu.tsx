@@ -279,9 +279,9 @@ export function MegaMenu({ isOpen, onClose, onNavigate, triggerRef, onFocusWithi
                         data-testid={`mega-menu-category-${category.name.toLowerCase().replace(/\s+/g, "-")}`}
                       >
                         <div
-                          className={`w-8 h-8 rounded-lg flex items-center justify-center bg-gradient-to-br ${category.color} group-hover:scale-105 transition-all duration-200 shadow-sm flex-shrink-0`}
+                          className="w-6 h-6 flex items-center justify-center flex-shrink-0"
                         >
-                          <category.icon size={14} className="text-white" strokeWidth={2.5} />
+                          <category.icon size={16} className="text-muted-foreground group-hover:text-primary transition-colors" strokeWidth={1.5} />
                         </div>
                         <div className="flex-1 min-w-0">
                           <h3 className="font-semibold text-[13px] text-foreground group-hover:text-primary transition-colors leading-tight">
