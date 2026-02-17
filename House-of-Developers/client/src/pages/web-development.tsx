@@ -143,7 +143,7 @@ function WebHeroMockup() {
               </div>
               <div className="flex-1 flex justify-center">
                 <div className="bg-background/80 rounded px-1.5 py-0.5 text-[6px] text-muted-foreground">
-                  {frame.type === "saas" ? "saas-platform.com" : frame.type === "ecommerce" ? "fashion-store.com" : "law-firm.co.uk"}
+                  {frame.type === "saas" ? "houseofdevelopers.co.uk/saas" : frame.type === "ecommerce" ? "houseofdevelopers.co.uk/store" : "houseofdevelopers.co.uk/law"}
                 </div>
               </div>
             </div>
@@ -861,7 +861,7 @@ export default function WebDevelopmentPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <BrowserFrame url="app.projecthub.io" glowColor="#3B82F6">
+            <BrowserFrame url="houseofdevelopers.co.uk/projecthub" glowColor="#3B82F6">
               <SaaSProjectMockup />
             </BrowserFrame>
 
@@ -935,7 +935,7 @@ export default function WebDevelopmentPage() {
             </div>
 
             <div className="order-1 lg:order-2">
-              <BrowserFrame url="luxewear.co.uk" glowColor="#10B981">
+              <BrowserFrame url="houseofdevelopers.co.uk/luxewear" glowColor="#10B981">
                 <EcommerceProjectMockup />
               </BrowserFrame>
             </div>
@@ -949,7 +949,7 @@ export default function WebDevelopmentPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <BrowserFrame url="hartley-law.co.uk" glowColor="#F59E0B">
+            <BrowserFrame url="houseofdevelopers.co.uk/hartley-law" glowColor="#F59E0B">
               <LawFirmProjectMockup />
             </BrowserFrame>
 
