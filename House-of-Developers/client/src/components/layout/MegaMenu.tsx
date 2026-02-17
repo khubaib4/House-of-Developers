@@ -266,10 +266,11 @@ export function MegaMenu({ isOpen, onClose, onNavigate, triggerRef, onFocusWithi
             exit="exit"
             role="menu"
             aria-label="Services menu"
-            className="fixed left-1/2 -translate-x-1/2 top-[72px] w-[95vw] max-w-5xl z-50"
+            className="fixed left-0 right-0 top-[72px] mx-auto max-w-5xl z-50"
             style={{
               maxHeight: "calc(100vh - 100px)",
               overflowY: "auto",
+              width: "calc(100vw - 32px)",
             }}
             data-testid="mega-menu"
             onFocus={handleFocusIn}
