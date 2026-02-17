@@ -31,10 +31,9 @@ const serviceCategories: ServiceCategory[] = [
     color: "from-blue-500 to-indigo-500",
     href: "/services/web-development",
     subServices: [
-      { name: "Custom Development", href: "/services/web-development/custom-development", popular: true },
-      { name: "Web Applications", href: "/services/web-development/web-applications" },
-      { name: "E-Commerce", href: "/services/web-development/ecommerce" },
-      { name: "Landing Pages", href: "/services/web-development/landing-pages" },
+      { name: "Custom Development", href: "/services/custom-development", popular: true },
+      { name: "Web Applications", href: "/services/web-apps" },
+      { name: "CMS Development", href: "/services/cms-development" },
       { name: "WordPress", href: "/services/web-development/cms/wordpress", popular: true },
       { name: "Shopify", href: "/services/web-development/cms/shopify" },
     ],
@@ -47,9 +46,7 @@ const serviceCategories: ServiceCategory[] = [
     subServices: [
       { name: "Hybrid Apps", href: "/services/mobile-development/hybrid", popular: true },
       { name: "iOS Development", href: "/services/mobile-development/ios" },
-      { name: "Android Development", href: "/services/mobile-development/android" },
-      { name: "React Native", href: "/services/mobile-development/hybrid" },
-      { name: "Flutter", href: "/services/mobile-development/hybrid" },
+      { name: "Android Development", href: "/services/mobile-development/kotlin" },
     ],
   },
   {
@@ -60,22 +57,15 @@ const serviceCategories: ServiceCategory[] = [
     subServices: [
       { name: "AI Chatbots", href: "/services/ai-services/ai-chatbots", popular: true },
       { name: "AI Agents", href: "/services/ai-services/ai-agents", popular: true },
-      { name: "AI Automation", href: "/services/ai-services/ai-automation" },
-      { name: "AI Integration", href: "/services/ai-services/ai-integration" },
-      { name: "Machine Learning", href: "/services/ai-services/machine-learning" },
     ],
   },
   {
     name: "SEO Services",
     icon: Search,
     color: "from-emerald-500 to-green-500",
-    href: "/services/seo",
+    href: "/services/seo-services",
     subServices: [
-      { name: "SEO Audits", href: "/services/seo/seo-audit", popular: true },
-      { name: "Technical SEO", href: "/services/seo/technical-seo" },
-      { name: "Local SEO", href: "/services/seo/local-seo", popular: true },
-      { name: "E-Commerce SEO", href: "/services/seo/ecommerce-seo" },
-      { name: "Content SEO", href: "/services/seo/content-seo" },
+      { name: "SEO Services", href: "/services/seo-services", popular: true },
     ],
   },
   {
@@ -87,8 +77,6 @@ const serviceCategories: ServiceCategory[] = [
       { name: "Full-Stack Developers", href: "/services/hire-developers/full-stack", popular: true },
       { name: "Frontend Developers", href: "/services/hire-developers/frontend" },
       { name: "Backend Developers", href: "/services/hire-developers/backend" },
-      { name: "React Developers", href: "/services/hire-developers/frontend/react" },
-      { name: "Node.js Developers", href: "/services/hire-developers/backend/nodejs" },
     ],
   },
 ];
