@@ -1,390 +1,394 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import {
-  Rocket,
   Globe,
-  Code2,
-  Layout,
   Smartphone,
-  Brain,
-  FileText,
+  Bot,
+  Search,
   Users,
-  TrendingUp,
-  CheckCircle2,
   ArrowRight,
-  Database,
-  Cloud,
-  Shield,
 } from "lucide-react";
 import { Link } from "wouter";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
-import { PageCTA } from "@/components/shared/PageCTA";
-import { SplitFeatureShowcase } from "@/components/shared/SplitFeatureShowcase";
-import { WebAppMockup } from "@/components/mockups/WebAppMockup";
-
-const services = [
-  {
-    icon: Rocket,
-    title: "30-Day MVP Program",
-    description:
-      "Launch your startup in 30 days. We handle discovery, design, development, cloud setup, and launch — everything you need to go from idea to market.",
-    deliverables: [
-      "Discovery workshop & strategy session",
-      "UI/UX design & prototyping",
-      "Core feature development (web or mobile)",
-      "Cloud infrastructure & deployment",
-      "Post-launch support & iterations",
-    ],
-    href: "/services/build-mvp",
-  },
-  {
-    icon: Globe,
-    title: "Web Development",
-    description:
-      "From corporate websites to high-performance web applications. We build fast, scalable, and conversion-optimized web platforms.",
-    deliverables: [
-      "Custom web applications & SaaS platforms",
-      "Corporate websites & landing pages",
-      "Headless CMS integration",
-      "E-commerce solutions",
-      "Performance optimization & SEO",
-    ],
-    href: "/services/web-development",
-  },
-  {
-    icon: Code2,
-    title: "Custom Development",
-    description:
-      "Bespoke solutions for unique business needs. Admin dashboards, internal tools, API integrations, and complex web applications.",
-    deliverables: [
-      "Custom web applications from scratch",
-      "Admin dashboards & CMS systems",
-      "Third-party API integrations",
-      "Real-time systems & WebSocket apps",
-      "Database design & optimization",
-    ],
-    href: "/services/custom-development",
-  },
-  {
-    icon: Layout,
-    title: "Web Applications",
-    description:
-      "Full-stack SaaS platforms and web apps built for scale. Real-time features, payment integration, and enterprise-grade architecture.",
-    deliverables: [
-      "Complete SaaS platform development",
-      "User authentication & authorization",
-      "Payment gateway integration (Stripe, PayPal)",
-      "Real-time features & notifications",
-      "Multi-tenant architecture",
-    ],
-    href: "/services/web-apps",
-  },
-  {
-    icon: Smartphone,
-    title: "Mobile App Development",
-    description:
-      "Native iOS, Android, and cross-platform mobile apps. Beautiful interfaces, smooth performance, app store deployment.",
-    deliverables: [
-      "iOS & Android native development",
-      "React Native cross-platform apps",
-      "App Store & Play Store deployment",
-      "Push notifications & analytics",
-      "Backend API development",
-    ],
-    href: "/services/mobile-development",
-  },
-  {
-    icon: Brain,
-    title: "AI Integration & Automation",
-    description:
-      "AI-powered features that transform your business. Chatbots, automation systems, intelligent workflows, and AI agents.",
-    deliverables: [
-      "AI chatbots & virtual assistants",
-      "Business process automation",
-      "Workflow automation systems",
-      "Custom AI agent development",
-      "Integration with OpenAI, Claude, etc.",
-    ],
-    href: "/services/ai-services",
-  },
-  {
-    icon: FileText,
-    title: "CMS Development",
-    description:
-      "Content management systems for easy website updates. WordPress, Shopify, and headless CMS solutions.",
-    deliverables: [
-      "WordPress with modern page builders",
-      "Shopify store development",
-      "Headless CMS (Contentful, Sanity)",
-      "Custom theme development",
-      "Plugin customization & integration",
-    ],
-    href: "/services/cms-development",
-  },
-  {
-    icon: Users,
-    title: "Hire Dedicated Developers",
-    description:
-      "Scale your team with vetted developers. Full-time or part-time, integrated with your workflow, managed by us.",
-    deliverables: [
-      "Pre-vetted senior developers",
-      "Full-time or part-time engagement",
-      "Direct communication & collaboration",
-      "Project management included",
-      "Flexible hiring models",
-    ],
-    href: "/services/hire-developers",
-  },
-  {
-    icon: TrendingUp,
-    title: "SEO & Growth Marketing",
-    description:
-      "Technical SEO, content optimization, and growth strategies to drive organic traffic and conversions.",
-    deliverables: [
-      "Technical SEO audit & fixes",
-      "On-page optimization",
-      "Local SEO for UK businesses",
-      "Content strategy & optimization",
-      "Performance tracking & reporting",
-    ],
-    href: "/services/seo-services",
-  },
-];
-
-const processSteps = [
-  {
-    number: 1,
-    title: "Discovery",
-    description:
-      "We understand your vision, goals, and technical requirements.",
-  },
-  {
-    number: 2,
-    title: "Design",
-    description:
-      "UI/UX design and prototyping for validation before development.",
-  },
-  {
-    number: 3,
-    title: "Build",
-    description: "Agile development with weekly updates and demos.",
-  },
-  {
-    number: 4,
-    title: "Launch",
-    description: "Deployment, testing, and go-live support.",
-  },
-  {
-    number: 5,
-    title: "Support",
-    description: "Post-launch monitoring, updates, and iterations.",
-  },
-];
 
 const fadeInUp = {
   initial: { opacity: 0, y: 24 },
   animate: { opacity: 1, y: 0 },
 };
 
-const containerVariants = {
-  initial: {},
-  animate: { transition: { staggerChildren: 0.08 } },
-};
+const serviceCards = [
+  {
+    icon: Globe,
+    name: "Web Development",
+    description: "Custom websites, web applications, and e-commerce platforms built exactly to your requirements.",
+    count: "6 services",
+    href: "/services/web-development",
+  },
+  {
+    icon: Smartphone,
+    name: "Mobile Development",
+    description: "Native iOS, Android, and cross-platform mobile apps that work seamlessly on every device.",
+    count: "3 services",
+    href: "/services/mobile-development",
+  },
+  {
+    icon: Bot,
+    name: "AI Services",
+    description: "Intelligent chatbots, automation, and machine learning solutions powered by GPT-4 and Claude.",
+    count: "2 services",
+    href: "/services/ai-services",
+  },
+  {
+    icon: Search,
+    name: "SEO Services",
+    description: "Technical SEO, local rankings, and content strategy to get you on page 1 of Google.",
+    count: "1 service",
+    href: "/services/seo-services",
+  },
+  {
+    icon: Users,
+    name: "Hire Developers",
+    description: "Skilled full-stack, frontend, and backend developers ready to join your team.",
+    count: "3 categories",
+    href: "/services/hire-developers",
+  },
+];
 
-const itemVariants = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+const industries = [
+  {
+    name: "E-Commerce & Retail",
+    services: ["Shopify Development", "SEO Services", "Web Applications"],
+    example: "E.g., online store with custom features",
+  },
+  {
+    name: "Professional Services",
+    services: ["Custom Development", "WordPress", "Local SEO"],
+    example: "E.g., law firm website with client portal",
+  },
+  {
+    name: "SaaS & Tech Startups",
+    services: ["Web Applications", "AI Services", "Hire Developers"],
+    example: "E.g., subscription platform with AI features",
+  },
+  {
+    name: "Healthcare & Medical",
+    services: ["Custom Development", "Mobile Apps", "HIPAA Compliance"],
+    example: "E.g., patient booking system",
+  },
+  {
+    name: "Hospitality & Tourism",
+    services: ["WordPress", "Mobile Apps", "Local SEO"],
+    example: "E.g., hotel website with booking",
+  },
+  {
+    name: "Education & Training",
+    services: ["Web Applications", "Mobile Apps", "AI Chatbots"],
+    example: "E.g., online learning platform",
+  },
+];
+
+const quizQuestions = [
+  {
+    key: "goal",
+    label: "What's your main goal?",
+    options: [
+      { text: "Build a new website or web application", value: "web" },
+      { text: "Create a mobile app (iOS/Android)", value: "mobile" },
+      { text: "Add AI features (chatbots, automation)", value: "ai" },
+      { text: "Improve Google rankings (SEO)", value: "seo" },
+      { text: "Hire developers for my team", value: "hire" },
+    ],
+  },
+  {
+    key: "platform",
+    label: "Where will it be used?",
+    options: [
+      { text: "Website/Web browser", value: "web" },
+      { text: "Mobile devices (phone/tablet)", value: "mobile" },
+      { text: "Both web and mobile", value: "both" },
+      { text: "Internal systems/tools", value: "internal" },
+    ],
+  },
+  {
+    key: "timeline",
+    label: "When do you need it?",
+    options: [
+      { text: "ASAP (4-6 weeks)", value: "urgent" },
+      { text: "Normal timeline (8-16 weeks)", value: "normal" },
+      { text: "Flexible (ongoing project)", value: "flexible" },
+    ],
+  },
+];
+
+const recommendations: Record<string, { name: string; href: string; icon: typeof Globe; description: string }> = {
+  web: {
+    name: "Custom Web Development",
+    href: "/services/custom-development",
+    icon: Globe,
+    description: "Build a tailored web application designed around your exact business needs, with modern frameworks and scalable architecture.",
+  },
+  mobile: {
+    name: "Mobile App Development",
+    href: "/services/mobile-development",
+    icon: Smartphone,
+    description: "Create native or cross-platform mobile apps for iOS and Android that your users will love.",
+  },
+  ai: {
+    name: "AI Services",
+    href: "/services/ai-services",
+    icon: Bot,
+    description: "Add intelligent automation, chatbots, and AI-powered features to streamline your business operations.",
+  },
+  seo: {
+    name: "SEO Services",
+    href: "/services/seo-services",
+    icon: Search,
+    description: "Rank higher on Google with technical SEO, content strategy, and data-driven optimisation.",
+  },
+  hire: {
+    name: "Hire Developers",
+    href: "/services/hire-developers",
+    icon: Users,
+    description: "Expand your team with pre-vetted senior developers who integrate seamlessly with your workflow.",
+  },
 };
 
 export default function ServicesPage() {
+  const [step, setStep] = useState(1);
+  const [answers, setAnswers] = useState({ goal: "", platform: "", timeline: "" });
+
+  const handleAnswer = (key: string, value: string) => {
+    setAnswers((prev) => ({ ...prev, [key]: value }));
+    setStep((prev) => prev + 1);
+  };
+
+  const resetQuiz = () => {
+    setStep(1);
+    setAnswers({ goal: "", platform: "", timeline: "" });
+  };
+
+  const recommendation = recommendations[answers.goal] || recommendations.web;
+  const currentQuestion = quizQuestions[step - 1];
+
   return (
     <>
-      <Breadcrumbs items={[{ label: "Services" }]} />
+      <section className="py-20">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <Breadcrumbs items={[{ label: "Services" }]} />
 
-      <section className="relative" data-testid="section-services-hero">
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div
-            className="absolute -top-32 -right-32 w-96 h-96 rounded-full opacity-15 dark:opacity-10"
-            style={{
-              background:
-                "radial-gradient(circle, hsl(217 91% 60% / 0.3) 0%, transparent 70%)",
-            }}
-          />
-          <div
-            className="absolute -bottom-32 -left-32 w-[400px] h-[400px] rounded-full opacity-10 dark:opacity-5"
-            style={{
-              background:
-                "radial-gradient(circle, hsl(152 100% 39% / 0.3) 0%, transparent 70%)",
-            }}
-          />
-        </div>
-
-        <div className="relative max-w-7xl mx-auto px-6 py-16 md:py-24 text-center">
           <motion.div
+            variants={fadeInUp}
+            initial="initial"
+            animate="animate"
+            transition={{ duration: 0.5 }}
+          >
+            <span className="inline-block bg-muted text-foreground px-3 py-1.5 rounded-full text-sm mb-4 mt-4">
+              Our Services
+            </span>
+          </motion.div>
+
+          <motion.h1
+            className="text-4xl md:text-5xl font-bold mb-4"
             variants={fadeInUp}
             initial="initial"
             animate="animate"
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <Badge
-              variant="outline"
-              className="mb-6 px-4 py-1.5 text-sm"
-              data-testid="badge-services"
-            >
-              What We Do
-            </Badge>
-          </motion.div>
-          <motion.h1
-            className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight"
+            What We Build
+          </motion.h1>
+
+          <motion.p
+            className="text-xl text-muted-foreground mb-6"
+            variants={fadeInUp}
+            initial="initial"
+            animate="animate"
+            transition={{ duration: 0.5, delay: 0.15 }}
+          >
+            From websites to AI—tailored solutions for your business
+          </motion.p>
+
+          <motion.p
+            className="text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto"
             variants={fadeInUp}
             initial="initial"
             animate="animate"
             transition={{ duration: 0.5, delay: 0.2 }}
-            data-testid="text-services-hero-title"
           >
-            Services Built for Startups & Scale
-          </motion.h1>
-          <motion.p
-            className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
+            We build custom software, websites, and AI solutions. Every project is tailored to your exact needs—no templates, no shortcuts, just results.
+          </motion.p>
+
+          <motion.div
+            className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 max-w-3xl mx-auto"
             variants={fadeInUp}
             initial="initial"
             animate="animate"
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            From MVP to enterprise. We build digital products that startups need
-            to launch, scale, and succeed.
-          </motion.p>
+            {[
+              { number: "5", label: "Core Services" },
+              { number: "150+", label: "Projects Delivered" },
+              { number: "40+", label: "Technologies" },
+              { number: "98%", label: "Client Satisfaction" },
+            ].map((stat) => (
+              <div key={stat.label} className="text-center">
+                <div className="text-3xl font-bold text-foreground">{stat.number}</div>
+                <div className="text-sm text-muted-foreground mt-1">{stat.label}</div>
+              </div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
-      <section className="py-16 md:py-20" data-testid="section-all-services">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8"
-            variants={containerVariants}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-          >
-            {services.map((service) => (
-              <motion.div key={service.title} variants={itemVariants}>
-                <Card
-                  className="h-full hover-elevate transition-all duration-200"
-                  data-testid={`card-service-${service.title.toLowerCase().replace(/\s+/g, "-")}`}
-                >
-                  <CardContent className="p-6 md:p-8">
-                    <div className="w-12 h-12 rounded-md bg-primary/10 flex items-center justify-center">
-                      <service.icon className="h-6 w-6 text-primary" />
-                    </div>
-                    <h3 className="text-2xl font-bold mt-4">{service.title}</h3>
-                    <p className="text-muted-foreground mt-3 leading-relaxed">
+      <section className="py-16 bg-muted">
+        <div className="max-w-3xl mx-auto px-6">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl font-bold">Not sure what you need?</h2>
+            <p className="text-sm text-muted-foreground mt-2">Answer a few quick questions</p>
+          </div>
+
+          <div className="bg-card border rounded-2xl p-8">
+            {step <= 3 && currentQuestion ? (
+              <>
+                <p className="text-sm font-semibold mb-4">{currentQuestion.label}</p>
+                <div className="grid grid-cols-1 gap-3">
+                  {currentQuestion.options.map((option) => (
+                    <button
+                      key={option.value}
+                      onClick={() => handleAnswer(currentQuestion.key, option.value)}
+                      className="w-full border rounded-xl p-4 text-left hover:border-primary hover:bg-primary/5 transition-all text-sm font-medium active:scale-[0.98]"
+                    >
+                      {option.text}
+                    </button>
+                  ))}
+                </div>
+              </>
+            ) : (
+              <div className="text-center">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                  <recommendation.icon className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold mb-2">We recommend: {recommendation.name}</h3>
+                <p className="text-sm text-muted-foreground mb-6">{recommendation.description}</p>
+                <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                  <Link href={recommendation.href}>
+                    <button className="inline-flex items-center gap-2 px-6 py-2.5 bg-primary text-primary-foreground text-sm font-semibold rounded-xl hover:bg-primary/90 transition-all">
+                      Explore {recommendation.name}
+                      <ArrowRight size={14} />
+                    </button>
+                  </Link>
+                  <button
+                    onClick={resetQuiz}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    Start over
+                  </button>
+                </div>
+              </div>
+            )}
+
+            <div className="flex justify-center gap-2 mt-6">
+              {[1, 2, 3].map((i) => (
+                <div
+                  key={i}
+                  className={`rounded-full transition-all ${
+                    step >= i ? "w-2 h-2 bg-primary" : "w-1.5 h-1.5 bg-muted-foreground/30"
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold">Our Services</h2>
+            <p className="text-muted-foreground text-sm mt-2">Choose what you need</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {serviceCards.map((service, i) => (
+              <motion.div
+                key={service.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.08 }}
+                className={i === serviceCards.length - 1 ? "md:col-span-2 lg:col-span-1 lg:col-start-2" : ""}
+              >
+                <Link href={service.href}>
+                  <div className="bg-card border rounded-2xl p-8 hover:border-primary hover:shadow-lg transition-all duration-300 cursor-pointer h-full">
+                    <service.icon className="h-8 w-8 text-primary mb-4" strokeWidth={1.5} />
+                    <h3 className="text-xl font-bold mb-2">{service.name}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                       {service.description}
                     </p>
-                    <div className="mt-6">
-                      <p className="font-semibold mb-3">What's Included:</p>
-                      <ul className="space-y-2">
-                        {service.deliverables.map((item) => (
-                          <li
-                            key={item}
-                            className="flex items-start gap-2 text-sm text-muted-foreground"
-                          >
-                            <CheckCircle2 className="h-4 w-4 text-accent mt-0.5 flex-shrink-0" />
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <Link href={service.href}>
-                      <Button
-                        variant="ghost"
-                        className="mt-6 -ml-4"
-                        data-testid={`link-learn-more-${service.title.toLowerCase().replace(/\s+/g, "-")}`}
-                      >
-                        Learn More
-                        <ArrowRight className="h-4 w-4 ml-1" />
-                      </Button>
-                    </Link>
-                  </CardContent>
-                </Card>
+                    <p className="text-xs text-muted-foreground mb-4">{service.count}</p>
+                    <span className="text-sm font-semibold text-primary inline-flex items-center gap-1">
+                      View Services <ArrowRight size={14} />
+                    </span>
+                  </div>
+                </Link>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      <section
-        className="py-16 md:py-20 bg-muted/50"
-        data-testid="section-process"
-      >
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            className="text-center mb-12 md:mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <h2
-              className="text-3xl md:text-4xl font-bold tracking-tight"
-              data-testid="text-process-title"
-            >
-              Our Process
-            </h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-              From discovery to launch, we've got you covered.
-            </p>
-          </motion.div>
+      <section className="py-20 bg-muted">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold">Solutions by Industry</h2>
+            <p className="text-sm text-muted-foreground mt-2">See what businesses like yours typically need</p>
+          </div>
 
-          <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8"
-            variants={containerVariants}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-          >
-            {processSteps.map((step, i) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {industries.map((industry, i) => (
               <motion.div
-                key={step.title}
-                variants={itemVariants}
-                className="flex flex-col items-center text-center relative"
-                data-testid={`process-step-${step.number}`}
+                key={industry.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.06 }}
+                className="bg-card border rounded-xl p-6 hover:border-primary transition-all"
               >
-                {i < processSteps.length - 1 && (
-                  <div className="hidden md:block absolute top-6 left-[calc(50%+24px)] w-[calc(100%-48px)] h-px bg-border" />
-                )}
-                <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold text-lg flex-shrink-0 relative z-10">
-                  {step.number}
+                <h3 className="text-base font-semibold mb-3">{industry.name}</h3>
+                <div className="flex flex-wrap gap-2 mb-3">
+                  {industry.services.map((s) => (
+                    <span key={s} className="text-xs bg-muted rounded-full px-3 py-1">
+                      {s}
+                    </span>
+                  ))}
                 </div>
-                <h3 className="font-semibold mt-4">{step.title}</h3>
-                <p className="text-sm text-muted-foreground mt-2">
-                  {step.description}
-                </p>
+                <p className="text-xs text-muted-foreground">{industry.example}</p>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      <SplitFeatureShowcase
-        badge="Tech Stack"
-        title="Enterprise-Grade Architecture"
-        description="We use proven, scalable technologies that grow with your business."
-        features={[
-          { icon: Code2, title: "Modern Frameworks", description: "Next.js, React, Node.js - battle-tested and fast." },
-          { icon: Database, title: "Scalable Databases", description: "PostgreSQL, MongoDB - designed for millions of users." },
-          { icon: Cloud, title: "Cloud Infrastructure", description: "AWS, Vercel - 99.99% uptime guaranteed." },
-          { icon: Shield, title: "Security First", description: "SSL, encryption, GDPR compliance built-in." },
-        ]}
-        mockupType="browser"
-        mockupContent={<WebAppMockup />}
-      />
-
-      <PageCTA
-        title="Ready to Start Your Project?"
-        subtitle="Book a free consultation and let's discuss how we can help you build your next digital product."
-      />
+      <section className="py-20">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <h2 className="text-2xl font-bold mb-4">Ready to get started?</h2>
+          <p className="text-muted-foreground mb-8">
+            Book a free consultation and we'll recommend the right solution for your business.
+          </p>
+          <div className="flex gap-4 justify-center flex-col sm:flex-row">
+            <Link href="/contact">
+              <button className="px-8 py-3 bg-primary text-primary-foreground rounded-xl font-semibold hover:bg-primary/90 transition-all">
+                Book Free Consultation
+              </button>
+            </Link>
+            <button className="px-8 py-3 border rounded-xl font-semibold hover:bg-muted transition-all">
+              View Our Work
+            </button>
+          </div>
+          <p className="mt-8 text-xs text-muted-foreground">
+            No obligation. Free 30-minute consultation to discuss your project.
+          </p>
+        </div>
+      </section>
     </>
   );
 }

@@ -1,0 +1,529 @@
+Create a clean, minimal Services overview page at /services. 
+Simple and focused with large service category cards, an 
+interactive service finder, and industry-based recommendations. 
+Text-focused, no heavy graphics, professional feel.
+
+PAGE: /services/page.tsx
+
+---
+
+HERO SECTION:
+
+Container: py-20, max-w-4xl mx-auto px-6, text-center
+
+- Badge: "Our Services" 
+  * bg-muted, text-foreground, px-3 py-1.5, rounded-full, mb-4
+  * Simple, not gradient
+
+- H1: "What We Build"
+  * text-4xl md:text-5xl font-bold, mb-4
+
+- Tagline: "From websites to AI—tailored solutions for your business"
+  * text-xl text-muted-foreground, mb-6
+
+- Description (max-w-2xl mx-auto):
+  * text-base text-muted-foreground leading-relaxed
+  * "We build custom software, websites, and AI solutions. 
+    Every project is tailored to your exact needs—no templates, 
+    no shortcuts, just results."
+
+- Simple Stats (grid-cols-4 gap-6, mt-12, max-w-3xl mx-auto):
+  Each stat (text-center):
+  - Number (text-3xl font-bold text-foreground)
+  - Label (text-sm text-muted-foreground, mt-1)
+
+  1. "5" / "Core Services"
+  2. "150+" / "Projects Delivered"
+  3. "40+" / "Technologies"
+  4. "98%" / "Client Satisfaction"
+
+---
+
+INTERACTIVE SERVICE FINDER:
+
+Container: py-16, bg-muted
+
+Wrapper: max-w-3xl mx-auto px-6
+
+Heading (text-center, mb-8):
+- H2: "Not sure what you need?" (text-2xl font-bold)
+- Subtitle: "Answer a few quick questions" 
+  (text-sm text-muted-foreground)
+
+Quiz Component (bg-card, border, rounded-2xl, p-8):
+
+STATE MANAGEMENT:
+```tsx
+const [step, setStep] = useState(1);
+const [answers, setAnswers] = useState({
+  goal: "",
+  platform: "",
+  timeline: ""
+});
+```
+
+QUESTION 1 (step === 1):
+* Label: "What's your main goal?" 
+  (text-sm font-semibold mb-4)
+* Options (grid-cols-1 gap-3):
+  Each option (button):
+  - border, rounded-xl, p-4, text-left
+  - hover:border-primary hover:bg-primary/5
+  - onClick sets answer and moves to step 2
+
+  Options:
+  1. "Build a new website or web application"
+     value: "web"
+  2. "Create a mobile app (iOS/Android)"
+     value: "mobile"
+  3. "Add AI features (chatbots, automation)"
+     value: "ai"
+  4. "Improve Google rankings (SEO)"
+     value: "seo"
+  5. "Hire developers for my team"
+     value: "hire"
+
+QUESTION 2 (step === 2):
+* Label: "Where will it be used?" (text-sm font-semibold mb-4)
+* Options:
+  1. "Website/Web browser"
+     value: "web"
+  2. "Mobile devices (phone/tablet)"
+     value: "mobile"
+  3. "Both web and mobile"
+     value: "both"
+  4. "Internal systems/tools"
+     value: "internal"
+
+QUESTION 3 (step === 3):
+* Label: "When do you need it?" (text-sm font-semibold mb-4)
+* Options:
+  1. "ASAP (4-6 weeks)"
+     value: "urgent"
+  2. "Normal timeline (8-16 weeks)"
+     value: "normal"
+  3. "Flexible (ongoing project)"
+     value: "flexible"
+
+RESULT (step === 4):
+Based on answers, show recommendation:
+
+Result Card (bg-primary/5, border border-primary/20, 
+rounded-xl, p-6):
+* Icon (primary gradient circle, size 48, mb-4)
+* Heading: "We recommend: [Service Name]"
+  (text-xl font-bold mb-2)
+* Description (text-sm text-muted-foreground mb-4)
+* CTA button: "Explore [Service]" → relevant service page
+* Secondary link: "Start over" (text-sm, resets quiz)
+
+RECOMMENDATION LOGIC:
+```tsx
+const getRecommendation = () => {
+  if (answers.goal === "web") {
+    return {
+      name: "Custom Web Development",
+      href: "/services/web-development/custom-development",
+      icon: Globe,
+      description: "Build a tailored web application..."
+    };
+  }
+  if (answers.goal === "mobile") {
+    return {
+      name: "Mobile App Development",
+      href: "/services/mobile-development",
+      icon: Smartphone,
+      description: "Create iOS and Android apps..."
+    };
+  }
+  if (answers.goal === "ai") {
+    return {
+      name: "AI Services",
+      href: "/services/ai-services",
+      icon: Bot,
+      description: "Add intelligent automation..."
+    };
+  }
+  if (answers.goal === "seo") {
+    return {
+      name: "SEO Services",
+      href: "/services/seo",
+      icon: Search,
+      description: "Rank higher on Google..."
+    };
+  }
+  if (answers.goal === "hire") {
+    return {
+      name: "Hire Developers",
+      href: "/services/hire-developers",
+      icon: Users,
+      description: "Expand your team..."
+    };
+  }
+};
+```
+
+Progress Indicator (mt-6, flex justify-center gap-2):
+* 3 dots representing steps
+* Active step: bg-primary, size 8
+* Inactive: bg-muted, size 6
+* Simple, minimal
+
+---
+
+SERVICE CATEGORY CARDS:
+
+Container: py-20, max-w-6xl mx-auto px-6
+
+Heading (text-center, mb-12):
+- H2: "Our Services" (text-3xl font-bold)
+- Subtitle: "Choose what you need" 
+  (text-muted-foreground, text-sm, mt-2)
+
+Grid: grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6
+
+5 SERVICE CARDS (2-2-1 layout, last centered):
+
+CARD STRUCTURE (minimal, clean):
+- bg-card, border, rounded-2xl, p-8
+- hover:border-primary hover:shadow-lg
+- transition-all 300ms
+- cursor-pointer
+
+Each card:
+1. Icon (size 32, text-primary, mb-4, simple—no circle)
+2. Name (text-xl font-bold mb-2)
+3. Description (text-sm text-muted-foreground, 
+   leading-relaxed, mb-4, 2-3 lines)
+4. Sub-services count (text-xs text-muted-foreground mb-4):
+   "6 services available"
+5. Link: "View Services →" 
+   (text-sm font-semibold text-primary, 
+    inline-flex items-center gap-1, ArrowRight icon)
+
+THE 5 CARDS:
+
+CARD 1: WEB DEVELOPMENT
+- Icon: Globe (primary color, size 32)
+- Name: "Web Development"
+- Description: "Custom websites, web applications, and 
+  e-commerce platforms built exactly to your requirements."
+- Count: "6 services"
+- Link: /services/web-development
+
+CARD 2: MOBILE DEVELOPMENT
+- Icon: Smartphone
+- Name: "Mobile Development"
+- Description: "Native iOS, Android, and cross-platform 
+  mobile apps that work seamlessly on every device."
+- Count: "5 services"
+- Link: /services/mobile-development
+
+CARD 3: AI SERVICES
+- Icon: Bot
+- Name: "AI Services"
+- Description: "Intelligent chatbots, automation, and 
+  machine learning solutions powered by GPT-4 and Claude."
+- Count: "5 services"
+- Link: /services/ai-services
+
+CARD 4: SEO SERVICES
+- Icon: Search
+- Name: "SEO Services"
+- Description: "Technical SEO, local rankings, and content 
+  strategy to get you on page 1 of Google."
+- Count: "5 services"
+- Link: /services/seo
+
+CARD 5: HIRE DEVELOPERS (centered, col-span-full on mobile)
+- Icon: Users
+- Name: "Hire Developers"
+- Description: "Skilled full-stack, frontend, and backend 
+  developers ready to join your team."
+- Count: "3 categories"
+- Link: /services/hire-developers
+
+---
+
+INDUSTRY-BASED RECOMMENDATIONS:
+
+Container: py-20, bg-muted
+
+Heading (text-center, mb-12, max-w-3xl mx-auto):
+- H2: "Solutions by Industry" (text-3xl font-bold)
+- Subtitle: "See what businesses like yours typically need"
+  (text-sm text-muted-foreground, mt-2)
+
+Grid: grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6,
+      max-w-5xl mx-auto px-6
+
+6 INDUSTRY CARDS (minimal, clean):
+
+CARD STRUCTURE:
+- bg-card, border, rounded-xl, p-6
+- hover:border-primary transition-all
+- Simple, text-focused
+
+Each card:
+1. Industry name (text-base font-semibold mb-3)
+2. Recommended services (space-y-2):
+   * 3 service pills (text-xs, bg-muted, 
+     rounded-full, px-3 py-1, inline-block)
+3. Example text (text-xs text-muted-foreground, mt-3):
+   "E.g., [specific use case]"
+
+THE 6 INDUSTRIES:
+
+INDUSTRY 1: E-COMMERCE
+- Name: "E-Commerce & Retail"
+- Services:
+  * Shopify Development
+  * SEO Services
+  * Web Applications
+- Example: "E.g., online store with custom features"
+
+INDUSTRY 2: PROFESSIONAL SERVICES
+- Name: "Professional Services"
+- Services:
+  * Custom Development
+  * WordPress
+  * Local SEO
+- Example: "E.g., law firm website with client portal"
+
+INDUSTRY 3: SAAS
+- Name: "SaaS & Tech Startups"
+- Services:
+  * Web Applications
+  * AI Services
+  * Hire Developers
+- Example: "E.g., subscription platform with AI features"
+
+INDUSTRY 4: HEALTHCARE
+- Name: "Healthcare & Medical"
+- Services:
+  * Custom Development
+  * Mobile Apps
+  * HIPAA Compliance
+- Example: "E.g., patient booking system"
+
+INDUSTRY 5: HOSPITALITY
+- Name: "Hospitality & Tourism"
+- Services:
+  * WordPress
+  * Mobile Apps
+  * Local SEO
+- Example: "E.g., hotel website with booking"
+
+INDUSTRY 6: EDUCATION
+- Name: "Education & Training"
+- Services:
+  * Web Applications
+  * Mobile Apps
+  * AI Chatbots
+- Example: "E.g., online learning platform"
+
+---
+
+SIMPLE CTA SECTION:
+
+Container: py-20, max-w-3xl mx-auto px-6, text-center
+
+- H2: "Ready to get started?" (text-2xl font-bold mb-4)
+- Description: "Book a free consultation and we'll 
+  recommend the right solution for your business."
+  (text-muted-foreground mb-8)
+
+- CTA Buttons (flex gap-4 justify-center):
+  * Primary: "Book Free Consultation" → /contact
+    bg-primary, text-primary-foreground, 
+    px-8 py-3, rounded-xl, font-semibold
+  * Secondary: "View Our Work" → /case-studies
+    border, px-8 py-3, rounded-xl, font-semibold
+
+- Trust line (mt-8, text-xs text-muted-foreground):
+  "No obligation. Free 30-minute consultation to 
+   discuss your project."
+
+---
+
+DESIGN SPECIFICATIONS:
+
+Color Palette:
+- NO gradients (minimal, clean)
+- Primary color for accents only
+- bg-card for cards
+- bg-muted for alternating sections
+- text-foreground, text-muted-foreground
+- Simple borders
+
+Typography:
+- Headings: font-bold, clear hierarchy
+- Body: text-sm to text-base, leading-relaxed
+- No fancy fonts, system defaults
+- Consistent spacing
+
+Icons:
+- Lucide icons only
+- Size 32 for service cards (simple, no circles)
+- Size 16 for inline arrows
+- Primary color, no gradients
+- No icon backgrounds/circles
+
+Cards:
+- Clean borders (border not border-2)
+- Rounded-2xl corners
+- Padding: p-6 to p-8 (generous)
+- hover:border-primary (subtle)
+- hover:shadow-lg (depth)
+- NO background gradients
+
+Spacing:
+- Section padding: py-20 (generous)
+- Card gaps: gap-6 (breathing room)
+- Margins: mb-4, mb-6, mb-8 (consistent)
+- Max-widths: max-w-3xl to max-w-6xl (contained)
+
+Interactive Elements:
+- Quiz buttons: clear, large click targets
+- Hover states on all interactive elements
+- Smooth transitions (300ms)
+- Active states: scale-[0.98]
+
+Accessibility:
+- High contrast text
+- Clear focus states
+- Semantic HTML (<button>, <nav>, etc.)
+- ARIA labels where needed
+
+---
+
+INTERACTIVE QUIZ IMPLEMENTATION:
+
+State Management:
+```tsx
+const [step, setStep] = useState(1);
+const [answers, setAnswers] = useState({
+  goal: "",
+  platform: "",
+  timeline: ""
+});
+
+const handleAnswer = (key: string, value: string) => {
+  setAnswers(prev => ({ ...prev, [key]: value }));
+  setStep(prev => prev + 1);
+};
+
+const resetQuiz = () => {
+  setStep(1);
+  setAnswers({ goal: "", platform: "", timeline: "" });
+};
+```
+
+Option Buttons:
+```tsx
+<button
+  onClick={() => handleAnswer("goal", "web")}
+  className="
+    w-full
+    border
+    rounded-xl
+    p-4
+    text-left
+    hover:border-primary
+    hover:bg-primary/5
+    transition-all
+    text-sm
+    font-medium
+  "
+>
+  Build a new website or web application
+</button>
+```
+
+Progress Dots:
+```tsx
+<div className="flex justify-center gap-2 mt-6">
+  {[1, 2, 3].map(i => (
+    <div 
+      key={i}
+      className={`
+        rounded-full transition-all
+        ${step >= i 
+          ? 'w-2 h-2 bg-primary' 
+          : 'w-1.5 h-1.5 bg-muted'}
+      `}
+    />
+  ))}
+</div>
+```
+
+---
+
+RESPONSIVE BEHAVIOR:
+
+Mobile (< 768px):
+- Hero: text-3xl headings
+- Stats: grid-cols-2 (2×2)
+- Service cards: 1 column
+- Industry cards: 1 column
+- Quiz: full-width options
+
+Tablet (768px - 1024px):
+- Service cards: 2 columns
+- Industry cards: 2 columns
+- Stats: grid-cols-4
+
+Desktop (1024px+):
+- Service cards: 3 columns (2-2-1, last centered)
+- Industry cards: 3 columns
+- All elements: max-width containers
+
+---
+
+PAGE STRUCTURE SUMMARY:
+
+1. ✅ Hero (heading + stats)
+2. ✅ Interactive Service Finder (3-question quiz)
+3. ✅ 5 Service Category Cards (minimal grid)
+4. ✅ Industry Recommendations (6 industries)
+5. ✅ Simple CTA (2 buttons + trust line)
+
+TOTAL PAGE LENGTH: ~5 sections, clean and scannable
+
+---
+
+SEO REQUIREMENTS:
+
+Meta:
+- Title: "Our Services | Web, Mobile, AI & SEO | 
+         House of Developers"
+- Description: "Custom web development, mobile apps, 
+  AI services, SEO, and dedicated developers. Tailored 
+  solutions for your business. Free consultation."
+- Schema: Service, Organization, BreadcrumbList
+
+Content:
+- H1: "What We Build"
+- Clear service descriptions
+- Industry keywords
+- Internal links to all service hubs
+
+---
+
+FINAL REQUIREMENTS:
+
+1. ✅ Minimal, clean design (no gradients, simple cards)
+2. ✅ Text-focused (clear descriptions, no heavy graphics)
+3. ✅ 5 large service category cards
+4. ✅ Interactive service finder (3-step quiz)
+5. ✅ Industry-based recommendations (6 industries)
+6. ✅ Simple CTA section
+7. ✅ Responsive (mobile-first)
+8. ✅ Fast loading (minimal animations, no images)
+9. ✅ Accessible (semantic HTML, ARIA, keyboard nav)
+10. ✅ Professional feel (clean typography, generous spacing)
+
+Build a simple, professional Services overview page that 
+helps users find the right service quickly through 
+clear categorization, an interactive quiz, and 
+industry-specific recommendations.
