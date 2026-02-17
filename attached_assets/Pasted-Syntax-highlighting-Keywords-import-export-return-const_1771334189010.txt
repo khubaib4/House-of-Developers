@@ -1,0 +1,888 @@
+Syntax highlighting:
+  * Keywords (import, export, return, const): blue (#569CD6)
+  * Strings: orange (#CE9178)
+  * Components: green (#4EC9B0)
+  * Functions: yellow (#DCDCAA)
+  * Numbers: light green (#B5CEA8)
+  
+  Bottom status bar (bg-[#007ACC], text-white, text-xs, px-3 py-1):
+  * "TypeScript React" on left
+  * "Ln 8, Col 24" on right
+  
+  RIGHT PANEL - Live App Preview:
+  * Container: bg-card, border, rounded-xl, shadow-2xl, overflow-hidden
+  
+  Mini Browser Bar (bg-muted, p-2, flex items-center gap-2):
+  * 3 dots
+  * URL: "houseofdevelopers.co.uk/projects/bizflow"
+  
+  App Preview Inside:
+  
+  Mini Dashboard (p-3):
+  * Header (flex justify-between, mb-3):
+    - "BizFlow" logo (small, bold)
+    - User avatar
+  
+  * Stats row (grid-cols-3 gap-2, mb-3):
+    1. Tiny card: "£24.5K" label: "Revenue"
+    2. "1,247" label: "Users"
+    3. "94%" label: "Uptime"
+  
+  * Chart area (bg-muted, rounded, h-20, mb-3):
+    - Simple line chart visualization
+    - Blue gradient fill
+    - X-axis labels: Mon-Sun
+  
+  * Table preview (text-xs):
+    - Header: Name | Status | Value
+    - 3 rows with colored status badges
+    - Clean minimal design
+  
+  "Live Preview" badge (absolute, top of right panel):
+  * bg-green-500, text-white, text-xs, px-2 py-1, rounded
+
+  Connecting Arrow between panels:
+  * Arrow pointing from code to preview
+  * "Builds to →" label
+
+  Floating badges around whole mockup:
+  * "React + TypeScript" (top-left, code side)
+  * "Real-Time Updates" (top-right, preview side)
+  * "Clean Architecture" (bottom-left)
+  * "Production Ready" (bottom-right)
+
+---
+
+WHAT IS CUSTOM DEVELOPMENT SECTION:
+
+Container: py-20, bg-muted, max-w-6xl mx-auto px-6
+
+Header (centered, mb-12):
+- H2: "Why Custom Software Development?"
+- Subtitle: "When off-the-shelf just doesn't cut it"
+
+Layout: grid-cols-1 lg:grid-cols-2 gap-12 items-start
+
+Left Column - Explanation:
+* Text (text-lg, leading-relaxed, text-muted-foreground):
+  "Most businesses start with off-the-shelf tools—and that's fine. But as you grow, generic software starts holding you back. You find yourself working around limitations, paying for features you don't need, and missing the ones you do."
+
+* Text (mt-4):
+  "Custom software is built around your exact workflows, your team, and your customers. It does exactly what you need—no more, no less. And because you own the code, there are no monthly fees, no vendor lock-in, and no limits on where it can grow."
+
+* When to Go Custom (mt-8):
+  Heading: "Signs You Need Custom Development" (font-semibold, mb-4)
+  List (space-y-3):
+  Each item (flex gap-3, items-start):
+  - Icon: CheckCircle2 (orange, size 20)
+  - Text (text-sm)
+
+  Items:
+  1. "Off-the-shelf tools don't fit your workflow"
+  2. "You're paying for features you never use"
+  3. "Your team uses workarounds daily"
+  4. "You need to integrate multiple disconnected systems"
+  5. "You want to automate a unique business process"
+  6. "You're building a SaaS product for customers"
+
+Right Column - Custom vs Off-The-Shelf:
+
+Comparison Card (bg-card, border, rounded-2xl, p-6):
+
+Heading: "Custom vs Off-The-Shelf" (font-semibold, mb-6, text-center)
+
+Table (w-full):
+* Header row (bg-muted, rounded-t):
+  - Feature | Custom | Off-The-Shelf
+
+* Rows (alternating bg, text-sm):
+  1. "Fits your workflow" | ✓ (green) | ✗ (red)
+  2. "You own the code" | ✓ | ✗
+  3. "No monthly fees" | ✓ | ✗
+  4. "Unlimited customisation" | ✓ | ✗
+  5. "Scales with business" | ✓ | ⚠️ (yellow, limited)
+  6. "Integrates with anything" | ✓ | ⚠️ (limited)
+  7. "Faster to start" | ✗ | ✓
+  8. "Lower upfront cost" | ✗ | ✓
+
+Note below (text-xs text-muted-foreground, text-center, mt-4):
+"Custom has higher upfront cost but lower long-term cost of ownership"
+
+---
+
+WHAT WE BUILD SECTION:
+
+Container: py-20
+
+Header (centered):
+- H2: "What We Build"
+- Subtitle: "Custom solutions for every business challenge"
+- mb-16
+
+Grid: grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8, max-w-7xl mx-auto px-6
+
+6 SOLUTION TYPES:
+
+CARD STRUCTURE (each):
+- bg-card, border, rounded-2xl, p-8
+- Hover: shadow-2xl, -translateY-2, border-primary
+- Transition: 300ms
+
+Each card:
+1. Icon container (gradient circle, w-16 h-16, mb-6)
+2. Solution name (text-xl font-bold)
+3. Description (text-sm text-muted-foreground, mt-3, leading-relaxed)
+4. Examples (mt-6):
+   - Heading: "Examples" (text-xs font-semibold, text-muted-foreground, uppercase, mb-2)
+   - 3 real example items (text-xs, space-y-1):
+     * Each: "→ [Example name]"
+5. Tech row (mt-6, flex gap-2 flex-wrap):
+   - Small tech pills
+
+THE 6 SOLUTIONS:
+
+SOLUTION 1: WEB APPLICATIONS
+- Icon: Layers (blue to indigo gradient)
+- Name: "Web Applications"
+- Description: "Feature-rich browser-based applications that replace manual processes and desktop software. Accessible anywhere, on any device."
+- Examples:
+  → Project management tool for construction company
+  → Client quoting system for insurance broker
+  → Inventory tracking for warehouse
+- Tech: React, Node.js, PostgreSQL, AWS
+
+SOLUTION 2: SAAS PLATFORMS
+- Icon: Cloud (purple to pink gradient)
+- Name: "SaaS Platforms"
+- Description: "Build your own software product with multi-tenancy, subscriptions, user management, and the infrastructure to serve thousands of customers."
+- Examples:
+  → HR management platform for SMEs
+  → Restaurant booking SaaS for chains
+  → Compliance tracking for financial firms
+- Tech: Next.js, Node.js, Stripe, PostgreSQL
+
+SOLUTION 3: INTERNAL BUSINESS TOOLS
+- Icon: Wrench (orange to amber gradient)
+- Name: "Internal Business Tools"
+- Description: "Replace spreadsheets and manual processes with custom tools built specifically for your team's workflows."
+- Examples:
+  → Sales reporting dashboard
+  → Employee onboarding system
+  → Resource allocation tool
+- Tech: React, Node.js, MySQL
+
+SOLUTION 4: CLIENT PORTALS
+- Icon: Users (green to emerald gradient)
+- Name: "Client Portals"
+- Description: "Secure, branded portals where your clients can access documents, track project progress, raise requests, and communicate with your team."
+- Examples:
+  → Legal document sharing portal
+  → Accounting client portal
+  → Agency project portal
+- Tech: Next.js, Auth0, PostgreSQL, AWS S3
+
+SOLUTION 5: API DEVELOPMENT
+- Icon: Network (cyan to blue gradient)
+- Name: "API Development"
+- Description: "Robust RESTful and GraphQL APIs connecting your systems, enabling third-party integrations, and powering mobile and web applications."
+- Examples:
+  → Payment processing API
+  → Data aggregation service
+  → Third-party integration layer
+- Tech: Node.js, Express, GraphQL, PostgreSQL
+
+SOLUTION 6: LEGACY MODERNISATION
+- Icon: RefreshCw (slate to indigo gradient)
+- Name: "Legacy System Modernisation"
+- Description: "Transform outdated systems into modern, maintainable applications without losing existing data or disrupting operations."
+- Examples:
+  → PHP 5 to modern Node.js migration
+  → Desktop app to web application
+  → Monolith to microservices
+- Tech: React, Node.js, Docker, AWS
+
+---
+
+INTERACTIVE APP SHOWCASE (TABBED):
+
+Container: py-20, bg-muted
+
+Header (centered):
+- H2: "See Custom Applications We've Built"
+- Subtitle: "Click to explore different application types"
+- mb-12
+
+Layout: max-w-6xl mx-auto px-6
+
+Tab Navigation (flex gap-4, border-b, mb-8, overflow-x-auto):
+* Tabs: 
+  1. "SaaS Dashboard" (active)
+  2. "Client Portal"
+  3. "Internal Tool"
+  4. "Data Platform"
+* Active: border-b-2 border-primary, text-primary
+* Inactive: text-muted-foreground
+
+TAB 1 - SAAS DASHBOARD:
+
+Browser Frame (shadow-2xl, rounded-xl, overflow-hidden):
+* URL bar: "houseofdevelopers.co.uk/projects/taskmaster"
+
+Inside - Project Management SaaS:
+
+Top Navigation (dark bg, px-6 py-3, flex justify-between):
+* Left: "TaskMaster" logo + nav items (Dashboard, Projects, Team, Reports)
+* Right: Notifications bell + avatar + "Pro Plan" badge
+
+Page Content:
+
+Sidebar (left, w-56, bg-card, border-r, p-4):
+* "My Projects" (text-xs uppercase, text-muted-foreground)
+* Project list with color dots:
+  - 🔵 "Website Redesign" (active)
+  - 🟢 "Mobile App"
+  - 🟠 "API Integration"
+  - 🔴 "Marketing Campaign"
+* Divider
+* "Team" section
+* 4 avatar + name rows
+
+Main Area (flex-1, p-6, bg-muted/30):
+
+Top: "Website Redesign" heading + "In Progress" badge + "Jun 30" deadline
+
+Stats Row (grid-cols-4 gap-4, mb-6):
+* "Tasks: 24/36" progress ring
+* "Team: 5 Members"
+* "Days Left: 12"
+* "Budget: 78%"
+
+Kanban Board (grid-cols-3 gap-4):
+
+Column 1 "To Do" (bg-muted, rounded, p-3):
+* 3 task cards:
+  - Task name
+  - Assignee avatar
+  - Priority badge (High/Medium)
+  - Due date
+
+Column 2 "In Progress" (same structure):
+* 2 tasks, progress bar on each
+
+Column 3 "Done" (green tint):
+* 3 completed tasks
+* Checkmark icons
+
+TAB 2 - CLIENT PORTAL:
+
+Browser Frame:
+* URL: "houseofdevelopers.co.uk/projects/clientspace"
+
+Inside - Professional Client Portal:
+
+Header (white, border-b, px-8 py-4):
+* "ClientSpace" logo (clean, professional)
+* Nav: Overview, Documents, Messages, Invoices
+* Notification bell + "Alex Johnson" + avatar
+
+Hero Section (bg-gradient subtle, p-8):
+* "Welcome back, Alex" (text-2xl font-bold)
+* "Hartley Legal Services" (text-muted-foreground)
+* "Your case is on track" (green badge)
+
+Dashboard Grid (grid-cols-3 gap-6, p-8):
+
+Card 1 - Active Cases:
+* "3 Active Cases"
+* Case list:
+  - "Trademark Application" - In Progress
+  - "Contract Review" - Awaiting Docs
+  - "NDA Draft" - Complete
+* Each with status badge
+
+Card 2 - Recent Documents:
+* Document list:
+  - 📄 "Trademark_Application.pdf" (Jun 12)
+  - 📄 "NDA_Final.pdf" (Jun 10)
+  - 📄 "Contract_v3.docx" (Jun 8)
+* Download icons
+
+Card 3 - Messages:
+* 3 message previews
+* Solicitor avatar + name
+* Message preview text
+* "2 unread" badge
+
+Bottom - Invoice Summary:
+* Table: Invoice # | Service | Amount | Status
+* 3 rows with paid/pending badges
+* Clean professional styling
+
+TAB 3 - INTERNAL TOOL:
+
+Browser Frame:
+* URL: "houseofdevelopers.co.uk/projects/staffhub"
+
+Inside - HR Internal Tool:
+
+Sidebar (dark, left):
+* "StaffHub" logo
+* Menu: Dashboard, Employees, Payroll, Leave, Reports
+
+Main Content:
+
+Top: "HR Dashboard" + "February 2024"
+
+Stats Row (grid-cols-4):
+* "Total Staff: 84"
+* "On Leave: 6"
+* "New Hires (Month): 3"
+* "Open Positions: 7"
+
+Two Columns:
+
+Left - Team Calendar:
+* Month view calendar
+* Color-coded events (leave, meetings, reviews)
+* Today highlighted
+
+Right - Recent Activity:
+* Activity feed (space-y-3):
+  - "Sarah K. approved annual leave (2 days)"
+  - "New hire: James T. starts Monday"
+  - "Payroll run completed - £84,230"
+  - "Performance review due: 12 staff"
+* Each with icon and timestamp
+
+Bottom - Quick Actions (grid-cols-4 gap-3):
+* [Add Employee]
+* [Process Leave]
+* [Run Payroll]
+* [Generate Report]
+
+TAB 4 - DATA PLATFORM:
+
+Browser Frame:
+* URL: "houseofdevelopers.co.uk/projects/datacore"
+
+Inside - Analytics/Data Platform:
+
+Dark theme:
+
+Top Bar:
+* "DataCore Analytics" logo
+* "Last updated: 2 min ago" (green dot)
+* Date range picker
+* Export button
+
+Main Grid:
+
+Row 1 - KPI Cards (grid-cols-4):
+* "Total Revenue: £2.4M" (+12% chip)
+* "Active Users: 45,230" (+8%)
+* "Conversion: 3.2%" (-0.3%)
+* "Avg Session: 4m 32s" (+15%)
+
+Row 2 - Charts (grid-cols-3):
+
+Large Chart (col-span-2):
+* "Revenue Over Time" heading
+* Multi-line chart:
+  - Blue line: This year
+  - Dashed gray: Last year
+  - Green area: Target
+* Month labels on x-axis
+* Clean dark theme
+
+Small Chart:
+* "Traffic Sources" (donut chart)
+* Legend:
+  - Organic: 42%
+  - Direct: 28%
+  - Social: 18%
+  - Paid: 12%
+
+Row 3 - Data Table:
+* "Top Performing Products"
+* Columns: Product | Sales | Revenue | Growth
+* 5 rows with sparkline charts
+* Color-coded growth %
+
+---
+
+INDUSTRIES & USE CASES:
+
+Container: py-20
+
+Header (centered):
+- H2: "Industries We Build For"
+- Subtitle: "Custom solutions with deep domain knowledge"
+- mb-16
+
+Grid: grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8, max-w-7xl mx-auto px-6
+
+6 INDUSTRY CARDS:
+
+Each card (bg-card, border, rounded-2xl, p-6, hover:border-primary):
+1. Icon (gradient circle, size 48, mb-4)
+2. Industry name (text-xl font-bold, mb-2)
+3. Description (text-sm text-muted-foreground, mb-4)
+4. Use cases (space-y-2):
+   - 4 items with ArrowRight icons (text-xs, text-muted-foreground)
+5. "View Projects" link (text-primary, text-sm, mt-4)
+
+THE 6 INDUSTRIES:
+
+INDUSTRY 1: PROFESSIONAL SERVICES
+- Icon: Briefcase (blue gradient)
+- Name: "Professional Services"
+- Description: "Law firms, accountants, consultants—replacing spreadsheets with custom workflow tools"
+- Use cases:
+  → Client matter management system
+  → Document automation platform
+  → Fee tracking and billing tool
+  → Compliance monitoring dashboard
+
+INDUSTRY 2: E-COMMERCE & RETAIL
+- Icon: ShoppingBag (green gradient)
+- Name: "E-Commerce & Retail"
+- Description: "Beyond Shopify—custom platforms for unique product types and complex operations"
+- Use cases:
+  → Custom product configurator
+  → Multi-warehouse inventory system
+  → B2B wholesale portal
+  → Subscription management platform
+
+INDUSTRY 3: HEALTHCARE
+- Icon: Heart (red gradient)
+- Name: "Healthcare"
+- Description: "GDPR-compliant patient management, scheduling, and clinical workflow systems"
+- Use cases:
+  → Patient booking & records system
+  → Clinical staff scheduling tool
+  → Referral management platform
+  → Medical billing system
+
+INDUSTRY 4: LOGISTICS & OPERATIONS
+- Icon: Truck (orange gradient)
+- Name: "Logistics & Operations"
+- Description: "Track, optimise, and automate complex logistics and operational workflows"
+- Use cases:
+  → Fleet tracking dashboard
+  → Route optimisation tool
+  → Driver management portal
+  → Delivery scheduling system
+
+INDUSTRY 5: FINANCE & FINTECH
+- Icon: TrendingUp (purple gradient)
+- Name: "Finance & Fintech"
+- Description: "Secure, compliant financial applications for data management and reporting"
+- Use cases:
+  → Investment portfolio tracker
+  → Expense management system
+  → Financial reporting dashboard
+  → Client wealth portal
+
+INDUSTRY 6: EDUCATION & TRAINING
+- Icon: GraduationCap (cyan gradient)
+- Name: "Education & Training"
+- Description: "Learning management systems, course platforms, and assessment tools"
+- Use cases:
+  → Custom LMS platform
+  → Student progress tracker
+  → Online assessment tool
+  → Corporate training portal
+
+---
+
+WHY CHOOSE CUSTOM DEVELOPMENT:
+
+Container: py-20, bg-muted
+
+Use ValueProposition component:
+
+- Title: "Why Custom Development With Us"
+- Subtitle: "What makes our custom builds different"
+- Columns: 3
+
+9 Values:
+
+1. Icon: Code2, Title: "You Own Everything", Description: "Full source code ownership. No vendor lock-in, no licensing fees, no surprises. It's yours forever."
+2. Icon: TrendingUp, Title: "Built to Scale", Description: "Architecture designed for growth. Start small, scale to millions of users without rebuilding."
+3. Icon: Fingerprint, Title: "Truly Tailored", Description: "Built around your exact workflows—not the other way around. Every feature exists for a reason."
+4. Icon: Shield, Title: "Enterprise Security", Description: "GDPR compliant, penetration tested, encrypted. Security built in from architecture to deployment."
+5. Icon: Zap, Title: "Performant by Design", Description: "Optimised queries, efficient architecture, CDN delivery. Fast for users, efficient on infrastructure."
+6. Icon: GitBranch, Title: "Maintainable Code", Description: "Documented, tested, clean code your team can maintain and extend for years to come."
+7. Icon: Users, Title: "Collaborative Process", Description: "Weekly demos, transparent progress, your feedback shapes every sprint. No surprises at launch."
+8. Icon: Headphones, Title: "Long-Term Partner", Description: "We stick around after launch. Ongoing development, bug fixes, and feature additions."
+9. Icon: Award, Title: "UK-Based Team", Description: "All development in-house by our UK team. Direct communication, same timezone, no outsourcing."
+
+---
+
+TECHNOLOGIES SECTION (TABBED):
+
+Container: py-20
+
+Header (centered):
+- H2: "Technologies We Build With"
+- Subtitle: "Modern stack for custom applications"
+- mb-12
+
+Layout: max-w-6xl mx-auto px-6
+
+Tabbed Interface:
+
+TABS:
+1. "Frontend" (active)
+2. "Backend"
+3. "Database"
+4. "Cloud & DevOps"
+5. "Security"
+
+Each tab panel: grid-cols-2 md:grid-cols-4 gap-6
+Each tech card: bg-card, border, rounded-lg, p-4, text-center
+- Icon (size 40, primary, mb-3)
+- Name (font-semibold, text-sm)
+- Description (text-xs, text-muted-foreground)
+
+PANEL 1 - FRONTEND:
+1. Code2: "React" - "UI library"
+2. ArrowRight: "Next.js" - "Full-stack"
+3. FileCode: "TypeScript" - "Type safety"
+4. Paintbrush: "Tailwind CSS" - "Styling"
+5. Zap: "Framer Motion" - "Animations"
+6. Package: "Redux" - "State mgmt"
+7. TestTube: "Jest" - "Testing"
+8. CheckCircle: "Cypress" - "E2E tests"
+
+PANEL 2 - BACKEND:
+1. Server: "Node.js" - "Runtime"
+2. Code2: "Express.js" - "Framework"
+3. Layers: "NestJS" - "Enterprise Node"
+4. Code: "Python" - "Data & ML"
+5. Network: "GraphQL" - "API queries"
+6. Shield: "JWT/OAuth" - "Auth"
+7. Zap: "WebSockets" - "Real-time"
+8. Package: "REST APIs" - "Integration"
+
+PANEL 3 - DATABASE:
+1. Database: "PostgreSQL" - "Primary DB"
+2. Database: "MongoDB" - "Document DB"
+3. Zap: "Redis" - "Caching"
+4. Table: "MySQL" - "SQL DB"
+5. Search: "Elasticsearch" - "Search"
+6. Cloud: "Supabase" - "Backend-as-service"
+7. Archive: "Prisma ORM" - "DB toolkit"
+8. GitBranch: "Migrations" - "DB versioning"
+
+PANEL 4 - CLOUD & DEVOPS:
+1. Cloud: "AWS" - "Cloud platform"
+2. Cloud: "DigitalOcean" - "Hosting"
+3. Package: "Docker" - "Containers"
+4. Layers: "Kubernetes" - "Orchestration"
+5. GitBranch: "GitHub Actions" - "CI/CD"
+6. Globe: "Cloudflare" - "CDN"
+7. Activity: "Datadog" - "Monitoring"
+8. Shield: "Terraform" - "Infrastructure"
+
+PANEL 5 - SECURITY:
+1. Lock: "SSL/TLS" - "Encryption"
+2. Shield: "OWASP" - "Security standard"
+3. Key: "Auth0" - "Authentication"
+4. FileCheck: "GDPR" - "Compliance"
+5. AlertTriangle: "Pen Testing" - "Vulnerability"
+6. Eye: "Audit Logs" - "Activity tracking"
+7. Database: "Encryption" - "Data at rest"
+8. RefreshCw: "Auto Backups" - "Disaster recovery"
+
+Implementation:
+- React useState for active tab
+- Smooth fade transition
+- Mobile: horizontal scroll on tabs
+
+---
+
+PROCESS SECTION:
+
+Container: py-20, bg-muted
+
+Use ZigzagTimeline component:
+
+Import statements:
+```javascript
+import { ZigzagTimeline } from "@/components/ui/ZigzagTimeline";
+import { Search, Layers, Code2, Rocket } from "lucide-react";
+```
+
+Accent Color Constant:
+```javascript
+const CUSTOM_DEV_COLOR = "#F59E0B"; // Amber for custom development
+```
+
+Process Steps Array:
+```javascript
+const processSteps = [
+  {
+    icon: Search,
+    title: "Discovery & Architecture",
+    points: [
+      "Deep-dive into your business workflows and requirements",
+      "Technical architecture design and database planning",
+      "Sprint roadmap with clear milestones and deliverables"
+    ]
+  },
+  {
+    icon: Layers,
+    title: "Design & Prototyping",
+    points: [
+      "UX wireframes mapping every user journey",
+      "High-fidelity Figma designs reviewed and approved",
+      "Clickable prototype before any code is written"
+    ]
+  },
+  {
+    icon: Code2,
+    title: "Agile Development",
+    points: [
+      "2-week sprints with live demo every Friday",
+      "Weekly progress updates and feedback rounds",
+      "Continuous testing and code review throughout"
+    ]
+  },
+  {
+    icon: Rocket,
+    title: "Launch & Scale",
+    points: [
+      "Zero-downtime deployment to production",
+      "Team training, documentation, and handover",
+      "Ongoing support and feature development available"
+    ]
+  }
+];
+```
+
+Component Usage:
+```javascript
+<ZigzagTimeline
+  title="Our Custom Development Process"
+  subtitle="A structured process that delivers on time, every time"
+  steps={processSteps}
+  accentColor={CUSTOM_DEV_COLOR}
+/>
+```
+
+---
+
+MINI CASE STUDIES:
+
+Container: py-20
+
+Header (centered):
+- H2: "Custom Software in Action"
+- Subtitle: "Real applications built for real businesses"
+- mb-12
+
+Grid: grid-cols-1 md:grid-cols-3 gap-8, max-w-6xl mx-auto px-6
+
+3 MINI CASE STUDIES (NO before/after metrics, NO generic text):
+
+CASE STUDY 1 (bg-card, border, rounded-2xl, overflow-hidden):
+
+Top Image Area (h-48, gradient blue to purple):
+* Icon: Truck (white, size 64, centered)
+* "Logistics & Operations" badge (white, top-left)
+
+Content (p-6):
+* H3: "Fleet Management Platform"
+* Industry: "Transport & Logistics"
+* Description (text-sm text-muted-foreground, mt-2):
+  "Built a real-time fleet tracking and dispatch platform for a UK logistics company managing 45 vehicles. The platform handles route optimisation, driver scheduling, delivery confirmation, and customer notifications."
+
+What Was Built (mt-4):
+* Heading: "Key Features Built" (text-xs font-semibold uppercase, text-muted-foreground)
+* List (space-y-1.5, mt-2):
+  - "📍 Live GPS tracking for all 45 vehicles"
+  - "📋 Automated dispatch and route assignment"
+  - "📱 Driver mobile app for delivery confirmation"
+  - "📊 Operations dashboard with daily analytics"
+  - "📧 Automated customer delivery notifications"
+
+Technologies (mt-4, flex gap-2 flex-wrap):
+* React, Node.js, PostgreSQL, Google Maps API, AWS
+
+Timeline (mt-4, text-xs text-muted-foreground):
+* "14 weeks • Logistics Company, Birmingham"
+
+CASE STUDY 2:
+
+Top Image Area (h-48, gradient purple to pink):
+* Icon: Heart (white, size 64)
+* "Healthcare" badge
+
+Content:
+* H3: "Patient Management System"
+* Industry: "Private Healthcare"
+* Description: "Developed a comprehensive patient management system for a group of private dental clinics across 6 locations. Replaced a legacy system that was causing double bookings and lost patient records."
+
+Key Features Built:
+* "🦷 Online booking with real-time availability"
+* "📋 Digital patient records and treatment history"
+* "💳 Integrated payment and insurance processing"
+* "📱 Patient reminder SMS and email system"
+* "📊 Multi-location management dashboard"
+
+Technologies: Next.js, Node.js, PostgreSQL, Twilio, Stripe
+
+Timeline: "16 weeks • Private Dental Group, London"
+
+CASE STUDY 3:
+
+Top Image Area (h-48, gradient green to teal):
+* Icon: BarChart (white, size 64)
+* "Finance" badge
+
+Content:
+* H3: "Investment Portfolio Platform"
+* Industry: "Financial Services"
+* Description: "Created a white-label investment portfolio management platform for an independent financial adviser. Clients log in to view holdings, performance, and statements in real-time—replacing manual PDF reports."
+
+Key Features Built:
+* "📈 Real-time portfolio performance tracking"
+* "📄 Automated monthly statement generation"
+* "🔒 Bank-grade security and two-factor authentication"
+* "📊 Interactive charts for holdings and returns"
+* "👤 White-label client portal with custom branding"
+
+Technologies: React, Node.js, PostgreSQL, Chart.js, AWS
+
+Timeline: "12 weeks • IFA Firm, Manchester"
+
+---
+
+FAQ SECTION:
+
+Container: py-20, bg-muted, max-w-4xl mx-auto px-6
+
+Header: "Custom Development FAQs"
+
+12 Questions (Accordion):
+
+Q1: "How much does custom software development cost?"
+A: "Custom projects vary widely based on scope and complexity. A simple internal tool starts around £15,000-£25,000. A full SaaS platform ranges from £40,000-£100,000+. We provide a detailed, itemised quote after a free discovery session. We never give vague estimates—you know exactly what you're paying for and why."
+
+Q2: "How long does custom development take?"
+A: "Simple web application: 8-12 weeks. Mid-complexity platform: 12-20 weeks. Full SaaS product: 16-28 weeks. We work in 2-week Agile sprints with weekly demos, so you see real progress throughout. Timelines are agreed upfront and we stick to them."
+
+Q3: "Do we own the code after the project?"
+A: "100% yes. You own all source code, assets, and intellectual property from day one. We hand over a full repository at project end. There are no licensing fees, no ongoing royalties, and no lock-in to us as a provider. It's yours to take anywhere."
+
+Q4: "What if requirements change mid-project?"
+A: "Requirements always evolve—that's why we work in Agile sprints. Minor changes within scope are handled at no extra cost. Significant new features are scoped, quoted, and added to the roadmap. We're flexible, not rigid."
+
+Q5: "Can you integrate with our existing systems?"
+A: "Yes, integration is core to what we do. We can connect with any system that has an API: CRMs, ERPs, accounting software, payment gateways, databases, legacy systems. If it doesn't have an API, we can often build one."
+
+Q6: "Will the application work on mobile?"
+A: "Every web application we build is fully responsive—designed mobile-first and tested on real iOS and Android devices. If you need a native mobile app alongside the web app, we handle that too."
+
+Q7: "How do you handle data security and GDPR?"
+A: "Security is built into architecture from day one: encrypted data at rest and in transit, OWASP-compliant code, regular dependency updates, penetration testing, audit logs, and GDPR-compliant data handling. For healthcare or finance, we apply the appropriate compliance standards."
+
+Q8: "Can we start small and scale up later?"
+A: "Absolutely—this is the recommended approach. We design architecture that scales, but build only what you need now. You can launch an MVP, validate with users, then add features iteratively. This reduces risk and gets you to market faster."
+
+Q9: "What happens if there are bugs after launch?"
+A: "All projects include a 60-day post-launch warranty covering bug fixes at no charge. After that, we offer maintenance retainers for ongoing support, bug fixes, security updates, and feature development."
+
+Q10: "Do you work with startups or only established businesses?"
+A: "Both! For startups we often build MVPs—the minimum viable version that proves the concept and attracts investment. For established businesses we build internal tools, client portals, and process automation. The approach differs but the quality doesn't."
+
+Q11: "Can you rescue a failed project from another developer?"
+A: "Yes—we've done this multiple times. We audit the existing codebase, assess what's salvageable, and provide an honest recommendation: fix, refactor, or rebuild. We never push for a full rebuild unless it's genuinely the right answer."
+
+Q12: "Do you provide training for the finished product?"
+A: "Yes, training is included in every project. We provide video walkthroughs, written documentation, and live training sessions for your team. We want you to be fully independent with the application after handover."
+
+---
+
+CTA SECTIONS:
+
+Add 3 CTAs:
+
+CTA 1 (After What We Build):
+- Variant: 'bordered'
+- Title: "Not Sure What You Need?"
+- Description: "Book a free consultation and we'll map out the right solution for your business"
+- PrimaryCTA: "Book Free Discovery Call" → /contact
+- Size: 'medium'
+
+CTA 2 (After Case Studies):
+- Variant: 'gradient'
+- Title: "Ready to Build Something Custom?"
+- Description: "Let's discuss your project. Free consultation, detailed quote within 48 hours."
+- PrimaryCTA: "Start Your Project" → /contact
+- SecondaryCTA: "Call: +44 7429 917368" → tel link
+- Size: 'large'
+
+CTA 3 (Final, After FAQ):
+- Variant: 'gradient'
+- Title: "Let's Build Your Custom Solution"
+- Description: "Every great product started with a conversation. Let's have ours."
+- PrimaryCTA: "Book Free Consultation" → /contact
+- SecondaryCTA: "View All Web Services" → /services/web-development
+- ShowContactInfo: true
+- Size: 'large'
+
+---
+
+GLOBAL REQUIREMENTS:
+
+1. SEO:
+   - Meta title: "Custom Software Development UK | Web Applications & SaaS | House of Developers"
+   - Meta description: "Bespoke web applications, SaaS platforms and internal tools. You own the code. Built in the UK. Free consultation and quote within 48 hours."
+   - Schema: Service, FAQPage, BreadcrumbList
+
+2. NO PRICING CARDS: No pricing section anywhere
+
+3. NO BEFORE/AFTER METRICS: Case studies show what was built, not metrics
+
+4. MOCKUP URLS: All browser frames use
+   houseofdevelopers.co.uk/projects/[shortname] format:
+   - /projects/bizflow (hero mockup)
+   - /projects/taskmaster (SaaS tab)
+   - /projects/clientspace (portal tab)
+   - /projects/staffhub (internal tool tab)
+   - /projects/datacore (data platform tab)
+
+5. INDUSTRY VARIETY in case studies:
+   - Logistics (Fleet Management)
+   - Healthcare (Patient Management)
+   - Finance (Investment Portfolio)
+
+6. ZIGZAGTIMELINE:
+   - 4 steps: Discovery, Design, Development, Launch
+   - Accent color: #F59E0B (amber)
+   - 3 bullet points per step
+
+7. TABBED TECH STACK:
+   - 5 tabs: Frontend, Backend, Database, Cloud & DevOps, Security
+   - 8 items per tab
+
+8. COMPONENTS:
+   - ZigzagTimeline ✅
+   - ValueProposition ✅
+   - CTASection (×3) ✅
+
+9. RESPONSIVE: Mobile-first throughout
+
+10. DARK/LIGHT MODE: Code editor uses fixed dark theme
+
+11. ANIMATIONS:
+    - Code editor: subtle cursor blink
+    - Live preview: gentle pulse on "Live" badge
+    - Cards: hover lift effect
+    - Tabs: smooth fade transition
+
+12. COLOR THEME: Orange/amber gradient throughout
+
+Build a comprehensive, beautiful custom development page that sells the value of bespoke software through realistic mockups, real use cases, and honest content.
