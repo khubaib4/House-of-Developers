@@ -1,0 +1,1084 @@
+Update ALL tabbed technology sections across every page to use Simple Icons CDN logos instead of Lucide icons. KEEP the tab structure exactly as is - only replace the icons inside each tab panel. Match the homepage "Our Tech Stack" design style: gray monochrome icons, name below, no descriptions, no card borders.
+
+---
+
+DESIGN STYLE (Inside Each Tab Panel):
+
+BEFORE (what exists now):
+- Cards with borders
+- Lucide icon inside
+- Tech name
+- Description text below
+
+AFTER (what we want):
+- No card borders or backgrounds
+- Simple Icons CDN logo (gray)
+- Tech name below icon only
+- No description text
+- Clean grid layout matching homepage
+
+Each Technology Item inside tabs:
+```tsx
+<div className="flex flex-col items-center gap-3 group">
+  <img
+    src={`https://cdn.simpleicons.org/${slug}/9CA3AF`}
+    alt={name}
+    className="w-12 h-12 opacity-70 group-hover:opacity-100 
+               transition-opacity duration-200"
+    loading="lazy"
+    onError={(e) => {
+      e.currentTarget.style.display = "none";
+    }}
+  />
+  <span className="text-sm font-medium text-muted-foreground text-center">
+    {name}
+  </span>
+</div>
+```
+
+Tab Panel Grid:
+- grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-8
+- No card wrappers around items
+- Clean spacing
+
+Tab Navigation (KEEP EXACTLY AS IS):
+- Same tab buttons
+- Same active/inactive styles
+- Same border-b-2 active indicator
+- Same React useState switching logic
+- Only the CONTENT inside panels changes
+
+---
+
+SIMPLE ICONS SLUG REFERENCE:
+
+FRONTEND:
+- React → "react"
+- Next.js → "nextdotjs"
+- Vue.js → "vuedotjs"
+- Angular → "angular"
+- TypeScript → "typescript"
+- JavaScript → "javascript"
+- Tailwind CSS → "tailwindcss"
+- Vite → "vite"
+- Nuxt.js → "nuxtdotjs"
+- Framer Motion → "framer"
+- Redux → "redux"
+- Sass/SCSS → "sass"
+
+BACKEND:
+- Node.js → "nodedotjs"
+- Express.js → "express"
+- Python → "python"
+- PHP → "php"
+- Django → "django"
+- Laravel → "laravel"
+- FastAPI → "fastapi"
+- NestJS → "nestjs"
+- Go → "go"
+- GraphQL → "graphql"
+
+DATABASES:
+- PostgreSQL → "postgresql"
+- MongoDB → "mongodb"
+- MySQL → "mysql"
+- Redis → "redis"
+- Supabase → "supabase"
+- Firebase → "firebase"
+- SQLite → "sqlite"
+- Elasticsearch → "elasticsearch"
+- Prisma → "prisma"
+
+MOBILE:
+- Flutter → "flutter"
+- Swift → "swift"
+- Kotlin → "kotlin"
+- Expo → "expo"
+
+CLOUD & DEVOPS:
+- AWS → "amazonaws"
+- Docker → "docker"
+- Kubernetes → "kubernetes"
+- Vercel → "vercel"
+- DigitalOcean → "digitalocean"
+- Cloudflare → "cloudflare"
+- GitHub → "github"
+- GitHub Actions → "githubactions"
+- Terraform → "terraform"
+
+CMS & E-COMMERCE:
+- WordPress → "wordpress"
+- Shopify → "shopify"
+- WooCommerce → "woocommerce"
+- Strapi → "strapi"
+- Contentful → "contentful"
+- Sanity → "sanity"
+- Webflow → "webflow"
+
+DESIGN:
+- Figma → "figma"
+- Adobe XD → "adobexd"
+- Framer → "framer"
+
+AI & ML:
+- OpenAI → "openai"
+- TensorFlow → "tensorflow"
+- PyTorch → "pytorch"
+- Hugging Face → "huggingface"
+- LangChain → "langchain"
+
+PAYMENTS & INTEGRATIONS:
+- Stripe → "stripe"
+- PayPal → "paypal"
+- Twilio → "twilio"
+- HubSpot → "hubspot"
+- Slack → "slack"
+- Zapier → "zapier"
+
+TESTING:
+- Jest → "jest"
+- Cypress → "cypress"
+- Playwright → "playwright"
+- Vitest → "vitest"
+
+SECURITY:
+- Auth0 → "auth0"
+- Cloudflare → "cloudflare"
+- Let's Encrypt → "letsencrypt"
+
+MONITORING:
+- Datadog → "datadog"
+- Grafana → "grafana"
+- Sentry → "sentry"
+
+---
+
+PAGES & THEIR TAB STRUCTURES TO UPDATE:
+
+PAGE 1: /services/web-development/page.tsx
+Tabs: Frontend | Backend | CMS & E-Commerce | Cloud & DevOps | Design & Tools
+
+TAB 1 - Frontend (8 items):
+{ name: "React", slug: "react" },
+{ name: "Next.js", slug: "nextdotjs" },
+{ name: "Vue.js", slug: "vuedotjs" },
+{ name: "Angular", slug: "angular" },
+{ name: "TypeScript", slug: "typescript" },
+{ name: "Tailwind CSS", slug: "tailwindcss" },
+{ name: "Vite", slug: "vite" },
+{ name: "Framer Motion", slug: "framer" }
+
+TAB 2 - Backend (8 items):
+{ name: "Node.js", slug: "nodedotjs" },
+{ name: "Express.js", slug: "express" },
+{ name: "Python", slug: "python" },
+{ name: "PHP", slug: "php" },
+{ name: "PostgreSQL", slug: "postgresql" },
+{ name: "MongoDB", slug: "mongodb" },
+{ name: "Redis", slug: "redis" },
+{ name: "GraphQL", slug: "graphql" }
+
+TAB 3 - CMS & E-Commerce (8 items):
+{ name: "WordPress", slug: "wordpress" },
+{ name: "Shopify", slug: "shopify" },
+{ name: "WooCommerce", slug: "woocommerce" },
+{ name: "Sanity", slug: "sanity" },
+{ name: "Contentful", slug: "contentful" },
+{ name: "Strapi", slug: "strapi" },
+{ name: "Stripe", slug: "stripe" },
+{ name: "PayPal", slug: "paypal" }
+
+TAB 4 - Cloud & DevOps (8 items):
+{ name: "AWS", slug: "amazonaws" },
+{ name: "Vercel", slug: "vercel" },
+{ name: "Cloudflare", slug: "cloudflare" },
+{ name: "Docker", slug: "docker" },
+{ name: "GitHub", slug: "github" },
+{ name: "GitHub Actions", slug: "githubactions" },
+{ name: "DigitalOcean", slug: "digitalocean" },
+{ name: "Terraform", slug: "terraform" }
+
+TAB 5 - Design & Tools (8 items):
+{ name: "Figma", slug: "figma" },
+{ name: "Adobe XD", slug: "adobexd" },
+{ name: "Jest", slug: "jest" },
+{ name: "Cypress", slug: "cypress" },
+{ name: "Playwright", slug: "playwright" },
+{ name: "Sentry", slug: "sentry" },
+{ name: "Datadog", slug: "datadog" },
+{ name: "Grafana", slug: "grafana" }
+
+---
+
+PAGE 2: /services/web-development/custom-development/page.tsx
+Tabs: Frontend | Backend | Database | Cloud & DevOps | Security
+
+TAB 1 - Frontend (8 items):
+{ name: "React", slug: "react" },
+{ name: "Next.js", slug: "nextdotjs" },
+{ name: "TypeScript", slug: "typescript" },
+{ name: "Tailwind CSS", slug: "tailwindcss" },
+{ name: "Framer Motion", slug: "framer" },
+{ name: "Redux", slug: "redux" },
+{ name: "Jest", slug: "jest" },
+{ name: "Cypress", slug: "cypress" }
+
+TAB 2 - Backend (8 items):
+{ name: "Node.js", slug: "nodedotjs" },
+{ name: "Express.js", slug: "express" },
+{ name: "NestJS", slug: "nestjs" },
+{ name: "Python", slug: "python" },
+{ name: "GraphQL", slug: "graphql" },
+{ name: "FastAPI", slug: "fastapi" },
+{ name: "WebSockets", slug: "socketdotio" },
+{ name: "REST APIs", slug: "postman" }
+
+TAB 3 - Database (8 items):
+{ name: "PostgreSQL", slug: "postgresql" },
+{ name: "MongoDB", slug: "mongodb" },
+{ name: "Redis", slug: "redis" },
+{ name: "MySQL", slug: "mysql" },
+{ name: "Elasticsearch", slug: "elasticsearch" },
+{ name: "Supabase", slug: "supabase" },
+{ name: "Prisma", slug: "prisma" },
+{ name: "SQLite", slug: "sqlite" }
+
+TAB 4 - Cloud & DevOps (8 items):
+{ name: "AWS", slug: "amazonaws" },
+{ name: "Docker", slug: "docker" },
+{ name: "Kubernetes", slug: "kubernetes" },
+{ name: "GitHub Actions", slug: "githubactions" },
+{ name: "Vercel", slug: "vercel" },
+{ name: "Cloudflare", slug: "cloudflare" },
+{ name: "Terraform", slug: "terraform" },
+{ name: "DigitalOcean", slug: "digitalocean" }
+
+TAB 5 - Security (8 items):
+{ name: "Auth0", slug: "auth0" },
+{ name: "Cloudflare", slug: "cloudflare" },
+{ name: "Let's Encrypt", slug: "letsencrypt" },
+{ name: "Sentry", slug: "sentry" },
+{ name: "Datadog", slug: "datadog" },
+{ name: "Grafana", slug: "grafana" },
+{ name: "GitHub", slug: "github" },
+{ name: "Stripe", slug: "stripe" }
+
+---
+
+PAGE 3: /services/ai-services/page.tsx
+Tabs: AI Models | Frameworks | Integrations | Data Sources | Monitoring
+
+TAB 1 - AI Models (8 items):
+{ name: "OpenAI", slug: "openai" },
+{ name: "TensorFlow", slug: "tensorflow" },
+{ name: "PyTorch", slug: "pytorch" },
+{ name: "Hugging Face", slug: "huggingface" },
+{ name: "Python", slug: "python" },
+{ name: "FastAPI", slug: "fastapi" },
+{ name: "Node.js", slug: "nodedotjs" },
+{ name: "LangChain", slug: "langchain" }
+
+TAB 2 - Frameworks (8 items):
+{ name: "LangChain", slug: "langchain" },
+{ name: "FastAPI", slug: "fastapi" },
+{ name: "Django", slug: "django" },
+{ name: "Node.js", slug: "nodedotjs" },
+{ name: "React", slug: "react" },
+{ name: "Next.js", slug: "nextdotjs" },
+{ name: "TypeScript", slug: "typescript" },
+{ name: "GraphQL", slug: "graphql" }
+
+TAB 3 - Integrations (8 items):
+{ name: "Stripe", slug: "stripe" },
+{ name: "HubSpot", slug: "hubspot" },
+{ name: "Slack", slug: "slack" },
+{ name: "Zapier", slug: "zapier" },
+{ name: "Twilio", slug: "twilio" },
+{ name: "Shopify", slug: "shopify" },
+{ name: "PayPal", slug: "paypal" },
+{ name: "GitHub", slug: "github" }
+
+TAB 4 - Data Sources (8 items):
+{ name: "PostgreSQL", slug: "postgresql" },
+{ name: "MongoDB", slug: "mongodb" },
+{ name: "Redis", slug: "redis" },
+{ name: "Supabase", slug: "supabase" },
+{ name: "Firebase", slug: "firebase" },
+{ name: "Elasticsearch", slug: "elasticsearch" },
+{ name: "AWS", slug: "amazonaws" },
+{ name: "Docker", slug: "docker" }
+
+TAB 5 - Monitoring (8 items):
+{ name: "Datadog", slug: "datadog" },
+{ name: "Grafana", slug: "grafana" },
+{ name: "Sentry", slug: "sentry" },
+{ name: "GitHub Actions", slug: "githubactions" },
+{ name: "Cloudflare", slug: "cloudflare" },
+{ name: "Vercel", slug: "vercel" },
+{ name: "AWS", slug: "amazonaws" },
+{ name: "Docker", slug: "docker" }
+
+---
+
+PAGE 4: /services/ai-services/ai-chatbots/page.tsx
+Tabs: AI Models | Frameworks | Integrations | Channels | Analytics
+
+TAB 1 - AI Models (8 items):
+{ name: "OpenAI", slug: "openai" },
+{ name: "TensorFlow", slug: "tensorflow" },
+{ name: "PyTorch", slug: "pytorch" },
+{ name: "Hugging Face", slug: "huggingface" },
+{ name: "Python", slug: "python" },
+{ name: "FastAPI", slug: "fastapi" },
+{ name: "LangChain", slug: "langchain" },
+{ name: "Node.js", slug: "nodedotjs" }
+
+TAB 2 - Frameworks (8 items):
+{ name: "LangChain", slug: "langchain" },
+{ name: "FastAPI", slug: "fastapi" },
+{ name: "Node.js", slug: "nodedotjs" },
+{ name: "React", slug: "react" },
+{ name: "Next.js", slug: "nextdotjs" },
+{ name: "TypeScript", slug: "typescript" },
+{ name: "Express.js", slug: "express" },
+{ name: "GraphQL", slug: "graphql" }
+
+TAB 3 - Integrations (8 items):
+{ name: "HubSpot", slug: "hubspot" },
+{ name: "Shopify", slug: "shopify" },
+{ name: "Stripe", slug: "stripe" },
+{ name: "Zapier", slug: "zapier" },
+{ name: "Slack", slug: "slack" },
+{ name: "Twilio", slug: "twilio" },
+{ name: "PayPal", slug: "paypal" },
+{ name: "GitHub", slug: "github" }
+
+TAB 4 - Channels (8 items):
+{ name: "Slack", slug: "slack" },
+{ name: "Twilio", slug: "twilio" },
+{ name: "WhatsApp", slug: "whatsapp" },
+{ name: "Facebook", slug: "facebook" },
+{ name: "Instagram", slug: "instagram" },
+{ name: "Zapier", slug: "zapier" },
+{ name: "HubSpot", slug: "hubspot" },
+{ name: "GitHub", slug: "github" }
+
+TAB 5 - Analytics (8 items):
+{ name: "Datadog", slug: "datadog" },
+{ name: "Grafana", slug: "grafana" },
+{ name: "Sentry", slug: "sentry" },
+{ name: "PostgreSQL", slug: "postgresql" },
+{ name: "MongoDB", slug: "mongodb" },
+{ name: "Redis", slug: "redis" },
+{ name: "AWS", slug: "amazonaws" },
+{ name: "Docker", slug: "docker" }
+
+---
+
+PAGE 5: /services/ai-services/ai-agents/page.tsx
+Tabs: AI Models | Agent Frameworks | Tool Integrations | Data Sources | Monitoring
+
+TAB 1 - AI Models (8 items):
+{ name: "OpenAI", slug: "openai" },
+{ name: "TensorFlow", slug: "tensorflow" },
+{ name: "PyTorch", slug: "pytorch" },
+{ name: "Hugging Face", slug: "huggingface" },
+{ name: "Python", slug: "python" },
+{ name: "FastAPI", slug: "fastapi" },
+{ name: "LangChain", slug: "langchain" },
+{ name: "Node.js", slug: "nodedotjs" }
+
+TAB 2 - Agent Frameworks (8 items):
+{ name: "LangChain", slug: "langchain" },
+{ name: "FastAPI", slug: "fastapi" },
+{ name: "Python", slug: "python" },
+{ name: "Node.js", slug: "nodedotjs" },
+{ name: "React", slug: "react" },
+{ name: "TypeScript", slug: "typescript" },
+{ name: "GraphQL", slug: "graphql" },
+{ name: "Express.js", slug: "express" }
+
+TAB 3 - Tool Integrations (8 items):
+{ name: "Slack", slug: "slack" },
+{ name: "HubSpot", slug: "hubspot" },
+{ name: "GitHub", slug: "github" },
+{ name: "Zapier", slug: "zapier" },
+{ name: "Stripe", slug: "stripe" },
+{ name: "Twilio", slug: "twilio" },
+{ name: "Figma", slug: "figma" },
+{ name: "PayPal", slug: "paypal" }
+
+TAB 4 - Data Sources (8 items):
+{ name: "PostgreSQL", slug: "postgresql" },
+{ name: "MongoDB", slug: "mongodb" },
+{ name: "Redis", slug: "redis" },
+{ name: "Supabase", slug: "supabase" },
+{ name: "Firebase", slug: "firebase" },
+{ name: "Elasticsearch", slug: "elasticsearch" },
+{ name: "AWS", slug: "amazonaws" },
+{ name: "Docker", slug: "docker" }
+
+TAB 5 - Monitoring (8 items):
+{ name: "Datadog", slug: "datadog" },
+{ name: "Grafana", slug: "grafana" },
+{ name: "Sentry", slug: "sentry" },
+{ name: "GitHub Actions", slug: "githubactions" },
+{ name: "Cloudflare", slug: "cloudflare" },
+{ name: "Vercel", slug: "vercel" },
+{ name: "AWS", slug: "amazonaws" },
+{ name: "Docker", slug: "docker" }
+
+---
+
+PAGE 6: /services/mobile-development/page.tsx
+Tabs: Frameworks | Languages | Backend | Cloud | Tools
+
+TAB 1 - Frameworks (8 items):
+{ name: "React Native", slug: "react" },
+{ name: "Flutter", slug: "flutter" },
+{ name: "Expo", slug: "expo" },
+{ name: "Next.js", slug: "nextdotjs" },
+{ name: "React", slug: "react" },
+{ name: "TypeScript", slug: "typescript" },
+{ name: "Redux", slug: "redux" },
+{ name: "GraphQL", slug: "graphql" }
+
+TAB 2 - Languages (8 items):
+{ name: "Swift", slug: "swift" },
+{ name: "Kotlin", slug: "kotlin" },
+{ name: "TypeScript", slug: "typescript" },
+{ name: "JavaScript", slug: "javascript" },
+{ name: "Python", slug: "python" },
+{ name: "Dart", slug: "dart" },
+{ name: "Java", slug: "java" },
+{ name: "Go", slug: "go" }
+
+TAB 3 - Backend (8 items):
+{ name: "Node.js", slug: "nodedotjs" },
+{ name: "PostgreSQL", slug: "postgresql" },
+{ name: "MongoDB", slug: "mongodb" },
+{ name: "Firebase", slug: "firebase" },
+{ name: "Supabase", slug: "supabase" },
+{ name: "GraphQL", slug: "graphql" },
+{ name: "Redis", slug: "redis" },
+{ name: "Express.js", slug: "express" }
+
+TAB 4 - Cloud (8 items):
+{ name: "AWS", slug: "amazonaws" },
+{ name: "Docker", slug: "docker" },
+{ name: "GitHub Actions", slug: "githubactions" },
+{ name: "Vercel", slug: "vercel" },
+{ name: "Cloudflare", slug: "cloudflare" },
+{ name: "DigitalOcean", slug: "digitalocean" },
+{ name: "Terraform", slug: "terraform" },
+{ name: "Kubernetes", slug: "kubernetes" }
+
+TAB 5 - Tools (8 items):
+{ name: "Figma", slug: "figma" },
+{ name: "Stripe", slug: "stripe" },
+{ name: "PayPal", slug: "paypal" },
+{ name: "Twilio", slug: "twilio" },
+{ name: "Sentry", slug: "sentry" },
+{ name: "Datadog", slug: "datadog" },
+{ name: "Jest", slug: "jest" },
+{ name: "Cypress", slug: "cypress" }
+
+---
+
+PAGE 7: /services/mobile-development/hybrid/page.tsx
+Tabs: Frameworks | State & Data | Backend | Cloud | Testing
+
+TAB 1 - Frameworks (8 items):
+{ name: "React Native", slug: "react" },
+{ name: "Flutter", slug: "flutter" },
+{ name: "Expo", slug: "expo" },
+{ name: "React", slug: "react" },
+{ name: "TypeScript", slug: "typescript" },
+{ name: "JavaScript", slug: "javascript" },
+{ name: "Redux", slug: "redux" },
+{ name: "GraphQL", slug: "graphql" }
+
+TAB 2 - State & Data (8 items):
+{ name: "Redux", slug: "redux" },
+{ name: "GraphQL", slug: "graphql" },
+{ name: "Firebase", slug: "firebase" },
+{ name: "Supabase", slug: "supabase" },
+{ name: "MongoDB", slug: "mongodb" },
+{ name: "PostgreSQL", slug: "postgresql" },
+{ name: "Redis", slug: "redis" },
+{ name: "Prisma", slug: "prisma" }
+
+TAB 3 - Backend (8 items):
+{ name: "Node.js", slug: "nodedotjs" },
+{ name: "Express.js", slug: "express" },
+{ name: "NestJS", slug: "nestjs" },
+{ name: "Python", slug: "python" },
+{ name: "FastAPI", slug: "fastapi" },
+{ name: "GraphQL", slug: "graphql" },
+{ name: "Stripe", slug: "stripe" },
+{ name: "Twilio", slug: "twilio" }
+
+TAB 4 - Cloud (8 items):
+{ name: "AWS", slug: "amazonaws" },
+{ name: "Docker", slug: "docker" },
+{ name: "GitHub Actions", slug: "githubactions" },
+{ name: "Vercel", slug: "vercel" },
+{ name: "Cloudflare", slug: "cloudflare" },
+{ name: "DigitalOcean", slug: "digitalocean" },
+{ name: "Terraform", slug: "terraform" },
+{ name: "Kubernetes", slug: "kubernetes" }
+
+TAB 5 - Testing (8 items):
+{ name: "Jest", slug: "jest" },
+{ name: "Cypress", slug: "cypress" },
+{ name: "Playwright", slug: "playwright" },
+{ name: "Vitest", slug: "vitest" },
+{ name: "Sentry", slug: "sentry" },
+{ name: "Datadog", slug: "datadog" },
+{ name: "Grafana", slug: "grafana" },
+{ name: "GitHub", slug: "github" }
+
+---
+
+PAGE 8: /services/mobile-development/ios/page.tsx
+Tabs: iOS Technologies | Backend | Cloud | Integrations | Testing
+
+TAB 1 - iOS Technologies (8 items):
+{ name: "Swift", slug: "swift" },
+{ name: "React Native", slug: "react" },
+{ name: "TypeScript", slug: "typescript" },
+{ name: "Redux", slug: "redux" },
+{ name: "GraphQL", slug: "graphql" },
+{ name: "Firebase", slug: "firebase" },
+{ name: "Supabase", slug: "supabase" },
+{ name: "Expo", slug: "expo" }
+
+TAB 2 - Backend (8 items):
+{ name: "Node.js", slug: "nodedotjs" },
+{ name: "Python", slug: "python" },
+{ name: "PostgreSQL", slug: "postgresql" },
+{ name: "MongoDB", slug: "mongodb" },
+{ name: "Redis", slug: "redis" },
+{ name: "GraphQL", slug: "graphql" },
+{ name: "Express.js", slug: "express" },
+{ name: "FastAPI", slug: "fastapi" }
+
+TAB 3 - Cloud (8 items):
+{ name: "AWS", slug: "amazonaws" },
+{ name: "Docker", slug: "docker" },
+{ name: "GitHub Actions", slug: "githubactions" },
+{ name: "Vercel", slug: "vercel" },
+{ name: "Cloudflare", slug: "cloudflare" },
+{ name: "DigitalOcean", slug: "digitalocean" },
+{ name: "Terraform", slug: "terraform" },
+{ name: "Kubernetes", slug: "kubernetes" }
+
+TAB 4 - Integrations (8 items):
+{ name: "Stripe", slug: "stripe" },
+{ name: "PayPal", slug: "paypal" },
+{ name: "Twilio", slug: "twilio" },
+{ name: "Slack", slug: "slack" },
+{ name: "HubSpot", slug: "hubspot" },
+{ name: "Zapier", slug: "zapier" },
+{ name: "GitHub", slug: "github" },
+{ name: "Figma", slug: "figma" }
+
+TAB 5 - Testing (8 items):
+{ name: "Jest", slug: "jest" },
+{ name: "Cypress", slug: "cypress" },
+{ name: "Playwright", slug: "playwright" },
+{ name: "Vitest", slug: "vitest" },
+{ name: "Sentry", slug: "sentry" },
+{ name: "Datadog", slug: "datadog" },
+{ name: "Grafana", slug: "grafana" },
+{ name: "GitHub", slug: "github" }
+
+---
+
+PAGE 9: /services/mobile-development/kotlin/page.tsx
+Tabs: Android Technologies | Backend | Cloud | Integrations | Testing
+
+TAB 1 - Android Technologies (8 items):
+{ name: "Kotlin", slug: "kotlin" },
+{ name: "React Native", slug: "react" },
+{ name: "Flutter", slug: "flutter" },
+{ name: "TypeScript", slug: "typescript" },
+{ name: "Redux", slug: "redux" },
+{ name: "Firebase", slug: "firebase" },
+{ name: "Supabase", slug: "supabase" },
+{ name: "Expo", slug: "expo" }
+
+TAB 2 - Backend (8 items):
+{ name: "Node.js", slug: "nodedotjs" },
+{ name: "Python", slug: "python" },
+{ name: "PostgreSQL", slug: "postgresql" },
+{ name: "MongoDB", slug: "mongodb" },
+{ name: "Redis", slug: "redis" },
+{ name: "GraphQL", slug: "graphql" },
+{ name: "Express.js", slug: "express" },
+{ name: "FastAPI", slug: "fastapi" }
+
+TAB 3 - Cloud (8 items):
+{ name: "AWS", slug: "amazonaws" },
+{ name: "Docker", slug: "docker" },
+{ name: "GitHub Actions", slug: "githubactions" },
+{ name: "Vercel", slug: "vercel" },
+{ name: "Cloudflare", slug: "cloudflare" },
+{ name: "DigitalOcean", slug: "digitalocean" },
+{ name: "Terraform", slug: "terraform" },
+{ name: "Kubernetes", slug: "kubernetes" }
+
+TAB 4 - Integrations (8 items):
+{ name: "Stripe", slug: "stripe" },
+{ name: "PayPal", slug: "paypal" },
+{ name: "Twilio", slug: "twilio" },
+{ name: "Slack", slug: "slack" },
+{ name: "HubSpot", slug: "hubspot" },
+{ name: "Zapier", slug: "zapier" },
+{ name: "GitHub", slug: "github" },
+{ name: "Figma", slug: "figma" }
+
+TAB 5 - Testing (8 items):
+{ name: "Jest", slug: "jest" },
+{ name: "Cypress", slug: "cypress" },
+{ name: "Playwright", slug: "playwright" },
+{ name: "Vitest", slug: "vitest" },
+{ name: "Sentry", slug: "sentry" },
+{ name: "Datadog", slug: "datadog" },
+{ name: "Grafana", slug: "grafana" },
+{ name: "GitHub", slug: "github" }
+
+---
+
+PAGE 10: /services/hire-developers/full-stack/mern/page.tsx
+Tabs: Frontend | Backend | Database | DevOps | Tools
+
+TAB 1 - Frontend (6 items):
+{ name: "React", slug: "react" },
+{ name: "Next.js", slug: "nextdotjs" },
+{ name: "TypeScript", slug: "typescript" },
+{ name: "Redux", slug: "redux" },
+{ name: "Tailwind CSS", slug: "tailwindcss" },
+{ name: "GraphQL", slug: "graphql" }
+
+TAB 2 - Backend (6 items):
+{ name: "Node.js", slug: "nodedotjs" },
+{ name: "Express.js", slug: "express" },
+{ name: "NestJS", slug: "nestjs" },
+{ name: "GraphQL", slug: "graphql" },
+{ name: "FastAPI", slug: "fastapi" },
+{ name: "Python", slug: "python" }
+
+TAB 3 - Database (6 items):
+{ name: "MongoDB", slug: "mongodb" },
+{ name: "PostgreSQL", slug: "postgresql" },
+{ name: "Redis", slug: "redis" },
+{ name: "MySQL", slug: "mysql" },
+{ name: "Supabase", slug: "supabase" },
+{ name: "Firebase", slug: "firebase" }
+
+TAB 4 - DevOps (6 items):
+{ name: "AWS", slug: "amazonaws" },
+{ name: "Docker", slug: "docker" },
+{ name: "GitHub Actions", slug: "githubactions" },
+{ name: "Vercel", slug: "vercel" },
+{ name: "Cloudflare", slug: "cloudflare" },
+{ name: "DigitalOcean", slug: "digitalocean" }
+
+TAB 5 - Tools (6 items):
+{ name: "GitHub", slug: "github" },
+{ name: "Figma", slug: "figma" },
+{ name: "Jest", slug: "jest" },
+{ name: "Cypress", slug: "cypress" },
+{ name: "Sentry", slug: "sentry" },
+{ name: "Stripe", slug: "stripe" }
+
+---
+
+PAGE 11: /services/hire-developers/full-stack/mean/page.tsx
+Tabs: Frontend | Backend | Database | DevOps | Tools
+
+TAB 1 - Frontend (6 items):
+{ name: "Angular", slug: "angular" },
+{ name: "TypeScript", slug: "typescript" },
+{ name: "RxJS", slug: "reactivex" },
+{ name: "Redux", slug: "redux" },
+{ name: "Tailwind CSS", slug: "tailwindcss" },
+{ name: "GraphQL", slug: "graphql" }
+
+TAB 2 - Backend (6 items):
+{ name: "Node.js", slug: "nodedotjs" },
+{ name: "Express.js", slug: "express" },
+{ name: "NestJS", slug: "nestjs" },
+{ name: "GraphQL", slug: "graphql" },
+{ name: "FastAPI", slug: "fastapi" },
+{ name: "Python", slug: "python" }
+
+TAB 3 - Database (6 items):
+{ name: "MongoDB", slug: "mongodb" },
+{ name: "PostgreSQL", slug: "postgresql" },
+{ name: "Redis", slug: "redis" },
+{ name: "MySQL", slug: "mysql" },
+{ name: "Supabase", slug: "supabase" },
+{ name: "Firebase", slug: "firebase" }
+
+TAB 4 - DevOps (6 items):
+{ name: "AWS", slug: "amazonaws" },
+{ name: "Docker", slug: "docker" },
+{ name: "GitHub Actions", slug: "githubactions" },
+{ name: "Vercel", slug: "vercel" },
+{ name: "Cloudflare", slug: "cloudflare" },
+{ name: "Azure", slug: "microsoftazure" }
+
+TAB 5 - Tools (6 items):
+{ name: "GitHub", slug: "github" },
+{ name: "Figma", slug: "figma" },
+{ name: "Jest", slug: "jest" },
+{ name: "Cypress", slug: "cypress" },
+{ name: "Sentry", slug: "sentry" },
+{ name: "Stripe", slug: "stripe" }
+
+---
+
+PAGE 12: /services/hire-developers/full-stack/mevn/page.tsx
+Tabs: Frontend | Backend | Database | DevOps | Tools
+
+TAB 1 - Frontend (6 items):
+{ name: "Vue.js", slug: "vuedotjs" },
+{ name: "Nuxt.js", slug: "nuxtdotjs" },
+{ name: "TypeScript", slug: "typescript" },
+{ name: "Tailwind CSS", slug: "tailwindcss" },
+{ name: "Vite", slug: "vite" },
+{ name: "GraphQL", slug: "graphql" }
+
+TAB 2 - Backend (6 items):
+{ name: "Node.js", slug: "nodedotjs" },
+{ name: "Express.js", slug: "express" },
+{ name: "NestJS", slug: "nestjs" },
+{ name: "GraphQL", slug: "graphql" },
+{ name: "FastAPI", slug: "fastapi" },
+{ name: "Python", slug: "python" }
+
+TAB 3 - Database (6 items):
+{ name: "MongoDB", slug: "mongodb" },
+{ name: "PostgreSQL", slug: "postgresql" },
+{ name: "Redis", slug: "redis" },
+{ name: "MySQL", slug: "mysql" },
+{ name: "Supabase", slug: "supabase" },
+{ name: "Firebase", slug: "firebase" }
+
+TAB 4 - DevOps (6 items):
+{ name: "AWS", slug: "amazonaws" },
+{ name: "Docker", slug: "docker" },
+{ name: "GitHub Actions", slug: "githubactions" },
+{ name: "Vercel", slug: "vercel" },
+{ name: "Cloudflare", slug: "cloudflare" },
+{ name: "DigitalOcean", slug: "digitalocean" }
+
+TAB 5 - Tools (6 items):
+{ name: "GitHub", slug: "github" },
+{ name: "Figma", slug: "figma" },
+{ name: "Vitest", slug: "vitest" },
+{ name: "Cypress", slug: "cypress" },
+{ name: "Sentry", slug: "sentry" },
+{ name: "Stripe", slug: "stripe" }
+
+---
+
+PAGE 13: /services/hire-developers/full-stack/lamp/page.tsx
+Tabs: Frontend | Backend | Database | DevOps | Tools
+
+TAB 1 - Frontend (6 items):
+{ name: "JavaScript", slug: "javascript" },
+{ name: "TypeScript", slug: "typescript" },
+{ name: "React", slug: "react" },
+{ name: "Vue.js", slug: "vuedotjs" },
+{ name: "Tailwind CSS", slug: "tailwindcss" },
+{ name: "WordPress", slug: "wordpress" }
+
+TAB 2 - Backend (6 items):
+{ name: "PHP", slug: "php" },
+{ name: "Laravel", slug: "laravel" },
+{ name: "WordPress", slug: "wordpress" },
+{ name: "Symfony", slug: "symfony" },
+{ name: "Node.js", slug: "nodedotjs" },
+{ name: "Python", slug: "python" }
+
+TAB 3 - Database (6 items):
+{ name: "MySQL", slug: "mysql" },
+{ name: "PostgreSQL", slug: "postgresql" },
+{ name: "Redis", slug: "redis" },
+{ name: "MongoDB", slug: "mongodb" },
+{ name: "SQLite", slug: "sqlite" },
+{ name: "MariaDB", slug: "mariadb" }
+
+TAB 4 - DevOps (6 items):
+{ name: "AWS", slug: "amazonaws" },
+{ name: "Docker", slug: "docker" },
+{ name: "GitHub Actions", slug: "githubactions" },
+{ name: "Cloudflare", slug: "cloudflare" },
+{ name: "DigitalOcean", slug: "digitalocean" },
+{ name: "Linux", slug: "linux" }
+
+TAB 5 - Tools (6 items):
+{ name: "GitHub", slug: "github" },
+{ name: "Figma", slug: "figma" },
+{ name: "Composer", slug: "composer" },
+{ name: "Stripe", slug: "stripe" },
+{ name: "Sentry", slug: "sentry" },
+{ name: "WooCommerce", slug: "woocommerce" }
+
+---
+
+PAGE 14: /services/hire-developers/frontend/page.tsx
+Tabs: Frameworks | Languages & Styling | State & Tools | Testing | Analytics
+
+TAB 1 - Frameworks (8 items):
+{ name: "React", slug: "react" },
+{ name: "Next.js", slug: "nextdotjs" },
+{ name: "Vue.js", slug: "vuedotjs" },
+{ name: "Angular", slug: "angular" },
+{ name: "Nuxt.js", slug: "nuxtdotjs" },
+{ name: "Vite", slug: "vite" },
+{ name: "Framer Motion", slug: "framer" },
+{ name: "Expo", slug: "expo" }
+
+TAB 2 - Languages & Styling (8 items):
+{ name: "TypeScript", slug: "typescript" },
+{ name: "JavaScript", slug: "javascript" },
+{ name: "Tailwind CSS", slug: "tailwindcss" },
+{ name: "Sass", slug: "sass" },
+{ name: "CSS3", slug: "css3" },
+{ name: "HTML5", slug: "html5" },
+{ name: "GraphQL", slug: "graphql" },
+{ name: "Redux", slug: "redux" }
+
+TAB 3 - State & Tools (8 items):
+{ name: "Redux", slug: "redux" },
+{ name: "GraphQL", slug: "graphql" },
+{ name: "Webpack", slug: "webpack" },
+{ name: "Vite", slug: "vite" },
+{ name: "Storybook", slug: "storybook" },
+{ name: "Figma", slug: "figma" },
+{ name: "GitHub", slug: "github" },
+{ name: "Vercel", slug: "vercel" }
+
+TAB 4 - Testing (8 items):
+{ name: "Jest", slug: "jest" },
+{ name: "Cypress", slug: "cypress" },
+{ name: "Playwright", slug: "playwright" },
+{ name: "Vitest", slug: "vitest" },
+{ name: "Sentry", slug: "sentry" },
+{ name: "Datadog", slug: "datadog" },
+{ name: "GitHub Actions", slug: "githubactions" },
+{ name: "Storybook", slug: "storybook" }
+
+TAB 5 - Analytics (8 items):
+{ name: "Datadog", slug: "datadog" },
+{ name: "Sentry", slug: "sentry" },
+{ name: "Grafana", slug: "grafana" },
+{ name: "GitHub", slug: "github" },
+{ name: "Cloudflare", slug: "cloudflare" },
+{ name: "Vercel", slug: "vercel" },
+{ name: "AWS", slug: "amazonaws" },
+{ name: "Docker", slug: "docker" }
+
+---
+
+PAGE 15: /services/hire-developers/backend/page.tsx
+Tabs: Languages | Frameworks | Databases | Cloud | Tools
+
+TAB 1 - Languages (8 items):
+{ name: "Node.js", slug: "nodedotjs" },
+{ name: "Python", slug: "python" },
+{ name: "PHP", slug: "php" },
+{ name: "Go", slug: "go" },
+{ name: "TypeScript", slug: "typescript" },
+{ name: "Java", slug: "java" },
+{ name: "Kotlin", slug: "kotlin" },
+{ name: "Rust", slug: "rust" }
+
+TAB 2 - Frameworks (8 items):
+{ name: "Express.js", slug: "express" },
+{ name: "NestJS", slug: "nestjs" },
+{ name: "Django", slug: "django" },
+{ name: "FastAPI", slug: "fastapi" },
+{ name: "Laravel", slug: "laravel" },
+{ name: "GraphQL", slug: "graphql" },
+{ name: "Next.js", slug: "nextdotjs" },
+{ name: "Flask", slug: "flask" }
+
+TAB 3 - Databases (8 items):
+{ name: "PostgreSQL", slug: "postgresql" },
+{ name: "MongoDB", slug: "mongodb" },
+{ name: "MySQL", slug: "mysql" },
+{ name: "Redis", slug: "redis" },
+{ name: "Elasticsearch", slug: "elasticsearch" },
+{ name: "Supabase", slug: "supabase" },
+{ name: "Firebase", slug: "firebase" },
+{ name: "SQLite", slug: "sqlite" }
+
+TAB 4 - Cloud (8 items):
+{ name: "AWS", slug: "amazonaws" },
+{ name: "Docker", slug: "docker" },
+{ name: "Kubernetes", slug: "kubernetes" },
+{ name: "GitHub Actions", slug: "githubactions" },
+{ name: "Vercel", slug: "vercel" },
+{ name: "Cloudflare", slug: "cloudflare" },
+{ name: "DigitalOcean", slug: "digitalocean" },
+{ name: "Terraform", slug: "terraform" }
+
+TAB 5 - Tools (8 items):
+{ name: "GitHub", slug: "github" },
+{ name: "Figma", slug: "figma" },
+{ name: "Jest", slug: "jest" },
+{ name: "Sentry", slug: "sentry" },
+{ name: "Datadog", slug: "datadog" },
+{ name: "Stripe", slug: "stripe" },
+{ name: "Twilio", slug: "twilio" },
+{ name: "Grafana", slug: "grafana" }
+
+---
+
+REUSABLE TABBED TECH COMPONENT TO CREATE:
+
+FILE: client/src/components/ui/TabbedTechStack.tsx
+```tsx
+import React, { useState } from "react";
+
+interface Tech {
+  name: string;
+  slug: string;
+}
+
+interface Tab {
+  label: string;
+  technologies: Tech[];
+}
+
+interface TabbedTechStackProps {
+  title?: string;
+  subtitle?: string;
+  tabs: Tab[];
+  className?: string;
+}
+
+export function TabbedTechStack({
+  title = "Technologies We Use",
+  subtitle,
+  tabs,
+  className = "",
+}: TabbedTechStackProps) {
+  const [activeTab, setActiveTab] = useState(0);
+
+  return (
+    <div className={`py-20 ${className}`}>
+      <div className="max-w-6xl mx-auto px-6">
+
+        {/* Header */}
+        {title && (
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{title}</h2>
+            {subtitle && (
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                {subtitle}
+              </p>
+            )}
+          </div>
+        )}
+
+        {/* Tab Navigation */}
+        <div className="flex gap-2 border-b mb-10 overflow-x-auto pb-0 scrollbar-hide">
+          {tabs.map((tab, index) => (
+            <button
+              key={tab.label}
+              onClick={() => setActiveTab(index)}
+              className={`px-5 py-3 text-sm font-semibold whitespace-nowrap transition-all duration-200 border-b-2 -mb-px ${
+                activeTab === index
+                  ? "border-primary text-primary"
+                  : "border-transparent text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
+
+        {/* Tab Content */}
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-8">
+          {tabs[activeTab].technologies.map((tech) => (
+            <div
+              key={tech.name}
+              className="flex flex-col items-center gap-3 group"
+            >
+              <img
+                src={`https://cdn.simpleicons.org/${tech.slug}/9CA3AF`}
+                alt={tech.name}
+                className="w-12 h-12 opacity-70 group-hover:opacity-100 
+                           transition-opacity duration-200"
+                loading="lazy"
+                onError={(e) => {
+                  e.currentTarget.style.display = "none";
+                }}
+              />
+              <span className="text-xs font-medium text-muted-foreground text-center leading-tight">
+                {tech.name}
+              </span>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </div>
+  );
+}
+```
+
+---
+
+IMPLEMENTATION STEPS:
+
+1. CREATE TabbedTechStack component first at
+   client/src/components/ui/TabbedTechStack.tsx
+
+2. For EACH page listed above:
+   a. Find the existing tabbed tech section
+   b. Import TabbedTechStack component
+   c. Replace old tab content with new component
+   d. Use exact tech arrays provided above
+   e. Keep section background color consistent with page
+
+3. REMOVE from each tech item:
+   - Lucide icon imports (for tech stack only)
+   - Description text under tech name
+   - Card border wrappers around each item
+   - bg-card backgrounds on individual items
+
+4. KEEP exactly as before:
+   - Section title and subtitle text
+   - Tab labels/names
+   - Number of tabs
+   - Section background (bg-muted or bg-background)
+   - All other page sections untouched
+
+5. VERIFY each page after update:
+   - Tabs still switch correctly
+   - Icons load from Simple Icons CDN
+   - No broken layout
+   - Mobile responsive
+
+---
+
+IMPORTANT NOTES:
+
+1. DO NOT change homepage - already correct
+2. DO NOT change any sections other than tech stack
+3. KEEP tab navigation working with useState
+4. Icons are gray (#9CA3AF) matching homepage style
+5. No descriptions under tech names (name only)
+6. No card borders on individual tech items
+7. onError handler hides broken images gracefully
+8. Grid adjusts: 3 cols mobile → 4 tablet → 6-8 desktop
+9. Hover: opacity increases from 70% to 100%
+
+Complete all 15 pages plus create the reusable TabbedTechStack component.
