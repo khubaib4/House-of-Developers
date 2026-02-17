@@ -62,7 +62,7 @@ const mevnTechTabs = [
     label: "Frontend",
     technologies: [
       { name: "Vue.js", slug: "vuedotjs" },
-      { name: "Nuxt.js", slug: "nuxtdotjs" },
+      { name: "Nuxt.js", slug: "nuxt" },
       { name: "TypeScript", slug: "typescript" },
       { name: "Tailwind CSS", slug: "tailwindcss" },
       { name: "Vite", slug: "vite" },

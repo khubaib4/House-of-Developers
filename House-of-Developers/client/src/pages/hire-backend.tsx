@@ -251,7 +251,7 @@ const backendTechTabs = [
       { name: "PHP", slug: "php" },
       { name: "Go", slug: "go" },
       { name: "TypeScript", slug: "typescript" },
-      { name: "Java", slug: "java" },
+      { name: "Java", slug: "openjdk" },
       { name: "Kotlin", slug: "kotlin" },
       { name: "Rust", slug: "rust" },
     ],

@@ -17,6 +17,33 @@ interface TabbedTechStackProps {
   className?: string;
 }
 
+function TechIcon({ tech }: { tech: Tech }) {
+  const [failed, setFailed] = useState(false);
+
+  return (
+    <div className="flex flex-col items-center gap-3 group">
+      {failed ? (
+        <div className="w-12 h-12 rounded-lg bg-muted flex items-center justify-center opacity-70 group-hover:opacity-100 transition-opacity duration-200">
+          <span className="text-lg font-bold text-muted-foreground">
+            {tech.name.slice(0, 2).toUpperCase()}
+          </span>
+        </div>
+      ) : (
+        <img
+          src={`https://cdn.simpleicons.org/${tech.slug}/9CA3AF`}
+          alt={tech.name}
+          className="w-12 h-12 opacity-70 group-hover:opacity-100 transition-opacity duration-200"
+          loading="lazy"
+          onError={() => setFailed(true)}
+        />
+      )}
+      <span className="text-xs font-medium text-muted-foreground text-center leading-tight">
+        {tech.name}
+      </span>
+    </div>
+  );
+}
+
 export function TabbedTechStack({
   title = "Technologies We Use",
   subtitle,
@@ -57,23 +84,7 @@ export function TabbedTechStack({
 
         <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-8">
           {tabs[activeTab].technologies.map((tech) => (
-            <div
-              key={tech.name}
-              className="flex flex-col items-center gap-3 group"
-            >
-              <img
-                src={`https://cdn.simpleicons.org/${tech.slug}/9CA3AF`}
-                alt={tech.name}
-                className="w-12 h-12 opacity-70 group-hover:opacity-100 transition-opacity duration-200"
-                loading="lazy"
-                onError={(e) => {
-                  e.currentTarget.style.display = "none";
-                }}
-              />
-              <span className="text-xs font-medium text-muted-foreground text-center leading-tight">
-                {tech.name}
-              </span>
-            </div>
+            <TechIcon key={tech.name} tech={tech} />
           ))}
         </div>
       </div>

@@ -69,7 +69,7 @@ const mobileTechTabs = [
       { name: "JavaScript", slug: "javascript" },
       { name: "Python", slug: "python" },
       { name: "Dart", slug: "dart" },
-      { name: "Java", slug: "java" },
+      { name: "Java", slug: "openjdk" },
       { name: "Go", slug: "go" },
     ],
   },
