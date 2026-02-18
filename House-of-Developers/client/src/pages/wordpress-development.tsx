@@ -62,7 +62,6 @@ import { SplitFeatureShowcase } from "@/components/shared/SplitFeatureShowcase";
 import { WordPressDashboardMockup } from "@/components/mockups/WordPressDashboardMockup";
 import { GutenbergEditorMockup } from "@/components/mockups/GutenbergEditorMockup";
 import { ZigzagTimeline } from "@/components/ui/ZigzagTimeline";
-import { TechStackIcons } from "@/components/ui/TechStackIcons";
 import { PackageIncludes } from "@/components/ui/PackageIncludes";
 
 import { ValueProposition } from "@/components/ui/ValueProposition";
@@ -137,19 +136,60 @@ const solutions = [
   },
 ];
 
-const wordpressTechnologies = [
-  { name: "WordPress", slug: "wordpress" },
-  { name: "PHP", slug: "php" },
-  { name: "MySQL", slug: "mysql" },
-  { name: "JavaScript", slug: "javascript" },
-  { name: "AWS", slug: "amazonaws" },
-  { name: "Cloudflare", slug: "cloudflare" },
-  { name: "Docker", slug: "docker" },
-  { name: "GitHub", slug: "github" },
-  { name: "Figma", slug: "figma" },
-  { name: "Stripe", slug: "stripe" },
-  { name: "WooCommerce", slug: "woocommerce" },
-  { name: "Tailwind CSS", slug: "tailwindcss" },
+const techTabs = [
+  {
+    label: "Core Platform",
+    technologies: [
+      { name: "WordPress", slug: "wordpress" },
+      { name: "PHP", slug: "php" },
+      { name: "MySQL", slug: "mysql" },
+      { name: "JavaScript", slug: "javascript" },
+      { name: "jQuery", slug: "jquery" },
+      { name: "REST API", slug: "json" },
+    ],
+  },
+  {
+    label: "Page Builders",
+    technologies: [
+      { name: "Elementor", slug: "elementor" },
+      { name: "Gutenberg", slug: "wordpress", },
+      { name: "WPBakery", slug: "wordpress" },
+      { name: "Divi", slug: "wordpress" },
+    ],
+  },
+  {
+    label: "Plugins & Tools",
+    technologies: [
+      { name: "WooCommerce", slug: "woocommerce" },
+      { name: "Yoast SEO", slug: "yoast" },
+      { name: "Gravity Forms", slug: "wordpress" },
+      { name: "ACF", slug: "wordpress" },
+      { name: "WPML", slug: "wordpress" },
+      { name: "Wordfence", slug: "wordpress" },
+    ],
+  },
+  {
+    label: "Hosting & DevOps",
+    technologies: [
+      { name: "AWS", slug: "amazonaws" },
+      { name: "Cloudflare", slug: "cloudflare" },
+      { name: "Docker", slug: "docker" },
+      { name: "GitHub", slug: "github" },
+      { name: "WP Engine", slug: "wpengine" },
+      { name: "Nginx", slug: "nginx" },
+    ],
+  },
+  {
+    label: "Design & Payments",
+    technologies: [
+      { name: "Figma", slug: "figma" },
+      { name: "Stripe", slug: "stripe" },
+      { name: "PayPal", slug: "paypal" },
+      { name: "Tailwind CSS", slug: "tailwindcss" },
+      { name: "Sass", slug: "sass" },
+      { name: "Adobe XD", slug: "adobexd" },
+    ],
+  },
 ];
 
 const zigzagSteps = [
@@ -503,6 +543,74 @@ function ModernWebsiteMockup() {
   );
 }
 
+function TechTabIcon({ name, slug }: { name: string; slug: string }) {
+  const [failed, setFailed] = useState(false);
+  return (
+    <motion.div
+      className="flex flex-col items-center gap-3 group"
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3 }}
+    >
+      {failed ? (
+        <div className="w-14 h-14 rounded-xl bg-muted flex items-center justify-center group-hover:bg-primary/10 transition-colors duration-200">
+          <span className="text-lg font-bold text-muted-foreground group-hover:text-primary transition-colors">
+            {name.slice(0, 2).toUpperCase()}
+          </span>
+        </div>
+      ) : (
+        <div className="w-14 h-14 rounded-xl bg-muted flex items-center justify-center group-hover:bg-primary/10 transition-colors duration-200">
+          <img
+            src={`https://cdn.simpleicons.org/${slug}/9CA3AF`}
+            alt={name}
+            className="w-8 h-8 opacity-70 group-hover:opacity-100 transition-opacity duration-200"
+            loading="lazy"
+            onError={() => setFailed(true)}
+          />
+        </div>
+      )}
+      <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors text-center">
+        {name}
+      </span>
+    </motion.div>
+  );
+}
+
+function WordPressTechTabs() {
+  const [activeTab, setActiveTab] = useState(0);
+
+  return (
+    <div>
+      <div className="flex flex-wrap gap-2 justify-center mb-10">
+        {techTabs.map((tab, i) => (
+          <button
+            key={tab.label}
+            onClick={() => setActiveTab(i)}
+            className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+              activeTab === i
+                ? "bg-primary text-primary-foreground shadow-md"
+                : "bg-muted text-muted-foreground hover:bg-muted/80 border"
+            }`}
+          >
+            {tab.label}
+          </button>
+        ))}
+      </div>
+      <motion.div
+        key={activeTab}
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3 }}
+        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8"
+      >
+        {techTabs[activeTab].technologies.map((tech) => (
+          <TechTabIcon key={tech.name} name={tech.name} slug={tech.slug} />
+        ))}
+      </motion.div>
+    </div>
+  );
+}
+
 function ResultsShowcase() {
   const [sliderPos, setSliderPos] = useState(50);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -847,14 +955,16 @@ export default function WordPressDevelopmentPage() {
         </div>
       </section>
 
-      {/* WordPress Ecosystem */}
+      {/* WordPress Ecosystem - Tabbed */}
       <section className="py-20" data-testid="section-ecosystem">
-        <div className="max-w-7xl mx-auto px-6">
-          <TechStackIcons
-            title="Technologies We Use"
-            subtitle="We use industry-leading technologies to build products that are fast, reliable, and maintainable."
-            technologies={wordpressTechnologies}
-          />
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Technologies We Use</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Industry-leading tools and technologies across the WordPress ecosystem
+            </p>
+          </div>
+          <WordPressTechTabs />
         </div>
       </section>
 
