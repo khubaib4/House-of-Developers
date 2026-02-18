@@ -1,0 +1,442 @@
+Create an About Us page at /about that tells the House of Developers 
+story in a personal, founder-driven way. Focus on the journey, mission, 
+values, and company timeline. No team photos - use illustrations/icons 
+instead. Tone should be personal and passion-driven, not corporate.
+
+PAGE: /about/page.tsx (or client/src/pages/About.tsx depending on structure)
+
+---
+
+HERO SECTION:
+
+Container: py-20 md:py-24, max-w-4xl mx-auto px-6, text-center
+
+- Badge: "About Us" 
+  * bg-muted, text-foreground, px-3 py-1.5, rounded-full, mb-4
+
+- H1: "Building Software That Matters"
+  * text-4xl md:text-5xl lg:text-6xl font-bold
+  * leading-tight, mb-6
+
+- Tagline (text-xl md:text-2xl text-muted-foreground, mb-6):
+  "We started House of Developers because we believe every 
+  business deserves software that works for them—not against them."
+
+- Opening Paragraph (text-lg text-muted-foreground, 
+  leading-relaxed, max-w-3xl mx-auto):
+  "Since 2018, we've built custom software for over 150 businesses. 
+  From solo founders with an idea to established companies scaling 
+  fast—we've been there for the journey. This is our story."
+
+- Simple Icon Illustration (mt-8):
+  * Not a photo, just a clean icon or simple graphic
+  * Maybe: Code icon, Heart icon, or Rocket icon
+  * Size 64px, text-primary color
+  * Centered
+
+---
+
+OUR STORY SECTION:
+
+Container: py-20, bg-muted
+
+Wrapper: max-w-4xl mx-auto px-6
+
+Heading (mb-12):
+- H2: "How We Started" (text-3xl font-bold, mb-4)
+- Subtitle: "The story behind House of Developers"
+  (text-muted-foreground)
+
+Story Content (prose format, NOT bullet points):
+
+Paragraph 1 (text-lg leading-relaxed, mb-6):
+"House of Developers started in 2018 when I (Muhammad Khubaib) 
+was frustrated with how most agencies treated clients. Cookie-cutter 
+templates. Inflated quotes. Disappearing after launch. I knew there 
+had to be a better way."
+
+Paragraph 2 (text-lg leading-relaxed, mb-6):
+"I started taking on freelance projects while studying computer 
+science. Every client had the same story: they'd been burned before 
+by developers who overpromised and underdelivered. I made a simple 
+promise—build exactly what they needed, communicate honestly, and 
+stick around after launch."
+
+Paragraph 3 (text-lg leading-relaxed, mb-6):
+"Word spread. What started as weekend projects became a full-time 
+business. Today, we're a team of developers who genuinely care about 
+our clients' success. We've built everything from simple websites to 
+complex SaaS platforms—but the mission hasn't changed: build software 
+that actually helps businesses grow."
+
+Pull Quote (mt-8, border-l-4 border-primary, pl-6, 
+italic, text-xl text-muted-foreground):
+"We don't build software to win awards. We build it to solve real 
+problems for real businesses."
+
+Attribution (mt-2, text-sm font-semibold):
+"— Muhammad Khubaib, Founder"
+
+---
+
+MISSION & VALUES SECTION:
+
+Container: py-20
+
+Wrapper: max-w-6xl mx-auto px-6
+
+Heading (text-center, mb-16):
+- H2: "What Drives Us" (text-3xl md:text-4xl font-bold)
+- Subtitle: "The principles that guide everything we build"
+  (text-muted-foreground, mt-3)
+
+Mission Statement (max-w-3xl mx-auto, text-center, mb-16):
+* Large text box (bg-card, border, rounded-2xl, p-8)
+* Heading: "Our Mission" (text-xl font-bold, mb-4)
+* Text (text-lg leading-relaxed):
+  "To build custom software that gives businesses a competitive 
+  advantage—without the enterprise price tag or corporate nonsense. 
+  Every project we take on is treated like it's our own business 
+  on the line."
+
+Core Values Grid (grid-cols-1 md:grid-cols-3 gap-8):
+
+3 VALUE CARDS:
+
+Each card (bg-card, border, rounded-2xl, p-8, text-center):
+1. Icon (mb-4, size 40, text-primary, centered)
+2. Value name (text-xl font-bold, mb-3)
+3. Description (text-sm text-muted-foreground, leading-relaxed)
+
+VALUE 1: HONEST COMMUNICATION
+- Icon: MessageSquare
+- Name: "Honest Communication"
+- Description: "No jargon, no runaround. We tell you what's 
+  possible, what's not, and what it'll cost. If we don't know 
+  something, we say so. If something goes wrong, we own it."
+
+VALUE 2: LONG-TERM THINKING
+- Icon: TrendingUp
+- Name: "Long-Term Thinking"
+- Description: "We don't build quick fixes that break in 6 months. 
+  Every line of code is written with the assumption you'll still 
+  be using it in 5 years. We build for scale, even if you're 
+  starting small."
+
+VALUE 3: CLIENT SUCCESS = OUR SUCCESS
+- Icon: Heart
+- Name: "Your Success Is Our Success"
+- Description: "We don't disappear after launch. Your software 
+  is your business—if it fails, we failed. That's why we stick 
+  around, answer questions, and genuinely care about the outcome."
+
+---
+
+COMPANY TIMELINE SECTION:
+
+Container: py-20, bg-muted
+
+Wrapper: max-w-4xl mx-auto px-6
+
+Heading (text-center, mb-16):
+- H2: "Our Journey" (text-3xl font-bold)
+- Subtitle: "8 years of building, learning, and growing"
+  (text-muted-foreground, mt-3)
+
+Timeline (vertical on mobile, alternating on desktop):
+
+Use a simple vertical timeline with dots and connecting lines.
+
+Timeline Container (space-y-12):
+
+Each milestone:
+- Dot (w-4 h-4, bg-primary, rounded-full, absolute left)
+- Connecting line (h-full, w-px, bg-border, absolute left)
+- Content box (ml-12, bg-card, border, rounded-xl, p-6)
+
+THE TIMELINE (8 milestones):
+
+MILESTONE 1 - 2018:
+* Year: "2018" (text-sm font-semibold text-primary)
+* Heading: "The Beginning" (text-lg font-bold, mt-1, mb-2)
+* Description: "Started as a solo developer taking freelance 
+  projects while studying computer science. Built first 5 client 
+  websites from a university dorm room."
+
+MILESTONE 2 - 2019:
+* Year: "2019"
+* Heading: "Going Full-Time"
+* Description: "Quit part-time jobs to focus entirely on client 
+  work. Delivered 20+ projects for UK small businesses. Learned 
+  React, Node.js, and what clients actually need (spoiler: not 
+  what they ask for)."
+
+MILESTONE 3 - 2020:
+* Year: "2020"
+* Heading: "House of Developers Founded"
+* Description: "Officially registered the business. Hired first 
+  developer. Shifted from 'cheap websites' to 'custom software 
+  solutions.' Worked through lockdowns building e-commerce platforms 
+  for businesses going digital."
+
+MILESTONE 4 - 2021:
+* Year: "2021"
+* Heading: "First SaaS Platform"
+* Description: "Built first full-scale SaaS application for a 
+  client. 12-week project turned into 50,000 users. Realized we 
+  could build serious software, not just websites."
+
+MILESTONE 5 - 2022:
+* Year: "2022"
+* Heading: "Expanded Services"
+* Description: "Added mobile app development and AI services. 
+  Built first AI chatbot (before it was trendy). Grew to a team 
+  of 5 developers. Hit 100 projects milestone."
+
+MILESTONE 6 - 2023:
+* Year: "2023"
+* Heading: "Focus on Quality"
+* Description: "Stopped chasing volume, started focusing on 
+  excellence. Turned down projects that weren't a good fit. 
+  Invested in better processes, documentation, and client 
+  communication."
+
+MILESTONE 7 - 2024:
+* Year: "2024"
+* Heading: "Client Success Stories"
+* Description: "Helped 3 clients raise funding using software 
+  we built. One client scaled from 500 to 50,000 users. Another 
+  hit £1M revenue using our e-commerce platform. This is why we 
+  do this."
+
+MILESTONE 8 - 2026 (Present):
+* Year: "2026" (with "Today" badge)
+* Heading: "Still Building"
+* Description: "150+ projects delivered. 40+ happy clients. 
+  8 years of learning what works and what doesn't. Still small 
+  enough to care, experienced enough to deliver."
+
+---
+
+WHY WE'RE DIFFERENT SECTION:
+
+Container: py-20
+
+Wrapper: max-w-5xl mx-auto px-6
+
+Heading (text-center, mb-12):
+- H2: "Why We're Not Like Other Agencies" 
+  (text-3xl md:text-4xl font-bold)
+- Subtitle: "What makes House of Developers different"
+  (text-muted-foreground, mt-3)
+
+Differences Grid (grid-cols-1 md:grid-cols-2 gap-8):
+
+6 DIFFERENCE CARDS:
+
+Each card (p-6, border-l-4, border-primary, bg-card):
+- Heading (font-semibold, mb-2)
+- Description (text-sm text-muted-foreground)
+
+DIFFERENCE 1:
+* Heading: "No Sales Teams"
+* Description: "You talk directly to the person building your 
+  software. No middlemen translating requirements badly."
+
+DIFFERENCE 2:
+* Heading: "Fixed Prices, Not Hourly"
+* Description: "We quote the project upfront. No surprise invoices, 
+  no scope creep charges. You know exactly what you're paying."
+
+DIFFERENCE 3:
+* Heading: "You Own The Code"
+* Description: "100% of the source code is yours. No licensing 
+  fees, no vendor lock-in. Take it anywhere."
+
+DIFFERENCE 4:
+* Heading: "We Don't Disappear"
+* Description: "Every project includes 60 days post-launch support. 
+  After that, we're still one email away. We build relationships, 
+  not transactions."
+
+DIFFERENCE 5:
+* Heading: "Small Team, Senior Developers"
+* Description: "No junior developers learning on your project. 
+  Every developer has 5+ years experience. Quality over quantity."
+
+DIFFERENCE 6:
+* Heading: "Honest About Limits"
+* Description: "If we can't do it, we tell you. If there's a 
+  better solution, we recommend it. We optimize for your success, 
+  not our invoice."
+
+---
+
+STATS SECTION:
+
+Container: py-16, bg-muted
+
+Grid: grid-cols-2 md:grid-cols-4 gap-8, max-w-5xl mx-auto px-6
+
+4 Stats (text-center):
+- Icon (text-primary, size 32, mb-3)
+- Number (text-4xl font-bold, mb-1)
+- Label (text-sm text-muted-foreground)
+
+STAT 1:
+* Icon: Code2
+* Number: "150+"
+* Label: "Projects Delivered"
+
+STAT 2:
+* Icon: Users
+* Number: "40+"
+* Label: "Happy Clients"
+
+STAT 3:
+* Icon: Calendar
+* Number: "8 Years"
+* Label: "In Business"
+
+STAT 4:
+* Icon: Star
+* Number: "98%"
+* Label: "Client Satisfaction"
+
+---
+
+FINAL CTA SECTION:
+
+Container: py-20
+
+Wrapper: max-w-3xl mx-auto px-6, text-center
+
+- H2: "Work With Us" (text-3xl font-bold, mb-4)
+- Description (text-lg text-muted-foreground, mb-8):
+  "We take on a limited number of projects each quarter to maintain 
+  quality. If you're looking for a development partner who actually 
+  cares about your success, let's talk."
+
+- CTA Buttons (flex gap-4 justify-center):
+  * Primary: "Book Free Consultation" → /contact
+    bg-primary, text-primary-foreground, h-14 px-8
+  
+  * Secondary: "View Our Work" → /case-studies (or /services)
+    border, h-14 px-8
+
+- Trust line (mt-6, text-sm text-muted-foreground):
+  "Free 30-minute consultation • No pressure, no obligation"
+
+---
+
+DESIGN SPECIFICATIONS:
+
+Typography:
+- Headings: font-bold, clear hierarchy
+- Body: text-lg for story sections (readable, engaging)
+- Pull quotes: text-xl, italic
+- Personal, conversational tone throughout
+
+Colors:
+- Primary for accents (icons, borders, badges)
+- bg-muted for alternating sections
+- No heavy graphics—clean, text-focused
+
+Icons:
+- Lucide icons only (simple, minimal)
+- Size 32-40px for section headers
+- Size 24px for value cards
+- Primary color, no backgrounds
+
+Spacing:
+- Generous padding (py-20 sections)
+- Wide max-widths for readability (max-w-4xl prose)
+- Breathing room between elements
+
+Timeline:
+- Vertical on mobile
+- Still vertical on desktop (cleaner than horizontal)
+- Dots connected with line
+- Cards for each milestone
+- Chronological order (2018 → 2026)
+
+---
+
+CONTENT GUIDELINES:
+
+Tone:
+- ✅ Personal: "I started", "we believe"
+- ✅ Honest: Admit challenges, learning
+- ✅ Specific: Real numbers, real stories
+- ✅ Humble: No bragging, just facts
+- ❌ NOT corporate speak
+- ❌ NOT generic mission statements
+- ❌ NOT buzzwords ("synergy", "leverage")
+
+Story:
+- Real founder journey (adapt to your actual story)
+- Specific moments, not vague history
+- Why you started (frustration with industry)
+- How you're different (not just better)
+- Where you're going (still building, learning)
+
+Values:
+- Not just listed—explained with examples
+- Connected to real actions you take
+- How they benefit clients
+- Authentic, not aspirational
+
+---
+
+RESPONSIVE BEHAVIOR:
+
+Mobile (< 768px):
+- Timeline: vertical only
+- Stats: 2×2 grid
+- Difference cards: 1 column
+- Values: 1 column
+
+Desktop (≥ 768px):
+- Timeline: still vertical (cleaner)
+- Stats: 4 columns
+- Difference cards: 2 columns
+- Values: 3 columns
+
+---
+
+SEO REQUIREMENTS:
+
+Meta:
+- Title: "About Us | House of Developers | Our Story & Mission"
+- Description: "Learn about House of Developers. Since 2018, 
+  we've built custom software for 150+ businesses. Our story, 
+  mission, and why we're different."
+- Schema: Organization, AboutPage
+
+Content:
+- H1: "Building Software That Matters"
+- Clear narrative structure
+- Founder story (personal, authentic)
+- Mission and values explained
+- Timeline shows credibility
+
+---
+
+FINAL REQUIREMENTS:
+
+1. ✅ Story-focused (founder journey, personal narrative)
+2. ✅ Mission & values section (3 core values)
+3. ✅ Company timeline (8 milestones, 2018-2026)
+4. ✅ No team photos (icons/illustrations only)
+5. ✅ Personal, passion-driven tone
+6. ✅ Honest, transparent, human
+7. ✅ Why we're different (6 differentiators)
+8. ✅ Stats section (4 key metrics)
+9. ✅ Strong CTA at end
+10. ✅ Clean, minimal design (text-focused)
+11. ✅ Mobile-first responsive
+12. ✅ Fast loading (no images, just icons)
+
+Build an About Us page that tells the authentic story of 
+House of Developers in a personal, engaging way that builds 
+trust and differentiates us from typical agencies.
