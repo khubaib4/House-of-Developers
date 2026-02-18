@@ -1,0 +1,955 @@
+Redesign the WordPress Development page with beautiful mockups 
+and comprehensive content. Split hero mockup showing WordPress 
+dashboard + live site, purple WordPress brand color (#9333EA), 
+covering all WordPress services from custom themes to WooCommerce.
+
+PAGE: /services/web-development/cms/wordpress/page.tsx
+
+ACCENT COLOR: #9333EA (WordPress Purple) - used for gradients, 
+borders, active states, icons, and highlights throughout.
+
+---
+
+HERO SECTION:
+
+Container: py-24, max-w-7xl mx-auto px-6
+Layout: Grid grid-cols-1 lg:grid-cols-2 gap-12 items-center
+
+Left Column:
+
+- Breadcrumb: "Home / Services / Web Development / WordPress"
+  * text-sm text-muted-foreground, clickable, mb-6
+
+- Badge: "⚡ WordPress Development"
+  * bg-gradient (purple to violet), text-white,
+    px-4 py-2, rounded-full, mb-4
+
+- H1: "WordPress Development Services"
+  * text-4xl md:text-5xl lg:text-6xl font-bold, mb-4
+
+- Tagline: "The World's Most Powerful CMS. Built Your Way."
+  * text-xl md:text-2xl
+  * Gradient text from purple to violet
+  * font-semibold
+
+- Description (mt-6):
+  * text-xl text-muted-foreground leading-relaxed
+  * "We build custom WordPress websites that look beautiful, 
+    perform fast, and are easy for you to manage. From simple 
+    business sites to complex e-commerce platforms—WordPress 
+    powers it all."
+
+- Feature Pills (mt-6, flex gap-3 flex-wrap):
+  1. "Custom Themes" (Palette icon)
+  2. "WooCommerce" (ShoppingCart icon)
+  3. "Fast & Secure" (Shield icon)
+  4. "Easy to Manage" (Settings icon)
+
+- Stats Grid (mt-8, grid-cols-3 gap-4):
+  Each stat (text-center, p-4, bg-card, border, rounded-xl):
+  - Number (text-3xl font-bold, gradient purple to violet)
+  - Label (text-sm text-muted-foreground, mt-1)
+
+  1. "43%" / "Of All Websites"
+  2. "40+" / "WP Sites Built"
+  3. "100%" / "Custom Code"
+
+- CTA Buttons (mt-8, flex gap-4):
+  * Primary: "Start Your WordPress Project" → /contact
+    bg-gradient purple to violet, text-white, h-14 px-8
+  * Secondary: "View WordPress Examples" → scroll to showcase
+
+Right Column:
+
+SPLIT MOCKUP: WORDPRESS DASHBOARD + LIVE SITE
+
+Container (relative, h-[550px]):
+
+LEFT HALF - WordPress Admin Dashboard:
+* Container: absolute left-0 top-0 w-1/2 h-full
+* bg-[#1d2327] (WordPress admin dark), rounded-l-2xl
+* overflow-hidden, shadow-2xl
+
+WordPress Admin Bar (top):
+* bg-[#1d2327], border-b border-[#3c434a]
+* Height: 32px
+* Left: WordPress logo (white)
+* Right: User avatar + "Admin" text
+
+Sidebar (left side of dashboard):
+* bg-[#1d2327], w-[160px], border-r border-[#3c434a]
+* Menu items (text-[#a7aaad], hover:text-white):
+  - Dashboard (icon + text)
+  - Posts (icon + text, highlighted)
+  - Media
+  - Pages
+  - Comments
+  - Appearance
+  - Plugins
+  - Settings
+
+Main Content Area:
+* bg-[#f0f0f1], p-4
+* Title: "Posts" (text-2xl, text-[#1d2327])
+* "Add New" button (blue, top-right)
+* Table showing blog posts:
+  - Columns: Title, Author, Categories, Date
+  - 3-4 sample rows
+  - Purple highlight on active row
+* Clean, familiar WordPress interface
+
+DIVIDING LINE (absolute center):
+* Vertical line (w-px, h-full, bg-purple-500/30)
+* Purple glow effect
+
+RIGHT HALF - Live WordPress Site:
+* Container: absolute right-0 top-0 w-1/2 h-full
+* bg-white dark:bg-slate-900
+* rounded-r-2xl, overflow-hidden, shadow-2xl
+
+Mini Browser Bar (bg-slate-100 dark:bg-slate-800, p-2):
+* 3 dots (red, yellow, green)
+* URL: "yourbusiness.co.uk"
+* Lock icon
+
+Live Site Preview:
+* Modern, clean WordPress site design
+* Header: Logo + navigation
+* Hero section: Heading + CTA button (purple)
+* Content preview: Blog post cards
+* Sidebar: Recent posts widget
+* Footer snippet
+* Professional, contemporary design
+
+Connecting Arrow (absolute, center, z-10):
+* Circle badge (bg-purple-600, size 48)
+* Icon: ArrowRight (white)
+* Label below: "Powers" (text-xs, purple)
+* Pulse animation
+
+Floating Badges (around mockup):
+* "43% of all websites" (top-left, outside)
+* "80M+ downloads" (top-right, outside)
+* "60K+ plugins" (bottom-left, outside)
+* "11K+ themes" (bottom-right, outside)
+
+---
+
+WORDPRESS SERVICES SECTION:
+
+Container: py-20, bg-muted
+
+Header (centered):
+- H2: "WordPress Services We Offer"
+- Subtitle: "Custom WordPress development for every need"
+- mb-16
+
+Grid: grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8,
+      max-w-6xl mx-auto px-6
+
+6 SERVICE CARDS:
+
+Each card:
+- bg-card, border, rounded-2xl, p-8
+- hover:border-purple-500/50 hover:shadow-xl
+- transition-all 300ms
+
+Structure:
+1. Icon (purple gradient circle, w-14 h-14, mb-4)
+2. Service name (text-xl font-bold, mb-3)
+3. Description (text-sm text-muted-foreground, mb-4)
+4. What's included (space-y-2):
+   * 4 items with CheckCircle2 icons (purple)
+   * text-xs
+5. Link: "Learn More →" (purple text, hover:underline)
+
+THE 6 SERVICES:
+
+SERVICE 1: CUSTOM THEMES
+- Icon: Palette (purple gradient)
+- Name: "Custom WordPress Themes"
+- Description: "Bespoke theme design and development 
+  tailored to your brand. No templates, no compromises—
+  built exactly how you need it."
+- Includes:
+  ✓ 100% custom design
+  ✓ Mobile-first responsive
+  ✓ Fast page load speeds
+  ✓ Easy content editing
+
+SERVICE 2: WOOCOMMERCE
+- Icon: ShoppingCart
+- Name: "WooCommerce E-Commerce"
+- Description: "Full-featured online stores powered by 
+  WooCommerce. Product catalogs, payment processing, 
+  inventory—everything you need to sell online."
+- Includes:
+  ✓ Custom store design
+  ✓ Payment gateway integration
+  ✓ Product variations & stock
+  ✓ Shipping & tax automation
+
+SERVICE 3: PLUGIN DEVELOPMENT
+- Icon: Puzzle
+- Name: "Custom Plugin Development"
+- Description: "Need functionality that doesn't exist? 
+  We build custom WordPress plugins for unique business 
+  requirements."
+- Includes:
+  ✓ Custom functionality
+  ✓ Third-party integrations
+  ✓ WordPress coding standards
+  ✓ Full documentation
+
+SERVICE 4: WORDPRESS MIGRATION
+- Icon: ArrowRightLeft
+- Name: "WordPress Migration"
+- Description: "Move your site from any platform to 
+  WordPress with zero downtime. We handle all the 
+  technical complexity."
+- Includes:
+  ✓ Zero downtime migration
+  ✓ SEO preservation (301s)
+  ✓ Content & media transfer
+  ✓ Design improvements
+
+SERVICE 5: SPEED OPTIMIZATION
+- Icon: Zap
+- Name: "Performance Optimization"
+- Description: "Make your WordPress site blazing fast. 
+  Image optimization, caching, database cleanup, and 
+  code optimization."
+- Includes:
+  ✓ Sub-2 second load times
+  ✓ Image & code optimization
+  ✓ CDN integration
+  ✓ Database cleanup
+
+SERVICE 6: MAINTENANCE & SUPPORT
+- Icon: Shield
+- Name: "WordPress Maintenance"
+- Description: "Keep your WordPress site secure, fast, 
+  and updated. Monthly maintenance packages with 
+  priority support."
+- Includes:
+  ✓ Security updates & monitoring
+  ✓ Daily backups
+  ✓ Uptime monitoring
+  ✓ Plugin & theme updates
+
+---
+
+WORDPRESS VS OTHER CMS COMPARISON:
+
+Container: py-20
+
+Header (centered, mb-12):
+- H2: "Why WordPress?"
+- Subtitle: "How WordPress compares to other platforms"
+
+Comparison Table (max-w-5xl mx-auto px-6):
+
+Card (bg-card, border, rounded-2xl, p-8, overflow-x-auto):
+
+Table (w-full, text-sm):
+
+Header Row (bg-muted, font-semibold):
+| Feature | WordPress | Shopify | Wix | Webflow | Squarespace |
+
+Rows (border-b, py-3):
+
+1. "Ownership"
+   WordPress: ✅ Full (green)
+   Shopify: ⚠️ Limited (amber)
+   Wix: ❌ No (red)
+   Webflow: ⚠️ Limited
+   Squarespace: ❌ No
+
+2. "Customization"
+   WordPress: ✅ Unlimited
+   Shopify: ⚠️ Limited
+   Wix: ⚠️ Template-based
+   Webflow: ✅ High
+   Squarespace: ⚠️ Limited
+
+3. "E-Commerce"
+   WordPress: ✅ WooCommerce
+   Shopify: ✅ Built-in
+   Wix: ⚠️ Basic
+   Webflow: ⚠️ Basic
+   Squarespace: ⚠️ Basic
+
+4. "Monthly Cost"
+   WordPress: £10-50/mo (hosting)
+   Shopify: £25-300/mo
+   Wix: £10-30/mo
+   Webflow: £12-36/mo
+   Squarespace: £10-35/mo
+
+5. "SEO Control"
+   WordPress: ✅ Full
+   Shopify: ⚠️ Good
+   Wix: ⚠️ Limited
+   Webflow: ✅ Good
+   Squarespace: ⚠️ Limited
+
+6. "Plugin Ecosystem"
+   WordPress: ✅ 60,000+
+   Shopify: ⚠️ 8,000+
+   Wix: ⚠️ 300+
+   Webflow: ⚠️ Limited
+   Squarespace: ⚠️ Limited
+
+7. "Code Access"
+   WordPress: ✅ Full
+   Shopify: ⚠️ Liquid only
+   Wix: ❌ No
+   Webflow: ⚠️ Custom code
+   Squarespace: ⚠️ Limited
+
+8. "Scalability"
+   WordPress: ✅ Unlimited
+   Shopify: ✅ High
+   Wix: ⚠️ Limited
+   Webflow: ⚠️ Medium
+   Squarespace: ⚠️ Limited
+
+Legend (mt-6, flex gap-6, text-xs):
+✅ Excellent | ⚠️ Good/Limited | ❌ Poor/None
+
+---
+
+PLUGIN & THEME ECOSYSTEM:
+
+Container: py-20, bg-muted
+
+Header (centered, mb-12):
+- H2: "Powered by 60,000+ Plugins"
+- Subtitle: "Extend WordPress with any functionality you need"
+
+Two-Column Layout (grid-cols-1 lg:grid-cols-2 gap-12, 
+max-w-6xl mx-auto px-6):
+
+Left Column - Popular Plugins We Use:
+
+Card (bg-card, border, rounded-2xl, p-6):
+
+Heading: "Essential Plugins" (font-semibold, mb-6)
+
+Plugin Grid (grid-cols-2 gap-4):
+
+Each plugin (flex items-center gap-3, p-3, bg-muted, 
+rounded-lg):
+- Plugin icon/logo (if available, or colored circle)
+- Plugin name (text-sm font-medium)
+- Category badge (text-xs, purple/10 bg)
+
+12 PLUGINS:
+
+1. Yoast SEO (SEO icon, "SEO" badge)
+2. WooCommerce (Cart icon, "E-commerce")
+3. Contact Form 7 (Mail icon, "Forms")
+4. Elementor (Layout icon, "Page Builder")
+5. WP Rocket (Rocket icon, "Performance")
+6. Wordfence (Shield icon, "Security")
+7. Gravity Forms (FormInput icon, "Forms")
+8. Advanced Custom Fields (Database icon, "Development")
+9. WP Super Cache (Zap icon, "Performance")
+10. UpdraftPlus (HardDrive icon, "Backup")
+11. Redirection (ArrowRight icon, "SEO")
+12. WPML (Globe icon, "Multilingual")
+
+Right Column - Theme Capabilities:
+
+Card (bg-card, border, rounded-2xl, p-6):
+
+Heading: "Custom Theme Features" (font-semibold, mb-6)
+
+Feature List (space-y-4):
+
+Each feature (flex items-start gap-3):
+- Icon (purple, size 20)
+- Content:
+  * Title (text-sm font-semibold)
+  * Description (text-xs text-muted-foreground)
+
+8 FEATURES:
+
+1. Icon: Paintbrush
+   Title: "Pixel-Perfect Design"
+   Desc: "Custom designs matching your brand exactly"
+
+2. Icon: Smartphone
+   Title: "Mobile-First Responsive"
+   Desc: "Perfect on every device, every screen size"
+
+3. Icon: Zap
+   Title: "Optimized Performance"
+   Desc: "Fast load times, clean code, best practices"
+
+4. Icon: Settings
+   Title: "Easy Customization"
+   Desc: "Theme options panel for easy updates"
+
+5. Icon: Lock
+   Title: "Security Hardened"
+   Desc: "Built with WordPress security standards"
+
+6. Icon: Search
+   Title: "SEO Optimized"
+   Desc: "Clean markup, schema, fast Core Web Vitals"
+
+7. Icon: Palette
+   Title: "Gutenberg Compatible"
+   Desc: "Full block editor support and custom blocks"
+
+8. Icon: Code
+   Title: "Developer Friendly"
+   Desc: "Well-documented, extensible, standards-compliant"
+
+---
+
+WOOCOMMERCE SECTION:
+
+Container: py-20
+
+Header (centered, mb-12):
+- H2: "WooCommerce E-Commerce"
+- Subtitle: "Power your online store with WordPress + WooCommerce"
+
+Layout: grid-cols-1 lg:grid-cols-2 gap-12, 
+        max-w-6xl mx-auto px-6
+
+Left Column - WooCommerce Mockup:
+
+Browser Frame (shadow-2xl, rounded-xl):
+
+Browser Bar (bg-slate-100 dark:bg-slate-800, px-4 py-2):
+* 3 dots
+* URL: "yourstore.co.uk"
+* Cart icon (top-right, badge: "3")
+
+Store Preview:
+* Header: Logo + category navigation + search
+* Hero banner: "Summer Sale - 30% Off"
+* Product grid (2x2):
+  Each product card:
+  - Product image placeholder
+  - Product name
+  - Price (with strikethrough old price)
+  - Star rating
+  - "Add to Cart" button (purple)
+* Clean, modern e-commerce design
+* Purple accent color throughout
+
+Right Column - WooCommerce Features:
+
+Feature Cards (space-y-4):
+
+Each card (p-4, border-l-4 border-purple-500, bg-card):
+- Icon (purple, size 24, mb-2)
+- Title (font-semibold, text-sm, mb-1)
+- Description (text-xs text-muted-foreground)
+
+8 WOOCOMMERCE FEATURES:
+
+1. Icon: Package
+   Title: "Unlimited Products"
+   Desc: "Sell physical, digital, subscriptions, anything"
+
+2. Icon: CreditCard
+   Title: "Payment Gateways"
+   Desc: "Stripe, PayPal, cards—all major processors"
+
+3. Icon: Truck
+   Title: "Shipping Integration"
+   Desc: "Real-time rates, tracking, fulfillment"
+
+4. Icon: BarChart
+   Title: "Sales Analytics"
+   Desc: "Track orders, revenue, customer behavior"
+
+5. Icon: Users
+   Title: "Customer Accounts"
+   Desc: "Order history, wishlists, saved addresses"
+
+6. Icon: Tags
+   Title: "Product Variations"
+   Desc: "Sizes, colors, options—infinite variations"
+
+7. Icon: Globe
+   Title: "Multi-Currency"
+   Desc: "Sell worldwide in local currencies"
+
+8. Icon: Percent
+   Title: "Coupons & Discounts"
+   Desc: "Flexible discount rules and promotions"
+
+Stats Row (mt-8, grid-cols-3 gap-4):
+Each stat (text-center, p-3, bg-muted, rounded-lg):
+- Number (text-2xl font-bold, purple)
+- Label (text-xs text-muted-foreground)
+
+1. "30%" / "Of All E-Commerce"
+2. "5M+" / "Active Stores"
+3. "£0" / "Transaction Fees"
+
+---
+
+WHY CHOOSE US FOR WORDPRESS:
+
+Container: py-20, bg-muted
+
+Use ValueProposition component:
+- Title: "Why Choose Us For WordPress Development"
+- Subtitle: "What makes our WordPress builds different"
+- Columns: 3
+
+9 Benefits:
+
+1. Icon: Code2,
+   Title: "Custom Code, Not Templates",
+   Desc: "We build from scratch—no pre-made themes. 
+          Every site is unique to your business."
+
+2. Icon: Zap,
+   Title: "Performance Optimized",
+   Desc: "Sub-2 second load times. Optimized images, 
+          caching, CDN, clean code. Fast sites rank better."
+
+3. Icon: Shield,
+   Title: "Security First",
+   Desc: "Hardened WordPress, regular updates, security 
+          monitoring, daily backups. Your site stays safe."
+
+4. Icon: Settings,
+   Title: "Easy to Manage",
+   Desc: "Intuitive admin, training provided, clear 
+          documentation. You can update it yourself."
+
+5. Icon: TrendingUp,
+   Title: "SEO Ready",
+   Desc: "Clean markup, fast Core Web Vitals, schema, 
+          Yoast SEO configured. Built to rank on Google."
+
+6. Icon: Palette,
+   Title: "Beautiful Design",
+   Desc: "Modern, professional designs that convert 
+          visitors into customers. Mobile-first always."
+
+7. Icon: Users,
+   Title: "WooCommerce Experts",
+   Desc: "40+ e-commerce stores built. Payment gateways, 
+          shipping, taxes—we handle the complexity."
+
+8. Icon: Headphones,
+   Title: "Ongoing Support",
+   Desc: "60-day warranty, then optional maintenance 
+          packages. We don't disappear after launch."
+
+9. Icon: Package,
+   Title: "Plugin Integration",
+   Desc: "CRM, email marketing, booking systems—we 
+          integrate WordPress with your entire stack."
+
+---
+
+TECHNOLOGIES SECTION (TABBED):
+
+Container: py-20
+
+Header (centered):
+- H2: "WordPress Technology Stack"
+- Subtitle: "Tools and plugins we use to build powerful WordPress sites"
+- mb-12
+
+Use TabbedTechStack component:
+```javascript
+const tabs = [
+  {
+    label: "Core Technologies",
+    technologies: [
+      { name: "WordPress", slug: "wordpress" },
+      { name: "PHP", slug: "php" },
+      { name: "MySQL", slug: "mysql" },
+      { name: "JavaScript", slug: "javascript" },
+      { name: "React", slug: "react" },
+      { name: "Sass", slug: "sass" },
+      { name: "Webpack", slug: "webpack" },
+      { name: "Composer", slug: "composer" },
+    ]
+  },
+  {
+    label: "Essential Plugins",
+    technologies: [
+      { name: "WooCommerce", slug: "woocommerce" },
+      { name: "Yoast SEO", slug: "yoast" },
+      { name: "Elementor", slug: "elementor" },
+      { name: "Contact Form 7", slug: "contactform7" },
+      { name: "Advanced Custom Fields", slug: "advancedcustomfields" },
+      { name: "Gravity Forms", slug: "gravityforms" },
+      { name: "WPML", slug: "wpml" },
+      { name: "Wordfence", slug: "wordfence" },
+    ]
+  },
+  {
+    label: "Performance & Security",
+    technologies: [
+      { name: "WP Rocket", slug: "wprocket" },
+      { name: "Cloudflare", slug: "cloudflare" },
+      { name: "Wordfence", slug: "wordfence" },
+      { name: "UpdraftPlus", slug: "updraftplus" },
+      { name: "Redis", slug: "redis" },
+      { name: "Nginx", slug: "nginx" },
+      { name: "Let's Encrypt", slug: "letsencrypt" },
+      { name: "Sentry", slug: "sentry" },
+    ]
+  },
+  {
+    label: "Development Tools",
+    technologies: [
+      { name: "GitHub", slug: "github" },
+      { name: "Figma", slug: "figma" },
+      { name: "Docker", slug: "docker" },
+      { name: "Composer", slug: "composer" },
+      { name: "Gulp", slug: "gulp" },
+      { name: "Webpack", slug: "webpack" },
+      { name: "VS Code", slug: "visualstudiocode" },
+      { name: "Local by Flywheel", slug: "flywheel" },
+    ]
+  },
+  {
+    label: "Hosting & Deployment",
+    technologies: [
+      { name: "AWS", slug: "amazonaws" },
+      { name: "Cloudflare", slug: "cloudflare" },
+      { name: "DigitalOcean", slug: "digitalocean" },
+      { name: "WP Engine", slug: "wpengine" },
+      { name: "Kinsta", slug: "kinsta" },
+      { name: "SiteGround", slug: "siteground" },
+      { name: "GitHub Actions", slug: "githubactions" },
+      { name: "Docker", slug: "docker" },
+    ]
+  }
+];
+```
+
+NOTE: Some WordPress-specific tools may not have Simple Icons 
+slugs. Use the onError handler to gracefully hide missing icons, 
+or use Lucide icons as fallbacks (Settings, Package, Shield, etc.) 
+styled in gray monochrome to match.
+
+---
+
+PROCESS SECTION:
+
+Container: py-20, bg-muted
+
+Use ZigzagTimeline component:
+```javascript
+import { ZigzagTimeline } from "@/components/ui/ZigzagTimeline";
+import { MessageSquare, Palette, Code2, Rocket } from "lucide-react";
+
+const WORDPRESS_COLOR = "#9333EA"; // Purple
+```
+```javascript
+const processSteps = [
+  {
+    icon: MessageSquare,
+    title: "Discovery & Planning",
+    points: [
+      "Understand your goals, audience, and functionality needs",
+      "Content audit and site structure planning",
+      "Plugin and integration requirements gathering"
+    ]
+  },
+  {
+    icon: Palette,
+    title: "Design & Approval",
+    points: [
+      "Custom designs in Figma matching your brand",
+      "Mobile-first responsive mockups",
+      "Revisions until you're 100% happy"
+    ]
+  },
+  {
+    icon: Code2,
+    title: "WordPress Development",
+    points: [
+      "Custom theme development with clean code",
+      "Plugin integration and custom functionality",
+      "Content migration and SEO optimization"
+    ]
+  },
+  {
+    icon: Rocket,
+    title: "Launch & Training",
+    points: [
+      "Thorough testing, optimization, and security hardening",
+      "Team training on WordPress admin and content editing",
+      "Launch with 60-day support and maintenance options"
+    ]
+  }
+];
+```
+```javascript
+<ZigzagTimeline
+  title="Our WordPress Development Process"
+  subtitle="A proven process for building WordPress sites that work"
+  steps={processSteps}
+  accentColor={WORDPRESS_COLOR}
+/>
+```
+
+---
+
+MINI CASE STUDIES:
+
+Container: py-20
+
+Header (centered):
+- H2: "WordPress Sites We've Built"
+- Subtitle: "Real projects, real businesses"
+- mb-12
+
+Grid: grid-cols-1 md:grid-cols-3 gap-8, max-w-6xl mx-auto px-6
+
+3 WORDPRESS CASE STUDIES:
+
+CASE STUDY 1:
+Top (h-48, gradient purple to violet, rounded-t-2xl):
+* Icon: ShoppingBag (white, size 64, centered)
+* "E-Commerce" badge (white/20, top-left, p-2)
+
+Content (bg-card, border border-t-0, rounded-b-2xl, p-6):
+* H3: "LuxeWear Fashion Store"
+* Client: "Online Retailer, Manchester"
+* Description (text-sm text-muted-foreground, mt-2):
+  "Custom WooCommerce store with 800 products, size 
+  variations, and subscription boxes. Integrated with 
+  Stripe, Royal Mail shipping, and Mailchimp."
+* Features Built (mt-4):
+  Heading: "WordPress Features" (text-xs uppercase, mb-2)
+  List (space-y-1.5, text-xs):
+  - "🛍️ WooCommerce with 800 products"
+  - "📦 Subscription box functionality"
+  - "💳 Stripe payment integration"
+  - "📧 Mailchimp automation"
+  - "🚀 Optimized to <2s load time"
+* Tech (mt-4, flex gap-2 flex-wrap):
+  WordPress, WooCommerce, PHP, Stripe
+* Footer (mt-4, text-xs text-muted-foreground):
+  "8 weeks • Custom WooCommerce theme"
+
+CASE STUDY 2:
+Top (h-48, gradient purple to blue):
+* Icon: Building (white, size 64)
+* "Business Website" badge
+
+Content:
+* H3: "Law Firm Corporate Site"
+* Client: "Legal Practice, London"
+* Description: "Professional WordPress site with practice 
+  area pages, attorney bios, case results, and contact 
+  forms. Optimized for Google local search."
+* Features:
+  - "⚖️ Practice area custom post types"
+  - "👥 Attorney profile system"
+  - "📝 Case results showcase"
+  - "📍 Local SEO optimization"
+  - "🔒 Security hardened for GDPR"
+* Tech: WordPress, ACF, Yoast SEO, Contact Form 7
+* Footer: "6 weeks • Custom business theme"
+
+CASE STUDY 3:
+Top (h-48, gradient purple to pink):
+* Icon: Users (white, size 64)
+* "Membership Site" badge
+
+Content:
+* H3: "Online Course Platform"
+* Client: "Education Startup, Birmingham"
+* Description: "Membership site with online courses, 
+  student dashboards, progress tracking, and drip content. 
+  Stripe subscriptions and video hosting."
+* Features:
+  - "📚 Course management system"
+  - "👨‍🎓 Student dashboard & progress"
+  - "💳 Stripe recurring subscriptions"
+  - "🎥 Video hosting integration"
+  - "📊 Student analytics"
+* Tech: WordPress, LearnDash, Stripe, Vimeo
+* Footer: "10 weeks • Custom membership theme"
+
+---
+
+FAQ SECTION:
+
+Container: py-20, bg-muted, max-w-4xl mx-auto px-6
+
+Header: "WordPress FAQs"
+
+12 Questions (Accordion):
+
+Q1: "How much does WordPress development cost?"
+A: "WordPress projects range from £2,000 for a basic 
+business site to £15,000+ for complex e-commerce or 
+membership sites. Cost depends on design complexity, 
+number of pages, custom functionality, and integrations. 
+We provide detailed quotes after a free discovery call."
+
+Q2: "Is WordPress good for e-commerce?"
+A: "Yes! WooCommerce (WordPress e-commerce) powers 30% 
+of all online stores including major brands. It's flexible, 
+scalable, and has zero transaction fees unlike Shopify. 
+We've built 40+ WooCommerce stores handling millions in 
+sales."
+
+Q3: "Will I be able to update the site myself?"
+A: "Absolutely. WordPress is designed for non-technical 
+users. We provide training, documentation, and video 
+tutorials. Most clients manage their own content updates—
+we're here if you need help."
+
+Q4: "How long does WordPress development take?"
+A: "Simple business site: 4-6 weeks. Custom theme with 
+functionality: 8-12 weeks. E-commerce or complex site: 
+12-16 weeks. Timeline depends on scope, revisions, and 
+content readiness."
+
+Q5: "What's the difference between WordPress.com and 
+WordPress.org?"
+A: "WordPress.com is a hosted platform (like Wix) with 
+limitations. WordPress.org is the open-source software 
+we use—you own everything, unlimited customization, full 
+control. We build on .org (self-hosted)."
+
+Q6: "Do I need WordPress hosting or can I use any host?"
+A: "WordPress runs on most hosting. We recommend managed 
+WordPress hosts (WP Engine, Kinsta, SiteGround) for best 
+performance, security, and support. We can set up hosting 
+or work with your existing provider."
+
+Q7: "Can you migrate my existing site to WordPress?"
+A: "Yes. We migrate from any platform (Wix, Squarespace, 
+Shopify, old WordPress, custom) to WordPress with zero 
+downtime. Content, SEO, and design all preserved or 
+improved. Typical migration: 2-4 weeks."
+
+Q8: "Is WordPress secure?"
+A: "WordPress itself is very secure when properly maintained. 
+We harden security (firewalls, malware scanning, login 
+protection), keep plugins updated, provide daily backups, 
+and monitor for threats. Maintenance packages available."
+
+Q9: "Can WordPress handle high traffic?"
+A: "Yes. WordPress powers sites with millions of visitors 
+(BBC, Sony, Microsoft use it). Proper caching, CDN, and 
+optimization make WordPress extremely scalable. We build 
+sites that handle traffic spikes without issues."
+
+Q10: "What is a child theme and do I need one?"
+A: "A child theme allows safe customization without 
+affecting the parent theme. We build custom themes from 
+scratch (no parent needed) or create child themes if 
+using a framework. You always get the approach that's 
+best for your project."
+
+Q11: "Can WordPress integrate with my CRM/tools?"
+A: "Yes. WordPress integrates with everything—Salesforce, 
+HubSpot, Mailchimp, Zapier, Stripe, Google Analytics, 
+booking systems, anything with an API. We build custom 
+integrations if needed."
+
+Q12: "Do you offer WordPress maintenance after launch?"
+A: "Yes. Every project includes 60 days post-launch 
+support. After that, maintenance packages start from 
+£150/month covering updates, backups, security monitoring, 
+and priority support."
+
+---
+
+CTA SECTIONS (3):
+
+CTA 1 (After Services Section):
+- Variant: 'bordered'
+- Title: "Ready to Build Your WordPress Site?"
+- Description: "Free consultation, honest advice, and a 
+  clear quote. Let's discuss your project."
+- PrimaryCTA: "Get Free WordPress Quote" → /contact
+- Size: 'medium'
+
+CTA 2 (After Comparison Table):
+- Variant: 'gradient'
+- Title: "See WordPress in Action"
+- Description: "View examples of WordPress sites we've 
+  built or book a demo to see what's possible."
+- PrimaryCTA: "View WordPress Examples" → /case-studies
+- SecondaryCTA: "Book Demo Call" → /contact
+- Size: 'large'
+
+CTA 3 (Final, After FAQ):
+- Variant: 'gradient'
+- Title: "Let's Build Your WordPress Site"
+- Description: "Free 30-minute consultation. We'll discuss 
+  your goals, answer questions, and give you an honest 
+  recommendation."
+- PrimaryCTA: "Book Free Consultation" → /contact
+- SecondaryCTA: "Call: +44 7429 917368" → tel link
+- ShowContactInfo: true
+- Size: 'large'
+
+---
+
+GLOBAL REQUIREMENTS:
+
+1. SEO:
+   - Meta title: "WordPress Development UK | Custom Themes 
+     & WooCommerce | House of Developers"
+   - Meta description: "Expert WordPress development. Custom 
+     themes, WooCommerce e-commerce, plugins, performance 
+     optimization. 40+ WordPress sites built. Free quote."
+   - Schema: Service, FAQPage, BreadcrumbList
+
+2. ACCENT COLOR: #9333EA (WordPress Purple) throughout:
+   - All gradients: purple to violet
+   - Active states, hover borders
+   - ZigzagTimeline accent
+   - Icons, badges, highlights
+
+3. SPLIT HERO MOCKUP:
+   - Left: WordPress admin dashboard (dark theme)
+   - Right: Live WordPress site preview
+   - Connecting arrow between them
+   - Floating WordPress stats badges
+
+4. COMPARISON TABLE:
+   - WordPress vs 4 competitors
+   - 8 comparison criteria
+   - Color-coded (green/amber/red)
+
+5. NO PRICING CARDS:
+   - Pricing ranges in FAQ only
+   - Focus on value and capabilities
+
+6. CASE STUDY URLS:
+   - All use houseofdevelopers.co.uk/projects/[name]
+
+7. COMPONENTS:
+   - ZigzagTimeline ✅ (purple accent)
+   - TabbedTechStack ✅ (Simple Icons CDN)
+   - ValueProposition ✅
+   - CTASection × 3 ✅
+
+8. RESPONSIVE: Mobile-first throughout
+
+9. DARK/LIGHT MODE: Full support
+   - WordPress admin mockup: always dark (#1d2327)
+   - Live site preview: adapts to theme
+
+10. NO BEFORE/AFTER METRICS in case studies
+
+Build a comprehensive WordPress development page that 
+showcases our expertise, differentiates us from template-
+based agencies, and demonstrates the power and flexibility 
+of custom WordPress development.
