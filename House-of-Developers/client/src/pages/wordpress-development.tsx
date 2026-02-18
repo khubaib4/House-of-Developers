@@ -569,7 +569,7 @@ export default function WordPressDevelopment() {
                   { value: "100%", label: "Custom Code" },
                 ].map((stat) => (
                   <div key={stat.label} className="bg-card border rounded-xl p-4 text-center">
-                    <div className="bg-gradient-to-r from-purple-600 to-violet-600 bg-clip-text text-transparent text-3xl font-bold">
+                    <div className="bg-gradient-to-r from-purple-600 to-violet-600 bg-clip-text text-transparent font-bold text-[20px]">
                       {stat.value}
                     </div>
                     <p className="text-xs text-muted-foreground mt-1">{stat.label}</p>
