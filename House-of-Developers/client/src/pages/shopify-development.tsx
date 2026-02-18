@@ -1,783 +1,1224 @@
-import { motion } from "framer-motion";
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
+import { Link } from "wouter";
+import {
+  CheckCircle2,
+  Palette,
+  ShoppingCart,
+  Shield,
+  Puzzle,
+  Zap,
+  Code2,
+  TrendingUp,
+  Users,
+  Headphones,
+  Package,
+  ArrowRight,
+  ArrowRightLeft,
+  Globe,
+  CreditCard,
+  Truck,
+  BarChart,
+  Percent,
+  Smartphone,
+  Mail,
+  Rocket,
+  MessageSquare,
+  Crown,
+  Award,
+  Star,
+  ThumbsUp,
+  RefreshCw,
+  Camera,
+  DollarSign,
+  Target,
+  Home,
+  Heart,
+  ShoppingBag,
+  Settings,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Card } from "@/components/ui/card";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import {
-  CheckCircle2,
-  TrendingUp,
-  Zap,
-  Globe,
-  Package,
-  Award,
-  ShoppingBag,
-  Smartphone,
-  BarChart,
-  Target,
-  Headphones,
-  ArrowRight,
-  Loader2,
-  ImageOff,
-  AlertTriangle,
-  CreditCard,
-  Server,
-  Store,
-  Repeat,
-  DollarSign,
-  Sparkles,
-  Coffee,
-  ShoppingCart,
-  Wallet,
-  Send,
-  BarChart3,
-  Mail,
-  Users,
-  Pin,
-  Video,
-  Flame,
-  Star,
-  Search,
-  Palette,
-  Code2,
-  Rocket,
-  Truck,
-  ThumbsUp,
-  MessageSquare,
-  Camera,
-  Clock,
-} from "lucide-react";
-import { useState, useRef, useCallback } from "react";
-import { Link } from "wouter";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { ZigzagTimeline } from "@/components/ui/ZigzagTimeline";
-import { TechStackIcons } from "@/components/ui/TechStackIcons";
 import { ValueProposition } from "@/components/ui/ValueProposition";
 import { CTASection } from "@/components/ui/CTASection";
 
-const fadeInUp = {
-  initial: { opacity: 0, y: 24 },
-  animate: { opacity: 1, y: 0 },
-};
+const SHOPIFY_COLOR = "#5E8E3E";
 
-const staggerContainer = {
-  initial: {},
-  animate: { transition: { staggerChildren: 0.1 } },
-};
-
-const staggerItem = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0, transition: { duration: 0.4 } },
-};
-
-const featurePills = [
-  { label: "Built-in Payments", icon: CreditCard },
-  { label: "8,000+ Apps", icon: Package },
-  { label: "Mobile Optimized", icon: Smartphone },
-  { label: "24/7 Hosting", icon: Server },
-];
-
-const solutions = [
+const services = [
   {
-    icon: Store,
-    title: "Standard Stores",
-    description: "Perfect for product-based businesses launching their first online store.",
-    features: ["Product catalog setup", "Payment gateway integration", "Mobile-optimized design", "Order management"],
+    icon: Palette,
+    title: "Custom Shopify Themes",
+    description: "Bespoke Shopify themes designed to convert visitors into customers.",
+    features: ["100% custom design", "Conversion-optimized", "Mobile-first", "Fast (<2s)"],
   },
   {
-    icon: Repeat,
-    title: "Subscription Stores",
-    description: "Recurring revenue models with subscription products and memberships.",
-    features: ["Subscription management", "Recurring billing", "Customer portals", "ReCharge integration"],
+    icon: Crown,
+    title: "Shopify Plus Development",
+    description: "Enterprise-grade Shopify Plus solutions for high-volume merchants.",
+    features: ["Custom checkout", "Automation & scripts", "B2B & wholesale", "Dedicated account manager"],
+  },
+  {
+    icon: Puzzle,
+    title: "Shopify App Development",
+    description: "Custom Shopify apps to extend your store's functionality.",
+    features: ["Custom functionality", "Shopify API integration", "Private or public apps", "App Store submission"],
+  },
+  {
+    icon: ArrowRightLeft,
+    title: "Shopify Migration",
+    description: "Seamless migration from any platform to Shopify with zero downtime.",
+    features: ["Zero downtime", "SEO preservation", "Product & customer data", "Design improvements"],
   },
   {
     icon: TrendingUp,
-    title: "Headless Shopify",
-    description: "Custom frontend with Shopify backend for ultimate flexibility.",
-    features: ["Next.js frontend", "Shopify Storefront API", "Custom checkout", "Blazing fast performance"],
+    title: "Conversion Rate Optimization",
+    description: "Data-driven optimization to increase sales and average order value.",
+    features: ["Checkout flow optimization", "A/B testing", "Analytics & tracking", "Speed optimization"],
+  },
+  {
+    icon: Shield,
+    title: "Shopify Maintenance & Support",
+    description: "Ongoing support to keep your Shopify store running at peak performance.",
+    features: ["Monthly theme updates", "App management", "Performance monitoring", "Priority support"],
   },
 ];
 
-const shopifyTechnologies = [
-  { name: "Shopify", slug: "shopify" },
-  { name: "JavaScript", slug: "javascript" },
-  { name: "React", slug: "react" },
-  { name: "Node.js", slug: "nodedotjs" },
-  { name: "Stripe", slug: "stripe" },
-  { name: "AWS", slug: "amazonaws" },
-  { name: "Cloudflare", slug: "cloudflare" },
-  { name: "GitHub", slug: "github" },
-  { name: "Figma", slug: "figma" },
-  { name: "TypeScript", slug: "typescript" },
-  { name: "GraphQL", slug: "graphql" },
-  { name: "MongoDB", slug: "mongodb" },
+const shopifyApps = [
+  { name: "Klaviyo", icon: Mail, category: "Email Marketing" },
+  { name: "Yotpo", icon: Star, category: "Reviews" },
+  { name: "Gorgias", icon: MessageSquare, category: "Support" },
+  { name: "Judge.me", icon: ThumbsUp, category: "Reviews" },
+  { name: "ReCharge", icon: RefreshCw, category: "Subscriptions" },
+  { name: "Shopify Flow", icon: Zap, category: "Automation" },
+  { name: "Loox", icon: Camera, category: "Photo Reviews" },
+  { name: "Bold", icon: DollarSign, category: "Pricing" },
+  { name: "Oberlo", icon: Package, category: "Dropshipping" },
+  { name: "ShipStation", icon: Truck, category: "Shipping" },
+  { name: "Google Analytics", icon: BarChart, category: "Analytics" },
+  { name: "Privy", icon: Target, category: "Popups" },
 ];
 
-const zigzagSteps = [
+const customIntegrations = [
+  { icon: CreditCard, title: "Payment Gateways" },
+  { icon: Truck, title: "Shipping & Fulfillment" },
+  { icon: Mail, title: "Email Marketing" },
+  { icon: Users, title: "CRM Integration" },
+  { icon: BarChart, title: "Analytics & Tracking" },
+  { icon: Package, title: "Inventory Management" },
+  { icon: MessageSquare, title: "Customer Support" },
+  { icon: Globe, title: "Multi-Channel Selling" },
+];
+
+const shopifyPlusBenefits = [
+  { icon: Crown, title: "Custom Checkout" },
+  { icon: Zap, title: "Unlimited API Calls" },
+  { icon: Code2, title: "Shopify Scripts" },
+  { icon: Users, title: "B2B & Wholesale" },
+  { icon: Zap, title: "Shopify Flow" },
+  { icon: Globe, title: "Multi-Store Management" },
+  { icon: Headphones, title: "Dedicated Support" },
+  { icon: TrendingUp, title: "No Revenue Limits" },
+];
+
+const checkoutFeatures = [
+  { icon: CreditCard, title: "Express Checkout", metric: "↑ 35% conversion" },
+  { icon: Shield, title: "Trust Badges", metric: "↓ 22% cart abandonment" },
+  { icon: Smartphone, title: "Mobile Optimized", metric: "↑ 40% mobile conversions" },
+  { icon: Percent, title: "Dynamic Discounts", metric: "↑ 28% AOV" },
+  { icon: Truck, title: "Shipping Calculator", metric: "↓ 18% drop-off" },
+  { icon: Mail, title: "Cart Recovery", metric: "↑ 15% recovered" },
+  { icon: Globe, title: "Multi-Currency", metric: "↑ 45% international" },
+  { icon: Zap, title: "One-Page Checkout", metric: "↓ 30% checkout time" },
+];
+
+const whyChooseValues = [
+  { icon: Award, title: "Shopify Certified Partners", description: "Official Shopify Partner agency with proven expertise across Shopify and Shopify Plus." },
+  { icon: TrendingUp, title: "Conversion-Focused Design", description: "Every design decision backed by data to maximize your store's conversion rate." },
+  { icon: Zap, title: "Fast Loading Stores", description: "Optimized themes that load in under 2 seconds for the best shopping experience." },
+  { icon: Crown, title: "Shopify Plus Experience", description: "Enterprise-level experience building high-volume stores on Shopify Plus." },
+  { icon: Code2, title: "Custom App Development", description: "Bespoke Shopify apps built to extend your store's functionality beyond the app store." },
+  { icon: ShoppingCart, title: "E-Commerce Expertise", description: "Deep understanding of e-commerce best practices, checkout flows, and conversion optimization." },
+  { icon: Users, title: "Post-Launch Support", description: "Ongoing maintenance, optimization, and support to keep your store growing." },
+  { icon: BarChart, title: "Analytics & Tracking", description: "Full analytics setup with Google Analytics, Facebook Pixel, and custom dashboards." },
+  { icon: Globe, title: "International Setup", description: "Multi-currency, multi-language, and global shipping configuration for worldwide sales." },
+];
+
+const techTabs = [
   {
-    icon: Search,
-    title: "Setup & Design",
+    label: "Core Technologies",
+    technologies: [
+      { name: "Shopify", slug: "shopify" },
+      { name: "Liquid", slug: "shopify" },
+      { name: "JavaScript", slug: "javascript" },
+      { name: "React", slug: "react" },
+      { name: "GraphQL", slug: "graphql" },
+      { name: "Node.js", slug: "nodedotjs" },
+      { name: "Tailwind CSS", slug: "tailwindcss" },
+      { name: "Webpack", slug: "webpack" },
+    ],
+  },
+  {
+    label: "Essential Apps",
+    technologies: [
+      { name: "Klaviyo", slug: "klaviyo" },
+      { name: "Yotpo", slug: "yotpo" },
+      { name: "Gorgias", slug: "gorgias" },
+      { name: "ReCharge", slug: "recharge" },
+      { name: "Judge.me", slug: "judgeme" },
+      { name: "Loox", slug: "loox" },
+      { name: "Privy", slug: "privy" },
+      { name: "Bold", slug: "bold" },
+    ],
+  },
+  {
+    label: "Payments & Checkout",
+    technologies: [
+      { name: "Shopify Payments", slug: "shopify" },
+      { name: "Stripe", slug: "stripe" },
+      { name: "PayPal", slug: "paypal" },
+      { name: "Klarna", slug: "klarna" },
+      { name: "Shop Pay", slug: "shopify" },
+      { name: "Apple Pay", slug: "apple" },
+      { name: "Google Pay", slug: "googlepay" },
+      { name: "Afterpay", slug: "afterpay" },
+    ],
+  },
+  {
+    label: "Marketing & Analytics",
+    technologies: [
+      { name: "Google Analytics", slug: "googleanalytics" },
+      { name: "Facebook Pixel", slug: "facebook" },
+      { name: "Klaviyo", slug: "klaviyo" },
+      { name: "Mailchimp", slug: "mailchimp" },
+      { name: "Google Ads", slug: "googleads" },
+      { name: "TikTok Pixel", slug: "tiktok" },
+      { name: "Hotjar", slug: "hotjar" },
+      { name: "Omnisend", slug: "omnisend" },
+    ],
+  },
+  {
+    label: "Development Tools",
+    technologies: [
+      { name: "GitHub", slug: "github" },
+      { name: "Figma", slug: "figma" },
+      { name: "Shopify CLI", slug: "shopify" },
+      { name: "Theme Kit", slug: "shopify" },
+      { name: "VS Code", slug: "visualstudiocode" },
+      { name: "Postman", slug: "postman" },
+      { name: "Git", slug: "git" },
+      { name: "Docker", slug: "docker" },
+    ],
+  },
+];
+
+const processSteps = [
+  {
+    icon: MessageSquare,
+    title: "Discovery & Strategy",
     points: [
-      "Shopify account setup, theme selection, and purchase",
-      "Brand customization with logo, colors, and fonts",
-      "Homepage and product page design and layout",
+      "Free consultation to understand your products, audience, and goals",
+      "Competitor analysis and store architecture planning",
+      "Technical specification and project roadmap",
     ],
   },
   {
     icon: Palette,
-    title: "Product Setup",
+    title: "Design & UX",
     points: [
-      "Product uploads with images, descriptions, and pricing",
-      "Collection creation, variant setup (sizes, colors)",
-      "Inventory management and catalog organization",
+      "Custom theme design with conversion-focused layouts",
+      "Brand integration with your identity and visual language",
+      "Mobile-first responsive design with user testing",
     ],
   },
   {
     icon: Code2,
-    title: "Integrations & Apps",
+    title: "Shopify Development",
     points: [
-      "Payment gateway setup with Stripe and PayPal",
-      "Shipping zones, rates, and essential app installations",
-      "Email marketing integration and automation",
+      "Custom Liquid theme development with clean code",
+      "App integration and custom functionality build",
+      "Product migration, payment setup, and shipping configuration",
     ],
   },
   {
     icon: Rocket,
-    title: "Testing & Launch",
+    title: "Launch & Optimize",
     points: [
-      "Checkout flow and payment testing end-to-end",
-      "Mobile responsiveness and SEO optimization",
-      "Store launch, team training, and handover",
+      "Thorough testing across devices and checkout flows",
+      "SEO setup, analytics configuration, and speed optimization",
+      "Go-live with ongoing monitoring and support",
     ],
   },
 ];
 
-const resultMetrics = [
-  { icon: TrendingUp, label: "Conversion Rate", before: "1.8%", after: "4.2%", improvement: "+133%" },
-  { icon: ShoppingCart, label: "Cart Abandonment", before: "78%", after: "42%", improvement: "46% lower" },
-  { icon: Smartphone, label: "Mobile Sales", before: "30%", after: "68%", improvement: "+127%" },
-  { icon: DollarSign, label: "Avg Order Value", before: "\u00a345", after: "\u00a378", improvement: "+73%" },
-  { icon: Zap, label: "Load Time", before: "4.2s", after: "1.1s", improvement: "74% faster" },
-  { icon: BarChart, label: "Monthly Revenue", before: "\u00a312K", after: "\u00a345K", improvement: "+275%" },
-];
-
-const useCases = [
+const caseStudies = [
   {
-    industry: "Fashion",
-    title: "Sustainable Clothing Brand",
-    description: "Shopify Plus store with 1,000+ products and subscription boxes",
-    results: ["\u00a3200K/month", "5.2% conversion"],
     icon: ShoppingBag,
+    title: "Premium Apparel Store",
+    gradient: "from-green-600 to-emerald-600",
+    badge: "Fashion",
+    description: "D2C fashion brand in London on Shopify Plus with size quiz, subscriptions, multi-currency, and Klaviyo integration.",
+    features: ["Shopify Plus", "Size quiz", "Subscriptions", "Multi-currency"],
+    tech: ["Shopify Plus", "Klaviyo", "ReCharge", "Custom App"],
+    timeline: "10 weeks",
   },
   {
-    industry: "Beauty",
-    title: "Skincare Subscription",
-    description: "ReCharge-powered subscription model with custom portal",
-    results: ["2,000 subscribers", "\u00a350K MRR"],
-    icon: Sparkles,
+    icon: Home,
+    title: "Home Decor E-Commerce",
+    gradient: "from-green-600 to-teal-600",
+    badge: "Home & Living",
+    description: "Manchester-based home decor store with 2,000+ products, AR preview, visual search, and WMS integration.",
+    features: ["2,000+ products", "AR preview", "Visual search", "WMS integration"],
+    tech: ["Shopify", "Custom App", "AR.js", "REST API"],
+    timeline: "12 weeks",
   },
   {
-    industry: "Food",
-    title: "Specialty Coffee Shop",
-    description: "Multi-location store with local pickup and shipping",
-    results: ["\u00a380K first quarter", "4.8/5 rating"],
-    icon: Coffee,
+    icon: Heart,
+    title: "Beauty Subscription Box",
+    gradient: "from-green-600 to-blue-600",
+    badge: "Beauty & Wellness",
+    description: "Birmingham beauty brand with build-your-box subscriptions, loyalty program, and influencer affiliate system.",
+    features: ["Build-your-box", "ReCharge", "Loyalty program", "Influencer affiliate"],
+    tech: ["Shopify", "ReCharge", "LoyaltyLion", "Custom App"],
+    timeline: "14 weeks",
   },
-];
-
-const whyChooseValues = [
-  { icon: Award, title: "Shopify Partners", description: "Official Shopify Partner with 50+ successful stores", stat: "50+ Stores" },
-  { icon: Zap, title: "Fast Delivery", description: "Most stores launched in 2-4 weeks", stat: "2-4 Weeks" },
-  { icon: TrendingUp, title: "Conversion Focused", description: "Optimized checkout flows that convert", stat: "4%+ Avg CVR" },
-  { icon: Smartphone, title: "Mobile First", description: "60%+ of sales happen on mobile", stat: "Mobile Optimized" },
-  { icon: DollarSign, title: "ROI Driven", description: "Our stores generate 3x more revenue on average" },
-  { icon: Headphones, title: "Ongoing Support", description: "Post-launch support and optimization" },
 ];
 
 const faqs = [
-  { q: "How long does it take to launch a Shopify store?", a: "Standard stores: 2-3 weeks. Complex stores with custom features: 4-6 weeks. We'll give you an exact timeline after understanding your requirements." },
-  { q: "What's the difference between Shopify and Shopify Plus?", a: "Shopify is for most businesses (\u00a329-\u00a3299/month). Shopify Plus is for high-volume stores (\u00a32,000+/month) with advanced features, dedicated support, and custom checkout. We'll recommend the right plan for you." },
-  { q: "Can you migrate my existing store to Shopify?", a: "Yes! We migrate from WooCommerce, Magento, BigCommerce, or any platform. We preserve your products, customers, orders, and SEO." },
-  { q: "Do you use custom themes or Shopify themes?", a: "We use premium Shopify themes (Dawn, Impulse, Brooklyn) and customize them heavily to match your brand. For unique designs, we build custom themes." },
-  { q: "What payment gateways do you support?", a: "Shopify Payments (recommended), Stripe, PayPal, Apple Pay, Google Pay, and 100+ other gateways supported by Shopify." },
-  { q: "Can you integrate with my existing tools?", a: "Yes! We integrate with email marketing (Klaviyo, Mailchimp), CRM, inventory systems, shipping providers, and more via Shopify apps or custom APIs." },
-  { q: "Do you provide ongoing support after launch?", a: "Yes! We offer monthly support packages (from \u00a3300/month) including app updates, theme updates, new product uploads, and technical assistance." },
-  { q: "What if I need custom functionality?", a: "We build custom Shopify apps or use Shopify's API to add any functionality you need\u2014subscriptions, custom checkout, wholesale portals, etc." },
+  { q: "How much does a Shopify store cost?", a: "Basic Shopify stores start from £3,000-£5,000. Custom theme stores with advanced features are £5,000-£15,000. Shopify Plus stores range from £15,000-£50,000+. We provide a fixed-price quote after our free consultation." },
+  { q: "Shopify vs WooCommerce — which is better?", a: "Shopify is easier to manage with built-in hosting and security. WooCommerce offers more flexibility with full code access. For most e-commerce businesses, Shopify is the better choice due to its reliability, app ecosystem, and zero maintenance hosting." },
+  { q: "What's the difference between Shopify and Shopify Plus?", a: "Shopify is for most businesses (£29-£299/month). Shopify Plus is for high-volume stores (£2,000+/month) with custom checkout, Shopify Scripts, unlimited API calls, dedicated support, and automation tools like Shopify Flow." },
+  { q: "Can you migrate my existing store to Shopify?", a: "Yes! We migrate from WooCommerce, Magento, BigCommerce, Squarespace, or any platform. We preserve your products, customers, orders, SEO rankings, and usually improve the design in the process." },
+  { q: "How long does it take to build a Shopify store?", a: "Simple stores: 2-3 weeks. Standard custom stores: 4-6 weeks. Complex Shopify Plus stores: 8-12 weeks. We'll give you an accurate timeline during our free consultation." },
+  { q: "Can you build custom Shopify apps?", a: "Yes! We build custom public and private Shopify apps using the Shopify API, Polaris, and App Bridge. Whether you need custom functionality for your store or want to publish on the Shopify App Store." },
+  { q: "Can Shopify handle high traffic and large catalogs?", a: "Absolutely! Shopify handles 10,000+ orders per minute during peak events like Black Friday. With Shopify Plus, you get 99.99% uptime SLA and unlimited bandwidth. Stores with 100,000+ products run smoothly." },
+  { q: "What payment methods does Shopify support?", a: "Shopify supports 100+ payment gateways including Shopify Payments, Stripe, PayPal, Apple Pay, Google Pay, Shop Pay, Klarna, Afterpay, and many more. With Shopify Payments, you pay 0% transaction fees." },
+  { q: "Can I sell internationally on Shopify?", a: "Yes! Shopify supports multi-currency (130+ currencies), multi-language, international shipping with real-time rates, customs & duties calculation, and local payment methods. Shopify Markets makes global selling easy." },
+  { q: "Can I sell subscriptions on Shopify?", a: "Yes! Using apps like ReCharge, Bold Subscriptions, or Shopify's native subscription tools, you can sell recurring products, subscription boxes, and membership plans with full customer portal management." },
+  { q: "What Shopify apps do you recommend?", a: "It depends on your needs, but our top picks include Klaviyo (email), Yotpo/Judge.me (reviews), Gorgias (support), ReCharge (subscriptions), Loox (photo reviews), and Shopify Flow (automation). We'll recommend the right stack for your business." },
+  { q: "Do you offer ongoing Shopify maintenance?", a: "Yes! We offer monthly maintenance packages starting at £300/month including theme updates, app management, performance monitoring, new feature development, and priority support." },
 ];
 
-function ShopifyStoreMockup() {
+function TechTabIcon({ slug, name }: { slug: string; name: string }) {
+  const [error, setError] = useState(false);
+  if (error) {
+    return (
+      <div className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center text-xs font-bold text-muted-foreground">
+        {name.charAt(0)}
+      </div>
+    );
+  }
   return (
-    <div className="relative">
-      <Card className="overflow-hidden">
-        <div className="bg-muted h-8 flex items-center gap-2 px-3">
-          <div className="w-2.5 h-2.5 rounded-full bg-red-500" />
-          <div className="w-2.5 h-2.5 rounded-full bg-yellow-500" />
-          <div className="w-2.5 h-2.5 rounded-full bg-green-500" />
-          <span className="text-xs text-muted-foreground ml-2">mystore.myshopify.com</span>
-        </div>
+    <img
+      src={`https://cdn.simpleicons.org/${slug}/9CA3AF`}
+      alt={name}
+      className="w-10 h-10"
+      onError={() => setError(true)}
+    />
+  );
+}
 
-        <div className="bg-[#1a1a2e] dark:bg-[#0d0d1a] p-4">
-          <div className="flex items-center justify-between mb-4">
+function ShopifyHeroMockup() {
+  return (
+    <div className="relative h-[500px]">
+      <div className="absolute inset-0 flex rounded-2xl overflow-hidden border shadow-2xl">
+        <div className="w-1/2 flex flex-col bg-[#f6f6f7] dark:bg-[#1e1e1e]">
+          <div className="bg-[#1a1a1a] px-3 py-1.5 flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <ShoppingBag className="h-5 w-5 text-[#7AB55C]" />
-              <span className="text-sm font-semibold text-white">My Store</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <span className="text-[10px] text-gray-400">Shop</span>
-              <span className="text-[10px] text-gray-400">Collections</span>
-              <span className="text-[10px] text-gray-400">About</span>
-              <div className="relative">
-                <ShoppingCart className="h-4 w-4 text-white" />
-                <div className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-[#7AB55C] text-[7px] text-white flex items-center justify-center font-bold">2</div>
+              <div className="w-5 h-5 rounded bg-[#5E8E3E] flex items-center justify-center">
+                <ShoppingBag className="h-3 w-3 text-white" />
               </div>
+              <span className="text-[10px] text-white/70">Shopify Admin</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <div className="w-4 h-4 rounded-full bg-gray-600" />
+              <span className="text-[9px] text-white/50">Admin</span>
             </div>
           </div>
-
-          <div className="grid grid-cols-2 gap-3">
-            {[
-              { name: "Classic Tee", price: "\u00a329.99", color: "bg-blue-900/30" },
-              { name: "Hoodie", price: "\u00a359.99", color: "bg-purple-900/30" },
-              { name: "Cap", price: "\u00a319.99", color: "bg-green-900/30" },
-              { name: "Joggers", price: "\u00a349.99", color: "bg-orange-900/30" },
-            ].map((product) => (
-              <div key={product.name} className={`${product.color} rounded-lg p-3 border border-white/5`}>
-                <div className="aspect-square rounded-md bg-white/5 mb-2 flex items-center justify-center">
-                  <ShoppingBag className="h-6 w-6 text-white/20" />
-                </div>
-                <div className="text-[11px] font-medium text-white">{product.name}</div>
-                <div className="text-[10px] text-[#7AB55C] font-semibold">{product.price}</div>
-                <div className="mt-1.5 bg-[#7AB55C] text-white text-[8px] font-semibold py-1 rounded text-center" data-testid={`add-to-cart-${product.name.toLowerCase().replace(/\s+/g, "-")}`}>
-                  Add to Cart
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </Card>
-
-      <motion.div
-        className="absolute -top-3 -right-3 z-10"
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.6 }}
-      >
-        <Badge className="bg-[#7AB55C] text-white border-0 shadow-lg text-xs">Fast Checkout</Badge>
-      </motion.div>
-      <motion.div
-        className="absolute -bottom-3 -left-3 z-10"
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.8 }}
-      >
-        <Badge className="bg-[#7AB55C] text-white border-0 shadow-lg text-xs">Mobile First</Badge>
-      </motion.div>
-    </div>
-  );
-}
-
-function OldStoreMockup() {
-  return (
-    <div className="bg-gradient-to-b from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 border-2 border-red-200 dark:border-red-900 aspect-video p-4 md:p-6 flex flex-col text-left overflow-hidden">
-      <div className="border-b-4 border-gray-400 dark:border-gray-600 pb-2 mb-3">
-        <span className="text-lg md:text-2xl text-gray-600 dark:text-gray-400" style={{ fontFamily: "'Comic Sans MS', 'Comic Sans', cursive" }}>MY ONLINE SHOP</span>
-      </div>
-      <div className="flex gap-2 md:gap-4 mb-3 flex-wrap">
-        {["Home", "Products", "Cart", "Checkout", "Contact"].map((item) => (
-          <span key={item} className="text-[10px] md:text-xs text-blue-600 underline cursor-default">{item}</span>
-        ))}
-      </div>
-      <div className="grid grid-cols-2 gap-2 flex-1 min-h-0">
-        {[1, 2, 3, 4].map((i) => (
-          <div key={i} className="bg-gray-300 dark:bg-gray-700 border border-gray-400 dark:border-gray-600 rounded-sm flex flex-col items-center justify-center gap-1 p-1">
-            <ImageOff className="h-4 w-4 text-gray-400" />
-            <span className="text-[7px] md:text-[8px] text-gray-500">Product {i}</span>
-            <span className="text-[7px] md:text-[8px] text-gray-600 font-bold">\u00a3??.??</span>
-          </div>
-        ))}
-      </div>
-      <div className="flex gap-2 mt-2 flex-wrap">
-        <span className="flex items-center gap-1 text-[8px] md:text-[9px] bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 px-1.5 py-0.5 rounded-full">
-          <Loader2 className="h-2 w-2 md:h-2.5 md:w-2.5 animate-spin" />Slow checkout
-        </span>
-        <span className="flex items-center gap-1 text-[8px] md:text-[9px] bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400 px-1.5 py-0.5 rounded-full">
-          <AlertTriangle className="h-2 w-2 md:h-2.5 md:w-2.5" />No mobile view
-        </span>
-      </div>
-    </div>
-  );
-}
-
-function ModernStoreMockup() {
-  return (
-    <div className="bg-white dark:bg-[#0a0a0a] aspect-video flex flex-col text-left overflow-hidden">
-      <div className="bg-[#1a1a2e] h-5 md:h-6 flex items-center gap-2 px-2 md:px-3">
-        <ShoppingBag className="h-2.5 w-2.5 md:h-3 md:w-3 text-[#7AB55C]" />
-        <span className="text-[8px] md:text-[10px] text-white/70">Shopify Admin</span>
-      </div>
-      <div className="flex items-center justify-between px-3 md:px-4 py-2 border-b border-gray-200 dark:border-gray-800">
-        <div className="flex items-center gap-2">
-          <div className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-[#7AB55C]/20 flex items-center justify-center">
-            <Store className="h-2.5 w-2.5 md:h-3 md:w-3 text-[#7AB55C]" />
-          </div>
-          <span className="text-[10px] md:text-xs font-semibold text-gray-900 dark:text-white">My Store</span>
-        </div>
-        <div className="hidden sm:flex items-center gap-3">
-          {["Shop", "Collections", "About"].map((n) => (
-            <span key={n} className="text-[8px] md:text-[10px] text-gray-500">{n}</span>
-          ))}
-          <div className="bg-[#7AB55C] text-white text-[7px] md:text-[8px] px-2 py-0.5 rounded-md">Cart (2)</div>
-        </div>
-      </div>
-      <div className="bg-gradient-to-r from-[#7AB55C]/10 to-emerald-500/10 px-3 md:px-4 py-3 flex flex-col items-center justify-center">
-        <span className="text-[10px] md:text-sm font-bold text-gray-900 dark:text-white">Summer Collection</span>
-        <span className="text-[7px] md:text-[9px] text-gray-500 mt-0.5">Free shipping on orders over \u00a350</span>
-        <div className="flex gap-2 mt-2">
-          <div className="bg-[#7AB55C] text-white text-[6px] md:text-[8px] px-2 py-0.5 rounded-md">Shop Now</div>
-          <div className="border border-border text-[6px] md:text-[8px] px-2 py-0.5 rounded-md text-gray-600 dark:text-gray-300">View All</div>
-        </div>
-      </div>
-      <div className="grid grid-cols-3 gap-1.5 md:gap-2 px-3 md:px-4 py-2 flex-1 min-h-0">
-        {[
-          { color: "bg-blue-500/10", title: "\u00a329.99" },
-          { color: "bg-purple-500/10", title: "\u00a359.99" },
-          { color: "bg-green-500/10", title: "\u00a319.99" },
-        ].map((card, i) => (
-          <div key={i} className={`${card.color} rounded-md p-1.5 md:p-2 flex flex-col items-center justify-center shadow-sm border border-border/30`}>
-            <ShoppingBag className="h-3 w-3 md:h-4 md:w-4 text-[#7AB55C] mb-0.5" />
-            <span className="text-[7px] md:text-[9px] font-semibold text-[#7AB55C]">{card.title}</span>
-            <div className="w-full bg-[#7AB55C] text-white text-[5px] md:text-[7px] py-0.5 rounded mt-1 text-center">Add to Cart</div>
-          </div>
-        ))}
-      </div>
-      <div className="flex gap-2 px-3 md:px-4 py-1.5 bg-white dark:bg-[#0a0a0a] border-t border-gray-100 dark:border-gray-800 flex-wrap">
-        <span className="flex items-center gap-1 text-[8px] md:text-[9px] bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-1.5 py-0.5 rounded-full">
-          <Zap className="h-2 w-2 md:h-2.5 md:w-2.5" />1.1s load
-        </span>
-        <span className="flex items-center gap-1 text-[8px] md:text-[9px] bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 px-1.5 py-0.5 rounded-full">
-          <Smartphone className="h-2 w-2 md:h-2.5 md:w-2.5" />Mobile optimized
-        </span>
-        <span className="flex items-center gap-1 text-[8px] md:text-[9px] bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 px-1.5 py-0.5 rounded-full">
-          <CreditCard className="h-2 w-2 md:h-2.5 md:w-2.5" />Fast checkout
-        </span>
-      </div>
-    </div>
-  );
-}
-
-function ShopifyResultsShowcase() {
-  const [sliderPos, setSliderPos] = useState(50);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const isDragging = useRef(false);
-
-  const handleMove = useCallback((clientX: number) => {
-    if (!containerRef.current) return;
-    const rect = containerRef.current.getBoundingClientRect();
-    const x = clientX - rect.left;
-    const pct = Math.max(5, Math.min(95, (x / rect.width) * 100));
-    setSliderPos(pct);
-  }, []);
-
-  const handleMouseDown = useCallback(() => {
-    isDragging.current = true;
-    const onMove = (e: MouseEvent) => { if (isDragging.current) handleMove(e.clientX); };
-    const onUp = () => { isDragging.current = false; window.removeEventListener("mousemove", onMove); window.removeEventListener("mouseup", onUp); };
-    window.addEventListener("mousemove", onMove);
-    window.addEventListener("mouseup", onUp);
-  }, [handleMove]);
-
-  const handleTouchStart = useCallback(() => {
-    isDragging.current = true;
-    const onMove = (e: TouchEvent) => { if (isDragging.current && e.touches[0]) handleMove(e.touches[0].clientX); };
-    const onEnd = () => { isDragging.current = false; window.removeEventListener("touchmove", onMove); window.removeEventListener("touchend", onEnd); };
-    window.addEventListener("touchmove", onMove);
-    window.addEventListener("touchend", onEnd);
-  }, [handleMove]);
-
-  return (
-    <section className="py-20 bg-muted" data-testid="section-results-showcase">
-      <div className="max-w-7xl mx-auto px-6">
-        <motion.div className="text-center mb-12" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
-          <h2 className="text-3xl md:text-4xl font-bold">Real Shopify Results We've Delivered</h2>
-          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">See the transformation from a basic online store to a high-converting Shopify powerhouse</p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          <motion.div className="space-y-4" initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-            <div
-              ref={containerRef}
-              className="relative rounded-xl shadow-lg overflow-hidden border border-border select-none"
-              style={{ cursor: "ew-resize" }}
-              data-testid="before-after-slider"
-            >
-              <div className="bg-muted h-8 flex items-center gap-2 px-3">
-                <div className="w-2.5 h-2.5 rounded-full bg-red-500" />
-                <div className="w-2.5 h-2.5 rounded-full bg-yellow-500" />
-                <div className="w-2.5 h-2.5 rounded-full bg-green-500" />
-                <span className="text-xs text-muted-foreground ml-2">mystore.myshopify.com</span>
-              </div>
-
-              <div className="relative">
-                <div className="w-full">
-                  <ModernStoreMockup />
-                </div>
+          <div className="flex flex-1 overflow-hidden">
+            <div className="w-[70px] bg-[#1a1a1a] py-2 flex flex-col gap-0.5">
+              {[
+                { label: "Home", icon: Home, active: false, badge: null },
+                { label: "Orders", icon: Package, active: false, badge: "3" },
+                { label: "Products", icon: ShoppingBag, active: true, badge: null },
+                { label: "Customers", icon: Users, active: false, badge: null },
+                { label: "Analytics", icon: BarChart, active: false, badge: null },
+                { label: "Marketing", icon: Target, active: false, badge: null },
+                { label: "Discounts", icon: Percent, active: false, badge: null },
+                { label: "Apps", icon: Puzzle, active: false, badge: null },
+                { label: "Settings", icon: Settings, active: false, badge: null },
+              ].map((item) => (
                 <div
-                  className="absolute top-0 left-0 w-full h-full overflow-hidden"
-                  style={{ clipPath: `inset(0 ${100 - sliderPos}% 0 0)` }}
+                  key={item.label}
+                  className={`flex items-center gap-1.5 px-2 py-1 mx-1 rounded text-[8px] ${
+                    item.active
+                      ? "bg-[#5E8E3E]/20 text-[#5E8E3E]"
+                      : "text-gray-400 hover:text-white"
+                  }`}
                 >
-                  <OldStoreMockup />
+                  <item.icon className="h-2.5 w-2.5 flex-shrink-0" />
+                  <span className="truncate">{item.label}</span>
+                  {item.badge && (
+                    <span className="ml-auto w-3 h-3 bg-red-500 rounded-full text-[6px] text-white flex items-center justify-center">
+                      {item.badge}
+                    </span>
+                  )}
                 </div>
-                <div
-                  className="absolute top-0 h-full w-0.5 bg-[#7AB55C] z-20"
-                  style={{ left: `${sliderPos}%`, transform: "translateX(-50%)" }}
-                >
-                  <div
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-[#7AB55C] text-white flex items-center justify-center shadow-lg cursor-ew-resize"
-                    onMouseDown={handleMouseDown}
-                    onTouchStart={handleTouchStart}
-                    data-testid="slider-handle"
-                  >
-                    <div className="flex gap-0.5">
-                      <div className="w-0.5 h-3 bg-white rounded-full" />
-                      <div className="w-0.5 h-3 bg-white rounded-full" />
+              ))}
+            </div>
+            <div className="flex-1 p-2 overflow-hidden">
+              <h3 className="text-[10px] font-bold text-gray-800 dark:text-gray-200 mb-1.5">Products</h3>
+              <div className="space-y-1">
+                {[
+                  { name: "Premium Leather Bag", status: "Active", inventory: "24" },
+                  { name: "Canvas Tote", status: "Active", inventory: "56" },
+                  { name: "Crossbody Mini", status: "Draft", inventory: "12" },
+                  { name: "Weekender Duffle", status: "Active", inventory: "8" },
+                ].map((product) => (
+                  <div key={product.name} className="flex items-center justify-between bg-white dark:bg-[#2a2a2a] rounded px-2 py-1 text-[8px]">
+                    <span className="text-gray-800 dark:text-gray-200 font-medium truncate">{product.name}</span>
+                    <div className="flex items-center gap-2">
+                      <Badge variant="outline" className="text-[6px] px-1 py-0 h-3">
+                        {product.status}
+                      </Badge>
+                      <span className="text-gray-400 text-[7px]">{product.inventory}</span>
                     </div>
                   </div>
+                ))}
+              </div>
+              <div className="mt-2 bg-white dark:bg-[#2a2a2a] rounded p-2 text-center">
+                <span className="text-[14px] font-bold text-[#5E8E3E]">£1,247</span>
+                <p className="text-[7px] text-gray-500">Today's sales</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="absolute left-1/2 top-0 bottom-0 w-px bg-[#5E8E3E] -translate-x-1/2 z-10">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-[#5E8E3E] flex items-center justify-center shadow-lg">
+            <ArrowRight className="h-4 w-4 text-white" />
+          </div>
+        </div>
+
+        <div className="w-1/2 flex flex-col bg-white dark:bg-[#0f0f0f]">
+          <div className="bg-gray-100 dark:bg-[#1a1a1a] px-3 py-1.5 flex items-center gap-2">
+            <div className="flex gap-1">
+              <div className="w-2 h-2 rounded-full bg-red-400" />
+              <div className="w-2 h-2 rounded-full bg-yellow-400" />
+              <div className="w-2 h-2 rounded-full bg-green-400" />
+            </div>
+            <div className="flex-1 bg-white dark:bg-[#2a2a2a] rounded text-[8px] px-2 py-0.5 text-gray-400 truncate">
+              yourstore.myshopify.com
+            </div>
+          </div>
+          <div className="flex-1 flex flex-col overflow-hidden">
+            <div className="px-3 py-2 flex items-center justify-between border-b border-gray-100 dark:border-gray-800">
+              <span className="text-[10px] font-bold text-gray-800 dark:text-white">YourStore</span>
+              <div className="flex gap-2 items-center">
+                {["Shop", "Collections", "About"].map((n) => (
+                  <span key={n} className="text-[8px] text-gray-500">{n}</span>
+                ))}
+                <div className="relative">
+                  <ShoppingCart className="h-3 w-3 text-gray-400" />
+                  <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-[#5E8E3E] rounded-full text-[6px] text-white flex items-center justify-center">2</span>
                 </div>
               </div>
-
-              <div className="absolute top-10 left-3 z-30">
-                <span className="bg-red-500/10 text-red-700 dark:text-red-400 px-3 py-1.5 rounded-full text-xs md:text-sm font-semibold backdrop-blur-sm">Old Store</span>
+            </div>
+            <div className="px-3 py-3 flex gap-2">
+              <div className="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded flex items-center justify-center flex-shrink-0">
+                <ShoppingBag className="h-6 w-6 text-gray-300 dark:text-gray-600" />
               </div>
-              <div className="absolute top-10 right-3 z-30">
-                <span className="bg-green-500/10 text-green-700 dark:text-green-400 px-3 py-1.5 rounded-full text-xs md:text-sm font-semibold backdrop-blur-sm">New Shopify Store</span>
+              <div className="flex-1 min-w-0">
+                <p className="text-[10px] font-bold text-gray-800 dark:text-white">Premium Leather Bag</p>
+                <div className="flex items-center gap-1 mt-0.5">
+                  <span className="text-[10px] font-bold text-[#5E8E3E]">£89.99</span>
+                  <span className="text-[8px] text-gray-400 line-through">£129.99</span>
+                </div>
+                <div className="flex gap-0.5 mt-0.5">
+                  {[1, 2, 3, 4].map((s) => (
+                    <Star key={s} className="h-2 w-2 text-yellow-400 fill-yellow-400" />
+                  ))}
+                  <Star className="h-2 w-2 text-yellow-400" />
+                  <span className="text-[7px] text-gray-400 ml-0.5">(128)</span>
+                </div>
+                <button className="mt-1.5 bg-[#5E8E3E] text-white text-[7px] font-semibold px-3 py-1 rounded">
+                  Add to Cart
+                </button>
               </div>
             </div>
-            <p className="text-xs text-muted-foreground text-center">Drag the slider to compare before and after</p>
-          </motion.div>
-
-          <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-            <h3 className="text-2xl font-bold mb-8">The Results</h3>
-            <div className="space-y-4">
-              {resultMetrics.map((metric, idx) => {
-                const Icon = metric.icon;
-                return (
-                  <motion.div
-                    key={metric.label}
-                    initial={{ opacity: 0, y: 15 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: idx * 0.08 }}
-                  >
-                    <Card className="p-4" data-testid={`metric-${metric.label.toLowerCase().replace(/\s+/g, "-")}`}>
-                      <div className="flex items-center gap-2">
-                        <Icon className="h-4 w-4 text-[#7AB55C]" />
-                        <span className="text-sm font-semibold text-muted-foreground">{metric.label}</span>
-                      </div>
-                      <div className="flex items-center gap-3 mt-2">
-                        <span className="text-lg text-muted-foreground line-through">{metric.before}</span>
-                        <ArrowRight className="h-5 w-5 text-[#7AB55C] flex-shrink-0" />
-                        <span className="text-2xl md:text-3xl font-bold text-[#7AB55C]">{metric.after}</span>
-                      </div>
-                      <div className="mt-2">
-                        <span className="inline-flex items-center gap-1 bg-green-500/10 text-green-700 dark:text-green-400 px-2.5 py-1 rounded-full text-xs font-semibold">
-                          <TrendingUp className="h-3 w-3" />
-                          {metric.improvement}
-                        </span>
-                      </div>
-                    </Card>
-                  </motion.div>
-                );
-              })}
+            <div className="grid grid-cols-3 gap-1.5 px-3 py-2 flex-1">
+              {[
+                { title: "Tote Bag", price: "£49.99" },
+                { title: "Crossbody", price: "£69.99" },
+                { title: "Wallet", price: "£29.99" },
+              ].map((card) => (
+                <div key={card.title} className="bg-gray-50 dark:bg-gray-900 rounded p-1.5 flex flex-col items-center justify-center">
+                  <div className="w-6 h-6 rounded bg-gray-200 dark:bg-gray-700 mb-1 flex items-center justify-center">
+                    <ShoppingBag className="h-3 w-3 text-gray-400" />
+                  </div>
+                  <span className="text-[7px] text-gray-600 dark:text-gray-300">{card.title}</span>
+                  <span className="text-[7px] font-bold text-[#5E8E3E]">{card.price}</span>
+                </div>
+              ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
-    </section>
+
+      <motion.div
+        className="absolute -top-3 -right-3 bg-[#5E8E3E] text-white text-[10px] px-3 py-1.5 rounded-full shadow-lg font-medium z-20"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 0.5 }}
+      >
+        4.6M+ stores
+      </motion.div>
+      <motion.div
+        className="absolute -bottom-3 -left-3 bg-emerald-600 text-white text-[10px] px-3 py-1.5 rounded-full shadow-lg font-medium z-20"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 0.7 }}
+      >
+        £444B+ GMV
+      </motion.div>
+      <motion.div
+        className="absolute top-1/2 -right-3 bg-green-700 text-white text-[10px] px-3 py-1.5 rounded-full shadow-lg font-medium z-20"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 0.9 }}
+      >
+        0% transaction fees
+      </motion.div>
+      <motion.div
+        className="absolute top-1/4 -left-3 bg-teal-600 text-white text-[10px] px-3 py-1.5 rounded-full shadow-lg font-medium z-20"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 1.1 }}
+      >
+        99.99% uptime
+      </motion.div>
+    </div>
   );
 }
 
-export default function ShopifyDevelopmentPage() {
-  const handleScrollTo = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  };
+function CheckoutMockup() {
+  return (
+    <div className="rounded-2xl overflow-hidden border shadow-xl">
+      <div className="bg-gray-100 dark:bg-[#1a1a1a] px-4 py-2 flex items-center gap-2">
+        <div className="flex gap-1.5">
+          <div className="w-2.5 h-2.5 rounded-full bg-red-400" />
+          <div className="w-2.5 h-2.5 rounded-full bg-yellow-400" />
+          <div className="w-2.5 h-2.5 rounded-full bg-green-400" />
+        </div>
+        <div className="flex-1 bg-white dark:bg-[#2a2a2a] rounded text-[10px] px-3 py-1 text-gray-400">
+          checkout.yourstore.com
+        </div>
+      </div>
+      <div className="bg-white dark:bg-[#0f0f0f] p-4">
+        <div className="flex items-center gap-2 mb-3">
+          <Shield className="h-3 w-3 text-[#5E8E3E]" />
+          <span className="text-[10px] font-medium text-gray-600 dark:text-gray-300">Secure Checkout</span>
+        </div>
+        <div className="space-y-2 mb-3">
+          <div className="flex items-center justify-between text-[9px] bg-gray-50 dark:bg-gray-900 rounded p-2">
+            <span className="text-gray-600 dark:text-gray-300">Premium Leather Bag × 1</span>
+            <span className="font-semibold">£89.99</span>
+          </div>
+          <div className="flex items-center justify-between text-[9px] bg-gray-50 dark:bg-gray-900 rounded p-2">
+            <span className="text-gray-600 dark:text-gray-300">Canvas Tote × 1</span>
+            <span className="font-semibold">£35.00</span>
+          </div>
+          <div className="flex items-center justify-between text-[10px] font-bold pt-1 border-t border-gray-200 dark:border-gray-700">
+            <span>Total</span>
+            <span className="text-[#5E8E3E]">£124.99</span>
+          </div>
+        </div>
+        <div className="bg-[#5A31F4] text-white text-[9px] font-semibold py-2 rounded text-center mb-2">
+          Shop Pay
+        </div>
+        <div className="text-center text-[8px] text-gray-400 mb-2">or pay with card</div>
+        <div className="flex gap-2 justify-center mb-3">
+          {["Visa", "MC", "Amex", "PayPal"].map((m) => (
+            <div key={m} className="w-8 h-5 bg-gray-100 dark:bg-gray-800 rounded text-[6px] flex items-center justify-center text-gray-500 font-medium">
+              {m}
+            </div>
+          ))}
+        </div>
+        <div className="bg-[#5E8E3E] text-white text-[10px] font-semibold py-2.5 rounded text-center">
+          Complete Order
+        </div>
+        <div className="flex gap-3 justify-center mt-3">
+          {["SSL Secure", "Free Returns", "24/7 Support"].map((badge) => (
+            <span key={badge} className="flex items-center gap-0.5 text-[7px] text-gray-400">
+              <Shield className="h-2 w-2" />
+              {badge}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function ShopifyDevelopment() {
+  const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <div className="min-h-screen" data-testid="shopify-development-page">
-      {/* Hero Section */}
-      <section className="py-16 md:py-24" data-testid="section-shopify-hero">
+    <>
+      <section className="py-24">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
-              <Breadcrumbs items={[
-                { label: "Services", href: "/services" },
-                { label: "Web Development", href: "/services/web-development" },
-                { label: "CMS", href: "/services/cms-development" },
-                { label: "Shopify" },
-              ]} />
-
-              <div className="w-16 h-16 mt-6 mb-4 rounded-xl bg-[#7AB55C]/10 flex items-center justify-center">
-                <img src="https://cdn.simpleicons.org/shopify/7AB55C" alt="Shopify" className="w-8 h-8" />
-              </div>
-
-              <Badge variant="secondary" className="mb-4" data-testid="badge-shopify">
-                <ShoppingBag className="h-3 w-3 mr-1" /> Shopify Development
+          <Breadcrumbs items={[
+            { label: "Services", href: "/services" },
+            { label: "Web Development", href: "/services/web-development" },
+            { label: "Shopify" },
+          ]} />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <Badge className="bg-gradient-to-r from-green-600 to-emerald-600 text-white px-4 py-2 rounded-full mb-4 border-0">
+                Shopify Development
               </Badge>
-
-              <h1 className="text-4xl md:text-6xl font-bold" data-testid="heading-shopify-hero">
-                Shopify E-Commerce Development
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+                Shopify Development Services
               </h1>
-
-              <p className="text-xl md:text-2xl font-semibold mt-4 bg-gradient-to-r from-[#7AB55C] to-emerald-400 bg-clip-text text-transparent">
-                E-Commerce Made Simple
+              <p className="text-xl md:text-2xl font-semibold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+                Build, Grow, and Scale Your Online Store
               </p>
-
-              <p className="text-xl text-muted-foreground mt-6">
-                Launch your online store in weeks, not months. We build custom Shopify stores with optimized checkout, mobile-first design, and seamless payment processing.
+              <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
+                We build high-converting Shopify stores that look stunning, load fast, and turn visitors into customers. From custom themes to Shopify Plus, we create e-commerce experiences that drive revenue.
               </p>
-
-              <div className="flex gap-3 flex-wrap mt-6">
-                {featurePills.map((pill) => {
-                  const Icon = pill.icon;
-                  return (
-                    <span key={pill.label} className="flex items-center gap-1.5 text-sm bg-[#7AB55C]/10 text-[#7AB55C] dark:text-emerald-400 px-3 py-1.5 rounded-full font-medium" data-testid={`pill-${pill.label.toLowerCase().replace(/\s+/g, "-")}`}>
-                      <Icon className="h-3.5 w-3.5" />
-                      {pill.label}
-                    </span>
-                  );
-                })}
+              <div className="mt-6 flex gap-3 flex-wrap">
+                {[
+                  { icon: Palette, label: "Custom Themes" },
+                  { icon: Crown, label: "Shopify Plus" },
+                  { icon: Puzzle, label: "App Development" },
+                  { icon: TrendingUp, label: "Conversion Focused" },
+                ].map((pill) => (
+                  <Badge key={pill.label} variant="outline" className="flex items-center gap-1.5 px-3 py-1.5">
+                    <pill.icon className="h-3.5 w-3.5" style={{ color: SHOPIFY_COLOR }} />
+                    {pill.label}
+                  </Badge>
+                ))}
               </div>
-
-              <div className="flex gap-4 mt-8 flex-wrap">
+              <div className="mt-8 grid grid-cols-3 gap-4">
+                {[
+                  { value: "£12B+", label: "GMV on Shopify" },
+                  { value: "30+", label: "Stores Built" },
+                  { value: "99.9%", label: "Uptime SLA" },
+                ].map((stat) => (
+                  <div key={stat.label} className="bg-card border rounded-xl p-4 text-center">
+                    <div className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent text-3xl font-bold">
+                      {stat.value}
+                    </div>
+                    <p className="text-xs text-muted-foreground mt-1">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-8 flex gap-4 flex-wrap">
                 <Link href="/contact">
-                  <Button data-testid="cta-start-store">Start Your Store</Button>
+                  <Button size="lg" className="bg-gradient-to-r from-green-600 to-emerald-600 text-white border-0">
+                    Start Your Shopify Store
+                  </Button>
                 </Link>
-                <Button variant="outline" onClick={() => handleScrollTo("use-cases")} data-testid="cta-view-examples">
-                  View Examples
-                </Button>
+                <Link href="/case-studies">
+                  <Button size="lg" variant="outline">
+                    View Shopify Examples
+                  </Button>
+                </Link>
               </div>
-
-              <p className="text-sm text-muted-foreground mt-6" data-testid="trust-signal">
-                Trusted by 100+ e-commerce brands
-              </p>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
               className="hidden lg:block"
             >
-              <ShopifyStoreMockup />
+              <ShopifyHeroMockup />
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Why Shopify Section */}
-      <section className="py-20 bg-muted" data-testid="section-why-shopify">
-        <div className="max-w-5xl mx-auto px-6 text-center">
-          <motion.div {...fadeInUp} transition={{ duration: 0.5 }}>
-            <h2 className="text-3xl md:text-4xl font-bold">Why Choose Shopify for Your Store</h2>
-            <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">The world's leading e-commerce platform trusted by millions</p>
-          </motion.div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-12">
-            {[
-              { icon: ShoppingBag, stat: "1M+", label: "Active Stores" },
-              { icon: DollarSign, stat: "$400B+", label: "Sales Powered" },
-              { icon: Globe, stat: "175+", label: "Countries" },
-              { icon: Zap, stat: "99.99%", label: "Uptime" },
-            ].map((item, idx) => {
-              const Icon = item.icon;
-              return (
-                <motion.div
-                  key={item.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: idx * 0.1 }}
-                  className="flex flex-col items-center"
-                  data-testid={`stat-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
-                >
-                  <div className="w-14 h-14 rounded-full bg-[#7AB55C]/10 flex items-center justify-center mb-3">
-                    <Icon className="h-7 w-7 text-[#7AB55C]" />
+      <section className="py-20 bg-muted">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <motion.h2
+              className="text-3xl md:text-4xl font-bold"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              Shopify Services We Offer
+            </motion.h2>
+            <motion.p
+              className="text-muted-foreground mt-3 max-w-2xl mx-auto"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+            >
+              From custom themes to Shopify Plus enterprise solutions, we cover every aspect of Shopify development.
+            </motion.p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service, i) => (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08, duration: 0.4 }}
+              >
+                <Card className="p-8 h-full hover:border-green-500/50 hover:shadow-xl transition-all">
+                  <div
+                    className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
+                    style={{ backgroundColor: `${SHOPIFY_COLOR}15` }}
+                  >
+                    <service.icon className="h-6 w-6" style={{ color: SHOPIFY_COLOR }} />
                   </div>
-                  <div className="text-3xl md:text-4xl font-bold text-accent">{item.stat}</div>
-                  <div className="text-sm text-muted-foreground mt-1">{item.label}</div>
-                </motion.div>
-              );
-            })}
+                  <h3 className="text-xl font-bold mb-2">{service.title}</h3>
+                  <p className="text-sm text-muted-foreground mb-4">{service.description}</p>
+                  <div className="space-y-2">
+                    {service.features.map((f) => (
+                      <div key={f} className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <CheckCircle2 className="h-4 w-4 flex-shrink-0" style={{ color: SHOPIFY_COLOR }} />
+                        <span>{f}</span>
+                      </div>
+                    ))}
+                  </div>
+                </Card>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* What We Build Section */}
-      <section className="py-20" data-testid="section-solutions">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div className="text-center mb-12" {...fadeInUp} transition={{ duration: 0.5 }}>
-            <h2 className="text-3xl md:text-4xl font-bold">Shopify Solutions We Build</h2>
-            <p className="text-muted-foreground mt-4">From startups to scaling brands</p>
-          </motion.div>
-
-          <motion.div
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
-          >
-            {solutions.map((solution) => {
-              const Icon = solution.icon;
-              return (
-                <motion.div key={solution.title} variants={staggerItem}>
-                  <Card className="p-8 h-full flex flex-col" data-testid={`solution-${solution.title.toLowerCase().replace(/\s+/g, "-")}`}>
-                    <div className="w-14 h-14 rounded-full bg-[#7AB55C]/10 flex items-center justify-center">
-                      <Icon className="h-7 w-7 text-[#7AB55C]" />
-                    </div>
-                    <h3 className="text-xl font-bold mt-6">{solution.title}</h3>
-                    <p className="text-sm text-muted-foreground mt-2">{solution.description}</p>
-                    <ul className="mt-6 space-y-2 flex-1">
-                      {solution.features.map((feature) => (
-                        <li key={feature} className="flex items-center gap-2">
-                          <CheckCircle2 className="h-4 w-4 text-[#7AB55C] flex-shrink-0" />
-                          <span className="text-sm">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </Card>
-                </motion.div>
-              );
-            })}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Apps & Integrations */}
-      <section className="py-20 bg-muted" data-testid="section-integrations">
-        <div className="max-w-7xl mx-auto px-6">
-          <TechStackIcons
-            title="Technologies We Use"
-            subtitle="We use industry-leading technologies to build products that are fast, reliable, and maintainable."
-            technologies={shopifyTechnologies}
-          />
-        </div>
-      </section>
-
-      {/* Process Timeline */}
-      <section className="py-20" data-testid="section-process">
-        <div className="max-w-7xl mx-auto px-6">
-          <ZigzagTimeline
-            title="How We Build Your Shopify Store"
-            subtitle="Launch in 2-4 weeks"
-            steps={zigzagSteps}
-            accentColor="#7AB55C"
-          />
-        </div>
-      </section>
-
-      {/* CTA 1 */}
-      <section className="py-20 bg-muted" data-testid="section-cta-1">
-        <div className="max-w-4xl mx-auto px-6">
+      <section className="py-20">
+        <div className="max-w-6xl mx-auto px-6">
           <CTASection
             variant="bordered"
             title="Ready to Launch Your Shopify Store?"
-            description="Let's build an e-commerce store that converts visitors into customers"
-            primaryCTA={{ text: "Start Your Project", link: "/contact" }}
+            description="Free consultation to discuss your products, audience, and goals."
+            primaryCTA={{ text: "Get Free Shopify Quote", link: "/contact" }}
             size="medium"
           />
         </div>
       </section>
 
-      {/* Results Showcase */}
-      <ShopifyResultsShowcase />
-
-      {/* Use Cases */}
-      <section id="use-cases" className="py-20" data-testid="section-use-cases">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div className="text-center mb-12" {...fadeInUp} transition={{ duration: 0.5 }}>
-            <h2 className="text-3xl md:text-4xl font-bold">Shopify Stores We've Built</h2>
-          </motion.div>
-
-          <motion.div
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
-          >
-            {useCases.map((uc) => {
-              const Icon = uc.icon;
-              return (
-                <motion.div key={uc.title} variants={staggerItem}>
-                  <Card className="p-8 h-full flex flex-col" data-testid={`usecase-${uc.title.toLowerCase().replace(/\s+/g, "-")}`}>
-                    <Badge variant="secondary" className="w-fit mb-4">{uc.industry}</Badge>
-                    <div className="w-12 h-12 rounded-full bg-[#7AB55C]/10 flex items-center justify-center">
-                      <Icon className="h-6 w-6 text-[#7AB55C]" />
+      <section className="py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <motion.h2
+              className="text-3xl md:text-4xl font-bold"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              Shopify App Ecosystem
+            </motion.h2>
+            <motion.p
+              className="text-muted-foreground mt-3 max-w-2xl mx-auto"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+            >
+              Leverage the best Shopify apps and custom integrations to power your store.
+            </motion.p>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <Card className="p-6">
+                <h3 className="text-xl font-bold mb-6">Must-Have Shopify Apps</h3>
+                <div className="grid grid-cols-2 gap-4">
+                  {shopifyApps.map((app) => (
+                    <div key={app.name} className="flex items-center gap-3 p-2 rounded-lg hover:bg-muted/50 transition-colors">
+                      <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: `${SHOPIFY_COLOR}15` }}>
+                        <app.icon className="h-4 w-4" style={{ color: SHOPIFY_COLOR }} />
+                      </div>
+                      <div className="min-w-0">
+                        <p className="text-sm font-medium truncate">{app.name}</p>
+                        <Badge variant="outline" className="text-[10px] px-1.5 py-0 h-4 mt-0.5">{app.category}</Badge>
+                      </div>
                     </div>
-                    <h3 className="text-xl font-bold mt-4">{uc.title}</h3>
-                    <p className="text-sm text-muted-foreground mt-2 flex-1">{uc.description}</p>
-                    <div className="flex gap-2 flex-wrap mt-4">
-                      {uc.results.map((r) => (
-                        <Badge key={r} variant="outline">{r}</Badge>
-                      ))}
+                  ))}
+                </div>
+              </Card>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+            >
+              <Card className="p-6">
+                <h3 className="text-xl font-bold mb-6">Custom Integrations</h3>
+                <div className="space-y-4">
+                  {customIntegrations.map((integration) => (
+                    <div key={integration.title} className="flex items-start gap-3">
+                      <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: `${SHOPIFY_COLOR}15` }}>
+                        <integration.icon className="h-4 w-4" style={{ color: SHOPIFY_COLOR }} />
+                      </div>
+                      <div>
+                        <p className="text-sm font-semibold">{integration.title}</p>
+                      </div>
                     </div>
-                  </Card>
-                </motion.div>
-              );
-            })}
-          </motion.div>
+                  ))}
+                </div>
+              </Card>
+            </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="py-20 bg-muted" data-testid="section-why-choose">
-        <div className="max-w-7xl mx-auto px-6">
-          <ValueProposition
-            title="Why Choose Us for Shopify"
-            values={whyChooseValues}
-            columns={3}
-          />
+      <section className="py-20 bg-muted">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <motion.h2
+              className="text-3xl md:text-4xl font-bold"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              Shopify Plus Features
+            </motion.h2>
+            <motion.p
+              className="text-muted-foreground mt-3 max-w-2xl mx-auto"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+            >
+              Enterprise-grade features for high-volume merchants who need more power and flexibility.
+            </motion.p>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <Card className="p-6">
+                <h3 className="text-xl font-bold mb-6">Why Shopify Plus?</h3>
+                <div className="space-y-3">
+                  {shopifyPlusBenefits.map((benefit) => (
+                    <Card key={benefit.title} className="p-4 border-l-4 border-l-green-500">
+                      <div className="flex items-center gap-3">
+                        <benefit.icon className="h-5 w-5 flex-shrink-0" style={{ color: SHOPIFY_COLOR }} />
+                        <p className="text-sm font-semibold">{benefit.title}</p>
+                      </div>
+                    </Card>
+                  ))}
+                </div>
+              </Card>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+            >
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { value: "25K+", label: "Plus Merchants" },
+                  { value: "$444B", label: "GMV" },
+                  { value: "99.99%", label: "Uptime SLA" },
+                  { value: "10K+", label: "Orders/Minute Peak" },
+                ].map((stat) => (
+                  <motion.div
+                    key={stat.label}
+                    className="bg-card border rounded-xl p-6 text-center"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent text-3xl font-bold">
+                      {stat.value}
+                    </div>
+                    <p className="text-xs text-muted-foreground mt-1">{stat.label}</p>
+                  </motion.div>
+                ))}
+              </div>
+              <Card className="p-4 mt-4">
+                <p className="text-sm text-muted-foreground text-center">
+                  Shopify Plus starts at <span className="font-semibold text-foreground">$2,300/month</span> with custom pricing based on GMV. Contact us to evaluate if Plus is right for your business.
+                </p>
+              </Card>
+            </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="py-20" data-testid="section-faq">
-        <div className="max-w-4xl mx-auto px-6">
-          <motion.div className="text-center mb-12" {...fadeInUp} transition={{ duration: 0.5 }}>
-            <h2 className="text-3xl md:text-4xl font-bold">Shopify Development FAQs</h2>
-          </motion.div>
-
-          <Accordion type="single" collapsible className="w-full" data-testid="faq-accordion">
-            {faqs.map((faq, i) => (
-              <AccordionItem key={i} value={`faq-${i}`} data-testid={`faq-item-${i}`}>
-                <AccordionTrigger className="text-left">{faq.q}</AccordionTrigger>
-                <AccordionContent>
-                  <p className="text-muted-foreground">{faq.a}</p>
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section className="py-20 bg-muted" data-testid="section-cta-final">
-        <div className="max-w-4xl mx-auto px-6">
+      <section className="py-20">
+        <div className="max-w-6xl mx-auto px-6">
           <CTASection
             variant="gradient"
-            title="Let's Build Your Online Store"
-            description="Book a free consultation and get a custom proposal for your Shopify project"
-            primaryCTA={{ text: "Book Free Consultation", link: "/contact" }}
-            secondaryCTA={{ text: "Call: +44 7429 917368", link: "tel:+447429917368" }}
-            showContactInfo
+            title="Is Shopify Plus Right For You?"
+            description="Book a call to evaluate if Shopify Plus makes sense for your business."
+            primaryCTA={{ text: "Discuss Shopify Plus", link: "/contact" }}
+            secondaryCTA={{ text: "View Store Examples", link: "/case-studies" }}
             size="large"
           />
         </div>
       </section>
-    </div>
+
+      <section className="py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <motion.h2
+              className="text-3xl md:text-4xl font-bold"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              Checkout & Payment Optimization
+            </motion.h2>
+            <motion.p
+              className="text-muted-foreground mt-3 max-w-2xl mx-auto"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+            >
+              Optimize every step of the checkout to maximize conversions and revenue.
+            </motion.p>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <CheckoutMockup />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+            >
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {checkoutFeatures.map((feature) => (
+                  <Card key={feature.title} className="p-4">
+                    <div className="flex items-start gap-3">
+                      <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: `${SHOPIFY_COLOR}15` }}>
+                        <feature.icon className="h-4 w-4" style={{ color: SHOPIFY_COLOR }} />
+                      </div>
+                      <div>
+                        <p className="text-sm font-semibold">{feature.title}</p>
+                        <span className="inline-flex items-center gap-1 bg-green-500/10 text-green-700 dark:text-green-400 px-2 py-0.5 rounded-full text-xs font-semibold mt-1">
+                          {feature.metric}
+                        </span>
+                      </div>
+                    </div>
+                  </Card>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-muted">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <motion.h2
+              className="text-3xl md:text-4xl font-bold"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              Sell Globally with Shopify
+            </motion.h2>
+            <motion.p
+              className="text-muted-foreground mt-3 max-w-2xl mx-auto"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+            >
+              Reach customers worldwide with multi-currency, multi-language, and global shipping support.
+            </motion.p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: Globe,
+                title: "Multi-Currency",
+                features: ["Auto-detect customer currency", "130+ currencies supported", "Real-time exchange rates", "Shopify Payments integration"],
+              },
+              {
+                icon: Globe,
+                title: "Multi-Language",
+                features: ["Unlimited languages", "Auto language detection", "SEO optimized per language", "Translation app integration"],
+              },
+              {
+                icon: Truck,
+                title: "Global Shipping",
+                features: ["Real-time shipping rates", "Customs & duties calculation", "Local fulfillment centers", "Order tracking worldwide"],
+              },
+            ].map((column, i) => (
+              <motion.div
+                key={column.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+              >
+                <Card className="p-8 h-full">
+                  <div
+                    className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
+                    style={{ backgroundColor: `${SHOPIFY_COLOR}15` }}
+                  >
+                    <column.icon className="h-6 w-6" style={{ color: SHOPIFY_COLOR }} />
+                  </div>
+                  <h3 className="text-xl font-bold mb-4">{column.title}</h3>
+                  <div className="space-y-2">
+                    {column.features.map((f) => (
+                      <div key={f} className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <CheckCircle2 className="h-4 w-4 flex-shrink-0" style={{ color: SHOPIFY_COLOR }} />
+                        <span>{f}</span>
+                      </div>
+                    ))}
+                  </div>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+          <div className="grid grid-cols-3 gap-4 mt-12 max-w-3xl mx-auto">
+            {[
+              { value: "175", label: "Countries" },
+              { value: "20+", label: "Languages" },
+              { value: "130+", label: "Currencies" },
+            ].map((stat) => (
+              <motion.div
+                key={stat.label}
+                className="bg-card border rounded-xl p-4 text-center"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+              >
+                <div className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent text-3xl font-bold">
+                  {stat.value}
+                </div>
+                <p className="text-xs text-muted-foreground mt-1">{stat.label}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <ValueProposition
+            title="Why Choose Us for Shopify?"
+            subtitle="What sets our Shopify development apart from the rest"
+            values={whyChooseValues}
+            columns={3}
+            accentColor={SHOPIFY_COLOR}
+          />
+        </div>
+      </section>
+
+      <section className="py-20 bg-muted">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <motion.h2
+              className="text-3xl md:text-4xl font-bold"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              Shopify Technology Stack
+            </motion.h2>
+            <motion.p
+              className="text-muted-foreground mt-3"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+            >
+              The tools and technologies we use to build Shopify stores
+            </motion.p>
+          </div>
+          <div className="flex flex-wrap gap-2 justify-center mb-8">
+            {techTabs.map((tab, i) => (
+              <button
+                key={tab.label}
+                onClick={() => setActiveTab(i)}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                  activeTab === i
+                    ? "bg-[#5E8E3E] text-white shadow-lg"
+                    : "bg-card border hover:border-green-500/50"
+                }`}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeTab}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.3 }}
+            >
+              <Card className="p-8">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+                  {techTabs[activeTab].technologies.map((tech) => (
+                    <div key={tech.name} className="flex flex-col items-center gap-2 p-4 rounded-xl hover:bg-muted/50 transition-colors">
+                      <TechTabIcon slug={tech.slug} name={tech.name} />
+                      <span className="text-sm font-medium text-center">{tech.name}</span>
+                    </div>
+                  ))}
+                </div>
+              </Card>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </section>
+
+      <section className="py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <ZigzagTimeline
+            title="Our Shopify Development Process"
+            subtitle="A proven process for building Shopify stores that convert"
+            steps={processSteps}
+            accentColor="#5E8E3E"
+          />
+        </div>
+      </section>
+
+      <section className="py-20 bg-muted">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <motion.h2
+              className="text-3xl md:text-4xl font-bold"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              Shopify Stores We've Built
+            </motion.h2>
+            <motion.p
+              className="text-muted-foreground mt-3"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+            >
+              Real projects delivered for real e-commerce businesses
+            </motion.p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {caseStudies.map((study, i) => (
+              <motion.div
+                key={study.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+              >
+                <Card className="overflow-hidden h-full hover:shadow-xl transition-all">
+                  <div className={`bg-gradient-to-r ${study.gradient} p-8 flex flex-col items-center`}>
+                    <study.icon className="h-12 w-12 text-white mb-3" />
+                    <Badge className="bg-white/20 text-white border-0">{study.badge}</Badge>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-lg font-bold mb-2">{study.title}</h3>
+                    <p className="text-sm text-muted-foreground mb-4">{study.description}</p>
+                    <div className="space-y-2 mb-4">
+                      {study.features.map((f) => (
+                        <div key={f} className="flex items-center gap-2 text-sm text-muted-foreground">
+                          <CheckCircle2 className="h-3.5 w-3.5 flex-shrink-0" style={{ color: SHOPIFY_COLOR }} />
+                          <span>{f}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="flex flex-wrap gap-1.5 mb-4">
+                      {study.tech.map((t) => (
+                        <Badge key={t} variant="outline" className="text-[10px]">{t}</Badge>
+                      ))}
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground border-t pt-4">
+                      <Rocket className="h-4 w-4" style={{ color: SHOPIFY_COLOR }} />
+                      <span>Delivered in <span className="font-semibold text-foreground">{study.timeline}</span></span>
+                    </div>
+                  </div>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <motion.h2
+              className="text-3xl md:text-4xl font-bold"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              Shopify FAQs
+            </motion.h2>
+            <motion.p
+              className="text-muted-foreground mt-3"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+            >
+              Common questions about Shopify development
+            </motion.p>
+          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <Accordion type="single" collapsible className="space-y-3">
+              {faqs.map((faq, i) => (
+                <AccordionItem key={i} value={`faq-${i}`} className="bg-card border rounded-xl px-6">
+                  <AccordionTrigger className="text-left font-semibold">{faq.q}</AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground leading-relaxed">{faq.a}</AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-muted">
+        <div className="max-w-6xl mx-auto px-6">
+          <CTASection
+            variant="gradient"
+            title="Let's Build Your Shopify Store"
+            description="Free 30-minute consultation to discuss your products, audience, and goals. No obligation, just honest advice."
+            primaryCTA={{ text: "Book Free Consultation", link: "/contact" }}
+            secondaryCTA={{ text: "Call: +44 7429 917368", link: "tel:+447429917368" }}
+            size="large"
+          />
+        </div>
+      </section>
+    </>
   );
 }
