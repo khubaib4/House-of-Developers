@@ -1,0 +1,443 @@
+Redesign the footer component with a CTA-focused approach. 
+Include prominent call-to-action at top, all service links, 
+trust badges, logo + tagline layout, and theme-adaptive colors 
+(auto dark/light mode).
+
+FILE: client/src/components/Footer.tsx (or wherever footer is located)
+
+DESIGN APPROACH: CTA at top, then clean footer with logo left 
+and service links right, minimal and professional.
+
+---
+
+FOOTER STRUCTURE:
+
+Three main sections:
+1. CTA Banner (top, prominent, converts visitors)
+2. Main Footer Content (logo, services, trust)
+3. Bottom Bar (copyright, legal links)
+
+---
+
+SECTION 1: CTA BANNER
+
+Container: 
+* bg-gradient-to-r from-primary to-primary/80
+* py-12 md:py-16
+* relative overflow-hidden
+
+Content Wrapper:
+* max-w-6xl mx-auto px-6
+* grid grid-cols-1 lg:grid-cols-2 gap-8 items-center
+
+Left Column:
+
+H2: "Ready to Start Your Project?"
+* text-3xl md:text-4xl font-bold
+* text-white
+* mb-3
+
+Tagline: "Let's build something great together"
+* text-xl text-white/90
+* mb-4
+
+Description:
+* text-white/80
+* text-base leading-relaxed
+* "Free consultation. Honest advice. Clear pricing. 
+   Book a call to discuss your project—no obligation."
+
+Right Column:
+
+CTA Buttons (flex gap-4, justify-end on desktop):
+
+Primary Button:
+* "Book Free Consultation" → /contact
+* bg-white text-primary
+* hover:bg-white/90
+* h-14 px-8 rounded-xl
+* font-semibold text-lg
+* shadow-lg
+* flex items-center gap-2
+* Icon: ArrowRight
+
+Secondary Button:
+* "Call: +44 7429 917368" → tel:+447429917368
+* border-2 border-white/30
+* text-white hover:bg-white/10
+* h-14 px-8 rounded-xl
+* font-semibold
+* flex items-center gap-2
+* Icon: Phone
+
+Trust Line (mt-6, lg:text-right):
+* text-sm text-white/70
+* "✓ Free 30-min consultation  •  ✓ No pressure  •  
+   ✓ Honest recommendations"
+
+Background Decoration (optional):
+* Subtle grid pattern or gradient overlay
+* Decorative elements (dots, shapes) in white/10 opacity
+
+---
+
+SECTION 2: MAIN FOOTER CONTENT
+
+Container:
+* bg-card (theme-adaptive)
+* border-t
+* py-16
+
+Content Wrapper:
+* max-w-7xl mx-auto px-6
+* grid grid-cols-1 lg:grid-cols-12 gap-12
+
+LEFT COLUMN (lg:col-span-4):
+
+Logo:
+* Your logo image or text
+* mb-4
+
+Tagline:
+* text-base text-muted-foreground leading-relaxed
+* "We build custom software, websites, and AI solutions 
+   for businesses. From startups to enterprise—tailored 
+   solutions that work."
+
+Contact Info (mt-6, space-y-3):
+
+Each contact item (flex items-start gap-3):
+* Icon (text-primary, size 18)
+* Text (text-sm text-muted-foreground)
+
+1. Icon: Mail
+   Text: "hello@houseofdevelopers.co.uk"
+   Link: mailto:hello@houseofdevelopers.co.uk
+
+2. Icon: Phone
+   Text: "+44 7429 917368"
+   Link: tel:+447429917368
+
+3. Icon: MapPin
+   Text: "United Kingdom"
+
+Social Links (mt-6, flex gap-4):
+
+Each social icon:
+* w-10 h-10 rounded-full
+* bg-muted hover:bg-primary
+* flex items-center justify-center
+* text-foreground hover:text-primary-foreground
+* transition-all
+
+Icons (use Lucide):
+1. LinkedIn (link to your LinkedIn)
+2. Twitter/X (link to your Twitter)
+3. GitHub (link to your GitHub)
+4. Instagram (optional)
+
+RIGHT COLUMNS (lg:col-span-8):
+
+Grid: grid-cols-2 md:grid-cols-4 gap-8
+
+COLUMN 1: WEB DEVELOPMENT
+Heading: "Web Development" (text-sm font-semibold mb-4)
+
+Links (space-y-3):
+* "Custom Development" → /services/web-development/custom-development
+* "Web Applications" → /services/web-development/web-applications
+* "E-Commerce" → /services/web-development/ecommerce
+* "Landing Pages" → /services/web-development/landing-pages
+* "WordPress" → /services/web-development/cms/wordpress
+* "Shopify" → /services/web-development/cms/shopify
+
+Each link:
+* text-sm text-muted-foreground
+* hover:text-primary
+* transition-colors
+* block
+
+COLUMN 2: OTHER SERVICES
+Heading: "Services" (text-sm font-semibold mb-4)
+
+Links:
+* "Mobile Development" → /services/mobile-development
+* "AI Services" → /services/ai-services
+* "SEO Services" → /services/seo
+* "Hire Developers" → /services/hire-developers
+
+COLUMN 3: COMPANY
+Heading: "Company" (text-sm font-semibold mb-4)
+
+Links:
+* "About Us" → /about
+* "Case Studies" → /case-studies
+* "Contact" → /contact
+* "Services" → /services
+
+COLUMN 4: RESOURCES
+Heading: "Resources" (text-sm font-semibold mb-4)
+
+Links:
+* "Privacy Policy" → /privacy
+* "Terms of Service" → /terms
+* "Cookie Policy" → /cookies
+
+Trust Badges Section (mt-12, pt-8, border-t):
+
+Container: flex flex-wrap items-center justify-center 
+           lg:justify-start gap-8
+
+Heading (w-full, text-center lg:text-left):
+* "Trusted & Certified" (text-sm font-semibold mb-4)
+
+Badge Items (flex items-center gap-8):
+
+Each badge (flex items-center gap-2, text-sm text-muted-foreground):
+* Icon (size 20, text-primary)
+* Text
+
+5 TRUST BADGES:
+
+1. Icon: Shield (or CheckCircle2)
+   Text: "ISO Certified"
+
+2. Icon: Award
+   Text: "Shopify Partner"
+
+3. Icon: Star
+   Text: "98% Satisfaction"
+
+4. Icon: Users
+   Text: "150+ Projects"
+
+5. Icon: Clock
+   Text: "8 Years Experience"
+
+NOTE: Style as simple text badges, not graphic badges. 
+Clean and minimal.
+
+---
+
+SECTION 3: BOTTOM BAR
+
+Container:
+* bg-muted (slightly different from main footer)
+* border-t
+* py-6
+
+Content Wrapper:
+* max-w-7xl mx-auto px-6
+* flex flex-col md:flex-row justify-between items-center
+* gap-4
+
+Left Side:
+
+Copyright:
+* text-sm text-muted-foreground
+* "© 2026 House of Developers. All rights reserved."
+
+Right Side:
+
+Legal Links (flex gap-6):
+* "Privacy Policy" → /privacy
+* "Terms" → /terms
+* "Cookies" → /cookies
+
+Each link:
+* text-sm text-muted-foreground
+* hover:text-primary
+* transition-colors
+
+---
+
+DESIGN SPECIFICATIONS:
+
+Theme-Adaptive Colors:
+* Use CSS variables for automatic dark/light switching
+* bg-card (adapts to theme)
+* text-foreground and text-muted-foreground
+* border (theme-aware)
+* CTA gradient uses primary color (works in both modes)
+
+CTA Banner:
+* Always uses primary gradient (stands out in both themes)
+* White text on colored background
+* Prominent, converts visitors before they leave
+
+Typography:
+* Footer headings: text-sm font-semibold uppercase 
+  tracking-wide
+* Links: text-sm
+* Copyright: text-sm
+* CTA heading: text-3xl md:text-4xl
+
+Spacing:
+* CTA banner: py-12 md:py-16
+* Main footer: py-16
+* Bottom bar: py-6
+* Consistent gaps: gap-4, gap-8, gap-12
+
+Hover States:
+* Links: hover:text-primary
+* Social icons: hover:bg-primary hover:text-white
+* Buttons: hover effects with scale or opacity
+* Smooth transitions (200ms)
+
+Mobile Responsive:
+* CTA: Stack vertically on mobile, side-by-side on desktop
+* Footer columns: 1 col mobile → 2 cols tablet → 4 cols desktop
+* Logo section: Full width mobile, left column desktop
+* Center-align on mobile, left-align on desktop
+
+Accessibility:
+* All links keyboard-accessible
+* Proper ARIA labels for social icons
+* Semantic HTML (<footer>, <nav>)
+* Sufficient color contrast in both themes
+
+---
+
+COMPONENT STRUCTURE:
+```typescript
+export function Footer() {
+  return (
+    <footer className="mt-auto">
+      {/* CTA Banner */}
+      <div className="bg-gradient-to-r from-primary to-primary/80 py-12 md:py-16">
+        {/* CTA Content */}
+      </div>
+
+      {/* Main Footer */}
+      <div className="bg-card border-t py-16">
+        {/* Logo + Services + Trust Badges */}
+      </div>
+
+      {/* Bottom Bar */}
+      <div className="bg-muted border-t py-6">
+        {/* Copyright + Legal Links */}
+      </div>
+    </footer>
+  );
+}
+```
+
+---
+
+IMPORTS NEEDED:
+```typescript
+import { Link } from "wouter";
+import {
+  ArrowRight,
+  Phone,
+  Mail,
+  MapPin,
+  Linkedin,
+  Twitter,
+  Github,
+  Instagram,
+  Shield,
+  Award,
+  Star,
+  Users,
+  Clock,
+  CheckCircle2,
+} from "lucide-react";
+```
+
+---
+
+EXAMPLE LINK STRUCTURE:
+```typescript
+// Service link
+<Link href="/services/web-development/custom-development">
+  <a className="block text-sm text-muted-foreground hover:text-primary transition-colors">
+    Custom Development
+  </a>
+</Link>
+
+// Social icon
+
+  href="https://linkedin.com/company/houseofdevelopers"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="w-10 h-10 rounded-full bg-muted hover:bg-primary flex items-center justify-center text-foreground hover:text-primary-foreground transition-all"
+  aria-label="LinkedIn"
+>
+  <Linkedin size={18} />
+</a>
+```
+
+---
+
+DARK/LIGHT MODE SUPPORT:
+
+Footer automatically adapts because it uses:
+* bg-card (white in light, dark in dark mode)
+* text-foreground (dark in light, light in dark mode)
+* text-muted-foreground (gray in both modes)
+* border (adapts to theme)
+
+CTA banner uses primary gradient (consistent in both modes).
+
+No manual dark mode classes needed—CSS variables handle it.
+
+---
+
+MOBILE LAYOUT:
+
+Mobile (< 768px):
+* CTA: Stacked vertically, centered
+* Logo section: Full width, centered
+* Service columns: 2 columns (Web Dev + Services)
+* Company + Resources: 2 columns
+* Trust badges: Centered, wrap
+* Bottom bar: Stacked, centered
+
+Desktop (≥ 1024px):
+* CTA: Side-by-side (text left, buttons right)
+* Logo: Left column (4/12)
+* Services: Right 4 columns (8/12)
+* Trust badges: Left-aligned
+* Bottom bar: Horizontal (copyright left, links right)
+
+---
+
+SEO BENEFITS:
+
+1. ✅ Service links in footer (internal linking)
+2. ✅ Contact info (NAP for local SEO)
+3. ✅ Social signals (social profile links)
+4. ✅ Trust indicators (builds credibility)
+5. ✅ Semantic HTML (<footer>, <nav>)
+
+---
+
+PERFORMANCE:
+
+* No images (uses icons + text)
+* Minimal JavaScript (just links)
+* CSS-only hover effects
+* Fast rendering
+* Accessible and semantic
+
+---
+
+FINAL REQUIREMENTS:
+
+1. ✅ CTA banner at top (converts visitors)
+2. ✅ Logo + tagline on left
+3. ✅ All service links organized by category
+4. ✅ Company links (About, Case Studies, Contact)
+5. ✅ Trust badges (5 simple text badges)
+6. ✅ Contact details (email, phone, location)
+7. ✅ Social media links (4-5 platforms)
+8. ✅ Bottom bar (copyright + legal links)
+9. ✅ Theme-adaptive (auto dark/light)
+10. ✅ Mobile-first responsive
+11. ✅ Accessible and semantic
+12. ✅ Fast loading (no images)
+
+Build a professional, conversion-focused footer that provides 
+excellent navigation, builds trust with badges, and gives 
+visitors one last chance to take action before leaving the site.
