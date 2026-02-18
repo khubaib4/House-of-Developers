@@ -38,6 +38,8 @@ import AIChatbotsPage from "@/pages/ai-chatbots";
 import AIAgentsPage from "@/pages/ai-agents";
 import AboutPage from "@/pages/about";
 import CaseStudiesPage from "@/pages/case-studies";
+import BlogPage from "@/pages/blog";
+import BlogPostPage from "@/pages/blog-post";
 import ComponentDemo from "@/pages/component-demo";
 import { StickyCallButton } from "@/components/ui/StickyCallButton";
 import { useEffect } from "react";
@@ -84,6 +86,8 @@ function Router() {
       <Route path="/services/hire-developers/full-stack/lamp" component={HireLAMPPage} />
       <Route path="/about" component={AboutPage} />
       <Route path="/case-studies" component={CaseStudiesPage} />
+      <Route path="/blog" component={BlogPage} />
+      <Route path="/blog/:slug" component={BlogPostPage} />
       <Route path="/demo" component={ComponentDemo} />
       <Route path="/contact" component={ContactPage} />
       <Route component={NotFound} />

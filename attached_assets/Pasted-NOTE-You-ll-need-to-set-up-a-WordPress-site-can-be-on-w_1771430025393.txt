@@ -1,0 +1,495 @@
+NOTE: You'll need to set up a WordPress site (can be on wordpress.com 
+or self-hosted) and point this URL to it. For now, we can use 
+placeholder data or a demo WordPress API.
+
+---
+
+PAGE 1: MAIN BLOG LISTING (/blog/page.tsx)
+
+HERO SECTION:
+
+Container: py-20 md:py-24, max-w-6xl mx-auto px-6, text-center
+
+- Badge: "📝 Blog"
+  * bg-muted, px-3 py-1.5, rounded-full, mb-4
+
+- H1: "Tech Guides & Tutorials"
+  * text-4xl md:text-5xl lg:text-6xl font-bold, mb-4
+
+- Description:
+  * text-xl text-muted-foreground, max-w-3xl mx-auto
+  * "Web development tutorials, coding guides, and tech 
+    insights. Learn how to build better software."
+
+---
+
+SEARCH & FILTER SECTION:
+
+Container: py-8, bg-muted, sticky top-0 z-40, border-b
+
+Wrapper: max-w-6xl mx-auto px-6
+
+Layout: flex flex-col md:flex-row gap-4 items-center 
+        justify-between
+
+Search Bar:
+* Input with search icon
+* placeholder: "Search articles..."
+* w-full md:w-96
+* Debounced search (300ms delay)
+* Updates URL params: ?search=query
+
+Category Filter:
+* Horizontal scrollable tabs
+* "All Posts", "React", "Node.js", "AI", "SEO", etc.
+* Active category highlighted (primary color)
+* Updates URL params: ?category=slug
+
+React State:
+```typescript
+const [searchQuery, setSearchQuery] = useState('');
+const [selectedCategory, setSelectedCategory] = useState('all');
+const [posts, setPosts] = useState<WPPost[]>([]);
+const [loading, setLoading] = useState(true);
+const [currentPage, setCurrentPage] = useState(1);
+const [totalPages, setTotalPages] = useState(1);
+
+useEffect(() => {
+  fetchPosts();
+}, [searchQuery, selectedCategory, currentPage]);
+
+async function fetchPosts() {
+  setLoading(true);
+  const { posts, totalPages } = await getPosts({
+    page: currentPage,
+    per_page: 12,
+    categories: selectedCategory !== 'all' ? selectedCategory : undefined,
+    search: searchQuery || undefined,
+  });
+  setPosts(posts);
+  setTotalPages(totalPages);
+  setLoading(false);
+}
+```
+
+---
+
+BLOG GRID:
+
+Container: py-20, max-w-7xl mx-auto px-6
+
+Loading State:
+* Show skeleton cards (3×4 grid)
+* bg-muted, rounded-2xl, animate-pulse
+* While posts are loading
+
+Grid: grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8
+
+BLOG POST CARD:
+
+Each card (group, bg-card, border, rounded-2xl, overflow-hidden,
+hover:shadow-xl, transition-all 300ms):
+
+1. Featured Image (aspect-video, relative):
+   * Image from post._embedded['wp:featuredmedia'][0].source_url
+   * object-cover, w-full, h-full
+   * Fallback: gradient background if no image
+   * Category badge (absolute top-4 left-4):
+     - bg-primary/90, text-primary-foreground
+     - px-3 py-1, rounded-full, text-xs font-semibold
+     - Category name from _embedded['wp:term']
+
+2. Content Area (p-6):
+
+   Date & Reading Time (flex items-center gap-4, text-xs, 
+   text-muted-foreground, mb-3):
+   * Calendar icon + formatted date
+   * Clock icon + reading time (e.g., "5 min read")
+
+   Title (linked):
+   * text-xl font-bold, mb-3
+   * line-clamp-2 (max 2 lines)
+   * hover:text-primary
+   * Links to /blog/[slug]
+
+   Excerpt:
+   * text-sm text-muted-foreground
+   * line-clamp-3 (max 3 lines)
+   * Strip HTML tags from excerpt
+
+   Author & CTA (flex items-center justify-between, mt-4, 
+   pt-4, border-t):
+   
+   Left - Author:
+   * Avatar (w-8 h-8 rounded-full)
+   * Name (text-sm font-medium)
+   * From _embedded.author
+
+   Right - Read More:
+   * "Read More →"
+   * text-sm font-semibold text-primary
+   * group-hover:gap-2 (arrow slides)
+
+---
+
+PAGINATION:
+
+Container: mt-12, flex justify-center items-center gap-4
+
+Previous Button:
+* Disabled if currentPage === 1
+* onClick: setCurrentPage(currentPage - 1)
+
+Page Numbers:
+* Show current page / total pages
+* e.g., "Page 2 of 5"
+
+Next Button:
+* Disabled if currentPage === totalPages
+* onClick: setCurrentPage(currentPage + 1)
+
+Style: Simple, minimal pagination with Previous/Next buttons
+
+---
+
+EMPTY STATE:
+
+If no posts found:
+
+Container: py-20, text-center
+
+* Icon: FileText (size 64, text-muted-foreground/30)
+* Heading: "No articles found"
+* Description: "Try adjusting your search or filters"
+* Button: "Clear Filters" (resets search and category)
+
+---
+
+PAGE 2: SINGLE BLOG POST (/blog/[slug]/page.tsx)
+
+ARTICLE HEADER:
+
+Container: py-20, max-w-4xl mx-auto px-6
+
+Breadcrumb (mb-6):
+* "Home / Blog / [Category] / [Post Title]"
+* text-sm, clickable links
+
+Category Badge:
+* bg-primary/10, text-primary
+* px-3 py-1.5, rounded-full, text-sm font-semibold
+* mb-4
+
+H1: Post Title
+* text-4xl md:text-5xl font-bold
+* mb-6
+
+Meta Info (flex flex-wrap gap-6, text-sm text-muted-foreground, 
+mb-8):
+* Author: Avatar (w-10 h-10) + Name
+* Date: Calendar icon + formatted date
+* Reading time: Clock icon + "X min read"
+* Views: Eye icon + view count (optional, if tracked)
+
+Featured Image:
+* aspect-video, rounded-2xl, overflow-hidden, mb-12
+* object-cover
+* Alt text from WordPress
+
+---
+
+ARTICLE LAYOUT:
+
+Two-column on desktop: Content (8/12) + Sidebar (4/12)
+
+LEFT: ARTICLE CONTENT (lg:col-span-8)
+
+Table of Contents (sticky, bg-card, border, rounded-xl, p-6, mb-8,
+top-24):
+
+* Heading: "Table of Contents"
+* Auto-generated from H2 and H3 tags in content
+* Scrollspy: Highlight active section
+* Smooth scroll to sections on click
+
+TOC Component:
+```typescript
+function TableOfContents({ content }: { content: string }) {
+  const headings = extractHeadings(content); // Parse H2, H3
+
+  return (
+    <nav>
+      <h4 className="font-semibold mb-3">Table of Contents</h4>
+      <ul className="space-y-2">
+        {headings.map((heading) => (
+          <li key={heading.id}>
+            
+              href={`#${heading.id}`}
+              className={`
+                text-sm hover:text-primary transition-colors
+                ${heading.level === 3 ? 'pl-4' : ''}
+              `}
+            >
+              {heading.text}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+}
+```
+
+Article Content:
+
+* Prose styling (max-w-none prose-lg)
+* Render HTML from post.content.rendered
+* dangerouslySetInnerHTML (WordPress content is HTML)
+
+Content styling:
+```css
+.prose {
+  /* Headings */
+  h2: text-2xl font-bold mt-12 mb-4;
+  h3: text-xl font-bold mt-8 mb-3;
+  
+  /* Paragraphs */
+  p: text-base leading-relaxed mb-6;
+  
+  /* Lists */
+  ul, ol: mb-6, pl-6;
+  li: mb-2;
+  
+  /* Code blocks */
+  pre: bg-muted, p-4, rounded-lg, overflow-x-auto;
+  code: bg-muted, px-1.5, py-0.5, rounded, text-sm;
+  
+  /* Images */
+  img: rounded-lg, my-8;
+  
+  /* Links */
+  a: text-primary, underline, hover:no-underline;
+  
+  /* Blockquotes */
+  blockquote: border-l-4 border-primary, pl-6, italic;
+}
+```
+
+---
+
+RIGHT: SIDEBAR (lg:col-span-4)
+
+Sticky Container (sticky top-24, space-y-8):
+
+AUTHOR CARD:
+
+Card (bg-card, border, rounded-xl, p-6):
+
+* Avatar (w-16 h-16, rounded-full, mx-auto, mb-3)
+* Author name (text-center, font-semibold, mb-2)
+* Role: "Author" (text-sm, text-muted-foreground, text-center)
+
+SHARE BUTTONS:
+
+Card (bg-card, border, rounded-xl, p-6):
+
+Heading: "Share this article"
+
+Buttons (flex flex-col gap-3):
+
+Each button (full width, flex items-center gap-3, px-4 py-3,
+border, rounded-lg, hover:bg-muted):
+
+1. Twitter: "Share on Twitter"
+   * Opens: `https://twitter.com/intent/tweet?url=${url}&text=${title}`
+
+2. LinkedIn: "Share on LinkedIn"
+   * Opens: `https://www.linkedin.com/sharing/share-offsite/?url=${url}`
+
+3. Facebook: "Share on Facebook"
+   * Opens: `https://www.facebook.com/sharer/sharer.php?u=${url}`
+
+4. Copy Link: "Copy Link"
+   * Copies URL to clipboard
+   * Shows "✓ Copied!" feedback
+
+RELATED POSTS:
+
+Card (bg-card, border, rounded-xl, p-6):
+
+Heading: "Related Articles"
+
+Fetch 3 posts from same category:
+```typescript
+const relatedPosts = await getPosts({
+  per_page: 3,
+  categories: post.categories[0],
+  exclude: post.id // Don't show current post
+});
+```
+
+Each related post (mb-4, last:mb-0):
+* Small thumbnail (w-full, aspect-video, rounded-lg)
+* Title (text-sm font-semibold, line-clamp-2, mt-2)
+* Reading time (text-xs, text-muted-foreground)
+* Link to post
+
+---
+
+ARTICLE FOOTER:
+
+Tags Section (mt-12, pt-8, border-t):
+
+Heading: "Tags"
+
+Tags (flex gap-2 flex-wrap):
+* Each tag: bg-muted, px-3 py-1.5, rounded-full, text-sm
+* Clickable → filters blog by tag
+
+---
+
+COMMENTS SECTION (OPTIONAL):
+
+If you want comments, integrate:
+- Disqus
+- WordPress native comments API
+- Custom comment system
+
+For now: Skip comments (can add later)
+
+---
+
+CTA SECTION:
+
+After article content:
+
+Container: mt-16, bg-gradient-to-r from-primary to-primary/80,
+rounded-2xl, p-8 md:p-12, text-center
+
+* Icon: Rocket (white, size 48, mx-auto, mb-4)
+* Heading: "Need Help With Your Project?"
+* Description: "We build custom software solutions. 
+  Let's discuss your project."
+* Button: "Get Free Consultation" → /contact
+  (bg-white, text-primary, hover:bg-white/90)
+
+---
+
+SEO & METADATA:
+
+For each blog post page:
+```typescript
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+  const post = await getPostBySlug(params.slug);
+  
+  if (!post) return {};
+  
+  return {
+    title: `${post.title.rendered} | House of Developers Blog`,
+    description: post.excerpt.rendered.replace(/<[^>]*>/g, '').slice(0, 160),
+    openGraph: {
+      title: post.title.rendered,
+      description: post.excerpt.rendered.replace(/<[^>]*>/g, ''),
+      images: [post._embedded?.['wp:featuredmedia']?.[0]?.source_url],
+      type: 'article',
+      publishedTime: post.date,
+    },
+  };
+}
+```
+
+Schema.org:
+- Article schema
+- Breadcrumb schema
+- Author schema
+
+---
+
+WORDPRESS SETUP NOTES:
+
+You'll need a WordPress installation to serve as headless CMS.
+
+Options:
+1. WordPress.com (free tier works)
+2. Self-hosted WordPress
+3. Managed WordPress (WP Engine, Kinsta)
+
+WordPress REST API is enabled by default.
+
+Endpoint: `https://your-site.com/wp-json/wp/v2/posts`
+
+For development/testing, you can use:
+- Demo WordPress API
+- Placeholder data
+- JSON files until WordPress is set up
+
+---
+
+DESIGN SPECIFICATIONS:
+
+Colors:
+- Cards: bg-card, border
+- Hover: shadow-xl, lift effect
+- Category badges: primary color
+- Links: text-primary
+
+Typography:
+- Blog titles: text-xl font-bold
+- Article headings: text-4xl → text-2xl → text-xl
+- Body: text-base, leading-relaxed
+- Meta info: text-sm, text-muted-foreground
+
+Images:
+- Featured images: aspect-video
+- Lazy loading: loading="lazy"
+- Object-fit: cover
+- Rounded corners: rounded-2xl
+
+Spacing:
+- Card padding: p-6
+- Grid gap: gap-8
+- Section spacing: py-20
+- Consistent margins
+
+Responsive:
+- Grid: 1 col mobile → 2 cols tablet → 3 cols desktop
+- Sidebar: Below content mobile, right side desktop
+- TOC: Collapsed mobile, sticky desktop
+
+---
+
+COMPONENTS TO CREATE:
+
+1. /lib/wordpress.ts - API utilities
+2. /blog/page.tsx - Main blog listing
+3. /blog/[slug]/page.tsx - Single post
+4. /components/blog/BlogCard.tsx - Post card component
+5. /components/blog/TableOfContents.tsx - TOC component
+6. /components/blog/ShareButtons.tsx - Social share
+
+---
+
+FINAL REQUIREMENTS:
+
+1. ✅ WordPress REST API integration
+2. ✅ Grid layout with featured images
+3. ✅ Search functionality (live search)
+4. ✅ Category filtering (clickable tabs)
+5. ✅ Pagination (Previous/Next)
+6. ✅ Author info with avatar (simple, no bio)
+7. ✅ Reading time calculation
+8. ✅ Table of contents (auto-generated)
+9. ✅ Related posts (same category)
+10. ✅ Social sharing buttons
+11. ✅ Responsive design
+12. ✅ SEO optimized (meta tags, schema)
+13. ✅ Loading states & empty states
+14. ✅ Professional prose styling
+
+Build a complete blog system powered by WordPress as a headless 
+CMS, optimized for tech tutorials and guides with excellent UX 
+and SEO.
+
+IMPORTANT: For initial development, use placeholder data or a 
+demo WordPress API endpoint until the actual WordPress site is 
+configured.
