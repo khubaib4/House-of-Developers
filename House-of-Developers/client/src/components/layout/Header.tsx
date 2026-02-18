@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from "react";
-import { Home, Menu, ChevronDown, X } from "lucide-react";
+import { Menu, ChevronDown, X } from "lucide-react";
+import hodLogo from "@/assets/HOD.svg";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "./ThemeToggle";
 import { Link, useLocation } from "wouter";
@@ -161,9 +162,7 @@ export function Header() {
             className="flex items-center gap-2 flex-shrink-0"
             data-testid="link-logo"
           >
-            <div className="w-8 h-8 rounded-md bg-primary flex items-center justify-center">
-              <Home className="h-4 w-4 text-primary-foreground" />
-            </div>
+            <img src={hodLogo} alt="House of Developers" className="h-8 w-auto" />
             <span className="font-bold text-lg tracking-tight hidden sm:inline">
               House of Developers
             </span>
@@ -269,9 +268,7 @@ export function Header() {
                 data-testid="link-mobile-logo"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                <div className="w-8 h-8 rounded-md bg-primary flex items-center justify-center">
-                  <Home className="h-4 w-4 text-primary-foreground" />
-                </div>
+                <img src={hodLogo} alt="House of Developers" className="h-8 w-auto" />
                 <span className="font-bold text-lg tracking-tight">
                   House of Developers
                 </span>
