@@ -9,7 +9,8 @@
     "build:vercel": "vite build",
     "start": "NODE_ENV=production node dist/index.cjs",
     "check": "tsc",
-    "db:push": "drizzle-kit push"
+    "db:push": "drizzle-kit push",
+    "deploy": "date > .deploy && git add . && git commit -m 'Deploy update' && git push origin main"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
