@@ -162,7 +162,7 @@ export function Header() {
             className="flex items-center gap-2 flex-shrink-0"
             data-testid="link-logo"
           >
-            <img src={hodLogo} alt="House of Developers" className="h-8 w-auto" />
+            <img src={hodLogo} alt="House of Developers" className="h-8 w-auto dark:invert" />
           </Link>
 
           <nav
@@ -262,7 +262,7 @@ export function Header() {
                 data-testid="link-mobile-logo"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                <img src={hodLogo} alt="House of Developers" className="h-8 w-auto" />
+                <img src={hodLogo} alt="House of Developers" className="h-8 w-auto dark:invert" />
               </Link>
               <Button
                 variant="ghost"
