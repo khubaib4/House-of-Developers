@@ -214,7 +214,9 @@ export async function fetchCategories(): Promise<WPCategory[]> {
   if (!res.ok) throw new Error(`WordPress API error: ${res.status}`);
 
   const categories: WPCategory[] = await res.json();
-  return categories.filter((c) => c.slug !== "uncategorized" || c.count > 0);
+  return categories
+    .filter((c) => c.slug !== "uncategorized" || c.count > 0)
+    .map((c) => ({ ...c, name: decodeHtmlEntities(c.name) }));
 }
 
 export async function fetchRelatedPosts(
