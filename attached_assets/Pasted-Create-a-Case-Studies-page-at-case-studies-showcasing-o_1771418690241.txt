@@ -1,0 +1,608 @@
+Create a Case Studies page at /case-studies showcasing our best 
+work with beautiful browser and device mockups. Grid layout with 
+6 featured projects, filterable by service type (Web, Mobile, AI, 
+SEO). Focus on visual impact with high-quality mockups.
+
+PAGE: /case-studies/page.tsx (or client/src/pages/CaseStudies.tsx)
+
+---
+
+HERO SECTION:
+
+Container: py-20 md:py-24, max-w-6xl mx-auto px-6
+
+Layout: Text-centered
+
+- Badge: "Our Work" 
+  * bg-muted, text-foreground, px-3 py-1.5, rounded-full, mb-4
+
+- H1: "Projects We've Built"
+  * text-4xl md:text-5xl lg:text-6xl font-bold
+  * leading-tight, mb-6
+
+- Tagline (text-xl md:text-2xl text-muted-foreground, mb-6):
+  "Real businesses. Real results. Real software we're proud of."
+
+- Description (text-lg text-muted-foreground, leading-relaxed, 
+  max-w-3xl mx-auto, mb-8):
+  "Every project tells a story. From SaaS platforms serving 
+  thousands to e-commerce stores doing millions—these are the 
+  solutions we've built for businesses like yours."
+
+- Stats Row (flex gap-8 justify-center, text-center):
+  Each stat (flex flex-col):
+  - Number (text-3xl font-bold text-foreground)
+  - Label (text-sm text-muted-foreground, mt-1)
+
+  1. "150+" / "Projects"
+  2. "6 Industries" / "Served"
+  3. "98%" / "Success Rate"
+
+---
+
+FILTER SECTION:
+
+Container: py-8, bg-muted, sticky top-0, z-40, border-b
+
+Wrapper: max-w-6xl mx-auto px-6
+
+Filter Tabs (flex gap-3 overflow-x-auto scrollbar-hide):
+
+Buttons (filter categories):
+- "All Projects" (default active)
+- "Web Development"
+- "Mobile Apps"
+- "AI Services"
+- "SEO Projects"
+
+Each button:
+* px-4 py-2, rounded-full, text-sm font-medium
+* transition-all duration-200
+* Active: bg-primary, text-primary-foreground
+* Inactive: bg-background, border, text-muted-foreground,
+           hover:bg-muted
+
+React State:
+```tsx
+const [activeFilter, setActiveFilter] = useState("All");
+
+const categories = [
+  "All Projects",
+  "Web Development", 
+  "Mobile Apps",
+  "AI Services",
+  "SEO Projects"
+];
+```
+
+---
+
+CASE STUDIES GRID:
+
+Container: py-20, max-w-7xl mx-auto px-6
+
+Grid: grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8
+
+6 FEATURED PROJECTS (with beautiful mockups):
+
+Each project card:
+- bg-card, border, rounded-2xl, overflow-hidden
+- hover:shadow-2xl, hover:-translateY-2
+- transition-all 300ms
+- cursor-pointer
+
+Card Structure:
+1. Mockup preview (aspect-video, bg-muted, relative)
+2. Content area (p-6)
+3. Tech stack pills
+4. CTA link
+
+---
+
+PROJECT 1: TASKFLOW - SAAS PROJECT MANAGEMENT
+
+Category: "Web Development"
+
+Mockup Preview Container (aspect-video, bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950 dark:to-indigo-950, relative, p-6):
+
+BROWSER MOCKUP (centered, shadow-2xl):
+* Browser frame (bg-white dark:bg-slate-900, rounded-lg, overflow-hidden)
+* Browser bar (bg-slate-100 dark:bg-slate-800, px-3 py-2):
+  - 3 dots (red, yellow, green, size 8px)
+  - URL: "taskflow.app"
+  - Lock icon
+* Content area (p-4):
+  Simple dashboard visual:
+  - Top nav bar (dark bg, white text)
+  - Sidebar (navigation items)
+  - Main content: 
+    * "Projects Dashboard" heading
+    * 3 stat cards in row (colored backgrounds)
+    * Kanban board preview (3 columns with cards)
+  - Use solid colors, simple shapes
+  - Clean, minimal design
+
+Content (p-6):
+* Service badge: "Web Development" 
+  (text-xs, px-2 py-1, rounded-full, bg-blue-100 dark:bg-blue-900, 
+   text-blue-700 dark:text-blue-300, mb-3)
+
+* H3: "TaskFlow - SaaS Project Management" 
+  (text-xl font-bold, mb-2)
+
+* Client: "Tech Startup, London" 
+  (text-sm text-muted-foreground, mb-3)
+
+* Description (text-sm text-muted-foreground, leading-relaxed, mb-4):
+  "Full-stack SaaS platform for project management with 
+  real-time collaboration, team dashboards, and task automation. 
+  Scaled from 0 to 5,000 active users in 6 months."
+
+* Key Features (space-y-1, mb-4):
+  3 items with checkmarks:
+  - ✓ "Real-time collaboration"
+  - ✓ "Custom workflows"
+  - ✓ "Team analytics"
+
+* Tech Stack (flex gap-2 flex-wrap, mb-4):
+  Pills: React, Node.js, PostgreSQL, AWS
+
+* Link: "View Project →" 
+  (text-sm font-semibold text-primary, 
+   inline-flex items-center gap-1, hover:gap-2)
+  Link to: /projects/taskflow (or external URL)
+
+---
+
+PROJECT 2: LUXEWEAR - E-COMMERCE FASHION
+
+Category: "Web Development"
+
+Mockup Preview (bg-gradient-to-br from-purple-50 to-pink-50 
+dark:from-purple-950 dark:to-pink-950, p-6):
+
+MULTI-DEVICE MOCKUP:
+
+Layout: Laptop in back, phone in front (overlapping)
+
+Laptop mockup (larger, 70% width, positioned back):
+* MacBook-style frame
+* Screen showing e-commerce homepage:
+  - Hero banner with product image
+  - "Shop Now" CTA button
+  - Product grid (4 products)
+  - Navigation bar at top
+
+Phone mockup (smaller, 40% width, positioned front-right, 
+slight rotation -5deg):
+* iPhone-style frame
+* Screen showing mobile product page:
+  - Product image
+  - Price and "Add to Cart" button
+  - Product details
+
+Both mockups: shadow-2xl, realistic bezels
+
+Content (p-6):
+* Service badge: "Web Development"
+
+* H3: "LuxeWear - Fashion E-Commerce"
+
+* Client: "Fashion Retailer, Manchester"
+
+* Description:
+  "High-converting Shopify store with custom features, 
+  AI-powered recommendations, and seamless checkout. 
+  £200K revenue in first 6 months."
+
+* Key Features:
+  - ✓ "AI product recommendations"
+  - ✓ "Custom checkout flow"
+  - ✓ "Real-time inventory"
+
+* Tech Stack:
+  Shopify, JavaScript, Stripe, Cloudflare
+
+* Link: "View Project →" → /projects/luxewear
+
+---
+
+PROJECT 3: HEALTHTRACK - MOBILE HEALTH APP
+
+Category: "Mobile Apps"
+
+Mockup Preview (bg-gradient-to-br from-green-50 to-emerald-50 
+dark:from-green-950 dark:to-emerald-950, p-6):
+
+MOBILE APP MOCKUP (phone-only focus):
+
+Two phones side-by-side:
+
+Phone 1 (left):
+* iPhone frame
+* Screen 1: App dashboard
+  - Top: "HealthTrack" logo
+  - Stats cards (steps, calories, heart rate)
+  - Activity graph
+  - Bottom navigation
+
+Phone 2 (right):
+* iPhone frame  
+* Screen 2: Activity detail
+  - Exercise tracking screen
+  - Start/stop button
+  - Timer display
+  - Progress chart
+
+Both phones: realistic shadows, slight tilt
+
+Content (p-6):
+* Service badge: "Mobile Apps" 
+  (green tones)
+
+* H3: "HealthTrack - Fitness & Wellness App"
+
+* Client: "Health Tech Startup, Bristol"
+
+* Description:
+  "Native iOS and Android fitness tracking app with 
+  real-time health monitoring, workout plans, and 
+  social features. 50K downloads in 3 months."
+
+* Key Features:
+  - ✓ "Real-time health tracking"
+  - ✓ "Workout plans & guidance"
+  - ✓ "Social challenges"
+
+* Tech Stack:
+  React Native, Node.js, MongoDB, Firebase
+
+* Link: "View Project →" → /projects/healthtrack
+
+---
+
+PROJECT 4: SUPPORTBOT - AI CUSTOMER SERVICE
+
+Category: "AI Services"
+
+Mockup Preview (bg-gradient-to-br from-violet-50 to-purple-50 
+dark:from-violet-950 dark:to-purple-950, p-6):
+
+BROWSER MOCKUP WITH CHAT WIDGET:
+
+Browser showing website with chat widget:
+
+Main browser (centered):
+* E-commerce website in background (blurred)
+* Chat widget (bottom-right, expanded):
+  - Header: "SupportBot" with avatar
+  - Chat messages:
+    * Customer: "Do you ship to UK?"
+    * Bot: "Yes! We offer free shipping..."
+    * Customer: "What about returns?"
+    * Bot: "30-day money back guarantee..."
+  - Input box: "Type your message..."
+  - "AI-powered" badge
+
+Content (p-6):
+* Service badge: "AI Services" 
+  (violet tones)
+
+* H3: "SupportBot - AI Customer Service"
+
+* Client: "E-Commerce Platform, Edinburgh"
+
+* Description:
+  "Intelligent AI chatbot handling 85% of customer 
+  inquiries automatically. Integrated with existing 
+  systems, trained on company data, 24/7 availability."
+
+* Key Features:
+  - ✓ "85% automation rate"
+  - ✓ "24/7 availability"
+  - ✓ "Multi-language support"
+
+* Tech Stack:
+  OpenAI GPT-4, Python, React, PostgreSQL
+
+* Link: "View Project →" → /projects/supportbot
+
+---
+
+PROJECT 5: LOCALBIZ - LOCAL SEO SUCCESS
+
+Category: "SEO Projects"
+
+Mockup Preview (bg-gradient-to-br from-emerald-50 to-green-50 
+dark:from-emerald-950 dark:to-green-950, p-6):
+
+GOOGLE SEARCH RESULTS MOCKUP:
+
+Browser showing Google search:
+
+Search bar: "dentist manchester"
+
+Search results:
+* Map pack (top):
+  - 3 business listings with stars
+  - "LocalBiz Dental" at #1 (highlighted)
+  - Map pins on the right
+
+* Organic results below:
+  - #1: "LocalBiz Dental - Manchester"
+    (highlighted with green border)
+  - Meta description preview
+  - Star rating: ⭐⭐⭐⭐⭐ (48 reviews)
+
+Annotation: "Ranked #1 in 4 months" badge
+
+Content (p-6):
+* Service badge: "SEO Projects" 
+  (emerald tones)
+
+* H3: "LocalBiz - Multi-Location SEO"
+
+* Client: "Dental Practice, Manchester"
+
+* Description:
+  "Local SEO campaign for 4-location dental practice. 
+  Achieved #1 rankings for 28 local keywords, 300% 
+  increase in organic traffic, doubled appointment bookings."
+
+* Key Features:
+  - ✓ "Page 1 rankings in 4 months"
+  - ✓ "300% traffic increase"
+  - ✓ "4 locations optimized"
+
+* Tech Stack:
+  WordPress, Yoast SEO, Google Business, Ahrefs
+
+* Link: "View Project →" → /projects/localbiz
+
+---
+
+PROJECT 6: FOODIE - RESTAURANT MOBILE APP
+
+Category: "Mobile Apps"
+
+Mockup Preview (bg-gradient-to-br from-orange-50 to-amber-50 
+dark:from-orange-950 dark:to-amber-950, p-6):
+
+THREE-DEVICE MOCKUP (laptop + tablet + phone):
+
+Laptop (back, largest):
+* Admin dashboard
+* Restaurant management screen
+* Orders, menu, analytics
+
+Tablet (middle, medium):
+* Menu browsing interface
+* Food photos in grid
+* Category tabs
+
+Phone (front, smallest):
+* Order checkout screen
+* Cart with items
+* Payment button
+
+All devices: proper perspective, shadows
+
+Content (p-6):
+* Service badge: "Mobile Apps" 
+  (orange tones)
+
+* H3: "Foodie - Restaurant Ordering App"
+
+* Client: "Restaurant Chain, Birmingham"
+
+* Description:
+  "Cross-platform ordering app with table reservations, 
+  loyalty program, and real-time kitchen integration. 
+  Serving 8 locations, 2K daily orders."
+
+* Key Features:
+  - ✓ "Real-time order tracking"
+  - ✓ "Loyalty rewards system"
+  - ✓ "Multi-location support"
+
+* Tech Stack:
+  Flutter, Node.js, PostgreSQL, Stripe
+
+* Link: "View Project →" → /projects/foodie
+
+---
+
+MOCKUP DESIGN SPECIFICATIONS:
+
+Browser Mockups:
+- Realistic browser chrome (dots, URL bar, lock icon)
+- Shadow: shadow-2xl with subtle colored shadows
+- Border radius: rounded-lg on browser frame
+- Background: gradient matching project category color
+- Content: Simple, clean UI (not too detailed)
+- Colors: Use category accent colors
+
+Phone Mockups:
+- iPhone-style frames (rounded corners, notch optional)
+- Realistic bezels and shadows
+- Slight rotation/tilt for depth (-3 to -5 degrees)
+- Screen content: actual app interfaces
+- Multiple screens showing different features
+
+Multi-Device Mockups:
+- Overlapping devices (front to back)
+- Size hierarchy (laptop > tablet > phone)
+- Proper perspective and shadows
+- Coordinated color schemes
+- All devices show same project
+
+Mockup Containers:
+- aspect-video ratio (16:9)
+- Gradient backgrounds (category color themed)
+- Padding: p-6 to p-8
+- Center aligned devices
+- Professional spacing
+
+---
+
+FILTERING FUNCTIONALITY:
+
+React Implementation:
+```tsx
+const [activeFilter, setActiveFilter] = useState("All Projects");
+
+const projects = [
+  {
+    id: 1,
+    category: "Web Development",
+    title: "TaskFlow - SaaS Project Management",
+    // ... other fields
+  },
+  // ... other projects
+];
+
+const filteredProjects = activeFilter === "All Projects"
+  ? projects
+  : projects.filter(p => p.category === activeFilter);
+
+// Map over filteredProjects in grid
+```
+
+Filter Animation:
+- Fade out current projects
+- Fade in filtered projects
+- Use Framer Motion for smooth transitions
+- Duration: 300ms
+
+---
+
+CTA SECTION:
+
+Container: py-20, bg-muted
+
+Wrapper: max-w-4xl mx-auto px-6, text-center
+
+- H2: "Want Your Project Here?" 
+  (text-3xl md:text-4xl font-bold, mb-4)
+
+- Description (text-lg text-muted-foreground, mb-8):
+  "We're selective about the projects we take on. If you're 
+  serious about building something great, let's talk."
+
+- CTA Buttons (flex gap-4 justify-center):
+  * Primary: "Start Your Project" → /contact
+    bg-primary, h-14 px-8
+
+  * Secondary: "View Our Services" → /services
+    border, h-14 px-8
+
+- Trust line (mt-6, text-sm text-muted-foreground):
+  "Free consultation • See if we're a good fit"
+
+---
+
+DESIGN SPECIFICATIONS:
+
+Colors by Category:
+- Web Development: Blue gradient (from-blue-50 to-indigo-50)
+- Mobile Apps: Green/Orange gradients (varied)
+- AI Services: Violet/Purple gradient
+- SEO Projects: Emerald/Green gradient
+
+Typography:
+- Project titles: text-xl font-bold
+- Descriptions: text-sm, leading-relaxed
+- All text readable over mockup backgrounds
+
+Cards:
+- bg-card, border, rounded-2xl
+- hover:shadow-2xl, hover:-translateY-2
+- transition-all 300ms
+- cursor-pointer for interactivity
+
+Mockups:
+- Professional, realistic device frames
+- Clean UI designs inside
+- Proper shadows and depth
+- Category-themed gradient backgrounds
+- Not stock photos - custom designed
+
+Tech Stack Pills:
+- text-xs, px-2 py-1, rounded-full
+- bg-muted, text-foreground
+- inline-flex, gap-2
+
+---
+
+RESPONSIVE BEHAVIOR:
+
+Mobile (< 768px):
+- Grid: 1 column
+- Mockups: Scale to fit
+- Filters: Horizontal scroll
+- Cards: Full width
+
+Tablet (768px - 1024px):
+- Grid: 2 columns
+- Mockups: Optimized size
+
+Desktop (1024px+):
+- Grid: 3 columns
+- Full mockup details visible
+- Hover effects active
+
+---
+
+SEO REQUIREMENTS:
+
+Meta:
+- Title: "Case Studies | Projects We've Built | 
+  House of Developers"
+- Description: "See our work. Real projects for real 
+  businesses - SaaS platforms, mobile apps, e-commerce 
+  stores, and AI solutions. 150+ successful projects delivered."
+- Schema: CollectionPage, CreativeWork
+
+Content:
+- H1: "Projects We've Built"
+- Unique descriptions per project
+- Real client results (anonymized if needed)
+- Service category keywords
+
+---
+
+PROJECT URL STRUCTURE:
+
+Individual project pages (future expansion):
+- /projects/taskflow
+- /projects/luxewear
+- /projects/healthtrack
+- /projects/supportbot
+- /projects/localbiz
+- /projects/foodie
+
+For now: Links can go to /contact or # (placeholder)
+
+---
+
+FINAL REQUIREMENTS:
+
+1. ✅ Grid layout (3 columns desktop, 2 tablet, 1 mobile)
+2. ✅ 6 featured projects (quality over quantity)
+3. ✅ Filter by service (Web, Mobile, AI, SEO)
+4. ✅ Browser mockups (realistic chrome, shadows)
+5. ✅ Mobile mockups (iPhone frames, app screens)
+6. ✅ Multi-device mockups (laptop + tablet + phone)
+7. ✅ Category-themed gradients
+8. ✅ Tech stack pills per project
+9. ✅ Key features with checkmarks
+10. ✅ Hover effects (lift and shadow)
+11. ✅ Clean, professional mockup designs
+12. ✅ Smooth filter transitions
+13. ✅ Mobile-first responsive
+14. ✅ Fast loading (optimized mockups)
+15. ✅ CTA at bottom
+
+Build a stunning Case Studies page that showcases our 
+best work with beautiful, professional mockups that 
+demonstrate the quality and variety of projects we deliver.
