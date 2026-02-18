@@ -128,7 +128,7 @@ function transformPost(wp: WPPost): BlogPost {
 
   const primaryCategory = categories[0];
 
-  const rawContent = wp.content.rendered;
+  const rawContent = decodeHtmlEntities(wp.content.rendered);
   const contentWithIds = addHeadingIds(rawContent);
 
   return {
