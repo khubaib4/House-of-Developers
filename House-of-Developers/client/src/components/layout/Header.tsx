@@ -163,12 +163,6 @@ export function Header() {
             data-testid="link-logo"
           >
             <img src={hodLogo} alt="House of Developers" className="h-8 w-auto" />
-            <span className="font-bold text-lg tracking-tight hidden sm:inline">
-              House of Developers
-            </span>
-            <span className="font-bold text-lg tracking-tight sm:hidden">
-              HoD
-            </span>
           </Link>
 
           <nav
@@ -269,9 +263,6 @@ export function Header() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <img src={hodLogo} alt="House of Developers" className="h-8 w-auto" />
-                <span className="font-bold text-lg tracking-tight">
-                  House of Developers
-                </span>
               </Link>
               <Button
                 variant="ghost"
