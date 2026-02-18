@@ -12,17 +12,19 @@ import {
   Check,
   Rocket,
   Tag,
+  Loader2,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
+import { useQuery } from "@tanstack/react-query";
 import {
-  getPostBySlug,
-  getRelatedPosts,
+  fetchPostBySlug,
+  fetchRelatedPosts,
   formatDate,
   type BlogPost,
-} from "@/lib/blog-data";
+} from "@/lib/wordpress-api";
 
 interface Heading {
   id: string;
@@ -31,7 +33,7 @@ interface Heading {
 }
 
 function extractHeadings(html: string): Heading[] {
-  const regex = /<h([23])\s+id="([^"]*)"[^>]*>(.*?)<\/h[23]>/g;
+  const regex = /<h([23])\s[^>]*id="([^"]*)"[^>]*>(.*?)<\/h[23]>/gi;
   const headings: Heading[] = [];
   let match;
   while ((match = regex.exec(html)) !== null) {
@@ -157,8 +159,12 @@ function ShareButtons({ title, slug }: { title: string; slug: string }) {
   );
 }
 
-function RelatedPosts({ post }: { post: BlogPost }) {
-  const related = useMemo(() => getRelatedPosts(post, 3), [post]);
+function RelatedPosts({ post }: { post: BlogPost; }) {
+  const { data: related = [] } = useQuery({
+    queryKey: ["wp-related", post.id, post.categoryId],
+    queryFn: () => fetchRelatedPosts(post.categoryId, post.id, 3),
+    staleTime: 5 * 60 * 1000,
+  });
 
   if (related.length === 0) return null;
 
@@ -175,9 +181,17 @@ function RelatedPosts({ post }: { post: BlogPost }) {
         {related.map((r, i) => (
           <Link key={r.id} href={`/blog/${r.slug}`}>
             <div className="cursor-pointer group">
-              <div className={`w-full aspect-video rounded-lg bg-gradient-to-br ${gradients[i % gradients.length]} flex items-center justify-center mb-2`}>
-                <span className="text-white/20 text-3xl font-bold">{r.title.charAt(0)}</span>
-              </div>
+              {r.featuredImage ? (
+                <img
+                  src={r.featuredImage}
+                  alt={r.title}
+                  className="w-full aspect-video rounded-lg object-cover mb-2"
+                />
+              ) : (
+                <div className={`w-full aspect-video rounded-lg bg-gradient-to-br ${gradients[i % gradients.length]} flex items-center justify-center mb-2`}>
+                  <span className="text-white/20 text-3xl font-bold">{r.title.charAt(0)}</span>
+                </div>
+              )}
               <h5 className="text-sm font-semibold line-clamp-2 group-hover:text-primary transition-colors">
                 {r.title}
               </h5>
@@ -195,11 +209,28 @@ function RelatedPosts({ post }: { post: BlogPost }) {
 export default function BlogPostPage() {
   const [, params] = useRoute("/blog/:slug");
   const slug = params?.slug || "";
-  const post = useMemo(() => getPostBySlug(slug), [slug]);
+
+  const { data: post, isLoading } = useQuery({
+    queryKey: ["wp-post", slug],
+    queryFn: () => fetchPostBySlug(slug),
+    enabled: !!slug,
+    staleTime: 2 * 60 * 1000,
+  });
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [slug]);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <Loader2 size={48} className="animate-spin text-primary mx-auto mb-4" />
+          <p className="text-muted-foreground">Loading article...</p>
+        </div>
+      </div>
+    );
+  }
 
   if (!post) {
     return (
@@ -242,9 +273,17 @@ export default function BlogPostPage() {
 
           <div className="flex flex-wrap gap-6 text-sm text-muted-foreground mb-8">
             <div className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">
-                {post.author.name.charAt(0)}
-              </div>
+              {post.author.avatar ? (
+                <img
+                  src={post.author.avatar}
+                  alt={post.author.name}
+                  className="w-10 h-10 rounded-full object-cover"
+                />
+              ) : (
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">
+                  {post.author.name.charAt(0)}
+                </div>
+              )}
               <span className="font-medium text-foreground">{post.author.name}</span>
             </div>
             <span className="flex items-center gap-1">
@@ -257,11 +296,19 @@ export default function BlogPostPage() {
             </span>
           </div>
 
-          <div className={`aspect-video rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center mb-12`}>
-            <span className="text-primary/10 text-[120px] font-bold select-none">
-              {post.title.charAt(0)}
-            </span>
-          </div>
+          {post.featuredImage ? (
+            <img
+              src={post.featuredImage}
+              alt={post.title}
+              className="w-full aspect-video rounded-2xl object-cover mb-12"
+            />
+          ) : (
+            <div className="aspect-video rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center mb-12">
+              <span className="text-primary/10 text-[120px] font-bold select-none">
+                {post.title.charAt(0)}
+              </span>
+            </div>
+          )}
         </div>
       </motion.section>
 
@@ -290,19 +337,21 @@ export default function BlogPostPage() {
                 dangerouslySetInnerHTML={{ __html: post.content }}
               />
 
-              <div className="mt-12 pt-8 border-t">
-                <div className="flex items-center gap-2 mb-3">
-                  <Tag size={16} className="text-muted-foreground" />
-                  <span className="text-sm font-semibold">Tags</span>
+              {post.tags.length > 0 && (
+                <div className="mt-12 pt-8 border-t">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Tag size={16} className="text-muted-foreground" />
+                    <span className="text-sm font-semibold">Tags</span>
+                  </div>
+                  <div className="flex gap-2 flex-wrap">
+                    {post.tags.map((tag) => (
+                      <Badge key={tag} variant="secondary" className="rounded-full">
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
                 </div>
-                <div className="flex gap-2 flex-wrap">
-                  {post.tags.map((tag) => (
-                    <Badge key={tag} variant="secondary" className="rounded-full">
-                      {tag}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
+              )}
 
               <div className="mt-16 bg-gradient-to-r from-primary to-primary/80 rounded-2xl p-8 md:p-12 text-center">
                 <Rocket className="text-white mx-auto mb-4" size={48} />
@@ -327,9 +376,17 @@ export default function BlogPostPage() {
                 </div>
 
                 <Card className="p-6 text-center">
-                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xl font-bold mx-auto mb-3">
-                    {post.author.name.charAt(0)}
-                  </div>
+                  {post.author.avatar ? (
+                    <img
+                      src={post.author.avatar}
+                      alt={post.author.name}
+                      className="w-16 h-16 rounded-full object-cover mx-auto mb-3"
+                    />
+                  ) : (
+                    <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xl font-bold mx-auto mb-3">
+                      {post.author.name.charAt(0)}
+                    </div>
+                  )}
                   <p className="font-semibold">{post.author.name}</p>
                   <p className="text-sm text-muted-foreground">Author</p>
                 </Card>

@@ -99,6 +99,7 @@ Located in `client/src/components/`:
 - **Google Fonts** — Inter, DM Sans, Geist Mono, Fira Code, Architects Daughter (loaded via CDN in `index.html`)
 
 ### External Services
+- **WordPress REST API** — Blog content management via headless WordPress (https://olive-lyrebird-997264.hostingersite.com/wp-json/wp/v2/). Posts, categories, tags, authors, and featured media are fetched client-side using TanStack React Query. WordPress API service lives in `client/src/lib/wordpress-api.ts`
 - **WhatsApp** — Direct communication links (phone number integration)
 - **Calendly** — Appointment scheduling (linked from CTAs)
 - **Simple Icons CDN** — Brand logos for technology icons (WordPress, Shopify, Stripe, etc.)

@@ -3,7 +3,7 @@ import { Calendar, Clock, ArrowRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { type BlogPost, formatDate } from "@/lib/blog-data";
+import { type BlogPost, formatDate } from "@/lib/wordpress-api";
 
 const gradients = [
   "from-blue-600 to-cyan-500",
@@ -28,10 +28,21 @@ export function BlogCard({ post, index = 0 }: { post: BlogPost; index?: number }
     >
       <Link href={`/blog/${post.slug}`}>
         <Card className="group overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer h-full flex flex-col">
-          <div className={`aspect-video relative bg-gradient-to-br ${gradient} flex items-center justify-center`}>
-            <div className="text-white/20 text-6xl font-bold select-none">
-              {post.title.charAt(0)}
-            </div>
+          <div className="aspect-video relative overflow-hidden">
+            {post.featuredImage ? (
+              <img
+                src={post.featuredImage}
+                alt={post.title}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+            ) : (
+              <div className={`w-full h-full bg-gradient-to-br ${gradient} flex items-center justify-center`}>
+                <div className="text-white/20 text-6xl font-bold select-none">
+                  {post.title.charAt(0)}
+                </div>
+              </div>
+            )}
             <Badge className="absolute top-4 left-4 bg-primary/90 text-primary-foreground text-xs font-semibold">
               {post.category}
             </Badge>
@@ -59,9 +70,17 @@ export function BlogCard({ post, index = 0 }: { post: BlogPost; index?: number }
 
             <div className="flex items-center justify-between mt-4 pt-4 border-t">
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xs font-bold">
-                  {post.author.name.charAt(0)}
-                </div>
+                {post.author.avatar ? (
+                  <img
+                    src={post.author.avatar}
+                    alt={post.author.name}
+                    className="w-8 h-8 rounded-full object-cover"
+                  />
+                ) : (
+                  <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xs font-bold">
+                    {post.author.name.charAt(0)}
+                  </div>
+                )}
                 <span className="text-sm font-medium">{post.author.name}</span>
               </div>
               <span className="text-sm font-semibold text-primary flex items-center gap-1 group-hover:gap-2 transition-all">

@@ -1,35 +1,54 @@
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Search, FileText } from "lucide-react";
+import { Search, FileText, Loader2 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { BlogCard } from "@/components/blog/BlogCard";
-import { getPosts, getCategories } from "@/lib/blog-data";
+import { useQuery } from "@tanstack/react-query";
+import { fetchPosts, fetchCategories, type WPCategory } from "@/lib/wordpress-api";
 
 export default function BlogPage() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [debouncedSearch, setDebouncedSearch] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState<WPCategory | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const categories = getCategories();
+  const [searchTimeout, setSearchTimeout] = useState<ReturnType<typeof setTimeout> | null>(null);
 
-  const { posts, totalPages } = useMemo(() => {
-    return getPosts({
-      page: currentPage,
-      perPage: 9,
-      category: selectedCategory !== "all" ? selectedCategory : undefined,
-      search: searchQuery || undefined,
-    });
-  }, [searchQuery, selectedCategory, currentPage]);
+  const { data: categories = [] } = useQuery({
+    queryKey: ["wp-categories"],
+    queryFn: fetchCategories,
+    staleTime: 5 * 60 * 1000,
+  });
 
-  function handleCategoryChange(slug: string) {
-    setSelectedCategory(slug);
+  const { data, isLoading } = useQuery({
+    queryKey: ["wp-posts", currentPage, selectedCategory?.id, debouncedSearch],
+    queryFn: () =>
+      fetchPosts({
+        page: currentPage,
+        perPage: 9,
+        category: selectedCategory?.id,
+        search: debouncedSearch || undefined,
+      }),
+    staleTime: 2 * 60 * 1000,
+  });
+
+  const posts = data?.posts || [];
+  const totalPages = data?.totalPages || 1;
+
+  function handleCategoryChange(cat: WPCategory | null) {
+    setSelectedCategory(cat);
     setCurrentPage(1);
   }
 
   function handleSearch(value: string) {
     setSearchQuery(value);
-    setCurrentPage(1);
+    if (searchTimeout) clearTimeout(searchTimeout);
+    const timeout = setTimeout(() => {
+      setDebouncedSearch(value);
+      setCurrentPage(1);
+    }, 400);
+    setSearchTimeout(timeout);
   }
 
   return (
@@ -61,12 +80,22 @@ export default function BlogPage() {
               />
             </div>
             <div className="flex gap-2 overflow-x-auto w-full md:w-auto pb-1">
+              <button
+                onClick={() => handleCategoryChange(null)}
+                className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors ${
+                  !selectedCategory
+                    ? "bg-primary text-primary-foreground"
+                    : "bg-card border hover:bg-accent"
+                }`}
+              >
+                All Posts
+              </button>
               {categories.map((cat) => (
                 <button
-                  key={cat.slug}
-                  onClick={() => handleCategoryChange(cat.slug)}
+                  key={cat.id}
+                  onClick={() => handleCategoryChange(cat)}
                   className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors ${
-                    selectedCategory === cat.slug
+                    selectedCategory?.id === cat.id
                       ? "bg-primary text-primary-foreground"
                       : "bg-card border hover:bg-accent"
                   }`}
@@ -81,7 +110,12 @@ export default function BlogPage() {
 
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6">
-          {posts.length > 0 ? (
+          {isLoading ? (
+            <div className="py-20 flex flex-col items-center justify-center">
+              <Loader2 size={48} className="animate-spin text-primary mb-4" />
+              <p className="text-muted-foreground">Loading articles...</p>
+            </div>
+          ) : posts.length > 0 ? (
             <>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {posts.map((post, i) => (
@@ -124,7 +158,8 @@ export default function BlogPage() {
                 variant="outline"
                 onClick={() => {
                   setSearchQuery("");
-                  setSelectedCategory("all");
+                  setDebouncedSearch("");
+                  setSelectedCategory(null);
                   setCurrentPage(1);
                 }}
               >
