@@ -52,7 +52,6 @@ import {
   Search,
   TestTube2,
 } from "lucide-react";
-import { useState, useRef, useCallback } from "react";
 import { Link } from "wouter";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { ZigzagTimeline } from "@/components/ui/ZigzagTimeline";
@@ -146,15 +145,6 @@ const zigzagSteps = [
     title: "Launch & Deploy",
     points: ["App Store (Apple) and Google Play Store submission", "App approval, production deployment & launch", "Post-launch monitoring and initial support"],
   },
-];
-
-const resultMetrics = [
-  { icon: Clock, label: "Development Time", before: "20 weeks", after: "12 weeks", improvement: "40% faster" },
-  { icon: DollarSign, label: "Development Cost", before: "\u00a380K", after: "\u00a350K", improvement: "37% savings" },
-  { icon: Code2, label: "Code Reuse", before: "0%", after: "95%", improvement: "Shared codebase" },
-  { icon: Users, label: "Team Size", before: "4 developers", after: "2 developers", improvement: "50% smaller" },
-  { icon: TrendingUp, label: "Maintenance Cost", before: "\u00a33K/month", after: "\u00a31.5K/month", improvement: "50% lower" },
-  { icon: Zap, label: "Feature Parity", before: "Delayed", after: "Simultaneous", improvement: "Same day both" },
 ];
 
 const useCases = [
@@ -374,188 +364,6 @@ function HybridHeroMockup() {
   );
 }
 
-function NativeSeparateMockup() {
-  return (
-    <div className="bg-gradient-to-b from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 border-2 border-red-200 dark:border-red-900 aspect-video p-4 md:p-6 flex flex-col text-left overflow-hidden">
-      <div className="text-[10px] md:text-xs font-bold text-red-600 dark:text-red-400 mb-3">Building Native Separately</div>
-      <div className="flex gap-3 flex-1 min-h-0">
-        <div className="flex-1 border border-gray-300 dark:border-gray-600 rounded-lg p-2 bg-gray-50 dark:bg-gray-700">
-          <div className="text-[8px] font-semibold mb-1">iOS Team</div>
-          <div className="text-[7px] text-muted-foreground mb-1">Swift / SwiftUI</div>
-          <div className="space-y-1">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="h-2 rounded bg-gray-300 dark:bg-gray-600" style={{ width: `${80 - i * 15}%` }} />
-            ))}
-          </div>
-          <div className="text-[6px] text-red-500 mt-2">10 weeks</div>
-        </div>
-        <div className="flex-1 border border-gray-300 dark:border-gray-600 rounded-lg p-2 bg-gray-50 dark:bg-gray-700">
-          <div className="text-[8px] font-semibold mb-1">Android Team</div>
-          <div className="text-[7px] text-muted-foreground mb-1">Kotlin / Compose</div>
-          <div className="space-y-1">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="h-2 rounded bg-gray-300 dark:bg-gray-600" style={{ width: `${80 - i * 15}%` }} />
-            ))}
-          </div>
-          <div className="text-[6px] text-red-500 mt-2">10 weeks</div>
-        </div>
-      </div>
-      <div className="flex gap-2 mt-2 flex-wrap">
-        <span className="text-[7px] bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 px-1.5 py-0.5 rounded-full">2 codebases</span>
-        <span className="text-[7px] bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 px-1.5 py-0.5 rounded-full">2 teams</span>
-        <span className="text-[7px] bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 px-1.5 py-0.5 rounded-full">\u00a380K cost</span>
-      </div>
-    </div>
-  );
-}
-
-function HybridResultMockup() {
-  return (
-    <div className="bg-white dark:bg-[#0a0a0a] aspect-video flex flex-col text-left overflow-hidden">
-      <div className="h-5 md:h-6 flex items-center gap-2 px-2 md:px-3" style={{ backgroundColor: HYBRID_COLOR }}>
-        <Code2 className="h-2.5 w-2.5 md:h-3 md:w-3 text-black" />
-        <span className="text-[8px] md:text-[10px] text-black/70">Hybrid Development</span>
-      </div>
-      <div className="p-3 md:p-4 flex-1 flex flex-col gap-2">
-        <div className="text-[10px] md:text-xs font-bold">Single Unified Codebase</div>
-        <div className="border border-border rounded-lg p-2 bg-muted/50 flex-1 min-h-0">
-          <div className="text-[8px] font-semibold mb-1" style={{ color: HYBRID_COLOR }}>React Native / Flutter</div>
-          <div className="grid grid-cols-2 gap-2">
-            <div className="rounded p-1.5 text-center" style={{ backgroundColor: `${HYBRID_COLOR}10` }}>
-              <Smartphone className="h-3 w-3 mx-auto mb-0.5" style={{ color: HYBRID_COLOR }} />
-              <span className="text-[6px]">iOS</span>
-            </div>
-            <div className="rounded p-1.5 text-center" style={{ backgroundColor: `${HYBRID_COLOR}10` }}>
-              <Smartphone className="h-3 w-3 mx-auto mb-0.5" style={{ color: HYBRID_COLOR }} />
-              <span className="text-[6px]">Android</span>
-            </div>
-          </div>
-          <div className="space-y-1 mt-2">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="h-2 rounded" style={{ width: `${90 - i * 10}%`, backgroundColor: `${HYBRID_COLOR}30` }} />
-            ))}
-          </div>
-        </div>
-      </div>
-      <div className="flex gap-2 px-3 md:px-4 py-1.5 border-t border-gray-100 dark:border-gray-800 flex-wrap">
-        <span className="text-[7px] bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-1.5 py-0.5 rounded-full">1 codebase</span>
-        <span className="text-[7px] bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-1.5 py-0.5 rounded-full">1 team</span>
-        <span className="text-[7px] bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-1.5 py-0.5 rounded-full">\u00a350K cost</span>
-      </div>
-    </div>
-  );
-}
-
-function ResultsShowcase() {
-  const [sliderPos, setSliderPos] = useState(50);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const isDragging = useRef(false);
-
-  const handleMove = useCallback((clientX: number) => {
-    if (!containerRef.current) return;
-    const rect = containerRef.current.getBoundingClientRect();
-    const x = clientX - rect.left;
-    const pct = Math.max(5, Math.min(95, (x / rect.width) * 100));
-    setSliderPos(pct);
-  }, []);
-
-  const handleMouseDown = useCallback(() => {
-    isDragging.current = true;
-    const onMove = (e: MouseEvent) => { if (isDragging.current) handleMove(e.clientX); };
-    const onUp = () => { isDragging.current = false; window.removeEventListener("mousemove", onMove); window.removeEventListener("mouseup", onUp); };
-    window.addEventListener("mousemove", onMove);
-    window.addEventListener("mouseup", onUp);
-  }, [handleMove]);
-
-  const handleTouchStart = useCallback(() => {
-    isDragging.current = true;
-    const onMove = (e: TouchEvent) => { if (isDragging.current && e.touches[0]) handleMove(e.touches[0].clientX); };
-    const onEnd = () => { isDragging.current = false; window.removeEventListener("touchmove", onMove); window.removeEventListener("touchend", onEnd); };
-    window.addEventListener("touchmove", onMove);
-    window.addEventListener("touchend", onEnd);
-  }, [handleMove]);
-
-  return (
-    <section className="py-20" data-testid="section-results">
-      <div className="max-w-7xl mx-auto px-6">
-        <motion.div className="text-center mb-12" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
-          <h2 className="text-3xl md:text-4xl font-bold">Real Hybrid App Results</h2>
-          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">See the savings from hybrid vs native development</p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          <motion.div className="space-y-4" initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-            <div ref={containerRef} className="relative rounded-xl shadow-lg overflow-hidden border border-border select-none" style={{ cursor: "ew-resize" }} data-testid="before-after-slider">
-              <div className="bg-muted h-8 flex items-center gap-2 px-3">
-                <div className="w-2.5 h-2.5 rounded-full bg-red-500" />
-                <div className="w-2.5 h-2.5 rounded-full bg-yellow-500" />
-                <div className="w-2.5 h-2.5 rounded-full bg-green-500" />
-                <span className="text-xs text-muted-foreground ml-2">development comparison</span>
-              </div>
-              <div className="relative">
-                <div className="w-full"><HybridResultMockup /></div>
-                <div className="absolute top-0 left-0 w-full h-full overflow-hidden" style={{ clipPath: `inset(0 ${100 - sliderPos}% 0 0)` }}>
-                  <NativeSeparateMockup />
-                </div>
-                <div className="absolute top-0 h-full w-0.5 z-20" style={{ left: `${sliderPos}%`, transform: "translateX(-50%)", backgroundColor: HYBRID_COLOR }}>
-                  <div
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full flex items-center justify-center shadow-lg cursor-ew-resize"
-                    style={{ backgroundColor: HYBRID_COLOR }}
-                    onMouseDown={handleMouseDown}
-                    onTouchStart={handleTouchStart}
-                    data-testid="slider-handle"
-                  >
-                    <div className="flex gap-0.5">
-                      <div className="w-0.5 h-3 bg-black rounded-full" />
-                      <div className="w-0.5 h-3 bg-black rounded-full" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="absolute top-10 left-3 z-30">
-                <span className="bg-red-500/10 text-red-700 dark:text-red-400 px-3 py-1.5 rounded-full text-xs md:text-sm font-semibold backdrop-blur-sm">Native Separate</span>
-              </div>
-              <div className="absolute top-10 right-3 z-30">
-                <span className="bg-green-500/10 text-green-700 dark:text-green-400 px-3 py-1.5 rounded-full text-xs md:text-sm font-semibold backdrop-blur-sm">Hybrid</span>
-              </div>
-            </div>
-            <p className="text-xs text-muted-foreground text-center">Drag the slider to compare approaches</p>
-          </motion.div>
-
-          <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-            <h3 className="text-2xl font-bold mb-8">The Savings</h3>
-            <div className="space-y-4">
-              {resultMetrics.map((metric, idx) => {
-                const Icon = metric.icon;
-                return (
-                  <motion.div key={metric.label} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: idx * 0.08 }}>
-                    <Card className="p-4" data-testid={`metric-${metric.label.toLowerCase().replace(/\s+/g, "-")}`}>
-                      <div className="flex items-center gap-2">
-                        <Icon className="h-4 w-4" style={{ color: HYBRID_COLOR }} />
-                        <span className="text-sm font-semibold text-muted-foreground">{metric.label}</span>
-                      </div>
-                      <div className="flex items-center gap-3 mt-2">
-                        <span className="text-lg text-muted-foreground line-through">{metric.before}</span>
-                        <ArrowRight className="h-5 w-5 flex-shrink-0" style={{ color: HYBRID_COLOR }} />
-                        <span className="text-2xl md:text-3xl font-bold" style={{ color: HYBRID_COLOR }}>{metric.after}</span>
-                      </div>
-                      <div className="mt-2">
-                        <span className="inline-flex items-center gap-1 bg-cyan-500/10 text-cyan-700 dark:text-cyan-400 px-2.5 py-1 rounded-full text-xs font-semibold">
-                          <TrendingUp className="h-3 w-3" />
-                          {metric.improvement}
-                        </span>
-                      </div>
-                    </Card>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </motion.div>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 export default function HybridDevelopmentPage() {
   const handleScrollTo = (id: string) => {
@@ -846,9 +654,6 @@ export default function HybridDevelopmentPage() {
           />
         </div>
       </section>
-
-      {/* Results Showcase */}
-      <ResultsShowcase />
 
       {/* Use Cases */}
       <section id="use-cases" className="py-20 bg-muted" data-testid="section-use-cases">
