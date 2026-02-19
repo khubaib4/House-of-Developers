@@ -1,0 +1,289 @@
+Audit all pages in the project to identify which pages are missing 
+SEO meta titles and descriptions. Create a comprehensive report 
+showing which pages need SEO metadata added for better search 
+engine optimization.
+
+TASK: Scan all page files and check for meta title and description
+
+---
+
+WHAT TO CHECK:
+
+For each page file, look for:
+1. Meta title (in <title> tag or metadata export)
+2. Meta description (in meta description tag or metadata export)
+3. Open Graph tags (og:title, og:description)
+4. Character counts (title should be 50-60 chars, description 150-160)
+
+---
+
+FILES TO SCAN:
+
+Check all page files in these locations:
+- /pages/**/*.tsx (or .jsx)
+- /app/**/*.tsx (if using Next.js App Router)
+- /src/pages/**/*.tsx
+- Any route files
+
+Common page locations:
+- Homepage: / or /page.tsx or /index.tsx
+- About: /about/page.tsx
+- Contact: /contact/page.tsx
+- Services: /services/*/page.tsx
+- Blog: /blog/page.tsx, /blog/[slug]/page.tsx
+- Case Studies: /case-studies/page.tsx
+
+---
+
+WHAT TO LOOK FOR IN EACH FILE:
+
+Next.js App Router (page.tsx):
+````typescript
+export const metadata = {
+  title: "Page Title Here",
+  description: "Page description here",
+  openGraph: {
+    title: "OG Title",
+    description: "OG Description",
+  }
+}
+````
+
+Next.js Pages Router (pages/*.tsx):
+````typescript
+<Head>
+  <title>Page Title</title>
+  <meta name="description" content="Description here" />
+</Head>
+````
+
+React/Vite (any component):
+````typescript
+<Helmet>
+  <title>Page Title</title>
+  <meta name="description" content="Description" />
+</Helmet>
+````
+
+---
+
+CREATE A REPORT FILE:
+
+Output: /seo-audit-report.md
+
+Format the report like this:
+````markdown
+# SEO Meta Tags Audit Report
+Generated: [Current Date]
+
+## Summary
+- Total Pages Scanned: X
+- Pages with Complete Meta: X
+- Pages Missing Title: X
+- Pages Missing Description: X
+- Pages Needing Improvement: X
+
+---
+
+## ✅ PAGES WITH COMPLETE SEO
+
+### Homepage (/)
+- ✅ Title: "Custom Software Development | House of Developers" (58 chars)
+- ✅ Description: "We build custom web applications..." (155 chars)
+- ✅ Open Graph: Yes
+- Status: **GOOD**
+
+---
+
+## ⚠️ PAGES MISSING META TITLE
+
+### About Page (/about)
+- ❌ Title: Missing or using default
+- ✅ Description: Present
+- Status: **NEEDS TITLE**
+- Recommendation: Add title like "About Us | House of Developers"
+
+---
+
+## ⚠️ PAGES MISSING META DESCRIPTION
+
+### Services Page (/services)
+- ✅ Title: Present
+- ❌ Description: Missing
+- Status: **NEEDS DESCRIPTION**
+- Recommendation: Add 150-160 char description
+
+---
+
+## ⚠️ PAGES WITH INCOMPLETE META
+
+### Web Development (/services/web-development)
+- ⚠️ Title: Too short (32 chars) - Should be 50-60
+- ⚠️ Description: Too long (185 chars) - Should be 150-160
+- Status: **NEEDS OPTIMIZATION**
+
+---
+
+## 📋 COMPLETE PAGE LIST
+
+| Page | Path | Title | Description | Status |
+|------|------|-------|-------------|--------|
+| Homepage | / | ✅ 58 chars | ✅ 155 chars | Good |
+| About | /about | ❌ Missing | ✅ 148 chars | Needs Title |
+| Contact | /contact | ✅ 52 chars | ❌ Missing | Needs Desc |
+| Services | /services | ✅ 55 chars | ✅ 158 chars | Good |
+| Web Dev | /services/web-development | ✅ 60 chars | ❌ Missing | Needs Desc |
+| Mobile Dev | /services/mobile-development | ❌ Missing | ❌ Missing | Needs Both |
+| AI Services | /services/ai-services | ✅ 54 chars | ✅ 152 chars | Good |
+| SEO Services | /services/seo | ✅ 58 chars | ✅ 156 chars | Good |
+| WordPress | /services/web-development/cms/wordpress | ⚠️ Too Long | ✅ 159 chars | Optimize |
+| Shopify | /services/web-development/cms/shopify | ⚠️ Too Long | ✅ 157 chars | Optimize |
+| Case Studies | /case-studies | ✅ 56 chars | ✅ 154 chars | Good |
+| Blog | /blog | ✅ 51 chars | ✅ 149 chars | Good |
+
+---
+
+## 🎯 RECOMMENDED ACTIONS
+
+### HIGH PRIORITY (Missing Both)
+1. [ ] Add meta title and description to /services/mobile-development
+2. [ ] Add meta title and description to /services/hire-developers
+
+### MEDIUM PRIORITY (Missing One)
+1. [ ] Add meta title to /about
+2. [ ] Add meta description to /contact
+3. [ ] Add meta description to /services/web-development
+
+### LOW PRIORITY (Optimization)
+1. [ ] Optimize title length on /services/web-development/cms/wordpress
+2. [ ] Shorten description on /services/ai-services/ai-chatbots
+
+---
+
+## 💡 SEO BEST PRACTICES REMINDER
+
+### Title Tags:
+- Length: 50-60 characters (up to 70 max)
+- Include primary keyword
+- Include brand name
+- Format: "Primary Keyword | Secondary Keyword | Brand"
+- Example: "WordPress Development UK | Custom Themes | House of Developers"
+
+### Meta Descriptions:
+- Length: 150-160 characters (up to 170 max)
+- Include primary and secondary keywords
+- Include call-to-action
+- Compelling and click-worthy
+- Example: "Expert WordPress development services. Custom themes, WooCommerce, 
+  performance optimization. 40+ WordPress sites built. Free consultation."
+
+### Open Graph Tags:
+- og:title (can be same as title or slightly different)
+- og:description (can be same as meta description)
+- og:image (1200x630px recommended)
+- og:type (usually "website" or "article")
+
+---
+
+## 📝 TEMPLATE FOR FIXING
+
+Use this template to add meta tags to pages:
+
+### Next.js App Router:
+```typescript
+export const metadata = {
+  title: "Your Page Title | House of Developers",
+  description: "Your compelling 150-160 character description that includes keywords and CTA.",
+  openGraph: {
+    title: "Your Page Title",
+    description: "Same or slightly different description",
+    images: ["/path-to-og-image.jpg"],
+    type: "website",
+  },
+};
+```
+
+### Next.js Pages Router:
+```typescript
+import Head from "next/head";
+
+<Head>
+  <title>Your Page Title | House of Developers</title>
+  <meta 
+    name="description" 
+    content="Your compelling description here" 
+  />
+  <meta property="og:title" content="Your Page Title" />
+  <meta property="og:description" content="Description" />
+  <meta property="og:image" content="/og-image.jpg" />
+</Head>
+```
+
+### React/Vite with React Helmet:
+```typescript
+import { Helmet } from "react-helmet";
+
+<Helmet>
+  <title>Your Page Title | House of Developers</title>
+  <meta 
+    name="description" 
+    content="Your compelling description" 
+  />
+  <meta property="og:title" content="Title" />
+  <meta property="og:description" content="Description" />
+</Helmet>
+```
+````
+
+---
+
+SCAN METHODOLOGY:
+
+1. Find all page/route files
+2. Read each file
+3. Check for metadata exports or Head/Helmet components
+4. Extract title and description
+5. Validate length (title: 50-60, description: 150-160)
+6. Check for Open Graph tags
+7. Generate report with findings
+
+---
+
+ADDITIONAL CHECKS:
+
+Also look for:
+- Canonical URLs (rel="canonical")
+- Schema.org markup (JSON-LD)
+- Robots meta tags (noindex, nofollow)
+- Viewport meta tag (should be present)
+
+---
+
+OUTPUT REQUIREMENTS:
+
+1. Create /seo-audit-report.md with full report
+2. Use clear formatting (emojis, tables, sections)
+3. Prioritize issues (High/Medium/Low)
+4. Include actionable recommendations
+5. Provide code templates for fixes
+6. Include character counts for existing meta tags
+7. Flag pages with duplicate titles/descriptions
+
+---
+
+EDGE CASES TO HANDLE:
+
+- Pages without any meta tags
+- Pages with meta tags in wrong format
+- Dynamic routes ([slug], [id]) - check if they have metadata
+- Pages using environment variables in meta
+- Pages with hardcoded titles vs. metadata exports
+
+---
+
+After generating the report, summarize the findings:
+- "Found X pages, Y need attention"
+- "High priority: Z pages missing both title and description"
+- "Quick wins: A pages just need description added"
+
+This will help prioritize SEO improvements for maximum impact.
