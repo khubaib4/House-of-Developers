@@ -56,7 +56,7 @@ export default function BlogPage() {
     <div className="min-h-screen">
       <SEO
         title="Tech Blog | Web Development Guides & Tutorials"
-        description="Expert web development tutorials, coding guides, and tech insights. Learn React, Node.js, AI, WordPress, and modern development best practices."
+        description="Tech tutorials and development guides. Learn React, Node.js, WordPress, AI integration, and SEO. Written by experienced developers for developers."
         canonical="/blog"
       />
       <section className="py-20 md:py-24 text-center">

@@ -547,7 +547,7 @@ export default function HireDevelopersPage() {
     <>
       <SEO
         title="Hire Dedicated Developers UK | Remote Dev Teams"
-        description="Hire skilled developers for your project. Full-stack, frontend, and backend specialists in React, Node.js, Python, and more. Flexible engagement."
+        description="Hire dedicated developers. Full-stack, frontend, backend specialists. Monthly contracts, part-time or full-time. Expert developers, competitive rates."
         canonical="/services/hire-developers"
       />
       {/* HERO */}

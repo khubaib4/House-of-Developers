@@ -417,7 +417,7 @@ export default function MobileDevelopmentPage() {
     <div className="min-h-screen" data-testid="mobile-development-page">
       <SEO
         title="Mobile App Development UK | iOS, Android & Hybrid"
-        description="Expert mobile app development. Native iOS, Android, and cross-platform apps with React Native and Flutter. From concept to App Store launch."
+        description="Mobile app development UK. iOS, Android, cross-platform apps. React Native, Flutter. 50+ mobile apps delivered. Launch-ready in 8-12 weeks."
         canonical="/services/mobile-development"
       />
       {/* Hero */}

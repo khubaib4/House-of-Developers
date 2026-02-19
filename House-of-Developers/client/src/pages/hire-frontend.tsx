@@ -479,7 +479,7 @@ export default function HireFrontendPage() {
     <div>
       <SEO
         title="Hire Frontend Developers | React & Next.js UK"
-        description="Hire expert frontend developers. React, Next.js, TypeScript, and Tailwind CSS specialists. Beautiful, responsive, and performant user interfaces."
+        description="Hire frontend developers. React, TypeScript, Next.js specialists. Beautiful, fast, responsive interfaces. Monthly contracts. Available immediately."
         canonical="/services/hire-developers/frontend"
       />
       <Breadcrumbs

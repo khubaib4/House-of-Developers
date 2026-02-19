@@ -343,7 +343,7 @@ export default function SEOServicesPage() {
     <>
       <SEO
         title="SEO Services UK | Technical SEO & Content Strategy"
-        description="Expert SEO services for higher rankings. Technical SEO audits, content strategy, Core Web Vitals optimization, and link building. Proven results."
+        description="SEO services UK. Technical SEO, on-page optimization, link building. Increase organic traffic 3-5x. Proven strategies. Free SEO audit included."
         canonical="/services/seo-services"
       />
       <section className="py-24">

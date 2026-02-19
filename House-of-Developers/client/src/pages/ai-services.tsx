@@ -808,7 +808,7 @@ export default function AIServicesPage() {
     <>
       <SEO
         title="AI Development Services | Chatbots & AI Agents UK"
-        description="Custom AI solutions: chatbots, AI agents, machine learning, and GPT integrations. Transform your business with intelligent automation. Free consultation."
+        description="AI development services. ChatGPT integration, AI chatbots, automation, custom ML models. Built with GPT-4, Claude. Reduce costs, improve efficiency."
         canonical="/services/ai-services"
       />
       {/* HERO SECTION */}

@@ -526,7 +526,7 @@ export default function HireBackendPage() {
     <div>
       <SEO
         title="Hire Backend Developers | Node.js & Python UK"
-        description="Hire expert backend developers. Node.js, Python, PostgreSQL, and AWS specialists. Scalable APIs, microservices, and database architecture."
+        description="Hire backend developers. Node.js, Python, PostgreSQL, API development. Scalable architecture, secure systems. Monthly contracts. Start this week."
         canonical="/services/hire-developers/backend"
       />
       <Breadcrumbs

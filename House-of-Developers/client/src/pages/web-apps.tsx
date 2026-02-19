@@ -230,7 +230,7 @@ export default function WebAppsPage() {
     <>
       <SEO
         title="Web Application Development UK | SaaS & Portals"
-        description="Custom web application development. SaaS platforms, dashboards, portals, and progressive web apps built with modern tech stacks. Free consultation."
+        description="Custom web application development. SaaS platforms, dashboards, internal tools. React, Node.js, PostgreSQL. Scalable architecture. Free quote."
         canonical="/services/web-apps"
       />
       {/* HERO SECTION */}

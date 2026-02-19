@@ -126,7 +126,7 @@ export default function ContactPage() {
     <div>
       <SEO
         title="Contact Us | Free Project Consultation"
-        description="Get in touch for a free consultation. Discuss your project, get honest advice, and receive a clear quote. Call +44 7429 917368 or fill out our form."
+        description="Contact House of Developers for a free consultation. Discuss your project, get honest advice, clear pricing. Call +44 7429 917368 or book online today."
         canonical="/contact"
         jsonLd={{
           "@context": "https://schema.org",

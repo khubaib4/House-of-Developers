@@ -413,7 +413,7 @@ export default function IOSDevelopmentPage() {
     <div className="min-h-screen" data-testid="ios-development-page">
       <SEO
         title="iOS App Development UK | Swift & SwiftUI"
-        description="Native iOS app development with Swift and SwiftUI. Beautiful, performant iPhone and iPad apps. From design to App Store submission. Free consultation."
+        description="iOS app development. Swift, SwiftUI, native performance. App Store optimization. Expert iOS developers. Launch-ready apps in 10-14 weeks."
         canonical="/services/mobile-development/ios"
       />
       {/* Hero */}

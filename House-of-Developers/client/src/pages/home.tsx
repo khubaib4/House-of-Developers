@@ -137,7 +137,7 @@ export default function Home() {
     <>
       <SEO
         title="Custom Software Development Agency UK | Web, Mobile & AI"
-        description="UK-based digital agency building custom web apps, mobile apps, and AI solutions. 150+ projects delivered. Expert React, Node.js & Python team. Free consultation."
+        description="Custom software development agency UK. We build web applications, mobile apps, and AI solutions. 150+ projects delivered, 98% satisfaction. Free consultation."
         canonical="/"
         jsonLd={{
           "@context": "https://schema.org",

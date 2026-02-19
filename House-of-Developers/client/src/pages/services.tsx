@@ -175,7 +175,7 @@ export default function ServicesPage() {
     <>
       <SEO
         title="Our Services | Web, Mobile & AI Development UK"
-        description="Full-stack development services: web apps, mobile apps, AI solutions, CMS development, SEO, and dedicated developer hiring. Get a free quote today."
+        description="Software development services: custom web apps, mobile development, AI integration, WordPress, Shopify, SEO. Expert team, fixed pricing. Free quote."
         canonical="/services"
       />
       <section className="py-20">

@@ -576,7 +576,7 @@ export default function ShopifyDevelopment() {
     <>
       <SEO
         title="Shopify Development UK | Custom Stores & Themes"
-        description="Professional Shopify development. Custom themes, Shopify Plus, checkout optimization, and headless commerce solutions. Free consultation."
+        description="Shopify development services. Custom themes, Shopify Plus, app development. 30+ Shopify stores built. Conversion-focused design. Free quote."
         canonical="/services/web-development/cms/shopify"
       />
       <section className="py-24">

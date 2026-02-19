@@ -567,7 +567,7 @@ export default function HybridDevelopmentPage() {
     <div className="min-h-screen" data-testid="hybrid-development-page">
       <SEO
         title="Hybrid App Development | React Native & Flutter UK"
-        description="Cross-platform mobile app development with React Native and Flutter. One codebase, both platforms. Faster development, lower costs. Free consultation."
+        description="Cross-platform mobile app development. React Native and Flutter. One codebase for iOS and Android. 40% faster delivery, same native performance."
         canonical="/services/mobile-development/hybrid"
       />
       {/* Hero */}

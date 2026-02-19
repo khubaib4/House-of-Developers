@@ -850,7 +850,7 @@ export default function CustomDevelopmentPage() {
     <div className="min-h-screen">
       <SEO
         title="Custom Software Development UK | Bespoke Solutions"
-        description="Bespoke software development tailored to your business. Custom web apps, APIs, and enterprise solutions. Scalable, secure, and built to last."
+        description="Bespoke web development tailored to your business. Custom features, integrations, and workflows. No templates. Built exactly how you need it."
         canonical="/services/custom-development"
       />
       {/* HERO */}

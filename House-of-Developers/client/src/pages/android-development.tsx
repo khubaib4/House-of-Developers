@@ -412,7 +412,7 @@ export default function AndroidDevelopmentPage() {
     <div className="min-h-screen" data-testid="android-development-page">
       <SEO
         title="Android App Development UK | Kotlin & Jetpack"
-        description="Native Android app development with Kotlin. Material Design, Google Play optimization, and enterprise Android solutions. Free consultation."
+        description="Android app development. Kotlin, Jetpack Compose, Material Design. Google Play optimization. Native Android apps built by expert developers."
         canonical="/services/mobile-development/kotlin"
       />
       {/* Hero */}

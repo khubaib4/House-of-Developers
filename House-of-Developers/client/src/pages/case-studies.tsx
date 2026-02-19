@@ -523,7 +523,7 @@ export default function CaseStudiesPage() {
     <div>
       <SEO
         title="Case Studies | Our Work & Results"
-        description="See our portfolio of successful projects. Web apps, mobile apps, AI solutions, and e-commerce platforms built for startups and businesses worldwide."
+        description="View our portfolio of 150+ successful projects. Custom web apps, mobile apps, e-commerce, and AI solutions. Real clients, real results, real code."
         canonical="/case-studies"
       />
       {/* Hero Section */}

@@ -637,7 +637,7 @@ export default function AIChatbotsPage() {
     <>
       <SEO
         title="AI Chatbot Development | Custom GPT Chatbots UK"
-        description="Build intelligent AI chatbots for your business. Powered by GPT-4, custom-trained on your data. 24/7 customer support automation. Free consultation."
+        description="AI chatbot development. Customer support automation with GPT-4. Handle 80%+ inquiries automatically. Reduce support costs by 85%. Free demo."
         canonical="/services/ai-services/ai-chatbots"
       />
       <Breadcrumbs

@@ -835,7 +835,7 @@ export default function WebDevelopmentPage() {
     <div className="min-h-screen">
       <SEO
         title="Web Development Services UK | Custom Websites"
-        description="Expert web development services. Custom websites, web applications, and e-commerce solutions built with React, Next.js, and Node.js. Free quote."
+        description="Custom web development services UK. React, Next.js, full-stack applications. Fast, secure, scalable. 100+ web projects delivered. Free consultation."
         canonical="/services/web-development"
       />
       {/* HERO */}

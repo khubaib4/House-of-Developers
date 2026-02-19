@@ -527,7 +527,7 @@ export default function WordPressDevelopment() {
     <>
       <SEO
         title="WordPress Development UK | Custom Themes & Plugins"
-        description="Custom WordPress development. Bespoke themes, plugins, WooCommerce stores, and performance optimization. 40+ WordPress sites built. Free quote."
+        description="WordPress development UK. Custom themes, plugins, WooCommerce stores. 40+ WordPress sites built. Fast, secure, SEO-optimized. Free consultation."
         canonical="/services/web-development/cms/wordpress"
       />
       <section className="py-24">

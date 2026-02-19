@@ -142,7 +142,7 @@ export default function AboutPage() {
     <div>
       <SEO
         title="About Us | UK Digital Product Agency"
-        description="Meet the team behind House of Developers. We build launch-ready software for startups and businesses. Our story, values, and the passion driving our work."
+        description="Learn about House of Developers. Building custom software since 2018, 150+ projects delivered, 40+ happy clients. Our story, mission, and values."
         canonical="/about"
       />
       {/* Hero Section */}

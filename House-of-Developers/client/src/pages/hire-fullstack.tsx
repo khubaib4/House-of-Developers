@@ -464,7 +464,7 @@ export default function HireFullStackPage() {
     <div>
       <SEO
         title="Hire Full-Stack Developers | MERN, MEAN & More"
-        description="Hire expert full-stack developers. MERN, MEAN, MEVN, and LAMP stack specialists. Scalable web applications, APIs, and SaaS platforms."
+        description="Hire full-stack developers. React, Node.js, PostgreSQL expertise. End-to-end application development. Monthly contracts from £3,000. Start immediately."
         canonical="/services/hire-developers/full-stack"
       />
       <Breadcrumbs

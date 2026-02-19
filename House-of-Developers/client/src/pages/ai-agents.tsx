@@ -436,7 +436,7 @@ export default function AIAgentsPage() {
     <div className="min-h-screen bg-background">
       <SEO
         title="AI Agent Development | Autonomous AI Agents UK"
-        description="Build autonomous AI agents that handle complex tasks. Multi-step workflows, tool integrations, and intelligent decision-making. Free consultation."
+        description="AI agent development. Intelligent automation for business processes. Custom AI workflows, data analysis, decision-making. Built with latest AI models."
         canonical="/services/ai-services/ai-agents"
       />
       <Breadcrumbs
