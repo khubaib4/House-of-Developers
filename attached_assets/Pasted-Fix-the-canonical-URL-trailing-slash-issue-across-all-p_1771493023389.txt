@@ -1,0 +1,181 @@
+Fix the canonical URL trailing slash issue across all pages.
+
+PROBLEM IDENTIFIED:
+The canonical URLs currently have inconsistent trailing slashes. 
+Some pages have trailing slashes in canonical tags while the actual 
+URLs don't, or vice versa. This causes "Canonicalised" warnings in 
+SEO tools and can hurt search rankings.
+
+SOLUTION NEEDED:
+Standardize all canonical URLs to NOT use trailing slashes (except 
+for the homepage if it must).
+
+---
+
+CANONICAL URL STANDARD TO FOLLOW:
+
+✅ CORRECT FORMAT (no trailing slash):
+- Homepage: https://houseofdevelopers.co.uk
+- About: https://houseofdevelopers.co.uk/about
+- Services: https://houseofdevelopers.co.uk/services
+- WordPress: https://houseofdevelopers.co.uk/services/web-development/cms/wordpress
+- Blog: https://houseofdevelopers.co.uk/blog
+
+❌ WRONG (with trailing slash):
+- https://houseofdevelopers.co.uk/
+- https://houseofdevelopers.co.uk/about/
+- https://houseofdevelopers.co.uk/services/
+
+---
+
+WHAT TO UPDATE:
+
+Find the SEO component (likely in /components/SEO.tsx or wherever 
+react-helmet-async is implemented) and update the canonical URL logic.
+
+Current code probably looks like:
+```typescript
+<link rel="canonical" href={`https://houseofdevelopers.co.uk${pathname}/`} />
+```
+
+Should be changed to:
+```typescript
+<link rel="canonical" href={`https://houseofdevelopers.co.uk${pathname}`} />
+```
+
+OR if pathname already has trailing slash, remove it:
+```typescript
+const canonicalUrl = `https://houseofdevelopers.co.uk${pathname}`.replace(/\/$/, '');
+<link rel="canonical" href={canonicalUrl} />
+```
+
+---
+
+SPECIFIC REQUIREMENTS:
+
+1. Remove trailing slashes from ALL canonical URLs
+2. Homepage canonical should be: https://houseofdevelopers.co.uk
+3. All other pages: https://houseofdevelopers.co.uk/path (no trailing slash)
+4. Use absolute URLs (full https://houseofdevelopers.co.uk)
+5. All lowercase
+6. Match the actual page URL exactly
+
+---
+
+PAGES TO FIX (all 34 pages should have correct canonicals):
+
+High Priority:
+- / (homepage)
+- /about
+- /contact
+- /services
+- /case-studies
+- /blog
+
+All Service Pages:
+- /services/web-development
+- /services/web-development/custom-development
+- /services/web-development/web-applications
+- /services/web-development/ecommerce
+- /services/web-development/landing-pages
+- /services/web-development/cms/wordpress
+- /services/web-development/cms/shopify
+- /services/mobile-development
+- /services/mobile-development/hybrid
+- /services/mobile-development/ios
+- /services/mobile-development/android
+- /services/ai-services
+- /services/ai-services/ai-chatbots
+- /services/ai-services/ai-agents
+- /services/seo
+- /services/seo/seo-audit
+- /services/seo/technical-seo
+- /services/seo/local-seo
+- /services/hire-developers
+- /services/hire-developers/full-stack
+- /services/hire-developers/frontend
+- /services/hire-developers/backend
+
+---
+
+EXAMPLE OF CORRECT IMPLEMENTATION:
+```typescript
+import { Helmet } from 'react-helmet-async';
+import { useLocation } from 'wouter';
+
+export function SEO({ 
+  title, 
+  description, 
+  image, 
+  type = 'website' 
+}) {
+  const [location] = useLocation();
+  
+  // Remove trailing slash for canonical URL
+  const pathname = location === '/' ? '' : location.replace(/\/$/, '');
+  const canonicalUrl = `https://houseofdevelopers.co.uk${pathname}`;
+  
+  return (
+    <Helmet>
+      <title>{title}</title>
+      <meta name="description" content={description} />
+      
+      {/* Canonical URL - no trailing slash */}
+      <link rel="canonical" href={canonicalUrl} />
+      
+      {/* Open Graph */}
+      <meta property="og:url" content={canonicalUrl} />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:type" content={type} />
+      {image && <meta property="og:image" content={image} />}
+      
+      {/* Twitter Card */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      {image && <meta name="twitter:image" content={image} />}
+    </Helmet>
+  );
+}
+```
+
+---
+
+ALSO UPDATE SITEMAP.XML:
+
+Make sure sitemap.xml also uses URLs WITHOUT trailing slashes:
+```xml
+<url>
+  <loc>https://houseofdevelopers.co.uk</loc>
+  <lastmod>2026-02-19</lastmod>
+  <priority>1.0</priority>
+</url>
+<url>
+  <loc>https://houseofdevelopers.co.uk/about</loc>
+  <lastmod>2026-02-19</lastmod>
+  <priority>0.8</priority>
+</url>
+```
+
+NOT:
+```xml
+<url>
+  <loc>https://houseofdevelopers.co.uk/</loc> <!-- Wrong -->
+</url>
+```
+
+---
+
+AFTER FIXING:
+
+1. Test locally - view page source and check canonical tag
+2. Verify no trailing slashes in any canonical URLs
+3. Check that canonical matches the actual page URL
+4. Ensure sitemap.xml also has no trailing slashes
+
+Then we'll redeploy and the SEO tools will show green checks instead 
+of red warnings.
+
+This fix will improve SEO by consolidating all link equity to the 
+correct URLs and preventing duplicate content issues.

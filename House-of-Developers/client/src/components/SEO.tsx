@@ -30,7 +30,8 @@ export function SEO({
   jsonLd,
 }: SEOProps) {
   const fullTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
-  const canonicalUrl = canonical ? `${SITE_URL}${canonical}` : undefined;
+  const cleanPath = canonical === "/" ? "" : (canonical || "").replace(/\/$/, "");
+  const canonicalUrl = canonical ? `${SITE_URL}${cleanPath}` : undefined;
   const image = ogImage || DEFAULT_OG_IMAGE;
 
   return (
