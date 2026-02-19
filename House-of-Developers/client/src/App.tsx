@@ -1,5 +1,4 @@
 import { Switch, Route } from "wouter";
-import { Helmet } from "react-helmet-async";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -101,9 +100,6 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <ThemeProvider>
-          <Helmet>
-            <meta name="google-site-verification" content="cHAe-qCXTsqbOR8m8e2TLq78-eEIbnGh3LQmVkPuwg4" />
-          </Helmet>
           <ScrollToTop />
           <div className="min-h-screen flex flex-col">
             <Header />
