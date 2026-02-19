@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { SEO } from "@/components/SEO";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -409,6 +410,11 @@ export default function AndroidDevelopmentPage() {
 
   return (
     <div className="min-h-screen" data-testid="android-development-page">
+      <SEO
+        title="Android App Development UK | Kotlin & Jetpack"
+        description="Native Android app development with Kotlin. Material Design, Google Play optimization, and enterprise Android solutions. Free consultation."
+        canonical="/services/mobile-development/kotlin"
+      />
       {/* Hero */}
       <section className="py-16 md:py-24" data-testid="section-android-hero">
         <div className="max-w-7xl mx-auto px-6">

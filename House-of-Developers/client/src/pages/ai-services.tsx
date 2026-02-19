@@ -1,5 +1,5 @@
-import { useEffect } from "react";
 import { motion } from "framer-motion";
+import { SEO } from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -799,10 +799,6 @@ const priceRanges = [
 ];
 
 export default function AIServicesPage() {
-  useEffect(() => {
-    document.title = "AI Development Services | Chatbots, AI Agents, Automation | House of Developers";
-  }, []);
-
   const handleScrollTo = (id: string) => {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -810,6 +806,11 @@ export default function AIServicesPage() {
 
   return (
     <>
+      <SEO
+        title="AI Development Services | Chatbots & AI Agents UK"
+        description="Custom AI solutions: chatbots, AI agents, machine learning, and GPT integrations. Transform your business with intelligent automation. Free consultation."
+        canonical="/services/ai-services"
+      />
       {/* HERO SECTION */}
       <section className="py-24" data-testid="section-ai-hero">
         <div className="max-w-7xl mx-auto px-6">

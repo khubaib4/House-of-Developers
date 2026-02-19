@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { SEO } from "@/components/SEO";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -410,6 +411,11 @@ export default function IOSDevelopmentPage() {
 
   return (
     <div className="min-h-screen" data-testid="ios-development-page">
+      <SEO
+        title="iOS App Development UK | Swift & SwiftUI"
+        description="Native iOS app development with Swift and SwiftUI. Beautiful, performant iPhone and iPad apps. From design to App Store submission. Free consultation."
+        canonical="/services/mobile-development/ios"
+      />
       {/* Hero */}
       <section className="py-16 md:py-24" data-testid="section-ios-hero">
         <div className="max-w-7xl mx-auto px-6">

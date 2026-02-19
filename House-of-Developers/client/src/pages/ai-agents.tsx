@@ -1,5 +1,5 @@
-import { useEffect } from "react";
 import { motion } from "framer-motion";
+import { SEO } from "@/components/SEO";
 import {
   Bot,
   ListChecks,
@@ -432,12 +432,13 @@ const processSteps = [
 ];
 
 export default function AIAgentsPage() {
-  useEffect(() => {
-    document.title = "AI Agent Development | Autonomous AI Agents | House of Developers";
-  }, []);
-
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="AI Agent Development | Autonomous AI Agents UK"
+        description="Build autonomous AI agents that handle complex tasks. Multi-step workflows, tool integrations, and intelligent decision-making. Free consultation."
+        canonical="/services/ai-services/ai-agents"
+      />
       <Breadcrumbs
         items={[
           { label: "Services", href: "/services" },

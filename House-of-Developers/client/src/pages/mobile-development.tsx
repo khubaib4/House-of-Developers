@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { SEO } from "@/components/SEO";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -414,6 +415,11 @@ export default function MobileDevelopmentPage() {
 
   return (
     <div className="min-h-screen" data-testid="mobile-development-page">
+      <SEO
+        title="Mobile App Development UK | iOS, Android & Hybrid"
+        description="Expert mobile app development. Native iOS, Android, and cross-platform apps with React Native and Flutter. From concept to App Store launch."
+        canonical="/services/mobile-development"
+      />
       {/* Hero */}
       <section className="py-16 md:py-24" data-testid="section-mobile-hero">
         <div className="max-w-7xl mx-auto px-6">

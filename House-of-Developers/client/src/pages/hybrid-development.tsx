@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { SEO } from "@/components/SEO";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -564,6 +565,11 @@ export default function HybridDevelopmentPage() {
 
   return (
     <div className="min-h-screen" data-testid="hybrid-development-page">
+      <SEO
+        title="Hybrid App Development | React Native & Flutter UK"
+        description="Cross-platform mobile app development with React Native and Flutter. One codebase, both platforms. Faster development, lower costs. Free consultation."
+        canonical="/services/mobile-development/hybrid"
+      />
       {/* Hero */}
       <section className="py-16 md:py-24" data-testid="section-hybrid-hero">
         <div className="max-w-7xl mx-auto px-6">

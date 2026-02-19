@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { SEO } from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -461,6 +462,11 @@ const fadeUp = {
 export default function HireFullStackPage() {
   return (
     <div>
+      <SEO
+        title="Hire Full-Stack Developers | MERN, MEAN & More"
+        description="Hire expert full-stack developers. MERN, MEAN, MEVN, and LAMP stack specialists. Scalable web applications, APIs, and SaaS platforms."
+        canonical="/services/hire-developers/full-stack"
+      />
       <Breadcrumbs
         items={[
           { label: "Services", href: "/services" },

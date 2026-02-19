@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import {
   Accordion,
@@ -340,6 +341,11 @@ function ComparisonIcon({ type }: { type: string }) {
 export default function SEOServicesPage() {
   return (
     <>
+      <SEO
+        title="SEO Services UK | Technical SEO & Content Strategy"
+        description="Expert SEO services for higher rankings. Technical SEO audits, content strategy, Core Web Vitals optimization, and link building. Proven results."
+        canonical="/services/seo-services"
+      />
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

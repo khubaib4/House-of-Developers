@@ -18,6 +18,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
+import { SEO } from "@/components/SEO";
 import { useQuery } from "@tanstack/react-query";
 import {
   fetchPostBySlug,
@@ -248,8 +249,36 @@ export default function BlogPostPage() {
     );
   }
 
+  const postDescription = post.excerpt.replace(/<[^>]*>/g, "").slice(0, 160).trim();
+
   return (
     <div className="min-h-screen">
+      <SEO
+        title={post.title}
+        description={postDescription || `Read ${post.title} on the House of Developers blog.`}
+        canonical={`/blog/${post.slug}`}
+        ogImage={post.featuredImage || undefined}
+        ogType="article"
+        article={{
+          publishedTime: post.date,
+          author: post.author.name,
+          tags: post.tags,
+        }}
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": post.title,
+          "description": postDescription,
+          "datePublished": post.date,
+          "author": { "@type": "Person", "name": post.author.name },
+          "publisher": { "@type": "Organization", "name": "House of Developers" },
+          ...(post.featuredImage ? { "image": post.featuredImage } : {}),
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": `https://houseofdevelopers.co.uk/blog/${post.slug}`
+          }
+        }}
+      />
       <motion.section
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

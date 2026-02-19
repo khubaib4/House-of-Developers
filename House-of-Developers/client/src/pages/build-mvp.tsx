@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { SEO } from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -180,6 +181,11 @@ export default function BuildMVPPage() {
 
   return (
     <>
+      <SEO
+        title="Build Your MVP in 30 Days | Startup MVP Development"
+        description="Launch your MVP in 30 days. Expert product development with React, Node.js, and modern tech. From idea to launch-ready product. Free consultation."
+        canonical="/services/build-mvp"
+      />
       <Breadcrumbs
         items={[
           { label: "Services", href: "/services" },

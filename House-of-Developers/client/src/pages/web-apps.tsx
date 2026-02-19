@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import {
   Accordion,
@@ -227,6 +228,11 @@ const comparisonRows = [
 export default function WebAppsPage() {
   return (
     <>
+      <SEO
+        title="Web Application Development UK | SaaS & Portals"
+        description="Custom web application development. SaaS platforms, dashboards, portals, and progressive web apps built with modern tech stacks. Free consultation."
+        canonical="/services/web-apps"
+      />
       {/* HERO SECTION */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-6">

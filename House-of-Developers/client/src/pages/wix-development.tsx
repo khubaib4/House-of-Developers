@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import { SEO } from "@/components/SEO";
 import { Link } from "wouter";
 import {
   CheckCircle2,
@@ -565,6 +566,11 @@ export default function WixDevelopment() {
 
   return (
     <>
+      <SEO
+        title="Wix Development UK | Custom Wix Websites"
+        description="Expert Wix development services. Custom designs, Velo integrations, e-commerce setups, and SEO optimization. Beautiful, fast Wix websites."
+        canonical="/services/web-development/cms/wix"
+      />
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-6">
           <Breadcrumbs items={[

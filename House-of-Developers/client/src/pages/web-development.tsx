@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { SEO } from "@/components/SEO";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -832,6 +833,11 @@ export default function WebDevelopmentPage() {
 
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Web Development Services UK | Custom Websites"
+        description="Expert web development services. Custom websites, web applications, and e-commerce solutions built with React, Next.js, and Node.js. Free quote."
+        canonical="/services/web-development"
+      />
       {/* HERO */}
       <section className="py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-6">

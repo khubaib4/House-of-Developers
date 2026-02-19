@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { SEO } from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -523,6 +524,11 @@ const fadeUp = {
 export default function HireBackendPage() {
   return (
     <div>
+      <SEO
+        title="Hire Backend Developers | Node.js & Python UK"
+        description="Hire expert backend developers. Node.js, Python, PostgreSQL, and AWS specialists. Scalable APIs, microservices, and database architecture."
+        canonical="/services/hire-developers/backend"
+      />
       <Breadcrumbs
         items={[
           { label: "Services", href: "/services" },

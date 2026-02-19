@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import { SEO } from "@/components/SEO";
 import { Link } from "wouter";
 import {
   CheckCircle2,
@@ -573,6 +574,11 @@ export default function ShopifyDevelopment() {
 
   return (
     <>
+      <SEO
+        title="Shopify Development UK | Custom Stores & Themes"
+        description="Professional Shopify development. Custom themes, Shopify Plus, checkout optimization, and headless commerce solutions. Free consultation."
+        canonical="/services/web-development/cms/shopify"
+      />
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-6">
           <Breadcrumbs items={[

@@ -1,5 +1,5 @@
-import { useEffect } from "react";
 import { motion } from "framer-motion";
+import { SEO } from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -542,11 +542,13 @@ const fadeUp = {
 };
 
 export default function HireMERNPage() {
-  useEffect(() => {
-    document.title = "Hire MERN Full-Stack Developers | MongoDB, Express, React, Node.js | House of Developers";
-  }, []);
   return (
     <div>
+      <SEO
+        title="Hire MERN Stack Developers | MongoDB, React, Node"
+        description="Hire expert MERN stack developers. MongoDB, Express, React, and Node.js specialists for full-stack web applications and SaaS platforms."
+        canonical="/services/hire-developers/full-stack/mern"
+      />
       <Breadcrumbs
         items={[
           { label: "Services", href: "/services" },

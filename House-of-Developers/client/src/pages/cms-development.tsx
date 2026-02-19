@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { SEO } from "@/components/SEO";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -357,6 +358,11 @@ export default function CMSDevelopmentPage() {
 
   return (
     <>
+      <SEO
+        title="CMS Development UK | WordPress, Shopify & More"
+        description="Expert CMS development services. WordPress, Shopify, Wix, WooCommerce, and Webflow. Custom themes, plugins, and integrations. Free consultation."
+        canonical="/services/cms-development"
+      />
       <Breadcrumbs
         items={[
           { label: "Services", href: "/services" },

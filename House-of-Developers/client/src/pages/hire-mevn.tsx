@@ -1,5 +1,5 @@
-import { useEffect } from "react";
 import { motion } from "framer-motion";
+import { SEO } from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -576,11 +576,13 @@ const fadeUp = {
 };
 
 export default function HireMEVNPage() {
-  useEffect(() => {
-    document.title = "Hire MEVN Full-Stack Developers | MongoDB, Express, Vue.js, Node.js | House of Developers";
-  }, []);
   return (
     <div>
+      <SEO
+        title="Hire MEVN Stack Developers | Vue.js & Node.js UK"
+        description="Hire expert MEVN stack developers. MongoDB, Express, Vue.js, and Node.js specialists for modern web applications and interactive platforms."
+        canonical="/services/hire-developers/full-stack/mevn"
+      />
       <Breadcrumbs
         items={[
           { label: "Services", href: "/services" },

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { SEO } from "@/components/SEO";
 import { Search, FileText, Loader2 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
@@ -53,6 +54,11 @@ export default function BlogPage() {
 
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Tech Blog | Web Development Guides & Tutorials"
+        description="Expert web development tutorials, coding guides, and tech insights. Learn React, Node.js, AI, WordPress, and modern development best practices."
+        canonical="/blog"
+      />
       <section className="py-20 md:py-24 text-center">
         <div className="max-w-6xl mx-auto px-6">
           <Badge variant="secondary" className="mb-4 px-3 py-1.5 rounded-full">

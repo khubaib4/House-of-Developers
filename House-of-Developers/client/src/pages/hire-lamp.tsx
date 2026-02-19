@@ -1,5 +1,5 @@
-import { useEffect } from "react";
 import { motion } from "framer-motion";
+import { SEO } from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -655,11 +655,13 @@ foreach ($products as $product) {
 }
 
 export default function HireLAMPPage() {
-  useEffect(() => {
-    document.title = "Hire LAMP Full-Stack Developers | Linux, Apache, MySQL, PHP | House of Developers";
-  }, []);
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Hire LAMP Stack Developers | PHP & MySQL UK"
+        description="Hire expert LAMP stack developers. Linux, Apache, MySQL, and PHP specialists for robust web applications, CMS customization, and APIs."
+        canonical="/services/hire-developers/full-stack/lamp"
+      />
       <section className="py-24" data-testid="section-hero">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

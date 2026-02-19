@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { SEO } from "@/components/SEO";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -527,6 +528,11 @@ export default function WebflowDevelopmentPage() {
 
   return (
     <div className="min-h-screen" data-testid="webflow-development-page">
+      <SEO
+        title="Webflow Development UK | Custom Webflow Sites"
+        description="Professional Webflow development. Custom designs, CMS integrations, animations, and responsive websites. Pixel-perfect Webflow builds."
+        canonical="/services/web-development/cms/webflow"
+      />
       {/* Hero */}
       <section className="py-16 md:py-24" data-testid="section-webflow-hero">
         <div className="max-w-7xl mx-auto px-6">

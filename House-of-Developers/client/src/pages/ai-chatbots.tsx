@@ -1,5 +1,5 @@
-import { useEffect } from "react";
 import { motion } from "framer-motion";
+import { SEO } from "@/components/SEO";
 import {
   MessageSquare,
   Brain,
@@ -633,12 +633,13 @@ const aiChatbotsTechTabs = [
 ];
 
 export default function AIChatbotsPage() {
-  useEffect(() => {
-    document.title = "AI Chatbot Development Services | GPT-4 & Claude Chatbots | House of Developers";
-  }, []);
-
   return (
     <>
+      <SEO
+        title="AI Chatbot Development | Custom GPT Chatbots UK"
+        description="Build intelligent AI chatbots for your business. Powered by GPT-4, custom-trained on your data. 24/7 customer support automation. Free consultation."
+        canonical="/services/ai-services/ai-chatbots"
+      />
       <Breadcrumbs
         items={[
           { label: "Services", href: "/services" },

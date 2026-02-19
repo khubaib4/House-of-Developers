@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
+import { SEO } from "@/components/SEO";
 import {
   Globe,
   Smartphone,
@@ -134,6 +135,22 @@ const stats = [
 export default function Home() {
   return (
     <>
+      <SEO
+        title="Custom Software Development Agency UK | Web, Mobile & AI"
+        description="UK-based digital agency building custom web apps, mobile apps, and AI solutions. 150+ projects delivered. Expert React, Node.js & Python team. Free consultation."
+        canonical="/"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "House of Developers",
+          "url": "https://houseofdevelopers.co.uk",
+          "description": "Premium UK-based digital product development agency",
+          "telephone": "+447429917368",
+          "email": "hello@houseofdevelopers.co.uk",
+          "address": { "@type": "PostalAddress", "addressCountry": "GB" },
+          "sameAs": ["https://www.linkedin.com/company/houseofdevelopers"]
+        }}
+      />
       <section className="py-24 md:py-32 pl-[0px] pr-[0px] pt-[30px] pb-[30px]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

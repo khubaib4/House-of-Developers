@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { SEO } from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -476,6 +477,11 @@ const fadeUp = {
 export default function HireFrontendPage() {
   return (
     <div>
+      <SEO
+        title="Hire Frontend Developers | React & Next.js UK"
+        description="Hire expert frontend developers. React, Next.js, TypeScript, and Tailwind CSS specialists. Beautiful, responsive, and performant user interfaces."
+        canonical="/services/hire-developers/frontend"
+      />
       <Breadcrumbs
         items={[
           { label: "Services", href: "/services" },

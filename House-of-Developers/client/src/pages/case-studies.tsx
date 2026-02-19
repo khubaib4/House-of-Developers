@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "wouter";
+import { SEO } from "@/components/SEO";
 import {
   ArrowRight,
   CheckCircle2,
@@ -520,6 +521,11 @@ export default function CaseStudiesPage() {
 
   return (
     <div>
+      <SEO
+        title="Case Studies | Our Work & Results"
+        description="See our portfolio of successful projects. Web apps, mobile apps, AI solutions, and e-commerce platforms built for startups and businesses worldwide."
+        canonical="/case-studies"
+      />
       {/* Hero Section */}
       <section className="py-20 md:py-24">
         <motion.div

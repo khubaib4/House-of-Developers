@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { SEO } from "@/components/SEO";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -847,6 +848,11 @@ export default function CustomDevelopmentPage() {
 
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Custom Software Development UK | Bespoke Solutions"
+        description="Bespoke software development tailored to your business. Custom web apps, APIs, and enterprise solutions. Scalable, secure, and built to last."
+        canonical="/services/custom-development"
+      />
       {/* HERO */}
       <section className="py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-6">

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { SEO } from "@/components/SEO";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Card, CardContent } from "@/components/ui/card";
@@ -123,6 +124,17 @@ export default function ContactPage() {
 
   return (
     <div>
+      <SEO
+        title="Contact Us | Free Project Consultation"
+        description="Get in touch for a free consultation. Discuss your project, get honest advice, and receive a clear quote. Call +44 7429 917368 or fill out our form."
+        canonical="/contact"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "name": "Contact House of Developers",
+          "url": "https://houseofdevelopers.co.uk/contact"
+        }}
+      />
       <Breadcrumbs items={[{ label: "Contact" }]} />
 
       <section className="py-16 md:py-24" data-testid="section-contact-hero">

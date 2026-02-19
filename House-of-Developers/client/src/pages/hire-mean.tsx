@@ -1,5 +1,5 @@
-import { useEffect } from "react";
 import { motion } from "framer-motion";
+import { SEO } from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -631,11 +631,13 @@ const fadeUp = {
 };
 
 export default function HireMEANPage() {
-  useEffect(() => {
-    document.title = "Hire MEAN Full-Stack Developers | MongoDB, Express, Angular, Node.js | House of Developers";
-  }, []);
   return (
     <div>
+      <SEO
+        title="Hire MEAN Stack Developers | Angular & Node.js UK"
+        description="Hire expert MEAN stack developers. MongoDB, Express, Angular, and Node.js specialists for enterprise web applications and dashboards."
+        canonical="/services/hire-developers/full-stack/mean"
+      />
       <Breadcrumbs
         items={[
           { label: "Services", href: "/services" },

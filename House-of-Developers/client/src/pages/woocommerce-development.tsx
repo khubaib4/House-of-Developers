@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { SEO } from "@/components/SEO";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -517,6 +518,11 @@ export default function WooCommerceDevelopmentPage() {
 
   return (
     <div className="min-h-screen" data-testid="woocommerce-development-page">
+      <SEO
+        title="WooCommerce Development UK | Custom Online Stores"
+        description="Custom WooCommerce development. Online stores, payment integrations, custom plugins, and performance optimization. Sell more with WooCommerce."
+        canonical="/services/web-development/cms/woocommerce"
+      />
       {/* Hero */}
       <section className="py-16 md:py-24" data-testid="section-woo-hero">
         <div className="max-w-7xl mx-auto px-6">

@@ -131,6 +131,16 @@ shared/
 - Built AI Chatbots hub page: Hero with live chat widget mockup, 4-step process, 6 chatbot type cards, 3 conversation demos, ValueProposition 9 benefits, 12 features grid, tabbed technologies section, GlowCosmetics case study, pricing, ZigzagTimeline 4 phases, 12 FAQs, 3 CTAs.
 - Redesigned AI Services hub page with AI Dashboard mockup, 5 service cards, 3 case studies, 3 interactive mockups, tabbed technologies section, ZigzagTimeline 5 phases, pricing section, 12 FAQs, 3 CTAs.
 
+### SEO Implementation
+- **react-helmet-async** for managing document head tags
+- **HelmetProvider** wraps the app in `main.tsx`
+- Reusable `SEO` component (`client/src/components/SEO.tsx`) handles title, description, canonical URLs, OG tags, Twitter cards, and JSON-LD structured data
+- All 33 content pages have SEO meta tags (component-demo.tsx and not-found.tsx excluded intentionally)
+- Blog post page uses dynamic SEO from WordPress data (title, excerpt, featured image, article schema)
+- `sitemap.xml` and `robots.txt` in `client/public/` for search engine crawling
+- JSON-LD structured data on Homepage (Organization), Contact (ContactPage), and Blog Post (BlogPosting)
+- Site name constant: "House of Developers", site URL: "https://houseofdevelopers.co.uk"
+
 ## Design Conventions
 - LAMP_COLOR: #8B5CF6 (purple), MEVN_COLOR: #42b883 (green), MEAN_COLOR: #DD0031 (red), MERN_COLOR: #00D8FF (cyan), FE_COLOR: #3B82F6 (blue), BE_COLOR: #10B981 (emerald), FS_COLOR: #6366F1 (indigo), CHATBOT_COLOR: #A855F7 (purple), AGENT_COLOR: #3B82F6 (blue), WEB_DEV_COLOR: #3B82F6 (blue)
 - CTASection uses primaryCTA/secondaryCTA as {text, link} objects

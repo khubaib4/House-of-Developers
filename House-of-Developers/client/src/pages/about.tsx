@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
+import { SEO } from "@/components/SEO";
 import {
   Code2,
   Rocket,
@@ -139,6 +140,11 @@ const stats = [
 export default function AboutPage() {
   return (
     <div>
+      <SEO
+        title="About Us | UK Digital Product Agency"
+        description="Meet the team behind House of Developers. We build launch-ready software for startups and businesses. Our story, values, and the passion driving our work."
+        canonical="/about"
+      />
       {/* Hero Section */}
       <section className="py-20 md:py-24">
         <motion.div

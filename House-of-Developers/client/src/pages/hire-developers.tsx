@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { SEO } from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -544,6 +545,11 @@ export default function HireDevelopersPage() {
 
   return (
     <>
+      <SEO
+        title="Hire Dedicated Developers UK | Remote Dev Teams"
+        description="Hire skilled developers for your project. Full-stack, frontend, and backend specialists in React, Node.js, Python, and more. Flexible engagement."
+        canonical="/services/hire-developers"
+      />
       {/* HERO */}
       <section className="py-16 md:py-24" data-testid="section-hire-hero">
         <div className="max-w-7xl mx-auto px-6">

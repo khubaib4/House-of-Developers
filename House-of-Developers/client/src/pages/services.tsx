@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { SEO } from "@/components/SEO";
 import {
   Globe,
   Smartphone,
@@ -172,6 +173,11 @@ export default function ServicesPage() {
 
   return (
     <>
+      <SEO
+        title="Our Services | Web, Mobile & AI Development UK"
+        description="Full-stack development services: web apps, mobile apps, AI solutions, CMS development, SEO, and dedicated developer hiring. Get a free quote today."
+        canonical="/services"
+      />
       <section className="py-20">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <Breadcrumbs items={[{ label: "Services" }]} />
