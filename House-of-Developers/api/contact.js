@@ -195,7 +195,7 @@ export default async function handler(req, res) {
   try {
     const { data, error } = await resend.emails.send({
       from: "House of Developers <onboarding@resend.dev>",
-      to: ["hello@houseofdevelopers.co.uk"],
+      to: ["khubaib@houseofdevelopers.co.uk"],
       replyTo: email,
       subject: `New Inquiry from ${escapeHtml(name)}${service ? ` - ${escapeHtml(service)}` : ""}`,
       html: buildContactEmailHtml({ name, email, phone, company, service, budget, message, timeline }),
