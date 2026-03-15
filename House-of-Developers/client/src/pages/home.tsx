@@ -146,7 +146,7 @@ export default function Home() {
           "url": "https://houseofdevelopers.co.uk",
           "description": "Premium UK-based digital product development agency",
           "telephone": "+447429917368",
-          "email": "hello@houseofdevelopers.co.uk",
+          "email": "khubaib@houseofdevelopers.co.uk",
           "address": { "@type": "PostalAddress", "addressCountry": "GB" },
           "sameAs": ["https://www.linkedin.com/company/houseofdevelopers"]
         }}

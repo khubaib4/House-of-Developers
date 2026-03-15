@@ -154,7 +154,7 @@ export function CTASection({
               <span>+44 123 456 789</span>
             </a>
             <a
-              href="mailto:hello@houseofdevelopers.co.uk"
+              href="mailto:khubaib@houseofdevelopers.co.uk"
               className={cn(
                 "flex items-center gap-2 hover-elevate rounded-md px-3 py-2",
                 variant === "gradient"
@@ -164,7 +164,7 @@ export function CTASection({
               data-testid="cta-email"
             >
               <Mail className="h-4 w-4" />
-              <span>hello@houseofdevelopers.co.uk</span>
+              <span>khubaib@houseofdevelopers.co.uk</span>
             </a>
           </div>
         )}

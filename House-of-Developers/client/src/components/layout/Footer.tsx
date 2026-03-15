@@ -115,9 +115,9 @@ export function Footer() {
                 We build custom software, websites, and AI solutions for businesses. From startups to enterprise—tailored solutions that work.
               </p>
               <div className="mt-6 space-y-3">
-                <a href="mailto:hello@houseofdevelopers.co.uk" className="flex items-start gap-3 text-sm text-muted-foreground hover:text-primary transition-colors">
+                <a href="mailto:khubaib@houseofdevelopers.co.uk" className="flex items-start gap-3 text-sm text-muted-foreground hover:text-primary transition-colors">
                   <Mail size={18} className="text-primary flex-shrink-0 mt-0.5" />
-                  hello@houseofdevelopers.co.uk
+                  khubaib@houseofdevelopers.co.uk
                 </a>
                 <a href="tel:+447429917368" className="flex items-start gap-3 text-sm text-muted-foreground hover:text-primary transition-colors">
                   <Phone size={18} className="text-primary flex-shrink-0 mt-0.5" />
