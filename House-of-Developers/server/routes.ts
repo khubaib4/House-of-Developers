@@ -26,7 +26,7 @@ export async function registerRoutes(
 
     try {
       const { data, error } = await resend.emails.send({
-        from: "House of Developers <onboarding@resend.dev>",
+        from: "House of Developers <noreply@houseofdevelopers.co.uk>",
         to: ["khubaib@houseofdevelopers.co.uk"],
         replyTo: email,
         subject: `New Inquiry from ${escapeHtml(name)}${service ? ` - ${escapeHtml(service)}` : ""}`,
