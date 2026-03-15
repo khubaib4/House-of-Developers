@@ -599,11 +599,11 @@ export default function HireBackendPage() {
               </div>
 
               <div className="flex gap-4 flex-wrap mt-8">
-                <Link href="/contact">
+                <a href="https://calendly.com/khubaib-houseofdevelopers/new-meeting" target="_blank" rel="noopener noreferrer">
                   <Button data-testid="cta-hire-backend">
                     Hire Backend Developer <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
-                </Link>
+                </a>
                 <Button
                   variant="outline"
                   data-testid="cta-compare-technologies"
@@ -753,7 +753,7 @@ export default function HireBackendPage() {
         variant="bordered"
         title="Not Sure Which Backend Technology to Choose?"
         description="Book a free consultation and we'll recommend the best technology for your project"
-        primaryCTA={{ text: "Get Tech Recommendation", link: "/contact" }}
+        primaryCTA={{ text: "Get Tech Recommendation", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
         size="medium"
       />
 
@@ -868,11 +868,11 @@ export default function HireBackendPage() {
                       <p className="text-xs text-muted-foreground">{profile.projects.join(" \u2022 ")}</p>
                     </div>
 
-                    <Link href="/contact">
+                    <a href="https://calendly.com/khubaib-houseofdevelopers/new-meeting" target="_blank" rel="noopener noreferrer">
                       <Button variant="outline" className="w-full" data-testid={`cta-interview-${i}`}>
                         Schedule Interview <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
-                    </Link>
+                    </a>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -886,7 +886,7 @@ export default function HireBackendPage() {
         variant="gradient"
         title="Ready to Hire a Backend Developer?"
         description="Tell us your stack and we'll match you with API and database experts in 48 hours"
-        primaryCTA={{ text: "Hire Backend Developer", link: "/contact" }}
+        primaryCTA={{ text: "Hire Backend Developer", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
         secondaryCTA={{ text: "View Pricing", link: "#pricing" }}
         size="large"
       />
@@ -1033,7 +1033,7 @@ export default function HireBackendPage() {
         variant="gradient"
         title="Let's Build Your Backend Infrastructure"
         description="Book a free consultation to discuss your API requirements and meet our developers"
-        primaryCTA={{ text: "Book Consultation", link: "/contact" }}
+        primaryCTA={{ text: "Book Consultation", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
         secondaryCTA={{ text: "Call: +44 7429 917368", link: "tel:+447429917368" }}
         showContactInfo
         size="large"

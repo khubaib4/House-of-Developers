@@ -620,11 +620,11 @@ export default function HireMERNPage() {
               </div>
 
               <div className="flex gap-4 flex-wrap mt-8">
-                <Link href="/contact">
+                <a href="https://calendly.com/khubaib-houseofdevelopers/new-meeting" target="_blank" rel="noopener noreferrer">
                   <Button data-testid="cta-hire-mern">
                     Hire MERN Developer <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
-                </Link>
+                </a>
                 <Button
                   variant="outline"
                   data-testid="cta-see-examples"
@@ -699,7 +699,7 @@ export default function HireMERNPage() {
         variant="bordered"
         title="Need a MERN Stack Expert?"
         description="Our developers build production-ready applications with MongoDB, Express, React, and Node.js"
-        primaryCTA={{ text: "Hire MERN Developer", link: "/contact" }}
+        primaryCTA={{ text: "Hire MERN Developer", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
         size="medium"
       />
 
@@ -859,11 +859,11 @@ export default function HireMERNPage() {
                       <p className="text-xs text-muted-foreground">{profile.projects.join(" \u2022 ")}</p>
                     </div>
 
-                    <Link href="/contact">
+                    <a href="https://calendly.com/khubaib-houseofdevelopers/new-meeting" target="_blank" rel="noopener noreferrer">
                       <Button variant="outline" className="w-full" data-testid={`cta-interview-${i}`}>
                         Schedule Interview <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
-                    </Link>
+                    </a>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -933,7 +933,7 @@ export default function HireMERNPage() {
         variant="gradient"
         title="Ready to Build Your MERN Application?"
         description="From SaaS platforms to real-time dashboards\u2014our MERN experts deliver fast"
-        primaryCTA={{ text: "Schedule Interview", link: "/contact" }}
+        primaryCTA={{ text: "Schedule Interview", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
         secondaryCTA={{ text: "See Pricing", link: "#pricing" }}
         size="large"
       />
@@ -986,7 +986,7 @@ export default function HireMERNPage() {
         variant="gradient"
         title="Let's Build with the MERN Stack"
         description="Book a free consultation and meet our JavaScript full-stack developers"
-        primaryCTA={{ text: "Book Consultation", link: "/contact" }}
+        primaryCTA={{ text: "Book Consultation", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
         secondaryCTA={{ text: "Call: +44 7429 917368", link: "tel:+447429917368" }}
         showContactInfo
         size="large"

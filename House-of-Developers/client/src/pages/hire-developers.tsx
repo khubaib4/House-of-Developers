@@ -683,7 +683,7 @@ export default function HireDevelopersPage() {
           variant="bordered"
           title="Need a Developer ASAP?"
           description="We can match you with qualified candidates within 48 hours"
-          primaryCTA={{ text: "Get Matched Now", link: "/contact" }}
+          primaryCTA={{ text: "Get Matched Now", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
           size="medium"
         />
       </div>
@@ -855,9 +855,9 @@ export default function HireDevelopersPage() {
                     </div>
 
                     <Button variant="outline" className="w-full mt-6" asChild>
-                      <Link href="/contact" data-testid={`button-profile-${i}`}>
+                      <a href="https://calendly.com/khubaib-houseofdevelopers/new-meeting" target="_blank" rel="noopener noreferrer">
                         Schedule Interview <ArrowRight className="h-4 w-4 ml-1" />
-                      </Link>
+                      </a>
                     </Button>
                   </CardContent>
                 </Card>
@@ -877,7 +877,7 @@ export default function HireDevelopersPage() {
           variant="gradient"
           title="Ready to Hire Your Next Developer?"
           description="Book a free consultation to discuss your needs and meet our developers"
-          primaryCTA={{ text: "Book Consultation", link: "/contact" }}
+          primaryCTA={{ text: "Book Consultation", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
           secondaryCTA={{ text: "View All Developers", link: "#categories" }}
           size="large"
         />
@@ -1029,7 +1029,7 @@ export default function HireDevelopersPage() {
           variant="gradient"
           title="Let's Build Your Dream Team"
           description="Tell us what you need and we'll find the perfect developers for your project"
-          primaryCTA={{ text: "Hire Developers Now", link: "/contact" }}
+          primaryCTA={{ text: "Hire Developers Now", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
           secondaryCTA={{ text: "Call: +44 7429 917368", link: "tel:+447429917368" }}
           showContactInfo
           size="large"

@@ -668,7 +668,7 @@ export default function WordPressDevelopment() {
             variant="bordered"
             title="Ready to Build Your WordPress Site?"
             description="Free consultation, honest advice, and a clear quote. Let's discuss your project."
-            primaryCTA={{ text: "Get Free WordPress Quote", link: "/contact" }}
+            primaryCTA={{ text: "Get Free WordPress Quote", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
             size="medium"
           />
         </div>
@@ -1080,7 +1080,7 @@ export default function WordPressDevelopment() {
             variant="gradient"
             title="Let's Build Your WordPress Site"
             description="Free 30-minute consultation. We'll discuss your goals, answer questions, and give you an honest recommendation."
-            primaryCTA={{ text: "Book Free Consultation", link: "/contact" }}
+            primaryCTA={{ text: "Book Free Consultation", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
             secondaryCTA={{ text: "Call: +44 7429 917368", link: "tel:+447429917368" }}
             size="large"
           />

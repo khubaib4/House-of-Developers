@@ -55,7 +55,7 @@ export function StickyCallButton() {
                 marginBottom: "max(1rem, env(safe-area-inset-bottom))",
               }}
             >
-              <Link href="/contact">
+              <a href="https://calendly.com/khubaib-houseofdevelopers/new-meeting" target="_blank" rel="noopener noreferrer">
                 <button
                   aria-label="Book a consultation call"
                   className="w-full flex items-center justify-center gap-2.5 h-14 rounded-2xl font-semibold text-sm tracking-wide transition-all duration-200 active:scale-[0.97] select-none relative overflow-hidden"
@@ -111,7 +111,7 @@ export function StickyCallButton() {
                     }}
                   />
                 </button>
-              </Link>
+              </a>
             </div>
           </motion.div>
         )}

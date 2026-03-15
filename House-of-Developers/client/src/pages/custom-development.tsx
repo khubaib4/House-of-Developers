@@ -920,12 +920,12 @@ export default function CustomDevelopmentPage() {
               </div>
 
               <div className="flex gap-4 mt-8 flex-wrap">
-                <Link href="/contact">
+                <a href="https://calendly.com/khubaib-houseofdevelopers/new-meeting" target="_blank" rel="noopener noreferrer">
                   <Button size="lg">
                     Start Your Project
                     <ArrowRight className="h-4 w-4 ml-1" />
                   </Button>
-                </Link>
+                </a>
                 <Link href="/services/web-development">
                   <Button variant="outline" size="lg">
                     View Our Work
@@ -1085,7 +1085,7 @@ export default function CustomDevelopmentPage() {
           variant="bordered"
           title="Not Sure What You Need?"
           description="Book a free consultation and we'll map out the right solution for your business"
-          primaryCTA={{ text: "Book Free Discovery Call", link: "/contact" }}
+          primaryCTA={{ text: "Book Free Discovery Call", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
           size="medium"
         />
       </div>
@@ -1240,7 +1240,7 @@ export default function CustomDevelopmentPage() {
           variant="gradient"
           title="Ready to Build Something Custom?"
           description="Let's discuss your project. Free consultation, detailed quote within 48 hours."
-          primaryCTA={{ text: "Start Your Project", link: "/contact" }}
+          primaryCTA={{ text: "Start Your Project", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
           secondaryCTA={{ text: "Call: +44 7429 917368", link: "tel:+447429917368" }}
           size="large"
         />
@@ -1344,7 +1344,7 @@ export default function CustomDevelopmentPage() {
           variant="gradient"
           title="Let's Build Your Custom Solution"
           description="Every great product started with a conversation. Let's have ours."
-          primaryCTA={{ text: "Book Free Consultation", link: "/contact" }}
+          primaryCTA={{ text: "Book Free Consultation", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
           secondaryCTA={{ text: "View All Web Services", link: "/services/web-development" }}
           showContactInfo={true}
           size="large"

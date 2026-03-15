@@ -566,9 +566,9 @@ export default function WooCommerceDevelopmentPage() {
               </div>
 
               <div className="flex gap-4 mt-8 flex-wrap">
-                <Link href="/contact">
+                <a href="https://calendly.com/khubaib-houseofdevelopers/new-meeting" target="_blank" rel="noopener noreferrer">
                   <Button data-testid="cta-start-store">Start Your Store</Button>
-                </Link>
+                </a>
                 <Button variant="outline" onClick={() => handleScrollTo("use-cases")} data-testid="cta-view-examples">
                   View Examples
                 </Button>
@@ -723,12 +723,12 @@ export default function WooCommerceDevelopmentPage() {
           </div>
 
           <div className="text-center mt-8">
-            <Link href="/contact">
+            <a href="https://calendly.com/khubaib-houseofdevelopers/new-meeting" target="_blank" rel="noopener noreferrer">
               <Button variant="outline" data-testid="cta-help-decide">
                 Not sure? Book a consultation and we'll help you decide
                 <ArrowRight className="h-4 w-4 ml-2" />
               </Button>
-            </Link>
+            </a>
           </div>
         </div>
       </section>
@@ -763,7 +763,7 @@ export default function WooCommerceDevelopmentPage() {
             variant="bordered"
             title="Ready to Build Your WooCommerce Store?"
             description="Let's create a powerful e-commerce solution with WordPress flexibility"
-            primaryCTA={{ text: "Start Your Project", link: "/contact" }}
+            primaryCTA={{ text: "Start Your Project", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
             size="medium"
           />
         </div>
@@ -843,7 +843,7 @@ export default function WooCommerceDevelopmentPage() {
             variant="gradient"
             title="Let's Build Your WooCommerce Store"
             description="Book a free consultation and discover why WooCommerce might be the perfect platform for your business"
-            primaryCTA={{ text: "Book Free Consultation", link: "/contact" }}
+            primaryCTA={{ text: "Book Free Consultation", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
             secondaryCTA={{ text: "Call: +44 7429 917368", link: "tel:+447429917368" }}
             showContactInfo
             size="large"

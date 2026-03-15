@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Mail } from "lucide-react";
 import { Link } from "wouter";
+import { CALENDLY_URL } from "@/lib/constants";
 
 interface PageCTAProps {
   title?: string;
@@ -34,10 +35,10 @@ export function PageCTA({
               className="bg-accent text-accent-foreground border-accent-border"
               asChild
             >
-              <Link href="/contact" data-testid="button-page-cta-consultation">
+              <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" data-testid="button-page-cta-consultation">
                 Book Free Consultation
                 <ArrowRight className="h-4 w-4 ml-1" />
-              </Link>
+              </a>
             </Button>
             <Button variant="outline" size="lg" asChild>
               <a

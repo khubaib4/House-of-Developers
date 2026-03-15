@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Rocket } from "lucide-react";
 import { Link } from "wouter";
+import { CALENDLY_URL } from "@/lib/constants";
 
 const stats = [
   { number: "50+", label: "Projects Delivered" },
@@ -132,10 +133,10 @@ export function Hero() {
               className="w-full sm:w-auto bg-accent text-accent-foreground border-accent-border"
               asChild
             >
-              <Link href="/contact" data-testid="button-hero-cta-primary">
+              <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" data-testid="button-hero-cta-primary">
                 Book Free Consultation
                 <ArrowRight className="h-4 w-4 ml-1" />
-              </Link>
+              </a>
             </Button>
             <Button
               variant="outline"

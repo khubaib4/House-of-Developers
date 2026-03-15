@@ -456,9 +456,9 @@ export default function IOSDevelopmentPage() {
               </div>
 
               <div className="flex gap-4 mt-8 flex-wrap">
-                <Link href="/contact">
+                <a href="https://calendly.com/khubaib-houseofdevelopers/new-meeting" target="_blank" rel="noopener noreferrer">
                   <Button data-testid="cta-start-ios">Start Your iOS App</Button>
-                </Link>
+                </a>
                 <Button variant="outline" onClick={() => handleScrollTo("use-cases")} data-testid="cta-view-examples">
                   View Examples
                 </Button>
@@ -673,7 +673,7 @@ export default function IOSDevelopmentPage() {
             variant="bordered"
             title="Ready to Build Your iOS App?"
             description="Create a premium native experience for Apple users"
-            primaryCTA={{ text: "Start Your Project", link: "/contact" }}
+            primaryCTA={{ text: "Start Your Project", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
             size="medium"
           />
         </div>
@@ -762,7 +762,7 @@ export default function IOSDevelopmentPage() {
             variant="gradient"
             title="Let's Build Your iOS App"
             description="Book a free consultation to discuss your iOS app idea with our Swift experts"
-            primaryCTA={{ text: "Book Free Consultation", link: "/contact" }}
+            primaryCTA={{ text: "Book Free Consultation", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
             secondaryCTA={{ text: "Call: +44 7429 917368", link: "tel:+447429917368" }}
             showContactInfo
             size="large"

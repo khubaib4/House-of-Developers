@@ -698,12 +698,12 @@ export default function CaseStudiesPage() {
             variants={fadeUp}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <Link href="/contact">
+            <a href="https://calendly.com/khubaib-houseofdevelopers/new-meeting" target="_blank" rel="noopener noreferrer">
               <Button size="lg" className="h-14 px-8 text-base">
                 Start Your Project
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
-            </Link>
+            </a>
             <Link href="/services">
               <Button
                 variant="outline"

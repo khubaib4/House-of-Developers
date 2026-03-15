@@ -14,6 +14,7 @@ import {
   Clock,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { CALENDLY_URL } from "@/lib/constants";
 
 const webDevLinks = [
   { label: "Custom Development", href: "/services/web-development/custom-development" },
@@ -81,12 +82,12 @@ export function Footer() {
             </div>
             <div className="flex flex-col items-center lg:items-end gap-4">
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/contact">
+                <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
                   <Button className="bg-white text-primary hover:bg-white/90 h-14 px-8 rounded-xl font-semibold text-lg shadow-lg flex items-center gap-2">
                     Book Free Consultation
                     <ArrowRight size={20} />
                   </Button>
-                </Link>
+                </a>
                 <a href="tel:+447429917368">
                   <Button variant="outline" className="border-2 border-white/30 text-white hover:bg-white/10 h-14 px-8 rounded-xl font-semibold flex items-center gap-2 bg-transparent">
                     <Phone size={18} />

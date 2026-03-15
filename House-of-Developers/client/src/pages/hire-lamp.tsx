@@ -731,11 +731,11 @@ export default function HireLAMPPage() {
               </div>
 
               <div className="mt-8 flex gap-4 flex-wrap">
-                <Link href="/contact">
+                <a href="https://calendly.com/khubaib-houseofdevelopers/new-meeting" target="_blank" rel="noopener noreferrer">
                   <Button data-testid="cta-hire-lamp">
                     Hire LAMP Developer <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
-                </Link>
+                </a>
                 <Button
                   variant="outline"
                   data-testid="cta-see-examples"
@@ -809,7 +809,7 @@ export default function HireLAMPPage() {
         variant="bordered"
         title="Need a WordPress or PHP Expert?"
         description="Our LAMP developers build proven web applications with PHP and MySQL"
-        primaryCTA={{ text: "Hire LAMP Developer", link: "/contact" }}
+        primaryCTA={{ text: "Hire LAMP Developer", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
         size="medium"
       />
 
@@ -948,11 +948,11 @@ export default function HireLAMPPage() {
 
                     <div className="mt-4 pt-4 border-t flex items-center justify-between flex-wrap gap-2">
                       <span className="text-xs text-muted-foreground">{profile.availability}</span>
-                      <Link href="/contact">
+                      <a href="https://calendly.com/khubaib-houseofdevelopers/new-meeting" target="_blank" rel="noopener noreferrer">
                         <Button size="sm" data-testid={`cta-interview-${i}`}>
                           Schedule Interview
                         </Button>
-                      </Link>
+                      </a>
                     </div>
                   </CardContent>
                 </Card>
@@ -1027,7 +1027,7 @@ export default function HireLAMPPage() {
         variant="gradient"
         title="Ready to Build with LAMP Stack?"
         description="From WordPress sites to Laravel apps—our PHP experts deliver reliable solutions"
-        primaryCTA={{ text: "Schedule Interview", link: "/contact" }}
+        primaryCTA={{ text: "Schedule Interview", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
         secondaryCTA={{ text: "See Pricing", link: "#pricing-section" }}
         size="large"
       />
@@ -1156,7 +1156,7 @@ export default function HireLAMPPage() {
         variant="gradient"
         title="Let's Build with PHP & MySQL"
         description="Book a free consultation and meet our battle-tested LAMP stack developers"
-        primaryCTA={{ text: "Book Consultation", link: "/contact" }}
+        primaryCTA={{ text: "Book Consultation", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
         secondaryCTA={{ text: "Call: +44 7429 917368", link: "tel:+447429917368" }}
         showContactInfo
         size="large"

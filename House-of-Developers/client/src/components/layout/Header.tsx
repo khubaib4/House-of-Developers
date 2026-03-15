@@ -224,10 +224,12 @@ export function Header() {
             <ThemeToggle />
             <Button
               className="hidden lg:inline-flex bg-accent text-accent-foreground border-accent-border"
-              onClick={() => handleNavClick("/contact", true)}
+              asChild
               data-testid="button-book-call"
             >
-              Book a Call
+              <a href="https://calendly.com/khubaib-houseofdevelopers/new-meeting" target="_blank" rel="noopener noreferrer">
+                Book a Call
+              </a>
             </Button>
             <Button
               variant="ghost"
@@ -348,10 +350,12 @@ export function Header() {
                 <Button
                   className="w-full bg-accent text-accent-foreground border-accent-border"
                   size="lg"
-                  onClick={() => handleNavClick("/contact", true)}
+                  asChild
                   data-testid="mobile-button-book-call"
                 >
-                  Book a Call
+                  <a href="https://calendly.com/khubaib-houseofdevelopers/new-meeting" target="_blank" rel="noopener noreferrer">
+                    Book a Call
+                  </a>
                 </Button>
               </motion.div>
             </nav>

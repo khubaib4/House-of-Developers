@@ -1,0 +1,123 @@
+Add Calendly booking links throughout the site for all CTA buttons.
+
+CALENDLY URL: https://calendly.com/khubaib-houseofdevelopers/new-meeting
+
+IMPLEMENTATION:
+
+Update all "Book Consultation" and "Get Started" CTAs to link to Calendly.
+
+LOCATIONS TO UPDATE:
+
+1. HOMEPAGE:
+   - Hero section: "Book Free Consultation" button
+     → https://calendly.com/khubaib-houseofdevelopers/new-meeting
+   - Final CTA section: "Start Your Project" button
+     → https://calendly.com/khubaib-houseofdevelopers/new-meeting
+
+2. FOOTER:
+   - CTA Banner: "Book Free Consultation" button
+     → https://calendly.com/khubaib-houseofdevelopers/new-meeting
+
+3. ABOUT PAGE:
+   - "Work With Us" CTA button
+     → https://calendly.com/khubaib-houseofdevelopers/new-meeting
+
+4. SERVICES OVERVIEW PAGE (/services):
+   - "Get Started" buttons
+     → https://calendly.com/khubaib-houseofdevelopers/new-meeting
+
+5. ALL SERVICE PAGES:
+   Web Development, Mobile Development, AI Services, SEO, WordPress, 
+   Shopify, Hire Developers, etc.
+   - All "Book Free Consultation" buttons
+   - All "Get Started" buttons
+   - All "Schedule Call" buttons
+   → https://calendly.com/khubaib-houseofdevelopers/new-meeting
+
+6. CONTACT PAGE:
+   Add Calendly inline widget as an option alongside the contact form.
+
+   Create a two-column or tabbed layout:
+   - Option 1: Contact Form (existing form)
+   - Option 2: Book a Call (Calendly widget)
+
+   Calendly inline embed code:
+```tsx
+<div className="calendly-embed-container">
+  <div 
+    className="calendly-inline-widget" 
+    data-url="https://calendly.com/khubaib-houseofdevelopers/new-meeting?hide_gdpr_banner=1&background_color=ffffff&text_color=1f2937&primary_color=10b981"
+    style={{ minWidth: '320px', height: '700px' }}
+  />
+</div>
+
+{/* Add Calendly script to head */}
+<script 
+  type="text/javascript" 
+  src="https://assets.calendly.com/assets/external/widget.js" 
+  async
+/>
+```
+
+BUTTON IMPLEMENTATION:
+
+For all CTA buttons, use this format:
+```tsx
+
+  href="https://calendly.com/khubaib-houseofdevelopers/new-meeting"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="btn-primary" // Use existing button styles
+>
+  Book Free Consultation
+</a>
+```
+
+CONTACT PAGE LAYOUT OPTIONS:
+
+Option A - Two Columns (Recommended):
+```tsx
+<div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+  {/* Left: Contact Form */}
+  <div>
+    <h3>Send Us a Message</h3>
+    {/* Existing contact form */}
+  </div>
+
+  {/* Right: Calendly Widget */}
+  <div>
+    <h3>Book a Call</h3>
+    <p>Schedule a free 30-minute consultation</p>
+    {/* Calendly inline widget */}
+  </div>
+</div>
+```
+
+Option B - Tabs:
+```tsx
+<Tabs>
+  <Tab title="Send Message">
+    {/* Contact form */}
+  </Tab>
+  <Tab title="Book a Call">
+    {/* Calendly widget */}
+  </Tab>
+</Tabs>
+```
+
+IMPORTANT:
+- All links open in new tab (target="_blank")
+- Add rel="noopener noreferrer" for security
+- Use existing button styling (keep design consistent)
+- Calendly widget on contact page is optional but recommended
+- Keep existing "Call Us" and "Email Us" options
+- This gives users 3 contact options: Form, Call booking, or Direct contact
+
+CALENDLY WIDGET CUSTOMIZATION:
+- Background color: White (matches site)
+- Text color: Dark gray (matches site)
+- Primary color: Green (matches brand)
+- Hide GDPR banner for cleaner look
+
+After implementation, all primary CTAs throughout the site will 
+direct users to book a call via Calendly.

@@ -668,7 +668,7 @@ export default function AIAgentsPage() {
           variant="gradient"
           title="Ready to Automate Your Workflow?"
           description="Let's build an AI agent that saves your team 15+ hours every week"
-          primaryCTA={{ text: "Build My Agent", link: "/contact" }}
+          primaryCTA={{ text: "Build My Agent", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
           size="large"
         />
       </div>
@@ -1234,7 +1234,7 @@ export default function AIAgentsPage() {
           variant="bordered"
           title="Want Results Like TaskFlow?"
           description="See how AI agents can cut response times 95% and boost satisfaction"
-          primaryCTA={{ text: "Get Agent Quote", link: "/contact" }}
+          primaryCTA={{ text: "Get Agent Quote", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
           secondaryCTA={{ text: "Watch Agent Demo", link: "#demos" }}
           size="medium"
         />
@@ -1385,7 +1385,7 @@ export default function AIAgentsPage() {
           variant="gradient"
           title="Let's Build Your Autonomous AI Agent"
           description="Book a free consultation to analyze your workflow and design the perfect agent"
-          primaryCTA={{ text: "Book Free Consultation", link: "/contact" }}
+          primaryCTA={{ text: "Book Free Consultation", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
           secondaryCTA={{ text: "Call: +44 7429 917368", link: "tel:+447429917368" }}
           showContactInfo={true}
           size="large"

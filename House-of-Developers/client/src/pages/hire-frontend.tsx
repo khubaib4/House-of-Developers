@@ -552,11 +552,11 @@ export default function HireFrontendPage() {
               </div>
 
               <div className="flex gap-4 flex-wrap mt-8">
-                <Link href="/contact">
+                <a href="https://calendly.com/khubaib-houseofdevelopers/new-meeting" target="_blank" rel="noopener noreferrer">
                   <Button data-testid="cta-hire-frontend">
                     Hire Frontend Developer <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
-                </Link>
+                </a>
                 <Button
                   variant="outline"
                   data-testid="cta-compare-frameworks"
@@ -717,7 +717,7 @@ export default function HireFrontendPage() {
         variant="bordered"
         title="Not Sure Which Framework to Choose?"
         description="Book a free consultation and we'll recommend React, Angular, or Vue based on your needs"
-        primaryCTA={{ text: "Get Framework Recommendation", link: "/contact" }}
+        primaryCTA={{ text: "Get Framework Recommendation", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
         size="medium"
       />
 
@@ -832,11 +832,11 @@ export default function HireFrontendPage() {
                       <p className="text-xs text-muted-foreground">{profile.projects.join(" \u2022 ")}</p>
                     </div>
 
-                    <Link href="/contact">
+                    <a href="https://calendly.com/khubaib-houseofdevelopers/new-meeting" target="_blank" rel="noopener noreferrer">
                       <Button variant="outline" className="w-full" data-testid={`cta-interview-${i}`}>
                         Schedule Interview <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
-                    </Link>
+                    </a>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -850,7 +850,7 @@ export default function HireFrontendPage() {
         variant="gradient"
         title="Ready to Hire a Frontend Developer?"
         description="Tell us your framework and we'll match you with senior UI specialists in 48 hours"
-        primaryCTA={{ text: "Hire Frontend Developer", link: "/contact" }}
+        primaryCTA={{ text: "Hire Frontend Developer", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
         secondaryCTA={{ text: "View Pricing", link: "#pricing" }}
         size="large"
       />
@@ -997,7 +997,7 @@ export default function HireFrontendPage() {
         variant="gradient"
         title="Let's Build Beautiful User Interfaces"
         description="Book a free consultation to discuss your designs and meet our frontend developers"
-        primaryCTA={{ text: "Book Consultation", link: "/contact" }}
+        primaryCTA={{ text: "Book Consultation", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
         secondaryCTA={{ text: "Call: +44 7429 917368", link: "tel:+447429917368" }}
         showContactInfo
         size="large"

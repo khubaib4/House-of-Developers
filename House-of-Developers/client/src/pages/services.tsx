@@ -381,11 +381,11 @@ export default function ServicesPage() {
             Book a free consultation and we'll recommend the right solution for your business.
           </p>
           <div className="flex gap-4 justify-center flex-col sm:flex-row">
-            <Link href="/contact">
+            <a href="https://calendly.com/khubaib-houseofdevelopers/new-meeting" target="_blank" rel="noopener noreferrer">
               <button className="px-8 py-3 bg-primary text-primary-foreground rounded-xl font-semibold hover:bg-primary/90 transition-all">
                 Book Free Consultation
               </button>
-            </Link>
+            </a>
             <button className="px-8 py-3 border rounded-xl font-semibold hover:bg-muted transition-all">
               View Our Work
             </button>

@@ -653,11 +653,11 @@ export default function HireMEVNPage() {
               </div>
 
               <div className="flex gap-4 flex-wrap mt-8">
-                <Link href="/contact">
+                <a href="https://calendly.com/khubaib-houseofdevelopers/new-meeting" target="_blank" rel="noopener noreferrer">
                   <Button data-testid="cta-hire-mevn">
                     Hire MEVN Developer <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
-                </Link>
+                </a>
                 <Button
                   variant="outline"
                   data-testid="cta-see-examples"
@@ -730,7 +730,7 @@ export default function HireMEVNPage() {
         variant="bordered"
         title="Need a Vue.js Expert?"
         description="Our MEVN developers build fast, beautiful applications with Vue.js"
-        primaryCTA={{ text: "Hire MEVN Developer", link: "/contact" }}
+        primaryCTA={{ text: "Hire MEVN Developer", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
         size="medium"
       />
 
@@ -887,11 +887,11 @@ export default function HireMEVNPage() {
                       <p className="text-xs text-muted-foreground">{profile.specialties.join(" \u2022 ")}</p>
                     </div>
 
-                    <Link href="/contact">
+                    <a href="https://calendly.com/khubaib-houseofdevelopers/new-meeting" target="_blank" rel="noopener noreferrer">
                       <Button variant="outline" className="w-full" data-testid={`cta-interview-${i}`}>
                         Schedule Interview <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
-                    </Link>
+                    </a>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -967,7 +967,7 @@ export default function HireMEVNPage() {
         variant="gradient"
         title="Ready to Build with Vue.js?"
         description="From content platforms to e-commerce\u2014our MEVN experts deliver fast"
-        primaryCTA={{ text: "Schedule Interview", link: "/contact" }}
+        primaryCTA={{ text: "Schedule Interview", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
         secondaryCTA={{ text: "See Pricing", link: "#pricing" }}
         size="large"
       />
@@ -1055,7 +1055,7 @@ export default function HireMEVNPage() {
         variant="gradient"
         title="Let's Build with Vue.js & MEVN Stack"
         description="Book a free consultation and meet our progressive JavaScript developers"
-        primaryCTA={{ text: "Book Consultation", link: "/contact" }}
+        primaryCTA={{ text: "Book Consultation", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
         secondaryCTA={{ text: "Call: +44 7429 917368", link: "tel:+447429917368" }}
         showContactInfo
         size="large"

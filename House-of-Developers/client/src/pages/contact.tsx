@@ -509,7 +509,7 @@ export default function ContactPage() {
                       for you.
                     </p>
                     <Button className="w-full mt-4" asChild>
-                      <a href="#calendly" data-testid="link-calendly">
+                      <a href="https://calendly.com/khubaib-houseofdevelopers/new-meeting" target="_blank" rel="noopener noreferrer" data-testid="link-calendly">
                         View Available Times
                       </a>
                     </Button>

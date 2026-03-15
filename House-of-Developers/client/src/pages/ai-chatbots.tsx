@@ -845,7 +845,7 @@ export default function AIChatbotsPage() {
         variant="gradient"
         title="Ready to Automate Customer Support?"
         description="Let's build an AI chatbot that handles 90% of inquiries 24/7"
-        primaryCTA={{ text: "Get Chatbot Quote", link: "/contact" }}
+        primaryCTA={{ text: "Get Chatbot Quote", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
         size="large"
       />
 
@@ -1071,7 +1071,7 @@ export default function AIChatbotsPage() {
         variant="bordered"
         title="Want Results Like GlowCosmetics?"
         description="See how AI chatbots can save 15+ hours per week and boost conversions"
-        primaryCTA={{ text: "Build My Chatbot", link: "/contact" }}
+        primaryCTA={{ text: "Build My Chatbot", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
         secondaryCTA={{ text: "See Live Demo", link: "#demos" }}
         size="medium"
       />
@@ -1236,7 +1236,7 @@ export default function AIChatbotsPage() {
         variant="gradient"
         title="Let's Build Your AI Chatbot"
         description="Book a free consultation and get a custom proposal for your business"
-        primaryCTA={{ text: "Book Free Consultation", link: "/contact" }}
+        primaryCTA={{ text: "Book Free Consultation", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
         secondaryCTA={{ text: "Call: +44 7429 917368", link: "tel:+447429917368" }}
         showContactInfo
         size="large"

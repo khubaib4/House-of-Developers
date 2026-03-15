@@ -632,11 +632,11 @@ export default function ShopifyDevelopment() {
                 ))}
               </div>
               <div className="mt-8 flex gap-4 flex-wrap">
-                <Link href="/contact">
+                <a href="https://calendly.com/khubaib-houseofdevelopers/new-meeting" target="_blank" rel="noopener noreferrer">
                   <Button size="lg" className="bg-gradient-to-r from-green-600 to-emerald-600 text-white border-0">
                     Start Your Shopify Store
                   </Button>
-                </Link>
+                </a>
                 <Link href="/case-studies">
                   <Button size="lg" variant="outline">
                     View Shopify Examples
@@ -717,7 +717,7 @@ export default function ShopifyDevelopment() {
             variant="bordered"
             title="Ready to Launch Your Shopify Store?"
             description="Free consultation to discuss your products, audience, and goals."
-            primaryCTA={{ text: "Get Free Shopify Quote", link: "/contact" }}
+            primaryCTA={{ text: "Get Free Shopify Quote", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
             size="medium"
           />
         </div>
@@ -877,7 +877,7 @@ export default function ShopifyDevelopment() {
             variant="gradient"
             title="Is Shopify Plus Right For You?"
             description="Book a call to evaluate if Shopify Plus makes sense for your business."
-            primaryCTA={{ text: "Discuss Shopify Plus", link: "/contact" }}
+            primaryCTA={{ text: "Discuss Shopify Plus", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
             secondaryCTA={{ text: "View Store Examples", link: "/case-studies" }}
             size="large"
           />
@@ -1219,7 +1219,7 @@ export default function ShopifyDevelopment() {
             variant="gradient"
             title="Let's Build Your Shopify Store"
             description="Free 30-minute consultation to discuss your products, audience, and goals. No obligation, just honest advice."
-            primaryCTA={{ text: "Book Free Consultation", link: "/contact" }}
+            primaryCTA={{ text: "Book Free Consultation", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
             secondaryCTA={{ text: "Call: +44 7429 917368", link: "tel:+447429917368" }}
             size="large"
           />

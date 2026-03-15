@@ -177,11 +177,11 @@ export default function Home() {
               </p>
 
               <div className="mt-8 flex gap-4 flex-wrap">
-                <Link href="/contact">
+                <a href="https://calendly.com/khubaib-houseofdevelopers/new-meeting" target="_blank" rel="noopener noreferrer">
                   <button className="h-14 px-8 bg-green-500 hover:bg-green-400 text-black rounded-xl font-semibold shadow-lg shadow-green-500/25 transition-all active:scale-[0.98]">
                     Book Free Consultation
                   </button>
-                </Link>
+                </a>
                 <Link href="/services">
                   <button className="h-14 px-8 border rounded-xl font-semibold hover:bg-muted transition-all active:scale-[0.98]">
                     View Our Services
@@ -374,11 +374,11 @@ export default function Home() {
             Book a free consultation. We'll discuss your project, provide honest advice, and give you a clear roadmap forward. No obligation, no pressure.
           </motion.p>
           <div className="flex gap-4 justify-center flex-col sm:flex-row">
-            <Link href="/contact">
+            <a href="https://calendly.com/khubaib-houseofdevelopers/new-meeting" target="_blank" rel="noopener noreferrer">
               <button className="h-14 px-10 bg-green-500 hover:bg-green-400 text-black rounded-xl font-semibold text-lg shadow-lg shadow-green-500/25 transition-all active:scale-[0.98]">
                 Book Free Consultation
               </button>
-            </Link>
+            </a>
             <a href="tel:+447429917368">
               <button className="h-14 px-8 border rounded-xl font-semibold inline-flex items-center gap-2 hover:bg-muted transition-all active:scale-[0.98]">
                 <Phone size={18} />

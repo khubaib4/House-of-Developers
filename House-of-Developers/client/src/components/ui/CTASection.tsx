@@ -3,6 +3,10 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Link } from "wouter";
 
+function isExternal(url: string) {
+  return url.startsWith("http://") || url.startsWith("https://");
+}
+
 interface CTAAction {
   text: string;
   link: string;
@@ -80,29 +84,57 @@ export function CTASection({
         <p className={descClasses}>{description}</p>
 
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link href={primaryCTA.link}>
-            <Button
-              size="lg"
-              variant={variant === "gradient" ? "secondary" : "default"}
-              data-testid="cta-primary"
-            >
-              {primaryCTA.text}
-            </Button>
-          </Link>
-          {secondaryCTA && (
-            <Link href={secondaryCTA.link}>
+          {isExternal(primaryCTA.link) ? (
+            <a href={primaryCTA.link} target="_blank" rel="noopener noreferrer">
               <Button
                 size="lg"
-                variant="outline"
-                className={cn(
-                  variant === "gradient" &&
-                    "border-primary-foreground/30 text-primary-foreground"
-                )}
-                data-testid="cta-secondary"
+                variant={variant === "gradient" ? "secondary" : "default"}
+                data-testid="cta-primary"
               >
-                {secondaryCTA.text}
+                {primaryCTA.text}
+              </Button>
+            </a>
+          ) : (
+            <Link href={primaryCTA.link}>
+              <Button
+                size="lg"
+                variant={variant === "gradient" ? "secondary" : "default"}
+                data-testid="cta-primary"
+              >
+                {primaryCTA.text}
               </Button>
             </Link>
+          )}
+          {secondaryCTA && (
+            isExternal(secondaryCTA.link) ? (
+              <a href={secondaryCTA.link} target="_blank" rel="noopener noreferrer">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className={cn(
+                    variant === "gradient" &&
+                      "border-primary-foreground/30 text-primary-foreground"
+                  )}
+                  data-testid="cta-secondary"
+                >
+                  {secondaryCTA.text}
+                </Button>
+              </a>
+            ) : (
+              <Link href={secondaryCTA.link}>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className={cn(
+                    variant === "gradient" &&
+                      "border-primary-foreground/30 text-primary-foreground"
+                  )}
+                  data-testid="cta-secondary"
+                >
+                  {secondaryCTA.text}
+                </Button>
+              </Link>
+            )
           )}
         </div>
 

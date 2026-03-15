@@ -708,11 +708,11 @@ export default function HireMEANPage() {
               </div>
 
               <div className="flex gap-4 flex-wrap mt-8">
-                <Link href="/contact">
+                <a href="https://calendly.com/khubaib-houseofdevelopers/new-meeting" target="_blank" rel="noopener noreferrer">
                   <Button data-testid="cta-hire-mean">
                     Hire MEAN Developer <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
-                </Link>
+                </a>
                 <Button
                   variant="outline"
                   data-testid="cta-see-examples"
@@ -785,7 +785,7 @@ export default function HireMEANPage() {
         variant="bordered"
         title="Need an Enterprise Angular Developer?"
         description="Our MEAN stack experts build scalable TypeScript applications"
-        primaryCTA={{ text: "Hire MEAN Developer", link: "/contact" }}
+        primaryCTA={{ text: "Hire MEAN Developer", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
         size="medium"
       />
 
@@ -942,11 +942,11 @@ export default function HireMEANPage() {
                       <p className="text-xs text-muted-foreground">{profile.certifications.join(" \u2022 ")}</p>
                     </div>
 
-                    <Link href="/contact">
+                    <a href="https://calendly.com/khubaib-houseofdevelopers/new-meeting" target="_blank" rel="noopener noreferrer">
                       <Button variant="outline" className="w-full" data-testid={`cta-interview-${i}`}>
                         Schedule Interview <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
-                    </Link>
+                    </a>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -1022,7 +1022,7 @@ export default function HireMEANPage() {
         variant="gradient"
         title="Ready to Build Your Enterprise Application?"
         description="From CRMs to financial platforms\u2014our MEAN developers deliver robust solutions"
-        primaryCTA={{ text: "Schedule Interview", link: "/contact" }}
+        primaryCTA={{ text: "Schedule Interview", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
         secondaryCTA={{ text: "See Pricing", link: "#pricing" }}
         size="large"
       />
@@ -1110,7 +1110,7 @@ export default function HireMEANPage() {
 
           <p className="text-center text-sm text-muted-foreground mt-8">
             Both are excellent JavaScript stacks. We&apos;ll recommend the best option based on your specific project needs.{" "}
-            <Link href="/contact" className="underline hover:text-foreground">Talk to us</Link>
+            <a href="https://calendly.com/khubaib-houseofdevelopers/new-meeting" target="_blank" rel="noopener noreferrer">Talk to us</a>
           </p>
         </div>
       </section>
@@ -1160,7 +1160,7 @@ export default function HireMEANPage() {
         variant="gradient"
         title="Let's Build with Angular & TypeScript"
         description="Book a free consultation and meet our enterprise MEAN stack developers"
-        primaryCTA={{ text: "Book Consultation", link: "/contact" }}
+        primaryCTA={{ text: "Book Consultation", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
         secondaryCTA={{ text: "Call: +44 7429 917368", link: "tel:+447429917368" }}
         showContactInfo
         size="large"

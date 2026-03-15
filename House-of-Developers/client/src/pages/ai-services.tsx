@@ -890,10 +890,10 @@ export default function AIServicesPage() {
                   className="bg-gradient-to-r from-purple-600 to-blue-600 text-white border-0"
                   asChild
                 >
-                  <Link href="/contact" data-testid="button-book-ai-consultation">
+                  <a href="https://calendly.com/khubaib-houseofdevelopers/new-meeting" target="_blank" rel="noopener noreferrer">
                     Book AI Consultation
                     <ArrowRight className="h-4 w-4 ml-1" />
-                  </Link>
+                  </a>
                 </Button>
                 <Button
                   variant="outline"
@@ -1007,7 +1007,7 @@ export default function AIServicesPage() {
         variant="gradient"
         title="Ready to Explore AI for Your Business?"
         description="Book a free consultation to discover how AI chatbots, agents, and automation can transform your operations and reduce costs."
-        primaryCTA={{ text: "Book AI Consultation", link: "/contact" }}
+        primaryCTA={{ text: "Book AI Consultation", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
         size="large"
       />
 
@@ -1103,7 +1103,7 @@ export default function AIServicesPage() {
         variant="bordered"
         title="Want Results Like These?"
         description="See how AI chatbots and agents can deliver measurable ROI for your business. Get a custom quote tailored to your needs."
-        primaryCTA={{ text: "Get Custom Quote", link: "/contact" }}
+        primaryCTA={{ text: "Get Custom Quote", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
         secondaryCTA={{ text: "Explore AI Chatbots", link: "/services/ai-services/ai-chatbots" }}
         size="medium"
       />
@@ -1301,7 +1301,7 @@ export default function AIServicesPage() {
         variant="gradient"
         title="Let's Build Your AI Solution"
         description="From chatbots to autonomous agents, we build AI solutions that transform your business. Get started with a free consultation today."
-        primaryCTA={{ text: "Book Free Consultation", link: "/contact" }}
+        primaryCTA={{ text: "Book Free Consultation", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
         secondaryCTA={{ text: "Call: +44 7429 917368", link: "tel:+447429917368" }}
         showContactInfo
         size="large"

@@ -539,11 +539,11 @@ export default function HireFullStackPage() {
               </div>
 
               <div className="flex gap-4 flex-wrap mt-8">
-                <Link href="/contact">
+                <a href="https://calendly.com/khubaib-houseofdevelopers/new-meeting" target="_blank" rel="noopener noreferrer">
                   <Button data-testid="cta-hire-fullstack">
                     Hire Full-Stack Developer <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
-                </Link>
+                </a>
                 <Button
                   variant="outline"
                   data-testid="cta-compare-stacks"
@@ -703,7 +703,7 @@ export default function HireFullStackPage() {
           variant="bordered"
           title="Not Sure Which Stack to Choose?"
           description="Book a free tech consultation and we'll recommend the best stack for your project"
-          primaryCTA={{ text: "Get Stack Recommendation", link: "/contact" }}
+          primaryCTA={{ text: "Get Stack Recommendation", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
           size="medium"
         />
       </section>
@@ -855,11 +855,11 @@ export default function HireFullStackPage() {
                       </div>
                     </div>
 
-                    <Link href="/contact">
+                    <a href="https://calendly.com/khubaib-houseofdevelopers/new-meeting" target="_blank" rel="noopener noreferrer">
                       <Button variant="outline" className="w-full" data-testid={`profile-cta-${i}`}>
                         Schedule Interview <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
-                    </Link>
+                    </a>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -874,7 +874,7 @@ export default function HireFullStackPage() {
           variant="gradient"
           title="Ready to Hire a Full-Stack Developer?"
           description="Tell us your stack and we'll match you with senior developers in 48 hours"
-          primaryCTA={{ text: "Hire Full-Stack Developer", link: "/contact" }}
+          primaryCTA={{ text: "Hire Full-Stack Developer", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
           secondaryCTA={{ text: "View Pricing", link: "#pricing-section" }}
           size="large"
         />
@@ -994,11 +994,11 @@ export default function HireFullStackPage() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <Link href="/contact">
+            <a href="https://calendly.com/khubaib-houseofdevelopers/new-meeting" target="_blank" rel="noopener noreferrer">
               <Button variant="outline" data-testid="cta-consultation-comparison">
                 Not sure? Book a consultation and we'll recommend <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
-            </Link>
+            </a>
           </motion.div>
         </div>
       </section>
@@ -1043,7 +1043,7 @@ export default function HireFullStackPage() {
           variant="gradient"
           title="Let's Find Your Perfect Full-Stack Developer"
           description="Book a free consultation to discuss your project and meet our developers"
-          primaryCTA={{ text: "Book Consultation", link: "/contact" }}
+          primaryCTA={{ text: "Book Consultation", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
           secondaryCTA={{ text: "Call: +44 7429 917368", link: "tel:+447429917368" }}
           showContactInfo={true}
           size="large"

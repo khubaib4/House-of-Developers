@@ -212,7 +212,7 @@ export default function ComponentDemo() {
             variant="default"
             title="Ready to Build Your Next Project?"
             description="Get a free consultation and project estimate from our expert team."
-            primaryCTA={{ text: "Book a Consultation", link: "/contact" }}
+            primaryCTA={{ text: "Book a Consultation", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
             secondaryCTA={{ text: "View Our Work", link: "/services" }}
             icon={Rocket}
           />
@@ -220,7 +220,7 @@ export default function ComponentDemo() {
             variant="gradient"
             title="Let's Build Something Amazing"
             description="Join 150+ businesses who trust us to deliver world-class digital products."
-            primaryCTA={{ text: "Start Your Project", link: "/contact" }}
+            primaryCTA={{ text: "Start Your Project", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
             secondaryCTA={{ text: "Learn More", link: "/services" }}
             showContactInfo
             size="large"
@@ -229,14 +229,14 @@ export default function ComponentDemo() {
             variant="bordered"
             title="Need a Quick Quote?"
             description="Tell us about your project and receive a detailed proposal within 24 hours."
-            primaryCTA={{ text: "Get a Quote", link: "/contact" }}
+            primaryCTA={{ text: "Get a Quote", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
             size="small"
           />
           <CTASection
             variant="minimal"
             title="Have Questions?"
             description="Our team is here to help. Reach out anytime."
-            primaryCTA={{ text: "Contact Us", link: "/contact" }}
+            primaryCTA={{ text: "Contact Us", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
             showContactInfo
             size="small"
           />

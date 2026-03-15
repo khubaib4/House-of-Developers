@@ -460,9 +460,9 @@ export default function MobileDevelopmentPage() {
               </div>
 
               <div className="flex gap-4 mt-8 flex-wrap">
-                <Link href="/contact">
+                <a href="https://calendly.com/khubaib-houseofdevelopers/new-meeting" target="_blank" rel="noopener noreferrer">
                   <Button data-testid="cta-discuss-app">Discuss Your App Idea</Button>
-                </Link>
+                </a>
                 <Button variant="outline" onClick={() => handleScrollTo("comparison")} data-testid="cta-compare-platforms">
                   Compare Platforms
                 </Button>
@@ -602,7 +602,7 @@ export default function MobileDevelopmentPage() {
             variant="bordered"
             title="Not Sure Which Platform to Choose?"
             description="Book a free consultation and we'll help you decide the best approach"
-            primaryCTA={{ text: "Get Expert Advice", link: "/contact" }}
+            primaryCTA={{ text: "Get Expert Advice", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
             size="medium"
           />
         </div>
@@ -709,7 +709,7 @@ export default function MobileDevelopmentPage() {
             variant="gradient"
             title="Ready to Build Your Mobile App?"
             description="From idea to App Store, we handle everything. Book a free consultation to discuss your app concept."
-            primaryCTA={{ text: "Discuss Your App Idea", link: "/contact" }}
+            primaryCTA={{ text: "Discuss Your App Idea", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
             secondaryCTA={{ text: "Call: +44 7429 917368", link: "tel:+447429917368" }}
             showContactInfo
             size="large"

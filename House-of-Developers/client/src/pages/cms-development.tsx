@@ -423,11 +423,11 @@ export default function CMSDevelopmentPage() {
                 >
                   Compare Platforms
                 </Button>
-                <Link href="/contact">
+                <a href="https://calendly.com/khubaib-houseofdevelopers/new-meeting" target="_blank" rel="noopener noreferrer">
                   <Button size="lg" variant="outline" data-testid="cta-book-consultation">
                     Book Consultation
                   </Button>
-                </Link>
+                </a>
               </div>
             </motion.div>
 
@@ -836,7 +836,7 @@ export default function CMSDevelopmentPage() {
             variant="gradient"
             title="Ready to Build Your CMS?"
             description="Book a free consultation and we'll help you choose the right platform and build a content management system that empowers your team."
-            primaryCTA={{ text: "Book Free Consultation", link: "/contact" }}
+            primaryCTA={{ text: "Book Free Consultation", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
             secondaryCTA={{ text: "Compare Platforms", link: "#platforms" }}
             showContactInfo
             size="large"

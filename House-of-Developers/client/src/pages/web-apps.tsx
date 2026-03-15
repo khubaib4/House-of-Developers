@@ -298,12 +298,12 @@ export default function WebAppsPage() {
               </div>
 
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                <Link href="/contact">
+                <a href="https://calendly.com/khubaib-houseofdevelopers/new-meeting" target="_blank" rel="noopener noreferrer">
                   <Button className="bg-gradient-to-r from-violet-600 to-purple-600 text-white h-14 px-8 rounded-xl">
                     Start Your Project
                     <ArrowRight className="h-4 w-4 ml-2" />
                   </Button>
-                </Link>
+                </a>
                 <Button variant="outline" className="h-14 px-8 rounded-xl">
                   See Our Work
                 </Button>
