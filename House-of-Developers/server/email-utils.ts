@@ -1,8 +1,4 @@
-import { Resend } from "resend";
-
-const resend = new Resend(process.env.RESEND_API_KEY);
-
-function escapeHtml(str) {
+export function escapeHtml(str: string): string {
   return str
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
@@ -11,7 +7,18 @@ function escapeHtml(str) {
     .replace(/'/g, "&#039;");
 }
 
-function buildContactEmailHtml(data) {
+interface ContactEmailData {
+  name: string;
+  email: string;
+  phone?: string;
+  company?: string;
+  service: string;
+  budget?: string;
+  message: string;
+  timeline: string;
+}
+
+export function buildContactEmailHtml(data: ContactEmailData): string {
   const name = escapeHtml(data.name);
   const email = escapeHtml(data.email);
   const phone = data.phone ? escapeHtml(data.phone) : "";
@@ -166,50 +173,4 @@ function buildContactEmailHtml(data) {
   </div>
 </body>
 </html>`;
-}
-
-export default async function handler(req, res) {
-  if (req.method !== "POST") {
-    return res.status(405).json({ message: "Method not allowed" });
-  }
-
-  if (!process.env.RESEND_API_KEY) {
-    console.error("RESEND_API_KEY is not configured");
-    return res.status(503).json({ message: "Email service is not configured" });
-  }
-
-  const { name, email, phone, company, service, budget, message, timeline } = req.body || {};
-
-  const errors = {};
-  if (!name || name.length < 2) errors.name = ["Name is required"];
-  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errors.email = ["Valid email is required"];
-  if (!service || service.length < 1) errors.service = ["Please select a service"];
-  if (!message || message.length < 20) errors.message = ["Please provide at least 20 characters"];
-  if (message && message.length > 500) errors.message = ["Message must be 500 characters or less"];
-  if (!timeline || timeline.length < 1) errors.timeline = ["Please select a timeline"];
-
-  if (Object.keys(errors).length > 0) {
-    return res.status(400).json({ message: "Validation failed", errors });
-  }
-
-  try {
-    const { data, error } = await resend.emails.send({
-      from: "House of Developers <onboarding@resend.dev>",
-      to: ["hello@houseofdevelopers.co.uk"],
-      replyTo: email,
-      subject: `New Inquiry from ${escapeHtml(name)}${service ? ` - ${escapeHtml(service)}` : ""}`,
-      html: buildContactEmailHtml({ name, email, phone, company, service, budget, message, timeline }),
-    });
-
-    if (error) {
-      console.error("Resend error:", error);
-      return res.status(500).json({ message: "Failed to send email" });
-    }
-
-    console.log("Contact form email sent:", data);
-    return res.status(200).json({ message: "Message sent successfully", data });
-  } catch (error) {
-    console.error("Email send error:", error);
-    return res.status(500).json({ message: "Failed to send email. Please try again." });
-  }
 }

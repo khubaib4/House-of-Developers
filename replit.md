@@ -57,7 +57,7 @@ Located in `client/src/components/`:
 - **Schema**: `shared/schema.ts` defines a `users` table and `contactFormSchema` Zod validator
 - **Migrations**: Drizzle Kit configured to output to `./migrations`
 - **Connection**: Expects `DATABASE_URL` environment variable
-- **Note**: The contact form currently just logs submissions; it doesn't persist to the database
+- **Note**: The contact form sends emails via Resend; submissions are not persisted to the database
 
 ### Build & Deploy
 - `npm run dev` — Development with HMR via Vite
@@ -99,6 +99,7 @@ Located in `client/src/components/`:
 - **Google Fonts** — Inter, DM Sans, Geist Mono, Fira Code, Architects Daughter (loaded via CDN in `index.html`)
 
 ### External Services
+- **Resend** — Email delivery service for the contact form. Sends professionally formatted HTML emails to `hello@houseofdevelopers.co.uk` when users submit the contact form. Configured via `RESEND_API_KEY` environment variable. Implementation in `server/routes.ts` (Express) and `api/contact.js` (Vercel serverless). Uses `onboarding@resend.dev` as sender — update to custom domain once DNS is verified in Resend dashboard.
 - **WordPress REST API** — Blog content management via headless WordPress (https://olive-lyrebird-997264.hostingersite.com/wp-json/wp/v2/). Posts, categories, tags, authors, and featured media are fetched client-side using TanStack React Query. WordPress API service lives in `client/src/lib/wordpress-api.ts`
 - **WhatsApp** — Direct communication links (phone number integration)
 - **Calendly** — Appointment scheduling (linked from CTAs)
