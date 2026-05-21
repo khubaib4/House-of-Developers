@@ -579,8 +579,8 @@ export default function HireMEVNPage() {
   return (
     <div>
       <SEO
-        title="Hire MEVN Stack Developers | Vue.js & Node.js UK"
-        description="Hire expert MEVN stack developers. MongoDB, Express, Vue.js, and Node.js specialists for modern web applications and interactive platforms."
+        title="Hire MEVN Developers London"
+        description="Hire MEVN stack developers in London. Vue.js, Node.js experts. Dedicated teams for London businesses. Free consultation."
         canonical="/services/hire-developers/full-stack/mevn"
       />
       <Breadcrumbs
@@ -605,7 +605,7 @@ export default function HireMEVNPage() {
               </Badge>
 
               <h1 className="text-4xl md:text-6xl font-bold mb-4" data-testid="hero-title">
-                Hire MEVN Stack Developers
+                Hire MEVN Stack Developers in London
               </h1>
 
               <p className="text-xl md:text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-teal-500">

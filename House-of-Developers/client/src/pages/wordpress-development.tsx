@@ -526,8 +526,8 @@ export default function WordPressDevelopment() {
   return (
     <>
       <SEO
-        title="WordPress Development UK | Custom Themes & Plugins"
-        description="WordPress development UK. Custom themes, plugins, WooCommerce stores. 40+ WordPress sites built. Fast, secure, SEO-optimized. Free consultation."
+        title="WordPress Developers London & Wembley"
+        description="WordPress developers in London & Wembley. Custom themes, plugins, WooCommerce. 50+ WordPress sites built. Free consultation."
         canonical="/services/web-development/cms/wordpress"
       />
       <section className="py-24">
@@ -547,7 +547,7 @@ export default function WordPressDevelopment() {
                 WordPress Development
               </Badge>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-                WordPress Development Services
+                WordPress Developers in London
               </h1>
               <p className="text-xl md:text-2xl font-semibold bg-gradient-to-r from-purple-600 to-violet-600 bg-clip-text text-transparent">
                 The World's Most Powerful CMS. Built Your Way.

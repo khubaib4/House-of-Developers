@@ -174,8 +174,8 @@ export default function ServicesPage() {
   return (
     <>
       <SEO
-        title="Our Services | Web, Mobile & AI Development UK"
-        description="Software development services: custom web apps, mobile development, AI integration, WordPress, Shopify, SEO. Expert team, fixed pricing. Free quote."
+        title="Software Services London & Wembley"
+        description="Software development services in London & Wembley. Web, mobile, AI solutions. Serving London businesses. Free consultation."
         canonical="/services"
       />
       <section className="py-20">
@@ -200,7 +200,7 @@ export default function ServicesPage() {
             animate="animate"
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            What We Build
+            Software Development Services in London
           </motion.h1>
 
           <motion.p

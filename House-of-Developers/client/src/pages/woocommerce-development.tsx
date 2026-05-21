@@ -519,8 +519,8 @@ export default function WooCommerceDevelopmentPage() {
   return (
     <div className="min-h-screen" data-testid="woocommerce-development-page">
       <SEO
-        title="WooCommerce Development UK | Custom Online Stores"
-        description="Custom WooCommerce development. Online stores, payment integrations, custom plugins, and performance optimization. Sell more with WooCommerce."
+        title="WooCommerce Developers London"
+        description="WooCommerce developers in London. Custom online stores, payment integration. E-commerce solutions for London. Free consultation."
         canonical="/services/web-development/cms/woocommerce"
       />
       {/* Hero */}
@@ -542,7 +542,7 @@ export default function WooCommerceDevelopmentPage() {
               </Badge>
 
               <h1 className="text-4xl md:text-6xl font-bold" data-testid="heading-woo-hero">
-                WooCommerce E-Commerce Development
+                WooCommerce Developers in London
               </h1>
 
               <p className="text-xl md:text-2xl font-semibold mt-4 bg-gradient-to-r to-pink-400 bg-clip-text text-transparent" style={{ backgroundImage: `linear-gradient(to right, ${WOO_COLOR}, #f472b6)` }}>

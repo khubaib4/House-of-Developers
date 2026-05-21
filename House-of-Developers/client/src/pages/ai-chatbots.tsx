@@ -636,8 +636,8 @@ export default function AIChatbotsPage() {
   return (
     <>
       <SEO
-        title="AI Chatbot Development | Custom GPT Chatbots UK"
-        description="AI chatbot development. Customer support automation with GPT-4. Handle 80%+ inquiries automatically. Reduce support costs by 85%. Free demo."
+        title="AI Chatbot Developers London"
+        description="AI chatbot developers in London. Custom GPT chatbots, automation, integration. Built for London businesses. Free consultation."
         canonical="/services/ai-services/ai-chatbots"
       />
       <Breadcrumbs
@@ -667,7 +667,7 @@ export default function AIChatbotsPage() {
               </Badge>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold" data-testid="heading-chatbot-hero">
-                AI Chatbot Development Services
+                AI Chatbot Developers in London
               </h1>
 
               <p

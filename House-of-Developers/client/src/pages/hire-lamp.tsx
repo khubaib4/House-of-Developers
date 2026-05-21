@@ -658,8 +658,8 @@ export default function HireLAMPPage() {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Hire LAMP Stack Developers | PHP & MySQL UK"
-        description="Hire expert LAMP stack developers. Linux, Apache, MySQL, and PHP specialists for robust web applications, CMS customization, and APIs."
+        title="Hire LAMP Developers London"
+        description="Hire LAMP stack developers in London. PHP, MySQL experts. Dedicated teams for London businesses. Free consultation."
         canonical="/services/hire-developers/full-stack/lamp"
       />
       <section className="py-24" data-testid="section-hero">
@@ -686,7 +686,7 @@ export default function HireLAMPPage() {
               </Badge>
 
               <h1 className="text-4xl md:text-6xl font-bold mb-4" data-testid="hero-title">
-                Hire LAMP Stack Developers
+                Hire LAMP Stack Developers in London
               </h1>
 
               <p className="text-xl md:text-2xl font-semibold mb-6">

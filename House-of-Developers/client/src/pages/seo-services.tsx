@@ -342,8 +342,8 @@ export default function SEOServicesPage() {
   return (
     <>
       <SEO
-        title="SEO Services UK | Technical SEO & Content Strategy"
-        description="SEO services UK. Technical SEO, on-page optimization, link building. Increase organic traffic 3-5x. Proven strategies. Free SEO audit included."
+        title="SEO Services London & Croydon"
+        description="SEO services in London & Croydon. Technical SEO, content strategy. Rank higher in London searches. Free SEO audit."
         canonical="/services/seo-services"
       />
       <section className="py-24">
@@ -367,7 +367,7 @@ export default function SEOServicesPage() {
               </span>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-                SEO Services That Get You Found on Google
+                SEO Services in London
               </h1>
 
               <p className="text-xl md:text-2xl font-semibold bg-gradient-to-r from-emerald-600 to-green-500 bg-clip-text text-transparent">

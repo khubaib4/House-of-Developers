@@ -416,8 +416,8 @@ export default function MobileDevelopmentPage() {
   return (
     <div className="min-h-screen" data-testid="mobile-development-page">
       <SEO
-        title="Mobile App Development UK | iOS, Android & Hybrid"
-        description="Mobile app development UK. iOS, Android, cross-platform apps. React Native, Flutter. 50+ mobile apps delivered. Launch-ready in 8-12 weeks."
+        title="App Developers London & Wembley"
+        description="Mobile app developers in London & Wembley. iOS, Android, hybrid apps. 100+ apps built for London businesses. Free consultation."
         canonical="/services/mobile-development"
       />
       {/* Hero */}
@@ -435,7 +435,7 @@ export default function MobileDevelopmentPage() {
               </Badge>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold" data-testid="heading-mobile-hero">
-                Mobile App Development Services
+                Mobile App Development Agency in London
               </h1>
 
               <p className="text-xl md:text-2xl font-semibold mt-4 bg-clip-text text-transparent" style={{ backgroundImage: `linear-gradient(to right, ${MOBILE_COLOR}, #a855f7)` }}>

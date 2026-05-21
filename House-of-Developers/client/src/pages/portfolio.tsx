@@ -222,8 +222,8 @@ export default function PortfolioPage() {
   return (
     <div>
       <SEO
-        title="Our Portfolio | Projects We've Built"
-        description="Explore our portfolio of 8 live projects. SaaS platforms, e-commerce stores, AI solutions, and WordPress sites built by House of Developers."
+        title="Our Portfolio - London Projects"
+        description="Our portfolio of projects built for London businesses. Web apps, mobile apps, e-commerce platforms. View our work. Free consultation."
         canonical="/portfolio"
         jsonLd={{
           "@context": "https://schema.org",
@@ -257,7 +257,7 @@ export default function PortfolioPage() {
             variants={fadeUp}
             className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6"
           >
-            Our Portfolio
+            Our London Portfolio & Projects
           </motion.h1>
           <motion.p
             variants={fadeUp}

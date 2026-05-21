@@ -359,8 +359,8 @@ export default function CMSDevelopmentPage() {
   return (
     <>
       <SEO
-        title="CMS Development UK | WordPress, Shopify & More"
-        description="Expert CMS development services. WordPress, Shopify, Wix, WooCommerce, and Webflow. Custom themes, plugins, and integrations. Free consultation."
+        title="CMS Development London & Wembley"
+        description="CMS development in London & Wembley. WordPress, Shopify, WooCommerce experts. Serving London businesses. Free consultation."
         canonical="/services/cms-development"
       />
       <Breadcrumbs
@@ -390,9 +390,9 @@ export default function CMSDevelopmentPage() {
               </Badge>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                Content Management Systems That{" "}
+                CMS Development{" "}
                 <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                  Empower Your Team
+                  Services in London
                 </span>
               </h1>
 

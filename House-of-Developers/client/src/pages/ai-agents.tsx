@@ -435,8 +435,8 @@ export default function AIAgentsPage() {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="AI Agent Development | Autonomous AI Agents UK"
-        description="AI agent development. Intelligent automation for business processes. Custom AI workflows, data analysis, decision-making. Built with latest AI models."
+        title="AI Agent Developers London & Wembley"
+        description="AI agent developers in London & Wembley. Autonomous AI solutions, automation. Serving London businesses. Free consultation."
         canonical="/services/ai-services/ai-agents"
       />
       <Breadcrumbs
@@ -465,7 +465,7 @@ export default function AIAgentsPage() {
               </Badge>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight" data-testid="hero-title">
-                Autonomous AI Agent Development
+                AI Agent Developers in London
               </h1>
 
               <p className="text-2xl md:text-3xl font-bold mt-4 bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent" data-testid="hero-tagline">

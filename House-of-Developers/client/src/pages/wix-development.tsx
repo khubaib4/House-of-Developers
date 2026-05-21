@@ -567,8 +567,8 @@ export default function WixDevelopment() {
   return (
     <>
       <SEO
-        title="Wix Development UK | Custom Wix Websites"
-        description="Expert Wix development services. Custom designs, Velo integrations, e-commerce setups, and SEO optimization. Beautiful, fast Wix websites."
+        title="Wix Developers London & Harrow"
+        description="Wix developers in London & Harrow. Custom Wix websites, design, optimization. Serving London businesses. Free consultation."
         canonical="/services/web-development/cms/wix"
       />
       <section className="py-24">
@@ -588,7 +588,7 @@ export default function WixDevelopment() {
                 Wix Development
               </Badge>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-                Wix Website Development Services
+                Wix Developers in London
               </h1>
               <p className="text-xl md:text-2xl font-semibold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
                 Beautiful Websites. Zero Coding. Maximum Impact.

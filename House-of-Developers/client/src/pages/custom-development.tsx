@@ -849,8 +849,8 @@ export default function CustomDevelopmentPage() {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Custom Software Development UK | Bespoke Solutions"
-        description="Bespoke web development tailored to your business. Custom features, integrations, and workflows. No templates. Built exactly how you need it."
+        title="Custom Software London & Croydon"
+        description="Custom software development in London & Croydon. Bespoke solutions for London businesses. 150+ projects delivered. Free consultation."
         canonical="/services/custom-development"
       />
       {/* HERO */}
@@ -872,7 +872,7 @@ export default function CustomDevelopmentPage() {
               </Badge>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground">
-                Custom Software Development
+                Custom Software Development in London
               </h1>
 
               <p

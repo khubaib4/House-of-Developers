@@ -55,8 +55,8 @@ export default function BlogPage() {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Tech Blog | Web Development Guides & Tutorials"
-        description="Tech tutorials and development guides. Learn React, Node.js, WordPress, AI integration, and SEO. Written by experienced developers for developers."
+        title="Web Development Blog London"
+        description="Web development blog for London developers. Tutorials, guides, tech insights. Free resources for London tech community."
         canonical="/blog"
       />
       <section className="py-20 md:py-24 text-center">
@@ -65,7 +65,7 @@ export default function BlogPage() {
             Blog
           </Badge>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-            Tech Guides & Tutorials
+            Web Development Blog for London Developers
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Web development tutorials, coding guides, and tech insights. Learn how to build better software.

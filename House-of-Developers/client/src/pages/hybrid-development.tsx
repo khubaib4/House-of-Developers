@@ -374,8 +374,8 @@ export default function HybridDevelopmentPage() {
   return (
     <div className="min-h-screen" data-testid="hybrid-development-page">
       <SEO
-        title="Hybrid App Development | React Native & Flutter UK"
-        description="Cross-platform mobile app development. React Native and Flutter. One codebase for iOS and Android. 40% faster delivery, same native performance."
+        title="Hybrid App Developers London"
+        description="Hybrid app developers in London. React Native, Flutter cross-platform apps. Built for London businesses. Free consultation."
         canonical="/services/mobile-development/hybrid"
       />
       {/* Hero */}
@@ -394,7 +394,7 @@ export default function HybridDevelopmentPage() {
               </Badge>
 
               <h1 className="text-4xl md:text-6xl font-bold" data-testid="heading-hybrid-hero">
-                Cross-Platform Mobile App Development
+                Hybrid App Developers in London
               </h1>
 
               <p className="text-xl md:text-2xl font-semibold mt-4 bg-clip-text text-transparent" style={{ backgroundImage: `linear-gradient(to right, #3b82f6, #22c55e)` }}>

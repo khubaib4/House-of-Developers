@@ -834,8 +834,8 @@ export default function WebDevelopmentPage() {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Web Development Services UK | Custom Websites"
-        description="Custom web development services UK. React, Next.js, full-stack applications. Fast, secure, scalable. 100+ web projects delivered. Free consultation."
+        title="Web Developers London & Wembley"
+        description="Professional web developers in London & Wembley. Custom websites, web apps, e-commerce. Serving London businesses. Free consultation."
         canonical="/services/web-development"
       />
       {/* HERO */}
@@ -855,7 +855,7 @@ export default function WebDevelopmentPage() {
               </Badge>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground">
-                Web Development Services
+                Web Development Agency in London
               </h1>
 
               <p className="text-xl md:text-2xl font-semibold mt-4 bg-clip-text text-transparent" style={{ backgroundImage: `linear-gradient(to right, ${WEB_DEV_COLOR}, #a855f7)` }}>

@@ -411,8 +411,8 @@ export default function AndroidDevelopmentPage() {
   return (
     <div className="min-h-screen" data-testid="android-development-page">
       <SEO
-        title="Android App Development UK | Kotlin & Jetpack"
-        description="Android app development. Kotlin, Jetpack Compose, Material Design. Google Play optimization. Native Android apps built by expert developers."
+        title="Android Developers London & Croydon"
+        description="Android developers in London & Croydon. Kotlin, Jetpack Compose apps. Built for London businesses. Free consultation."
         canonical="/services/mobile-development/android"
       />
       {/* Hero */}
@@ -431,7 +431,7 @@ export default function AndroidDevelopmentPage() {
               </Badge>
 
               <h1 className="text-4xl md:text-6xl font-bold" data-testid="heading-android-hero">
-                Native Android App Development
+                Android App Developers in London
               </h1>
 
               <p className="text-xl md:text-2xl font-semibold mt-4 bg-clip-text text-transparent" style={{ backgroundImage: `linear-gradient(to right, ${ANDROID_COLOR}, #4285F4)` }}>

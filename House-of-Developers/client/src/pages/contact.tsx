@@ -125,8 +125,8 @@ export default function ContactPage() {
   return (
     <div>
       <SEO
-        title="Contact Us | Free Project Consultation"
-        description="Contact House of Developers for a free consultation. Discuss your project, get honest advice, clear pricing. Call +44 7429 917368 or book online today."
+        title="Contact Us - Free Consultation"
+        description="Contact House of Developers in London. Serving London, Wembley, Croydon, Harrow & Ealing. Free project consultation & quote."
         canonical="/contact"
         jsonLd={{
           "@context": "https://schema.org",
@@ -151,9 +151,9 @@ export default function ContactPage() {
               className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mt-6"
               data-testid="text-contact-title"
             >
-              Let's Build Something{" "}
+              Contact Our{" "}
               <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                Great Together
+                London Development Team
               </span>
             </h1>
             <p className="text-xl text-muted-foreground mt-4 max-w-2xl mx-auto">

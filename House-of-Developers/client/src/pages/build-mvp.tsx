@@ -182,8 +182,8 @@ export default function BuildMVPPage() {
   return (
     <>
       <SEO
-        title="Build Your MVP in 30 Days | Startup MVP Development"
-        description="Launch your MVP in 30 days. Expert product development with React, Node.js, and modern tech. From idea to launch-ready product. Free consultation."
+        title="MVP Development London & Croydon"
+        description="MVP development in London & Croydon. Launch in 30 days. Perfect for London startups. 150+ MVPs delivered. Free consultation."
         canonical="/services/build-mvp"
       />
       <Breadcrumbs
@@ -224,7 +224,7 @@ export default function BuildMVPPage() {
                 className="text-4xl sm:text-5xl font-bold tracking-tight leading-tight"
                 data-testid="text-mvp-title"
               >
-                Launch Your MVP in 30 Days
+                MVP Development Agency in London
               </h1>
               <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
                 Stop waiting. Stop overthinking. We build launch-ready MVPs in

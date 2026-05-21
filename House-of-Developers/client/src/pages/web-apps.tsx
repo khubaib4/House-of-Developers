@@ -229,8 +229,8 @@ export default function WebAppsPage() {
   return (
     <>
       <SEO
-        title="Web Application Development UK | SaaS & Portals"
-        description="Custom web application development. SaaS platforms, dashboards, internal tools. React, Node.js, PostgreSQL. Scalable architecture. Free quote."
+        title="Web App Developers London & Ealing"
+        description="Web application developers in London & Ealing. SaaS platforms, portals, dashboards. Built for London businesses. Free consultation."
         canonical="/services/web-apps"
       />
       {/* HERO SECTION */}
@@ -256,7 +256,7 @@ export default function WebAppsPage() {
               </span>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-                Web Application Development
+                Web Application Developers in London
               </h1>
 
               <p className="text-xl md:text-2xl font-semibold bg-gradient-to-r from-violet-600 to-purple-500 bg-clip-text text-transparent">

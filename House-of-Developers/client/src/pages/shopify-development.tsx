@@ -575,8 +575,8 @@ export default function ShopifyDevelopment() {
   return (
     <>
       <SEO
-        title="Shopify Development UK | Custom Stores & Themes"
-        description="Shopify development services. Custom themes, Shopify Plus, app development. 30+ Shopify stores built. Conversion-focused design. Free quote."
+        title="Shopify Developers London & Croydon"
+        description="Shopify developers in London & Croydon. Custom stores, themes, apps. E-commerce experts for London businesses. Free consultation."
         canonical="/services/web-development/cms/shopify"
       />
       <section className="py-24">
@@ -596,7 +596,7 @@ export default function ShopifyDevelopment() {
                 Shopify Development
               </Badge>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-                Shopify Development Services
+                Shopify Developers in London
               </h1>
               <p className="text-xl md:text-2xl font-semibold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
                 Build, Grow, and Scale Your Online Store

@@ -463,8 +463,8 @@ export default function HireFullStackPage() {
   return (
     <div>
       <SEO
-        title="Hire Full-Stack Developers | MERN, MEAN & More"
-        description="Hire full-stack developers. React, Node.js, PostgreSQL expertise. End-to-end application development. Monthly contracts from £3,000. Start immediately."
+        title="Hire Full-Stack Developers London"
+        description="Hire full-stack developers in London. MERN, MEAN, MEVN, LAMP stacks. Dedicated teams for London businesses. Free consultation."
         canonical="/services/hire-developers/full-stack"
       />
       <Breadcrumbs
@@ -489,7 +489,7 @@ export default function HireFullStackPage() {
               </Badge>
 
               <h1 className="text-4xl md:text-6xl font-bold mb-4" data-testid="hero-title">
-                Hire Full-Stack Developers
+                Hire Full-Stack Developers in London
               </h1>
 
               <p

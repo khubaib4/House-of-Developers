@@ -412,8 +412,8 @@ export default function IOSDevelopmentPage() {
   return (
     <div className="min-h-screen" data-testid="ios-development-page">
       <SEO
-        title="iOS App Development UK | Swift & SwiftUI"
-        description="iOS app development. Swift, SwiftUI, native performance. App Store optimization. Expert iOS developers. Launch-ready apps in 10-14 weeks."
+        title="iOS Developers London & Wembley"
+        description="iOS developers in London & Wembley. Swift, SwiftUI, iPhone & iPad apps. 50+ iOS apps built for London. Free consultation."
         canonical="/services/mobile-development/ios"
       />
       {/* Hero */}
@@ -432,7 +432,7 @@ export default function IOSDevelopmentPage() {
               </Badge>
 
               <h1 className="text-4xl md:text-6xl font-bold" data-testid="heading-ios-hero">
-                Native iOS App Development
+                iOS App Developers in London
               </h1>
 
               <p className="text-xl md:text-2xl font-semibold mt-4 bg-clip-text text-transparent" style={{ backgroundImage: `linear-gradient(to right, ${IOS_COLOR}, #a855f7)` }}>

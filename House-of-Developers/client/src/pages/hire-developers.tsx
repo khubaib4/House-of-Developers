@@ -546,8 +546,8 @@ export default function HireDevelopersPage() {
   return (
     <>
       <SEO
-        title="Hire Dedicated Developers UK | Remote Dev Teams"
-        description="Hire dedicated developers. Full-stack, frontend, backend specialists. Monthly contracts, part-time or full-time. Expert developers, competitive rates."
+        title="Hire Developers London & Wembley"
+        description="Hire dedicated developers in London & Wembley. Full-stack, frontend, backend teams. Serving London businesses. Free consultation."
         canonical="/services/hire-developers"
       />
       {/* HERO */}
@@ -569,7 +569,7 @@ export default function HireDevelopersPage() {
               </Badge>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight" data-testid="text-hire-title">
-                Hire Vetted Developers for Your Projects
+                Hire Developers in London
               </h1>
 
               <p className="mt-2 text-xl md:text-2xl font-semibold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">

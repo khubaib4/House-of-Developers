@@ -136,8 +136,8 @@ export default function Home() {
   return (
     <>
       <SEO
-        title="Custom Software Development Agency UK | Web, Mobile & AI"
-        description="Custom software development agency UK. We build web applications, mobile apps, and AI solutions. 150+ projects delivered, 98% satisfaction. Free consultation."
+        title="Software Development London & Wembley"
+        description="Custom software development in London, Wembley & Croydon. Web apps, mobile apps, AI solutions. 150+ projects delivered. Free consultation."
         canonical="/"
         jsonLd={{
           "@context": "https://schema.org",
@@ -165,7 +165,7 @@ export default function Home() {
               </div>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                We Build Software That Grows Your Business
+                Software Development Agency in London
               </h1>
 
               <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-4">

@@ -807,8 +807,8 @@ export default function AIServicesPage() {
   return (
     <>
       <SEO
-        title="AI Development Services | Chatbots & AI Agents UK"
-        description="AI development services. ChatGPT integration, AI chatbots, automation, custom ML models. Built with GPT-4, Claude. Reduce costs, improve efficiency."
+        title="AI Development London & Wembley"
+        description="AI development services in London & Wembley. Chatbots, AI agents, machine learning. Serving London businesses. Free consultation."
         canonical="/services/ai-services"
       />
       {/* HERO SECTION */}
@@ -839,7 +839,7 @@ export default function AIServicesPage() {
                 className="text-4xl sm:text-5xl font-bold tracking-tight leading-tight"
                 data-testid="text-ai-title"
               >
-                AI Development & Integration Services
+                AI Development Services in London
               </h1>
 
               <p

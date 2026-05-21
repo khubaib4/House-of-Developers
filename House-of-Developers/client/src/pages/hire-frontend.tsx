@@ -478,8 +478,8 @@ export default function HireFrontendPage() {
   return (
     <div>
       <SEO
-        title="Hire Frontend Developers | React & Next.js UK"
-        description="Hire frontend developers. React, TypeScript, Next.js specialists. Beautiful, fast, responsive interfaces. Monthly contracts. Available immediately."
+        title="Hire Frontend Developers London"
+        description="Hire frontend developers in London. React, Next.js, Vue experts. Dedicated teams for London businesses. Free consultation."
         canonical="/services/hire-developers/frontend"
       />
       <Breadcrumbs
@@ -504,7 +504,7 @@ export default function HireFrontendPage() {
               </Badge>
 
               <h1 className="text-4xl md:text-6xl font-bold mb-4" data-testid="hero-title">
-                Hire Frontend Developers
+                Hire Frontend Developers in London
               </h1>
 
               <p className="text-xl md:text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-pink-500">

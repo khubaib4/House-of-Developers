@@ -634,8 +634,8 @@ export default function HireMEANPage() {
   return (
     <div>
       <SEO
-        title="Hire MEAN Stack Developers | Angular & Node.js UK"
-        description="Hire expert MEAN stack developers. MongoDB, Express, Angular, and Node.js specialists for enterprise web applications and dashboards."
+        title="Hire MEAN Developers London"
+        description="Hire MEAN stack developers in London. Angular, Node.js experts. Dedicated teams for London businesses. Free consultation."
         canonical="/services/hire-developers/full-stack/mean"
       />
       <Breadcrumbs
@@ -660,7 +660,7 @@ export default function HireMEANPage() {
               </Badge>
 
               <h1 className="text-4xl md:text-6xl font-bold mb-4" data-testid="hero-title">
-                Hire MEAN Stack Developers
+                Hire MEAN Stack Developers in London
               </h1>
 
               <p className="text-xl md:text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-blue-500">

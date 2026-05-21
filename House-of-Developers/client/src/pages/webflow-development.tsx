@@ -529,8 +529,8 @@ export default function WebflowDevelopmentPage() {
   return (
     <div className="min-h-screen" data-testid="webflow-development-page">
       <SEO
-        title="Webflow Development UK | Custom Webflow Sites"
-        description="Professional Webflow development. Custom designs, CMS integrations, animations, and responsive websites. Pixel-perfect Webflow builds."
+        title="Webflow Developers London & Ealing"
+        description="Webflow developers in London & Ealing. Custom Webflow sites, CMS setup, animations. Serving London businesses. Free consultation."
         canonical="/services/web-development/cms/webflow"
       />
       {/* Hero */}
@@ -554,7 +554,7 @@ export default function WebflowDevelopmentPage() {
               </Badge>
 
               <h1 className="text-4xl md:text-6xl font-bold" data-testid="heading-webflow-hero">
-                Webflow Website Development Services
+                Webflow Developers in London
               </h1>
 
               <p className="text-xl md:text-2xl font-semibold mt-4 bg-clip-text text-transparent" style={{ backgroundImage: `linear-gradient(to right, ${WF_COLOR}, #818cf8)` }}>

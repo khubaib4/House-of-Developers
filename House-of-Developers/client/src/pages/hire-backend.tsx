@@ -525,8 +525,8 @@ export default function HireBackendPage() {
   return (
     <div>
       <SEO
-        title="Hire Backend Developers | Node.js & Python UK"
-        description="Hire backend developers. Node.js, Python, PostgreSQL, API development. Scalable architecture, secure systems. Monthly contracts. Start this week."
+        title="Hire Backend Developers London"
+        description="Hire backend developers in London. Node.js, Python, PHP experts. Dedicated teams for London businesses. Free consultation."
         canonical="/services/hire-developers/backend"
       />
       <Breadcrumbs
@@ -551,7 +551,7 @@ export default function HireBackendPage() {
               </Badge>
 
               <h1 className="text-4xl md:text-6xl font-bold mb-4" data-testid="hero-title">
-                Hire Backend Developers
+                Hire Backend Developers in London
               </h1>
 
               <p className="text-xl md:text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-blue-500">

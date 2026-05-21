@@ -141,8 +141,8 @@ export default function AboutPage() {
   return (
     <div>
       <SEO
-        title="About Us | UK Digital Product Agency"
-        description="Learn about House of Developers. Building custom software since 2018, 150+ projects delivered, 40+ happy clients. Our story, mission, and values."
+        title="About Us - London Software Agency"
+        description="About House of Developers - London-based software agency serving businesses across London, Wembley, Croydon & Harrow. Est. 2018."
         canonical="/about"
       />
       {/* Hero Section */}
@@ -163,7 +163,7 @@ export default function AboutPage() {
             variants={fadeUp}
             className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6"
           >
-            Building Software That Matters
+            About Our London Software Agency
           </motion.h1>
           <motion.p
             variants={fadeUp}
