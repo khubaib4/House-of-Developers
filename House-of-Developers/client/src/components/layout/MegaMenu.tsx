@@ -46,7 +46,7 @@ const serviceCategories: ServiceCategory[] = [
     subServices: [
       { name: "Hybrid Apps", href: "/services/mobile-development/hybrid", popular: true },
       { name: "iOS Development", href: "/services/mobile-development/ios" },
-      { name: "Android Development", href: "/services/mobile-development/kotlin" },
+      { name: "Android Development", href: "/services/mobile-development/android" },
     ],
   },
   {

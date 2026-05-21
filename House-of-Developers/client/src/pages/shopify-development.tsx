@@ -637,7 +637,7 @@ export default function ShopifyDevelopment() {
                     Start Your Shopify Store
                   </Button>
                 </a>
-                <Link href="/case-studies">
+                <Link href="/portfolio">
                   <Button size="lg" variant="outline">
                     View Shopify Examples
                   </Button>
@@ -878,7 +878,7 @@ export default function ShopifyDevelopment() {
             title="Is Shopify Plus Right For You?"
             description="Book a call to evaluate if Shopify Plus makes sense for your business."
             primaryCTA={{ text: "Discuss Shopify Plus", link: "https://calendly.com/khubaib-houseofdevelopers/new-meeting" }}
-            secondaryCTA={{ text: "View Store Examples", link: "/case-studies" }}
+            secondaryCTA={{ text: "View Store Examples", link: "/portfolio" }}
             size="large"
           />
         </div>

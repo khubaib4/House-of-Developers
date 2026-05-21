@@ -3,6 +3,13 @@
   "outputDirectory": "dist/public",
   "framework": null,
   "installCommand": "npm install",
+  "redirects": [
+    {
+      "source": "/case-studies",
+      "destination": "/portfolio",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api/$1" },
     { "source": "/(.*)", "destination": "/index.html" }

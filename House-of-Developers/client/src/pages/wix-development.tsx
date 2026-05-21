@@ -629,7 +629,7 @@ export default function WixDevelopment() {
                     Start Your Wix Project
                   </Button>
                 </a>
-                <Link href="/case-studies">
+                <Link href="/portfolio">
                   <Button size="lg" variant="outline">
                     View Wix Examples
                   </Button>
@@ -784,7 +784,7 @@ export default function WixDevelopment() {
             variant="gradient"
             title="See Wix in Action"
             description="View examples of Wix websites we've built or book a demo to see what's possible."
-            primaryCTA={{ text: "View Wix Examples", link: "/case-studies" }}
+            primaryCTA={{ text: "View Wix Examples", link: "/portfolio" }}
             secondaryCTA={{ text: "Book Demo Call", link: "/contact" }}
             size="large"
           />

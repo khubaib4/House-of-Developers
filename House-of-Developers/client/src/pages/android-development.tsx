@@ -413,7 +413,7 @@ export default function AndroidDevelopmentPage() {
       <SEO
         title="Android App Development UK | Kotlin & Jetpack"
         description="Android app development. Kotlin, Jetpack Compose, Material Design. Google Play optimization. Native Android apps built by expert developers."
-        canonical="/services/mobile-development/kotlin"
+        canonical="/services/mobile-development/android"
       />
       {/* Hero */}
       <section className="py-16 md:py-24" data-testid="section-android-hero">

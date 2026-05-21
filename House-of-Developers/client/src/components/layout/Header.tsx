@@ -22,7 +22,7 @@ interface MobileServiceLink {
 const navItems: NavItem[] = [
   { label: "Home", href: "/", isRoute: true },
   { label: "Services", href: "/services", isRoute: true, hasMegaMenu: true },
-  { label: "Case Studies", href: "/case-studies", isRoute: true },
+  { label: "Portfolio", href: "/portfolio", isRoute: true },
   { label: "Blog", href: "/blog", isRoute: true },
   { label: "About", href: "/about", isRoute: true },
   { label: "Contact", href: "/contact", isRoute: true },

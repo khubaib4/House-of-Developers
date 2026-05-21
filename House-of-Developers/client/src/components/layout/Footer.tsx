@@ -17,8 +17,8 @@ import { Button } from "@/components/ui/button";
 import { CALENDLY_URL } from "@/lib/constants";
 
 const webDevLinks = [
-  { label: "Custom Development", href: "/services/web-development/custom-development" },
-  { label: "Web Applications", href: "/services/web-development/web-applications" },
+  { label: "Custom Development", href: "/services/custom-development" },
+  { label: "Web Applications", href: "/services/web-apps" },
   { label: "WordPress", href: "/services/web-development/cms/wordpress" },
   { label: "Shopify", href: "/services/web-development/cms/shopify" },
   { label: "Wix", href: "/services/web-development/cms/wix" },
@@ -28,13 +28,13 @@ const webDevLinks = [
 const serviceLinks = [
   { label: "Mobile Development", href: "/services/mobile-development" },
   { label: "AI Services", href: "/services/ai-services" },
-  { label: "SEO Services", href: "/services/seo" },
+  { label: "SEO Services", href: "/services/seo-services" },
   { label: "Hire Developers", href: "/services/hire-developers" },
 ];
 
 const companyLinks = [
   { label: "About Us", href: "/about" },
-  { label: "Case Studies", href: "/case-studies" },
+  { label: "Portfolio", href: "/portfolio" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
   { label: "Services", href: "/services" },

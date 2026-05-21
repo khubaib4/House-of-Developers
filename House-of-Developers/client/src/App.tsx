@@ -37,13 +37,16 @@ import HireLAMPPage from "@/pages/hire-lamp";
 import AIChatbotsPage from "@/pages/ai-chatbots";
 import AIAgentsPage from "@/pages/ai-agents";
 import AboutPage from "@/pages/about";
-import CaseStudiesPage from "@/pages/case-studies";
+import PortfolioPage from "@/pages/portfolio";
 import BlogPage from "@/pages/blog";
 import BlogPostPage from "@/pages/blog-post";
 import ComponentDemo from "@/pages/component-demo";
+import PrivacyPage from "@/pages/privacy";
+import TermsPage from "@/pages/terms";
+import CookiesPage from "@/pages/cookies";
 import { StickyCallButton } from "@/components/ui/StickyCallButton";
 import { useEffect } from "react";
-import { useLocation } from "wouter";
+import { useLocation, Redirect } from "wouter";
 
 function ScrollToTop() {
   const [location] = useLocation();
@@ -65,7 +68,10 @@ function Router() {
       <Route path="/services/mobile-development" component={MobileDevelopmentPage} />
       <Route path="/services/mobile-development/hybrid" component={HybridDevelopmentPage} />
       <Route path="/services/mobile-development/ios" component={IOSDevelopmentPage} />
-      <Route path="/services/mobile-development/kotlin" component={AndroidDevelopmentPage} />
+      <Route path="/services/mobile-development/kotlin">
+        {() => <Redirect to="/services/mobile-development/android" />}
+      </Route>
+      <Route path="/services/mobile-development/android" component={AndroidDevelopmentPage} />
       <Route path="/services/seo-services" component={SEOServicesPage} />
       <Route path="/services/web-development" component={WebDevelopmentPage} />
       <Route path="/services/custom-development" component={CustomDevelopmentPage} />
@@ -85,11 +91,15 @@ function Router() {
       <Route path="/services/hire-developers/full-stack/mevn" component={HireMEVNPage} />
       <Route path="/services/hire-developers/full-stack/lamp" component={HireLAMPPage} />
       <Route path="/about" component={AboutPage} />
-      <Route path="/case-studies" component={CaseStudiesPage} />
+      <Route path="/portfolio" component={PortfolioPage} />
+      <Route path="/case-studies">{() => <Redirect to="/portfolio" />}</Route>
       <Route path="/blog" component={BlogPage} />
       <Route path="/blog/:slug" component={BlogPostPage} />
       <Route path="/demo" component={ComponentDemo} />
       <Route path="/contact" component={ContactPage} />
+      <Route path="/privacy" component={PrivacyPage} />
+      <Route path="/terms" component={TermsPage} />
+      <Route path="/cookies" component={CookiesPage} />
       <Route component={NotFound} />
     </Switch>
   );

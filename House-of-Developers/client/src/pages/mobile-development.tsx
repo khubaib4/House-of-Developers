@@ -175,7 +175,7 @@ const platforms = [
       "Google services integration",
     ],
     time: "8-16 weeks",
-    link: "/services/mobile-development/kotlin",
+    link: "/services/mobile-development/android",
     cta: "Explore Android",
   },
 ];
