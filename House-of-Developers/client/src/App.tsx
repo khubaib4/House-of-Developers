@@ -1,4 +1,5 @@
-import { Switch, Route } from "wouter";
+import { lazy, Suspense, useEffect } from "react";
+import { Switch, Route, useLocation, Redirect } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -6,47 +7,47 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "@/components/layout/ThemeProvider";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import NotFound from "@/pages/not-found";
-import Home from "@/pages/home";
-import ServicesPage from "@/pages/services";
-import BuildMVPPage from "@/pages/build-mvp";
-import ContactPage from "@/pages/contact";
-import AIServicesPage from "@/pages/ai-services";
-import MobileDevelopmentPage from "@/pages/mobile-development";
-import SEOServicesPage from "@/pages/seo-services";
-import WebDevelopmentPage from "@/pages/web-development";
-import CustomDevelopmentPage from "@/pages/custom-development";
-import WebAppsPage from "@/pages/web-apps";
-import CMSDevelopmentPage from "@/pages/cms-development";
-import HireDevelopersPage from "@/pages/hire-developers";
-import WordPressDevelopmentPage from "@/pages/wordpress-development";
-import ShopifyDevelopmentPage from "@/pages/shopify-development";
-import WixDevelopmentPage from "@/pages/wix-development";
-import WooCommerceDevelopmentPage from "@/pages/woocommerce-development";
-import WebflowDevelopmentPage from "@/pages/webflow-development";
-import HybridDevelopmentPage from "@/pages/hybrid-development";
-import IOSDevelopmentPage from "@/pages/ios-development";
-import AndroidDevelopmentPage from "@/pages/android-development";
-import HireFullStackPage from "@/pages/hire-fullstack";
-import HireFrontendPage from "@/pages/hire-frontend";
-import HireBackendPage from "@/pages/hire-backend";
-import HireMERNPage from "@/pages/hire-mern";
-import HireMEANPage from "@/pages/hire-mean";
-import HireMEVNPage from "@/pages/hire-mevn";
-import HireLAMPPage from "@/pages/hire-lamp";
-import AIChatbotsPage from "@/pages/ai-chatbots";
-import AIAgentsPage from "@/pages/ai-agents";
-import AboutPage from "@/pages/about";
-import PortfolioPage from "@/pages/portfolio";
-import BlogPage from "@/pages/blog";
-import BlogPostPage from "@/pages/blog-post";
-import ComponentDemo from "@/pages/component-demo";
-import PrivacyPage from "@/pages/privacy";
-import TermsPage from "@/pages/terms";
-import CookiesPage from "@/pages/cookies";
 import { StickyCallButton } from "@/components/ui/StickyCallButton";
-import { useEffect } from "react";
-import { useLocation, Redirect } from "wouter";
+
+// Lazy-loaded page chunks — each route loads only when first visited
+const NotFound = lazy(() => import("@/pages/not-found"));
+const Home = lazy(() => import("@/pages/home"));
+const ServicesPage = lazy(() => import("@/pages/services"));
+const BuildMVPPage = lazy(() => import("@/pages/build-mvp"));
+const ContactPage = lazy(() => import("@/pages/contact"));
+const AIServicesPage = lazy(() => import("@/pages/ai-services"));
+const AIChatbotsPage = lazy(() => import("@/pages/ai-chatbots"));
+const AIAgentsPage = lazy(() => import("@/pages/ai-agents"));
+const MobileDevelopmentPage = lazy(() => import("@/pages/mobile-development"));
+const HybridDevelopmentPage = lazy(() => import("@/pages/hybrid-development"));
+const IOSDevelopmentPage = lazy(() => import("@/pages/ios-development"));
+const AndroidDevelopmentPage = lazy(() => import("@/pages/android-development"));
+const SEOServicesPage = lazy(() => import("@/pages/seo-services"));
+const WebDevelopmentPage = lazy(() => import("@/pages/web-development"));
+const CustomDevelopmentPage = lazy(() => import("@/pages/custom-development"));
+const WebAppsPage = lazy(() => import("@/pages/web-apps"));
+const CMSDevelopmentPage = lazy(() => import("@/pages/cms-development"));
+const WordPressDevelopmentPage = lazy(() => import("@/pages/wordpress-development"));
+const ShopifyDevelopmentPage = lazy(() => import("@/pages/shopify-development"));
+const WixDevelopmentPage = lazy(() => import("@/pages/wix-development"));
+const WooCommerceDevelopmentPage = lazy(() => import("@/pages/woocommerce-development"));
+const WebflowDevelopmentPage = lazy(() => import("@/pages/webflow-development"));
+const HireDevelopersPage = lazy(() => import("@/pages/hire-developers"));
+const HireFullStackPage = lazy(() => import("@/pages/hire-fullstack"));
+const HireFrontendPage = lazy(() => import("@/pages/hire-frontend"));
+const HireBackendPage = lazy(() => import("@/pages/hire-backend"));
+const HireMERNPage = lazy(() => import("@/pages/hire-mern"));
+const HireMEANPage = lazy(() => import("@/pages/hire-mean"));
+const HireMEVNPage = lazy(() => import("@/pages/hire-mevn"));
+const HireLAMPPage = lazy(() => import("@/pages/hire-lamp"));
+const AboutPage = lazy(() => import("@/pages/about"));
+const PortfolioPage = lazy(() => import("@/pages/portfolio"));
+const BlogPage = lazy(() => import("@/pages/blog"));
+const BlogPostPage = lazy(() => import("@/pages/blog-post"));
+const ComponentDemo = lazy(() => import("@/pages/component-demo"));
+const PrivacyPage = lazy(() => import("@/pages/privacy"));
+const TermsPage = lazy(() => import("@/pages/terms"));
+const CookiesPage = lazy(() => import("@/pages/cookies"));
 
 function ScrollToTop() {
   const [location] = useLocation();
@@ -56,9 +57,16 @@ function ScrollToTop() {
   return null;
 }
 
+const PageLoader = () => (
+  <div className="min-h-screen flex items-center justify-center">
+    <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin" />
+  </div>
+);
+
 function Router() {
   return (
-    <Switch>
+    <Suspense fallback={<PageLoader />}>
+      <Switch>
       <Route path="/" component={Home} />
       <Route path="/services" component={ServicesPage} />
       <Route path="/services/build-mvp" component={BuildMVPPage} />
@@ -102,6 +110,7 @@ function Router() {
       <Route path="/cookies" component={CookiesPage} />
       <Route component={NotFound} />
     </Switch>
+    </Suspense>
   );
 }
 

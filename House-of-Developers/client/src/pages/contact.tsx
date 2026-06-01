@@ -37,7 +37,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
-import { contactFormSchema, type ContactFormData } from "@shared/schema";
+import { contactFormSchema, type ContactFormData } from "@/lib/contact-schema";
 import { apiRequest } from "@/lib/queryClient";
 import { Link } from "wouter";
 
