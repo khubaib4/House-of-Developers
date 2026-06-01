@@ -419,6 +419,19 @@ export default function MobileDevelopmentPage() {
         title="App Developers London & Wembley"
         description="Mobile app developers in London & Wembley. iOS, Android, hybrid apps. 100+ apps built for London businesses. Free consultation."
         canonical="/services/mobile-development"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Mobile App Development London",
+          "provider": {
+            "@type": "ProfessionalService",
+            "name": "House of Developers",
+            "url": "https://houseofdevelopers.co.uk"
+          },
+          "areaServed": "London",
+          "description": "Professional mobile app development in London. iOS, Android, hybrid apps.",
+          "url": "https://houseofdevelopers.co.uk/services/mobile-development"
+        }}
       />
       {/* Hero */}
       <section className="py-16 md:py-24" data-testid="section-mobile-hero">

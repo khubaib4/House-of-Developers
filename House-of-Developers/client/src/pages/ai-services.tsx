@@ -810,6 +810,19 @@ export default function AIServicesPage() {
         title="AI Development London & Wembley"
         description="AI development services in London & Wembley. Chatbots, AI agents, machine learning. Serving London businesses. Free consultation."
         canonical="/services/ai-services"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "AI Development Services London",
+          "provider": {
+            "@type": "ProfessionalService",
+            "name": "House of Developers",
+            "url": "https://houseofdevelopers.co.uk"
+          },
+          "areaServed": "London",
+          "description": "AI development services in London. Chatbots, AI agents, machine learning solutions.",
+          "url": "https://houseofdevelopers.co.uk/services/ai-services"
+        }}
       />
       {/* HERO SECTION */}
       <section className="py-24" data-testid="section-ai-hero">

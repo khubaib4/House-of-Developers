@@ -345,6 +345,19 @@ export default function SEOServicesPage() {
         title="SEO Services London & Croydon"
         description="SEO services in London & Croydon. Technical SEO, content strategy. Rank higher in London searches. Free SEO audit."
         canonical="/services/seo-services"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "SEO Services London",
+          "provider": {
+            "@type": "ProfessionalService",
+            "name": "House of Developers",
+            "url": "https://houseofdevelopers.co.uk"
+          },
+          "areaServed": "London",
+          "description": "SEO services in London. Technical SEO, content strategy, local SEO.",
+          "url": "https://houseofdevelopers.co.uk/services/seo-services"
+        }}
       />
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-6">

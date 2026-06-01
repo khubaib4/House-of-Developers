@@ -549,6 +549,19 @@ export default function HireDevelopersPage() {
         title="Hire Developers London & Wembley"
         description="Hire dedicated developers in London & Wembley. Full-stack, frontend, backend teams. Serving London businesses. Free consultation."
         canonical="/services/hire-developers"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Hire Developers London",
+          "provider": {
+            "@type": "ProfessionalService",
+            "name": "House of Developers",
+            "url": "https://houseofdevelopers.co.uk"
+          },
+          "areaServed": "London",
+          "description": "Hire dedicated developers in London. Full-stack, frontend, backend development teams.",
+          "url": "https://houseofdevelopers.co.uk/services/hire-developers"
+        }}
       />
       {/* HERO */}
       <section className="py-16 md:py-24" data-testid="section-hire-hero">

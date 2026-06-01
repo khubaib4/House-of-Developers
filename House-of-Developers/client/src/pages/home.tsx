@@ -141,14 +141,40 @@ export default function Home() {
         canonical="/"
         jsonLd={{
           "@context": "https://schema.org",
-          "@type": "Organization",
+          "@type": "ProfessionalService",
           "name": "House of Developers",
           "url": "https://houseofdevelopers.co.uk",
-          "description": "Premium UK-based digital product development agency",
-          "telephone": "+447429917368",
+          "logo": "https://houseofdevelopers.co.uk/favicon.png",
+          "image": "https://houseofdevelopers.co.uk/og-image.jpg",
+          "description": "Custom software development agency in London. Web apps, mobile apps, AI solutions. Serving London, Wembley, Croydon, Harrow & Ealing.",
           "email": "khubaib@houseofdevelopers.co.uk",
-          "address": { "@type": "PostalAddress", "addressCountry": "GB" },
-          "sameAs": ["https://www.linkedin.com/company/houseofdevelopers"]
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "London",
+            "addressRegion": "England",
+            "addressCountry": "GB"
+          },
+          "areaServed": [
+            { "@type": "City", "name": "London" },
+            { "@type": "City", "name": "Wembley" },
+            { "@type": "City", "name": "Croydon" },
+            { "@type": "City", "name": "Harrow" },
+            { "@type": "City", "name": "Ealing" }
+          ],
+          "serviceType": [
+            "Web Development",
+            "Mobile App Development",
+            "AI Development",
+            "Custom Software Development",
+            "SEO Services",
+            "CMS Development"
+          ],
+          "sameAs": [
+            "https://www.linkedin.com/company/houseofdevelopers",
+            "https://github.com/khubaib4"
+          ],
+          "priceRange": "££",
+          "openingHours": "Mo-Fr 09:00-18:00"
         }}
       />
       <section className="py-24 md:py-32 pl-[0px] pr-[0px] pt-[30px] pb-[30px]">

@@ -837,6 +837,19 @@ export default function WebDevelopmentPage() {
         title="Web Developers London & Wembley"
         description="Professional web developers in London & Wembley. Custom websites, web apps, e-commerce. Serving London businesses. Free consultation."
         canonical="/services/web-development"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Web Development London",
+          "provider": {
+            "@type": "ProfessionalService",
+            "name": "House of Developers",
+            "url": "https://houseofdevelopers.co.uk"
+          },
+          "areaServed": "London",
+          "description": "Professional web development services in London. Custom websites, web apps, e-commerce solutions.",
+          "url": "https://houseofdevelopers.co.uk/services/web-development"
+        }}
       />
       {/* HERO */}
       <section className="py-16 md:py-24">
