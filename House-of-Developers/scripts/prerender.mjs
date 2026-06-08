@@ -58,7 +58,7 @@ const ROUTES = [
 ];
 
 function makeContentVisible(html) {
-  return html.replace(/\s*style="([^"]*)"/gi, (match, styles) => {
+  let result = html.replace(/\s*style="([^"]*)"/gi, (match, styles) => {
     if (!/opacity:\s*0/.test(styles)) return match;
     const cleaned = styles
       .replace(/opacity:\s*0;?\s*/gi, "")
@@ -66,6 +66,15 @@ function makeContentVisible(html) {
       .trim();
     return cleaned ? ` style="${cleaned}"` : "";
   });
+
+  // Unhide Radix accordion FAQ answers for crawlers (hidden="" hides
+  // content from Google even though the text is in the DOM).
+  result = result.replace(/<div([^>]*)>/g, (match, attrs) => {
+    if (!attrs.includes('role="region"')) return match;
+    return `<div${attrs.replace(/\s+hidden=""/, "")}>`;
+  });
+
+  return result;
 }
 
 async function prerender() {
