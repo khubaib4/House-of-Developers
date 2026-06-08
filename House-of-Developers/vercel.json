@@ -3,6 +3,8 @@
   "outputDirectory": "dist/public",
   "framework": null,
   "installCommand": "npm install",
+  "cleanUrls": true,
+  "trailingSlash": false,
   "redirects": [
     { "source": "/case-studies",                             "destination": "/portfolio",             "permanent": true },
 
