@@ -9,6 +9,9 @@
     { "source": "/checkout-2/",                              "destination": "/contact",               "permanent": true },
     { "source": "/book-a-call/",                             "destination": "/contact",               "permanent": true },
     { "source": "/book-a-call",                              "destination": "/contact",               "permanent": true },
+    { "source": "/my-account-2/",                            "destination": "/contact",               "permanent": true },
+    { "source": "/my-account-2",                             "destination": "/contact",               "permanent": true },
+    { "source": "/contact/",                                 "destination": "/contact",               "permanent": true },
 
     { "source": "/portfolio/",                               "destination": "/portfolio",             "permanent": true },
 
@@ -29,6 +32,12 @@
 
     { "source": "/team/",                                    "destination": "/about",                 "permanent": true },
     { "source": "/team",                                     "destination": "/about",                 "permanent": true },
+
+    { "source": "/portfolio-2/portfolio-single/",             "destination": "/portfolio",             "permanent": true },
+    { "source": "/portfolio-2/",                             "destination": "/portfolio",             "permanent": true },
+    { "source": "/portfolio-2/:slug*",                       "destination": "/portfolio",             "permanent": true },
+    { "source": "/product-tag/:slug*",                       "destination": "/portfolio",             "permanent": true },
+    { "source": "/category/:slug*",                          "destination": "/",                      "permanent": true },
 
     { "source": "/binsro_template/:slug*",                   "destination": "/",                      "permanent": true },
     { "source": "/wp-json/:path*",                           "destination": "/",                      "permanent": true },
