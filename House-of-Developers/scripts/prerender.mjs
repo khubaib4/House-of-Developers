@@ -57,6 +57,17 @@ const ROUTES = [
   "/cookies",
 ];
 
+function makeContentVisible(html) {
+  return html.replace(/\s*style="([^"]*)"/gi, (match, styles) => {
+    if (!/opacity:\s*0/.test(styles)) return match;
+    const cleaned = styles
+      .replace(/opacity:\s*0;?\s*/gi, "")
+      .replace(/transform:[^;]+;?\s*/gi, "")
+      .trim();
+    return cleaned ? ` style="${cleaned}"` : "";
+  });
+}
+
 async function prerender() {
   console.log("\n[prerender] Starting static site generation...\n");
 
@@ -110,9 +121,10 @@ async function prerender() {
         : routeTemplate;
 
       // Inject rendered body HTML into the root div
+      const visibleHtml = makeContentVisible(html);
       output = output.replace(
         '<div id="root"></div>',
-        `<div id="root">${html}</div>`
+        `<div id="root">${visibleHtml}</div>`
       );
 
       // Determine output path

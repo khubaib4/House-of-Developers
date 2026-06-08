@@ -26,6 +26,18 @@ export default defineConfig(async ({ isSsrBuild }) => ({
   ],
   resolve: {
     alias: {
+      ...(isSsrBuild
+        ? {
+            "framer-motion": path.resolve(
+              import.meta.dirname,
+              "client/src/lib/motion-ssr.ts"
+            ),
+            "@fm-real": path.resolve(
+              import.meta.dirname,
+              "node_modules/framer-motion/dist/es/index.mjs"
+            ),
+          }
+        : {}),
       "@": path.resolve(import.meta.dirname, "client", "src"),
       "@shared": path.resolve(import.meta.dirname, "shared"),
       "@assets": path.resolve(import.meta.dirname, "attached_assets"),
